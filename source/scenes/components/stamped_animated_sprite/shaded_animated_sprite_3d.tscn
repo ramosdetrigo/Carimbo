@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://toum1olkwjmg"]
+
+[ext_resource type="Shader" uid="uid://dl6ampid6rth6" path="res://scenes/components/stamped_animated_sprite/shaded_animated_sprite_3d.gdshader" id="1_65egy"]
+[ext_resource type="Texture2D" uid="uid://dn1mdtvrnxb6v" path="res://assets/tmp/paper_mario.png" id="2_qpmdg"]
+[ext_resource type="Texture2D" uid="uid://bymhvxidkm43d" path="res://resources/gambiarra_trans.tres" id="3_chihe"]
+[ext_resource type="Texture2D" uid="uid://o34vnik8cwo4" path="res://assets/textures/paper/Paper003_1K-JPG_NormalGL.jpg" id="4_ng11f"]
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://assets/tmp/icon.svg" id="5_56ys0"]
+[ext_resource type="Texture2D" uid="uid://dkbujjnpxwia0" path="res://assets/textures/paper/Paper003_1K-JPG_Roughness.jpg" id="5_qpmdg"]
+[ext_resource type="Script" uid="uid://ctmgj3s2w7dsb" path="res://scenes/components/stamped_animated_sprite/shaded_animated_sprite_3d.gd" id="6_7kmoi"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mevdd"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("1_65egy")
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/texture_roughness = ExtResource("5_qpmdg")
+shader_parameter/specular = 0.249999994412
+shader_parameter/metallic = 0.0
+shader_parameter/texture_normal = ExtResource("4_ng11f")
+shader_parameter/normal_scale = 2.2000008645000015
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("2_qpmdg")
+shader_parameter/texture_carimbo = ExtResource("3_chihe")
+shader_parameter/carimbo_scale = Vector3(0, 0, 0)
+shader_parameter/carimbo_offset = Vector3(0, 0, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ppt8k"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_56ys0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_qpmdg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="ShadedAnimatedSprite3D" type="AnimatedSprite3D" unique_id=1229798839]
+material_override = SubResource("ShaderMaterial_mevdd")
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_ppt8k")
+frame = 1
+frame_progress = 0.4814965
+script = ExtResource("6_7kmoi")

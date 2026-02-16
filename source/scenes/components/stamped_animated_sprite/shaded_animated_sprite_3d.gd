@@ -1,8 +1,10 @@
 @tool
-class_name StampedAnimatedSprite3D
+class_name ShadedAnimatedSprite3D
 extends AnimatedSprite3D
 
+
 var material: ShaderMaterial = material_override
+@export var stamp_viewport: SubViewport
 
 
 func _ready() -> void:
@@ -11,10 +13,33 @@ func _ready() -> void:
 	update_viewport_size()
 
 
-## Desenha uma imagem por cima do sprite
+## "Carimba" uma imagem em algum lugar aleatório da imagem
 func stamp(image: Texture2D) -> void:
-	%Stamp.texture = image
-	%StampViewport.render_target_update_mode = SubViewport.UPDATE_ONCE
+	var vp_size = stamp_viewport.size
+	
+	# anda até 1/4 do tamanho do viewport pra algum lado
+	var r = vp_size/4.0
+	var pos_offset = Vector2(randi_range(-r.x, r.x), randi_range(-r.y, r.y))
+	# escala entre 80% e 120% do tamanho
+	var s: float = randf_range(0.8, 1.2)
+	var size = Vector2(s, s)
+	
+	var pos = vp_size/2.0 + pos_offset
+	stamp_offset(image, pos, size)
+
+
+## Desenha uma imagem por cima do sprite = null
+func stamp_offset(image: Texture2D, pos: Vector2, size: Vector2) -> void:
+	var sprite = Sprite2D.new()
+	sprite.position = pos
+	sprite.scale = size
+	sprite.texture = image
+	stamp_viewport.add_child(sprite)
+	
+	# Faz o viewport atualizar no próximo frame
+	stamp_viewport.render_target_update_mode = SubViewport.UPDATE_ONCE
+	
+	#sprite.draw.connect(sprite.queue_free.call_deferred)
 
 
 ## Atualiza o tamanho do viewport de carimbos de acordo com a animação
@@ -30,9 +55,7 @@ func update_viewport_size() -> void:
 			max_y = max(max_y, tex.get_height())
 	
 	var size = Vector2(max_x, max_y)
-	%StampViewport.size = size
-	%Stamp.position = size / 2.0
-	%Stamp.scale = Vector2(0.5, 0.5)
+	stamp_viewport.size = size
 
 
 ## Atualiza a texture no shader de acordo com a animação atual

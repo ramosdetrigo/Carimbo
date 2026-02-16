@@ -64,7 +64,6 @@ positional_shadow_atlas_quad_0 = 0
 positional_shadow_atlas_quad_1 = 0
 positional_shadow_atlas_quad_2 = 0
 positional_shadow_atlas_quad_3 = 0
+size = Vector2i(256, 256)
 render_target_clear_mode = 2
 render_target_update_mode = 1
-
-[node name="Sprite2D" type="Sprite2D" parent="StampViewport" unique_id=2084940717]

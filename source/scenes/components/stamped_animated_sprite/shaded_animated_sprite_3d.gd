@@ -38,9 +38,10 @@ func stamp_offset(image: Texture2D, pos: Vector2, size: Vector2) -> void:
 	
 	# Faz o viewport atualizar no próximo frame
 	stamp_viewport.render_target_update_mode = SubViewport.UPDATE_ONCE
-	
-	#sprite.draw.connect(sprite.queue_free.call_deferred)
-
+	# Apaga o sprite depois do fim do próximo frame
+	get_tree().process_frame.connect(func():
+		get_tree().process_frame.connect(sprite.queue_free, CONNECT_ONE_SHOT)
+	, CONNECT_ONE_SHOT)
 
 ## Atualiza o tamanho do viewport de carimbos de acordo com a animação
 func update_viewport_size() -> void:

@@ -18,6 +18,10 @@ config/icon="res://assets/tmp/icon.svg"
 
 Consts="*uid://c3877hb6j1qqh"
 
+[display]
+
+window/vsync/vsync_mode=0
+
 [physics]
 
 3d/physics_engine="Jolt Physics"

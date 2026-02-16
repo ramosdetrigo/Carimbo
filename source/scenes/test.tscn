@@ -1,0 +1,2365 @@
+[gd_scene format=3 uid="uid://dsbst1y8nsp0s"]
+
+[ext_resource type="Script" uid="uid://bxok4pulo8hal" path="res://scenes/test.gd" id="1_at5dv"]
+[ext_resource type="PackedScene" uid="uid://toum1olkwjmg" path="res://scenes/components/stamped_animated_sprite/shaded_animated_sprite_3d.tscn" id="2_jcd4p"]
+[ext_resource type="Shader" uid="uid://dl6ampid6rth6" path="res://scenes/components/stamped_animated_sprite/shaded_animated_sprite_3d.gdshader" id="3_uacia"]
+[ext_resource type="Texture2D" uid="uid://dn1mdtvrnxb6v" path="res://assets/tmp/paper_mario.png" id="4_yk7ts"]
+[ext_resource type="Texture2D" uid="uid://o34vnik8cwo4" path="res://assets/textures/paper/Paper003_1K-JPG_NormalGL.jpg" id="5_ajshl"]
+[ext_resource type="Texture2D" uid="uid://dkbujjnpxwia0" path="res://assets/textures/paper/Paper003_1K-JPG_Roughness.jpg" id="6_ghpyy"]
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://assets/tmp/icon.svg" id="7_44saj"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_7mbro"]
+viewport_path = NodePath("StampViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ff6ho"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_uacia")
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/texture_roughness = ExtResource("6_ghpyy")
+shader_parameter/specular = 0.249999994412
+shader_parameter/metallic = 0.0
+shader_parameter/texture_normal = ExtResource("5_ajshl")
+shader_parameter/normal_scale = 2.2000008645000015
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("4_yk7ts")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_7mbro")
+shader_parameter/carimbo_scale = Vector3(0, 0, 0)
+shader_parameter/carimbo_offset = Vector3(0, 0, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7yos8"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_44saj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yk7ts")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_5jxlq"]
+viewport_path = NodePath("StampViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xrtyr"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_uacia")
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/texture_roughness = ExtResource("6_ghpyy")
+shader_parameter/specular = 0.249999994412
+shader_parameter/metallic = 0.0
+shader_parameter/texture_normal = ExtResource("5_ajshl")
+shader_parameter/normal_scale = 2.2000008645000015
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("4_yk7ts")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_5jxlq")
+shader_parameter/carimbo_scale = Vector3(0, 0, 0)
+shader_parameter/carimbo_offset = Vector3(0, 0, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_daiq8"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_44saj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yk7ts")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_c6rvn"]
+viewport_path = NodePath("StampViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n74k2"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_uacia")
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/texture_roughness = ExtResource("6_ghpyy")
+shader_parameter/specular = 0.249999994412
+shader_parameter/metallic = 0.0
+shader_parameter/texture_normal = ExtResource("5_ajshl")
+shader_parameter/normal_scale = 2.2000008645000015
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("4_yk7ts")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_c6rvn")
+shader_parameter/carimbo_scale = Vector3(0, 0, 0)
+shader_parameter/carimbo_offset = Vector3(0, 0, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_si7kk"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_44saj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yk7ts")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_pn65j"]
+viewport_path = NodePath("StampViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5f8cm"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_uacia")
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/texture_roughness = ExtResource("6_ghpyy")
+shader_parameter/specular = 0.249999994412
+shader_parameter/metallic = 0.0
+shader_parameter/texture_normal = ExtResource("5_ajshl")
+shader_parameter/normal_scale = 2.2000008645000015
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("4_yk7ts")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_pn65j")
+shader_parameter/carimbo_scale = Vector3(0, 0, 0)
+shader_parameter/carimbo_offset = Vector3(0, 0, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gm488"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_44saj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yk7ts")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_kay4s"]
+viewport_path = NodePath("StampViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j7bvy"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_uacia")
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/texture_roughness = ExtResource("6_ghpyy")
+shader_parameter/specular = 0.249999994412
+shader_parameter/metallic = 0.0
+shader_parameter/texture_normal = ExtResource("5_ajshl")
+shader_parameter/normal_scale = 2.2000008645000015
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("4_yk7ts")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_kay4s")
+shader_parameter/carimbo_scale = Vector3(0, 0, 0)
+shader_parameter/carimbo_offset = Vector3(0, 0, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1dqgb"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_44saj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yk7ts")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_y81of"]
+viewport_path = NodePath("StampViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gsk6d"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_uacia")
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/texture_roughness = ExtResource("6_ghpyy")
+shader_parameter/specular = 0.249999994412
+shader_parameter/metallic = 0.0
+shader_parameter/texture_normal = ExtResource("5_ajshl")
+shader_parameter/normal_scale = 2.2000008645000015
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("4_yk7ts")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_y81of")
+shader_parameter/carimbo_scale = Vector3(0, 0, 0)
+shader_parameter/carimbo_offset = Vector3(0, 0, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2cnsr"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_44saj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yk7ts")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_4k8fq"]
+viewport_path = NodePath("StampViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_75pfo"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_uacia")
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/texture_roughness = ExtResource("6_ghpyy")
+shader_parameter/specular = 0.249999994412
+shader_parameter/metallic = 0.0
+shader_parameter/texture_normal = ExtResource("5_ajshl")
+shader_parameter/normal_scale = 2.2000008645000015
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("4_yk7ts")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_4k8fq")
+shader_parameter/carimbo_scale = Vector3(0, 0, 0)
+shader_parameter/carimbo_offset = Vector3(0, 0, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gv2t6"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_44saj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yk7ts")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_1xwo4"]
+viewport_path = NodePath("StampViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5civd"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_uacia")
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/texture_roughness = ExtResource("6_ghpyy")
+shader_parameter/specular = 0.249999994412
+shader_parameter/metallic = 0.0
+shader_parameter/texture_normal = ExtResource("5_ajshl")
+shader_parameter/normal_scale = 2.2000008645000015
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("4_yk7ts")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_1xwo4")
+shader_parameter/carimbo_scale = Vector3(0, 0, 0)
+shader_parameter/carimbo_offset = Vector3(0, 0, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mi64w"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_44saj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yk7ts")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ds53i"]
+viewport_path = NodePath("StampViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p8c7m"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_uacia")
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/texture_roughness = ExtResource("6_ghpyy")
+shader_parameter/specular = 0.249999994412
+shader_parameter/metallic = 0.0
+shader_parameter/texture_normal = ExtResource("5_ajshl")
+shader_parameter/normal_scale = 2.2000008645000015
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("4_yk7ts")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_ds53i")
+shader_parameter/carimbo_scale = Vector3(0, 0, 0)
+shader_parameter/carimbo_offset = Vector3(0, 0, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3ss0b"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_44saj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yk7ts")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_mftsw"]
+viewport_path = NodePath("StampViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q6ayx"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_uacia")
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/texture_roughness = ExtResource("6_ghpyy")
+shader_parameter/specular = 0.249999994412
+shader_parameter/metallic = 0.0
+shader_parameter/texture_normal = ExtResource("5_ajshl")
+shader_parameter/normal_scale = 2.2000008645000015
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("4_yk7ts")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_mftsw")
+shader_parameter/carimbo_scale = Vector3(0, 0, 0)
+shader_parameter/carimbo_offset = Vector3(0, 0, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iq7xp"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_44saj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yk7ts")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_at5dv"]
+viewport_path = NodePath("StampViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jcd4p"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_uacia")
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/texture_roughness = ExtResource("6_ghpyy")
+shader_parameter/specular = 0.249999994412
+shader_parameter/metallic = 0.0
+shader_parameter/texture_normal = ExtResource("5_ajshl")
+shader_parameter/normal_scale = 2.2000008645000015
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("4_yk7ts")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_at5dv")
+shader_parameter/carimbo_scale = Vector3(0, 0, 0)
+shader_parameter/carimbo_offset = Vector3(0, 0, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uacia"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_44saj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yk7ts")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_yk7ts"]
+viewport_path = NodePath("StampViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ajshl"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_uacia")
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/texture_roughness = ExtResource("6_ghpyy")
+shader_parameter/specular = 0.249999994412
+shader_parameter/metallic = 0.0
+shader_parameter/texture_normal = ExtResource("5_ajshl")
+shader_parameter/normal_scale = 2.2000008645000015
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("4_yk7ts")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_yk7ts")
+shader_parameter/carimbo_scale = Vector3(0, 0, 0)
+shader_parameter/carimbo_offset = Vector3(0, 0, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ghpyy"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_44saj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yk7ts")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_44saj"]
+viewport_path = NodePath("StampViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7mbro"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_uacia")
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/texture_roughness = ExtResource("6_ghpyy")
+shader_parameter/specular = 0.249999994412
+shader_parameter/metallic = 0.0
+shader_parameter/texture_normal = ExtResource("5_ajshl")
+shader_parameter/normal_scale = 2.2000008645000015
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("4_yk7ts")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_44saj")
+shader_parameter/carimbo_scale = Vector3(0, 0, 0)
+shader_parameter/carimbo_offset = Vector3(0, 0, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ff6ho"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_44saj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yk7ts")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_7yos8"]
+viewport_path = NodePath("StampViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5jxlq"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_uacia")
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/texture_roughness = ExtResource("6_ghpyy")
+shader_parameter/specular = 0.249999994412
+shader_parameter/metallic = 0.0
+shader_parameter/texture_normal = ExtResource("5_ajshl")
+shader_parameter/normal_scale = 2.2000008645000015
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("4_yk7ts")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_7yos8")
+shader_parameter/carimbo_scale = Vector3(0, 0, 0)
+shader_parameter/carimbo_offset = Vector3(0, 0, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xrtyr"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_44saj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yk7ts")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_daiq8"]
+viewport_path = NodePath("StampViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c6rvn"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_uacia")
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/texture_roughness = ExtResource("6_ghpyy")
+shader_parameter/specular = 0.249999994412
+shader_parameter/metallic = 0.0
+shader_parameter/texture_normal = ExtResource("5_ajshl")
+shader_parameter/normal_scale = 2.2000008645000015
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("4_yk7ts")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_daiq8")
+shader_parameter/carimbo_scale = Vector3(0, 0, 0)
+shader_parameter/carimbo_offset = Vector3(0, 0, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n74k2"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_44saj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yk7ts")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_si7kk"]
+viewport_path = NodePath("StampViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pn65j"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_uacia")
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/texture_roughness = ExtResource("6_ghpyy")
+shader_parameter/specular = 0.249999994412
+shader_parameter/metallic = 0.0
+shader_parameter/texture_normal = ExtResource("5_ajshl")
+shader_parameter/normal_scale = 2.2000008645000015
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("4_yk7ts")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_si7kk")
+shader_parameter/carimbo_scale = Vector3(0, 0, 0)
+shader_parameter/carimbo_offset = Vector3(0, 0, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5f8cm"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_44saj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yk7ts")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_gm488"]
+viewport_path = NodePath("StampViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kay4s"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_uacia")
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/texture_roughness = ExtResource("6_ghpyy")
+shader_parameter/specular = 0.249999994412
+shader_parameter/metallic = 0.0
+shader_parameter/texture_normal = ExtResource("5_ajshl")
+shader_parameter/normal_scale = 2.2000008645000015
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("4_yk7ts")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_gm488")
+shader_parameter/carimbo_scale = Vector3(0, 0, 0)
+shader_parameter/carimbo_offset = Vector3(0, 0, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j7bvy"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_44saj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yk7ts")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_1dqgb"]
+viewport_path = NodePath("StampViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y81of"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_uacia")
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/texture_roughness = ExtResource("6_ghpyy")
+shader_parameter/specular = 0.249999994412
+shader_parameter/metallic = 0.0
+shader_parameter/texture_normal = ExtResource("5_ajshl")
+shader_parameter/normal_scale = 2.2000008645000015
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("4_yk7ts")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_1dqgb")
+shader_parameter/carimbo_scale = Vector3(0, 0, 0)
+shader_parameter/carimbo_offset = Vector3(0, 0, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gsk6d"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_44saj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yk7ts")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_2cnsr"]
+viewport_path = NodePath("StampViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4k8fq"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_uacia")
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/texture_roughness = ExtResource("6_ghpyy")
+shader_parameter/specular = 0.249999994412
+shader_parameter/metallic = 0.0
+shader_parameter/texture_normal = ExtResource("5_ajshl")
+shader_parameter/normal_scale = 2.2000008645000015
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("4_yk7ts")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_2cnsr")
+shader_parameter/carimbo_scale = Vector3(0, 0, 0)
+shader_parameter/carimbo_offset = Vector3(0, 0, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_75pfo"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_44saj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yk7ts")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_s6cx0"]
+viewport_path = NodePath("StampViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_emonu"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_uacia")
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/texture_roughness = ExtResource("6_ghpyy")
+shader_parameter/specular = 0.249999994412
+shader_parameter/metallic = 0.0
+shader_parameter/texture_normal = ExtResource("5_ajshl")
+shader_parameter/normal_scale = 2.2000008645000015
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("4_yk7ts")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_s6cx0")
+shader_parameter/carimbo_scale = Vector3(0, 0, 0)
+shader_parameter/carimbo_offset = Vector3(0, 0, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pdwa4"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_44saj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yk7ts")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_335pd"]
+viewport_path = NodePath("StampViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_376r3"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_uacia")
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/texture_roughness = ExtResource("6_ghpyy")
+shader_parameter/specular = 0.249999994412
+shader_parameter/metallic = 0.0
+shader_parameter/texture_normal = ExtResource("5_ajshl")
+shader_parameter/normal_scale = 2.2000008645000015
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("4_yk7ts")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_335pd")
+shader_parameter/carimbo_scale = Vector3(0, 0, 0)
+shader_parameter/carimbo_offset = Vector3(0, 0, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xsg57"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_44saj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yk7ts")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_qx18j"]
+viewport_path = NodePath("StampViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cgmg2"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_uacia")
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/texture_roughness = ExtResource("6_ghpyy")
+shader_parameter/specular = 0.249999994412
+shader_parameter/metallic = 0.0
+shader_parameter/texture_normal = ExtResource("5_ajshl")
+shader_parameter/normal_scale = 2.2000008645000015
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("4_yk7ts")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_qx18j")
+shader_parameter/carimbo_scale = Vector3(0, 0, 0)
+shader_parameter/carimbo_offset = Vector3(0, 0, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n11rl"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_44saj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yk7ts")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_y8o6s"]
+viewport_path = NodePath("StampViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1urli"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_uacia")
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/texture_roughness = ExtResource("6_ghpyy")
+shader_parameter/specular = 0.249999994412
+shader_parameter/metallic = 0.0
+shader_parameter/texture_normal = ExtResource("5_ajshl")
+shader_parameter/normal_scale = 2.2000008645000015
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("4_yk7ts")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_y8o6s")
+shader_parameter/carimbo_scale = Vector3(0, 0, 0)
+shader_parameter/carimbo_offset = Vector3(0, 0, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_35prk"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_44saj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yk7ts")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_eokji"]
+viewport_path = NodePath("StampViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8nvs4"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_uacia")
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/texture_roughness = ExtResource("6_ghpyy")
+shader_parameter/specular = 0.249999994412
+shader_parameter/metallic = 0.0
+shader_parameter/texture_normal = ExtResource("5_ajshl")
+shader_parameter/normal_scale = 2.2000008645000015
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("4_yk7ts")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_eokji")
+shader_parameter/carimbo_scale = Vector3(0, 0, 0)
+shader_parameter/carimbo_offset = Vector3(0, 0, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2ixbo"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_44saj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yk7ts")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_uig8d"]
+viewport_path = NodePath("StampViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eixnv"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_uacia")
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/texture_roughness = ExtResource("6_ghpyy")
+shader_parameter/specular = 0.249999994412
+shader_parameter/metallic = 0.0
+shader_parameter/texture_normal = ExtResource("5_ajshl")
+shader_parameter/normal_scale = 2.2000008645000015
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("4_yk7ts")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_uig8d")
+shader_parameter/carimbo_scale = Vector3(0, 0, 0)
+shader_parameter/carimbo_offset = Vector3(0, 0, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_68ewr"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_44saj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yk7ts")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_osnag"]
+viewport_path = NodePath("StampViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vqdru"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_uacia")
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/texture_roughness = ExtResource("6_ghpyy")
+shader_parameter/specular = 0.249999994412
+shader_parameter/metallic = 0.0
+shader_parameter/texture_normal = ExtResource("5_ajshl")
+shader_parameter/normal_scale = 2.2000008645000015
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("4_yk7ts")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_osnag")
+shader_parameter/carimbo_scale = Vector3(0, 0, 0)
+shader_parameter/carimbo_offset = Vector3(0, 0, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tnm51"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_44saj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yk7ts")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_tbman"]
+viewport_path = NodePath("StampViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gwri7"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_uacia")
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/texture_roughness = ExtResource("6_ghpyy")
+shader_parameter/specular = 0.249999994412
+shader_parameter/metallic = 0.0
+shader_parameter/texture_normal = ExtResource("5_ajshl")
+shader_parameter/normal_scale = 2.2000008645000015
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("4_yk7ts")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_tbman")
+shader_parameter/carimbo_scale = Vector3(0, 0, 0)
+shader_parameter/carimbo_offset = Vector3(0, 0, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3t5ks"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_44saj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yk7ts")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_elqqf"]
+viewport_path = NodePath("StampViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tdgre"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_uacia")
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/texture_roughness = ExtResource("6_ghpyy")
+shader_parameter/specular = 0.249999994412
+shader_parameter/metallic = 0.0
+shader_parameter/texture_normal = ExtResource("5_ajshl")
+shader_parameter/normal_scale = 2.2000008645000015
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("4_yk7ts")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_elqqf")
+shader_parameter/carimbo_scale = Vector3(0, 0, 0)
+shader_parameter/carimbo_offset = Vector3(0, 0, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c0b3m"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_44saj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yk7ts")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_80m0l"]
+viewport_path = NodePath("StampViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qfy4l"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_uacia")
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/texture_roughness = ExtResource("6_ghpyy")
+shader_parameter/specular = 0.249999994412
+shader_parameter/metallic = 0.0
+shader_parameter/texture_normal = ExtResource("5_ajshl")
+shader_parameter/normal_scale = 2.2000008645000015
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("4_yk7ts")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_80m0l")
+shader_parameter/carimbo_scale = Vector3(0, 0, 0)
+shader_parameter/carimbo_offset = Vector3(0, 0, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ho4wr"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_44saj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yk7ts")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_4amwq"]
+viewport_path = NodePath("StampViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3w526"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_uacia")
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/texture_roughness = ExtResource("6_ghpyy")
+shader_parameter/specular = 0.249999994412
+shader_parameter/metallic = 0.0
+shader_parameter/texture_normal = ExtResource("5_ajshl")
+shader_parameter/normal_scale = 2.2000008645000015
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("4_yk7ts")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_4amwq")
+shader_parameter/carimbo_scale = Vector3(0, 0, 0)
+shader_parameter/carimbo_offset = Vector3(0, 0, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hpsc0"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_44saj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yk7ts")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_tgrws"]
+viewport_path = NodePath("StampViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g2gmo"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_uacia")
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/texture_roughness = ExtResource("6_ghpyy")
+shader_parameter/specular = 0.249999994412
+shader_parameter/metallic = 0.0
+shader_parameter/texture_normal = ExtResource("5_ajshl")
+shader_parameter/normal_scale = 2.2000008645000015
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("4_yk7ts")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_tgrws")
+shader_parameter/carimbo_scale = Vector3(0, 0, 0)
+shader_parameter/carimbo_offset = Vector3(0, 0, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1d0gi"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_44saj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yk7ts")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_c05ib"]
+viewport_path = NodePath("StampViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nwu0k"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_uacia")
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/texture_roughness = ExtResource("6_ghpyy")
+shader_parameter/specular = 0.249999994412
+shader_parameter/metallic = 0.0
+shader_parameter/texture_normal = ExtResource("5_ajshl")
+shader_parameter/normal_scale = 2.2000008645000015
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("4_yk7ts")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_c05ib")
+shader_parameter/carimbo_scale = Vector3(0, 0, 0)
+shader_parameter/carimbo_offset = Vector3(0, 0, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8pbqr"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_44saj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yk7ts")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ugxyt"]
+viewport_path = NodePath("StampViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_itbbc"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_uacia")
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/texture_roughness = ExtResource("6_ghpyy")
+shader_parameter/specular = 0.249999994412
+shader_parameter/metallic = 0.0
+shader_parameter/texture_normal = ExtResource("5_ajshl")
+shader_parameter/normal_scale = 2.2000008645000015
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("4_yk7ts")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_ugxyt")
+shader_parameter/carimbo_scale = Vector3(0, 0, 0)
+shader_parameter/carimbo_offset = Vector3(0, 0, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2w7nf"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_44saj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yk7ts")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_vspyu"]
+viewport_path = NodePath("StampViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vs3tm"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_uacia")
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/texture_roughness = ExtResource("6_ghpyy")
+shader_parameter/specular = 0.249999994412
+shader_parameter/metallic = 0.0
+shader_parameter/texture_normal = ExtResource("5_ajshl")
+shader_parameter/normal_scale = 2.2000008645000015
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("4_yk7ts")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_vspyu")
+shader_parameter/carimbo_scale = Vector3(0, 0, 0)
+shader_parameter/carimbo_offset = Vector3(0, 0, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yuwb2"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_44saj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yk7ts")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_xfgcb"]
+viewport_path = NodePath("StampViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6rksj"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_uacia")
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/texture_roughness = ExtResource("6_ghpyy")
+shader_parameter/specular = 0.249999994412
+shader_parameter/metallic = 0.0
+shader_parameter/texture_normal = ExtResource("5_ajshl")
+shader_parameter/normal_scale = 2.2000008645000015
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("4_yk7ts")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_xfgcb")
+shader_parameter/carimbo_scale = Vector3(0, 0, 0)
+shader_parameter/carimbo_offset = Vector3(0, 0, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oyxl4"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_44saj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yk7ts")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_xsyvi"]
+viewport_path = NodePath("StampViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mervl"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_uacia")
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/texture_roughness = ExtResource("6_ghpyy")
+shader_parameter/specular = 0.249999994412
+shader_parameter/metallic = 0.0
+shader_parameter/texture_normal = ExtResource("5_ajshl")
+shader_parameter/normal_scale = 2.2000008645000015
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("4_yk7ts")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_xsyvi")
+shader_parameter/carimbo_scale = Vector3(0, 0, 0)
+shader_parameter/carimbo_offset = Vector3(0, 0, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tc0w7"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_44saj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yk7ts")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_aw7an"]
+viewport_path = NodePath("StampViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8o50k"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_uacia")
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/texture_roughness = ExtResource("6_ghpyy")
+shader_parameter/specular = 0.249999994412
+shader_parameter/metallic = 0.0
+shader_parameter/texture_normal = ExtResource("5_ajshl")
+shader_parameter/normal_scale = 2.2000008645000015
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("4_yk7ts")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_aw7an")
+shader_parameter/carimbo_scale = Vector3(0, 0, 0)
+shader_parameter/carimbo_offset = Vector3(0, 0, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t8aaa"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_44saj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yk7ts")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_4lsv5"]
+viewport_path = NodePath("StampViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wv7sc"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_uacia")
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/texture_roughness = ExtResource("6_ghpyy")
+shader_parameter/specular = 0.249999994412
+shader_parameter/metallic = 0.0
+shader_parameter/texture_normal = ExtResource("5_ajshl")
+shader_parameter/normal_scale = 2.2000008645000015
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("4_yk7ts")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_4lsv5")
+shader_parameter/carimbo_scale = Vector3(0, 0, 0)
+shader_parameter/carimbo_offset = Vector3(0, 0, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7qcsl"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_44saj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yk7ts")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_7dcpw"]
+viewport_path = NodePath("StampViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vwa82"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_uacia")
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/texture_roughness = ExtResource("6_ghpyy")
+shader_parameter/specular = 0.249999994412
+shader_parameter/metallic = 0.0
+shader_parameter/texture_normal = ExtResource("5_ajshl")
+shader_parameter/normal_scale = 2.2000008645000015
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("4_yk7ts")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_7dcpw")
+shader_parameter/carimbo_scale = Vector3(0, 0, 0)
+shader_parameter/carimbo_offset = Vector3(0, 0, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jfe00"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_44saj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yk7ts")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_mf2kp"]
+viewport_path = NodePath("StampViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b65qk"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_uacia")
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/texture_roughness = ExtResource("6_ghpyy")
+shader_parameter/specular = 0.249999994412
+shader_parameter/metallic = 0.0
+shader_parameter/texture_normal = ExtResource("5_ajshl")
+shader_parameter/normal_scale = 2.2000008645000015
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("4_yk7ts")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_mf2kp")
+shader_parameter/carimbo_scale = Vector3(0, 0, 0)
+shader_parameter/carimbo_offset = Vector3(0, 0, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y2p4a"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_44saj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yk7ts")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_etvgs"]
+viewport_path = NodePath("StampViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h5c55"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_uacia")
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/texture_roughness = ExtResource("6_ghpyy")
+shader_parameter/specular = 0.249999994412
+shader_parameter/metallic = 0.0
+shader_parameter/texture_normal = ExtResource("5_ajshl")
+shader_parameter/normal_scale = 2.2000008645000015
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("4_yk7ts")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_etvgs")
+shader_parameter/carimbo_scale = Vector3(0, 0, 0)
+shader_parameter/carimbo_offset = Vector3(0, 0, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2pxgj"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_44saj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yk7ts")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_mxsuy"]
+viewport_path = NodePath("StampViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_83c18"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_uacia")
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/texture_roughness = ExtResource("6_ghpyy")
+shader_parameter/specular = 0.249999994412
+shader_parameter/metallic = 0.0
+shader_parameter/texture_normal = ExtResource("5_ajshl")
+shader_parameter/normal_scale = 2.2000008645000015
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("4_yk7ts")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_mxsuy")
+shader_parameter/carimbo_scale = Vector3(0, 0, 0)
+shader_parameter/carimbo_offset = Vector3(0, 0, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sao6w"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_44saj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yk7ts")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_5un4f"]
+viewport_path = NodePath("StampViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f81g6"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_uacia")
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/texture_roughness = ExtResource("6_ghpyy")
+shader_parameter/specular = 0.249999994412
+shader_parameter/metallic = 0.0
+shader_parameter/texture_normal = ExtResource("5_ajshl")
+shader_parameter/normal_scale = 2.2000008645000015
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("4_yk7ts")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_5un4f")
+shader_parameter/carimbo_scale = Vector3(0, 0, 0)
+shader_parameter/carimbo_offset = Vector3(0, 0, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2npwi"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_44saj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yk7ts")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_5205d"]
+viewport_path = NodePath("StampViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_32c8b"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_uacia")
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/texture_roughness = ExtResource("6_ghpyy")
+shader_parameter/specular = 0.249999994412
+shader_parameter/metallic = 0.0
+shader_parameter/texture_normal = ExtResource("5_ajshl")
+shader_parameter/normal_scale = 2.2000008645000015
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("4_yk7ts")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_5205d")
+shader_parameter/carimbo_scale = Vector3(0, 0, 0)
+shader_parameter/carimbo_offset = Vector3(0, 0, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hj8ru"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_44saj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yk7ts")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_wf13j"]
+viewport_path = NodePath("StampViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l1phw"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_uacia")
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/texture_roughness = ExtResource("6_ghpyy")
+shader_parameter/specular = 0.249999994412
+shader_parameter/metallic = 0.0
+shader_parameter/texture_normal = ExtResource("5_ajshl")
+shader_parameter/normal_scale = 2.2000008645000015
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("4_yk7ts")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_wf13j")
+shader_parameter/carimbo_scale = Vector3(0, 0, 0)
+shader_parameter/carimbo_offset = Vector3(0, 0, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2x75j"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_44saj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yk7ts")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_4yku5"]
+viewport_path = NodePath("StampViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xred0"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_uacia")
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/texture_roughness = ExtResource("6_ghpyy")
+shader_parameter/specular = 0.249999994412
+shader_parameter/metallic = 0.0
+shader_parameter/texture_normal = ExtResource("5_ajshl")
+shader_parameter/normal_scale = 2.2000008645000015
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("4_yk7ts")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_4yku5")
+shader_parameter/carimbo_scale = Vector3(0, 0, 0)
+shader_parameter/carimbo_offset = Vector3(0, 0, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ap7sd"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_44saj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yk7ts")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_cd78x"]
+viewport_path = NodePath("StampViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gow5c"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_uacia")
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/texture_roughness = ExtResource("6_ghpyy")
+shader_parameter/specular = 0.249999994412
+shader_parameter/metallic = 0.0
+shader_parameter/texture_normal = ExtResource("5_ajshl")
+shader_parameter/normal_scale = 2.2000008645000015
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("4_yk7ts")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_cd78x")
+shader_parameter/carimbo_scale = Vector3(0, 0, 0)
+shader_parameter/carimbo_offset = Vector3(0, 0, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lxpqy"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_44saj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yk7ts")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_68bh8"]
+viewport_path = NodePath("StampViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yj8m3"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_uacia")
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/texture_roughness = ExtResource("6_ghpyy")
+shader_parameter/specular = 0.249999994412
+shader_parameter/metallic = 0.0
+shader_parameter/texture_normal = ExtResource("5_ajshl")
+shader_parameter/normal_scale = 2.2000008645000015
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("4_yk7ts")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_68bh8")
+shader_parameter/carimbo_scale = Vector3(0, 0, 0)
+shader_parameter/carimbo_offset = Vector3(0, 0, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0xerh"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_44saj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yk7ts")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_d06u7"]
+viewport_path = NodePath("StampViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bg6ob"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_uacia")
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/texture_roughness = ExtResource("6_ghpyy")
+shader_parameter/specular = 0.249999994412
+shader_parameter/metallic = 0.0
+shader_parameter/texture_normal = ExtResource("5_ajshl")
+shader_parameter/normal_scale = 2.2000008645000015
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("4_yk7ts")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_d06u7")
+shader_parameter/carimbo_scale = Vector3(0, 0, 0)
+shader_parameter/carimbo_offset = Vector3(0, 0, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p16r8"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_44saj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yk7ts")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_h7phc"]
+viewport_path = NodePath("StampViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jonjh"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_uacia")
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/texture_roughness = ExtResource("6_ghpyy")
+shader_parameter/specular = 0.249999994412
+shader_parameter/metallic = 0.0
+shader_parameter/texture_normal = ExtResource("5_ajshl")
+shader_parameter/normal_scale = 2.2000008645000015
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("4_yk7ts")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_h7phc")
+shader_parameter/carimbo_scale = Vector3(0, 0, 0)
+shader_parameter/carimbo_offset = Vector3(0, 0, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4qgo0"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_44saj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yk7ts")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_wa3wq"]
+viewport_path = NodePath("StampViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_okn2c"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_uacia")
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/texture_roughness = ExtResource("6_ghpyy")
+shader_parameter/specular = 0.249999994412
+shader_parameter/metallic = 0.0
+shader_parameter/texture_normal = ExtResource("5_ajshl")
+shader_parameter/normal_scale = 2.2000008645000015
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("4_yk7ts")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_wa3wq")
+shader_parameter/carimbo_scale = Vector3(0, 0, 0)
+shader_parameter/carimbo_offset = Vector3(0, 0, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k0hd2"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_44saj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yk7ts")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_vteq7"]
+viewport_path = NodePath("StampViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xjfkh"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_uacia")
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/texture_roughness = ExtResource("6_ghpyy")
+shader_parameter/specular = 0.249999994412
+shader_parameter/metallic = 0.0
+shader_parameter/texture_normal = ExtResource("5_ajshl")
+shader_parameter/normal_scale = 2.2000008645000015
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("4_yk7ts")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_vteq7")
+shader_parameter/carimbo_scale = Vector3(0, 0, 0)
+shader_parameter/carimbo_offset = Vector3(0, 0, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kive8"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_44saj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yk7ts")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_d6eso"]
+viewport_path = NodePath("StampViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_knsa6"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_uacia")
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/texture_roughness = ExtResource("6_ghpyy")
+shader_parameter/specular = 0.249999994412
+shader_parameter/metallic = 0.0
+shader_parameter/texture_normal = ExtResource("5_ajshl")
+shader_parameter/normal_scale = 2.2000008645000015
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("4_yk7ts")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_d6eso")
+shader_parameter/carimbo_scale = Vector3(0, 0, 0)
+shader_parameter/carimbo_offset = Vector3(0, 0, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7psng"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_44saj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yk7ts")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_2486v"]
+viewport_path = NodePath("StampViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q881y"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_uacia")
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/texture_roughness = ExtResource("6_ghpyy")
+shader_parameter/specular = 0.249999994412
+shader_parameter/metallic = 0.0
+shader_parameter/texture_normal = ExtResource("5_ajshl")
+shader_parameter/normal_scale = 2.2000008645000015
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("4_yk7ts")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_2486v")
+shader_parameter/carimbo_scale = Vector3(0, 0, 0)
+shader_parameter/carimbo_offset = Vector3(0, 0, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gbxhh"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_44saj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yk7ts")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_i80v7"]
+viewport_path = NodePath("StampViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qft1g"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_uacia")
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/texture_roughness = ExtResource("6_ghpyy")
+shader_parameter/specular = 0.249999994412
+shader_parameter/metallic = 0.0
+shader_parameter/texture_normal = ExtResource("5_ajshl")
+shader_parameter/normal_scale = 2.2000008645000015
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("4_yk7ts")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_i80v7")
+shader_parameter/carimbo_scale = Vector3(0, 0, 0)
+shader_parameter/carimbo_offset = Vector3(0, 0, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_te4pb"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_44saj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yk7ts")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_m1w0u"]
+viewport_path = NodePath("StampViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3yvdh"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_uacia")
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/texture_roughness = ExtResource("6_ghpyy")
+shader_parameter/specular = 0.249999994412
+shader_parameter/metallic = 0.0
+shader_parameter/texture_normal = ExtResource("5_ajshl")
+shader_parameter/normal_scale = 2.2000008645000015
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("4_yk7ts")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_m1w0u")
+shader_parameter/carimbo_scale = Vector3(0, 0, 0)
+shader_parameter/carimbo_offset = Vector3(0, 0, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rerqb"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_44saj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yk7ts")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_jgpah"]
+viewport_path = NodePath("StampViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dkcng"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_uacia")
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/texture_roughness = ExtResource("6_ghpyy")
+shader_parameter/specular = 0.249999994412
+shader_parameter/metallic = 0.0
+shader_parameter/texture_normal = ExtResource("5_ajshl")
+shader_parameter/normal_scale = 2.2000008645000015
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("4_yk7ts")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_jgpah")
+shader_parameter/carimbo_scale = Vector3(0, 0, 0)
+shader_parameter/carimbo_offset = Vector3(0, 0, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xwpai"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_44saj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yk7ts")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Node3D" type="Node3D" unique_id=1046712100]
+script = ExtResource("1_at5dv")
+
+[node name="ShadedAnimatedSprite3D2" parent="." unique_id=1229798839 instance=ExtResource("2_jcd4p")]
+material_override = SubResource("ShaderMaterial_ff6ho")
+sprite_frames = SubResource("SpriteFrames_7yos8")
+frame = 0
+frame_progress = 0.0
+
+[node name="ShadedAnimatedSprite3D" parent="." unique_id=1173853008 instance=ExtResource("2_jcd4p")]
+material_override = SubResource("ShaderMaterial_xrtyr")
+sprite_frames = SubResource("SpriteFrames_daiq8")
+
+[node name="ShadedAnimatedSprite3D3" parent="." unique_id=1781127928 instance=ExtResource("2_jcd4p")]
+material_override = SubResource("ShaderMaterial_n74k2")
+sprite_frames = SubResource("SpriteFrames_si7kk")
+frame = 0
+frame_progress = 0.0
+
+[node name="ShadedAnimatedSprite3D4" parent="." unique_id=2005837440 instance=ExtResource("2_jcd4p")]
+material_override = SubResource("ShaderMaterial_5f8cm")
+sprite_frames = SubResource("SpriteFrames_gm488")
+frame = 0
+frame_progress = 0.0
+
+[node name="ShadedAnimatedSprite3D5" parent="." unique_id=631790179 instance=ExtResource("2_jcd4p")]
+material_override = SubResource("ShaderMaterial_j7bvy")
+sprite_frames = SubResource("SpriteFrames_1dqgb")
+frame = 0
+frame_progress = 0.0
+
+[node name="ShadedAnimatedSprite3D6" parent="." unique_id=87002392 instance=ExtResource("2_jcd4p")]
+material_override = SubResource("ShaderMaterial_gsk6d")
+sprite_frames = SubResource("SpriteFrames_2cnsr")
+frame = 0
+frame_progress = 0.0
+
+[node name="ShadedAnimatedSprite3D7" parent="." unique_id=568038810 instance=ExtResource("2_jcd4p")]
+material_override = SubResource("ShaderMaterial_75pfo")
+sprite_frames = SubResource("SpriteFrames_gv2t6")
+frame = 0
+frame_progress = 0.0
+
+[node name="ShadedAnimatedSprite3D8" parent="." unique_id=77930233 instance=ExtResource("2_jcd4p")]
+material_override = SubResource("ShaderMaterial_5civd")
+sprite_frames = SubResource("SpriteFrames_mi64w")
+frame = 0
+frame_progress = 0.0
+
+[node name="ShadedAnimatedSprite3D9" parent="." unique_id=1874291082 instance=ExtResource("2_jcd4p")]
+material_override = SubResource("ShaderMaterial_p8c7m")
+sprite_frames = SubResource("SpriteFrames_3ss0b")
+frame = 0
+frame_progress = 0.0
+
+[node name="ShadedAnimatedSprite3D10" parent="." unique_id=94606628 instance=ExtResource("2_jcd4p")]
+material_override = SubResource("ShaderMaterial_q6ayx")
+sprite_frames = SubResource("SpriteFrames_iq7xp")
+frame = 0
+frame_progress = 0.0
+
+[node name="ShadedAnimatedSprite3D49" parent="." unique_id=465892766 instance=ExtResource("2_jcd4p")]
+material_override = SubResource("ShaderMaterial_jcd4p")
+sprite_frames = SubResource("SpriteFrames_uacia")
+frame = 0
+frame_progress = 0.0
+
+[node name="ShadedAnimatedSprite3D50" parent="." unique_id=1870633890 instance=ExtResource("2_jcd4p")]
+material_override = SubResource("ShaderMaterial_ajshl")
+sprite_frames = SubResource("SpriteFrames_ghpyy")
+frame = 0
+frame_progress = 0.0
+
+[node name="ShadedAnimatedSprite3D51" parent="." unique_id=154966995 instance=ExtResource("2_jcd4p")]
+material_override = SubResource("ShaderMaterial_7mbro")
+sprite_frames = SubResource("SpriteFrames_ff6ho")
+frame = 0
+frame_progress = 0.0
+
+[node name="ShadedAnimatedSprite3D52" parent="." unique_id=2131255509 instance=ExtResource("2_jcd4p")]
+material_override = SubResource("ShaderMaterial_5jxlq")
+sprite_frames = SubResource("SpriteFrames_xrtyr")
+frame = 0
+frame_progress = 0.0
+
+[node name="ShadedAnimatedSprite3D53" parent="." unique_id=1846030444 instance=ExtResource("2_jcd4p")]
+material_override = SubResource("ShaderMaterial_c6rvn")
+sprite_frames = SubResource("SpriteFrames_n74k2")
+frame = 0
+frame_progress = 0.0
+
+[node name="ShadedAnimatedSprite3D54" parent="." unique_id=1038824291 instance=ExtResource("2_jcd4p")]
+material_override = SubResource("ShaderMaterial_pn65j")
+sprite_frames = SubResource("SpriteFrames_5f8cm")
+frame = 0
+frame_progress = 0.0
+
+[node name="ShadedAnimatedSprite3D55" parent="." unique_id=324609105 instance=ExtResource("2_jcd4p")]
+material_override = SubResource("ShaderMaterial_kay4s")
+sprite_frames = SubResource("SpriteFrames_j7bvy")
+frame = 0
+frame_progress = 0.0
+
+[node name="ShadedAnimatedSprite3D56" parent="." unique_id=782029646 instance=ExtResource("2_jcd4p")]
+material_override = SubResource("ShaderMaterial_y81of")
+sprite_frames = SubResource("SpriteFrames_gsk6d")
+frame = 0
+frame_progress = 0.0
+
+[node name="ShadedAnimatedSprite3D57" parent="." unique_id=1731363499 instance=ExtResource("2_jcd4p")]
+material_override = SubResource("ShaderMaterial_4k8fq")
+sprite_frames = SubResource("SpriteFrames_75pfo")
+frame = 0
+frame_progress = 0.0
+
+[node name="ShadedAnimatedSprite3D11" parent="." unique_id=1992734173 instance=ExtResource("2_jcd4p")]
+material_override = SubResource("ShaderMaterial_emonu")
+sprite_frames = SubResource("SpriteFrames_pdwa4")
+frame = 0
+frame_progress = 0.0
+
+[node name="ShadedAnimatedSprite3D12" parent="." unique_id=1731174103 instance=ExtResource("2_jcd4p")]
+material_override = SubResource("ShaderMaterial_376r3")
+sprite_frames = SubResource("SpriteFrames_xsg57")
+frame = 0
+frame_progress = 0.0
+
+[node name="ShadedAnimatedSprite3D13" parent="." unique_id=415931051 instance=ExtResource("2_jcd4p")]
+material_override = SubResource("ShaderMaterial_cgmg2")
+sprite_frames = SubResource("SpriteFrames_n11rl")
+frame = 0
+frame_progress = 0.0
+
+[node name="ShadedAnimatedSprite3D14" parent="." unique_id=1715955706 instance=ExtResource("2_jcd4p")]
+material_override = SubResource("ShaderMaterial_1urli")
+sprite_frames = SubResource("SpriteFrames_35prk")
+frame = 0
+frame_progress = 0.0
+
+[node name="ShadedAnimatedSprite3D15" parent="." unique_id=1013427623 instance=ExtResource("2_jcd4p")]
+material_override = SubResource("ShaderMaterial_8nvs4")
+sprite_frames = SubResource("SpriteFrames_2ixbo")
+frame = 0
+frame_progress = 0.0
+
+[node name="ShadedAnimatedSprite3D16" parent="." unique_id=126598033 instance=ExtResource("2_jcd4p")]
+material_override = SubResource("ShaderMaterial_eixnv")
+sprite_frames = SubResource("SpriteFrames_68ewr")
+frame = 0
+frame_progress = 0.0
+
+[node name="ShadedAnimatedSprite3D17" parent="." unique_id=1898156452 instance=ExtResource("2_jcd4p")]
+material_override = SubResource("ShaderMaterial_vqdru")
+sprite_frames = SubResource("SpriteFrames_tnm51")
+frame = 0
+frame_progress = 0.0
+
+[node name="ShadedAnimatedSprite3D18" parent="." unique_id=839002517 instance=ExtResource("2_jcd4p")]
+material_override = SubResource("ShaderMaterial_gwri7")
+sprite_frames = SubResource("SpriteFrames_3t5ks")
+frame = 0
+frame_progress = 0.0
+
+[node name="ShadedAnimatedSprite3D19" parent="." unique_id=1865615025 instance=ExtResource("2_jcd4p")]
+material_override = SubResource("ShaderMaterial_tdgre")
+sprite_frames = SubResource("SpriteFrames_c0b3m")
+frame = 0
+frame_progress = 0.0
+
+[node name="ShadedAnimatedSprite3D20" parent="." unique_id=459971690 instance=ExtResource("2_jcd4p")]
+material_override = SubResource("ShaderMaterial_qfy4l")
+sprite_frames = SubResource("SpriteFrames_ho4wr")
+frame = 0
+frame_progress = 0.0
+
+[node name="ShadedAnimatedSprite3D21" parent="." unique_id=1735245688 instance=ExtResource("2_jcd4p")]
+material_override = SubResource("ShaderMaterial_3w526")
+sprite_frames = SubResource("SpriteFrames_hpsc0")
+frame = 0
+frame_progress = 0.0
+
+[node name="ShadedAnimatedSprite3D22" parent="." unique_id=1152449628 instance=ExtResource("2_jcd4p")]
+material_override = SubResource("ShaderMaterial_g2gmo")
+sprite_frames = SubResource("SpriteFrames_1d0gi")
+frame = 0
+frame_progress = 0.0
+
+[node name="ShadedAnimatedSprite3D23" parent="." unique_id=187892920 instance=ExtResource("2_jcd4p")]
+material_override = SubResource("ShaderMaterial_nwu0k")
+sprite_frames = SubResource("SpriteFrames_8pbqr")
+frame = 0
+frame_progress = 0.0
+
+[node name="ShadedAnimatedSprite3D24" parent="." unique_id=1775336375 instance=ExtResource("2_jcd4p")]
+material_override = SubResource("ShaderMaterial_itbbc")
+sprite_frames = SubResource("SpriteFrames_2w7nf")
+frame = 0
+frame_progress = 0.0
+
+[node name="ShadedAnimatedSprite3D25" parent="." unique_id=1664462818 instance=ExtResource("2_jcd4p")]
+material_override = SubResource("ShaderMaterial_vs3tm")
+sprite_frames = SubResource("SpriteFrames_yuwb2")
+frame = 0
+frame_progress = 0.0
+
+[node name="ShadedAnimatedSprite3D26" parent="." unique_id=1109923408 instance=ExtResource("2_jcd4p")]
+material_override = SubResource("ShaderMaterial_6rksj")
+sprite_frames = SubResource("SpriteFrames_oyxl4")
+frame = 0
+frame_progress = 0.0
+
+[node name="ShadedAnimatedSprite3D27" parent="." unique_id=416072762 instance=ExtResource("2_jcd4p")]
+material_override = SubResource("ShaderMaterial_mervl")
+sprite_frames = SubResource("SpriteFrames_tc0w7")
+frame = 0
+frame_progress = 0.0
+
+[node name="ShadedAnimatedSprite3D28" parent="." unique_id=1561017151 instance=ExtResource("2_jcd4p")]
+material_override = SubResource("ShaderMaterial_8o50k")
+sprite_frames = SubResource("SpriteFrames_t8aaa")
+frame = 0
+frame_progress = 0.0
+
+[node name="ShadedAnimatedSprite3D29" parent="." unique_id=1809737006 instance=ExtResource("2_jcd4p")]
+material_override = SubResource("ShaderMaterial_wv7sc")
+sprite_frames = SubResource("SpriteFrames_7qcsl")
+frame = 0
+frame_progress = 0.0
+
+[node name="ShadedAnimatedSprite3D30" parent="." unique_id=134682114 instance=ExtResource("2_jcd4p")]
+material_override = SubResource("ShaderMaterial_vwa82")
+sprite_frames = SubResource("SpriteFrames_jfe00")
+frame = 0
+frame_progress = 0.0
+
+[node name="ShadedAnimatedSprite3D31" parent="." unique_id=1358905928 instance=ExtResource("2_jcd4p")]
+material_override = SubResource("ShaderMaterial_b65qk")
+sprite_frames = SubResource("SpriteFrames_y2p4a")
+frame = 0
+frame_progress = 0.0
+
+[node name="ShadedAnimatedSprite3D32" parent="." unique_id=1231718266 instance=ExtResource("2_jcd4p")]
+material_override = SubResource("ShaderMaterial_h5c55")
+sprite_frames = SubResource("SpriteFrames_2pxgj")
+frame = 0
+frame_progress = 0.0
+
+[node name="ShadedAnimatedSprite3D33" parent="." unique_id=2006482861 instance=ExtResource("2_jcd4p")]
+material_override = SubResource("ShaderMaterial_83c18")
+sprite_frames = SubResource("SpriteFrames_sao6w")
+frame = 0
+frame_progress = 0.0
+
+[node name="ShadedAnimatedSprite3D34" parent="." unique_id=630362713 instance=ExtResource("2_jcd4p")]
+material_override = SubResource("ShaderMaterial_f81g6")
+sprite_frames = SubResource("SpriteFrames_2npwi")
+frame = 0
+frame_progress = 0.0
+
+[node name="ShadedAnimatedSprite3D35" parent="." unique_id=1975819458 instance=ExtResource("2_jcd4p")]
+material_override = SubResource("ShaderMaterial_32c8b")
+sprite_frames = SubResource("SpriteFrames_hj8ru")
+frame = 0
+frame_progress = 0.0
+
+[node name="ShadedAnimatedSprite3D36" parent="." unique_id=1870854839 instance=ExtResource("2_jcd4p")]
+material_override = SubResource("ShaderMaterial_l1phw")
+sprite_frames = SubResource("SpriteFrames_2x75j")
+frame = 0
+frame_progress = 0.0
+
+[node name="ShadedAnimatedSprite3D37" parent="." unique_id=1036324749 instance=ExtResource("2_jcd4p")]
+material_override = SubResource("ShaderMaterial_xred0")
+sprite_frames = SubResource("SpriteFrames_ap7sd")
+frame = 0
+frame_progress = 0.0
+
+[node name="ShadedAnimatedSprite3D38" parent="." unique_id=476211542 instance=ExtResource("2_jcd4p")]
+material_override = SubResource("ShaderMaterial_gow5c")
+sprite_frames = SubResource("SpriteFrames_lxpqy")
+frame = 0
+frame_progress = 0.0
+
+[node name="ShadedAnimatedSprite3D39" parent="." unique_id=500090526 instance=ExtResource("2_jcd4p")]
+material_override = SubResource("ShaderMaterial_yj8m3")
+sprite_frames = SubResource("SpriteFrames_0xerh")
+frame = 0
+frame_progress = 0.0
+
+[node name="ShadedAnimatedSprite3D40" parent="." unique_id=2111120425 instance=ExtResource("2_jcd4p")]
+material_override = SubResource("ShaderMaterial_bg6ob")
+sprite_frames = SubResource("SpriteFrames_p16r8")
+frame = 0
+frame_progress = 0.0
+
+[node name="ShadedAnimatedSprite3D41" parent="." unique_id=944921056 instance=ExtResource("2_jcd4p")]
+material_override = SubResource("ShaderMaterial_jonjh")
+sprite_frames = SubResource("SpriteFrames_4qgo0")
+frame = 0
+frame_progress = 0.0
+
+[node name="ShadedAnimatedSprite3D42" parent="." unique_id=1840543436 instance=ExtResource("2_jcd4p")]
+material_override = SubResource("ShaderMaterial_okn2c")
+sprite_frames = SubResource("SpriteFrames_k0hd2")
+frame = 0
+frame_progress = 0.0
+
+[node name="ShadedAnimatedSprite3D43" parent="." unique_id=1105338261 instance=ExtResource("2_jcd4p")]
+material_override = SubResource("ShaderMaterial_xjfkh")
+sprite_frames = SubResource("SpriteFrames_kive8")
+frame = 0
+frame_progress = 0.0
+
+[node name="ShadedAnimatedSprite3D44" parent="." unique_id=870634566 instance=ExtResource("2_jcd4p")]
+material_override = SubResource("ShaderMaterial_knsa6")
+sprite_frames = SubResource("SpriteFrames_7psng")
+frame = 0
+frame_progress = 0.0
+
+[node name="ShadedAnimatedSprite3D45" parent="." unique_id=176806716 instance=ExtResource("2_jcd4p")]
+material_override = SubResource("ShaderMaterial_q881y")
+sprite_frames = SubResource("SpriteFrames_gbxhh")
+frame = 0
+frame_progress = 0.0
+
+[node name="ShadedAnimatedSprite3D46" parent="." unique_id=406712515 instance=ExtResource("2_jcd4p")]
+material_override = SubResource("ShaderMaterial_qft1g")
+sprite_frames = SubResource("SpriteFrames_te4pb")
+frame = 0
+frame_progress = 0.0
+
+[node name="ShadedAnimatedSprite3D47" parent="." unique_id=505566597 instance=ExtResource("2_jcd4p")]
+material_override = SubResource("ShaderMaterial_3yvdh")
+sprite_frames = SubResource("SpriteFrames_rerqb")
+frame = 0
+frame_progress = 0.0
+
+[node name="ShadedAnimatedSprite3D48" parent="." unique_id=1372946398 instance=ExtResource("2_jcd4p")]
+material_override = SubResource("ShaderMaterial_dkcng")
+sprite_frames = SubResource("SpriteFrames_xwpai")
+frame = 0
+frame_progress = 0.0
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=530694474]
+transform = Transform3D(-0.47942525, -0.58033156, 0.658306, 0, 0.7501355, 0.6612842, -0.8775827, 0.31703633, -0.35963392, 9.023031, 9.063852, -4.929301)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=203386244]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=1846429304]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="CanvasLayer/Control" unique_id=1497342256]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "eita porra"

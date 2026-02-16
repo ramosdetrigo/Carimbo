@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://5ao27c7otj7f"]
+
+[ext_resource type="PackedScene" uid="uid://domk3xwojp1ia" path="res://scenes/components/character/character.tscn" id="1_ru7ka"]
+[ext_resource type="PackedScene" uid="uid://toum1olkwjmg" path="res://scenes/components/stamped_animated_sprite/shaded_animated_sprite_3d.tscn" id="2_hmnde"]
+[ext_resource type="Shader" uid="uid://dl6ampid6rth6" path="res://scenes/components/stamped_animated_sprite/shaded_animated_sprite_3d.gdshader" id="3_ytj3i"]
+[ext_resource type="Texture2D" uid="uid://dn1mdtvrnxb6v" path="res://assets/tmp/paper_mario.png" id="4_aose2"]
+[ext_resource type="Texture2D" uid="uid://o34vnik8cwo4" path="res://assets/textures/paper/Paper003_1K-JPG_NormalGL.jpg" id="5_vup72"]
+[ext_resource type="Texture2D" uid="uid://dkbujjnpxwia0" path="res://assets/textures/paper/Paper003_1K-JPG_Roughness.jpg" id="6_oiwiy"]
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://assets/tmp/icon.svg" id="7_e5ff4"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ru7ka"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_5ci4w"]
+sky_material = SubResource("ProceduralSkyMaterial_ru7ka")
+
+[sub_resource type="Environment" id="Environment_e8gke"]
+background_mode = 2
+sky = SubResource("Sky_5ci4w")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_tdf5x"]
+size = Vector2(80, 80)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ru7ka"]
+size = Vector3(80, 0.001, 80)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_hmnde"]
+viewport_path = NodePath("StampViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ytj3i"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_ytj3i")
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/texture_roughness = ExtResource("6_oiwiy")
+shader_parameter/specular = 0.249999994412
+shader_parameter/metallic = 0.0
+shader_parameter/texture_normal = ExtResource("5_vup72")
+shader_parameter/normal_scale = 2.2000008645000015
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("4_aose2")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_hmnde")
+shader_parameter/carimbo_scale = Vector3(0, 0, 0)
+shader_parameter/carimbo_offset = Vector3(0, 0, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aose2"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_e5ff4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_aose2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Gym" type="Node3D" unique_id=1404610020]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1607123390]
+environment = SubResource("Environment_e8gke")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1343204371]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1120384046]
+mesh = SubResource("PlaneMesh_tdf5x")
+metadata/_edit_group_ = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=1525464261]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=111452759]
+shape = SubResource("BoxShape3D_ru7ka")
+
+[node name="Character" parent="." unique_id=855143719 instance=ExtResource("1_ru7ka")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.78931284, 1.0288286, -0.38434458)
+
+[node name="ShadedAnimatedSprite3D" parent="." unique_id=1229798839 instance=ExtResource("2_hmnde")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5808394, -6.1378202)
+material_override = SubResource("ShaderMaterial_ytj3i")
+sprite_frames = SubResource("SpriteFrames_aose2")

@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://toum1olkwjmg"]
 
 [ext_resource type="Shader" uid="uid://dl6ampid6rth6" path="res://scenes/components/stamped_animated_sprite/shaded_animated_sprite_3d.gdshader" id="1_65egy"]
+[ext_resource type="Texture2D" uid="uid://bg4indpuy846" path="res://resources/burn_noise_texture.tres" id="2_chihe"]
 [ext_resource type="Texture2D" uid="uid://dn1mdtvrnxb6v" path="res://assets/tmp/paper_mario.png" id="2_qpmdg"]
-[ext_resource type="Texture2D" uid="uid://dcuetcvdq2d6o" path="res://assets/textures/fire_random.png" id="3_qpmdg"]
 [ext_resource type="Texture2D" uid="uid://o34vnik8cwo4" path="res://assets/textures/paper/Paper003_1K-JPG_NormalGL.jpg" id="4_ng11f"]
 [ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://assets/tmp/icon.svg" id="5_56ys0"]
 [ext_resource type="Texture2D" uid="uid://dkbujjnpxwia0" path="res://assets/textures/paper/Paper003_1K-JPG_Roughness.jpg" id="5_qpmdg"]
@@ -25,9 +25,12 @@ shader_parameter/normal_scale = 1.5600008340999985
 shader_parameter/albedo = Color(1, 1, 1, 1)
 shader_parameter/texture_albedo = ExtResource("2_qpmdg")
 shader_parameter/texture_carimbo = SubResource("ViewportTexture_qpmdg")
-shader_parameter/burn_texture = ExtResource("3_qpmdg")
-shader_parameter/burn_min = 0.0
-shader_parameter/burn_max_offset = 0.0999999977648
+shader_parameter/burn_texture = ExtResource("2_chihe")
+shader_parameter/burn_amount = 0.0
+shader_parameter/burn_size = 0.150000007125
+shader_parameter/burn_smoothness = 0.1330000063175
+shader_parameter/burn_glow_color = Color(1, 0.19607843, 0, 1)
+shader_parameter/burn_glow_intensity = 10.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ppt8k"]
 resource_local_to_scene = true

@@ -7,17 +7,20 @@
 [ext_resource type="PackedScene" uid="uid://toum1olkwjmg" path="res://scenes/components/stamped_animated_sprite/shaded_animated_sprite_3d.tscn" id="5_3bymh"]
 [ext_resource type="Script" uid="uid://bo27hd1h0bn3l" path="res://scripts/state_machine/states/roll.gd" id="5_nhrsp"]
 [ext_resource type="Shader" uid="uid://dl6ampid6rth6" path="res://scenes/components/stamped_animated_sprite/shaded_animated_sprite_3d.gdshader" id="6_83d2c"]
+[ext_resource type="PackedScene" uid="uid://dq76el4arkfni" path="res://scenes/objects/weapon/weapon.tscn" id="6_agqai"]
 [ext_resource type="Texture2D" uid="uid://dn1mdtvrnxb6v" path="res://assets/tmp/paper_mario.png" id="7_qsg3x"]
 [ext_resource type="Texture2D" uid="uid://o34vnik8cwo4" path="res://assets/textures/paper/Paper003_1K-JPG_NormalGL.jpg" id="8_qx14y"]
+[ext_resource type="Texture2D" uid="uid://br1n3n670sbm8" path="res://assets/textures/stamps/damage_stamp.png" id="9_5pm52"]
+[ext_resource type="Script" uid="uid://cuoa1ubyh5d06" path="res://scripts/attack_system/weapon_info.gd" id="9_jw073"]
 [ext_resource type="Texture2D" uid="uid://dkbujjnpxwia0" path="res://assets/textures/paper/Paper003_1K-JPG_Roughness.jpg" id="9_wtsan"]
+[ext_resource type="Script" uid="uid://cdr65apsfmy8" path="res://scripts/attack_system/stamp_strategy.gd" id="10_04d15"]
 [ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://assets/tmp/icon.svg" id="10_scejm"]
+[ext_resource type="Script" uid="uid://d2d3pves0fe03" path="res://scripts/attack_system/strategies/damage_stamp_strategy.gd" id="11_5pm52"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0mkjy"]
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_nhrsp"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_5pm52"]
 viewport_path = NodePath("StampViewport")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_i2fiu"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_albb0"]
 resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("6_83d2c")
@@ -30,11 +33,14 @@ shader_parameter/texture_normal = ExtResource("8_qx14y")
 shader_parameter/normal_scale = 2.2000008645000015
 shader_parameter/albedo = Color(1, 1, 1, 1)
 shader_parameter/texture_albedo = ExtResource("7_qsg3x")
-shader_parameter/texture_carimbo = SubResource("ViewportTexture_nhrsp")
-shader_parameter/carimbo_scale = Vector3(0, 0, 0)
-shader_parameter/carimbo_offset = Vector3(0, 0, 0)
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_5pm52")
+shader_parameter/burn_amount = 0.0
+shader_parameter/burn_size = 0.0
+shader_parameter/burn_smoothness = 0.0
+shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
+shader_parameter/burn_glow_intensity = 0.0
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_brhop"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_0fpak"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -49,15 +55,44 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="FpsCharacter" type="CharacterBody3D" unique_id=269989542 node_paths=PackedStringArray("camera_pivot", "state_machine")]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0mkjy"]
+
+[sub_resource type="Resource" id="Resource_72r7g"]
+script = ExtResource("9_jw073")
+current_stamp_texture = ExtResource("9_5pm52")
+metadata/_custom_type_script = "uid://cuoa1ubyh5d06"
+
+[sub_resource type="Resource" id="Resource_bedty"]
+script = ExtResource("11_5pm52")
+stamp_texture = ExtResource("9_5pm52")
+metadata/_custom_type_script = "uid://d2d3pves0fe03"
+
+[node name="PlayerCharacter" type="CharacterBody3D" unique_id=269989542 node_paths=PackedStringArray("state_machine", "weapon")]
 script = ExtResource("1_6d1i5")
-camera_pivot = NodePath("CameraPivot")
 state_machine = NodePath("StateMachine")
+weapon = NodePath("Weapon")
 metadata/_custom_type_script = "uid://bnfb6cxda8lhn"
+
+[node name="ShadedAnimatedSprite3D" parent="." unique_id=1229798839 instance=ExtResource("5_3bymh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+material_override = SubResource("ShaderMaterial_albb0")
+sprite_frames = SubResource("SpriteFrames_0fpak")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=77915751]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_0mkjy")
+
+[node name="Weapon" parent="." unique_id=300869857 instance=ExtResource("6_agqai")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
+weapon_info = SubResource("Resource_72r7g")
+weapon_strategies = Array[ExtResource("10_04d15")]([SubResource("Resource_bedty")])
+
+[node name="CameraPivot" type="Node3D" parent="." unique_id=1065541715]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 5)
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot" unique_id=154854567]
+transform = Transform3D(1, 0, 0, 0, 0.81915206, 0.57357645, 0, -0.57357645, 0.81915206, 0, 0, 0)
+current = true
 
 [node name="StateMachine" type="Node" parent="." unique_id=511908981 node_paths=PackedStringArray("initial_state", "actor")]
 script = ExtResource("1_0mkjy")
@@ -80,14 +115,3 @@ metadata/_custom_type_script = "uid://p013328bt87o"
 script = ExtResource("5_nhrsp")
 idle_state = NodePath("../IdleState")
 metadata/_custom_type_script = "uid://bo27hd1h0bn3l"
-
-[node name="CameraPivot" type="Node3D" parent="." unique_id=1065541715]
-transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, 0, 4.5, 5)
-
-[node name="Camera3D" type="Camera3D" parent="CameraPivot" unique_id=154854567]
-current = true
-
-[node name="ShadedAnimatedSprite3D" parent="." unique_id=1229798839 instance=ExtResource("5_3bymh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-material_override = SubResource("ShaderMaterial_i2fiu")
-sprite_frames = SubResource("SpriteFrames_brhop")

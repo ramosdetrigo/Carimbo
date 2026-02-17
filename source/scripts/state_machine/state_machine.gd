@@ -15,11 +15,11 @@ func _ready() -> void:
 func initialize(a: CharacterController3D) -> void:
 	actor = a
 	await get_tree().process_frame
-	
-	for child in get_children():
+
+	for child: Node in get_children():
 		if child is State:
 			(child as State).transitioned.connect(_on_state_transitioned)
-	
+
 	if initial_state:
 		current_state = initial_state
 		current_state.enter(actor)
@@ -36,7 +36,7 @@ func _physics_process(delta: float) -> void:
 func _on_state_transitioned(from: State, to: State) -> void:
 	assert(from != to, "Estado transicionando para si mesmo")
 	assert(from == current_state, "Um estado que não o atual está tentando transicionar")
-	
+
 	current_state.exit()
 	current_state = to
 	current_state.enter(actor)

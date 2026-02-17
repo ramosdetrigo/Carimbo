@@ -1,15 +1,14 @@
 class_name CharacterController3D
-extends CharacterBody3D
+extends StampableCharacter
 
-@export var camera_pivot: Node3D
 @export var state_machine: StateMachine
+@export var weapon: WeaponHurtboxComponent
 
 var move_input: Vector2 = Vector2.ZERO
 
 
 func _ready() -> void:
 	state_machine.initialize(self)
-
 
 func _physics_process(_delta: float) -> void:
 	_process_input()
@@ -27,18 +26,18 @@ func apply_gravity(delta: float) -> void:
 
 
 func get_input_direction() -> Vector3:
-	var yaw: float = camera_pivot.global_transform.basis.get_euler().y
-	var dir: Vector3 = Vector3(move_input.x, 0, move_input.y)
-	return dir.rotated(Vector3.UP, yaw).normalized()
+	return Vector3(move_input.x, 0, move_input.y).normalized()
 
 
-func move_horizontally():
-	var direction = get_input_direction()
-	var desired_velocity = direction * 9.0
+func move_horizontally() -> void:
+	var direction: Vector3 = get_input_direction()
+	var desired_velocity: Vector3 = direction * 9.0
 	velocity.x = desired_velocity.x
 	velocity.z = desired_velocity.z
+	if direction.is_zero_approx(): return
+	weapon.look_at(weapon.global_position + direction)
 
 
-func stop_horizontal_movement(delta: float):
+func stop_horizontal_movement(delta: float) -> void:
 	velocity.x = move_toward(velocity.x, 0.0, 8.0 * delta)
 	velocity.z = move_toward(velocity.z, 0.0, 8.0 * delta)

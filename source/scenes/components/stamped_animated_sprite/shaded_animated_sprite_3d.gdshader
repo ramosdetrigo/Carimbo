@@ -17,9 +17,10 @@ uniform vec4 albedo : source_color;
 uniform sampler2D texture_albedo : source_color, filter_linear_mipmap, repeat_disable;
 
 uniform sampler2D texture_carimbo : source_color, filter_linear_mipmap, repeat_disable;
-uniform vec3 carimbo_scale;
-uniform vec3 carimbo_offset;
 
+uniform sampler2D burn_texture;
+uniform float burn_min: hint_range(0.0, 1.0, 0.01);
+uniform float burn_max_offset: hint_range(0.0, 1.0, 0.01);
 
 void vertex() {
 	// Billboard Mode: Y-Billboard
@@ -51,10 +52,16 @@ void fragment() {
 	NORMAL_MAP = texture(texture_normal, UV).rgb;
 	NORMAL_MAP_DEPTH = normal_scale;
 	
-	// Carimbo
 	// albedo
 	vec4 cor_og = texture(texture_albedo, UV);
 	vec4 cor_carimbo = texture(texture_carimbo, UV);
-	ALBEDO = mix(cor_og.rgb, cor_carimbo.rgb, cor_carimbo.a);
-	ALPHA *= albedo.a * cor_og.a;
+	// Overlay do carimbo na textura original
+	ALBEDO = mix(cor_og.rgb, cor_carimbo.rgb, cor_carimbo.a) * albedo.rgb;
+	
+	// burn
+	vec4 burn_tex = texture(burn_texture, UV);
+	float burn_max = burn_min + burn_max_offset;
+	float burn_val = smoothstep(burn_min, burn_max, burn_tex.r);
+	
+	ALPHA *= albedo.a * cor_og.a * burn_val;
 }

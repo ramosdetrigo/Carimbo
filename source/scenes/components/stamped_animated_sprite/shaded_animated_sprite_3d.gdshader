@@ -1,4 +1,5 @@
-// NOTE: Shader automatically converted from Godot Engine 4.6.stable's StandardMaterial3D.
+#define BILBOARD_Y_MODE 0
+#define BILBOARD_FULL_MODE 1
 
 shader_type spatial;
 // render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_burley, specular_schlick_ggx;
@@ -27,11 +28,20 @@ uniform float burn_glow_intensity: hint_range(0.0, 10.0, 0.1);
 
 void vertex() {
 	// Billboard Mode: Y-Billboard
+	#if BILBOARD_Y_MODE && !BILBOARD_FULL_MODE
 	MODELVIEW_MATRIX = VIEW_MATRIX * mat4(
 			vec4(normalize(cross(vec3(0.0, 1.0, 0.0), MAIN_CAM_INV_VIEW_MATRIX[2].xyz)), 0.0),
 			vec4(0.0, 1.0, 0.0, 0.0),
 			vec4(normalize(cross(MAIN_CAM_INV_VIEW_MATRIX[0].xyz, vec3(0.0, 1.0, 0.0))), 0.0),
 			MODEL_MATRIX[3]);
+	#elif BILBOARD_FULL_MODE && !BILBOARD_Y_MODE
+	// Billboard Mode: Enabled
+	MODELVIEW_MATRIX = VIEW_MATRIX * mat4(
+			MAIN_CAM_INV_VIEW_MATRIX[0],
+			MAIN_CAM_INV_VIEW_MATRIX[1],
+			MAIN_CAM_INV_VIEW_MATRIX[2],
+			MODEL_MATRIX[3]);
+	#endif
 
 	// Billboard Keep Scale: Enabled
 	MODELVIEW_MATRIX = MODELVIEW_MATRIX * mat4(

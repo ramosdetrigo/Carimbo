@@ -5,9 +5,10 @@ signal damaged(attack: int)
 
 @export var actor: StampableCharacter
 
-func damage(info: WeaponInfo) -> void:
-	if info.current_stamp_texture: actor.stampable_sprite.stamp_texture = info.current_stamp_texture
-	damaged.emit(info.weapon_damage)
+func damage(info: AttackInfo) -> void:
+	if info.stamp_texture:
+		actor.stampable_sprite.stamp_texture = info.stamp_texture
+	damaged.emit(info.damage)
 
 
 func on_actor(strategies: Array[StampStrategy]) -> void:

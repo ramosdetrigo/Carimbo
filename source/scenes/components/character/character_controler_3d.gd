@@ -18,6 +18,7 @@ func _physics_process(_delta: float) -> void:
 func _process_input() -> void:
 	move_input = Input.get_vector(
 		&"move_left", &"move_right", &"move_fowards", &"move_backwards")
+	_rotate_weapon_with_mouse()
 
 
 func apply_gravity(delta: float) -> void:
@@ -29,13 +30,19 @@ func get_input_direction() -> Vector3:
 	return Vector3(move_input.x, 0, move_input.y).normalized()
 
 
+func _rotate_weapon_with_mouse() -> void:
+	var screen_middle: float = get_viewport().get_visible_rect().size.x / 2.0
+	var mouse_x: float = get_viewport().get_mouse_position().x
+	var is_right: bool = mouse_x >= screen_middle
+	if is_zero_approx(mouse_x): return
+	weapon.look_at(weapon.global_position + Vector3(mouse_x if is_right else -mouse_x, 0.0, 0.0))
+
+
 func move_horizontally() -> void:
 	var direction: Vector3 = get_input_direction()
 	var desired_velocity: Vector3 = direction * 9.0
 	velocity.x = desired_velocity.x
 	velocity.z = desired_velocity.z
-	if direction.is_zero_approx(): return
-	weapon.look_at(weapon.global_position + direction)
 
 
 func stop_horizontal_movement(delta: float) -> void:

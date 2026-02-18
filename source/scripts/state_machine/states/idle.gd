@@ -20,6 +20,6 @@ func process(_delta: float) -> void:
 func physics_process(delta: float) -> void:
 	actor.apply_gravity(delta)
 	actor.stop_horizontal_movement(delta)
-	
+
 	if not is_zero_approx(actor.move_input.length()):
 		transitioned.emit(self, move_state)

@@ -3,8 +3,8 @@ extends Area3D
 
 signal hit()
 
-@export var weapon_info: WeaponInfo
-@export var weapon_strategies: Array[StampStrategy]
+@export var attack_info: AttackInfo
+@export var attack_strategies: Array[StampStrategy]
 
 
 func _ready() -> void:
@@ -16,9 +16,9 @@ func _on_area_entered(area: Area3D) -> void:
 
 
 func _handle_damage(hitbox: HitboxComponent) -> void:
-	var info: WeaponInfo = weapon_info.duplicate(true)
-	for strategy: StampStrategy in weapon_strategies:
+	var info: AttackInfo = attack_info.duplicate(true) if attack_info else AttackInfo.new()
+	for strategy: StampStrategy in attack_strategies:
 		strategy.apply_upgrade(info)
 	hitbox.damage(info)
-	hitbox.on_actor(weapon_strategies)
+	hitbox.on_actor(attack_strategies)
 	hit.emit()

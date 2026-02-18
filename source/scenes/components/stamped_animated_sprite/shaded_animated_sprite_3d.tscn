@@ -49,7 +49,7 @@ animations = [{
 
 [node name="ShadedAnimatedSprite3D" type="AnimatedSprite3D" unique_id=1952958561 node_paths=PackedStringArray("stamp_viewport")]
 material_override = SubResource("ShaderMaterial_mevdd")
-billboard = 2
+billboard = 1
 sprite_frames = SubResource("SpriteFrames_ppt8k")
 frame = 1
 frame_progress = 0.4814965

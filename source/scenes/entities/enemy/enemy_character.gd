@@ -1,6 +1,11 @@
 extends StampableCharacter
 
 
+#func _ready() -> void:
+	#for i in 50:
+		#stampable_sprite.stamp(stampable_sprite.stamp_texture)
+
+
 func _on_health_changed(health: int) -> void:
 	if health > 0: return
 	death()

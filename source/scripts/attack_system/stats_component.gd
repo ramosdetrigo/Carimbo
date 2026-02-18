@@ -1,12 +1,7 @@
 class_name StatsComponent
 extends Node
 
-enum DamageSuccess {
-	MISS,
-	HIT,
-}
-
-signal damaged(success: DamageSuccess)
+signal missed()
 signal health_changed(health: int)
 signal armor_changed(armor: int)
 
@@ -23,17 +18,10 @@ func _ready() -> void:
 
 
 func on_damaged(attack: AttackInfo) -> void:
-	if armor > 0 and not attack.can_break_armor:
-		damaged.emit(DamageSuccess.MISS)
+	if armor <= 0 or attack.ignores_armor:
+		health = maxf(health - attack.damage, 0.0)
+		health_changed.emit(health)
 		return
-	if armor > 0 and not attack.ignores_armor:
-		armor -= attack.damage
-		armor_changed.emit(armor)
-		damaged.emit(DamageSuccess.HIT)
-		return
-	health -= attack.damage
-	if health <= 0:
-		health = 0
-	health_changed.emit(health)
-	damaged.emit(DamageSuccess.HIT)
-	return
+	if not attack.can_break_armor: return missed.emit()
+	armor = maxf(armor - attack.damage, 0.0)
+	armor_changed.emit(armor)

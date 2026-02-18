@@ -60,20 +60,20 @@ script/source = "extends Label3D
 
 @onready var stats_component: StatsComponent = $\"../StatsComponent\"
 
-@onready var health: int = self.stats_component.health: set = set_health
-@onready var armor: int = self.stats_component.armor: set = set_armor
+@onready var health: float = self.stats_component.health: set = set_health
+@onready var armor: float = self.stats_component.armor: set = set_armor
 
 
 func _ready() -> void:
 	_update_text()
 
 
-func set_health(value: int) -> void:
+func set_health(value: float) -> void:
 	health = value
 	_update_text()
 
 
-func set_armor(value: int) -> void:
+func set_armor(value: float) -> void:
 	armor = value
 	_update_text()
 

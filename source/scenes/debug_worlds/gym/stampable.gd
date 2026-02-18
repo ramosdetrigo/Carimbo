@@ -12,5 +12,5 @@ func _ready() -> void:
 	stamp_texture = CARIMBO
 
 
-func _on_hitbox_damaged(_a: int) -> void:
+func _on_hitbox_damaged(_a: AttackInfo) -> void:
 	stamp(stamp_texture)

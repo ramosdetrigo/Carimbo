@@ -1,14 +1,14 @@
 class_name HitboxComponent
 extends Area3D
 
-signal damaged(attack: int)
+signal damaged(attack: AttackInfo)
 
 @export var actor: StampableCharacter
 
 func damage(info: AttackInfo) -> void:
 	if info.stamp_texture:
 		actor.stampable_sprite.stamp_texture = info.stamp_texture
-	damaged.emit(info.damage)
+	damaged.emit(info)
 
 
 func on_actor(strategies: Array[StampStrategy]) -> void:

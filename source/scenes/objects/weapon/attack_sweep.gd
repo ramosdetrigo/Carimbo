@@ -2,9 +2,8 @@ class_name AttackProjectile
 extends Node3D
 
 @export var attack_info: AttackInfo
-
-var lifetime: float = 0.5
-var speed: float = 5.0
+@export var lifetime: float = 0.5
+@export var speed: float = 5.0
 
 @onready var hurtbox_component: HurtboxComponent = $HurtboxComponent
 

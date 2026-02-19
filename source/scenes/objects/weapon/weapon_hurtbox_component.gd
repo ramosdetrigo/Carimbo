@@ -15,7 +15,7 @@ func _handle_ranged() -> void:
 	projectile.attack_info = attack_info
 	projectile.top_level = true
 	projectile.lifetime = 2
-	add_child(projectile)
+	get_tree().current_scene.add_child(projectile)
 	projectile.global_position = global_position
 	var mouse_dir: Vector2 = _get_mouse_dir()
 	projectile.look_at(global_position + Vector3(mouse_dir.x, 0.0, mouse_dir.y))

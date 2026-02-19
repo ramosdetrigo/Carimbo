@@ -4,7 +4,6 @@ extends Area3D
 signal hit()
 
 @export var attack_info: AttackInfo
-@export var attack_strategies: Array[StampStrategy]
 
 
 func _ready() -> void:
@@ -16,9 +15,6 @@ func _on_area_entered(area: Area3D) -> void:
 
 
 func _handle_damage(hitbox: HitboxComponent) -> void:
-	var info: AttackInfo = attack_info.duplicate(true) if attack_info else AttackInfo.new()
-	for strategy: StampStrategy in attack_strategies:
-		strategy.apply_upgrade(info)
+	var info: AttackInfo = attack_info if attack_info else AttackInfo.new()
 	hitbox.damage(info)
-	hitbox.on_actor(attack_strategies)
 	hit.emit()

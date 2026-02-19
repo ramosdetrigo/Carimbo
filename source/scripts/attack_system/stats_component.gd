@@ -22,6 +22,8 @@ func on_damaged(attack: AttackInfo) -> void:
 		health = maxf(health - attack.damage, 0.0)
 		health_changed.emit(health)
 		return
-	if not attack.can_break_armor: return missed.emit()
+	if not attack.can_break_armor:
+		missed.emit()
+		return
 	armor = maxf(armor - attack.damage, 0.0)
 	armor_changed.emit(armor)

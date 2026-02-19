@@ -6,3 +6,6 @@ extends Resource
 @export var stamp_texture: Texture2D
 @export var can_break_armor: bool = false
 @export var ignores_armor: bool = false
+@export_group("Is Ranged")
+@export_custom(PROPERTY_HINT_GROUP_ENABLE, "") var is_ranged: bool = false
+@export var projectile: PackedScene

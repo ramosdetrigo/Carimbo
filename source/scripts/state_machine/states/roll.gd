@@ -2,15 +2,15 @@ class_name RollState
 extends State
 
 @export var idle_state: IdleState
+@export var move_component: MoveComponent
+@export var input_component: InputComponent
 
-var actor: CharacterController3D
-var direction: Vector3
+var direction: Vector2
 var timer: SceneTreeTimer
 
-func enter(a: CharacterController3D) -> void:
-	actor = a
-	timer = get_tree().create_timer(0.3)
-	direction = a.get_input_direction()
+func enter(_a: CharacterController3D) -> void:
+	timer = get_tree().create_timer(0.5)
+	direction = input_component.get_horizontal_input_direction()
 
 
 func exit() -> void:
@@ -21,7 +21,11 @@ func process(_delta: float) -> void:
 	pass
 
 
-func physics_process(_delta: float) -> void:
-	actor.velocity = direction * 10.0
+func physics_process(delta: float) -> void:
+	input_component.set_horizontal_input_direction(direction)
+	input_component.block()
 	if is_zero_approx(timer.time_left):
 		transitioned.emit(self, idle_state)
+		input_component.unblock()
+		move_component.stop_horizontal_movement(delta)
+		input_component.set_horizontal_input_direction(Vector2.ZERO)

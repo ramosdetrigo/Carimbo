@@ -18,6 +18,21 @@ config/icon="res://assets/tmp/icon.svg"
 [autoload]
 
 Consts="*uid://c3877hb6j1qqh"
+BeehaveGlobalMetrics="*uid://c3ktl6ontsdt7"
+BeehaveGlobalDebugger="*uid://bl3ma400hpvsh"
+
+[debug]
+
+gdscript/warnings/unsafe_property_access=1
+gdscript/warnings/unsafe_method_access=1
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/beehave/plugin.cfg")
+
+[global_group]
+
+player="The group to grab the player node"
 
 [input]
 
@@ -56,6 +71,12 @@ hit={
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(167, 18),"global_position":Vector2(174, 55),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
 ]
 }
+
+[layer_names]
+
+3d_physics/layer_1="world_collision"
+3d_physics/layer_2="player_hitbox"
+3d_physics/layer_3="enemy_hitbox"
 
 [physics]
 

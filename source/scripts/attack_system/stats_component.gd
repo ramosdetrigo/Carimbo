@@ -2,8 +2,8 @@ class_name StatsComponent
 extends Node
 
 signal missed()
-signal health_changed(health: int)
-signal armor_changed(armor: int)
+signal health_changed(health: float)
+signal armor_changed(armor: float)
 
 @export var hitbox: HitboxComponent
 

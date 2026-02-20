@@ -2,6 +2,8 @@
 class_name ShadedAnimatedSprite3D
 extends AnimatedSprite3D
 
+signal burned
+
 
 var material: ShaderMaterial = material_override
 @export var stamp_viewport: SubViewport
@@ -14,15 +16,12 @@ func _ready() -> void:
 
 
 ## "Carimba" uma imagem em algum lugar aleatório da imagem
-func stamp(image: Texture2D) -> void:
+func stamp(image: Texture2D, size: Vector2 = Vector2(1.0, 1.0)) -> void:
 	var vp_size = stamp_viewport.size
 
 	# anda até 1/4 do tamanho do viewport pra algum lado
 	var r = vp_size/4.0
 	var pos_offset = Vector2(randi_range(-r.x, r.x), randi_range(-r.y, r.y))
-	# escala entre 80% e 120% do tamanho
-	var s: float = randf_range(0.8, 1.2)
-	var size = Vector2(s, s)
 
 	var pos = vp_size/2.0 + pos_offset
 	stamp_offset(image, pos, size)
@@ -63,3 +62,13 @@ func update_viewport_size() -> void:
 func update_shader_anim() -> void:
 	var curr_frame = sprite_frames.get_frame_texture(animation, frame)
 	material.set_shader_parameter("texture_albedo", curr_frame)
+
+
+## Executa o efeito de burn
+func trigger_burn_fx(burn_time: float = 1.0) -> void:
+	var burn_tween: Tween = create_tween()
+	burn_tween.tween_method(
+		func(b):
+			material.set_shader_parameter("burn_amount", b)
+	, 0.0, 1.0, burn_time)
+	burn_tween.finished.connect(burned.emit)

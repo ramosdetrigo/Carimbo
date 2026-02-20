@@ -4,11 +4,8 @@ shader_type spatial;
 // render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_burley, specular_schlick_ggx;
 
 uniform float roughness : hint_range(0.0, 1.0);
-uniform sampler2D texture_metallic : hint_default_white, filter_linear_mipmap, repeat_enable;
-uniform vec4 metallic_texture_channel;
 uniform sampler2D texture_roughness : hint_roughness_r, filter_linear_mipmap, repeat_enable;
 uniform float specular : hint_range(0.0, 1.0, 0.01);
-uniform float metallic : hint_range(0.0, 1.0, 0.01);
 
 uniform sampler2D texture_normal : hint_roughness_normal, filter_linear_mipmap, repeat_enable;
 uniform float normal_scale : hint_range(-16.0, 16.0);
@@ -16,7 +13,8 @@ uniform float normal_scale : hint_range(-16.0, 16.0);
 uniform vec4 albedo : source_color;
 uniform sampler2D texture_albedo : source_color, filter_linear_mipmap, repeat_disable;
 
-uniform sampler2D texture_carimbo : source_color, filter_linear_mipmap, repeat_disable;
+uniform sampler2D texture_carimbo : hint_default_transparent, source_color, filter_linear_mipmap, repeat_disable;
+uniform float carimbo_glow_intensity: hint_range(0.0, 10.0, 0.1);
 
 uniform sampler2D burn_texture;
 uniform float burn_amount: hint_range(0.0, 1.0, 0.01);
@@ -43,11 +41,8 @@ void vertex() {
 }
 
 void fragment() {
-	// Normal, Metallic & Roughness
+	// Normal & Roughness
 	{
-		// metallic
-		float metallic_tex = dot(texture(texture_metallic, UV), metallic_texture_channel);
-		METALLIC = metallic_tex * metallic;
 		SPECULAR = specular;
 		// roughness
 		vec4 roughness_texture_channel = vec4(1.0, 0.0, 0.0, 0.0);
@@ -76,9 +71,10 @@ void fragment() {
 	glow_mask = 1.0 - smoothstep(
 		border_size - burn_smoothness,
 		border_size + burn_smoothness,
-		burn_noise
+		burn_noise * (1.0 - burn_smoothness) + burn_smoothness
 	);
 	
-	EMISSION = mix(vec3(0.0), burn_glow_color, glow_mask) * burn_glow_intensity;
+	EMISSION = mix(vec3(0.0), burn_glow_color, glow_mask) * burn_glow_intensity
+			 + cor_carimbo.rgb * carimbo_glow_intensity * (0.9 + sin(TIME * 5.0) * 0.1);
 	ALBEDO = mix(cor_mix, vec3(0.0), glow_mask);
 }

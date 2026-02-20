@@ -14,10 +14,13 @@ enum Flags {
 @export var flags: int = 0
 
 
-static func is_flag_true(value: int, flag: Flags) -> bool:
-	return value & (1 << flag) != 0
+func is_flag_true(flag: Flags) -> bool:
+	return flags & (1 << flag) != 0
 
 func _validate_property(property: Dictionary) -> void:
 	if property.name == "flags":
 		property.hint = PROPERTY_HINT_FLAGS
-		property.hint_string = ",".join(Flags.keys())
+		var keys: Array[String] = []
+		for key: String in Flags.keys():
+			keys.append(key.capitalize())
+		property.hint_string = ",".join(keys)

@@ -124,8 +124,7 @@ shape = SubResource("CapsuleShape3D_0mkjy")
 [node name="StatsComponent" type="Node" parent="." unique_id=1263754344 node_paths=PackedStringArray("hitbox")]
 script = ExtResource("19_bedty")
 hitbox = NodePath("../HitboxComponent")
-max_health = 10.0
-max_armor = 10.0
+max_health = 3.0
 metadata/_custom_type_script = "uid://cqxuelwl2k4bg"
 
 [node name="MoveComponent" type="Node" parent="." unique_id=173278771 node_paths=PackedStringArray("actor", "input_component")]
@@ -191,4 +190,5 @@ transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70
 current = true
 
 [connection signal="armor_changed" from="StatsComponent" to="Label3D" method="set_armor"]
+[connection signal="died" from="StatsComponent" to="PlayerInputComponent" method="block"]
 [connection signal="health_changed" from="StatsComponent" to="Label3D" method="set_health"]

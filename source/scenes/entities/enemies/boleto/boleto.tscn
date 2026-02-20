@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://ddvf2tcrr4143" path="res://assets/textures/enemies/boleto/boleto_sprite_sheet.png" id="5_uqqi4"]
 [ext_resource type="Script" uid="uid://cqxuelwl2k4bg" path="res://scripts/attack_system/stats_component.gd" id="8_yp07s"]
 [ext_resource type="Script" uid="uid://baffaklkbk27f" path="res://scripts/attack_system/hitbox_component.gd" id="9_2a0nr"]
+[ext_resource type="Script" uid="uid://c15vrenp7llbg" path="res://scripts/debug/debug_label.gd" id="11_qjr6i"]
 [ext_resource type="Script" uid="uid://c6tbcxlt1e2hy" path="res://scripts/components/move_component.gd" id="11_uqqi4"]
 [ext_resource type="Script" uid="uid://bfied8f76qv1k" path="res://scripts/components/input_component.gd" id="12_3kibg"]
 [ext_resource type="Script" uid="uid://bb0t2ovl7wifo" path="res://addons/beehave/nodes/beehave_tree.gd" id="13_ex3sn"]
@@ -74,34 +75,6 @@ animations = [{
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_porrh"]
 
-[sub_resource type="GDScript" id="GDScript_aose2"]
-resource_name = "label"
-script/source = "extends Label3D
-
-@onready var stats_component: StatsComponent = $\"../StatsComponent\"
-
-@onready var health: float = self.stats_component.health: set = set_health
-@onready var armor: float = self.stats_component.armor: set = set_armor
-
-
-func _ready() -> void:
-	_update_text()
-
-
-func set_health(value: float) -> void:
-	health = value
-	_update_text()
-
-
-func set_armor(value: float) -> void:
-	armor = value
-	_update_text()
-
-
-func _update_text() -> void:
-	set_text(\"PV: %s\\nPA: %s\" % [health, armor])
-"
-
 [node name="Boleto" type="CharacterBody3D" unique_id=1012244960 node_paths=PackedStringArray("beehave_tree", "stampable_sprite", "stats_component", "hitbox_component")]
 collision_layer = 16
 script = ExtResource("1_5jjyw")
@@ -127,7 +100,7 @@ metadata/_custom_type_script = "uid://ctmgj3s2w7dsb"
 disable_3d = true
 transparent_bg = true
 size = Vector2i(256, 256)
-render_target_clear_mode = 1
+render_target_clear_mode = 2
 render_target_update_mode = 1
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1251093907]
@@ -153,6 +126,15 @@ hitbox = NodePath("../HitboxComponent")
 max_health = 6.0
 metadata/_custom_type_script = "uid://cqxuelwl2k4bg"
 
+[node name="DebugLabel3D" type="Label3D" parent="." unique_id=1984591582 node_paths=PackedStringArray("stats_component")]
+editor_description = "Uma label para debug que irá mostrar os valores de vida e armadura de um StatsComponent"
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4, 0)
+billboard = 1
+text = "FILHO DA PUTA"
+script = ExtResource("11_qjr6i")
+stats_component = NodePath("../StatsComponent")
+metadata/_custom_type_script = "uid://c15vrenp7llbg"
+
 [node name="HitboxComponent" type="Area3D" parent="." unique_id=941104208]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 collision_layer = 4
@@ -163,16 +145,10 @@ metadata/_custom_type_script = "uid://baffaklkbk27f"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="HitboxComponent" unique_id=1124297260]
 shape = SubResource("CapsuleShape3D_porrh")
 
-[node name="Label3D" type="Label3D" parent="." unique_id=1693522910]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6481094, 0)
-billboard = 1
-text = "FILHO DA PUTA"
-script = SubResource("GDScript_aose2")
-
 [node name="BeehaveTree" type="Node" parent="." unique_id=289134762 node_paths=PackedStringArray("blackboard", "actor")]
 script = ExtResource("13_ex3sn")
 actor_node_path = NodePath("..")
-blackboard = NodePath("@Node@37652")
+blackboard = NodePath("@Node@18815")
 actor = NodePath("..")
 metadata/_custom_type_script = "uid://bb0t2ovl7wifo"
 
@@ -234,6 +210,3 @@ script = ExtResource("18_qfubs")
 input_component = NodePath("../../../../InputComponent")
 target_desired_distance = 2.0
 metadata/_custom_type_script = "uid://dmfahxpjyyf01"
-
-[connection signal="armor_changed" from="StatsComponent" to="Label3D" method="set_armor"]
-[connection signal="health_changed" from="StatsComponent" to="Label3D" method="set_health"]

@@ -6,7 +6,7 @@ extends AttackScene
 
 func _physics_process(delta: float) -> void:
 	global_position += _get_direction() * speed * delta
-	lifetime -= delta
+	super._physics_process(delta)
 
 
 func _get_direction() -> Vector3:

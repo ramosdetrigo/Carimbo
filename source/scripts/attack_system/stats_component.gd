@@ -1,7 +1,6 @@
 class_name StatsComponent
 extends Node
 
-signal missed()
 signal died()
 signal health_changed(health: float)
 signal armor_changed(armor: float)
@@ -20,13 +19,22 @@ func _ready() -> void:
 
 func on_damaged(attack: AttackInfo) -> void:
 	if health <= 0: return
-	if armor <= 0 or AttackInfo.is_flag_true(attack.flags, attack.Flags.IGNORES_ARMOR):
-		health = maxf(health - attack.damage, 0.0)
-		health_changed.emit(health)
-		if health <= 0: died.emit()
-		return
-	if not AttackInfo.is_flag_true(attack.flags, attack.Flags.CAN_BREAK_ARMOR):
-		missed.emit()
-		return
-	armor = maxf(armor - attack.damage, 0.0)
+	if armor <= 0 or attack.is_flag_true(AttackInfo.Flags.IGNORES_ARMOR):
+		set_health(health - attack.damage); return
+	if not attack.is_flag_true(AttackInfo.Flags.CAN_BREAK_ARMOR): return
+	set_armor(armor - attack.damage)
+
+
+func set_health(value: float) -> void:
+	health = clampf(value, 0.0, self.max_health)
+	health_changed.emit(health)
+	if health <= 0: died.emit()
+
+
+func set_armor(value: float) -> void:
+	armor = clampf(value, 0.0, self.max_armor)
 	armor_changed.emit(armor)
+
+
+func kill() -> void:
+	set_health(0)

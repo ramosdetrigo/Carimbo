@@ -3,6 +3,7 @@ class_name MoveTowardsTargetAction
 extends ActionLeaf
 
 @export var input_component: InputComponent: set = _set_input_component
+@export_range(0.1, 10.0, 0.01, "suffix:x") var movement_speed_modifier: float = 1.0
 @export_range(0.1, 100, 0.1, "suffix:m") var target_desired_distance: float = 1.0
 
 

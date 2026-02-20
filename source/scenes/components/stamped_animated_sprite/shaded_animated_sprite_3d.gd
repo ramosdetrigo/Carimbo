@@ -71,7 +71,7 @@ func trigger_burn_fx(burn_time: float = 1.0) -> void:
 	get_tree().current_scene.add_child(particles)
 	particles.global_position = global_position
 	particles.emitting = true
-	
+
 	var burn_tween: Tween = create_tween()
 	burn_tween.tween_method(
 		func(b):

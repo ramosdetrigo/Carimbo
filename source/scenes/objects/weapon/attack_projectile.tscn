@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://fjgad71t0sd4" path="res://scripts/attack_system/hurtbox_component.gd" id="2_1ubmo"]
 [ext_resource type="Script" uid="uid://cuoa1ubyh5d06" path="res://scripts/attack_system/attack_info.gd" id="3_ftas8"]
 [ext_resource type="Texture2D" uid="uid://br1n3n670sbm8" path="res://assets/textures/stamps/damage_stamp.png" id="4_riqaf"]
-[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://assets/tmp/icon.svg" id="5_ixjwr"]
+[ext_resource type="Texture2D" uid="uid://qjkhq2b4id7p" path="res://assets/textures/enemies/boleto/coin.png" id="5_s0atq"]
 
 [sub_resource type="Resource" id="Resource_wx74x"]
 resource_local_to_scene = true
@@ -31,5 +31,5 @@ metadata/_custom_type_script = "uid://fjgad71t0sd4"
 shape = SubResource("BoxShape3D_ssq5c")
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=159798786]
-axis = 1
-texture = ExtResource("5_ixjwr")
+billboard = 1
+texture = ExtResource("5_s0atq")

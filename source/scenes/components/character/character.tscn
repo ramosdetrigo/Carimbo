@@ -30,15 +30,14 @@ resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("6_83d2c")
 shader_parameter/roughness = 1.0
-shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
 shader_parameter/texture_roughness = ExtResource("9_wtsan")
 shader_parameter/specular = 0.249999994412
-shader_parameter/metallic = 0.0
 shader_parameter/texture_normal = ExtResource("8_qx14y")
 shader_parameter/normal_scale = 2.2000008645000015
 shader_parameter/albedo = Color(1, 1, 1, 1)
 shader_parameter/texture_albedo = ExtResource("7_qsg3x")
 shader_parameter/texture_carimbo = SubResource("ViewportTexture_oucov")
+shader_parameter/carimbo_glow_intensity = 0.0
 shader_parameter/burn_amount = 0.0
 shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
@@ -149,7 +148,7 @@ metadata/_custom_type_script = "uid://baffaklkbk27f"
 shape = SubResource("CapsuleShape3D_oucov")
 
 [node name="CameraPivot" type="Node3D" parent="." unique_id=1065541715]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.695, 3)
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivot" unique_id=154854567]
 transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 0, 0)

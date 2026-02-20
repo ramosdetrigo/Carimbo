@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://br1n3n670sbm8"
-path.s3tc="res://.godot/imported/damage_stamp.png-fc8931e4fc467ff907709435adaa4c7d.s3tc.ctex"
+uid="uid://d20vsxwygb45d"
+path.s3tc="res://.godot/imported/errige.png-47d3a9dd585d956778bbf1a8e17de2e1.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/textures/stamps/damage_stamp.png"
-dest_files=["res://.godot/imported/damage_stamp.png-fc8931e4fc467ff907709435adaa4c7d.s3tc.ctex"]
+source_file="res://assets/textures/enemies/errige/errige.png"
+dest_files=["res://.godot/imported/errige.png-47d3a9dd585d956778bbf1a8e17de2e1.s3tc.ctex"]
 
 [params]
 

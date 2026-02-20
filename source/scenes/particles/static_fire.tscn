@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://dgf1gryeieslf"]
+
+[ext_resource type="Shader" uid="uid://ww8i0k6cy81m" path="res://scenes/particles/static_fire_shader.tres" id="1_6ea7g"]
+[ext_resource type="Texture2D" uid="uid://da60k8swp6rp4" path="res://assets/tmp/pixel.png" id="2_1oxwi"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_6ea7g"]
+noise_type = 0
+seed = 7
+frequency = 0.0046
+offset = Vector3(0, 365.96, 0)
+fractal_type = 2
+fractal_lacunarity = 1.15
+fractal_gain = 1.0
+fractal_weighted_strength = 1.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_1oxwi"]
+noise = SubResource("FastNoiseLite_6ea7g")
+seamless = true
+
+[sub_resource type="Gradient" id="Gradient_spv0n"]
+offsets = PackedFloat32Array(0, 0.4569766, 0.538372, 1)
+colors = PackedColorArray(0.15, 0, 0, 0, 1, 0, 0, 1, 1.3540697, 0.41914195, 0, 1, 1.6737665, 0.8249503, 0.2973079, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_vud5x"]
+gradient = SubResource("Gradient_spv0n")
+
+[sub_resource type="Gradient" id="Gradient_1oxwi"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1)
+metadata/_snap_enabled = true
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_vud5x"]
+gradient = SubResource("Gradient_1oxwi")
+metadata/_snap_enabled = true
+
+[sub_resource type="Gradient" id="Gradient_6ea7g"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1oxwi"]
+gradient = SubResource("Gradient_6ea7g")
+fill_to = Vector2(0, 1)
+
+[sub_resource type="Gradient" id="Gradient_0pipk"]
+interpolation_color_space = 1
+colors = PackedColorArray(0, 0, 0, 1, 0.56, 0.56, 0.56, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_spv0n"]
+gradient = SubResource("Gradient_0pipk")
+fill_from = Vector2(1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vud5x"]
+render_priority = 0
+shader = ExtResource("1_6ea7g")
+shader_parameter/Scale = Vector2(1.158, 1)
+shader_parameter/Speed = Vector2(0, 1)
+shader_parameter/BaseTexture = SubResource("NoiseTexture2D_1oxwi")
+shader_parameter/TextureMul = SubResource("GradientTexture2D_1oxwi")
+shader_parameter/TextiureShape = SubResource("GradientTexture2D_vud5x")
+shader_parameter/TextureSub = SubResource("GradientTexture2D_spv0n")
+shader_parameter/Color_gradient = SubResource("GradientTexture1D_vud5x")
+
+[node name="StaticFire" type="Sprite3D" unique_id=468415840]
+material_override = SubResource("ShaderMaterial_vud5x")
+pixel_size = 2.0
+texture = ExtResource("2_1oxwi")
+region_rect = Rect2(1, 1, 95, 95)

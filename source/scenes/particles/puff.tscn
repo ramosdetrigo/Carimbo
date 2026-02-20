@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://68uyk4amv4a6"]
 
-[ext_resource type="Texture2D" uid="uid://db11mohofq7po" path="res://assets/particles/puff.png" id="1_rgskl"]
+[ext_resource type="Texture2D" uid="uid://db11mohofq7po" path="res://assets/particles/puff.png" id="1_mhmg1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ykxhy"]
 transparency = 1
 shading_mode = 0
 vertex_color_use_as_albedo = true
 vertex_color_is_srgb = true
-albedo_texture = ExtResource("1_rgskl")
+albedo_texture = ExtResource("1_mhmg1")
 albedo_texture_force_srgb = true
 billboard_mode = 3
 billboard_keep_scale = true
@@ -43,8 +43,10 @@ scale_curve = SubResource("CurveTexture_xlx4m")
 
 [node name="Puff" type="GPUParticles3D" unique_id=2134799546]
 material_override = SubResource("StandardMaterial3D_ykxhy")
+emitting = false
 amount = 64
 lifetime = 1.5
+one_shot = true
 explosiveness = 1.0
 process_material = SubResource("ParticleProcessMaterial_4tulo")
 draw_pass_1 = SubResource("QuadMesh_y2x1i")

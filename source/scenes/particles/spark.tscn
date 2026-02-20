@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://mgp02mkor0at"]
+
+[ext_resource type="Texture2D" uid="uid://crl1uvanniocl" path="res://assets/particles/faisca.png" id="1_a27fn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_noarx"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+albedo_texture = ExtResource("1_a27fn")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id="Gradient_a0tk4"]
+offsets = PackedFloat32Array(0, 0.2, 0.3, 0.5, 0.7, 0.8, 1)
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 0.13, 0.13, 0.13, 1, 0.82, 0.82, 0.82, 1, 0.34, 0.34, 0.34, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+metadata/_snap_enabled = true
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_r3fl7"]
+gradient = SubResource("Gradient_a0tk4")
+
+[sub_resource type="Curve" id="Curve_jka67"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_i5arm"]
+curve = SubResource("Curve_jka67")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_wc5p8"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 0.5)
+direction = Vector3(0.45, 1, 0)
+spread = 20.0
+initial_velocity_min = 0.75
+initial_velocity_max = 1.35
+gravity = Vector3(0, 0, 0)
+scale_min = 0.099999994
+scale_max = 0.19999999
+scale_curve = SubResource("CurveTexture_i5arm")
+color = Color(2.5721397, 1.6308517, 0.55509406, 1)
+color_ramp = SubResource("GradientTexture1D_r3fl7")
+
+[sub_resource type="QuadMesh" id="QuadMesh_jsk3o"]
+
+[node name="Spark" type="GPUParticles3D" unique_id=1243693879]
+material_override = SubResource("StandardMaterial3D_noarx")
+emitting = false
+amount = 32
+lifetime = 2.0
+one_shot = true
+explosiveness = 0.5
+process_material = SubResource("ParticleProcessMaterial_wc5p8")
+draw_pass_1 = SubResource("QuadMesh_jsk3o")

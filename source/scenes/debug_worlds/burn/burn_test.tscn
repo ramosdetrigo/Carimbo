@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://b8hg1fu6cxuwr"]
+
+[ext_resource type="PackedScene" uid="uid://toum1olkwjmg" path="res://scenes/components/stamped_animated_sprite/shaded_animated_sprite_3d.tscn" id="1_6nrcb"]
+[ext_resource type="Script" uid="uid://biqucisx0w1aa" path="res://scenes/debug_worlds/burn/burn_test.gd" id="1_o3ac7"]
+[ext_resource type="Shader" uid="uid://dl6ampid6rth6" path="res://scenes/components/stamped_animated_sprite/shaded_animated_sprite_3d.gdshader" id="2_o3ac7"]
+[ext_resource type="Texture2D" uid="uid://ch1fj0j2vc2r1" path="res://resources/burn_noise_texture.tres" id="3_nmjr0"]
+[ext_resource type="Texture2D" uid="uid://dn1mdtvrnxb6v" path="res://assets/tmp/paper_mario.png" id="4_tqdyu"]
+[ext_resource type="Texture2D" uid="uid://o34vnik8cwo4" path="res://assets/textures/paper/Paper003_1K-JPG_NormalGL.jpg" id="5_dp1wj"]
+[ext_resource type="Texture2D" uid="uid://dkbujjnpxwia0" path="res://assets/textures/paper/Paper003_1K-JPG_Roughness.jpg" id="6_8dgia"]
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://assets/tmp/icon.svg" id="7_m56pq"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_o3ac7"]
+viewport_path = NodePath("StampViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nmjr0"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("2_o3ac7")
+shader_parameter/roughness = 1.0
+shader_parameter/texture_roughness = ExtResource("6_8dgia")
+shader_parameter/specular = 0.249999994412
+shader_parameter/texture_normal = ExtResource("5_dp1wj")
+shader_parameter/normal_scale = 1.5600008340999985
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("4_tqdyu")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_o3ac7")
+shader_parameter/carimbo_glow_intensity = 7.0000001043084
+shader_parameter/burn_texture = ExtResource("3_nmjr0")
+shader_parameter/burn_amount = 0.0
+shader_parameter/burn_size = 0.150000007125
+shader_parameter/burn_smoothness = 0.1330000063175
+shader_parameter/burn_glow_color = Color(1, 0.19607843, 0, 1)
+shader_parameter/burn_glow_intensity = 10.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tqdyu"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_m56pq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_tqdyu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Environment" id="Environment_o3ac7"]
+glow_enabled = true
+
+[node name="burn_test" type="Node3D" unique_id=1778052406]
+script = ExtResource("1_o3ac7")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=774724544]
+transform = Transform3D(1, 0, 0, 0, 0.955952, 0.29352313, 0, -0.29352313, 0.955952, 0, 1.1596845, 2.9459047)
+
+[node name="Mario" parent="." unique_id=1952958561 instance=ExtResource("1_6nrcb")]
+unique_name_in_owner = true
+material_override = SubResource("ShaderMaterial_nmjr0")
+sprite_frames = SubResource("SpriteFrames_tqdyu")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1678090721]
+
+[node name="BurnButton" type="Button" parent="CanvasLayer" unique_id=67997092]
+offset_left = 14.0
+offset_top = 11.0
+offset_right = 112.0
+offset_bottom = 55.0
+text = "queimar"
+
+[node name="StampButton" type="Button" parent="CanvasLayer" unique_id=1302815452]
+offset_left = 13.0
+offset_top = 69.0
+offset_right = 111.0
+offset_bottom = 113.0
+text = "carimbar"
+
+[node name="ResetButton" type="Button" parent="CanvasLayer" unique_id=512859511]
+offset_left = 13.0
+offset_top = 123.0
+offset_right = 111.0
+offset_bottom = 167.0
+text = "reset"
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=308680018]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.3124151, 3.873734)
+omni_range = 61.06
+omni_attenuation = 0.419
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2127679256]
+environment = SubResource("Environment_o3ac7")
+
+[connection signal="pressed" from="CanvasLayer/BurnButton" to="." method="_on_burn_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/StampButton" to="." method="_on_stamp_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/ResetButton" to="." method="_on_reset_button_pressed"]

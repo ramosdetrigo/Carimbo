@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drvo7xbjpeiy6"
-path.s3tc="res://.godot/imported/Untitled3.png-e798be746698792bdf41f0e3e12f83a5.s3tc.ctex"
+uid="uid://dv47qx37udvg3"
+path.bptc="res://.godot/imported/mask_flat_fire_combined.png-ad8cdc080f4cc651cb04655444c05c69.bptc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,18 +11,18 @@ metadata={
 
 [deps]
 
-source_file="res://assets/textures/Untitled3.png"
-dest_files=["res://.godot/imported/Untitled3.png-e798be746698792bdf41f0e3e12f83a5.s3tc.ctex"]
+source_file="res://assets/textures/vfx/mask/mask_flat_fire_combined.png"
+dest_files=["res://.godot/imported/mask_flat_fire_combined.png-ad8cdc080f4cc651cb04655444c05c69.bptc.ctex"]
 
 [params]
 
 compress/mode=2
-compress/high_quality=false
-compress/lossy_quality=0.7
+compress/high_quality=true
+compress/lossy_quality=1.0
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
-compress/normal_map=0
+compress/normal_map=2
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
@@ -31,7 +31,7 @@ roughness/src_normal=""
 process/channel_remap/red=0
 process/channel_remap/green=1
 process/channel_remap/blue=2
-process/channel_remap/alpha=3
+process/channel_remap/alpha=8
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

@@ -46,6 +46,10 @@ source = 5
 parameter_name = "Color_gradient"
 texture_repeat = 2
 
+[sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_eyvp0"]
+default_input_values = [0, Vector3(0, 0, 0), 1, Vector3(5, 5, 5)]
+operator = 2
+
 [sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_6ea7g"]
 expanded_output_ports = [0]
 source = 5
@@ -82,7 +86,7 @@ flags/unshaded = true
 nodes/vertex/3/node = SubResource("VisualShaderNodeBillboard_eyvp0")
 nodes/vertex/3/position = Vector2(66.66667, 422.22223)
 nodes/vertex/connections = PackedInt32Array(3, 0, 0, 10)
-nodes/fragment/0/position = Vector2(2244.4446, 155.55556)
+nodes/fragment/0/position = Vector2(2422.2222, 133.33334)
 nodes/fragment/2/node = SubResource("VisualShaderNodeTexture2DParameter_3w0yi")
 nodes/fragment/2/position = Vector2(111.111115, 333.33334)
 nodes/fragment/3/node = SubResource("VisualShaderNodeTexture_6ea7g")
@@ -123,4 +127,6 @@ nodes/fragment/20/node = SubResource("VisualShaderNodeTexture_j674m")
 nodes/fragment/20/position = Vector2(1888.8889, 400)
 nodes/fragment/21/node = SubResource("VisualShaderNodeTexture2DParameter_y8naq")
 nodes/fragment/21/position = Vector2(1844.4445, 644.44446)
-nodes/fragment/connections = PackedInt32Array(2, 0, 3, 2, 6, 0, 5, 1, 5, 0, 7, 2, 9, 0, 8, 1, 8, 0, 7, 0, 11, 0, 10, 2, 3, 1, 12, 0, 10, 1, 12, 1, 13, 0, 14, 2, 16, 0, 15, 2, 12, 0, 17, 0, 14, 1, 17, 1, 17, 0, 18, 0, 15, 1, 18, 1, 18, 0, 19, 0, 21, 0, 20, 2, 4, 0, 5, 0, 20, 0, 0, 0, 19, 0, 20, 0, 7, 0, 3, 0, 20, 4, 0, 1)
+nodes/fragment/22/node = SubResource("VisualShaderNodeVectorOp_eyvp0")
+nodes/fragment/22/position = Vector2(2103.9177, 323.5914)
+nodes/fragment/connections = PackedInt32Array(2, 0, 3, 2, 6, 0, 5, 1, 5, 0, 7, 2, 9, 0, 8, 1, 8, 0, 7, 0, 11, 0, 10, 2, 3, 1, 12, 0, 12, 0, 17, 0, 17, 0, 18, 0, 18, 0, 19, 0, 21, 0, 20, 2, 4, 0, 5, 0, 19, 0, 20, 0, 10, 1, 12, 1, 13, 0, 14, 2, 14, 1, 17, 1, 16, 0, 15, 2, 15, 1, 18, 1, 7, 0, 3, 0, 20, 4, 0, 1, 20, 0, 22, 0, 22, 0, 0, 0)

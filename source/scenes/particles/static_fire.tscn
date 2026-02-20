@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://dgf1gryeieslf"]
 
 [ext_resource type="Shader" uid="uid://ww8i0k6cy81m" path="res://scenes/particles/static_fire_shader.tres" id="1_6ea7g"]
+[ext_resource type="Texture2D" uid="uid://t781pa1h8vhf" path="res://assets/textures/vfx/mask/gradient_bottom_up.tres" id="2_0pipk"]
 [ext_resource type="Texture2D" uid="uid://da60k8swp6rp4" path="res://assets/tmp/pixel.png" id="2_1oxwi"]
+[ext_resource type="Texture2D" uid="uid://dran5cq0y6khy" path="res://assets/textures/vfx/mask/flat_fire_mask.tres" id="2_spv0n"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_6ea7g"]
 noise_type = 0
@@ -24,22 +26,6 @@ colors = PackedColorArray(0.15, 0, 0, 0, 1, 0, 0, 1, 1.3540697, 0.41914195, 0, 1
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_vud5x"]
 gradient = SubResource("Gradient_spv0n")
 
-[sub_resource type="Gradient" id="Gradient_1oxwi"]
-interpolation_mode = 2
-offsets = PackedFloat32Array(0, 0.5, 1)
-colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1)
-metadata/_snap_enabled = true
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_vud5x"]
-gradient = SubResource("Gradient_1oxwi")
-metadata/_snap_enabled = true
-
-[sub_resource type="Gradient" id="Gradient_6ea7g"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_1oxwi"]
-gradient = SubResource("Gradient_6ea7g")
-fill_to = Vector2(0, 1)
-
 [sub_resource type="Gradient" id="Gradient_0pipk"]
 interpolation_color_space = 1
 colors = PackedColorArray(0, 0, 0, 1, 0.56, 0.56, 0.56, 1)
@@ -54,8 +40,8 @@ shader = ExtResource("1_6ea7g")
 shader_parameter/Scale = Vector2(1.158, 1)
 shader_parameter/Speed = Vector2(0, 1)
 shader_parameter/BaseTexture = SubResource("NoiseTexture2D_1oxwi")
-shader_parameter/TextureMul = SubResource("GradientTexture2D_1oxwi")
-shader_parameter/TextiureShape = SubResource("GradientTexture2D_vud5x")
+shader_parameter/TextureMul = ExtResource("2_0pipk")
+shader_parameter/TextiureShape = ExtResource("2_spv0n")
 shader_parameter/TextureSub = SubResource("GradientTexture2D_spv0n")
 shader_parameter/Color_gradient = SubResource("GradientTexture1D_vud5x")
 

@@ -56,5 +56,6 @@ amount = 32
 lifetime = 2.0
 one_shot = true
 explosiveness = 0.5
+local_coords = true
 process_material = SubResource("ParticleProcessMaterial_wc5p8")
 draw_pass_1 = SubResource("QuadMesh_jsk3o")

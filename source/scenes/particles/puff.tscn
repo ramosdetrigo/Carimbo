@@ -48,5 +48,6 @@ amount = 64
 lifetime = 1.5
 one_shot = true
 explosiveness = 1.0
+local_coords = true
 process_material = SubResource("ParticleProcessMaterial_4tulo")
 draw_pass_1 = SubResource("QuadMesh_y2x1i")

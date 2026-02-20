@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://domk3xwojp1ia" path="res://scenes/components/character/character.tscn" id="1_ru7ka"]
 [ext_resource type="PackedScene" uid="uid://572ad1efklon" path="res://scenes/entities/enemies/boleto/boleto.tscn" id="2_5ci4w"]
+[ext_resource type="PackedScene" uid="uid://dgf1gryeieslf" path="res://scenes/particles/static_fire.tscn" id="3_e8gke"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ru7ka"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -147,3 +148,6 @@ mesh = SubResource("PrismMesh_hmnde")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D4/StaticBody3D" unique_id=729363384]
 shape = SubResource("ConcavePolygonShape3D_6ms5o")
+
+[node name="StaticFire" parent="." unique_id=468415840 instance=ExtResource("3_e8gke")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.09277201, 1.8832372, -4.8431044)

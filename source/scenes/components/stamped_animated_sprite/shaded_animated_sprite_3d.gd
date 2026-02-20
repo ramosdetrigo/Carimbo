@@ -66,6 +66,12 @@ func update_shader_anim() -> void:
 
 ## Executa o efeito de burn
 func trigger_burn_fx(burn_time: float = 1.0) -> void:
+	var particles: GPUParticles3D = Consts.PARTICLE_SPARK.instantiate()
+	particles.emitting = true
+	get_tree().current_scene.add_child(particles)
+	particles.global_position = global_position
+	particles.emitting = true
+	
 	var burn_tween: Tween = create_tween()
 	burn_tween.tween_method(
 		func(b):

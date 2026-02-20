@@ -15,13 +15,11 @@ func _physics_process(_delta: float) -> void:
 
 
 func _on_health_changed(health: int) -> void:
-	if health > 0: return
+	if health > 0 or dead: return
 	death()
 
 
 func death() -> void:
-	var t: Tween = create_tween()
-	t.tween_property((stampable_sprite.material_override as ShaderMaterial),
-		"shader_parameter/burn_amount", 1.0, 1.2)
-	t.tween_interval(0.5)
-	t.tween_callback(queue_free)
+	dead = true
+	stampable_sprite.trigger_burn_fx()
+	stampable_sprite.burned.connect(queue_free)

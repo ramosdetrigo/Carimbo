@@ -14,7 +14,7 @@
 [ext_resource type="Script" uid="uid://c6tbcxlt1e2hy" path="res://scripts/components/move_component.gd" id="11_uqqi4"]
 [ext_resource type="Script" uid="uid://bfied8f76qv1k" path="res://scripts/components/input_component.gd" id="12_3kibg"]
 [ext_resource type="Script" uid="uid://bb0t2ovl7wifo" path="res://addons/beehave/nodes/beehave_tree.gd" id="13_ex3sn"]
-[ext_resource type="Script" uid="uid://cdr65apsfmy8" path="res://scripts/attack_system/weapon_manager.gd" id="13_u1dib"]
+[ext_resource type="Script" path="res://scripts/attack_system/weapon_manager.gd" id="13_u1dib"]
 [ext_resource type="Script" uid="uid://cg016dbe7gs1x" path="res://addons/beehave/nodes/composites/sequence.gd" id="14_46xen"]
 [ext_resource type="Texture2D" uid="uid://qjkhq2b4id7p" path="res://assets/textures/enemies/boleto/coin.png" id="14_qjr6i"]
 [ext_resource type="Script" uid="uid://8hn4kne15ac5" path="res://addons/beehave/nodes/composites/selector.gd" id="15_0kxu0"]
@@ -31,23 +31,22 @@
 atlas = ExtResource("5_uqqi4")
 region = Rect2(0, 0, 256, 256)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_qjlqy"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_c6tnj"]
 viewport_path = NodePath("StampViewport")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_8iy4v"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_24mnh"]
 resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("2_5jjyw")
 shader_parameter/roughness = 1.0
-shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
 shader_parameter/texture_roughness = ExtResource("5_8gtkm")
 shader_parameter/specular = 0.249999994412
-shader_parameter/metallic = 0.0
 shader_parameter/texture_normal = ExtResource("4_g10rj")
 shader_parameter/normal_scale = 1.5600008340999985
 shader_parameter/albedo = Color(1, 1, 1, 1)
 shader_parameter/texture_albedo = SubResource("AtlasTexture_3kibg")
-shader_parameter/texture_carimbo = SubResource("ViewportTexture_qjlqy")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_c6tnj")
+shader_parameter/carimbo_glow_intensity = 0.0
 shader_parameter/burn_texture = ExtResource("4_8gtkm")
 shader_parameter/burn_amount = 0.0
 shader_parameter/burn_size = 0.150000007125
@@ -59,7 +58,7 @@ shader_parameter/burn_glow_intensity = 10.0
 atlas = ExtResource("5_uqqi4")
 region = Rect2(256, 0, 256, 256)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_0kxu0"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_0teup"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -119,8 +118,8 @@ metadata/_custom_type_script = "uid://cg1dswyw2p1op"
 
 [node name="ShadedAnimatedSprite3D" parent="." unique_id=1952958561 instance=ExtResource("1_qk6p8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-material_override = SubResource("ShaderMaterial_8iy4v")
-sprite_frames = SubResource("SpriteFrames_0kxu0")
+material_override = SubResource("ShaderMaterial_24mnh")
+sprite_frames = SubResource("SpriteFrames_0teup")
 animation = &"shoot"
 frame = 2
 frame_progress = 1.0
@@ -157,7 +156,6 @@ stamp_texture = ExtResource("14_qjr6i")
 can_break_armor = true
 projectile_is_ranged = true
 projectile_scene = ExtResource("15_y7snv")
-metadata/_custom_type_script = "uid://cdr65apsfmy8"
 
 [node name="HitboxComponent" type="Area3D" parent="." unique_id=941104208 node_paths=PackedStringArray("actor")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -179,7 +177,7 @@ script = SubResource("GDScript_aose2")
 [node name="BeehaveTree" type="Node" parent="." unique_id=289134762 node_paths=PackedStringArray("blackboard", "actor")]
 script = ExtResource("13_ex3sn")
 actor_node_path = NodePath("..")
-blackboard = NodePath("@Node@111748")
+blackboard = NodePath("@Node@30843")
 actor = NodePath("..")
 metadata/_custom_type_script = "uid://bb0t2ovl7wifo"
 
@@ -237,6 +235,6 @@ target_desired_distance = 2.0
 metadata/_custom_type_script = "uid://dmfahxpjyyf01"
 
 [connection signal="armor_changed" from="StatsComponent" to="Label3D" method="set_armor"]
-[connection signal="health_changed" from="StatsComponent" to="Label3D" method="set_health"]
 [connection signal="health_changed" from="StatsComponent" to="." method="_on_health_changed"]
+[connection signal="health_changed" from="StatsComponent" to="Label3D" method="set_health"]
 [connection signal="damaged" from="HitboxComponent" to="ShadedAnimatedSprite3D" method="_on_hitbox_damaged"]

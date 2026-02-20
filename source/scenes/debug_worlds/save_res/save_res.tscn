@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://djeqq803dh126"]
+
+[ext_resource type="Script" uid="uid://dfphb7nsmal2" path="res://scenes/debug_worlds/save_res/save_res.gd" id="1_7x325"]
+[ext_resource type="Texture2D" uid="uid://dran5cq0y6khy" path="res://assets/textures/vfx/mask/flat_fire_mask.tres" id="2_hkgoq"]
+
+[node name="SaveRes" type="Node2D" unique_id=371987933]
+script = ExtResource("1_7x325")
+resources = Array[Texture2D]([ExtResource("2_hkgoq")])

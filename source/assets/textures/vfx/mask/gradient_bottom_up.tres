@@ -1,0 +1,9 @@
+[gd_resource type="GradientTexture2D" format=3 uid="uid://t781pa1h8vhf"]
+
+[sub_resource type="Gradient" id="Gradient_6ea7g"]
+
+[resource]
+gradient = SubResource("Gradient_6ea7g")
+width = 512
+height = 512
+fill_to = Vector2(0, 1)

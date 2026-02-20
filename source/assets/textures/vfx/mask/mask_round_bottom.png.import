@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://fu73m46r60bj"
-path.s3tc="res://.godot/imported/Untitled.png-6be75a3a3db21aa11a7b10902100d23d.s3tc.ctex"
+uid="uid://dt7xkr17gl5gq"
+path.s3tc="res://.godot/imported/mask_round_bottom.png-942349ea27cb4df2cab9f86de6818e26.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/textures/Untitled.png"
-dest_files=["res://.godot/imported/Untitled.png-6be75a3a3db21aa11a7b10902100d23d.s3tc.ctex"]
+source_file="res://assets/textures/vfx/mask/mask_round_bottom.png"
+dest_files=["res://.godot/imported/mask_round_bottom.png-942349ea27cb4df2cab9f86de6818e26.s3tc.ctex"]
 
 [params]
 

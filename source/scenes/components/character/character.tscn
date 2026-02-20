@@ -3,58 +3,51 @@
 [ext_resource type="Script" uid="uid://c04rbi1nsbk4f" path="res://scripts/state_machine/state_machine.gd" id="1_0mkjy"]
 [ext_resource type="Script" uid="uid://bnfb6cxda8lhn" path="res://scenes/components/character/character_controler_3d.gd" id="1_6d1i5"]
 [ext_resource type="Script" uid="uid://cf1upyw7x1cla" path="res://scripts/state_machine/states/idle.gd" id="2_61ex5"]
+[ext_resource type="Shader" uid="uid://dl6ampid6rth6" path="res://scenes/components/stamped_animated_sprite/shaded_animated_sprite_3d.gdshader" id="2_albb0"]
+[ext_resource type="Texture2D" uid="uid://ch1fj0j2vc2r1" path="res://resources/burn_noise_texture.tres" id="3_0fpak"]
 [ext_resource type="Script" uid="uid://p013328bt87o" path="res://scripts/state_machine/states/move.gd" id="3_6d1i5"]
-[ext_resource type="PackedScene" uid="uid://toum1olkwjmg" path="res://scenes/components/stamped_animated_sprite/shaded_animated_sprite_3d.tscn" id="5_3bymh"]
+[ext_resource type="Texture2D" uid="uid://o34vnik8cwo4" path="res://assets/textures/paper/Paper003_1K-JPG_NormalGL.jpg" id="4_cfbnc"]
+[ext_resource type="Texture2D" uid="uid://dkbujjnpxwia0" path="res://assets/textures/paper/Paper003_1K-JPG_Roughness.jpg" id="5_bedty"]
 [ext_resource type="Script" uid="uid://bo27hd1h0bn3l" path="res://scripts/state_machine/states/roll.gd" id="5_nhrsp"]
-[ext_resource type="Shader" uid="uid://dl6ampid6rth6" path="res://scenes/components/stamped_animated_sprite/shaded_animated_sprite_3d.gdshader" id="6_83d2c"]
-[ext_resource type="PackedScene" uid="uid://dq76el4arkfni" path="res://scenes/objects/weapon/weapon.tscn" id="6_agqai"]
-[ext_resource type="Texture2D" uid="uid://dn1mdtvrnxb6v" path="res://assets/tmp/paper_mario.png" id="7_qsg3x"]
-[ext_resource type="Script" uid="uid://5kc8fyscu1dj" path="res://scenes/debug_worlds/gym/stampable.gd" id="8_oucov"]
-[ext_resource type="Texture2D" uid="uid://o34vnik8cwo4" path="res://assets/textures/paper/Paper003_1K-JPG_NormalGL.jpg" id="8_qx14y"]
+[ext_resource type="Texture2D" uid="uid://dn1mdtvrnxb6v" path="res://assets/tmp/paper_mario.png" id="6_oucov"]
+[ext_resource type="Script" uid="uid://ctmgj3s2w7dsb" path="res://scenes/components/stamped_animated_sprite/shaded_animated_sprite_3d.gd" id="7_gke3f"]
 [ext_resource type="Script" uid="uid://c6tbcxlt1e2hy" path="res://scripts/components/move_component.gd" id="9_72r7g"]
-[ext_resource type="PackedScene" uid="uid://brd2jp1tbh21k" path="res://scenes/objects/weapon/attack_projectile.tscn" id="9_albb0"]
-[ext_resource type="Texture2D" uid="uid://bvav1abqdnltd" path="res://assets/tmp/carimbo.png" id="9_gke3f"]
-[ext_resource type="Texture2D" uid="uid://dkbujjnpxwia0" path="res://assets/textures/paper/Paper003_1K-JPG_Roughness.jpg" id="9_wtsan"]
-[ext_resource type="Script" uid="uid://cuoa1ubyh5d06" path="res://scripts/attack_system/attack_info.gd" id="10_0fpak"]
+[ext_resource type="Script" uid="uid://cdr65apsfmy8" path="res://scripts/attack_system/weapon_manager.gd" id="9_albb0"]
 [ext_resource type="Script" uid="uid://bc4ynw03213w5" path="res://scripts/components/player_input_component.gd" id="10_72r7g"]
-[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://assets/tmp/icon.svg" id="10_scejm"]
-[ext_resource type="Texture2D" uid="uid://br1n3n670sbm8" path="res://assets/textures/stamps/damage_stamp.png" id="11_cfbnc"]
+[ext_resource type="PackedScene" uid="uid://brd2jp1tbh21k" path="res://scenes/objects/weapon/attack_projectile.tscn" id="11_cfbnc"]
 [ext_resource type="Script" uid="uid://baffaklkbk27f" path="res://scripts/attack_system/hitbox_component.gd" id="12_cfbnc"]
 [ext_resource type="Script" uid="uid://cqxuelwl2k4bg" path="res://scripts/attack_system/stats_component.gd" id="19_bedty"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_oucov"]
-viewport_path = NodePath("StampViewport")
+[sub_resource type="ViewportTexture" id="ViewportTexture_q5p2s"]
+viewport_path = NodePath("ShadedAnimatedSprite3D/SubViewport")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_gke3f"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kvm8o"]
 resource_local_to_scene = true
 render_priority = 0
-shader = ExtResource("6_83d2c")
+shader = ExtResource("2_albb0")
 shader_parameter/roughness = 1.0
-shader_parameter/texture_roughness = ExtResource("9_wtsan")
+shader_parameter/texture_roughness = ExtResource("5_bedty")
 shader_parameter/specular = 0.249999994412
-shader_parameter/texture_normal = ExtResource("8_qx14y")
-shader_parameter/normal_scale = 2.2000008645000015
+shader_parameter/texture_normal = ExtResource("4_cfbnc")
+shader_parameter/normal_scale = 1.5600008340999985
 shader_parameter/albedo = Color(1, 1, 1, 1)
-shader_parameter/texture_albedo = ExtResource("7_qsg3x")
-shader_parameter/texture_carimbo = SubResource("ViewportTexture_oucov")
+shader_parameter/texture_albedo = ExtResource("6_oucov")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_q5p2s")
 shader_parameter/carimbo_glow_intensity = 0.0
+shader_parameter/burn_texture = ExtResource("3_0fpak")
 shader_parameter/burn_amount = 0.0
-shader_parameter/burn_size = 0.0
-shader_parameter/burn_smoothness = 0.0
-shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
-shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/burn_size = 0.150000007125
+shader_parameter/burn_smoothness = 0.1330000063175
+shader_parameter/burn_glow_color = Color(1, 0.32, 0, 1)
+shader_parameter/burn_glow_intensity = 10.0
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_q5p2s"]
-resource_local_to_scene = true
+[sub_resource type="SpriteFrames" id="SpriteFrames_wrelc"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("10_scejm")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_qsg3x")
+"texture": ExtResource("6_oucov")
 }],
-"loop": true,
+"loop": false,
 "name": &"default",
 "speed": 5.0
 }]
@@ -89,30 +82,40 @@ func _update_text() -> void:
 	set_text(\"PV: %s\\nPA: %s\" % [health, armor])
 "
 
-[sub_resource type="Resource" id="Resource_bedty"]
-script = ExtResource("10_0fpak")
-stamp_texture = ExtResource("11_cfbnc")
-ignores_armor = true
-is_ranged = true
-projectile = ExtResource("9_albb0")
-metadata/_custom_type_script = "uid://cuoa1ubyh5d06"
-
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_oucov"]
 
-[node name="PlayerCharacter" type="CharacterBody3D" unique_id=269989542 node_paths=PackedStringArray("state_machine", "weapon", "stampable_sprite", "stats_component") groups=["player"]]
+[node name="PlayerCharacter" type="CharacterBody3D" unique_id=269989542 node_paths=PackedStringArray("state_machine", "stampable_sprite", "stats_component", "hitbox_component") groups=["player"]]
+collision_layer = 8
 script = ExtResource("1_6d1i5")
 state_machine = NodePath("StateMachine")
-weapon = NodePath("Weapon")
 stampable_sprite = NodePath("ShadedAnimatedSprite3D")
 stats_component = NodePath("StatsComponent")
+hitbox_component = NodePath("HitboxComponent")
 metadata/_custom_type_script = "uid://bnfb6cxda8lhn"
 
-[node name="ShadedAnimatedSprite3D" parent="." unique_id=1229798839 instance=ExtResource("5_3bymh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -0.5)
-material_override = SubResource("ShaderMaterial_gke3f")
-sprite_frames = SubResource("SpriteFrames_q5p2s")
-script = ExtResource("8_oucov")
-stamp_texture = ExtResource("9_gke3f")
+[node name="ShadedAnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=1555501919 node_paths=PackedStringArray("stamp_viewport")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+material_override = SubResource("ShaderMaterial_kvm8o")
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_wrelc")
+frame_progress = 0.982645
+script = ExtResource("7_gke3f")
+stamp_viewport = NodePath("SubViewport")
+metadata/_custom_type_script = "uid://ctmgj3s2w7dsb"
+
+[node name="SubViewport" type="SubViewport" parent="ShadedAnimatedSprite3D" unique_id=1103892833]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(256, 256)
+render_target_clear_mode = 2
+render_target_update_mode = 1
+
+[node name="WeaponManager" type="Node3D" parent="." unique_id=2002537722]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -0.0579077)
+script = ExtResource("9_albb0")
+attack_scene = ExtResource("11_cfbnc")
+is_projectile = true
+metadata/_custom_type_script = "uid://cdr65apsfmy8"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=77915751]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -125,43 +128,15 @@ max_health = 10.0
 max_armor = 10.0
 metadata/_custom_type_script = "uid://cqxuelwl2k4bg"
 
-[node name="Label3D" type="Label3D" parent="." unique_id=1333799076]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6481094, 0)
-billboard = 1
-text = "FILHO DA PUTA"
-script = SubResource("GDScript_cfbnc")
-
-[node name="Weapon" parent="." unique_id=300869857 instance=ExtResource("6_agqai")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 1.8, 0)
-visible = false
-attack_info = SubResource("Resource_bedty")
-
-[node name="HitboxComponent" type="Area3D" parent="." unique_id=54983019 node_paths=PackedStringArray("actor")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-collision_layer = 2
-collision_mask = 0
-script = ExtResource("12_cfbnc")
-actor = NodePath("..")
-metadata/_custom_type_script = "uid://baffaklkbk27f"
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="HitboxComponent" unique_id=2114798917]
-shape = SubResource("CapsuleShape3D_oucov")
-
-[node name="CameraPivot" type="Node3D" parent="." unique_id=1065541715]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.695, 3)
-
-[node name="Camera3D" type="Camera3D" parent="CameraPivot" unique_id=154854567]
-transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 0, 0)
-current = true
-
 [node name="MoveComponent" type="Node" parent="." unique_id=173278771 node_paths=PackedStringArray("actor", "input_component")]
 script = ExtResource("9_72r7g")
 actor = NodePath("..")
 input_component = NodePath("../PlayerInputComponent")
 metadata/_custom_type_script = "uid://c6tbcxlt1e2hy"
 
-[node name="PlayerInputComponent" type="Node" parent="." unique_id=805557834]
+[node name="PlayerInputComponent" type="Node" parent="." unique_id=805557834 node_paths=PackedStringArray("weapon_manager")]
 script = ExtResource("10_72r7g")
+weapon_manager = NodePath("../WeaponManager")
 metadata/_custom_type_script = "uid://bc4ynw03213w5"
 
 [node name="StateMachine" type="Node" parent="." unique_id=511908981 node_paths=PackedStringArray("initial_state", "actor")]
@@ -192,6 +167,28 @@ move_component = NodePath("../../MoveComponent")
 input_component = NodePath("../../PlayerInputComponent")
 metadata/_custom_type_script = "uid://bo27hd1h0bn3l"
 
+[node name="Label3D" type="Label3D" parent="." unique_id=1333799076]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6481094, 0)
+billboard = 1
+text = "FILHO DA PUTA"
+script = SubResource("GDScript_cfbnc")
+
+[node name="HitboxComponent" type="Area3D" parent="." unique_id=54983019]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("12_cfbnc")
+metadata/_custom_type_script = "uid://baffaklkbk27f"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HitboxComponent" unique_id=2114798917]
+shape = SubResource("CapsuleShape3D_oucov")
+
+[node name="CameraPivot" type="Node3D" parent="." unique_id=1065541715]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.29, 3.27)
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot" unique_id=154854567]
+transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 0, 0)
+current = true
+
 [connection signal="armor_changed" from="StatsComponent" to="Label3D" method="set_armor"]
 [connection signal="health_changed" from="StatsComponent" to="Label3D" method="set_health"]
-[connection signal="damaged" from="HitboxComponent" to="ShadedAnimatedSprite3D" method="_on_hitbox_damaged"]

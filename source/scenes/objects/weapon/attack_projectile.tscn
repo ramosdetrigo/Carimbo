@@ -1,30 +1,29 @@
 [gd_scene format=3 uid="uid://brd2jp1tbh21k"]
 
-[ext_resource type="Script" uid="uid://ctsptwrqbeytg" path="res://scenes/objects/weapon/attack_sweep.gd" id="1_s0atq"]
+[ext_resource type="Script" uid="uid://ctsptwrqbeytg" path="res://scripts/attack_system/attack_projectile.gd" id="1_s0atq"]
 [ext_resource type="Script" uid="uid://fjgad71t0sd4" path="res://scripts/attack_system/hurtbox_component.gd" id="2_1ubmo"]
 [ext_resource type="Script" uid="uid://cuoa1ubyh5d06" path="res://scripts/attack_system/attack_info.gd" id="3_ftas8"]
-[ext_resource type="Texture2D" uid="uid://br1n3n670sbm8" path="res://assets/textures/stamps/damage_stamp.png" id="4_riqaf"]
 [ext_resource type="Texture2D" uid="uid://qjkhq2b4id7p" path="res://assets/textures/enemies/boleto/coin.png" id="5_s0atq"]
 
-[sub_resource type="Resource" id="Resource_wx74x"]
-resource_local_to_scene = true
+[sub_resource type="Resource" id="Resource_s0atq"]
 script = ExtResource("3_ftas8")
-damage = 2.0
-stamp_texture = ExtResource("4_riqaf")
-ignores_armor = true
+stamp_texture = ExtResource("5_s0atq")
+flags = 1
 metadata/_custom_type_script = "uid://cuoa1ubyh5d06"
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ssq5c"]
 
-[node name="AttackProjectile" type="Node3D" unique_id=1970701499]
+[node name="AttackProjectile" type="Node3D" unique_id=1970701499 node_paths=PackedStringArray("hurtbox_component")]
 script = ExtResource("1_s0atq")
+attack_info = SubResource("Resource_s0atq")
+lifetime = 2.0
+hurtbox_component = NodePath("HurtboxComponent")
 metadata/_custom_type_script = "uid://ctsptwrqbeytg"
 
 [node name="HurtboxComponent" type="Area3D" parent="." unique_id=2062817433]
 collision_layer = 0
-collision_mask = 4
+collision_mask = 5
 script = ExtResource("2_1ubmo")
-attack_info = SubResource("Resource_wx74x")
 metadata/_custom_type_script = "uid://fjgad71t0sd4"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="HurtboxComponent" unique_id=1878795018]

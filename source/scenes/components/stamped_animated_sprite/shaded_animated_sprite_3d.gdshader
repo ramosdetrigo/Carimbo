@@ -1,38 +1,37 @@
 #define BILBOARD_Y_MODE 1
-#define BILBOARD_FULL_MODE 0
 
 shader_type spatial;
 // render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_burley, specular_schlick_ggx;
 
-uniform float roughness : hint_range(0.0, 1.0);
+uniform float roughness : hint_range(0.0, 1.0) = 1.0;
 uniform sampler2D texture_roughness : hint_roughness_r, filter_linear_mipmap, repeat_enable;
-uniform float specular : hint_range(0.0, 1.0, 0.01);
+uniform float specular : hint_range(0.0, 1.0, 0.01) = 0.25;
 
 uniform sampler2D texture_normal : hint_roughness_normal, filter_linear_mipmap, repeat_enable;
-uniform float normal_scale : hint_range(-16.0, 16.0);
+uniform float normal_scale : hint_range(-16.0, 16.0) = 1.56;
 
-uniform vec4 albedo : source_color;
-uniform sampler2D texture_albedo : source_color, filter_linear_mipmap, repeat_disable;
+uniform vec4 albedo : source_color = vec4(1);
+uniform sampler2D texture_albedo : hint_default_transparent, source_color, filter_linear_mipmap, repeat_disable;
 
 uniform sampler2D texture_carimbo : hint_default_transparent, source_color, filter_linear_mipmap, repeat_disable;
 uniform float carimbo_glow_intensity: hint_range(0.0, 10.0, 0.1);
 
 uniform sampler2D burn_texture;
 uniform float burn_amount: hint_range(0.0, 1.0, 0.01);
-uniform float burn_size: hint_range(0.0, 0.5, 0.001);
-uniform float burn_smoothness: hint_range(0.0, 0.2, 0.001);
-uniform vec3 burn_glow_color: source_color = vec3(1.0, 0.032, 0.0); 
-uniform float burn_glow_intensity: hint_range(0.0, 10.0, 0.1);
+uniform float burn_size: hint_range(0.0, 0.5, 0.001) = 0.15;
+uniform float burn_smoothness: hint_range(0.0, 0.2, 0.001) = 0.133;
+uniform vec3 burn_glow_color: source_color = vec3(1.0, 0.32, 0.0);
+uniform float burn_glow_intensity: hint_range(0.0, 10.0, 0.1) = 10.0;
 
 void vertex() {
 	// Billboard Mode: Y-Billboard
-	#if BILBOARD_Y_MODE && !BILBOARD_FULL_MODE
+	#if BILBOARD_Y_MODE
 	MODELVIEW_MATRIX = VIEW_MATRIX * mat4(
 			vec4(normalize(cross(vec3(0.0, 1.0, 0.0), MAIN_CAM_INV_VIEW_MATRIX[2].xyz)), 0.0),
 			vec4(0.0, 1.0, 0.0, 0.0),
 			vec4(normalize(cross(MAIN_CAM_INV_VIEW_MATRIX[0].xyz, vec3(0.0, 1.0, 0.0))), 0.0),
 			MODEL_MATRIX[3]);
-	#elif BILBOARD_FULL_MODE && !BILBOARD_Y_MODE
+	#else
 	// Billboard Mode: Enabled
 	MODELVIEW_MATRIX = VIEW_MATRIX * mat4(
 			MAIN_CAM_INV_VIEW_MATRIX[0],

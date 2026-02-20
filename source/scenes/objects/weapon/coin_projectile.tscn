@@ -1,14 +1,24 @@
 [gd_scene format=3 uid="uid://8gjcppe7ib7d"]
 
 [ext_resource type="Script" uid="uid://fjgad71t0sd4" path="res://scripts/attack_system/hurtbox_component.gd" id="1_uxk2s"]
-[ext_resource type="Script" uid="uid://ctsptwrqbeytg" path="res://scenes/objects/weapon/attack_sweep.gd" id="1_xj7mc"]
+[ext_resource type="Script" uid="uid://ctsptwrqbeytg" path="res://scripts/attack_system/attack_projectile.gd" id="1_xj7mc"]
 [ext_resource type="Texture2D" uid="uid://qjkhq2b4id7p" path="res://assets/textures/enemies/boleto/coin.png" id="2_jboay"]
+[ext_resource type="Script" uid="uid://cuoa1ubyh5d06" path="res://scripts/attack_system/attack_info.gd" id="2_x8ajp"]
+
+[sub_resource type="Resource" id="Resource_jmjnv"]
+script = ExtResource("2_x8ajp")
+stamp_texture = ExtResource("2_jboay")
+flags = 1
+metadata/_custom_type_script = "uid://cuoa1ubyh5d06"
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_jboay"]
 radius = 0.5559753
 
-[node name="CoinProjectile" type="Node3D" unique_id=1795986710]
+[node name="CoinProjectile" type="Node3D" unique_id=1795986710 node_paths=PackedStringArray("hurtbox_component")]
 script = ExtResource("1_xj7mc")
+attack_info = SubResource("Resource_jmjnv")
+lifetime = 2.0
+hurtbox_component = NodePath("HurtboxComponent")
 metadata/_custom_type_script = "uid://ctsptwrqbeytg"
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=2133482051]

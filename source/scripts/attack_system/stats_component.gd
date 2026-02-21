@@ -7,8 +7,9 @@ signal armor_changed(armor: float)
 
 @export var hitbox: HitboxComponent
 
-@export var max_health: float = 1
-@export var max_armor: float = 0
+@export_range(1.0, 100.0, 0.1, "or_greater", "hide_control") var max_health: float = 1
+@export_range(0.0, 100.0, 0.1, "or_greater", "hide_control") var max_armor: float = 0
+@export var is_flying: bool = false
 
 @onready var health: float = self.max_health
 @onready var armor: float = self.max_armor
@@ -18,6 +19,7 @@ func _ready() -> void:
 
 
 func on_damaged(attack: AttackInfo) -> void:
+	if is_flying and not attack.is_flag_true(AttackInfo.Flags.CAN_HIT_FLYING): return
 	if health <= 0: return
 	if armor <= 0 or attack.is_flag_true(AttackInfo.Flags.IGNORES_ARMOR):
 		set_health(health - attack.damage); return

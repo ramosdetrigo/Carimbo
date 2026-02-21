@@ -16,7 +16,6 @@
 [ext_resource type="Script" uid="uid://cg016dbe7gs1x" path="res://addons/beehave/nodes/composites/sequence.gd" id="14_46xen"]
 [ext_resource type="Script" uid="uid://8hn4kne15ac5" path="res://addons/beehave/nodes/composites/selector.gd" id="15_0kxu0"]
 [ext_resource type="PackedScene" uid="uid://8gjcppe7ib7d" path="res://scenes/objects/weapon/coin_projectile.tscn" id="15_y7snv"]
-[ext_resource type="Script" uid="uid://crkjak4kyv56m" path="res://addons/beehave/nodes/decorators/inverter.gd" id="16_o8w3b"]
 [ext_resource type="Script" uid="uid://btprtn1g4f0od" path="res://scripts/beehave/leaf/condition/target_is_in_range_condition.gd" id="17_qfubs"]
 [ext_resource type="Script" uid="uid://dmfahxpjyyf01" path="res://scripts/beehave/leaf/action/move_towards_target_action.gd" id="18_qfubs"]
 [ext_resource type="Script" uid="uid://cvskmb5ygc4fw" path="res://scripts/beehave/leaf/action/stop_moving_action.gd" id="20_i3grk"]
@@ -24,6 +23,7 @@
 [ext_resource type="Script" uid="uid://c5v7wuqn1xvdy" path="res://addons/beehave/nodes/decorators/repeater.gd" id="22_qjr6i"]
 [ext_resource type="Script" uid="uid://wpfn0jjwq6r3" path="res://scripts/beehave/leaf/action/attack_action.gd" id="23_c6tnj"]
 [ext_resource type="Script" uid="uid://dorri1tul8gfx" path="res://addons/beehave/nodes/decorators/delayer.gd" id="23_y7snv"]
+[ext_resource type="Script" uid="uid://chs4o6431t6sh" path="res://scripts/beehave/leaf/action/roam_action.gd" id="24_qjr6i"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i3grk"]
 atlas = ExtResource("5_uqqi4")
@@ -78,11 +78,18 @@ animations = [{
 [node name="Boleto" type="CharacterBody3D" unique_id=1012244960 node_paths=PackedStringArray("beehave_tree", "stampable_sprite", "stats_component", "hitbox_component")]
 collision_layer = 16
 script = ExtResource("1_5jjyw")
-beehave_tree = NodePath("BeehaveTree")
+beehave_tree = NodePath("BoletoBeehaveTree")
 stampable_sprite = NodePath("ShadedAnimatedSprite3D")
 stats_component = NodePath("StatsComponent")
 hitbox_component = NodePath("HitboxComponent")
 metadata/_custom_type_script = "uid://cg1dswyw2p1op"
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1251093907]
+avoidance_enabled = true
+radius = 2.5
+debug_enabled = true
+debug_use_custom = true
+debug_path_custom_color = Color(0, 0.76315594, 0.38502556, 1)
 
 [node name="ShadedAnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=1651267216 node_paths=PackedStringArray("stamp_viewport")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -102,8 +109,6 @@ transparent_bg = true
 size = Vector2i(256, 256)
 render_target_clear_mode = 2
 render_target_update_mode = 1
-
-[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1251093907]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1313853746]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -145,68 +150,72 @@ metadata/_custom_type_script = "uid://baffaklkbk27f"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="HitboxComponent" unique_id=1124297260]
 shape = SubResource("CapsuleShape3D_porrh")
 
-[node name="BeehaveTree" type="Node" parent="." unique_id=289134762 node_paths=PackedStringArray("blackboard", "actor")]
+[node name="BoletoBeehaveTree" type="Node" parent="." unique_id=289134762 node_paths=PackedStringArray("blackboard", "actor")]
 script = ExtResource("13_ex3sn")
 actor_node_path = NodePath("..")
-blackboard = NodePath("@Node@18815")
+blackboard = NodePath("@Node@18813")
 actor = NodePath("..")
 metadata/_custom_type_script = "uid://bb0t2ovl7wifo"
 
-[node name="SelectorComposite" type="Node" parent="BeehaveTree" unique_id=805762087]
+[node name="SelectorComposite" type="Node" parent="BoletoBeehaveTree" unique_id=805762087]
 script = ExtResource("15_0kxu0")
 metadata/_custom_type_script = "uid://8hn4kne15ac5"
 
-[node name="SequenceComposite" type="Node" parent="BeehaveTree/SelectorComposite" unique_id=170119672]
+[node name="SequenceComposite" type="Node" parent="BoletoBeehaveTree/SelectorComposite" unique_id=170119672]
 script = ExtResource("14_46xen")
 metadata/_custom_type_script = "uid://cg016dbe7gs1x"
 
-[node name="TargetIsInRangeCondition" type="Node" parent="BeehaveTree/SelectorComposite/SequenceComposite" unique_id=1498899931]
+[node name="TargetIsInRangeCondition" type="Node" parent="BoletoBeehaveTree/SelectorComposite/SequenceComposite" unique_id=1498899931]
 script = ExtResource("17_qfubs")
 view_range = 8.0
 metadata/_custom_type_script = "uid://btprtn1g4f0od"
 
-[node name="StopMovingAction" type="Node" parent="BeehaveTree/SelectorComposite/SequenceComposite" unique_id=1726075735 node_paths=PackedStringArray("input_component")]
+[node name="StopMovingAction" type="Node" parent="BoletoBeehaveTree/SelectorComposite/SequenceComposite" unique_id=1726075735 node_paths=PackedStringArray("input_component")]
 script = ExtResource("20_i3grk")
 input_component = NodePath("../../../../InputComponent")
 metadata/_custom_type_script = "uid://cvskmb5ygc4fw"
 
-[node name="CooldownDecorator" type="Node" parent="BeehaveTree/SelectorComposite/SequenceComposite" unique_id=1800641658]
+[node name="CooldownDecorator" type="Node" parent="BoletoBeehaveTree/SelectorComposite/SequenceComposite" unique_id=1800641658]
 script = ExtResource("21_c6tnj")
 wait_time = 0.5
 metadata/_custom_type_script = "uid://2qri6rrfv8ui"
 
-[node name="RepeaterDecorator" type="Node" parent="BeehaveTree/SelectorComposite/SequenceComposite/CooldownDecorator" unique_id=419108725]
+[node name="RepeaterDecorator" type="Node" parent="BoletoBeehaveTree/SelectorComposite/SequenceComposite/CooldownDecorator" unique_id=419108725]
 script = ExtResource("22_qjr6i")
 repetitions = 3
 metadata/_custom_type_script = "uid://c5v7wuqn1xvdy"
 
-[node name="DelayDecorator" type="Node" parent="BeehaveTree/SelectorComposite/SequenceComposite/CooldownDecorator/RepeaterDecorator" unique_id=1299458683]
+[node name="DelayDecorator" type="Node" parent="BoletoBeehaveTree/SelectorComposite/SequenceComposite/CooldownDecorator/RepeaterDecorator" unique_id=1299458683]
 script = ExtResource("23_y7snv")
 wait_time = 0.5
 metadata/_custom_type_script = "uid://dorri1tul8gfx"
 
-[node name="AttackAction" type="Node" parent="BeehaveTree/SelectorComposite/SequenceComposite/CooldownDecorator/RepeaterDecorator/DelayDecorator" unique_id=1991564007]
+[node name="AttackAction" type="Node" parent="BoletoBeehaveTree/SelectorComposite/SequenceComposite/CooldownDecorator/RepeaterDecorator/DelayDecorator" unique_id=1991564007]
 script = ExtResource("23_c6tnj")
 attack_scene = ExtResource("15_y7snv")
 attack_spawn_offset = Vector3(0, 1, 0)
 is_projectile = true
 metadata/_custom_type_script = "uid://wpfn0jjwq6r3"
 
-[node name="SequenceComposite2" type="Node" parent="BeehaveTree/SelectorComposite" unique_id=2104183788]
+[node name="SequenceComposite2" type="Node" parent="BoletoBeehaveTree/SelectorComposite" unique_id=2104183788]
 script = ExtResource("14_46xen")
 metadata/_custom_type_script = "uid://cg016dbe7gs1x"
 
-[node name="InverterDecorator" type="Node" parent="BeehaveTree/SelectorComposite/SequenceComposite2" unique_id=253915563]
-script = ExtResource("16_o8w3b")
-metadata/_custom_type_script = "uid://crkjak4kyv56m"
-
-[node name="TargetIsInRangeCondition" type="Node" parent="BeehaveTree/SelectorComposite/SequenceComposite2/InverterDecorator" unique_id=440855470]
+[node name="TargetIsInRangeCondition" type="Node" parent="BoletoBeehaveTree/SelectorComposite/SequenceComposite2" unique_id=440855470]
 script = ExtResource("17_qfubs")
-view_range = 8.0
+view_range = 12.0
 metadata/_custom_type_script = "uid://btprtn1g4f0od"
 
-[node name="MoveTowardsTargetAction" type="Node" parent="BeehaveTree/SelectorComposite/SequenceComposite2" unique_id=57519011 node_paths=PackedStringArray("input_component")]
+[node name="MoveTowardsTargetAction" type="Node" parent="BoletoBeehaveTree/SelectorComposite/SequenceComposite2" unique_id=57519011 node_paths=PackedStringArray("input_component", "navigation_agent")]
 script = ExtResource("18_qfubs")
 input_component = NodePath("../../../../InputComponent")
-target_desired_distance = 2.0
+navigation_enable = true
+navigation_agent = NodePath("../../../../NavigationAgent3D")
 metadata/_custom_type_script = "uid://dmfahxpjyyf01"
+
+[node name="RoamAction" type="Node" parent="BoletoBeehaveTree/SelectorComposite" unique_id=1299651214 node_paths=PackedStringArray("input_component", "navigation_agent")]
+script = ExtResource("24_qjr6i")
+input_component = NodePath("../../../InputComponent")
+navigation_enable = true
+navigation_agent = NodePath("../../../NavigationAgent3D")
+metadata/_custom_type_script = "uid://chs4o6431t6sh"

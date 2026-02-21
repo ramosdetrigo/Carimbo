@@ -8,7 +8,7 @@
 [sub_resource type="Resource" id="Resource_s0atq"]
 script = ExtResource("3_ftas8")
 stamp_texture = ExtResource("5_s0atq")
-flags = 1
+flags = 5
 metadata/_custom_type_script = "uid://cuoa1ubyh5d06"
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ssq5c"]

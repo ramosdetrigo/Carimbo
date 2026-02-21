@@ -4,8 +4,8 @@ extends Label3D
 
 @export var stats_component: StatsComponent
 
-@onready var health: float = self.stats_component.health: set = set_health
-@onready var armor: float = self.stats_component.armor: set = set_armor
+var health: float = 0.0: set = set_health
+var armor: float = 0.0: set = set_armor
 
 func _init() -> void:
 	set_text("FILHO DA PUTA")
@@ -15,6 +15,8 @@ func _init() -> void:
 
 func _ready() -> void:
 	if Engine.is_editor_hint() or not stats_component: return
+	set_health(stats_component.health)
+	set_armor(stats_component.armor)
 	stats_component.armor_changed.connect(set_armor)
 	stats_component.health_changed.connect(set_health)
 	_update_text()

@@ -4,8 +4,11 @@ extends ConditionLeaf
 
 const TIMER_KEY: String = "timer_cache_key"
 
-@export var timer: Timer
+@export_range(0.001, 4096, 0.001, "or_greater", "suffix:s", "exp")
+var wait_time: float = 1.0
 
-func tick(_actor: Node, blackboard: Blackboard) -> int:
-	blackboard.set_value(TIMER_KEY, timer.time_left, str(blackboard.get_instance_id()))
-	return SUCCESS if timer.is_stopped() else FAILURE
+var _timer: SceneTreeTimer
+
+func tick(_actor: Node, _blackboard: Blackboard) -> int:
+	if not _timer or _timer.time_left <= 0: _timer = get_tree().create_timer(wait_time)
+	return SUCCESS if _timer.time_left <= 0 else FAILURE

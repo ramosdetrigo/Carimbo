@@ -1,0 +1,273 @@
+[gd_scene format=3 uid="uid://c11bmvx2h5bt3"]
+
+[ext_resource type="Script" uid="uid://cg1dswyw2p1op" path="res://scenes/entities/enemies/enemy_character.gd" id="1_jscit"]
+[ext_resource type="Script" uid="uid://c15vrenp7llbg" path="res://scripts/debug/debug_label.gd" id="2_3c1s0"]
+[ext_resource type="Script" uid="uid://ctmgj3s2w7dsb" path="res://scenes/components/stamped_animated_sprite/shaded_animated_sprite_3d.gd" id="2_3ddwk"]
+[ext_resource type="Shader" uid="uid://dl6ampid6rth6" path="res://scenes/components/stamped_animated_sprite/shaded_animated_sprite_3d.gdshader" id="2_iodyl"]
+[ext_resource type="Texture2D" uid="uid://ch1fj0j2vc2r1" path="res://resources/burn_noise_texture.tres" id="3_3c1s0"]
+[ext_resource type="Script" uid="uid://baffaklkbk27f" path="res://scripts/attack_system/hitbox_component.gd" id="3_63u2k"]
+[ext_resource type="Texture2D" uid="uid://o34vnik8cwo4" path="res://assets/textures/paper/Paper003_1K-JPG_NormalGL.jpg" id="4_pbwyr"]
+[ext_resource type="Script" uid="uid://c6tbcxlt1e2hy" path="res://scripts/components/move_component.gd" id="4_x56er"]
+[ext_resource type="Texture2D" uid="uid://dkbujjnpxwia0" path="res://assets/textures/paper/Paper003_1K-JPG_Roughness.jpg" id="5_g34wm"]
+[ext_resource type="Script" uid="uid://bfied8f76qv1k" path="res://scripts/components/input_component.gd" id="5_qi4g3"]
+[ext_resource type="Script" uid="uid://cqxuelwl2k4bg" path="res://scripts/attack_system/stats_component.gd" id="6_iodyl"]
+[ext_resource type="Texture2D" uid="uid://bjxerb7gpyfc" path="res://assets/textures/enemies/passaporte/passaporte.png" id="6_r3rdc"]
+[ext_resource type="Script" uid="uid://bb0t2ovl7wifo" path="res://addons/beehave/nodes/beehave_tree.gd" id="7_3c1s0"]
+[ext_resource type="Script" uid="uid://8hn4kne15ac5" path="res://addons/beehave/nodes/composites/selector.gd" id="14_w2uf8"]
+[ext_resource type="Script" uid="uid://cg016dbe7gs1x" path="res://addons/beehave/nodes/composites/sequence.gd" id="15_0c8vc"]
+[ext_resource type="Script" uid="uid://btprtn1g4f0od" path="res://scripts/beehave/leaf/condition/target_is_in_range_condition.gd" id="16_w78sf"]
+[ext_resource type="Script" uid="uid://dmfahxpjyyf01" path="res://scripts/beehave/leaf/action/move_towards_target_action.gd" id="18_pai83"]
+[ext_resource type="Script" uid="uid://5aiqrlyonbxb" path="res://scripts/beehave/leaf/action/play_animation_action.gd" id="19_0c8vc"]
+[ext_resource type="Script" uid="uid://cvskmb5ygc4fw" path="res://scripts/beehave/leaf/action/stop_moving_action.gd" id="19_cdoc2"]
+[ext_resource type="Script" uid="uid://dorri1tul8gfx" path="res://addons/beehave/nodes/decorators/delayer.gd" id="19_mnppx"]
+[ext_resource type="Script" uid="uid://2qri6rrfv8ui" path="res://addons/beehave/nodes/decorators/cooldown.gd" id="19_pai83"]
+[ext_resource type="Script" uid="uid://wpfn0jjwq6r3" path="res://scripts/beehave/leaf/action/attack_action.gd" id="20_abpj4"]
+[ext_resource type="PackedScene" uid="uid://kic2sv51e8jj" path="res://scenes/objects/attack_explosion.tscn" id="22_w78sf"]
+[ext_resource type="Script" uid="uid://chs4o6431t6sh" path="res://scripts/beehave/leaf/action/roam_action.gd" id="26_abpj4"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_iodyl"]
+height = 2.862793
+
+[sub_resource type="Animation" id="Animation_0c8vc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ShadedAnimatedSprite3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 3, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_w78sf"]
+resource_name = "dive_attack"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ShadedAnimatedSprite3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 1),
+"transitions": PackedFloat32Array(0.5, 2, 2),
+"update": 0,
+"values": [Vector3(0, 3, 0), Vector3(0, 0.49984527, 0), Vector3(0, 3, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cdoc2"]
+_data = {
+&"RESET": SubResource("Animation_0c8vc"),
+&"dive_attack": SubResource("Animation_w78sf")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0c8vc"]
+atlas = ExtResource("6_r3rdc")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_sw6y8"]
+viewport_path = NodePath("ShadedAnimatedSprite3D/SubViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7q4i4"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("2_iodyl")
+shader_parameter/roughness = 1.0
+shader_parameter/texture_roughness = ExtResource("5_g34wm")
+shader_parameter/specular = 0.249999994412
+shader_parameter/texture_normal = ExtResource("4_pbwyr")
+shader_parameter/normal_scale = 1.5600008340999985
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = SubResource("AtlasTexture_0c8vc")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_sw6y8")
+shader_parameter/carimbo_glow_intensity = 0.0
+shader_parameter/burn_texture = ExtResource("3_3c1s0")
+shader_parameter/burn_amount = 0.0
+shader_parameter/burn_size = 0.150000007125
+shader_parameter/burn_smoothness = 0.1330000063175
+shader_parameter/burn_glow_color = Color(1, 0.32, 0, 1)
+shader_parameter/burn_glow_intensity = 10.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w2uf8"]
+atlas = ExtResource("6_r3rdc")
+region = Rect2(512, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w78sf"]
+atlas = ExtResource("6_r3rdc")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cdoc2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w2uf8")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0c8vc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w78sf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3c1s0"]
+
+[node name="Passaporte" type="CharacterBody3D" unique_id=1005230644 node_paths=PackedStringArray("beehave_tree", "stampable_sprite", "stats_component", "hitbox_component")]
+collision_layer = 16
+script = ExtResource("1_jscit")
+beehave_tree = NodePath("PassaporteBeehaveTree")
+stampable_sprite = NodePath("ShadedAnimatedSprite3D")
+stats_component = NodePath("StatsComponent")
+hitbox_component = NodePath("HitboxComponent")
+metadata/_custom_type_script = "uid://cg1dswyw2p1op"
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1055487225]
+avoidance_enabled = true
+height = 3.0
+radius = 2.0
+debug_enabled = true
+debug_use_custom = true
+debug_path_custom_color = Color(0.3174075, 0.17535019, 0.49796063, 1)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=438118117]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4313965, 0)
+shape = SubResource("CapsuleShape3D_iodyl")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1628495497]
+libraries/ = SubResource("AnimationLibrary_cdoc2")
+
+[node name="ShadedAnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=517155676 node_paths=PackedStringArray("stamp_viewport")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+material_override = SubResource("ShaderMaterial_7q4i4")
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_cdoc2")
+autoplay = "default"
+script = ExtResource("2_3ddwk")
+stamp_viewport = NodePath("SubViewport")
+metadata/_custom_type_script = "uid://ctmgj3s2w7dsb"
+
+[node name="SubViewport" type="SubViewport" parent="ShadedAnimatedSprite3D" unique_id=1806349535]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(256, 256)
+render_target_clear_mode = 2
+render_target_update_mode = 1
+
+[node name="HitboxComponent" type="Area3D" parent="." unique_id=1100271751]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("3_63u2k")
+metadata/_custom_type_script = "uid://baffaklkbk27f"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HitboxComponent" unique_id=1465685642]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_3c1s0")
+
+[node name="MoveComponent" type="Node" parent="." unique_id=593443567 node_paths=PackedStringArray("actor", "input_component")]
+script = ExtResource("4_x56er")
+actor = NodePath("..")
+input_component = NodePath("../InputComponent")
+metadata/_custom_type_script = "uid://c6tbcxlt1e2hy"
+
+[node name="InputComponent" type="Node" parent="." unique_id=1648601125]
+script = ExtResource("5_qi4g3")
+metadata/_custom_type_script = "uid://bfied8f76qv1k"
+
+[node name="StatsComponent" type="Node" parent="." unique_id=456641389 node_paths=PackedStringArray("hitbox")]
+script = ExtResource("6_iodyl")
+hitbox = NodePath("../HitboxComponent")
+max_health = 4.0
+is_flying = true
+metadata/_custom_type_script = "uid://cqxuelwl2k4bg"
+
+[node name="DebugLabel3D" type="Label3D" parent="." unique_id=1695865491 node_paths=PackedStringArray("stats_component")]
+editor_description = "Uma label para debug que irá mostrar os valores de vida e armadura de um StatsComponent"
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+billboard = 1
+text = "FILHO DA PUTA"
+script = ExtResource("2_3c1s0")
+stats_component = NodePath("../StatsComponent")
+metadata/_custom_type_script = "uid://c15vrenp7llbg"
+
+[node name="PassaporteBeehaveTree" type="Node" parent="." unique_id=517946327 node_paths=PackedStringArray("blackboard", "actor")]
+script = ExtResource("7_3c1s0")
+actor_node_path = NodePath("..")
+blackboard = NodePath("@Node@82668")
+actor = NodePath("..")
+metadata/_custom_type_script = "uid://bb0t2ovl7wifo"
+
+[node name="SelectorComposite" type="Node" parent="PassaporteBeehaveTree" unique_id=557576042]
+script = ExtResource("14_w2uf8")
+metadata/_custom_type_script = "uid://8hn4kne15ac5"
+
+[node name="SequenceComposite2" type="Node" parent="PassaporteBeehaveTree/SelectorComposite" unique_id=1426430241]
+script = ExtResource("15_0c8vc")
+metadata/_custom_type_script = "uid://cg016dbe7gs1x"
+
+[node name="TargetIsInRangeCondition" type="Node" parent="PassaporteBeehaveTree/SelectorComposite/SequenceComposite2" unique_id=505877142]
+script = ExtResource("16_w78sf")
+view_range = 0.5
+metadata/_custom_type_script = "uid://btprtn1g4f0od"
+
+[node name="CooldownDecorator" type="Node" parent="PassaporteBeehaveTree/SelectorComposite/SequenceComposite2" unique_id=1143304118]
+script = ExtResource("19_pai83")
+wait_time = 2.0
+metadata/_custom_type_script = "uid://2qri6rrfv8ui"
+
+[node name="SequenceComposite" type="Node" parent="PassaporteBeehaveTree/SelectorComposite/SequenceComposite2/CooldownDecorator" unique_id=580731035]
+script = ExtResource("15_0c8vc")
+metadata/_custom_type_script = "uid://cg016dbe7gs1x"
+
+[node name="StopMovingAction" type="Node" parent="PassaporteBeehaveTree/SelectorComposite/SequenceComposite2/CooldownDecorator/SequenceComposite" unique_id=1526644239 node_paths=PackedStringArray("input_component")]
+script = ExtResource("19_cdoc2")
+input_component = NodePath("../../../../../../InputComponent")
+metadata/_custom_type_script = "uid://cvskmb5ygc4fw"
+
+[node name="PlayAnimationAction" type="Node" parent="PassaporteBeehaveTree/SelectorComposite/SequenceComposite2/CooldownDecorator/SequenceComposite" unique_id=1952017640 node_paths=PackedStringArray("animation_player")]
+script = ExtResource("19_0c8vc")
+animation_player = NodePath("../../../../../../AnimationPlayer")
+animation_name = &"dive_attack"
+metadata/_custom_type_script = "uid://5aiqrlyonbxb"
+
+[node name="DelayDecorator" type="Node" parent="PassaporteBeehaveTree/SelectorComposite/SequenceComposite2/CooldownDecorator/SequenceComposite" unique_id=374522940]
+script = ExtResource("19_mnppx")
+wait_time = 0.3
+metadata/_custom_type_script = "uid://dorri1tul8gfx"
+
+[node name="AttackAction" type="Node" parent="PassaporteBeehaveTree/SelectorComposite/SequenceComposite2/CooldownDecorator/SequenceComposite/DelayDecorator" unique_id=654353950]
+script = ExtResource("20_abpj4")
+attack_scene = ExtResource("22_w78sf")
+metadata/_custom_type_script = "uid://wpfn0jjwq6r3"
+
+[node name="SequenceComposite" type="Node" parent="PassaporteBeehaveTree/SelectorComposite" unique_id=386412076]
+script = ExtResource("15_0c8vc")
+metadata/_custom_type_script = "uid://cg016dbe7gs1x"
+
+[node name="TargetIsInRangeCondition" type="Node" parent="PassaporteBeehaveTree/SelectorComposite/SequenceComposite" unique_id=422379570]
+script = ExtResource("16_w78sf")
+metadata/_custom_type_script = "uid://btprtn1g4f0od"
+
+[node name="MoveTowardsTargetAction" type="Node" parent="PassaporteBeehaveTree/SelectorComposite/SequenceComposite" unique_id=245721474 node_paths=PackedStringArray("input_component", "navigation_agent")]
+script = ExtResource("18_pai83")
+input_component = NodePath("../../../../InputComponent")
+navigation_enable = true
+navigation_agent = NodePath("../../../../NavigationAgent3D")
+metadata/_custom_type_script = "uid://dmfahxpjyyf01"
+
+[node name="RoamAction" type="Node" parent="PassaporteBeehaveTree/SelectorComposite" unique_id=260096369 node_paths=PackedStringArray("input_component", "navigation_agent")]
+script = ExtResource("26_abpj4")
+input_component = NodePath("../../../InputComponent")
+navigation_enable = true
+navigation_agent = NodePath("../../../NavigationAgent3D")
+metadata/_custom_type_script = "uid://chs4o6431t6sh"

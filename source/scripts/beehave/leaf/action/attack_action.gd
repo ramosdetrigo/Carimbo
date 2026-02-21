@@ -14,16 +14,12 @@ func tick(actor: Node, blackboard: Blackboard) -> int:
 	attack.global_position = (actor as Node3D).global_position + attack_spawn_offset
 	if not is_projectile: return SUCCESS
 
-	var target: Node3D = _get_target(blackboard)
+	var target: Node3D = blackboard.get_value(BeehaveConsts.BlackboardKeys.TARGET, null)
 	if not target: return FAILURE
+
 	var direction: Vector3 = (actor as Node3D).global_position.direction_to(target.global_position)
 	attack.look_at(attack.global_position + direction)
 	return SUCCESS
-
-
-func _get_target(blackboard: Blackboard) -> Node3D:
-	return blackboard.get_value(BeehaveConsts.BlackboardKeys.TARGET,
-		null, str(blackboard.get_instance_id()))
 
 
 func _get_configuration_warnings() -> PackedStringArray:

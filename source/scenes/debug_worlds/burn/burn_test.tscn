@@ -4,15 +4,18 @@
 [ext_resource type="Script" uid="uid://biqucisx0w1aa" path="res://scenes/debug_worlds/burn/burn_test.gd" id="1_o3ac7"]
 [ext_resource type="Shader" uid="uid://dl6ampid6rth6" path="res://scenes/components/stamped_animated_sprite/shaded_animated_sprite_3d.gdshader" id="2_o3ac7"]
 [ext_resource type="Texture2D" uid="uid://ch1fj0j2vc2r1" path="res://resources/burn_noise_texture.tres" id="3_nmjr0"]
-[ext_resource type="Texture2D" uid="uid://dn1mdtvrnxb6v" path="res://assets/tmp/paper_mario.png" id="4_tqdyu"]
 [ext_resource type="Texture2D" uid="uid://o34vnik8cwo4" path="res://assets/textures/paper/Paper003_1K-JPG_NormalGL.jpg" id="5_dp1wj"]
 [ext_resource type="Texture2D" uid="uid://dkbujjnpxwia0" path="res://assets/textures/paper/Paper003_1K-JPG_Roughness.jpg" id="6_8dgia"]
 [ext_resource type="Texture2D" uid="uid://c08g6e0pfttkp" path="res://assets/textures/player/idle.png" id="8_o3ac7"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_nmjr0"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_dp1wj"]
+atlas = ExtResource("8_o3ac7")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_6nrcb"]
 viewport_path = NodePath("StampViewport")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_tqdyu"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o3ac7"]
 resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("2_o3ac7")
@@ -22,8 +25,8 @@ shader_parameter/specular = 0.249999994412
 shader_parameter/texture_normal = ExtResource("5_dp1wj")
 shader_parameter/normal_scale = 1.5600008340999985
 shader_parameter/albedo = Color(1, 1, 1, 1)
-shader_parameter/texture_albedo = ExtResource("4_tqdyu")
-shader_parameter/texture_carimbo = SubResource("ViewportTexture_nmjr0")
+shader_parameter/texture_albedo = SubResource("AtlasTexture_dp1wj")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_6nrcb")
 shader_parameter/carimbo_glow_intensity = 7.0000001043084
 shader_parameter/burn_texture = ExtResource("3_nmjr0")
 shader_parameter/burn_amount = 0.0
@@ -31,10 +34,6 @@ shader_parameter/burn_size = 0.150000007125
 shader_parameter/burn_smoothness = 0.1330000063175
 shader_parameter/burn_glow_color = Color(1, 0.19607843, 0, 1)
 shader_parameter/burn_glow_intensity = 10.0
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dp1wj"]
-atlas = ExtResource("8_o3ac7")
-region = Rect2(0, 0, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8dgia"]
 atlas = ExtResource("8_o3ac7")
@@ -72,7 +71,7 @@ region = Rect2(2048, 0, 256, 256)
 atlas = ExtResource("8_o3ac7")
 region = Rect2(2304, 0, 256, 256)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_y7if3"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_nmjr0"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -122,10 +121,11 @@ transform = Transform3D(1, 0, 0, 0, 0.955952, 0.29352313, 0, -0.29352313, 0.9559
 
 [node name="Mario" parent="." unique_id=1952958561 instance=ExtResource("1_6nrcb")]
 unique_name_in_owner = true
-material_override = SubResource("ShaderMaterial_tqdyu")
-sprite_frames = SubResource("SpriteFrames_y7if3")
+material_override = SubResource("ShaderMaterial_o3ac7")
+sprite_frames = SubResource("SpriteFrames_nmjr0")
 autoplay = "default"
 frame = 0
+frame_progress = 0.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1678090721]
 

@@ -20,14 +20,15 @@
 [ext_resource type="Script" uid="uid://dmfahxpjyyf01" path="res://scripts/beehave/leaf/action/move_towards_target_action.gd" id="18_qfubs"]
 [ext_resource type="Script" uid="uid://cvskmb5ygc4fw" path="res://scripts/beehave/leaf/action/stop_moving_action.gd" id="20_i3grk"]
 [ext_resource type="Script" uid="uid://2qri6rrfv8ui" path="res://addons/beehave/nodes/decorators/cooldown.gd" id="21_c6tnj"]
+[ext_resource type="Script" uid="uid://conlbm78k0yfx" path="res://scripts/beehave/leaf/action/play_sprite_frames_animation_action.gd" id="21_y7snv"]
 [ext_resource type="Script" uid="uid://c5v7wuqn1xvdy" path="res://addons/beehave/nodes/decorators/repeater.gd" id="22_qjr6i"]
 [ext_resource type="Script" uid="uid://wpfn0jjwq6r3" path="res://scripts/beehave/leaf/action/attack_action.gd" id="23_c6tnj"]
 [ext_resource type="Script" uid="uid://dorri1tul8gfx" path="res://addons/beehave/nodes/decorators/delayer.gd" id="23_y7snv"]
 [ext_resource type="Script" uid="uid://chs4o6431t6sh" path="res://scripts/beehave/leaf/action/roam_action.gd" id="24_qjr6i"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_i3grk"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_c6tnj"]
 atlas = ExtResource("5_uqqi4")
-region = Rect2(0, 0, 256, 256)
+region = Rect2(0, 1024, 512, 512)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_u1dib"]
 viewport_path = NodePath("ShadedAnimatedSprite3D/SubViewport")
@@ -42,7 +43,7 @@ shader_parameter/specular = 0.249999994412
 shader_parameter/texture_normal = ExtResource("4_g10rj")
 shader_parameter/normal_scale = 1.5600008340999985
 shader_parameter/albedo = Color(1, 1, 1, 1)
-shader_parameter/texture_albedo = SubResource("AtlasTexture_i3grk")
+shader_parameter/texture_albedo = SubResource("AtlasTexture_c6tnj")
 shader_parameter/texture_carimbo = SubResource("ViewportTexture_u1dib")
 shader_parameter/carimbo_glow_intensity = 0.0
 shader_parameter/burn_texture = ExtResource("4_8gtkm")
@@ -52,25 +53,84 @@ shader_parameter/burn_smoothness = 0.1330000063175
 shader_parameter/burn_glow_color = Color(1, 0.32, 0, 1)
 shader_parameter/burn_glow_intensity = 10.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fg7qw"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_y7snv"]
 atlas = ExtResource("5_uqqi4")
-region = Rect2(256, 0, 256, 256)
+region = Rect2(0, 2048, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v7hf8"]
+atlas = ExtResource("5_uqqi4")
+region = Rect2(0, 1536, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_24mnh"]
+atlas = ExtResource("5_uqqi4")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0teup"]
+atlas = ExtResource("5_uqqi4")
+region = Rect2(512, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cs4ho"]
+atlas = ExtResource("5_uqqi4")
+region = Rect2(512, 1024, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jsgmn"]
+atlas = ExtResource("5_uqqi4")
+region = Rect2(0, 512, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7m3rs"]
+atlas = ExtResource("5_uqqi4")
+region = Rect2(512, 512, 512, 512)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u1dib"]
 animations = [{
 "frames": [{
-"duration": 0.5,
-"texture": SubResource("AtlasTexture_i3grk")
-}, {
-"duration": 1.5,
-"texture": SubResource("AtlasTexture_fg7qw")
-}, {
-"duration": 0.5,
-"texture": SubResource("AtlasTexture_i3grk")
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y7snv")
 }],
-"loop": false,
-"name": &"shoot",
+"loop": true,
+"name": &"death",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v7hf8")
+}],
+"loop": true,
+"name": &"hit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_24mnh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0teup")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c6tnj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cs4ho")
+}],
+"loop": true,
+"name": &"shoot",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jsgmn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7m3rs")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 6.0
 }]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_porrh"]
@@ -85,7 +145,6 @@ metadata/_custom_type_script = "uid://cg1dswyw2p1op"
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1251093907]
 avoidance_enabled = true
 radius = 2.5
-debug_enabled = true
 debug_use_custom = true
 debug_path_custom_color = Color(0, 0.76315594, 0.38502556, 1)
 
@@ -94,9 +153,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 material_override = SubResource("ShaderMaterial_qjr6i")
 billboard = 2
 sprite_frames = SubResource("SpriteFrames_u1dib")
-animation = &"shoot"
-frame = 2
-frame_progress = 1.0
+animation = &"death"
+autoplay = "idle"
 script = ExtResource("3_0kxu0")
 stamp_viewport = NodePath("SubViewport")
 metadata/_custom_type_script = "uid://ctmgj3s2w7dsb"
@@ -156,7 +214,7 @@ shape = SubResource("CapsuleShape3D_porrh")
 [node name="BoletoBeehaveTree" type="Node" parent="." unique_id=289134762 node_paths=PackedStringArray("blackboard", "actor")]
 script = ExtResource("13_ex3sn")
 actor_node_path = NodePath("..")
-blackboard = NodePath("@Node@18813")
+blackboard = NodePath("@Node@24745")
 actor = NodePath("..")
 metadata/_custom_type_script = "uid://bb0t2ovl7wifo"
 
@@ -164,61 +222,93 @@ metadata/_custom_type_script = "uid://bb0t2ovl7wifo"
 script = ExtResource("15_0kxu0")
 metadata/_custom_type_script = "uid://8hn4kne15ac5"
 
-[node name="SequenceComposite" type="Node" parent="BoletoBeehaveTree/SelectorComposite" unique_id=170119672]
+[node name="StopAndShoot" type="Node" parent="BoletoBeehaveTree/SelectorComposite" unique_id=170119672]
 script = ExtResource("14_46xen")
 metadata/_custom_type_script = "uid://cg016dbe7gs1x"
 
-[node name="TargetIsInRangeCondition" type="Node" parent="BoletoBeehaveTree/SelectorComposite/SequenceComposite" unique_id=1498899931]
+[node name="TargetIsInRangeCondition" type="Node" parent="BoletoBeehaveTree/SelectorComposite/StopAndShoot" unique_id=1498899931]
 script = ExtResource("17_qfubs")
 view_range = 8.0
 metadata/_custom_type_script = "uid://btprtn1g4f0od"
 
-[node name="StopMovingAction" type="Node" parent="BoletoBeehaveTree/SelectorComposite/SequenceComposite" unique_id=1726075735 node_paths=PackedStringArray("input_component")]
+[node name="PlaySpriteFramesAnimationAction" type="Node" parent="BoletoBeehaveTree/SelectorComposite/StopAndShoot" unique_id=624366686 node_paths=PackedStringArray("animated_sprite")]
+script = ExtResource("21_y7snv")
+animated_sprite = NodePath("../../../../ShadedAnimatedSprite3D")
+animation_name = &"idle"
+metadata/_custom_type_script = "uid://conlbm78k0yfx"
+
+[node name="StopMovingAction" type="Node" parent="BoletoBeehaveTree/SelectorComposite/StopAndShoot" unique_id=1726075735 node_paths=PackedStringArray("input_component")]
 script = ExtResource("20_i3grk")
 input_component = NodePath("../../../../InputComponent")
 metadata/_custom_type_script = "uid://cvskmb5ygc4fw"
 
-[node name="CooldownDecorator" type="Node" parent="BoletoBeehaveTree/SelectorComposite/SequenceComposite" unique_id=1800641658]
+[node name="CooldownDecorator" type="Node" parent="BoletoBeehaveTree/SelectorComposite/StopAndShoot" unique_id=1800641658]
 script = ExtResource("21_c6tnj")
 wait_time = 0.5
 metadata/_custom_type_script = "uid://2qri6rrfv8ui"
 
-[node name="RepeaterDecorator" type="Node" parent="BoletoBeehaveTree/SelectorComposite/SequenceComposite/CooldownDecorator" unique_id=419108725]
+[node name="RepeaterDecorator" type="Node" parent="BoletoBeehaveTree/SelectorComposite/StopAndShoot/CooldownDecorator" unique_id=419108725]
 script = ExtResource("22_qjr6i")
 repetitions = 3
 metadata/_custom_type_script = "uid://c5v7wuqn1xvdy"
 
-[node name="DelayDecorator" type="Node" parent="BoletoBeehaveTree/SelectorComposite/SequenceComposite/CooldownDecorator/RepeaterDecorator" unique_id=1299458683]
+[node name="DelayDecorator" type="Node" parent="BoletoBeehaveTree/SelectorComposite/StopAndShoot/CooldownDecorator/RepeaterDecorator" unique_id=1299458683]
 script = ExtResource("23_y7snv")
 wait_time = 0.5
 metadata/_custom_type_script = "uid://dorri1tul8gfx"
 
-[node name="AttackAction" type="Node" parent="BoletoBeehaveTree/SelectorComposite/SequenceComposite/CooldownDecorator/RepeaterDecorator/DelayDecorator" unique_id=1991564007]
+[node name="Shoot" type="Node" parent="BoletoBeehaveTree/SelectorComposite/StopAndShoot/CooldownDecorator/RepeaterDecorator/DelayDecorator" unique_id=1181996348]
+script = ExtResource("14_46xen")
+metadata/_custom_type_script = "uid://cg016dbe7gs1x"
+
+[node name="PlaySpriteFramesAnimationAction" type="Node" parent="BoletoBeehaveTree/SelectorComposite/StopAndShoot/CooldownDecorator/RepeaterDecorator/DelayDecorator/Shoot" unique_id=532859901 node_paths=PackedStringArray("animated_sprite")]
+script = ExtResource("21_y7snv")
+animated_sprite = NodePath("../../../../../../../../ShadedAnimatedSprite3D")
+animation_name = &"shoot"
+metadata/_custom_type_script = "uid://conlbm78k0yfx"
+
+[node name="AttackAction" type="Node" parent="BoletoBeehaveTree/SelectorComposite/StopAndShoot/CooldownDecorator/RepeaterDecorator/DelayDecorator/Shoot" unique_id=1991564007]
 script = ExtResource("23_c6tnj")
 attack_scene = ExtResource("15_y7snv")
 attack_spawn_offset = Vector3(0, 1, 0)
 is_projectile = true
 metadata/_custom_type_script = "uid://wpfn0jjwq6r3"
 
-[node name="SequenceComposite2" type="Node" parent="BoletoBeehaveTree/SelectorComposite" unique_id=2104183788]
+[node name="MoveTowardsTarget" type="Node" parent="BoletoBeehaveTree/SelectorComposite" unique_id=2104183788]
 script = ExtResource("14_46xen")
 metadata/_custom_type_script = "uid://cg016dbe7gs1x"
 
-[node name="TargetIsInRangeCondition" type="Node" parent="BoletoBeehaveTree/SelectorComposite/SequenceComposite2" unique_id=440855470]
+[node name="TargetIsInRangeCondition" type="Node" parent="BoletoBeehaveTree/SelectorComposite/MoveTowardsTarget" unique_id=440855470]
 script = ExtResource("17_qfubs")
 view_range = 12.0
 metadata/_custom_type_script = "uid://btprtn1g4f0od"
 
-[node name="MoveTowardsTargetAction" type="Node" parent="BoletoBeehaveTree/SelectorComposite/SequenceComposite2" unique_id=57519011 node_paths=PackedStringArray("input_component", "navigation_agent")]
+[node name="PlaySpriteFramesAnimationAction" type="Node" parent="BoletoBeehaveTree/SelectorComposite/MoveTowardsTarget" unique_id=1035740580 node_paths=PackedStringArray("animated_sprite")]
+script = ExtResource("21_y7snv")
+animated_sprite = NodePath("../../../../ShadedAnimatedSprite3D")
+animation_name = &"walk"
+metadata/_custom_type_script = "uid://conlbm78k0yfx"
+
+[node name="MoveTowardsTargetAction" type="Node" parent="BoletoBeehaveTree/SelectorComposite/MoveTowardsTarget" unique_id=57519011 node_paths=PackedStringArray("input_component", "navigation_agent")]
 script = ExtResource("18_qfubs")
 input_component = NodePath("../../../../InputComponent")
 navigation_enable = true
 navigation_agent = NodePath("../../../../NavigationAgent3D")
 metadata/_custom_type_script = "uid://dmfahxpjyyf01"
 
-[node name="RoamAction" type="Node" parent="BoletoBeehaveTree/SelectorComposite" unique_id=1299651214 node_paths=PackedStringArray("input_component", "navigation_agent")]
+[node name="Roam" type="Node" parent="BoletoBeehaveTree/SelectorComposite" unique_id=620922268]
+script = ExtResource("14_46xen")
+metadata/_custom_type_script = "uid://cg016dbe7gs1x"
+
+[node name="PlaySpriteFramesAnimationAction" type="Node" parent="BoletoBeehaveTree/SelectorComposite/Roam" unique_id=1598319271 node_paths=PackedStringArray("animated_sprite")]
+script = ExtResource("21_y7snv")
+animated_sprite = NodePath("../../../../ShadedAnimatedSprite3D")
+animation_name = &"walk"
+metadata/_custom_type_script = "uid://conlbm78k0yfx"
+
+[node name="RoamAction" type="Node" parent="BoletoBeehaveTree/SelectorComposite/Roam" unique_id=1299651214 node_paths=PackedStringArray("input_component", "navigation_agent")]
 script = ExtResource("24_qjr6i")
-input_component = NodePath("../../../InputComponent")
+input_component = NodePath("../../../../InputComponent")
 navigation_enable = true
-navigation_agent = NodePath("../../../NavigationAgent3D")
+navigation_agent = NodePath("../../../../NavigationAgent3D")
 metadata/_custom_type_script = "uid://chs4o6431t6sh"

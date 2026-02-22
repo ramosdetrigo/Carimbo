@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dwevc0sgyx4os"]
+
+[ext_resource type="Script" uid="uid://iji7e78ikilx" path="res://scripts/attack_system/attack_scene.gd" id="1_4tcaw"]
+[ext_resource type="Script" uid="uid://cuoa1ubyh5d06" path="res://scripts/attack_system/attack_info.gd" id="2_tm3st"]
+[ext_resource type="Texture2D" uid="uid://qjkhq2b4id7p" path="res://assets/textures/enemies/boleto/coin.png" id="3_6vuk0"]
+[ext_resource type="Script" uid="uid://fjgad71t0sd4" path="res://scripts/attack_system/hurtbox_component.gd" id="4_tm3st"]
+
+[sub_resource type="Resource" id="Resource_7yvkn"]
+script = ExtResource("2_tm3st")
+stamp_texture = ExtResource("3_6vuk0")
+flags = 1
+metadata/_custom_type_script = "uid://cuoa1ubyh5d06"
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_6vuk0"]
+radius = 1.5
+
+[node name="SimpleAttack" type="Node3D" unique_id=1595268403 node_paths=PackedStringArray("hurtbox_component")]
+script = ExtResource("1_4tcaw")
+attack_info = SubResource("Resource_7yvkn")
+hurtbox_component = NodePath("HurtboxComponent")
+metadata/_custom_type_script = "uid://iji7e78ikilx"
+
+[node name="HurtboxComponent" type="Area3D" parent="." unique_id=1523860770]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("4_tm3st")
+should_hit_bodys = false
+metadata/_custom_type_script = "uid://fjgad71t0sd4"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HurtboxComponent" unique_id=1103816115]
+shape = SubResource("SphereShape3D_6vuk0")

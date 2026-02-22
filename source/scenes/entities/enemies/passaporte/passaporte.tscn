@@ -123,13 +123,11 @@ animations = [{
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3c1s0"]
 
-[node name="Passaporte" type="CharacterBody3D" unique_id=1005230644 node_paths=PackedStringArray("beehave_tree", "stampable_sprite", "stats_component", "hitbox_component")]
+[node name="Passaporte" type="CharacterBody3D" unique_id=1005230644 node_paths=PackedStringArray("beehave_tree", "stampable_sprite")]
 collision_layer = 16
 script = ExtResource("1_jscit")
 beehave_tree = NodePath("PassaporteBeehaveTree")
 stampable_sprite = NodePath("ShadedAnimatedSprite3D")
-stats_component = NodePath("StatsComponent")
-hitbox_component = NodePath("HitboxComponent")
 metadata/_custom_type_script = "uid://cg1dswyw2p1op"
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1055487225]
@@ -164,10 +162,12 @@ size = Vector2i(256, 256)
 render_target_clear_mode = 2
 render_target_update_mode = 1
 
-[node name="HitboxComponent" type="Area3D" parent="." unique_id=1100271751]
+[node name="HitboxComponent" type="Area3D" parent="." unique_id=1100271751 node_paths=PackedStringArray("stampable_sprite")]
 collision_layer = 4
 collision_mask = 0
 script = ExtResource("3_63u2k")
+connect_signals_enable = true
+stampable_sprite = NodePath("../ShadedAnimatedSprite3D")
 metadata/_custom_type_script = "uid://baffaklkbk27f"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="HitboxComponent" unique_id=1465685642]
@@ -184,11 +184,14 @@ metadata/_custom_type_script = "uid://c6tbcxlt1e2hy"
 script = ExtResource("5_qi4g3")
 metadata/_custom_type_script = "uid://bfied8f76qv1k"
 
-[node name="StatsComponent" type="Node" parent="." unique_id=456641389 node_paths=PackedStringArray("hitbox")]
+[node name="StatsComponent" type="Node" parent="." unique_id=456641389 node_paths=PackedStringArray("input_component", "hitbox_component", "beehave_tree")]
 script = ExtResource("6_iodyl")
-hitbox = NodePath("../HitboxComponent")
 max_health = 4.0
 is_flying = true
+connect_signals_enable = true
+input_component = NodePath("../InputComponent")
+hitbox_component = NodePath("../HitboxComponent")
+beehave_tree = NodePath("../PassaporteBeehaveTree")
 metadata/_custom_type_script = "uid://cqxuelwl2k4bg"
 
 [node name="DebugLabel3D" type="Label3D" parent="." unique_id=1695865491 node_paths=PackedStringArray("stats_component")]

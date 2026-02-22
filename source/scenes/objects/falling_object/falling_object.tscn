@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://cci12ktyrx42t"]
+
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://assets/tmp/icon.svg" id="1_0wxl7"]
+[ext_resource type="Script" uid="uid://duow468xp3x63" path="res://scenes/objects/falling_object/falling_object.gd" id="1_2gcsc"]
+[ext_resource type="PackedScene" uid="uid://kic2sv51e8jj" path="res://scenes/objects/attack_explosion.tscn" id="2_31anu"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_2gcsc"]
+radius = 0.9463208
+
+[node name="FallingObject" type="RigidBody3D" unique_id=338417314]
+collision_layer = 0
+contact_monitor = true
+max_contacts_reported = 2
+script = ExtResource("1_2gcsc")
+attack_scene = ExtResource("2_31anu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1427847667]
+shape = SubResource("SphereShape3D_2gcsc")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=714539039]
+billboard = 2
+texture = ExtResource("1_0wxl7")
+
+[node name="LifetimeTimer" type="Timer" parent="." unique_id=412070597]
+wait_time = 2.0
+one_shot = true

@@ -2,15 +2,17 @@
 class_name ShadedAnimatedSprite3D
 extends AnimatedSprite3D
 
+const SHADER_STAMPABLE_SPRITE: ShaderMaterial = preload("uid://brb72iyoqsyk6")
+
 signal burned
 
 @export var stamp_viewport: SubViewport:
-	set(v):
-		stamp_viewport = v
-		update_viewport_size()
-		update_configuration_warnings()
+	set(v): stamp_viewport = v; update_viewport_size(); update_configuration_warnings()
 
-@onready var material: ShaderMaterial = self.material_override
+func _init() -> void:
+	if not Engine.is_editor_hint(): return
+	if not material_override: material_override = SHADER_STAMPABLE_SPRITE.duplicate()
+	if not sprite_frames: sprite_frames = SpriteFrames.new()
 
 
 func _ready() -> void:
@@ -48,7 +50,7 @@ func stamp_offset(image: Texture2D, pos: Vector2, size: Vector2) -> void:
 
 ## Atualiza o tamanho do viewport de carimbos de acordo com a animação
 func update_viewport_size() -> void:
-	if not sprite_frames: return
+	if not sprite_frames or not stamp_viewport: return
 	var max_x: int = 256
 	var max_y: int = 256
 
@@ -69,7 +71,7 @@ func update_viewport_size() -> void:
 ## Atualiza a texture no shader de acordo com a animação atual
 func update_shader_anim() -> void:
 	if not material_override: return
-	if not material: material = material_override
+	var material: ShaderMaterial = material_override
 	var curr_frame = sprite_frames.get_frame_texture(animation, frame)
 	material.set_shader_parameter("texture_albedo", curr_frame)
 
@@ -83,10 +85,8 @@ func trigger_burn_fx(burn_time: float = 1.0) -> void:
 	particles.emitting = true
 
 	var burn_tween: Tween = create_tween()
-	burn_tween.tween_method(
-		func(b):
-			material.set_shader_parameter("burn_amount", b)
-	, 0.0, 1.0, burn_time)
+	burn_tween.tween_property(material_override, ^"shader_parameter/burn_amount", 1.0, burn_time
+		).from(0.0)
 	burn_tween.finished.connect(burned.emit)
 
 

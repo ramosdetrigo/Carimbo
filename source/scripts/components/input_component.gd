@@ -27,3 +27,8 @@ func block() -> void:
 
 func unblock() -> void:
 	blocked = false
+
+
+func kill() -> void:
+	set_input_direction(Vector3.ZERO)
+	block()

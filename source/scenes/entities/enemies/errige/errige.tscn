@@ -76,13 +76,11 @@ animations = [{
 radius = 0.95703125
 height = 2.77
 
-[node name="Errige" type="CharacterBody3D" unique_id=1891326732 node_paths=PackedStringArray("beehave_tree", "stampable_sprite", "stats_component", "hitbox_component")]
+[node name="Errige" type="CharacterBody3D" unique_id=1891326732 node_paths=PackedStringArray("beehave_tree", "stampable_sprite")]
 collision_layer = 16
 script = ExtResource("1_trs0h")
 beehave_tree = NodePath("ErrigeBeehaveTree")
 stampable_sprite = NodePath("ShadedAnimatedSprite3D")
-stats_component = NodePath("StatsComponent")
-hitbox_component = NodePath("HitboxComponent")
 metadata/_custom_type_script = "uid://cg1dswyw2p1op"
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=2082853608]
@@ -110,10 +108,13 @@ size = Vector2i(256, 256)
 render_target_clear_mode = 2
 render_target_update_mode = 1
 
-[node name="StatsComponent" type="Node" parent="." unique_id=1685966125 node_paths=PackedStringArray("hitbox")]
+[node name="StatsComponent" type="Node" parent="." unique_id=1685966125 node_paths=PackedStringArray("input_component", "hitbox_component", "beehave_tree")]
 script = ExtResource("2_3psif")
-hitbox = NodePath("../HitboxComponent")
 max_health = 3.0
+connect_signals_enable = true
+input_component = NodePath("../InputComponent")
+hitbox_component = NodePath("../HitboxComponent")
+beehave_tree = NodePath("../ErrigeBeehaveTree")
 metadata/_custom_type_script = "uid://cqxuelwl2k4bg"
 
 [node name="MoveComponent" type="Node" parent="." unique_id=1592426109 node_paths=PackedStringArray("actor", "input_component")]
@@ -136,11 +137,13 @@ script = ExtResource("11_7obxp")
 stats_component = NodePath("../StatsComponent")
 metadata/_custom_type_script = "uid://c15vrenp7llbg"
 
-[node name="HitboxComponent" type="Area3D" parent="." unique_id=783591654]
+[node name="HitboxComponent" type="Area3D" parent="." unique_id=783591654 node_paths=PackedStringArray("stampable_sprite")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 collision_layer = 4
 collision_mask = 0
 script = ExtResource("3_b7hfo")
+connect_signals_enable = true
+stampable_sprite = NodePath("../ShadedAnimatedSprite3D")
 metadata/_custom_type_script = "uid://baffaklkbk27f"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="HitboxComponent" unique_id=1849922377]

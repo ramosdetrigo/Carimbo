@@ -18,7 +18,7 @@
 [ext_resource type="Script" uid="uid://cvskmb5ygc4fw" path="res://scripts/beehave/leaf/action/stop_moving_action.gd" id="16_ce2ch"]
 [ext_resource type="Script" uid="uid://2qri6rrfv8ui" path="res://addons/beehave/nodes/decorators/cooldown.gd" id="16_u6ejr"]
 [ext_resource type="Script" uid="uid://wpfn0jjwq6r3" path="res://scripts/beehave/leaf/action/attack_action.gd" id="17_u6ejr"]
-[ext_resource type="PackedScene" uid="uid://dwevc0sgyx4os" path="res://scenes/objects/weapon/simple_attack.tscn" id="18_37d6u"]
+[ext_resource type="PackedScene" uid="uid://dwevc0sgyx4os" path="res://scenes/objects/attacks/simple_attack.tscn" id="18_37d6u"]
 [ext_resource type="Script" uid="uid://dmfahxpjyyf01" path="res://scripts/beehave/leaf/action/move_towards_target_action.gd" id="18_qbc74"]
 [ext_resource type="Script" uid="uid://chs4o6431t6sh" path="res://scripts/beehave/leaf/action/roam_action.gd" id="19_vhq8i"]
 

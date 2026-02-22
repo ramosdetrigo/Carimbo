@@ -79,6 +79,7 @@ hit={
 3d_physics/layer_3="enemy_hitbox"
 3d_physics/layer_4="player_collision"
 3d_physics/layer_5="enemy_collision"
+3d_physics/layer_6="falling_object"
 
 [physics]
 

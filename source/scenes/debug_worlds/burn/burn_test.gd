@@ -10,6 +10,6 @@ func _on_stamp_button_pressed() -> void:
 
 
 func _on_reset_button_pressed() -> void:
-	%Mario.material.set_shader_parameter("burn_amount", 0.0)
+	%Mario.material_override.set_shader_parameter("burn_amount", 0.0)
 	%Mario.stamp_viewport.render_target_clear_mode = SubViewport.CLEAR_MODE_ONCE
 	%Mario.stamp_viewport.render_target_update_mode = SubViewport.UPDATE_ONCE

@@ -15,13 +15,14 @@
 [ext_resource type="Script" uid="uid://cdr65apsfmy8" path="res://scripts/attack_system/weapon_manager.gd" id="9_albb0"]
 [ext_resource type="Script" uid="uid://bc4ynw03213w5" path="res://scripts/components/player_input_component.gd" id="10_72r7g"]
 [ext_resource type="Script" uid="uid://c15vrenp7llbg" path="res://scripts/debug/debug_label.gd" id="11_0fpak"]
-[ext_resource type="PackedScene" uid="uid://brd2jp1tbh21k" path="res://scenes/objects/weapon/attack_projectile.tscn" id="11_cfbnc"]
+[ext_resource type="PackedScene" uid="uid://brd2jp1tbh21k" path="res://scenes/objects/attacks/attack_projectile.tscn" id="11_cfbnc"]
 [ext_resource type="Script" uid="uid://baffaklkbk27f" path="res://scripts/attack_system/hitbox_component.gd" id="12_cfbnc"]
 [ext_resource type="Script" uid="uid://cqxuelwl2k4bg" path="res://scripts/attack_system/stats_component.gd" id="19_bedty"]
+[ext_resource type="Texture2D" uid="uid://cnh72186tt4jt" path="res://assets/tmp/damage_circle.png" id="19_cfbnc"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_cfbnc"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_bedty"]
 atlas = ExtResource("4_0fpak")
-region = Rect2(2304, 0, 256, 256)
+region = Rect2(0, 0, 256, 256)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_q5p2s"]
 viewport_path = NodePath("ShadedAnimatedSprite3D/SubViewport")
@@ -36,7 +37,7 @@ shader_parameter/specular = 0.249999994412
 shader_parameter/texture_normal = ExtResource("4_cfbnc")
 shader_parameter/normal_scale = 1.5600008340999985
 shader_parameter/albedo = Color(1, 1, 1, 1)
-shader_parameter/texture_albedo = SubResource("AtlasTexture_cfbnc")
+shader_parameter/texture_albedo = SubResource("AtlasTexture_bedty")
 shader_parameter/texture_carimbo = SubResource("ViewportTexture_q5p2s")
 shader_parameter/carimbo_glow_intensity = 0.0
 shader_parameter/burn_texture = ExtResource("3_0fpak")
@@ -45,10 +46,6 @@ shader_parameter/burn_size = 0.150000007125
 shader_parameter/burn_smoothness = 0.1330000063175
 shader_parameter/burn_glow_color = Color(1, 0.32, 0, 1)
 shader_parameter/burn_glow_intensity = 10.0
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bedty"]
-atlas = ExtResource("4_0fpak")
-region = Rect2(0, 0, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oucov"]
 atlas = ExtResource("4_0fpak")
@@ -81,6 +78,10 @@ region = Rect2(1792, 0, 256, 256)
 [sub_resource type="AtlasTexture" id="AtlasTexture_a6gqt"]
 atlas = ExtResource("4_0fpak")
 region = Rect2(2048, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cfbnc"]
+atlas = ExtResource("4_0fpak")
+region = Rect2(2304, 0, 256, 256)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wrelc"]
 animations = [{
@@ -117,7 +118,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 5.0
+"speed": 12.0
 }]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0mkjy"]
@@ -138,7 +139,7 @@ billboard = 2
 sprite_frames = SubResource("SpriteFrames_wrelc")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.1425965
+frame_progress = 0.15569994
 script = ExtResource("7_gke3f")
 stamp_viewport = NodePath("SubViewport")
 metadata/_custom_type_script = "uid://ctmgj3s2w7dsb"
@@ -149,6 +150,10 @@ transparent_bg = true
 size = Vector2i(256, 256)
 render_target_clear_mode = 2
 render_target_update_mode = 1
+
+[node name="WeaponCircle" type="Sprite3D" parent="." unique_id=1463312137]
+axis = 1
+texture = ExtResource("19_cfbnc")
 
 [node name="WeaponManager" type="Node3D" parent="." unique_id=2002537722]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -0.0579077)
@@ -230,7 +235,7 @@ metadata/_custom_type_script = "uid://baffaklkbk27f"
 shape = SubResource("CapsuleShape3D_oucov")
 
 [node name="CameraPivot" type="Node3D" parent="." unique_id=1065541715]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.29, 3.27)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 2.5)
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivot" unique_id=154854567]
 transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 0, 0)

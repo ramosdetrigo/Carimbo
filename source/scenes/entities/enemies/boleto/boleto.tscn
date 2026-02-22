@@ -15,7 +15,7 @@
 [ext_resource type="Script" uid="uid://bb0t2ovl7wifo" path="res://addons/beehave/nodes/beehave_tree.gd" id="13_ex3sn"]
 [ext_resource type="Script" uid="uid://cg016dbe7gs1x" path="res://addons/beehave/nodes/composites/sequence.gd" id="14_46xen"]
 [ext_resource type="Script" uid="uid://8hn4kne15ac5" path="res://addons/beehave/nodes/composites/selector.gd" id="15_0kxu0"]
-[ext_resource type="PackedScene" uid="uid://8gjcppe7ib7d" path="res://scenes/objects/weapon/coin_projectile.tscn" id="15_y7snv"]
+[ext_resource type="PackedScene" uid="uid://8gjcppe7ib7d" path="res://scenes/objects/attacks/coin_projectile.tscn" id="15_y7snv"]
 [ext_resource type="Script" uid="uid://btprtn1g4f0od" path="res://scripts/beehave/leaf/condition/target_is_in_range_condition.gd" id="17_qfubs"]
 [ext_resource type="Script" uid="uid://dmfahxpjyyf01" path="res://scripts/beehave/leaf/action/move_towards_target_action.gd" id="18_qfubs"]
 [ext_resource type="Script" uid="uid://cvskmb5ygc4fw" path="res://scripts/beehave/leaf/action/stop_moving_action.gd" id="20_i3grk"]

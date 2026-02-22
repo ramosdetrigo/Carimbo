@@ -7,12 +7,12 @@
 [ext_resource type="Texture2D" uid="uid://dn1mdtvrnxb6v" path="res://assets/tmp/paper_mario.png" id="4_tqdyu"]
 [ext_resource type="Texture2D" uid="uid://o34vnik8cwo4" path="res://assets/textures/paper/Paper003_1K-JPG_NormalGL.jpg" id="5_dp1wj"]
 [ext_resource type="Texture2D" uid="uid://dkbujjnpxwia0" path="res://assets/textures/paper/Paper003_1K-JPG_Roughness.jpg" id="6_8dgia"]
-[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://assets/tmp/icon.svg" id="7_m56pq"]
+[ext_resource type="Texture2D" uid="uid://c08g6e0pfttkp" path="res://assets/textures/player/idle.png" id="8_o3ac7"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_o3ac7"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_nmjr0"]
 viewport_path = NodePath("StampViewport")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_nmjr0"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tqdyu"]
 resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("2_o3ac7")
@@ -23,7 +23,7 @@ shader_parameter/texture_normal = ExtResource("5_dp1wj")
 shader_parameter/normal_scale = 1.5600008340999985
 shader_parameter/albedo = Color(1, 1, 1, 1)
 shader_parameter/texture_albedo = ExtResource("4_tqdyu")
-shader_parameter/texture_carimbo = SubResource("ViewportTexture_o3ac7")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_nmjr0")
 shader_parameter/carimbo_glow_intensity = 7.0000001043084
 shader_parameter/burn_texture = ExtResource("3_nmjr0")
 shader_parameter/burn_amount = 0.0
@@ -32,19 +32,83 @@ shader_parameter/burn_smoothness = 0.1330000063175
 shader_parameter/burn_glow_color = Color(1, 0.19607843, 0, 1)
 shader_parameter/burn_glow_intensity = 10.0
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_tqdyu"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_dp1wj"]
+atlas = ExtResource("8_o3ac7")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8dgia"]
+atlas = ExtResource("8_o3ac7")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m56pq"]
+atlas = ExtResource("8_o3ac7")
+region = Rect2(512, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sqha4"]
+atlas = ExtResource("8_o3ac7")
+region = Rect2(768, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_br403"]
+atlas = ExtResource("8_o3ac7")
+region = Rect2(1024, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_14pgy"]
+atlas = ExtResource("8_o3ac7")
+region = Rect2(1280, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_se2nd"]
+atlas = ExtResource("8_o3ac7")
+region = Rect2(1536, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0xey0"]
+atlas = ExtResource("8_o3ac7")
+region = Rect2(1792, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8yhr"]
+atlas = ExtResource("8_o3ac7")
+region = Rect2(2048, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mrpj0"]
+atlas = ExtResource("8_o3ac7")
+region = Rect2(2304, 0, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y7if3"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_m56pq")
+"texture": SubResource("AtlasTexture_dp1wj")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_tqdyu")
+"texture": SubResource("AtlasTexture_8dgia")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m56pq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sqha4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_br403")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_14pgy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_se2nd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0xey0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l8yhr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mrpj0")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 12.0
 }]
 
 [sub_resource type="Environment" id="Environment_o3ac7"]
@@ -58,8 +122,10 @@ transform = Transform3D(1, 0, 0, 0, 0.955952, 0.29352313, 0, -0.29352313, 0.9559
 
 [node name="Mario" parent="." unique_id=1952958561 instance=ExtResource("1_6nrcb")]
 unique_name_in_owner = true
-material_override = SubResource("ShaderMaterial_nmjr0")
-sprite_frames = SubResource("SpriteFrames_tqdyu")
+material_override = SubResource("ShaderMaterial_tqdyu")
+sprite_frames = SubResource("SpriteFrames_y7if3")
+autoplay = "default"
+frame = 0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1678090721]
 

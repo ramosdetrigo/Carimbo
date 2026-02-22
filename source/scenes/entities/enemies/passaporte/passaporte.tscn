@@ -22,7 +22,7 @@
 [ext_resource type="Script" uid="uid://dorri1tul8gfx" path="res://addons/beehave/nodes/decorators/delayer.gd" id="19_mnppx"]
 [ext_resource type="Script" uid="uid://2qri6rrfv8ui" path="res://addons/beehave/nodes/decorators/cooldown.gd" id="19_pai83"]
 [ext_resource type="Script" uid="uid://wpfn0jjwq6r3" path="res://scripts/beehave/leaf/action/attack_action.gd" id="20_abpj4"]
-[ext_resource type="PackedScene" uid="uid://kic2sv51e8jj" path="res://scenes/objects/attack_explosion.tscn" id="22_w78sf"]
+[ext_resource type="PackedScene" uid="uid://kic2sv51e8jj" path="res://scenes/objects/attacks/attack_explosion.tscn" id="22_w78sf"]
 [ext_resource type="Script" uid="uid://chs4o6431t6sh" path="res://scripts/beehave/leaf/action/roam_action.gd" id="26_abpj4"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_iodyl"]

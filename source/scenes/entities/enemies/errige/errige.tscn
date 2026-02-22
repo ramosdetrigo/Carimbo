@@ -19,7 +19,7 @@
 [ext_resource type="Script" uid="uid://dmfahxpjyyf01" path="res://scripts/beehave/leaf/action/move_towards_target_action.gd" id="15_2r5vq"]
 [ext_resource type="Script" uid="uid://cvskmb5ygc4fw" path="res://scripts/beehave/leaf/action/stop_moving_action.gd" id="17_e2o72"]
 [ext_resource type="Script" uid="uid://wpfn0jjwq6r3" path="res://scripts/beehave/leaf/action/attack_action.gd" id="18_2r5vq"]
-[ext_resource type="PackedScene" uid="uid://kic2sv51e8jj" path="res://scenes/objects/attack_explosion.tscn" id="18_brxvn"]
+[ext_resource type="PackedScene" uid="uid://kic2sv51e8jj" path="res://scenes/objects/attacks/attack_explosion.tscn" id="18_brxvn"]
 [ext_resource type="Script" uid="uid://docm6x45208x4" path="res://scripts/beehave/leaf/action/play_particle_action.gd" id="18_dbcxx"]
 [ext_resource type="Script" uid="uid://2qri6rrfv8ui" path="res://addons/beehave/nodes/decorators/cooldown.gd" id="18_p3gvl"]
 [ext_resource type="PackedScene" uid="uid://68uyk4amv4a6" path="res://scenes/particles/puff.tscn" id="19_p3gvl"]

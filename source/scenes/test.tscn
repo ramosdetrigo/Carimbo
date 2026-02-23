@@ -29,6 +29,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uacia"]
 resource_local_to_scene = true
@@ -66,6 +67,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ghpyy"]
 resource_local_to_scene = true
@@ -103,6 +105,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ff6ho"]
 resource_local_to_scene = true
@@ -140,6 +143,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xrtyr"]
 resource_local_to_scene = true
@@ -177,6 +181,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_n74k2"]
 resource_local_to_scene = true
@@ -214,6 +219,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5f8cm"]
 resource_local_to_scene = true
@@ -251,6 +257,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_j7bvy"]
 resource_local_to_scene = true
@@ -288,6 +295,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gsk6d"]
 resource_local_to_scene = true
@@ -325,6 +333,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_75pfo"]
 resource_local_to_scene = true
@@ -362,6 +371,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5civd"]
 resource_local_to_scene = true
@@ -399,6 +409,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_p8c7m"]
 resource_local_to_scene = true
@@ -436,6 +447,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_q6ayx"]
 resource_local_to_scene = true
@@ -473,6 +485,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_emonu"]
 resource_local_to_scene = true
@@ -510,6 +523,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_376r3"]
 resource_local_to_scene = true
@@ -547,6 +561,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cgmg2"]
 resource_local_to_scene = true
@@ -584,6 +599,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1urli"]
 resource_local_to_scene = true
@@ -621,6 +637,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8nvs4"]
 resource_local_to_scene = true
@@ -658,6 +675,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_eixnv"]
 resource_local_to_scene = true
@@ -695,6 +713,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vqdru"]
 resource_local_to_scene = true
@@ -732,6 +751,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gwri7"]
 resource_local_to_scene = true
@@ -769,6 +789,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tdgre"]
 resource_local_to_scene = true
@@ -806,6 +827,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qfy4l"]
 resource_local_to_scene = true
@@ -843,6 +865,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3w526"]
 resource_local_to_scene = true
@@ -880,6 +903,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g2gmo"]
 resource_local_to_scene = true
@@ -917,6 +941,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nwu0k"]
 resource_local_to_scene = true
@@ -954,6 +979,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_itbbc"]
 resource_local_to_scene = true
@@ -991,6 +1017,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vs3tm"]
 resource_local_to_scene = true
@@ -1028,6 +1055,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6rksj"]
 resource_local_to_scene = true
@@ -1065,6 +1093,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mervl"]
 resource_local_to_scene = true
@@ -1102,6 +1131,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8o50k"]
 resource_local_to_scene = true
@@ -1139,6 +1169,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wv7sc"]
 resource_local_to_scene = true
@@ -1176,6 +1207,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vwa82"]
 resource_local_to_scene = true
@@ -1213,6 +1245,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_b65qk"]
 resource_local_to_scene = true
@@ -1250,6 +1283,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_h5c55"]
 resource_local_to_scene = true
@@ -1287,6 +1321,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_83c18"]
 resource_local_to_scene = true
@@ -1324,6 +1359,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_f81g6"]
 resource_local_to_scene = true
@@ -1361,6 +1397,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_32c8b"]
 resource_local_to_scene = true
@@ -1398,6 +1435,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_l1phw"]
 resource_local_to_scene = true
@@ -1435,6 +1473,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xred0"]
 resource_local_to_scene = true
@@ -1472,6 +1511,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gow5c"]
 resource_local_to_scene = true
@@ -1509,6 +1549,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yj8m3"]
 resource_local_to_scene = true
@@ -1546,6 +1587,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bg6ob"]
 resource_local_to_scene = true
@@ -1583,6 +1625,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jonjh"]
 resource_local_to_scene = true
@@ -1620,6 +1663,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_okn2c"]
 resource_local_to_scene = true
@@ -1657,6 +1701,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xjfkh"]
 resource_local_to_scene = true
@@ -1694,6 +1739,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_knsa6"]
 resource_local_to_scene = true
@@ -1731,6 +1777,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_q881y"]
 resource_local_to_scene = true
@@ -1768,6 +1815,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qft1g"]
 resource_local_to_scene = true
@@ -1805,6 +1853,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3yvdh"]
 resource_local_to_scene = true
@@ -1842,6 +1891,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dkcng"]
 resource_local_to_scene = true
@@ -1879,6 +1929,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bsstp"]
 resource_local_to_scene = true
@@ -1916,6 +1967,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_frg8x"]
 resource_local_to_scene = true
@@ -1953,6 +2005,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dtp80"]
 resource_local_to_scene = true
@@ -1990,6 +2043,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2teej"]
 resource_local_to_scene = true
@@ -2027,6 +2081,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_00hxb"]
 resource_local_to_scene = true
@@ -2064,6 +2119,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_d4844"]
 resource_local_to_scene = true
@@ -2101,6 +2157,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_i8lq6"]
 resource_local_to_scene = true
@@ -2138,6 +2195,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_v0gmd"]
 resource_local_to_scene = true
@@ -2175,6 +2233,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_i11e8"]
 resource_local_to_scene = true
@@ -2212,6 +2271,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bg2i4"]
 resource_local_to_scene = true
@@ -2249,6 +2309,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xef4m"]
 resource_local_to_scene = true
@@ -2286,6 +2347,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xqrkn"]
 resource_local_to_scene = true
@@ -2323,6 +2385,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u6kjn"]
 resource_local_to_scene = true
@@ -2360,6 +2423,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mi5y0"]
 resource_local_to_scene = true
@@ -2397,6 +2461,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2ti87"]
 resource_local_to_scene = true
@@ -2434,6 +2499,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vpvki"]
 resource_local_to_scene = true
@@ -2471,6 +2537,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6y1g5"]
 resource_local_to_scene = true
@@ -2508,6 +2575,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vdai6"]
 resource_local_to_scene = true
@@ -2545,6 +2613,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7m5pw"]
 resource_local_to_scene = true
@@ -2582,6 +2651,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s20p5"]
 resource_local_to_scene = true
@@ -2619,6 +2689,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nf2iw"]
 resource_local_to_scene = true
@@ -2656,6 +2727,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4hmh0"]
 resource_local_to_scene = true
@@ -2693,6 +2765,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_h6um1"]
 resource_local_to_scene = true
@@ -2730,6 +2803,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fcsrr"]
 resource_local_to_scene = true
@@ -2767,6 +2841,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bbb1p"]
 resource_local_to_scene = true
@@ -2804,6 +2879,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nnpml"]
 resource_local_to_scene = true
@@ -2841,6 +2917,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7p2p0"]
 resource_local_to_scene = true
@@ -2878,6 +2955,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ynppm"]
 resource_local_to_scene = true
@@ -2915,6 +2993,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uylgt"]
 resource_local_to_scene = true
@@ -2952,6 +3031,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mceuq"]
 resource_local_to_scene = true
@@ -2989,6 +3069,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_eewy4"]
 resource_local_to_scene = true
@@ -3026,6 +3107,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_huq38"]
 resource_local_to_scene = true
@@ -3063,6 +3145,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1oosa"]
 resource_local_to_scene = true
@@ -3100,6 +3183,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ij8yx"]
 resource_local_to_scene = true
@@ -3137,6 +3221,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_l1g8a"]
 resource_local_to_scene = true
@@ -3174,6 +3259,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g8vip"]
 resource_local_to_scene = true
@@ -3211,6 +3297,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ev3kv"]
 resource_local_to_scene = true
@@ -3248,6 +3335,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qwvrt"]
 resource_local_to_scene = true
@@ -3285,6 +3373,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1yose"]
 resource_local_to_scene = true
@@ -3322,6 +3411,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_eh24m"]
 resource_local_to_scene = true
@@ -3359,6 +3449,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yo58f"]
 resource_local_to_scene = true
@@ -3396,6 +3487,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gqmxr"]
 resource_local_to_scene = true
@@ -3433,6 +3525,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_66411"]
 resource_local_to_scene = true
@@ -3470,6 +3563,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bu7yf"]
 resource_local_to_scene = true
@@ -3507,6 +3601,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_i1nb3"]
 resource_local_to_scene = true
@@ -3544,6 +3639,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8lk47"]
 resource_local_to_scene = true
@@ -3581,6 +3677,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_v4in8"]
 resource_local_to_scene = true
@@ -3618,6 +3715,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_l71pi"]
 resource_local_to_scene = true
@@ -3655,6 +3753,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hl3h0"]
 resource_local_to_scene = true
@@ -3692,6 +3791,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2awfq"]
 resource_local_to_scene = true
@@ -3729,6 +3829,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ihaxp"]
 resource_local_to_scene = true
@@ -3766,6 +3867,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8jd5k"]
 resource_local_to_scene = true
@@ -3803,6 +3905,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qlfam"]
 resource_local_to_scene = true
@@ -3840,6 +3943,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_w88dy"]
 resource_local_to_scene = true
@@ -3877,6 +3981,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uiedu"]
 resource_local_to_scene = true
@@ -3914,6 +4019,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yd2i0"]
 resource_local_to_scene = true
@@ -3951,6 +4057,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0j4nj"]
 resource_local_to_scene = true
@@ -3988,6 +4095,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xhy3e"]
 resource_local_to_scene = true
@@ -4025,6 +4133,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0xj25"]
 resource_local_to_scene = true
@@ -4062,6 +4171,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_va8gx"]
 resource_local_to_scene = true
@@ -4099,6 +4209,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_j6tf6"]
 resource_local_to_scene = true
@@ -4136,6 +4247,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4emmt"]
 resource_local_to_scene = true
@@ -4173,6 +4285,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4pgdr"]
 resource_local_to_scene = true
@@ -4210,6 +4323,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_k2ui2"]
 resource_local_to_scene = true
@@ -4247,6 +4361,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xxkh6"]
 resource_local_to_scene = true
@@ -4284,6 +4399,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_53esx"]
 resource_local_to_scene = true
@@ -4321,6 +4437,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ah38x"]
 resource_local_to_scene = true
@@ -4358,6 +4475,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_iebrn"]
 resource_local_to_scene = true
@@ -4395,6 +4513,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3bwxl"]
 resource_local_to_scene = true
@@ -4432,6 +4551,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ucsgu"]
 resource_local_to_scene = true
@@ -4469,6 +4589,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pcg20"]
 resource_local_to_scene = true
@@ -4506,6 +4627,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_v1sjc"]
 resource_local_to_scene = true
@@ -4543,6 +4665,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mfspy"]
 resource_local_to_scene = true
@@ -4580,6 +4703,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nh7bs"]
 resource_local_to_scene = true
@@ -4617,6 +4741,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gpnjr"]
 resource_local_to_scene = true
@@ -4654,6 +4779,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u2fga"]
 resource_local_to_scene = true
@@ -4691,6 +4817,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_d1iix"]
 resource_local_to_scene = true
@@ -4728,6 +4855,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qs555"]
 resource_local_to_scene = true
@@ -4765,6 +4893,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mjtfa"]
 resource_local_to_scene = true
@@ -4802,6 +4931,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_04ico"]
 resource_local_to_scene = true
@@ -4839,6 +4969,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wh4b0"]
 resource_local_to_scene = true
@@ -4876,6 +5007,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ehali"]
 resource_local_to_scene = true
@@ -4913,6 +5045,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_f3hgd"]
 resource_local_to_scene = true
@@ -4950,6 +5083,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qt7p3"]
 resource_local_to_scene = true
@@ -4987,6 +5121,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_548un"]
 resource_local_to_scene = true
@@ -5024,6 +5159,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_joyna"]
 resource_local_to_scene = true
@@ -5061,6 +5197,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dth8e"]
 resource_local_to_scene = true
@@ -5098,6 +5235,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_o7rsj"]
 resource_local_to_scene = true
@@ -5135,6 +5273,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4cxa6"]
 resource_local_to_scene = true
@@ -5172,6 +5311,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mf2y3"]
 resource_local_to_scene = true
@@ -5209,6 +5349,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_juxhr"]
 resource_local_to_scene = true
@@ -5246,6 +5387,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_d4ic8"]
 resource_local_to_scene = true
@@ -5283,6 +5425,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5eeyf"]
 resource_local_to_scene = true
@@ -5320,6 +5463,7 @@ shader_parameter/burn_size = 0.0
 shader_parameter/burn_smoothness = 0.0
 shader_parameter/burn_glow_color = Color(1, 0.032, 0, 1)
 shader_parameter/burn_glow_intensity = 0.0
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tsgt3"]
 resource_local_to_scene = true

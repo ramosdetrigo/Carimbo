@@ -7,7 +7,7 @@ const SHADER_STAMPABLE_SPRITE: ShaderMaterial = preload("uid://brb72iyoqsyk6")
 signal burned
 
 @export var stamp_viewport: SubViewport:
-	set(v): stamp_viewport = v; update_viewport_size(); update_configuration_warnings()
+	set(v): stamp_viewport = v; _update_viewport_size(); update_configuration_warnings()
 
 func _init() -> void:
 	if not Engine.is_editor_hint(): return
@@ -16,9 +16,9 @@ func _init() -> void:
 
 
 func _ready() -> void:
-	frame_changed.connect(update_shader_anim)
-	update_viewport_size()
-	update_shader_anim()
+	frame_changed.connect(_update_shader_anim)
+	_update_viewport_size()
+	_update_shader_anim()
 
 
 ## "Carimba" uma imagem em algum lugar aleatório da imagem
@@ -49,7 +49,7 @@ func stamp_offset(image: Texture2D, pos: Vector2, size: Vector2) -> void:
 	CONNECT_ONE_SHOT)
 
 ## Atualiza o tamanho do viewport de carimbos de acordo com a animação
-func update_viewport_size() -> void:
+func _update_viewport_size() -> void:
 	if not sprite_frames or not stamp_viewport: return
 	var max_x: int = 256
 	var max_y: int = 256
@@ -69,10 +69,27 @@ func update_viewport_size() -> void:
 
 
 ## Atualiza a texture no shader de acordo com a animação atual
-func update_shader_anim() -> void:
+func _update_shader_anim() -> void:
 	if not material_override: return
 	var material: ShaderMaterial = material_override
+	
 	var curr_frame = sprite_frames.get_frame_texture(animation, frame)
+	# Caso onde o frame atual é um parte de um atlas
+	if curr_frame is AtlasTexture:
+		# Atlas do frame atual
+		var atlas: Texture2D = curr_frame.atlas
+		var atlas_size = atlas.get_size()
+		
+		# Posição e tamanho normalizados do atlas
+		var curr_rect = curr_frame.region
+		var curr_pos = curr_rect.position / atlas_size
+		var curr_size = curr_rect.size / atlas_size
+		var normal_rect = Vector4(curr_pos.x, curr_pos.y, curr_size.x, curr_size.y)
+		
+		material.set_shader_parameter("region_rect", normal_rect)
+	else:
+		material.set_shader_parameter("region_rect", Vector4(0.0, 0.0, 1.0, 1.0))
+	
 	material.set_shader_parameter("texture_albedo", curr_frame)
 
 

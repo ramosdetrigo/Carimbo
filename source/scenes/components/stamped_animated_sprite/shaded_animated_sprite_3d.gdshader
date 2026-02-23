@@ -23,6 +23,17 @@ uniform float burn_smoothness: hint_range(0.0, 0.2, 0.001) = 0.133;
 uniform vec3 burn_glow_color: source_color = vec3(1.0, 0.32, 0.0);
 uniform float burn_glow_intensity: hint_range(0.0, 10.0, 0.1) = 10.0;
 
+// Retângulo da textura desenhado (normalizado)
+uniform vec4 region_rect;
+vec2 texture_to_region_uv(vec2 uv) {
+    return uv * region_rect.zw + region_rect.xy;
+}
+vec2 region_to_texture_uv(vec2 uv) {
+    return (uv - region_rect.xy) / region_rect.zw;
+}
+
+
+
 void vertex() {
 	// Billboard Mode: Y-Billboard
 	#if BILBOARD_Y_MODE
@@ -50,27 +61,28 @@ void vertex() {
 }
 
 void fragment() {
+	vec2 tuv = region_to_texture_uv(UV);
 	// Normal & Roughness
 	{
 		SPECULAR = specular;
 		// roughness
 		vec4 roughness_texture_channel = vec4(1.0, 0.0, 0.0, 0.0);
-		float roughness_tex = dot(texture(texture_roughness, UV), roughness_texture_channel);
+		float roughness_tex = dot(texture(texture_roughness, tuv), roughness_texture_channel);
 		ROUGHNESS = roughness_tex * roughness;
 		// normal
-		NORMAL_MAP = texture(texture_normal, UV).rgb;
+		NORMAL_MAP = texture(texture_normal, tuv).rgb;
 		NORMAL_MAP_DEPTH = normal_scale;
 	}
 	
 	vec4 cor_og = texture(texture_albedo, UV) * albedo;
-	vec4 cor_carimbo = texture(texture_carimbo, UV);
+	vec4 cor_carimbo = texture(texture_carimbo, tuv);
 	// Overlay do carimbo na textura original
 	vec3 cor_mix = mix(cor_og.rgb, cor_carimbo.rgb, cor_carimbo.a);
 	
 	// burn mask
 	// essa "normalização" pelo burn_size impede que o sprite "queime" com
 	// o burn_amount no 0, e garante que a animação de queima termine ao chegar no 1.0
-	float burn_noise = texture(burn_texture, UV).r * (1.0 - burn_size) + burn_size;
+	float burn_noise = texture(burn_texture, tuv).r * (1.0 - burn_size) + burn_size;
 	float burn_val = step(burn_amount, burn_noise);
 	ALPHA = cor_og.a * burn_val;
 	

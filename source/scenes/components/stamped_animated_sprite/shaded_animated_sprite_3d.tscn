@@ -30,6 +30,7 @@ shader_parameter/burn_size = 0.150000007125
 shader_parameter/burn_smoothness = 0.1330000063175
 shader_parameter/burn_glow_color = Color(1, 0.19607843, 0, 1)
 shader_parameter/burn_glow_intensity = 10.0
+shader_parameter/region_rect = Vector4(0, 0, 0, 0)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ppt8k"]
 resource_local_to_scene = true

@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://8gjcppe7ib7d"]
+
+[ext_resource type="Script" uid="uid://fjgad71t0sd4" path="res://scripts/attack_system/hurtbox_component.gd" id="1_uxk2s"]
+[ext_resource type="Script" uid="uid://ctsptwrqbeytg" path="res://scripts/attack_system/attack_projectile.gd" id="1_xj7mc"]
+[ext_resource type="Texture2D" uid="uid://qjkhq2b4id7p" path="res://assets/textures/enemies/boleto/coin.png" id="2_jboay"]
+[ext_resource type="Script" uid="uid://cuoa1ubyh5d06" path="res://scripts/attack_system/attack_info.gd" id="2_x8ajp"]
+[ext_resource type="Texture2D" uid="uid://ddvf2tcrr4143" path="res://assets/textures/enemies/boleto/boleto_sprite_sheet.png" id="4_wxlir"]
+
+[sub_resource type="Resource" id="Resource_jmjnv"]
+script = ExtResource("2_x8ajp")
+stamp_texture = ExtResource("2_jboay")
+flags = 1
+metadata/_custom_type_script = "uid://cuoa1ubyh5d06"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_57s06"]
+atlas = ExtResource("4_wxlir")
+region = Rect2(0, 2560, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_siwbb"]
+atlas = ExtResource("4_wxlir")
+region = Rect2(512, 2560, 512, 512)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fnqaj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_57s06")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_siwbb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_jboay"]
+radius = 0.5559753
+
+[node name="CoinProjectile" type="Node3D" unique_id=1795986710 node_paths=PackedStringArray("hurtbox_component")]
+script = ExtResource("1_xj7mc")
+attack_info = SubResource("Resource_jmjnv")
+lifetime = 2.0
+hurtbox_component = NodePath("HurtboxComponent")
+metadata/_custom_type_script = "uid://ctsptwrqbeytg"
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=896540335]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+sorting_offset = 1.0
+pixel_size = 0.005
+axis = 1
+sprite_frames = SubResource("SpriteFrames_fnqaj")
+autoplay = "default"
+
+[node name="HurtboxComponent" type="Area3D" parent="." unique_id=2011867498]
+collision_layer = 0
+collision_mask = 3
+script = ExtResource("1_uxk2s")
+metadata/_custom_type_script = "uid://fjgad71t0sd4"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HurtboxComponent" unique_id=1731169884]
+shape = SubResource("SphereShape3D_jboay")

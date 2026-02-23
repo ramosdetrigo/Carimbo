@@ -22,5 +22,5 @@ func physics_process(delta: float) -> void:
 	move_component.apply_gravity(delta)
 	move_component.stop_horizontal_movement(delta)
 
-	if not is_zero_approx(input_component.get_horizontal_input_direction().length()):
+	if not is_zero_approx(input_component.movement_input.length()):
 		transitioned.emit(self, move_state)

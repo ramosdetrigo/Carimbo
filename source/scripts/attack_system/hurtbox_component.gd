@@ -2,12 +2,16 @@ class_name HurtboxComponent
 extends Area3D
 
 signal hit()
+signal body_hit()
 
-@export var attack_info: AttackInfo
+@export var should_hit_bodys: bool = true
+
+var attack_info: AttackInfo
 
 
 func _ready() -> void:
 	area_entered.connect(_on_area_entered)
+	if should_hit_bodys: body_entered.connect(body_hit.emit.unbind(1))
 
 
 func _on_area_entered(area: Area3D) -> void:

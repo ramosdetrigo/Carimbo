@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://ci7255spfg8fe"]
+
+[sub_resource type="Curve" id="Curve_g7ovx"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.0038911104), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_rb4d1"]
+curve = SubResource("Curve_g7ovx")
+
+[sub_resource type="Gradient" id="Gradient_cirxv"]
+offsets = PackedFloat32Array(0, 0.7736486, 1)
+colors = PackedColorArray(0.8754911, 0.30116642, 0, 1, 0.7299286, 0.07641705, 3.85046e-07, 1, 0.73006314, 0.07846785, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_71fju"]
+gradient = SubResource("Gradient_cirxv")
+
+[sub_resource type="Curve" id="Curve_qa2ve"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_rfb83"]
+curve = SubResource("Curve_qa2ve")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_q5xeg"]
+particle_flag_align_y = true
+particle_flag_damping_as_friction = true
+angle_min = -89.99999
+angle_max = 90.000015
+angle_curve = SubResource("CurveTexture_rb4d1")
+direction = Vector3(0, 1, 0)
+spread = 100.0
+initial_velocity_min = 50.0
+initial_velocity_max = 50.0
+angular_velocity_min = -10.000016
+angular_velocity_max = 9.999984
+radial_accel_min = -2.2351742e-06
+radial_accel_max = 4.9999976
+damping_min = 8.0
+damping_max = 8.0
+scale_min = 0.79999995
+scale_max = 1.1999999
+scale_curve = SubResource("CurveTexture_rfb83")
+color_ramp = SubResource("GradientTexture1D_71fju")
+hue_variation_min = -1.0
+hue_variation_max = 0.99999994
+collision_mode = 1
+collision_friction = 1.0
+collision_bounce = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_60js8"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+vertex_color_use_as_albedo = true
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_yxfwg"]
+material = SubResource("StandardMaterial3D_60js8")
+size = Vector2(0.2, 0.2)
+
+[node name="Confetti" type="GPUParticles3D" unique_id=824159356]
+emitting = false
+amount = 64
+lifetime = 5.0
+one_shot = true
+explosiveness = 1.0
+randomness = 0.1
+collision_base_size = 0.1
+process_material = SubResource("ParticleProcessMaterial_q5xeg")
+draw_pass_1 = SubResource("PlaneMesh_yxfwg")

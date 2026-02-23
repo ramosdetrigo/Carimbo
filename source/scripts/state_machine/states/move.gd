@@ -25,5 +25,5 @@ func physics_process(delta: float) -> void:
 
 	if Input.is_action_just_pressed(&"move_roll"):
 		transitioned.emit(self, roll_state)
-	elif is_zero_approx(input_component.get_horizontal_input_direction().length()):
+	elif is_zero_approx(input_component.movement_input.length()):
 		transitioned.emit(self, idle_state)

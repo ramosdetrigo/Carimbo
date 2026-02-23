@@ -10,7 +10,7 @@ var timer: SceneTreeTimer
 
 func enter(_a: CharacterController3D) -> void:
 	timer = get_tree().create_timer(0.5)
-	direction = input_component.get_horizontal_input_direction()
+	direction = Vector2(input_component.movement_input.x, input_component.movement_input.z)
 
 
 func exit() -> void:

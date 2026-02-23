@@ -2,17 +2,23 @@
 class_name ShadedAnimatedSprite3D
 extends AnimatedSprite3D
 
+const SHADER_STAMPABLE_SPRITE: ShaderMaterial = preload("uid://brb72iyoqsyk6")
+
 signal burned
 
+@export var stamp_viewport: SubViewport:
+	set(v): stamp_viewport = v; update_viewport_size(); update_configuration_warnings()
 
-var material: ShaderMaterial = material_override
-@export var stamp_viewport: SubViewport
+func _init() -> void:
+	if not Engine.is_editor_hint(): return
+	if not material_override: material_override = SHADER_STAMPABLE_SPRITE.duplicate()
+	if not sprite_frames: sprite_frames = SpriteFrames.new()
 
 
 func _ready() -> void:
 	frame_changed.connect(update_shader_anim)
-	update_shader_anim()
 	update_viewport_size()
+	update_shader_anim()
 
 
 ## "Carimba" uma imagem em algum lugar aleatório da imagem
@@ -44,22 +50,28 @@ func stamp_offset(image: Texture2D, pos: Vector2, size: Vector2) -> void:
 
 ## Atualiza o tamanho do viewport de carimbos de acordo com a animação
 func update_viewport_size() -> void:
-	var max_x: int = 0
-	var max_y: int = 0
+	if not sprite_frames or not stamp_viewport: return
+	var max_x: int = 256
+	var max_y: int = 256
 
 	# Itera por cada frame de cada animação
-	for anim in sprite_frames.get_animation_names():
+	if sprite_frames: for anim in sprite_frames.get_animation_names():
 		for f in sprite_frames.get_frame_count(anim):
 			var tex = sprite_frames.get_frame_texture(anim, f)
 			max_x = max(max_x, tex.get_width())
 			max_y = max(max_y, tex.get_height())
 
-	var size = Vector2(max_x, max_y)
-	stamp_viewport.size = size
+	stamp_viewport.set_size(Vector2(max_x, max_y))
+	stamp_viewport.set_clear_mode(SubViewport.CLEAR_MODE_ONCE)
+	stamp_viewport.set_update_mode(SubViewport.UPDATE_ONCE)
+	stamp_viewport.set_transparent_background(true)
+	stamp_viewport.set_disable_3d(true)
 
 
 ## Atualiza a texture no shader de acordo com a animação atual
 func update_shader_anim() -> void:
+	if not material_override: return
+	var material: ShaderMaterial = material_override
 	var curr_frame = sprite_frames.get_frame_texture(animation, frame)
 	material.set_shader_parameter("texture_albedo", curr_frame)
 
@@ -73,8 +85,18 @@ func trigger_burn_fx(burn_time: float = 1.0) -> void:
 	particles.emitting = true
 
 	var burn_tween: Tween = create_tween()
-	burn_tween.tween_method(
-		func(b):
-			material.set_shader_parameter("burn_amount", b)
-	, 0.0, 1.0, burn_time)
+	burn_tween.tween_property(material_override, ^"shader_parameter/burn_amount", 1.0, burn_time
+		).from(0.0)
 	burn_tween.finished.connect(burned.emit)
+
+
+## Chamada quando a hitbox leva dano para carimbar o sprite
+func on_hitbox_damaged(info: AttackInfo) -> void:
+	stamp(info.stamp_texture if info.stamp_texture else Consts.CARIMBO)
+
+
+func _get_configuration_warnings() -> PackedStringArray:
+	var war: PackedStringArray = []
+	if not stamp_viewport:
+		war.append("Select a SubViewport node for the stamp effect")
+	return war

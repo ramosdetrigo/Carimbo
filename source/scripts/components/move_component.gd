@@ -17,7 +17,7 @@ func apply_gravity(delta: float) -> void:
 
 
 func move_horizontally(_delta: float) -> void:
-	var direction: Vector3 = input_component.get_input_direction()
+	var direction: Vector3 = input_component.movement_input
 	var desired_velocity: Vector3 = direction * speed
 	actor.velocity = Vector3(desired_velocity.x, actor.velocity.y, desired_velocity.z)
 

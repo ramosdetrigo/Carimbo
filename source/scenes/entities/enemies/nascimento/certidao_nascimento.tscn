@@ -1,68 +1,97 @@
 [gd_scene format=3 uid="uid://bxgw65gxcyvvi"]
 
 [ext_resource type="Script" uid="uid://cg1dswyw2p1op" path="res://scenes/entities/enemies/enemy_character.gd" id="1_syafj"]
-[ext_resource type="Shader" uid="uid://dl6ampid6rth6" path="res://scenes/components/stamped_animated_sprite/shaded_animated_sprite_3d.gdshader" id="2_7tysw"]
-[ext_resource type="Texture2D" uid="uid://b4y7mdvpe6yn" path="res://assets/textures/enemies/nascimento/certidao_nascimento.png" id="2_c3m3a"]
-[ext_resource type="Script" uid="uid://5kc8fyscu1dj" path="res://scenes/debug_worlds/gym/stampable.gd" id="2_fkf4w"]
+[ext_resource type="Script" uid="uid://ctmgj3s2w7dsb" path="res://scenes/components/stamped_animated_sprite/shaded_animated_sprite_3d.gd" id="2_1fn1j"]
+[ext_resource type="Texture2D" uid="uid://b4y7mdvpe6yn" path="res://assets/textures/enemies/nascimento/certidao_nascimento.png" id="2_duv7f"]
+[ext_resource type="Shader" uid="uid://dl6ampid6rth6" path="res://scenes/components/stamped_animated_sprite/shaded_animated_sprite_3d.gdshader" id="2_kyicb"]
 [ext_resource type="Script" uid="uid://cqxuelwl2k4bg" path="res://scripts/attack_system/stats_component.gd" id="2_p28al"]
 [ext_resource type="Texture2D" uid="uid://b1o0sn4m4002s" path="res://assets/textures/enemies/nascimento/buaa.png" id="2_yfe74"]
-[ext_resource type="Texture2D" uid="uid://ch1fj0j2vc2r1" path="res://resources/burn_noise_texture.tres" id="3_p6bue"]
+[ext_resource type="Texture2D" uid="uid://ch1fj0j2vc2r1" path="res://resources/burn_noise_texture.tres" id="3_lbcd4"]
 [ext_resource type="Script" uid="uid://baffaklkbk27f" path="res://scripts/attack_system/hitbox_component.gd" id="3_yfe74"]
-[ext_resource type="PackedScene" uid="uid://toum1olkwjmg" path="res://scenes/components/stamped_animated_sprite/shaded_animated_sprite_3d.tscn" id="4_jn51p"]
-[ext_resource type="Texture2D" uid="uid://o34vnik8cwo4" path="res://assets/textures/paper/Paper003_1K-JPG_NormalGL.jpg" id="5_5or5a"]
-[ext_resource type="Texture2D" uid="uid://dkbujjnpxwia0" path="res://assets/textures/paper/Paper003_1K-JPG_Roughness.jpg" id="6_o47xr"]
+[ext_resource type="Texture2D" uid="uid://o34vnik8cwo4" path="res://assets/textures/paper/Paper003_1K-JPG_NormalGL.jpg" id="4_g2kvs"]
+[ext_resource type="Texture2D" uid="uid://dkbujjnpxwia0" path="res://assets/textures/paper/Paper003_1K-JPG_Roughness.jpg" id="5_idvk1"]
 [ext_resource type="Script" uid="uid://bb0t2ovl7wifo" path="res://addons/beehave/nodes/beehave_tree.gd" id="10_1fn1j"]
-[ext_resource type="Texture2D" uid="uid://bvav1abqdnltd" path="res://assets/tmp/carimbo.png" id="10_g2kvs"]
+[ext_resource type="Script" uid="uid://c15vrenp7llbg" path="res://scripts/debug/debug_label.gd" id="10_lbcd4"]
 [ext_resource type="Script" uid="uid://cg016dbe7gs1x" path="res://addons/beehave/nodes/composites/sequence.gd" id="11_duv7f"]
-[ext_resource type="Script" uid="uid://5naycquyoac2" path="res://scripts/beehave/leaf/condition/is_timer_stopped_condition.gd" id="13_1fn1j"]
-[ext_resource type="Script" uid="uid://8hn4kne15ac5" path="res://addons/beehave/nodes/composites/selector.gd" id="13_lbcd4"]
-[ext_resource type="Script" uid="uid://vfqqt15t76vb" path="res://scripts/beehave/leaf/action/evolve_to_action.gd" id="14_duv7f"]
+[ext_resource type="Script" uid="uid://dorri1tul8gfx" path="res://addons/beehave/nodes/decorators/delayer.gd" id="13_lbcd4"]
+[ext_resource type="Script" uid="uid://vfqqt15t76vb" path="res://scripts/beehave/leaf/action/evolve_action.gd" id="14_duv7f"]
+[ext_resource type="Script" uid="uid://docm6x45208x4" path="res://scripts/beehave/leaf/action/play_particle_action.gd" id="16_g2kvs"]
+[ext_resource type="PackedScene" uid="uid://68uyk4amv4a6" path="res://scenes/vfx/particles/puff.tscn" id="17_idvk1"]
 [ext_resource type="PackedScene" uid="uid://xw64ux4jg7fg" path="res://scenes/entities/enemies/errige/errige.tscn" id="18_lbcd4"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_idvk1"]
-atlas = ExtResource("2_c3m3a")
-region = Rect2(256, 0, 256, 256)
+[sub_resource type="AtlasTexture" id="AtlasTexture_3lwnm"]
+atlas = ExtResource("2_duv7f")
+region = Rect2(0, 0, 256, 256)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_g2kvs"]
-viewport_path = NodePath("StampViewport")
+[sub_resource type="ViewportTexture" id="ViewportTexture_ix5r7"]
+viewport_path = NodePath("ShadedAnimatedSprite3D/SubViewport")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_idvk1"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pg18a"]
 resource_local_to_scene = true
 render_priority = 0
-shader = ExtResource("2_7tysw")
+shader = ExtResource("2_kyicb")
 shader_parameter/roughness = 1.0
-shader_parameter/texture_roughness = ExtResource("6_o47xr")
+shader_parameter/texture_roughness = ExtResource("5_idvk1")
 shader_parameter/specular = 0.249999994412
-shader_parameter/texture_normal = ExtResource("5_5or5a")
+shader_parameter/texture_normal = ExtResource("4_g2kvs")
 shader_parameter/normal_scale = 1.5600008340999985
 shader_parameter/albedo = Color(1, 1, 1, 1)
-shader_parameter/texture_albedo = SubResource("AtlasTexture_idvk1")
-shader_parameter/texture_carimbo = SubResource("ViewportTexture_g2kvs")
+shader_parameter/texture_albedo = SubResource("AtlasTexture_3lwnm")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_ix5r7")
 shader_parameter/carimbo_glow_intensity = 0.0
-shader_parameter/burn_texture = ExtResource("3_p6bue")
+shader_parameter/burn_texture = ExtResource("3_lbcd4")
 shader_parameter/burn_amount = 0.0
 shader_parameter/burn_size = 0.150000007125
 shader_parameter/burn_smoothness = 0.1330000063175
-shader_parameter/burn_glow_color = Color(1, 0.19607843, 0, 1)
+shader_parameter/burn_glow_color = Color(1, 0.32, 0, 1)
 shader_parameter/burn_glow_intensity = 10.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_g2kvs"]
-atlas = ExtResource("2_c3m3a")
-region = Rect2(0, 0, 256, 256)
+[sub_resource type="AtlasTexture" id="AtlasTexture_lbcd4"]
+atlas = ExtResource("2_duv7f")
+region = Rect2(0, 513, 512, 513)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ix5r7"]
-resource_local_to_scene = true
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2kvs"]
+atlas = ExtResource("2_duv7f")
+region = Rect2(0, 0, 512, 513)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_idvk1"]
+atlas = ExtResource("2_duv7f")
+region = Rect2(512, 0, 512, 513)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ix5r7"]
+atlas = ExtResource("2_duv7f")
+region = Rect2(1024, 0, 512, 513)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pg18a"]
+atlas = ExtResource("2_duv7f")
+region = Rect2(1536, 0, 512, 513)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kyicb"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lbcd4")
+}],
+"loop": false,
+"name": &"death",
+"speed": 1.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_g2kvs")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_idvk1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ix5r7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pg18a")
 }],
 "loop": true,
-"name": &"default",
-"speed": 5.0
+"name": &"idle",
+"speed": 6.0
 }]
 
 [sub_resource type="Curve" id="Curve_1fn1j"]
@@ -104,19 +133,29 @@ radius = 0.98883617
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_dakoy"]
 
-[node name="CertidaoNascimento" type="CharacterBody3D" unique_id=113904686 node_paths=PackedStringArray("beehave_tree", "stampable_sprite", "stats_component")]
+[node name="CertidaoNascimento" type="CharacterBody3D" unique_id=113904686 node_paths=PackedStringArray("beehave_tree", "stampable_sprite")]
+collision_layer = 16
 script = ExtResource("1_syafj")
-beehave_tree = NodePath("BeehaveTree")
+beehave_tree = NodePath("NascimentoBeehaveTree")
 stampable_sprite = NodePath("ShadedAnimatedSprite3D")
-stats_component = NodePath("StatsComponent")
 metadata/_custom_type_script = "uid://cg1dswyw2p1op"
 
-[node name="ShadedAnimatedSprite3D" parent="." unique_id=1952958561 instance=ExtResource("4_jn51p")]
-material_override = SubResource("ShaderMaterial_idvk1")
-sprite_frames = SubResource("SpriteFrames_ix5r7")
-autoplay = "default"
-script = ExtResource("2_fkf4w")
-stamp_texture = ExtResource("10_g2kvs")
+[node name="ShadedAnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=869163867 node_paths=PackedStringArray("stamp_viewport")]
+material_override = SubResource("ShaderMaterial_pg18a")
+pixel_size = 0.005
+sprite_frames = SubResource("SpriteFrames_kyicb")
+animation = &"death"
+autoplay = "idle"
+script = ExtResource("2_1fn1j")
+stamp_viewport = NodePath("SubViewport")
+metadata/_custom_type_script = "uid://ctmgj3s2w7dsb"
+
+[node name="SubViewport" type="SubViewport" parent="ShadedAnimatedSprite3D" unique_id=1750654420]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(256, 256)
+render_target_clear_mode = 2
+render_target_update_mode = 1
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=874105604]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
@@ -124,21 +163,28 @@ amount = 4
 process_material = SubResource("ParticleProcessMaterial_3lwnm")
 draw_pass_1 = SubResource("PlaneMesh_kyicb")
 
-[node name="Timer" type="Timer" parent="." unique_id=2072764192]
-wait_time = 5.0
-one_shot = true
-autostart = true
-
-[node name="StatsComponent" type="Node" parent="." unique_id=1568362791 node_paths=PackedStringArray("hitbox")]
+[node name="StatsComponent" type="Node" parent="." unique_id=1568362791 node_paths=PackedStringArray("hitbox_component", "beehave_tree")]
 script = ExtResource("2_p28al")
-hitbox = NodePath("../HitboxComponent")
+connect_signals_enable = true
+hitbox_component = NodePath("../HitboxComponent")
+beehave_tree = NodePath("../NascimentoBeehaveTree")
 metadata/_custom_type_script = "uid://cqxuelwl2k4bg"
 
-[node name="HitboxComponent" type="Area3D" parent="." unique_id=1522271134 node_paths=PackedStringArray("actor")]
+[node name="DebugLabel3D" type="Label3D" parent="." unique_id=8577010 node_paths=PackedStringArray("stats_component")]
+editor_description = "Uma label para debug que irá mostrar os valores de vida e armadura de um StatsComponent"
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+billboard = 1
+text = "FILHO DA PUTA"
+script = ExtResource("10_lbcd4")
+stats_component = NodePath("../StatsComponent")
+metadata/_custom_type_script = "uid://c15vrenp7llbg"
+
+[node name="HitboxComponent" type="Area3D" parent="." unique_id=1522271134 node_paths=PackedStringArray("stampable_sprite")]
 collision_layer = 4
 collision_mask = 0
 script = ExtResource("3_yfe74")
-actor = NodePath("..")
+connect_signals_enable = true
+stampable_sprite = NodePath("../ShadedAnimatedSprite3D")
 metadata/_custom_type_script = "uid://baffaklkbk27f"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="HitboxComponent" unique_id=655475096]
@@ -147,30 +193,28 @@ shape = SubResource("SphereShape3D_3lwnm")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=497100569]
 shape = SubResource("SphereShape3D_dakoy")
 
-[node name="BeehaveTree" type="Node" parent="." unique_id=1447399182 node_paths=PackedStringArray("blackboard", "actor")]
+[node name="NascimentoBeehaveTree" type="Node" parent="." unique_id=1447399182 node_paths=PackedStringArray("blackboard", "actor")]
 script = ExtResource("10_1fn1j")
 actor_node_path = NodePath("..")
-blackboard = NodePath("@Node@18817")
+blackboard = NodePath("@Node@117628")
 actor = NodePath("..")
 metadata/_custom_type_script = "uid://bb0t2ovl7wifo"
 
-[node name="SelectorComposite" type="Node" parent="BeehaveTree" unique_id=355493648]
+[node name="DelayDecorator" type="Node" parent="NascimentoBeehaveTree" unique_id=314619447]
 script = ExtResource("13_lbcd4")
-metadata/_custom_type_script = "uid://8hn4kne15ac5"
+wait_time = 5.0
+metadata/_custom_type_script = "uid://dorri1tul8gfx"
 
-[node name="SequenceComposite" type="Node" parent="BeehaveTree/SelectorComposite" unique_id=906532819]
+[node name="SequenceComposite" type="Node" parent="NascimentoBeehaveTree/DelayDecorator" unique_id=906532819]
 script = ExtResource("11_duv7f")
 metadata/_custom_type_script = "uid://cg016dbe7gs1x"
 
-[node name="IsTimerStoppedCondition" type="Node" parent="BeehaveTree/SelectorComposite/SequenceComposite" unique_id=1442950424 node_paths=PackedStringArray("timer")]
-script = ExtResource("13_1fn1j")
-timer = NodePath("../../../../Timer")
-metadata/_custom_type_script = "uid://5naycquyoac2"
+[node name="PlayParticleAction" type="Node" parent="NascimentoBeehaveTree/DelayDecorator/SequenceComposite" unique_id=823112257]
+script = ExtResource("16_g2kvs")
+particle_scene = ExtResource("17_idvk1")
+metadata/_custom_type_script = "uid://docm6x45208x4"
 
-[node name="EvolveToAction" type="Node" parent="BeehaveTree/SelectorComposite/SequenceComposite" unique_id=1316474822]
+[node name="EvolveToAction" type="Node" parent="NascimentoBeehaveTree/DelayDecorator/SequenceComposite" unique_id=1316474822]
 script = ExtResource("14_duv7f")
-entity_scene = ExtResource("18_lbcd4")
+evolution_entity_scene = ExtResource("18_lbcd4")
 metadata/_custom_type_script = "uid://vfqqt15t76vb"
-
-[connection signal="health_changed" from="StatsComponent" to="." method="_on_health_changed"]
-[connection signal="damaged" from="HitboxComponent" to="ShadedAnimatedSprite3D" method="_on_hitbox_damaged"]

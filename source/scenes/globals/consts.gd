@@ -1,5 +1,5 @@
 extends Node
 
-const TRANSPARENT: GradientTexture1D = preload("uid://bymhvxidkm43d")
+const CARIMBO: Texture2D = preload("uid://bvav1abqdnltd")
 
 const PARTICLE_SPARK: PackedScene = preload("uid://mgp02mkor0at")

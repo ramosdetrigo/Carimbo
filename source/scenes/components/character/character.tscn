@@ -135,6 +135,7 @@ metadata/_custom_type_script = "uid://bnfb6cxda8lhn"
 
 [node name="ShadedAnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=1555501919 node_paths=PackedStringArray("stamp_viewport")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+sorting_offset = 30.0
 material_override = SubResource("ShaderMaterial_kvm8o")
 billboard = 2
 sprite_frames = SubResource("SpriteFrames_wrelc")
@@ -236,7 +237,7 @@ metadata/_custom_type_script = "uid://baffaklkbk27f"
 shape = SubResource("CapsuleShape3D_oucov")
 
 [node name="CameraPivot" type="Node3D" parent="." unique_id=1065541715]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 2.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.133, 2.363)
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivot" unique_id=154854567]
 transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 0, 0)

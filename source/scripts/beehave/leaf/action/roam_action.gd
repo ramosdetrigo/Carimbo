@@ -21,23 +21,26 @@ func tick(actor: Node, blackboard: Blackboard) -> int:
 	if navigation_enable: navigation_agent.set_target_position(target_pos)
 	var dir: Vector3 = (actor as Node3D).global_position.direction_to(
 		navigation_agent.get_next_path_position() if navigation_enable else target_pos)
+
+	var reached: bool = _has_reached_target(actor, target_pos)
+	blackboard.set_value(TARGET_REACHED, reached)
+	if reached: return SUCCESS
 	input_component.set_input_direction(dir)
-	return SUCCESS
+	return RUNNING
 
 
 func _cached_target_pos(actor: Node3D, blackboard: Blackboard) -> Vector3:
 	var pos: Vector3 = blackboard.get_value(TARGET_KEY, _get_random_target_pos(), str(get_instance_id()))
-	if _has_reached_target(actor, pos, blackboard): pos = _get_random_target_pos()
+	if blackboard.get_value(TARGET_REACHED, true): pos = _get_random_target_pos()
 	pos.y = actor.global_position.y
 	blackboard.set_value(TARGET_KEY, pos, str(get_instance_id()))
 	return pos
 
 
-func _has_reached_target(actor: Node3D, target: Vector3, blackboard: Blackboard) -> bool:
+func _has_reached_target(actor: Node3D, target: Vector3) -> bool:
 	var nav: bool = navigation_enable and \
 		(navigation_agent.is_target_reached() or not navigation_agent.is_target_reachable())
 	var r: bool = nav or actor.global_position.distance_to(target) <= 1.0
-	blackboard.set_value(TARGET_REACHED, r)
 	return r
 
 

@@ -4,6 +4,7 @@ extends ActionLeaf
 
 const TARGET_POS_KEY = BeehaveConsts.BlackboardKeys.TARGET_POSITION
 const TARGET_KEY = BeehaveConsts.BlackboardKeys.TARGET
+const TARGET_REACHED = BeehaveConsts.BlackboardKeys.TARGET_REACHED
 
 @export var input_component: InputComponent:
 	set(v): input_component = v; update_configuration_warnings()
@@ -18,20 +19,26 @@ const TARGET_KEY = BeehaveConsts.BlackboardKeys.TARGET
 func tick(actor: Node, blackboard: Blackboard) -> int:
 	if not actor or not input_component: return FAILURE
 	if navigation_enable and not navigation_agent: return FAILURE
+	blackboard.set_value(TARGET_REACHED, false)
 
 	var target: Node3D = blackboard.get_value(TARGET_KEY, null)
 	if not target: return FAILURE
 
-	input_component.set_input_direction(_get_target_direction(actor, target))
-	return SUCCESS
+	var pos: Vector3 = _get_target_pos(target)
+	var direction: Vector3 = (actor as Node3D).global_position.direction_to(pos)
+	var reached: bool = _has_reached_target(actor, pos)
+	blackboard.set_value(TARGET_REACHED, reached)
+	if reached: return SUCCESS
+	input_component.set_input_direction(direction)
+	return RUNNING
 
 
-func _get_target_direction(actor: Node3D, target: Node3D) -> Vector3:
+func _get_target_pos(target: Node3D) -> Vector3:
 	var pos: Vector3 = target.global_position
 	if navigation_enable:
 		navigation_agent.set_target_position(pos)
 		pos = navigation_agent.get_next_path_position()
-	return actor.global_position.direction_to(pos)
+	return pos
 
 
 func _has_reached_target(actor: Node3D, target: Vector3) -> bool:
@@ -39,6 +46,11 @@ func _has_reached_target(actor: Node3D, target: Vector3) -> bool:
 	if navigation_enable: return navigation_agent.is_target_reached() \
 		or not navigation_agent.is_target_reachable() or dis_reached
 	return dis_reached
+
+
+func interrupt(_actor: Node, _blackboard: Blackboard) -> void:
+	if not input_component: return
+	input_component.set_input_direction(Vector3.ZERO)
 
 
 func _get_configuration_warnings() -> PackedStringArray:

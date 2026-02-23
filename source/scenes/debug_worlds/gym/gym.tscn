@@ -3,9 +3,12 @@
 [ext_resource type="Script" uid="uid://bb0t2ovl7wifo" path="res://addons/beehave/nodes/beehave_tree.gd" id="1_aose2"]
 [ext_resource type="PackedScene" uid="uid://domk3xwojp1ia" path="res://scenes/components/character/character.tscn" id="1_ru7ka"]
 [ext_resource type="Script" uid="uid://2qri6rrfv8ui" path="res://addons/beehave/nodes/decorators/cooldown.gd" id="2_vup72"]
+[ext_resource type="PackedScene" uid="uid://c11bmvx2h5bt3" path="res://scenes/entities/enemies/passaporte/passaporte.tscn" id="3_6ms5o"]
 [ext_resource type="Script" uid="uid://wpfn0jjwq6r3" path="res://scripts/beehave/leaf/action/attack_action.gd" id="3_oiwiy"]
 [ext_resource type="PackedScene" uid="uid://572ad1efklon" path="res://scenes/entities/enemies/boleto/boleto.tscn" id="4_6ms5o"]
 [ext_resource type="PackedScene" uid="uid://cci12ktyrx42t" path="res://scenes/objects/falling_object/falling_object.tscn" id="4_e5ff4"]
+[ext_resource type="PackedScene" uid="uid://dxyd470cqorqq" path="res://scenes/entities/enemies/comprovante/comprovante.tscn" id="5_jhkjw"]
+[ext_resource type="PackedScene" uid="uid://xw64ux4jg7fg" path="res://scenes/entities/enemies/errige/errige.tscn" id="8_ytj3i"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ru7ka"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -164,7 +167,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5642924, 11.377207, 21.381
 [node name="BeehaveTree" type="Node" parent="Marker3D" unique_id=520531356 node_paths=PackedStringArray("blackboard", "actor")]
 script = ExtResource("1_aose2")
 actor_node_path = NodePath("..")
-blackboard = NodePath("@Node@43869")
+blackboard = NodePath("@Node@190178")
 actor = NodePath("..")
 metadata/_custom_type_script = "uid://bb0t2ovl7wifo"
 
@@ -183,3 +186,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5642924, 1.0288286, 28.381
 
 [node name="Boleto" parent="." unique_id=1012244960 instance=ExtResource("4_6ms5o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.722834, -1.9073486e-06, -1.3342724)
+
+[node name="Comprovante" parent="." unique_id=931080643 instance=ExtResource("5_jhkjw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.83841, -9.536743e-07, 21.28584)
+
+[node name="Errige" parent="." unique_id=1891326732 instance=ExtResource("8_ytj3i")]
+
+[node name="Passaporte" parent="." unique_id=1005230644 instance=ExtResource("3_6ms5o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.916569, 9.536743e-07, 25.724342)

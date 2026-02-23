@@ -30,6 +30,14 @@ gdscript/warnings/unsafe_method_access=1
 
 enabled=PackedStringArray("res://addons/beehave/plugin.cfg")
 
+[file_customization]
+
+folder_colors={
+"res://assets/": "orange",
+"res://resources/": "purple",
+"res://scenes/": "teal"
+}
+
 [global_group]
 
 player="The group to grab the player node"

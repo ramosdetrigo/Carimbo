@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://de5aie68gk0wk"
-path.s3tc="res://.godot/imported/símbolo-vermelho.png-d7cc00c9bbc6e9462c47ac757a96b8ff.s3tc.ctex"
+uid="uid://dfis2osve2yvn"
+path.s3tc="res://.godot/imported/spark_02.png-40dcaaf2fd68e7c2c438430c9e383ba5.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/textures/stamps/símbolo-vermelho.png"
-dest_files=["res://.godot/imported/símbolo-vermelho.png-d7cc00c9bbc6e9462c47ac757a96b8ff.s3tc.ctex"]
+source_file="res://assets/textures/vfx/particles/spark_02.png"
+dest_files=["res://.godot/imported/spark_02.png-40dcaaf2fd68e7c2c438430c9e383ba5.s3tc.ctex"]
 
 [params]
 

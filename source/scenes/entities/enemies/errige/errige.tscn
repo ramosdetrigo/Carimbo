@@ -11,7 +11,7 @@
 [ext_resource type="Script" uid="uid://bfied8f76qv1k" path="res://scripts/components/input_component.gd" id="4_x0uji"]
 [ext_resource type="Texture2D" uid="uid://o34vnik8cwo4" path="res://assets/textures/paper/Paper003_1K-JPG_NormalGL.jpg" id="5_3psif"]
 [ext_resource type="Script" uid="uid://cdr65apsfmy8" path="res://scripts/attack_system/weapon_manager.gd" id="5_e2o72"]
-[ext_resource type="Texture2D" uid="uid://crl1uvanniocl" path="res://assets/particles/faisca.png" id="6_2r5vq"]
+[ext_resource type="Texture2D" uid="uid://crl1uvanniocl" path="res://assets/textures/vfx/particles/faisca.png" id="6_2r5vq"]
 [ext_resource type="Texture2D" uid="uid://dkbujjnpxwia0" path="res://assets/textures/paper/Paper003_1K-JPG_Roughness.jpg" id="6_b7hfo"]
 [ext_resource type="Script" uid="uid://bb0t2ovl7wifo" path="res://addons/beehave/nodes/beehave_tree.gd" id="9_b7hfo"]
 [ext_resource type="Script" uid="uid://8hn4kne15ac5" path="res://addons/beehave/nodes/composites/selector.gd" id="13_yacn0"]

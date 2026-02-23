@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://de5aie68gk0wk"
-path.s3tc="res://.godot/imported/símbolo-vermelho.png-d7cc00c9bbc6e9462c47ac757a96b8ff.s3tc.ctex"
+uid="uid://cdwflngy0b7h5"
+path.s3tc="res://.godot/imported/símbolo-laranja.png-a88773d9a212520fa3ee0dc5937f28d4.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/textures/stamps/símbolo-vermelho.png"
-dest_files=["res://.godot/imported/símbolo-vermelho.png-d7cc00c9bbc6e9462c47ac757a96b8ff.s3tc.ctex"]
+source_file="res://assets/textures/stamps/símbolo-laranja.png"
+dest_files=["res://.godot/imported/símbolo-laranja.png-a88773d9a212520fa3ee0dc5937f28d4.s3tc.ctex"]
 
 [params]
 

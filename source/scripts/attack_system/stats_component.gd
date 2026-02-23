@@ -25,7 +25,9 @@ func _ready() -> void:
 func _connect_signals() -> void:
 	if hitbox_component: hitbox_component.damaged.connect(on_damaged)
 	if input_component: died.connect(input_component.kill)
-	if owner is StampableCharacter: died.connect((owner as StampableCharacter).death)
+	if owner is StampableCharacter:
+		died.connect((owner as StampableCharacter).death)
+		health_changed.connect((owner as StampableCharacter).on_being_hit)
 	if beehave_tree: died.connect(beehave_tree.disable)
 
 

@@ -11,5 +11,11 @@ func _physics_process(_delta: float) -> void:
 
 func death() -> void:
 	if not stampable_sprite: return
+	stampable_sprite.play(&"death")
+	await stampable_sprite.animation_finished
 	stampable_sprite.trigger_burn_fx()
 	stampable_sprite.burned.connect(queue_free)
+
+
+func on_being_hit(_h: float) -> void:
+	pass

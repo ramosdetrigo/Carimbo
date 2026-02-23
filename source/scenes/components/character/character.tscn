@@ -47,6 +47,14 @@ shader_parameter/burn_smoothness = 0.1330000063175
 shader_parameter/burn_glow_color = Color(1, 0.32, 0, 1)
 shader_parameter/burn_glow_intensity = 10.0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_80i3n"]
+atlas = ExtResource("4_0fpak")
+region = Rect2(2304, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yylnd"]
+atlas = ExtResource("4_0fpak")
+region = Rect2(0, 0, 256, 256)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_oucov"]
 atlas = ExtResource("4_0fpak")
 region = Rect2(256, 0, 256, 256)
@@ -85,6 +93,22 @@ region = Rect2(2304, 0, 256, 256)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wrelc"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_80i3n")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yylnd")
+}],
+"loop": true,
+"name": &"hit",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_bedty")
@@ -139,9 +163,8 @@ sorting_offset = 30.0
 material_override = SubResource("ShaderMaterial_kvm8o")
 billboard = 2
 sprite_frames = SubResource("SpriteFrames_wrelc")
-animation = &"idle"
+animation = &"hit"
 autoplay = "idle"
-frame_progress = 0.15569994
 script = ExtResource("7_gke3f")
 stamp_viewport = NodePath("SubViewport")
 metadata/_custom_type_script = "uid://ctmgj3s2w7dsb"
@@ -243,4 +266,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.133, 2.363)
 transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 0, 0)
 current = true
 
+[connection signal="animation_finished" from="ShadedAnimatedSprite3D" to="ShadedAnimatedSprite3D" method="play" binds= [&"idle"]]
 [connection signal="died" from="StatsComponent" to="PlayerInputComponent" method="block"]

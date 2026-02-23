@@ -16,7 +16,7 @@
 [ext_resource type="Script" uid="uid://dorri1tul8gfx" path="res://addons/beehave/nodes/decorators/delayer.gd" id="13_lbcd4"]
 [ext_resource type="Script" uid="uid://vfqqt15t76vb" path="res://scripts/beehave/leaf/action/evolve_action.gd" id="14_duv7f"]
 [ext_resource type="Script" uid="uid://docm6x45208x4" path="res://scripts/beehave/leaf/action/play_particle_action.gd" id="16_g2kvs"]
-[ext_resource type="PackedScene" uid="uid://68uyk4amv4a6" path="res://scenes/particles/puff.tscn" id="17_idvk1"]
+[ext_resource type="PackedScene" uid="uid://68uyk4amv4a6" path="res://scenes/vfx/particles/puff.tscn" id="17_idvk1"]
 [ext_resource type="PackedScene" uid="uid://xw64ux4jg7fg" path="res://scenes/entities/enemies/errige/errige.tscn" id="18_lbcd4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3lwnm"]
@@ -46,22 +46,52 @@ shader_parameter/burn_smoothness = 0.1330000063175
 shader_parameter/burn_glow_color = Color(1, 0.32, 0, 1)
 shader_parameter/burn_glow_intensity = 10.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jn51p"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_lbcd4"]
 atlas = ExtResource("2_duv7f")
-region = Rect2(256, 0, 256, 256)
+region = Rect2(0, 513, 512, 513)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2kvs"]
+atlas = ExtResource("2_duv7f")
+region = Rect2(0, 0, 512, 513)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_idvk1"]
+atlas = ExtResource("2_duv7f")
+region = Rect2(512, 0, 512, 513)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ix5r7"]
+atlas = ExtResource("2_duv7f")
+region = Rect2(1024, 0, 512, 513)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pg18a"]
+atlas = ExtResource("2_duv7f")
+region = Rect2(1536, 0, 512, 513)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kyicb"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3lwnm")
+"texture": SubResource("AtlasTexture_lbcd4")
+}],
+"loop": false,
+"name": &"death",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g2kvs")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_jn51p")
+"texture": SubResource("AtlasTexture_idvk1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ix5r7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pg18a")
 }],
 "loop": true,
-"name": &"default",
-"speed": 5.0
+"name": &"idle",
+"speed": 6.0
 }]
 
 [sub_resource type="Curve" id="Curve_1fn1j"]
@@ -112,9 +142,10 @@ metadata/_custom_type_script = "uid://cg1dswyw2p1op"
 
 [node name="ShadedAnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=869163867 node_paths=PackedStringArray("stamp_viewport")]
 material_override = SubResource("ShaderMaterial_pg18a")
+pixel_size = 0.005
 sprite_frames = SubResource("SpriteFrames_kyicb")
-autoplay = "default"
-frame_progress = 0.40711802
+animation = &"death"
+autoplay = "idle"
 script = ExtResource("2_1fn1j")
 stamp_viewport = NodePath("SubViewport")
 metadata/_custom_type_script = "uid://ctmgj3s2w7dsb"
@@ -165,7 +196,7 @@ shape = SubResource("SphereShape3D_dakoy")
 [node name="NascimentoBeehaveTree" type="Node" parent="." unique_id=1447399182 node_paths=PackedStringArray("blackboard", "actor")]
 script = ExtResource("10_1fn1j")
 actor_node_path = NodePath("..")
-blackboard = NodePath("@Node@169900")
+blackboard = NodePath("@Node@117628")
 actor = NodePath("..")
 metadata/_custom_type_script = "uid://bb0t2ovl7wifo"
 
@@ -187,5 +218,3 @@ metadata/_custom_type_script = "uid://docm6x45208x4"
 script = ExtResource("14_duv7f")
 evolution_entity_scene = ExtResource("18_lbcd4")
 metadata/_custom_type_script = "uid://vfqqt15t76vb"
-
-[connection signal="health_changed" from="StatsComponent" to="." method="_on_health_changed"]

@@ -164,19 +164,19 @@ size = Vector3(80, 1, 80)
 [node name="Marker3D" type="Marker3D" parent="." unique_id=1884660999]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5642924, 11.377207, 21.3819)
 
-[node name="BeehaveTree" type="Node" parent="Marker3D" unique_id=520531356 node_paths=PackedStringArray("blackboard", "actor")]
+[node name="TestBeehaveTree" type="Node" parent="Marker3D" unique_id=520531356 node_paths=PackedStringArray("blackboard", "actor")]
 script = ExtResource("1_aose2")
 actor_node_path = NodePath("..")
-blackboard = NodePath("@Node@190178")
+blackboard = NodePath("@Node@29591")
 actor = NodePath("..")
 metadata/_custom_type_script = "uid://bb0t2ovl7wifo"
 
-[node name="CooldownDecorator" type="Node" parent="Marker3D/BeehaveTree" unique_id=279353187]
+[node name="CooldownDecorator" type="Node" parent="Marker3D/TestBeehaveTree" unique_id=279353187]
 script = ExtResource("2_vup72")
 wait_time = 3.0
 metadata/_custom_type_script = "uid://2qri6rrfv8ui"
 
-[node name="AttackAction" type="Node" parent="Marker3D/BeehaveTree/CooldownDecorator" unique_id=1678237504]
+[node name="AttackAction" type="Node" parent="Marker3D/TestBeehaveTree/CooldownDecorator" unique_id=1678237504]
 script = ExtResource("3_oiwiy")
 attack_scene = ExtResource("4_e5ff4")
 metadata/_custom_type_script = "uid://wpfn0jjwq6r3"

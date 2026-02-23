@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b7umreoyk5s0h"]
 
-[ext_resource type="Shader" uid="uid://cabw4nbfiql0e" path="res://scenes/particles/static_fire_opt_shader.tres" id="1_dwc5q"]
+[ext_resource type="Shader" uid="uid://cabw4nbfiql0e" path="res://scenes/vfx/static/static_fire_opt_shader.tres" id="1_dwc5q"]
 [ext_resource type="Texture2D" uid="uid://dv47qx37udvg3" path="res://assets/textures/vfx/mask/mask_flat_fire_combined.png" id="1_qymac"]
 [ext_resource type="Texture2D" uid="uid://da60k8swp6rp4" path="res://assets/tmp/pixel.png" id="4_dfyhd"]
 

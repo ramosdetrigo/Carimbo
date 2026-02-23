@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crl1uvanniocl"
-path.s3tc="res://.godot/imported/faisca.png-eef66ba7870093440444a272a862e6d4.s3tc.ctex"
+uid="uid://db11mohofq7po"
+path.s3tc="res://.godot/imported/puff.png-479539dee4dee164966fa679b1df7590.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/particles/faisca.png"
-dest_files=["res://.godot/imported/faisca.png-eef66ba7870093440444a272a862e6d4.s3tc.ctex"]
+source_file="res://assets/textures/vfx/particles/puff.png"
+dest_files=["res://.godot/imported/puff.png-479539dee4dee164966fa679b1df7590.s3tc.ctex"]
 
 [params]
 

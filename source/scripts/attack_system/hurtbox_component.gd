@@ -4,18 +4,29 @@ extends Area3D
 signal hit()
 signal body_hit()
 
-@export var should_hit_bodys: bool = true
+@export var launch_force: float = 15.0
+var launch_direction: Vector3 = Vector3.FORWARD:
+	set(v): launch_direction = v.normalized()
 
 var attack_info: AttackInfo
 
 
 func _ready() -> void:
 	area_entered.connect(_on_area_entered)
-	if should_hit_bodys: body_entered.connect(body_hit.emit.unbind(1))
+	body_entered.connect(_on_body_entered)
 
 
 func _on_area_entered(area: Area3D) -> void:
-	if area is HitboxComponent: _handle_damage(area as HitboxComponent)
+	if area is HitboxComponent: _handle_damage(area)
+
+
+func _on_body_entered(body: Node3D) -> void:
+	if body is FallingObject: _launch_falling_object(body)
+	body_hit.emit()
+
+
+func _launch_falling_object(body: FallingObject) -> void:
+	body.apply_central_impulse(launch_direction * launch_force)
 
 
 func _handle_damage(hitbox: HitboxComponent) -> void:

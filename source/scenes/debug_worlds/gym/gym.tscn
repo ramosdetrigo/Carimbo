@@ -6,9 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://c11bmvx2h5bt3" path="res://scenes/entities/enemies/passaporte/passaporte.tscn" id="3_6ms5o"]
 [ext_resource type="Script" uid="uid://wpfn0jjwq6r3" path="res://scripts/beehave/leaf/action/attack_action.gd" id="3_oiwiy"]
 [ext_resource type="PackedScene" uid="uid://572ad1efklon" path="res://scenes/entities/enemies/boleto/boleto.tscn" id="4_6ms5o"]
-[ext_resource type="PackedScene" uid="uid://cci12ktyrx42t" path="res://scenes/objects/falling_object/falling_object.tscn" id="4_e5ff4"]
 [ext_resource type="PackedScene" uid="uid://dxyd470cqorqq" path="res://scenes/entities/enemies/comprovante/comprovante.tscn" id="5_jhkjw"]
+[ext_resource type="Texture2D" uid="uid://dn1mdtvrnxb6v" path="res://assets/tmp/paper_mario.png" id="6_vup72"]
+[ext_resource type="Script" uid="uid://cg016dbe7gs1x" path="res://addons/beehave/nodes/composites/sequence.gd" id="8_oiwiy"]
 [ext_resource type="PackedScene" uid="uid://xw64ux4jg7fg" path="res://scenes/entities/enemies/errige/errige.tscn" id="8_ytj3i"]
+[ext_resource type="Script" uid="uid://din3o6je4hf0y" path="res://scripts/beehave/leaf/action/get_enemy_action.gd" id="9_e5ff4"]
+[ext_resource type="Script" uid="uid://oc2hkcrhiyfa" path="res://scripts/beehave/leaf/condition/is_in_range_condition.gd" id="10_qrft0"]
+[ext_resource type="PackedScene" uid="uid://bbea24bmwk3a2" path="res://scenes/objects/attacks/coffin_spawner.tscn" id="15_kh0qg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ru7ka"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -85,18 +89,6 @@ size = Vector2(80, 80)
 [sub_resource type="BoxShape3D" id="BoxShape3D_ru7ka"]
 size = Vector3(80, 0.001, 80)
 
-[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_e8gke"]
-plane = Plane(0, 0, 1, 40)
-
-[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_6ms5o"]
-plane = Plane(0, 0, -1, 40)
-
-[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_jhkjw"]
-plane = Plane(1, 0, 0, 40)
-
-[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_r1k0u"]
-plane = Plane(-1, 0, 0, 40)
-
 [node name="Gym" type="Node3D" unique_id=1404610020]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1607123390]
@@ -138,51 +130,70 @@ shape = SubResource("ConcavePolygonShape3D_6ms5o")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D" unique_id=1120384046]
 mesh = SubResource("PlaneMesh_tdf5x")
-metadata/_edit_group_ = true
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/MeshInstance3D" unique_id=1525464261]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/MeshInstance3D/StaticBody3D" unique_id=111452759]
 shape = SubResource("BoxShape3D_ru7ka")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="NavigationRegion3D/MeshInstance3D/StaticBody3D" unique_id=1532735012]
-shape = SubResource("WorldBoundaryShape3D_e8gke")
-
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="NavigationRegion3D/MeshInstance3D/StaticBody3D" unique_id=693949755]
-shape = SubResource("WorldBoundaryShape3D_6ms5o")
-
-[node name="CollisionShape3D4" type="CollisionShape3D" parent="NavigationRegion3D/MeshInstance3D/StaticBody3D" unique_id=1472066346]
-shape = SubResource("WorldBoundaryShape3D_jhkjw")
-
-[node name="CollisionShape3D5" type="CollisionShape3D" parent="NavigationRegion3D/MeshInstance3D/StaticBody3D" unique_id=575244571]
-shape = SubResource("WorldBoundaryShape3D_r1k0u")
-
 [node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D/MeshInstance3D/StaticBody3D" unique_id=930327844]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 size = Vector3(80, 1, 80)
 
-[node name="Marker3D" type="Marker3D" parent="." unique_id=1884660999]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5642924, 11.377207, 21.3819)
+[node name="NavigationLink3D" type="NavigationLink3D" parent="NavigationRegion3D" unique_id=744563704]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.299498, 0, 8.128283)
+end_position = Vector3(6, 1.2, 0)
 
-[node name="TestBeehaveTree" type="Node" parent="Marker3D" unique_id=520531356 node_paths=PackedStringArray("blackboard", "actor")]
-script = ExtResource("1_aose2")
-actor_node_path = NodePath("..")
-blackboard = NodePath("@Node@21315")
-actor = NodePath("..")
-metadata/_custom_type_script = "uid://bb0t2ovl7wifo"
+[node name="NavigationRegion3D2" type="NavigationRegion3D" parent="." unique_id=544560531]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.11829, 0, 0)
+navigation_mesh = SubResource("NavigationMesh_5ci4w")
 
-[node name="CooldownDecorator" type="Node" parent="Marker3D/TestBeehaveTree" unique_id=279353187]
-script = ExtResource("2_vup72")
-wait_time = 3.0
-metadata/_custom_type_script = "uid://2qri6rrfv8ui"
+[node name="NavigationLink3D" type="NavigationLink3D" parent="NavigationRegion3D2" unique_id=501579601]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.950706, 0, 0.31985474)
+end_position = Vector3(8, 0, 0)
+enter_cost = 5.0
 
-[node name="AttackAction" type="Node" parent="Marker3D/TestBeehaveTree/CooldownDecorator" unique_id=1678237504]
-script = ExtResource("3_oiwiy")
-attack_scene = ExtResource("4_e5ff4")
-metadata/_custom_type_script = "uid://wpfn0jjwq6r3"
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="NavigationRegion3D2" unique_id=1108189645]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.188942, 4.142597, -10.76394)
+mesh = SubResource("BoxMesh_6ms5o")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D2/MeshInstance3D2" unique_id=1355847220]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D2/MeshInstance3D2/StaticBody3D" unique_id=1934516945]
+shape = SubResource("BoxShape3D_5ci4w")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="NavigationRegion3D2" unique_id=1850016931]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.141084, -1.2602024, 8.511216)
+mesh = SubResource("BoxMesh_jhkjw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D2/MeshInstance3D3" unique_id=1375237203]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D2/MeshInstance3D3/StaticBody3D" unique_id=707917165]
+shape = SubResource("BoxShape3D_e8gke")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="NavigationRegion3D2" unique_id=513556972]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.734359, -1.2602024, -10.82722)
+mesh = SubResource("PrismMesh_hmnde")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D2/MeshInstance3D4" unique_id=256300298]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D2/MeshInstance3D4/StaticBody3D" unique_id=1769287901]
+shape = SubResource("ConcavePolygonShape3D_6ms5o")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D2" unique_id=1165754481]
+mesh = SubResource("PlaneMesh_tdf5x")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D2/MeshInstance3D" unique_id=1582230231]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D2/MeshInstance3D/StaticBody3D" unique_id=1818633487]
+shape = SubResource("BoxShape3D_ru7ka")
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="NavigationRegion3D2/MeshInstance3D/StaticBody3D" unique_id=2076686324]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+size = Vector3(80, 1, 80)
 
 [node name="Character" parent="." unique_id=855143719 instance=ExtResource("1_ru7ka")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5642924, 1.0288286, 28.3819)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.287125, 1.0288286, 30.631992)
 
 [node name="Boleto" parent="." unique_id=1012244960 instance=ExtResource("4_6ms5o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.722834, -1.9073486e-06, -1.3342724)
@@ -194,3 +205,48 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.83841, -9.536743e-07, 21.
 
 [node name="Passaporte" parent="." unique_id=1005230644 instance=ExtResource("3_6ms5o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.916569, 9.536743e-07, 25.724342)
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1449250427]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.95678, 7.628666, 23.851242)
+pixel_size = 0.02
+billboard = 1
+texture = ExtResource("6_vup72")
+
+[node name="BeehaveTree" type="Node" parent="Sprite3D" unique_id=457996425 node_paths=PackedStringArray("blackboard", "actor")]
+script = ExtResource("1_aose2")
+actor_node_path = NodePath("..")
+blackboard = NodePath("@Node@167420")
+actor = NodePath("..")
+metadata/_custom_type_script = "uid://bb0t2ovl7wifo"
+
+[node name="SequenceComposite" type="Node" parent="Sprite3D/BeehaveTree" unique_id=755525473]
+script = ExtResource("8_oiwiy")
+metadata/_custom_type_script = "uid://cg016dbe7gs1x"
+
+[node name="GetEnemyAction" type="Node" parent="Sprite3D/BeehaveTree/SequenceComposite" unique_id=1319850479]
+script = ExtResource("9_e5ff4")
+metadata/_custom_type_script = "uid://din3o6je4hf0y"
+
+[node name="IsInRangeCondition" type="Node" parent="Sprite3D/BeehaveTree/SequenceComposite" unique_id=181615949]
+script = ExtResource("10_qrft0")
+view_range = 30.0
+metadata/_custom_type_script = "uid://oc2hkcrhiyfa"
+
+[node name="CooldownDecorator" type="Node" parent="Sprite3D/BeehaveTree/SequenceComposite" unique_id=367016016]
+script = ExtResource("2_vup72")
+wait_time = 1.2
+metadata/_custom_type_script = "uid://2qri6rrfv8ui"
+
+[node name="SequenceComposite" type="Node" parent="Sprite3D/BeehaveTree/SequenceComposite/CooldownDecorator" unique_id=1988136655]
+script = ExtResource("8_oiwiy")
+metadata/_custom_type_script = "uid://cg016dbe7gs1x"
+
+[node name="GetEnemyAction" type="Node" parent="Sprite3D/BeehaveTree/SequenceComposite/CooldownDecorator/SequenceComposite" unique_id=965888768]
+script = ExtResource("9_e5ff4")
+metadata/_custom_type_script = "uid://din3o6je4hf0y"
+
+[node name="AttackAction" type="Node" parent="Sprite3D/BeehaveTree/SequenceComposite/CooldownDecorator/SequenceComposite" unique_id=1976654665]
+script = ExtResource("3_oiwiy")
+attack_scene = ExtResource("15_kh0qg")
+spawn_at_target = true
+metadata/_custom_type_script = "uid://wpfn0jjwq6r3"

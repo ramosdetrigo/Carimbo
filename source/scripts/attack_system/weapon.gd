@@ -1,0 +1,2 @@
+class_name WeaponNode
+extends AnimatableBody3D

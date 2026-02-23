@@ -17,6 +17,7 @@ func _init() -> void:
 
 func _ready() -> void:
 	frame_changed.connect(_update_shader_anim)
+	animation_changed.connect(_update_shader_anim)
 	_update_viewport_size()
 	_update_shader_anim()
 
@@ -72,24 +73,24 @@ func _update_viewport_size() -> void:
 func _update_shader_anim() -> void:
 	if not material_override: return
 	var material: ShaderMaterial = material_override
-	
+
 	var curr_frame = sprite_frames.get_frame_texture(animation, frame)
 	# Caso onde o frame atual é um parte de um atlas
 	if curr_frame is AtlasTexture:
 		# Atlas do frame atual
 		var atlas: Texture2D = curr_frame.atlas
 		var atlas_size = atlas.get_size()
-		
+
 		# Posição e tamanho normalizados do atlas
 		var curr_rect = curr_frame.region
 		var curr_pos = curr_rect.position / atlas_size
 		var curr_size = curr_rect.size / atlas_size
 		var normal_rect = Vector4(curr_pos.x, curr_pos.y, curr_size.x, curr_size.y)
-		
+
 		material.set_shader_parameter("region_rect", normal_rect)
 	else:
 		material.set_shader_parameter("region_rect", Vector4(0.0, 0.0, 1.0, 1.0))
-	
+
 	material.set_shader_parameter("texture_albedo", curr_frame)
 
 
@@ -109,7 +110,7 @@ func trigger_burn_fx(burn_time: float = 1.0) -> void:
 
 ## Chamada quando a hitbox leva dano para carimbar o sprite
 func on_hitbox_damaged(info: AttackInfo) -> void:
-	stamp(info.stamp_texture if info.stamp_texture else Consts.CARIMBO)
+	stamp(info.stamp_texture if info.stamp_texture else Consts.CARIMBO, info.stamp_size)
 
 
 func _get_configuration_warnings() -> PackedStringArray:

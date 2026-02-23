@@ -1,3 +1,4 @@
+class_name FallingObject
 extends RigidBody3D
 
 @export var attack_scene: PackedScene
@@ -12,6 +13,7 @@ func _ready() -> void:
 
 func _on_body_entered(_body: Node) -> void:
 	lifetime_timer.start()
+	if not attack_scene: return
 	var attack: Node3D = attack_scene.instantiate()
 	get_tree().current_scene.add_child(attack)
 	attack.global_position = global_position + attack_spawn_offset

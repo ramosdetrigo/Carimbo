@@ -3,6 +3,7 @@ extends InputComponent
 
 @export var weapon_manager: WeaponManager
 
+var _last_move_input: Vector3
 
 func _unhandled_input(event: InputEvent) -> void:
 	if blocked: return
@@ -24,6 +25,11 @@ func _handle_movement() -> void:
 
 
 func _handle_hit() -> void:
-	var input_dir: Vector2 = _get_mouse_dir()
-	weapon_manager.attack(Vector3(input_dir.x, 0.0, input_dir.y))
+	#var input_dir: Vector2 = _get_mouse_dir()
+	weapon_manager.attack(_last_move_input)
 	get_viewport().set_input_as_handled()
+
+
+func set_input_direction(value: Vector3) -> void:
+	if not blocked: movement_input = value
+	if movement_input: _last_move_input = movement_input

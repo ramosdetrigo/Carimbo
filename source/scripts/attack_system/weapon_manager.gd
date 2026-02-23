@@ -4,16 +4,16 @@ extends Node3D
 
 @export var attack_scene: PackedScene: set = _set_attack_scene
 @export var attack_spawn_offset: Vector3
-@export var is_projectile: bool = false
 
 
-func attack(shooting_dir: Vector3 = Vector3.ZERO) -> void:
+func attack(shooting_dir: Vector3 = Vector3.UP) -> void:
 	if not attack_scene: return
 	var attk: Node3D = attack_scene.instantiate()
-	get_tree().current_scene.add_child(attk)
-	attk.global_position = global_position + attack_spawn_offset
-	if not is_projectile: return
-	attk.look_at(attk.global_position + shooting_dir)
+	owner.add_sibling(attk)
+	var pos: Vector3 = global_position + attack_spawn_offset
+	shooting_dir = (shooting_dir if shooting_dir else Vector3.UP)
+	attk.look_at_from_position(pos, pos + shooting_dir)
+	if "swing_dir" in attk: attk.set.call_deferred(&"swing_dir", shooting_dir)
 
 
 

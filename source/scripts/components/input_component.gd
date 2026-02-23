@@ -13,17 +13,14 @@ func _physics_process(_delta: float) -> void:
 	_update_agent_move_direction()
 
 
-func set_input_direction(value: Vector3) -> void:
-	if blocked: return
-	movement_input = value
+func set_input_direction(value: Vector3) -> void: if not blocked: movement_input = value
 
 
 func set_horizontal_input_direction(value: Vector2) -> void:
 	set_input_direction(Vector3(value.x, 0.0, value.y))
 
 
-func set_target_pos(value: Vector3) -> void:
-	target_pos = value
+func set_target_pos(value: Vector3) -> void: target_pos = value
 
 
 func start_navigation(agent: NavigationAgent3D, starting_pos: Vector3 = Vector3.ZERO) -> void:
@@ -44,17 +41,10 @@ func stop_navigation() -> void:
 	_reached = true
 
 
-func block() -> void:
-	blocked = true
+func block() -> void: blocked = true
 
 
-func unblock() -> void:
-	blocked = false
-
-
-func kill() -> void:
-	set_input_direction(Vector3.ZERO)
-	block()
+func unblock() -> void: blocked = false
 
 
 func is_at_destination() -> bool: return _reached

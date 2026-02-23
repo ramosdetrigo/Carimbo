@@ -8,5 +8,6 @@ func on_being_hit(_h: float) -> void:
 	if _h <= 0: return
 	beehave_tree.disable()
 	stampable_sprite.play(&"hit")
-	await stampable_sprite.animation_finished
+	if stampable_sprite.sprite_frames.get_animation_loop(&"hit"): await stampable_sprite.animation_looped
+	else: await stampable_sprite.animation_finished
 	beehave_tree.enable()

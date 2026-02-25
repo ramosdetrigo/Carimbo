@@ -9,17 +9,23 @@ colors = PackedColorArray(0.9, 0.225, 0, 1, 0.9047094, 0.4903581, 5.7756904e-07,
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_p2bes"]
 gradient = SubResource("Gradient_lo1cw")
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_jggbg"]
-frequency = 0.002
-fractal_octaves = 3
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_lo1cw"]
+noise_type = 4
+seed = 3
+fractal_type = 2
+fractal_lacunarity = 1.5
+fractal_gain = 0.75
+fractal_weighted_strength = 1.0
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_plilt"]
-noise = SubResource("FastNoiseLite_jggbg")
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_p2bes"]
+noise = SubResource("FastNoiseLite_lo1cw")
 seamless = true
+seamless_blend_skirt = 0.37
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_p2bes"]
 noise_type = 4
 seed = 2
+frequency = 0.005
 fractal_type = 2
 fractal_lacunarity = 1.5
 fractal_gain = 0.75
@@ -28,23 +34,27 @@ fractal_weighted_strength = 1.0
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_27s2g"]
 noise = SubResource("FastNoiseLite_p2bes")
 seamless = true
+seamless_blend_skirt = 0.37
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jggbg"]
 render_priority = 0
 shader = ExtResource("1_p2bes")
-shader_parameter/displacement_map = SubResource("NoiseTexture2D_plilt")
+shader_parameter/displacement_map = SubResource("NoiseTexture2D_p2bes")
 shader_parameter/liquid = SubResource("NoiseTexture2D_27s2g")
 shader_parameter/color_ramp = SubResource("GradientTexture1D_p2bes")
-shader_parameter/glow_strength = 2.0
+shader_parameter/glow_strength = 1.10000001639132
 shader_parameter/glow_oscillation = 0.0
-shader_parameter/displacement_strength = 0.07999999821184
+shader_parameter/displacement_strength = 0.1999999955296
 shader_parameter/displacement_vector = Vector3(0, 1, 0)
-shader_parameter/displacement_speed = 0.20000000298024
+shader_parameter/displacement_speed = 0.10000000149012
 shader_parameter/uv_scale = Vector2(1, 1)
 shader_parameter/uv_offset = Vector2(1, 1)
+shader_parameter/uv_offset2 = Vector2(1, 0)
+shader_parameter/mix_amount = 0.1999999955296
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_pw8pa"]
 material = SubResource("ShaderMaterial_jggbg")
+size = Vector2(4, 4)
 subdivide_width = 32
 subdivide_depth = 32
 

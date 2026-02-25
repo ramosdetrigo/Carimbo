@@ -1,0 +1,151 @@
+[gd_scene format=3 uid="uid://ba0qf7kvnemw0"]
+
+[ext_resource type="Texture2D" uid="uid://dstc6eh73wl5o" path="res://assets/tmp/wall.png" id="1_q14ec"]
+[ext_resource type="Texture2D" uid="uid://cdhacpnmwivwn" path="res://assets/tmp/column.png" id="2_k1q5k"]
+[ext_resource type="Texture2D" uid="uid://b57w5p4s68qxs" path="res://assets/tmp/door.png" id="2_llv17"]
+[ext_resource type="Texture2D" uid="uid://doq2ak5y2l18" path="res://assets/tmp/cilinder.png" id="4_fggqu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vyhqo"]
+cull_mode = 2
+albedo_texture = ExtResource("1_q14ec")
+distance_fade_mode = 2
+distance_fade_max_distance = 5.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_k1q5k"]
+material = SubResource("StandardMaterial3D_vyhqo")
+size = Vector2(2, 8)
+orientation = 0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_llv17"]
+size = Vector3(0.5, 8, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_llv17"]
+cull_mode = 2
+albedo_texture = ExtResource("1_q14ec")
+uv1_scale = Vector3(1, 0.125, 1)
+uv1_offset = Vector3(0, 0.875, 0)
+distance_fade_mode = 2
+distance_fade_max_distance = 5.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_eu5cw"]
+material = SubResource("StandardMaterial3D_llv17")
+size = Vector2(2, 1)
+orientation = 0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wsecc"]
+size = Vector3(0.5, 1, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fggqu"]
+transparency = 1
+albedo_texture = ExtResource("2_llv17")
+distance_fade_mode = 2
+distance_fade_max_distance = 5.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_5h1ip"]
+material = SubResource("StandardMaterial3D_fggqu")
+size = Vector2(4, 8)
+orientation = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qi0o4"]
+transparency = 1
+albedo_texture = ExtResource("2_k1q5k")
+distance_fade_mode = 2
+distance_fade_max_distance = 5.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_fggqu"]
+material = SubResource("StandardMaterial3D_qi0o4")
+size = Vector2(4, 8)
+orientation = 0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dqv7n"]
+size = Vector3(0.5, 8, 4)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_llv17"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fggqu"]
+size = Vector3(2, 0.001, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ludqd"]
+cull_mode = 2
+albedo_texture = ExtResource("4_fggqu")
+uv1_scale = Vector3(4, 1, 1)
+distance_fade_mode = 2
+distance_fade_max_distance = 5.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_5h1ip"]
+lightmap_size_hint = Vector2i(441, 184)
+material = SubResource("StandardMaterial3D_ludqd")
+flip_faces = true
+top_radius = 14.0
+bottom_radius = 14.0
+height = 8.0
+radial_segments = 16
+rings = 1
+cap_top = false
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_fggqu"]
+height = 0.001
+radius = 14.0
+
+[node name="LevelProps" type="Node3D" unique_id=498885906]
+
+[node name="Wall" type="MeshInstance3D" parent="." unique_id=372984427]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 4, 0)
+visible = false
+mesh = SubResource("PlaneMesh_k1q5k")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall" unique_id=90950033]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall/StaticBody3D" unique_id=1400331722]
+shape = SubResource("BoxShape3D_llv17")
+
+[node name="HalfWall" type="MeshInstance3D" parent="." unique_id=313913796]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.5, 0)
+visible = false
+mesh = SubResource("PlaneMesh_eu5cw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="HalfWall" unique_id=191573588]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HalfWall/StaticBody3D" unique_id=826301948]
+shape = SubResource("BoxShape3D_wsecc")
+
+[node name="Door" type="MeshInstance3D" parent="." unique_id=1398103195]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.97981393, 4, 0)
+visible = false
+mesh = SubResource("PlaneMesh_5h1ip")
+
+[node name="OffsetDoor" type="MeshInstance3D" parent="." unique_id=394613121]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.97981393, 4, -1)
+visible = false
+mesh = SubResource("PlaneMesh_5h1ip")
+
+[node name="Column" type="MeshInstance3D" parent="." unique_id=1217671361]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 4, -1)
+visible = false
+mesh = SubResource("PlaneMesh_fggqu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Column" unique_id=1259045274]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Column/StaticBody3D" unique_id=763059559]
+shape = SubResource("BoxShape3D_dqv7n")
+
+[node name="Floor" type="MeshInstance3D" parent="." unique_id=252229296]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+visible = false
+mesh = SubResource("PlaneMesh_llv17")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor" unique_id=351213506]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D" unique_id=613321179]
+shape = SubResource("BoxShape3D_fggqu")
+
+[node name="RoundRoom" type="MeshInstance3D" parent="." unique_id=440767567]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+visible = false
+mesh = SubResource("CylinderMesh_5h1ip")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="RoundRoom" unique_id=53902559]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RoundRoom/StaticBody3D" unique_id=227192558]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
+shape = SubResource("CylinderShape3D_fggqu")

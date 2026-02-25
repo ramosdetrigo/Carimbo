@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Diabo A4"
-run/main_scene="uid://5ao27c7otj7f"
+run/main_scene="uid://dbx0mdbod3dh8"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://assets/tmp/icon.svg"
 
@@ -20,6 +20,7 @@ config/icon="res://assets/tmp/icon.svg"
 Consts="*uid://c3877hb6j1qqh"
 BeehaveGlobalMetrics="*uid://c3ktl6ontsdt7"
 BeehaveGlobalDebugger="*uid://bl3ma400hpvsh"
+SceneLoader="*uid://c1vlf4hvjuhhx"
 
 [debug]
 

@@ -2,13 +2,17 @@
 
 [ext_resource type="Script" uid="uid://fjgad71t0sd4" path="res://scripts/attack_system/hurtbox_component.gd" id="1_uxk2s"]
 [ext_resource type="Script" uid="uid://ctsptwrqbeytg" path="res://scripts/attack_system/attack_projectile.gd" id="1_xj7mc"]
-[ext_resource type="Texture2D" uid="uid://qjkhq2b4id7p" path="res://assets/textures/enemies/boleto/coin.png" id="2_jboay"]
 [ext_resource type="Script" uid="uid://cuoa1ubyh5d06" path="res://scripts/attack_system/attack_info.gd" id="2_x8ajp"]
 [ext_resource type="Texture2D" uid="uid://ddvf2tcrr4143" path="res://assets/textures/enemies/boleto/boleto_sprite_sheet.png" id="4_wxlir"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_5c8i2"]
+atlas = ExtResource("4_wxlir")
+region = Rect2(133, 2717, 289, 156)
+
 [sub_resource type="Resource" id="Resource_jmjnv"]
 script = ExtResource("2_x8ajp")
-stamp_texture = ExtResource("2_jboay")
+stamp_texture = SubResource("AtlasTexture_5c8i2")
+stamp_size = Vector2(0.25, 0.25)
 flags = 1
 metadata/_custom_type_script = "uid://cuoa1ubyh5d06"
 

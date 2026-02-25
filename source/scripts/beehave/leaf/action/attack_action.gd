@@ -12,12 +12,12 @@ const TARGET_POS_KEY = BeehaveConsts.TARGET_POS_KEY
 func tick(actor: Node, blackboard: Blackboard) -> int:
 	if not attack_scene: return FAILURE
 	var attack: Node3D = attack_scene.instantiate()
-	get_tree().current_scene.add_child(attack)
+	actor.add_sibling(attack)
 	var pos: Vector3 = (actor as Node3D).global_position + attack_spawn_offset
 	var target: Vector3 = blackboard.get_value(TARGET_POS_KEY, pos + Vector3.DOWN)
-	if spawn_at_target: pos = target; target -= Vector3.DOWN
-	var direction: Vector3 = pos.direction_to(target)
-	attack.look_at_from_position(pos, direction)
+	target.y = pos.y
+	if spawn_at_target: attack.set_global_position.call_deferred(target)
+	else: attack.look_at_from_position(pos, target)
 	return SUCCESS
 
 

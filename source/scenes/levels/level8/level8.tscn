@@ -1,0 +1,178 @@
+[gd_scene format=3 uid="uid://c3ydqufdpwrd6"]
+
+[ext_resource type="Script" uid="uid://ckxpmu5lrfiql" path="res://scenes/levels/level_scene.gd" id="1_fkc71"]
+[ext_resource type="MeshLibrary" uid="uid://be3yh5mqefut3" path="res://resources/mesh_library/level_props.meshlib" id="2_qv888"]
+[ext_resource type="PackedScene" uid="uid://c3hpiq2ftpgt8" path="res://scenes/levels/doors/scene_door.tscn" id="3_af80s"]
+[ext_resource type="Environment" uid="uid://c44ylihrd2515" path="res://resources/envoriment/fire_enviroment.tres" id="5_6076s"]
+[ext_resource type="Script" uid="uid://i7djs8lu52us" path="res://scenes/levels/camera_area.gd" id="5_r5mya"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_kddao"]
+agent_radius = 1.0
+
+[sub_resource type="FogMaterial" id="FogMaterial_af80s"]
+albedo = Color(0.69648236, 0.18224016, 0.123515494, 1)
+emission = Color(0.5894126, 0.2249873, 9.62615e-08, 1)
+height_falloff = 7.1184483
+edge_fade = 0.096593596
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6076s"]
+size = Vector3(10, 1, 28)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_af80s"]
+size = Vector3(20, 1, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r5mya"]
+size = Vector3(20, 1, 10)
+
+[node name="Level8" type="Node3D" unique_id=921310700]
+script = ExtResource("1_fkc71")
+metadata/_custom_type_script = "uid://ckxpmu5lrfiql"
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1301747232]
+navigation_mesh = SubResource("NavigationMesh_kddao")
+
+[node name="GridMap" type="GridMap" parent="NavigationRegion3D" unique_id=1814664590]
+mesh_library = ExtResource("2_qv888")
+cell_center_y = false
+data = {
+"cells": PackedInt32Array(-1, 65531, 1441797, -2, 65531, 1441797, -3, 65531, 1441797, -4, 65531, 1441797, -5, 65531, 1441797, -5, 65532, 1441797, -5, 65533, 1441797, -5, 65534, 1441797, -5, 65535, 1441797, -5, 0, 1441797, -5, 1, 1441797, -5, 2, 1441797, -5, 3, 1441797, -5, 4, 1441797, -5, 5, 1441797, -5, 6, 1441797, -5, 7, 1441797, -5, 8, 1441797, -4, 8, 1441797, -3, 8, 1441797, -2, 8, 1441797, -1, 8, 1441797, -1, 7, 1441797, -1, 6, 1441797, -1, 5, 1441797, -1, 4, 1441797, -1, 3, 1441797, -1, 2, 1441797, -1, 1, 1441797, -1, 0, 1441797, -1, 65535, 1441797, -1, 65534, 1441797, -1, 65533, 1441797, -1, 65532, 1441797, -2, 65532, 1441797, -3, 65532, 1441797, -4, 65532, 1441797, -4, 65533, 1441797, -4, 65534, 1441797, -4, 65535, 1441797, -4, 0, 1441797, -4, 1, 1441797, -4, 2, 1441797, -4, 3, 1441797, -4, 4, 1441797, -4, 5, 1441797, -4, 6, 1441797, -4, 7, 1441797, -3, 7, 1441797, -2, 7, 1441797, -2, 6, 1441797, -2, 5, 1441797, -2, 4, 1441797, -2, 3, 1441797, -2, 2, 1441797, -2, 1, 1441797, -2, 0, 1441797, -2, 65535, 1441797, -2, 65534, 1441797, -2, 65533, 1441797, -3, 65533, 1441797, -3, 65534, 1441797, -3, 65535, 1441797, -3, 0, 1441797, -3, 1, 1441797, -3, 2, 1441797, -3, 3, 1441797, -3, 4, 1441797, -3, 5, 1441797, -3, 6, 1441797, -65536, 65531, 1441797, -65535, 65531, 1441797, -65534, 65531, 1441797, -65533, 65531, 1441797, -65532, 65531, 1441797, -65531, 65531, 1441797, -65530, 65531, 1441797, -65529, 65531, 1441797, -65528, 65531, 1441797, -65527, 65531, 1441797, -65527, 65532, 1441797, -65527, 65533, 1441797, -65527, 65534, 1441797, -65527, 65535, 1441797, -65528, 65535, 1441797, -65529, 65535, 1441797, -65530, 65535, 1441797, -65531, 65535, 1441797, -65532, 65535, 1441797, -65533, 65535, 1441797, -65534, 65535, 1441797, -65535, 65535, 1441797, -65536, 65535, 1441797, -65536, 65534, 1441797, -65536, 65533, 1441797, -65536, 65532, 1441797, -65535, 65532, 1441797, -65534, 65532, 1441797, -65533, 65532, 1441797, -65532, 65532, 1441797, -65531, 65532, 1441797, -65530, 65532, 1441797, -65529, 65532, 1441797, -65528, 65532, 1441797, -65528, 65533, 1441797, -65529, 65533, 1441797, -65529, 65534, 1441797, -65530, 65534, 1441797, -65531, 65534, 1441797, -65532, 65534, 1441797, -65533, 65534, 1441797, -65534, 65534, 1441797, -65534, 65533, 1441797, -65535, 65533, 1441797, -65533, 65533, 1441797, -65532, 65533, 1441797, -65531, 65533, 1441797, -65530, 65533, 1441797, -65528, 65534, 1441797, -65535, 65534, 1441797, -65536, 4, 1441797, -65535, 4, 1441797, -65534, 4, 1441797, -65533, 4, 1441797, -65532, 4, 1441797, -65531, 4, 1441797, -65530, 4, 1441797, -65529, 4, 1441797, -65528, 4, 1441797, -65527, 4, 1441797, -65527, 5, 1441797, -65527, 6, 1441797, -65527, 7, 1441797, -65527, 8, 1441797, -65528, 8, 1441797, -65529, 8, 1441797, -65530, 8, 1441797, -65531, 8, 1441797, -65532, 8, 1441797, -65533, 8, 1441797, -65534, 8, 1441797, -65535, 8, 1441797, -65536, 8, 1441797, -65536, 7, 1441797, -65536, 6, 1441797, -65536, 5, 1441797, -65535, 5, 1441797, -65534, 5, 1441797, -65533, 5, 1441797, -65532, 5, 1441797, -65529, 5, 1441797, -65528, 5, 1441797, -65528, 6, 1441797, -65528, 7, 1441797, -65529, 7, 1441797, -65533, 7, 1441797, -65534, 7, 1441797, -65535, 7, 1441797, -65535, 6, 1441797, -65534, 6, 1441797, -65533, 6, 1441797, -65532, 6, 1441797, -65532, 7, 1441797, -65531, 7, 1441797, -65531, 6, 1441797, -65530, 6, 1441797, -65529, 6, 1441797, -65530, 7, 1441797, -65531, 5, 1441797, -65530, 5, 1441797, 9, 65530, 1048576, 8, 65530, 1048576, 7, 65530, 1048576, 6, 65530, 1048576, 5, 65530, 1048576, 4, 65530, 1048576, 3, 65530, 1048576, 2, 65530, 1048576, 1, 65530, 1048576, 0, 65530, 1048576, 65535, 65530, 1048576, 65534, 65530, 1048576, 65533, 65530, 1048576, 65532, 65530, 1048576, 65531, 65530, 1048576, 65531, 9, 1441792, 65532, 9, 1441792, 65533, 9, 1441792, 65534, 9, 1441792, 65535, 9, 1441792, 0, 9, 1441792, 1, 9, 1441792, 2, 9, 1441792, 3, 9, 1441792, 4, 9, 1441792, 5, 9, 1441792, 6, 9, 1441792, 7, 9, 1441792, 8, 9, 1441792, 9, 9, 1441792, 65530, 8, 655360, 65530, 7, 655360, 65530, 6, 655360, 65530, 5, 655360, 65530, 4, 655360, 65530, 3, 655360, 65530, 2, 655360, 65530, 1, 655360, 65530, 0, 655360, 65530, 65535, 655360, 65530, 65534, 655360, 65530, 65533, 655360, 65530, 65532, 655360, 65530, 65531, 655360, 10, 65534, 0, 10, 65533, 0, 10, 65532, 0, 10, 65531, 0, 10, 65535, 0, 10, 4, 0, 10, 5, 0, 10, 6, 0, 10, 7, 0, 10, 8, 0, 9, 65533, 655362, 9, 6, 655362, -262135, 3, 1048576, -262136, 3, 1048576, -262137, 3, 1048576, -262138, 3, 1048576, -262139, 3, 1048576, -262140, 3, 1048576, -262141, 3, 1048576, -262142, 3, 1048576, -262143, 3, 1048576, -262144, 3, 1048576, -262144, 0, 1441792, -262143, 0, 1441792, -262142, 0, 1441792, -262141, 0, 1441792, -262140, 0, 1441792, -262139, 0, 1441792, -262138, 0, 1441792, -262137, 0, 1441792, -262136, 0, 1441792, -262135, 0, 1441792, -196609, 0, 655360, -196609, 1, 655360, -196609, 2, 655360, -196609, 3, 655360, -262134, 0, 0, -262134, 1, 0, -262134, 2, 0, -262134, 3, 0, 10, 0, 0, 10, 1, 0, 10, 2, 0, 10, 3, 0, 9, 65535, 1048577, 8, 65535, 1048577, 7, 65535, 1048577, 6, 65535, 1048577, 5, 65535, 1048577, 4, 65535, 1048577, 3, 65535, 1048577, 2, 65535, 1048577, 1, 65535, 1048577, 0, 65535, 1048577, 0, 0, 1, 0, 1, 1, 0, 2, 1, 0, 3, 1, 0, 4, 1441793, 1, 4, 1441793, 2, 4, 1441793, 3, 4, 1441793, 4, 4, 1441793, 5, 4, 1441793, 6, 4, 1441793, 7, 4, 1441793, 8, 4, 1441793, 9, 4, 1441793)
+}
+metadata/_editor_floor_ = Vector3(0, -5, 0)
+
+[node name="Lights" type="Node3D" parent="NavigationRegion3D/GridMap" unique_id=1696212993]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="NavigationRegion3D/GridMap/Lights" unique_id=1010980605]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.9195127, 5, -4.5878515)
+light_color = Color(0.87, 0.56549996, 0.348, 1)
+light_size = 4.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 10.0
+omni_shadow_mode = 0
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="NavigationRegion3D/GridMap/Lights" unique_id=1937900019]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5551376, 5, 12.548691)
+light_color = Color(0.87, 0.56549996, 0.348, 1)
+light_size = 4.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 10.0
+omni_shadow_mode = 0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="NavigationRegion3D/GridMap/Lights" unique_id=31429328]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.956436, 5.000002, -5.111004)
+light_color = Color(0.87, 0.56549996, 0.348, 1)
+light_size = 4.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 10.0
+omni_shadow_mode = 0
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="NavigationRegion3D/GridMap/Lights" unique_id=598157779]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1308184, 5, -4.724187)
+light_color = Color(0.87, 0.56549996, 0.348, 1)
+light_size = 4.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 10.0
+omni_shadow_mode = 0
+
+[node name="OmniLight3D6" type="OmniLight3D" parent="NavigationRegion3D/GridMap/Lights" unique_id=1499554157]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.371368, 5, 12.172947)
+light_color = Color(0.87, 0.56549996, 0.348, 1)
+light_size = 4.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 10.0
+omni_shadow_mode = 0
+
+[node name="OmniLight3D8" type="OmniLight3D" parent="NavigationRegion3D/GridMap/Lights" unique_id=133593191]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5338364, 5, 13.860611)
+light_color = Color(0.87, 0.56549996, 0.348, 1)
+light_size = 4.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 10.0
+omni_shadow_mode = 0
+
+[node name="OmniLight3D7" type="OmniLight3D" parent="NavigationRegion3D/GridMap/Lights" unique_id=2053274530]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6962056, 5, 3.063774)
+light_color = Color(0.87, 0.56549996, 0.348, 1)
+light_size = 4.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 10.0
+omni_shadow_mode = 0
+
+[node name="Entrance" parent="NavigationRegion3D/GridMap" unique_id=1756562916 instance=ExtResource("3_af80s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -5)
+destination_scene = "uid://du3pjs2hn1we1"
+destination_position = Vector3(-11, 0, 0)
+
+[node name="Marker3D" type="Marker3D" parent="NavigationRegion3D/GridMap/Entrance" unique_id=1865328752]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+
+[node name="Exit" parent="NavigationRegion3D/GridMap" unique_id=335607182 instance=ExtResource("3_af80s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 13)
+destination_scene = "uid://ca140xefhoyi6"
+destination_position = Vector3(-2, 0, 0)
+
+[node name="Marker3D" type="Marker3D" parent="NavigationRegion3D/GridMap/Exit" unique_id=1760131355]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, 13)
+top_level = true
+
+[node name="Enemies" type="Node3D" parent="NavigationRegion3D/GridMap" unique_id=604547976]
+
+[node name="FogVolume" type="FogVolume" parent="NavigationRegion3D/GridMap" unique_id=430452668]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -3, 4)
+size = Vector3(20, 6, 8)
+material = SubResource("FogMaterial_af80s")
+
+[node name="CameraArea" type="Area3D" parent="NavigationRegion3D/GridMap" unique_id=1945968237 node_paths=PackedStringArray("camera")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 13)
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("5_r5mya")
+camera = NodePath("Camera3D")
+metadata/_custom_type_script = "uid://i7djs8lu52us"
+
+[node name="CameraArea" type="CollisionShape3D" parent="NavigationRegion3D/GridMap/CameraArea" unique_id=1580147622]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -9)
+shape = SubResource("BoxShape3D_6076s")
+debug_color = Color(0.9849661, 0, 0.34298557, 0.41960785)
+
+[node name="Camera3D" type="Camera3D" parent="NavigationRegion3D/GridMap/CameraArea" unique_id=17556107]
+transform = Transform3D(0.65605885, -0.4133001, 0.6314822, 0, 0.83672196, 0.5476279, -0.7547097, -0.35927618, 0.5489389, 7.033168, 5.9079795, 3.0705967)
+
+[node name="CameraArea2" type="Area3D" parent="NavigationRegion3D/GridMap" unique_id=1796813437 node_paths=PackedStringArray("camera")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -5)
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("5_r5mya")
+camera = NodePath("Camera3D")
+metadata/_custom_type_script = "uid://i7djs8lu52us"
+
+[node name="CameraArea" type="CollisionShape3D" parent="NavigationRegion3D/GridMap/CameraArea2" unique_id=1951101203]
+shape = SubResource("BoxShape3D_af80s")
+debug_color = Color(0.9849661, 0, 0.34298557, 0.41960785)
+
+[node name="Camera3D" type="Camera3D" parent="NavigationRegion3D/GridMap/CameraArea2" unique_id=1338877882]
+transform = Transform3D(0.8746199, -0.2760228, 0.39856175, 0, 0.82210004, 0.56934303, -0.4848093, -0.49795875, 0.7190251, 8.071611, 6.759674, 8.032889)
+
+[node name="CameraArea3" type="Area3D" parent="NavigationRegion3D/GridMap" unique_id=673822331 node_paths=PackedStringArray("camera")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 13)
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("5_r5mya")
+camera = NodePath("Camera3D")
+metadata/_custom_type_script = "uid://i7djs8lu52us"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/GridMap/CameraArea3" unique_id=46246464]
+shape = SubResource("BoxShape3D_r5mya")
+debug_color = Color(0.9499399, 0.21283916, 0.19803298, 0.41960785)
+
+[node name="Camera3D" type="Camera3D" parent="NavigationRegion3D/GridMap/CameraArea3" unique_id=566831040]
+transform = Transform3D(0.7372785, -0.41318244, 0.5345098, 0, 0.79117596, 0.6115886, -0.6755889, -0.4509111, 0.5833171, 8.582649, 5.613468, 4.059553)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1548286571]
+environment = ExtResource("5_6076s")

@@ -1,0 +1,128 @@
+[gd_scene format=3 uid="uid://8r3eav3jfq30"]
+
+[ext_resource type="Script" uid="uid://ckxpmu5lrfiql" path="res://scenes/levels/level_scene.gd" id="1_wyavl"]
+[ext_resource type="MeshLibrary" uid="uid://be3yh5mqefut3" path="res://resources/mesh_library/level_props.meshlib" id="3_ly24c"]
+[ext_resource type="PackedScene" uid="uid://c3hpiq2ftpgt8" path="res://scenes/levels/doors/scene_door.tscn" id="4_kplnt"]
+[ext_resource type="PackedScene" uid="uid://byma2jgolnudi" path="res://scenes/vfx/static/symbols/water_rune.tscn" id="4_ludqd"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fail8"]
+sky_top_color = Color(0.3333091, 0.07350255, 0.05406054, 1)
+sky_horizon_color = Color(0.20485693, 0.03212632, 0.021665383, 1)
+ground_bottom_color = Color(0.09721538, 0.01852827, 0, 1)
+ground_horizon_color = Color(0.20485693, 0.03212632, 0.021665383, 1)
+
+[sub_resource type="Sky" id="Sky_mguho"]
+sky_material = SubResource("ProceduralSkyMaterial_fail8")
+
+[sub_resource type="Environment" id="Environment_t22y2"]
+background_mode = 2
+sky = SubResource("Sky_mguho")
+ambient_light_sky_contribution = 0.0
+tonemap_mode = 2
+glow_enabled = true
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0
+volumetric_fog_albedo = Color(0.28478888, 0.07470257, 0.041376807, 1)
+
+[node name="Level5" type="Node3D" unique_id=37976033]
+script = ExtResource("1_wyavl")
+metadata/_custom_type_script = "uid://ckxpmu5lrfiql"
+
+[node name="GridMap" type="GridMap" parent="." unique_id=1512181801]
+mesh_library = ExtResource("3_ly24c")
+cell_center_y = false
+collision_mask = 0
+data = {
+"cells": PackedInt32Array(65529, 2, 655360, 65529, 0, 655360, 65529, 1, 655360, 65529, 65535, 655360, 65529, 65534, 655360, 65530, 0, 2, 7, 65534, 0, 7, 65535, 0, 7, 0, 0, 7, 1, 0, 7, 2, 0, 6, 0, 655362, 0, 0, 655366)
+}
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="GridMap" unique_id=755179532]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 5, -7)
+light_color = Color(0.24193507, 0.70318556, 0.8807105, 1)
+light_energy = 0.545
+light_volumetric_fog_energy = 2.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 8.478483
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="GridMap" unique_id=2068704172]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 5, 9)
+light_color = Color(0.24193507, 0.70318556, 0.8807105, 1)
+light_energy = 0.545
+light_volumetric_fog_energy = 2.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 8.478483
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="GridMap" unique_id=1661295426]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 5, -7)
+light_color = Color(0.24193507, 0.70318556, 0.8807105, 1)
+light_energy = 0.545
+light_volumetric_fog_energy = 2.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 8.478483
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="GridMap" unique_id=362880169]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 5, -10)
+light_color = Color(0.24193507, 0.70318556, 0.8807105, 1)
+light_energy = 0.545
+light_volumetric_fog_energy = 2.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 8.478483
+
+[node name="OmniLight3D6" type="OmniLight3D" parent="GridMap" unique_id=1268511638]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 5, 12)
+light_color = Color(0.24193507, 0.70318556, 0.8807105, 1)
+light_energy = 0.545
+light_volumetric_fog_energy = 2.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 8.478483
+
+[node name="OmniLight3D8" type="OmniLight3D" parent="GridMap" unique_id=2073159682]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 5, 1)
+light_color = Color(0.24193507, 0.70318556, 0.8807105, 1)
+light_energy = 0.545
+light_volumetric_fog_energy = 2.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 8.478483
+
+[node name="OmniLight3D9" type="OmniLight3D" parent="GridMap" unique_id=918920472]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 5, 1)
+light_color = Color(0.24193507, 0.70318556, 0.8807105, 1)
+light_energy = 0.545
+light_volumetric_fog_energy = 2.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 8.478483
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="GridMap" unique_id=209325932]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 5, 9)
+light_color = Color(0.24193507, 0.70318556, 0.8807105, 1)
+light_energy = 0.545
+light_volumetric_fog_energy = 2.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 8.478483
+
+[node name="WaterRune" parent="GridMap" unique_id=945686240 instance=ExtResource("4_ludqd")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 1, 0, 1)
+
+[node name="Entrance" parent="GridMap" unique_id=1756562916 instance=ExtResource("4_kplnt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 1)
+
+[node name="Exit" parent="GridMap" unique_id=817801631 instance=ExtResource("4_kplnt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 1)
+destination_scene = "uid://cpe81jsk65sjm"
+destination_position = Vector3(7.778175, 0, 8.192389)
+
+[node name="Marker3D" type="Marker3D" parent="GridMap/Exit" unique_id=390032404]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 1)
+top_level = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=599409113]
+environment = SubResource("Environment_t22y2")

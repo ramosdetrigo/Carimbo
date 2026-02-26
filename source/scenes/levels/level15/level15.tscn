@@ -1,0 +1,140 @@
+[gd_scene format=3 uid="uid://ddxf88bkpk7iu"]
+
+[ext_resource type="Script" uid="uid://ckxpmu5lrfiql" path="res://scenes/levels/level_scene.gd" id="1_igujk"]
+[ext_resource type="MeshLibrary" uid="uid://be3yh5mqefut3" path="res://resources/mesh_library/level_props.meshlib" id="2_oxh2k"]
+[ext_resource type="PackedScene" uid="uid://c3hpiq2ftpgt8" path="res://scenes/levels/doors/scene_door.tscn" id="3_okbqr"]
+[ext_resource type="PackedScene" uid="uid://bi3cegty1y7xs" path="res://scenes/vfx/static/symbols/knockback_rune.tscn" id="4_ejewu"]
+[ext_resource type="Script" uid="uid://i7djs8lu52us" path="res://scenes/levels/camera_area.gd" id="5_cnxbl"]
+[ext_resource type="Environment" uid="uid://c44ylihrd2515" path="res://resources/envoriment/fire_enviroment.tres" id="6_jq4be"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_yax02"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_88c10"]
+height = 0.5
+radius = 14.0
+
+[node name="Level10" type="Node3D" unique_id=2027348526]
+script = ExtResource("1_igujk")
+metadata/_custom_type_script = "uid://ckxpmu5lrfiql"
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=732782216]
+navigation_mesh = SubResource("NavigationMesh_yax02")
+
+[node name="GridMap" type="GridMap" parent="NavigationRegion3D" unique_id=873311870]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -1)
+mesh_library = ExtResource("2_oxh2k")
+cell_center_y = false
+data = {
+"cells": PackedInt32Array(0, 0, 6, 65529, 2, 655360, 65529, 1, 655360, 65529, 0, 655360, 65529, 65535, 655360, 65529, 65534, 655360, 7, 65534, 0, 7, 65535, 0, 7, 0, 0, 7, 1, 0, 7, 2, 0, 65530, 0, 2, 6, 0, 655362, 393209, 65529, 524293, 393209, 65530, 524293, 393209, 65531, 524293, 393209, 65532, 524293, 393209, 65533, 524293, 393209, 65534, 524293, 393209, 65535, 524293, 393209, 0, 524293, 393209, 1, 524293, 393209, 2, 524293, 393209, 3, 524293, 393209, 4, 524293, 393209, 5, 524293, 393209, 6, 524293, 393209, 7, 524293, 393210, 65529, 524293, 393210, 65530, 524293, 393210, 65531, 524293, 393210, 65532, 524293, 393210, 65533, 524293, 393210, 65534, 524293, 393210, 65535, 524293, 393210, 0, 524293, 393210, 1, 524293, 393210, 2, 524293, 393210, 3, 524293, 393210, 4, 524293, 393210, 5, 524293, 393210, 6, 524293, 393210, 7, 524293, 393211, 65529, 524293, 393211, 65530, 524293, 393211, 65531, 524293, 393211, 65532, 524293, 393211, 65533, 524293, 393211, 65534, 524293, 393211, 65535, 524293, 393211, 0, 524293, 393211, 1, 524293, 393211, 2, 524293, 393211, 3, 524293, 393211, 4, 524293, 393211, 5, 524293, 393211, 6, 524293, 393211, 7, 524293, 393212, 65529, 524293, 393212, 65530, 524293, 393212, 65531, 524293, 393212, 65532, 524293, 393212, 65533, 524293, 393212, 65534, 524293, 393212, 65535, 524293, 393212, 0, 524293, 393212, 1, 524293, 393212, 2, 524293, 393212, 3, 524293, 393212, 4, 524293, 393212, 5, 524293, 393212, 6, 524293, 393212, 7, 524293, 393213, 65529, 524293, 393213, 65530, 524293, 393213, 65531, 524293, 393213, 65532, 524293, 393213, 65533, 524293, 393213, 65534, 524293, 393213, 65535, 524293, 393213, 0, 524293, 393213, 1, 524293, 393213, 2, 524293, 393213, 3, 524293, 393213, 4, 524293, 393213, 5, 524293, 393213, 6, 524293, 393213, 7, 524293, 393214, 65529, 524293, 393214, 65530, 524293, 393214, 65531, 524293, 393214, 65532, 524293, 393214, 65533, 524293, 393214, 65534, 524293, 393214, 65535, 524293, 393214, 0, 524293, 393214, 1, 524293, 393214, 2, 524293, 393214, 3, 524293, 393214, 4, 524293, 393214, 5, 524293, 393214, 6, 524293, 393214, 7, 524293, 393215, 65529, 524293, 393215, 65530, 524293, 393215, 65531, 524293, 393215, 65532, 524293, 393215, 65533, 524293, 393215, 65534, 524293, 393215, 65535, 524293, 393215, 0, 524293, 393215, 1, 524293, 393215, 2, 524293, 393215, 3, 524293, 393215, 4, 524293, 393215, 5, 524293, 393215, 6, 524293, 393215, 7, 524293, 327680, 65529, 524293, 327680, 65530, 524293, 327680, 65531, 524293, 327680, 65532, 524293, 327680, 65533, 524293, 327680, 65534, 524293, 327680, 65535, 524293, 327680, 0, 524293, 327680, 1, 524293, 327680, 2, 524293, 327680, 3, 524293, 327680, 4, 524293, 327680, 5, 524293, 327680, 6, 524293, 327680, 7, 524293, 327681, 65529, 524293, 327681, 65530, 524293, 327681, 65531, 524293, 327681, 65532, 524293, 327681, 65533, 524293, 327681, 65534, 524293, 327681, 65535, 524293, 327681, 0, 524293, 327681, 1, 524293, 327681, 2, 524293, 327681, 3, 524293, 327681, 4, 524293, 327681, 5, 524293, 327681, 6, 524293, 327681, 7, 524293, 327682, 65529, 524293, 327682, 65530, 524293, 327682, 65531, 524293, 327682, 65532, 524293, 327682, 65533, 524293, 327682, 65534, 524293, 327682, 65535, 524293, 327682, 0, 524293, 327682, 1, 524293, 327682, 2, 524293, 327682, 3, 524293, 327682, 4, 524293, 327682, 5, 524293, 327682, 6, 524293, 327682, 7, 524293, 327683, 65529, 524293, 327683, 65530, 524293, 327683, 65531, 524293, 327683, 65532, 524293, 327683, 65533, 524293, 327683, 65534, 524293, 327683, 65535, 524293, 327683, 0, 524293, 327683, 1, 524293, 327683, 2, 524293, 327683, 3, 524293, 327683, 4, 524293, 327683, 5, 524293, 327683, 6, 524293, 327683, 7, 524293, 327684, 65529, 524293, 327684, 65530, 524293, 327684, 65531, 524293, 327684, 65532, 524293, 327684, 65533, 524293, 327684, 65534, 524293, 327684, 65535, 524293, 327684, 0, 524293, 327684, 1, 524293, 327684, 2, 524293, 327684, 3, 524293, 327684, 4, 524293, 327684, 5, 524293, 327684, 6, 524293, 327684, 7, 524293, 327685, 65529, 524293, 327685, 65530, 524293, 327685, 65531, 524293, 327685, 65532, 524293, 327685, 65533, 524293, 327685, 65534, 524293, 327685, 65535, 524293, 327685, 0, 524293, 327685, 1, 524293, 327685, 2, 524293, 327685, 3, 524293, 327685, 4, 524293, 327685, 5, 524293, 327685, 6, 524293, 327685, 7, 524293, 327686, 65529, 524293, 327686, 65530, 524293, 327686, 65531, 524293, 327686, 65532, 524293, 327686, 65533, 524293, 327686, 65534, 524293, 327686, 65535, 524293, 327686, 0, 524293, 327686, 1, 524293, 327686, 2, 524293, 327686, 3, 524293, 327686, 4, 524293, 327686, 5, 524293, 327686, 6, 524293, 327686, 7, 524293, 327687, 65529, 524293, 327687, 65530, 524293, 327687, 65531, 524293, 327687, 65532, 524293, 327687, 65533, 524293, 327687, 65534, 524293, 327687, 65535, 524293, 327687, 0, 524293, 327687, 1, 524293, 327687, 2, 524293, 327687, 3, 524293, 327687, 4, 524293, 327687, 5, 524293, 327687, 6, 524293, 327687, 7, 524293)
+}
+metadata/_editor_floor_ = Vector3(0, 5, 0)
+
+[node name="Lights" type="Node3D" parent="NavigationRegion3D/GridMap" unique_id=1784018073]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="NavigationRegion3D/GridMap/Lights" unique_id=608939908]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -8)
+light_color = Color(0.71475035, 0.51046205, 0.2746351, 1)
+light_size = 4.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 10.0
+omni_shadow_mode = 0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="NavigationRegion3D/GridMap/Lights" unique_id=1487569529]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 5, 0)
+light_color = Color(0.71475035, 0.51046205, 0.2746351, 1)
+light_size = 4.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 10.0
+omni_shadow_mode = 0
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="NavigationRegion3D/GridMap/Lights" unique_id=632772376]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 8)
+light_color = Color(0.71475035, 0.51046205, 0.2746351, 1)
+light_size = 4.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 10.0
+omni_shadow_mode = 0
+
+[node name="OmniLight3D7" type="OmniLight3D" parent="NavigationRegion3D/GridMap/Lights" unique_id=658048064]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 5, 0)
+light_color = Color(0.71475035, 0.51046205, 0.2746351, 1)
+light_size = 4.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 10.0
+omni_shadow_mode = 0
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="NavigationRegion3D/GridMap/Lights" unique_id=214113834]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 5.656854, 5, -5.656854)
+light_color = Color(0.71475035, 0.51046205, 0.2746351, 1)
+light_size = 4.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 10.0
+omni_shadow_mode = 0
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="NavigationRegion3D/GridMap/Lights" unique_id=1537209460]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 5.656854, 5, 5.656854)
+light_color = Color(0.71475035, 0.51046205, 0.2746351, 1)
+light_size = 4.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 10.0
+omni_shadow_mode = 0
+
+[node name="OmniLight3D6" type="OmniLight3D" parent="NavigationRegion3D/GridMap/Lights" unique_id=428292966]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -5.656854, 5, 5.656854)
+light_color = Color(0.71475035, 0.51046205, 0.2746351, 1)
+light_size = 4.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 10.0
+omni_shadow_mode = 0
+
+[node name="OmniLight3D8" type="OmniLight3D" parent="NavigationRegion3D/GridMap/Lights" unique_id=1904168474]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -5.656854, 5, -5.656854)
+light_color = Color(0.71475035, 0.51046205, 0.2746351, 1)
+light_size = 4.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 10.0
+omni_shadow_mode = 0
+
+[node name="Entrance" parent="NavigationRegion3D/GridMap/Lights" unique_id=1756562916 instance=ExtResource("3_okbqr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, 0)
+marker_position = Vector3(-11, 0, 0)
+destination_scene = "uid://c8vxltglwp0pc"
+destination_position = Vector3(18, 0, -1.7484555e-07)
+
+[node name="Exit" parent="NavigationRegion3D/GridMap/Lights" unique_id=1742187779 instance=ExtResource("3_okbqr")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 13, 0, 0)
+marker_position = Vector3(11, 0, -1.7484555e-07)
+destination_scene = "uid://8j66i15hf3p4"
+destination_position = Vector3(-18, 0, 11)
+
+[node name="KnockbackRune" parent="NavigationRegion3D/GridMap/Lights" unique_id=945686240 instance=ExtResource("4_ejewu")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0.1, 0)
+
+[node name="Enemies" type="Node3D" parent="NavigationRegion3D/GridMap" unique_id=926605760]
+
+[node name="CameraArea3" type="Area3D" parent="NavigationRegion3D/GridMap" unique_id=1391119992 node_paths=PackedStringArray("camera")]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("5_cnxbl")
+camera = NodePath("Camera3D")
+metadata/_custom_type_script = "uid://i7djs8lu52us"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/GridMap/CameraArea3" unique_id=991603872]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
+shape = SubResource("CylinderShape3D_88c10")
+debug_color = Color(0.9499399, 0.21283916, 0.19803298, 0.41960785)
+
+[node name="Camera3D" type="Camera3D" parent="NavigationRegion3D/GridMap/CameraArea3" unique_id=1198026530]
+transform = Transform3D(0.9930684, 0.025531352, -0.114731394, 0, 0.9761231, 0.21721816, 0.11753783, -0.2157125, 0.969357, -0.8654238, 5.677467, 14.641994)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=961935023]
+environment = ExtResource("6_jq4be")

@@ -34,9 +34,9 @@
 [ext_resource type="Script" uid="uid://538o4tqp8sxm" path="res://scripts/beehave/leaf/action/set_wander_target_action.gd" id="29_klmsu"]
 [ext_resource type="Script" uid="uid://c541rfah1pvw8" path="res://scripts/beehave/leaf/condition/wait_for_destination_condition.gd" id="30_ycreh"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_uct0t"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_8oi5f"]
 atlas = ExtResource("2_c2hyi")
-region = Rect2(0, 512, 512, 512)
+region = Rect2(0, 1024, 512, 512)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_2r5vq"]
 viewport_path = NodePath("ShadedAnimatedSprite3D/SubViewport")
@@ -51,7 +51,7 @@ shader_parameter/specular = 0.249999994412
 shader_parameter/texture_normal = ExtResource("5_3psif")
 shader_parameter/normal_scale = 1.5600008340999985
 shader_parameter/albedo = Color(1, 1, 1, 1)
-shader_parameter/texture_albedo = SubResource("AtlasTexture_uct0t")
+shader_parameter/texture_albedo = SubResource("AtlasTexture_8oi5f")
 shader_parameter/texture_carimbo = SubResource("ViewportTexture_2r5vq")
 shader_parameter/carimbo_glow_intensity = 0.0
 shader_parameter/burn_texture = ExtResource("3_gbopn")
@@ -60,14 +60,11 @@ shader_parameter/burn_size = 0.150000007125
 shader_parameter/burn_smoothness = 0.1330000063175
 shader_parameter/burn_glow_color = Color(1, 0.32, 0, 1)
 shader_parameter/burn_glow_intensity = 10.0
+shader_parameter/region_rect = Vector4(0, 0.39937598, 0.5, 0.19968799)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b6xlh"]
 atlas = ExtResource("2_c2hyi")
 region = Rect2(0, 2048, 512, 512)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8oi5f"]
-atlas = ExtResource("2_c2hyi")
-region = Rect2(0, 1024, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p0bpt"]
 atlas = ExtResource("2_c2hyi")
@@ -80,6 +77,10 @@ region = Rect2(512, 0, 512, 512)
 [sub_resource type="AtlasTexture" id="AtlasTexture_has4m"]
 atlas = ExtResource("2_c2hyi")
 region = Rect2(0, 1536, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uct0t"]
+atlas = ExtResource("2_c2hyi")
+region = Rect2(0, 512, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t1dcx"]
 atlas = ExtResource("2_c2hyi")
@@ -138,17 +139,17 @@ animations = [{
 radius = 0.95703125
 height = 2.77
 
-[node name="Errige" type="CharacterBody3D" unique_id=1891326732 node_paths=PackedStringArray("beehave_tree", "stampable_sprite")]
+[node name="Errige" type="CharacterBody3D" unique_id=1891326732 node_paths=PackedStringArray("beehave_tree", "stats_component", "stampable_sprite") groups=["monster"]]
 collision_layer = 16
 script = ExtResource("1_trs0h")
 beehave_tree = NodePath("ErrigeBeehaveTree")
+stats_component = NodePath("StatsComponent")
 stampable_sprite = NodePath("ShadedAnimatedSprite3D")
 metadata/_custom_type_script = "uid://cg1dswyw2p1op"
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=2082853608]
 avoidance_enabled = true
 radius = 2.0
-debug_enabled = true
 debug_use_custom = true
 debug_path_custom_color = Color(0.8370921, 0, 0.28961593, 1)
 
@@ -167,13 +168,12 @@ metadata/_custom_type_script = "uid://ctmgj3s2w7dsb"
 [node name="SubViewport" type="SubViewport" parent="ShadedAnimatedSprite3D" unique_id=2068575141]
 disable_3d = true
 transparent_bg = true
-size = Vector2i(256, 256)
 render_target_clear_mode = 2
 render_target_update_mode = 1
 
 [node name="StatsComponent" type="Node" parent="." unique_id=1685966125 node_paths=PackedStringArray("input_component", "hitbox_component", "beehave_tree")]
 script = ExtResource("2_3psif")
-max_health = 3.0
+max_health = 2.0
 connect_signals_enable = true
 input_component = NodePath("../InputComponent")
 hitbox_component = NodePath("../HitboxComponent")
@@ -219,7 +219,7 @@ shape = SubResource("CapsuleShape3D_8lugo")
 [node name="ErrigeBeehaveTree" type="Node" parent="." unique_id=356257183 node_paths=PackedStringArray("blackboard", "actor")]
 script = ExtResource("9_b7hfo")
 actor_node_path = NodePath("..")
-blackboard = NodePath("@Node@29933")
+blackboard = NodePath("@Node@1461493")
 actor = NodePath("..")
 metadata/_custom_type_script = "uid://bb0t2ovl7wifo"
 

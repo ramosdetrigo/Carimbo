@@ -3,6 +3,7 @@ extends Node
 
 signal died()
 signal health_changed(health: float)
+signal health_lowered()
 signal armor_changed(armor: float)
 
 @export_range(1.0, 100.0, 0.1, "or_greater", "hide_control") var max_health: float = 1
@@ -27,7 +28,7 @@ func _connect_signals() -> void:
 	if input_component: died.connect(input_component.stop_navigation)
 	if owner is StampableCharacter:
 		died.connect((owner as StampableCharacter).death)
-		health_changed.connect((owner as StampableCharacter).on_being_hit)
+		health_lowered.connect((owner as StampableCharacter).on_being_hit)
 	if beehave_tree:
 		died.connect(beehave_tree.disable)
 		if input_component: beehave_tree.tree_disabled.connect(input_component.stop_navigation)
@@ -43,14 +44,26 @@ func on_damaged(attack: AttackInfo) -> void:
 
 
 func set_health(value: float) -> void:
-	health = clampf(value, 0.0, self.max_health)
+	var old: float = health
+	health = maxf(value, 0.0)
 	health_changed.emit(health)
 	if health <= 0: died.emit()
+	elif health < old: health_lowered.emit()
 
 
 func set_armor(value: float) -> void:
-	armor = clampf(value, 0.0, self.max_armor)
+	armor = maxf(value, 0.0)
 	armor_changed.emit(armor)
+
+
+## Accepts a Callable with the following format: [code]func(prev: float) -> float[/code]
+func set_health_call(setter: Callable) -> void:
+	set_health(setter.call(health))
+
+
+## Accepts a Callable with the following format: [code]func(prev: float) -> float[/code]
+func set_armor_call(setter: Callable) -> void:
+	set_armor(setter.call(armor))
 
 
 func kill() -> void:

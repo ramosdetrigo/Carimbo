@@ -11,12 +11,6 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed(&"hit") and weapon_manager: _handle_hit()
 
 
-func _get_mouse_dir() -> Vector2:
-	var vp_middle: Vector2 = get_viewport().get_visible_rect().size / 2
-	var mouse_pos: Vector2 = get_viewport().get_mouse_position()
-	return vp_middle.direction_to(mouse_pos).normalized()
-
-
 func _handle_movement() -> void:
 	var input_dir: Vector2 = Input.get_vector(
 		&"move_left", &"move_right", &"move_fowards", &"move_backwards")
@@ -26,7 +20,8 @@ func _handle_movement() -> void:
 
 func _handle_hit() -> void:
 	#var input_dir: Vector2 = _get_mouse_dir()
-	weapon_manager.attack(_last_move_input)
+	var mouse: Vector3 = MousePointing.get_mouse_pos()
+	weapon_manager.attack(weapon_manager.global_position.direction_to(mouse))
 	get_viewport().set_input_as_handled()
 
 

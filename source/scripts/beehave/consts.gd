@@ -3,10 +3,8 @@ class_name BeehaveConsts
 const TARGET_KEY = "enemy_target"
 const TARGET_POS_KEY = "enemy_target_pos"
 
-enum BlackboardKeys {
-	TARGET,
-	TARGET_POSITION,
-	TARGET_REACHED,
-}
+const ALLIES_KEY = "allies_array"
+const MOVE_SPEED_KEY = "move_speed_cache"
 
 const PLAYER_NODE_GROUP: String = "player"
+const MONSTER_NODE_GROUP: String = "monster"

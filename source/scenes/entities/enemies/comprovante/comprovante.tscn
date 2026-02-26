@@ -137,10 +137,11 @@ animations = [{
 "speed": 6.0
 }]
 
-[node name="Comprovante" type="CharacterBody3D" unique_id=931080643 node_paths=PackedStringArray("beehave_tree", "stampable_sprite")]
+[node name="Comprovante" type="CharacterBody3D" unique_id=931080643 node_paths=PackedStringArray("beehave_tree", "stats_component", "stampable_sprite") groups=["monster"]]
 collision_layer = 16
 script = ExtResource("1_xc5op")
-beehave_tree = NodePath("BeehaveTree")
+beehave_tree = NodePath("ComprovanteBeehaveTree")
+stats_component = NodePath("StatsComponent")
 stampable_sprite = NodePath("ShadedAnimatedSprite3D")
 metadata/_custom_type_script = "uid://cg1dswyw2p1op"
 
@@ -176,10 +177,11 @@ debug_path_custom_color = Color(1.3235956e-07, 0.3700417, 0.033110492, 1)
 
 [node name="StatsComponent" type="Node" parent="." unique_id=140788789 node_paths=PackedStringArray("input_component", "hitbox_component", "beehave_tree")]
 script = ExtResource("3_dn2of")
+max_health = 6.0
 connect_signals_enable = true
 input_component = NodePath("../InputComponent")
 hitbox_component = NodePath("../HitboxComponent")
-beehave_tree = NodePath("../BeehaveTree")
+beehave_tree = NodePath("../ComprovanteBeehaveTree")
 metadata/_custom_type_script = "uid://cqxuelwl2k4bg"
 
 [node name="DebugLabel3D" type="Label3D" parent="." unique_id=1144921013 node_paths=PackedStringArray("stats_component")]
@@ -214,167 +216,167 @@ metadata/_custom_type_script = "uid://baffaklkbk27f"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_6ho0j")
 
-[node name="BeehaveTree" type="Node" parent="." unique_id=1038131014 node_paths=PackedStringArray("blackboard", "actor")]
+[node name="ComprovanteBeehaveTree" type="Node" parent="." unique_id=1038131014 node_paths=PackedStringArray("blackboard", "actor")]
 script = ExtResource("7_6ho0j")
-blackboard = NodePath("@Node@752626")
+blackboard = NodePath("@Node@1440734")
 actor = NodePath("..")
 metadata/_custom_type_script = "uid://bb0t2ovl7wifo"
 
-[node name="SelectorReactiveComposite" type="Node" parent="BeehaveTree" unique_id=1762724315]
+[node name="SelectorReactiveComposite" type="Node" parent="ComprovanteBeehaveTree" unique_id=1762724315]
 script = ExtResource("13_gnod2")
 metadata/_custom_type_script = "uid://cw22yurt5l74k"
 
-[node name="Combat" type="Node" parent="BeehaveTree/SelectorReactiveComposite" unique_id=956188329]
+[node name="Combat" type="Node" parent="ComprovanteBeehaveTree/SelectorReactiveComposite" unique_id=956188329]
 script = ExtResource("14_vhq8i")
 metadata/_custom_type_script = "uid://cg016dbe7gs1x"
 
-[node name="GetEnemyAction" type="Node" parent="BeehaveTree/SelectorReactiveComposite/Combat" unique_id=408690660]
+[node name="GetEnemyAction" type="Node" parent="ComprovanteBeehaveTree/SelectorReactiveComposite/Combat" unique_id=408690660]
 script = ExtResource("15_at3s2")
 metadata/_custom_type_script = "uid://din3o6je4hf0y"
 
-[node name="IsInRangeCondition" type="Node" parent="BeehaveTree/SelectorReactiveComposite/Combat" unique_id=590397606]
+[node name="IsInRangeCondition" type="Node" parent="ComprovanteBeehaveTree/SelectorReactiveComposite/Combat" unique_id=590397606]
 script = ExtResource("16_3a7xy")
 view_range = 8.0
 metadata/_custom_type_script = "uid://oc2hkcrhiyfa"
 
-[node name="SelectorComposite" type="Node" parent="BeehaveTree/SelectorReactiveComposite/Combat" unique_id=1189993028]
+[node name="SelectorComposite" type="Node" parent="ComprovanteBeehaveTree/SelectorReactiveComposite/Combat" unique_id=1189993028]
 script = ExtResource("13_0pv1n")
 metadata/_custom_type_script = "uid://8hn4kne15ac5"
 
-[node name="InRange" type="Node" parent="BeehaveTree/SelectorReactiveComposite/Combat/SelectorComposite" unique_id=746422257]
+[node name="InRange" type="Node" parent="ComprovanteBeehaveTree/SelectorReactiveComposite/Combat/SelectorComposite" unique_id=746422257]
 script = ExtResource("14_vhq8i")
 metadata/_custom_type_script = "uid://cg016dbe7gs1x"
 
-[node name="IsInRangeCondition" type="Node" parent="BeehaveTree/SelectorReactiveComposite/Combat/SelectorComposite/InRange" unique_id=1113021718]
+[node name="IsInRangeCondition" type="Node" parent="ComprovanteBeehaveTree/SelectorReactiveComposite/Combat/SelectorComposite/InRange" unique_id=1113021718]
 script = ExtResource("16_3a7xy")
 metadata/_custom_type_script = "uid://oc2hkcrhiyfa"
 
-[node name="CooldownDecorator" type="Node" parent="BeehaveTree/SelectorReactiveComposite/Combat/SelectorComposite/InRange" unique_id=570347285]
+[node name="CooldownDecorator" type="Node" parent="ComprovanteBeehaveTree/SelectorReactiveComposite/Combat/SelectorComposite/InRange" unique_id=570347285]
 script = ExtResource("16_u6ejr")
 wait_time = 1.0
 metadata/_custom_type_script = "uid://2qri6rrfv8ui"
 
-[node name="DelayDecorator" type="Node" parent="BeehaveTree/SelectorReactiveComposite/Combat/SelectorComposite/InRange/CooldownDecorator" unique_id=224776696]
+[node name="DelayDecorator" type="Node" parent="ComprovanteBeehaveTree/SelectorReactiveComposite/Combat/SelectorComposite/InRange/CooldownDecorator" unique_id=224776696]
 script = ExtResource("21_u6f22")
 wait_time = 0.5
 metadata/_custom_type_script = "uid://dorri1tul8gfx"
 
-[node name="SequenceComposite" type="Node" parent="BeehaveTree/SelectorReactiveComposite/Combat/SelectorComposite/InRange/CooldownDecorator/DelayDecorator" unique_id=1247377368]
+[node name="SequenceComposite" type="Node" parent="ComprovanteBeehaveTree/SelectorReactiveComposite/Combat/SelectorComposite/InRange/CooldownDecorator/DelayDecorator" unique_id=1247377368]
 script = ExtResource("14_vhq8i")
 metadata/_custom_type_script = "uid://cg016dbe7gs1x"
 
-[node name="PlaySpriteFramesAnimationAction" type="Node" parent="BeehaveTree/SelectorReactiveComposite/Combat/SelectorComposite/InRange/CooldownDecorator/DelayDecorator/SequenceComposite" unique_id=2100281384 node_paths=PackedStringArray("animated_sprite")]
+[node name="PlaySpriteFramesAnimationAction" type="Node" parent="ComprovanteBeehaveTree/SelectorReactiveComposite/Combat/SelectorComposite/InRange/CooldownDecorator/DelayDecorator/SequenceComposite" unique_id=2100281384 node_paths=PackedStringArray("animated_sprite")]
 script = ExtResource("22_qaros")
 animated_sprite = NodePath("../../../../../../../../../ShadedAnimatedSprite3D")
 animation_name = &"attack"
 metadata/_custom_type_script = "uid://conlbm78k0yfx"
 
-[node name="AttackAction" type="Node" parent="BeehaveTree/SelectorReactiveComposite/Combat/SelectorComposite/InRange/CooldownDecorator/DelayDecorator/SequenceComposite" unique_id=1661745499]
+[node name="AttackAction" type="Node" parent="ComprovanteBeehaveTree/SelectorReactiveComposite/Combat/SelectorComposite/InRange/CooldownDecorator/DelayDecorator/SequenceComposite" unique_id=1661745499]
 script = ExtResource("17_u6ejr")
 attack_scene = ExtResource("18_37d6u")
 attack_spawn_offset = Vector3(0, 1, 0)
 metadata/_custom_type_script = "uid://wpfn0jjwq6r3"
 
-[node name="GotoEnemy" type="Node" parent="BeehaveTree/SelectorReactiveComposite/Combat/SelectorComposite" unique_id=224038929]
+[node name="GotoEnemy" type="Node" parent="ComprovanteBeehaveTree/SelectorReactiveComposite/Combat/SelectorComposite" unique_id=224038929]
 script = ExtResource("14_vhq8i")
 metadata/_custom_type_script = "uid://cg016dbe7gs1x"
 
-[node name="GetEnemyAction" type="Node" parent="BeehaveTree/SelectorReactiveComposite/Combat/SelectorComposite/GotoEnemy" unique_id=1750241447]
+[node name="GetEnemyAction" type="Node" parent="ComprovanteBeehaveTree/SelectorReactiveComposite/Combat/SelectorComposite/GotoEnemy" unique_id=1750241447]
 script = ExtResource("15_at3s2")
 metadata/_custom_type_script = "uid://din3o6je4hf0y"
 
-[node name="SetEnemyTargetAction" type="Node" parent="BeehaveTree/SelectorReactiveComposite/Combat/SelectorComposite/GotoEnemy" unique_id=724406361 node_paths=PackedStringArray("input_component")]
+[node name="SetEnemyTargetAction" type="Node" parent="ComprovanteBeehaveTree/SelectorReactiveComposite/Combat/SelectorComposite/GotoEnemy" unique_id=724406361 node_paths=PackedStringArray("input_component")]
 script = ExtResource("25_3fub3")
 input_component = NodePath("../../../../../../InputComponent")
 metadata/_custom_type_script = "uid://b8qgfm5nhx8mh"
 
-[node name="StartNavigationAction" type="Node" parent="BeehaveTree/SelectorReactiveComposite/Combat/SelectorComposite/GotoEnemy" unique_id=1265004190 node_paths=PackedStringArray("input_component", "navigation_agent")]
+[node name="StartNavigationAction" type="Node" parent="ComprovanteBeehaveTree/SelectorReactiveComposite/Combat/SelectorComposite/GotoEnemy" unique_id=1265004190 node_paths=PackedStringArray("input_component", "navigation_agent")]
 script = ExtResource("26_s4aa4")
 input_component = NodePath("../../../../../../InputComponent")
 navigation_agent = NodePath("../../../../../../NavigationAgent3D")
 metadata/_custom_type_script = "uid://bg1soc5i52jps"
 
-[node name="PlaySpriteFramesAnimationAction" type="Node" parent="BeehaveTree/SelectorReactiveComposite/Combat/SelectorComposite/GotoEnemy" unique_id=2119283565 node_paths=PackedStringArray("animated_sprite")]
+[node name="PlaySpriteFramesAnimationAction" type="Node" parent="ComprovanteBeehaveTree/SelectorReactiveComposite/Combat/SelectorComposite/GotoEnemy" unique_id=2119283565 node_paths=PackedStringArray("animated_sprite")]
 script = ExtResource("22_qaros")
 animated_sprite = NodePath("../../../../../../ShadedAnimatedSprite3D")
 animation_name = &"walk"
 metadata/_custom_type_script = "uid://conlbm78k0yfx"
 
-[node name="TimeLimiterDecorator" type="Node" parent="BeehaveTree/SelectorReactiveComposite/Combat/SelectorComposite/GotoEnemy" unique_id=266163778]
+[node name="TimeLimiterDecorator" type="Node" parent="ComprovanteBeehaveTree/SelectorReactiveComposite/Combat/SelectorComposite/GotoEnemy" unique_id=266163778]
 script = ExtResource("27_jhvp8")
 wait_time = 1.0
 metadata/_custom_type_script = "uid://we22430vcb44"
 
-[node name="WaitForRangeCondition" type="Node" parent="BeehaveTree/SelectorReactiveComposite/Combat/SelectorComposite/GotoEnemy/TimeLimiterDecorator" unique_id=2043649887]
+[node name="WaitForRangeCondition" type="Node" parent="ComprovanteBeehaveTree/SelectorReactiveComposite/Combat/SelectorComposite/GotoEnemy/TimeLimiterDecorator" unique_id=2043649887]
 script = ExtResource("28_11ag4")
 metadata/_custom_type_script = "uid://cssfcwmucql4s"
 
-[node name="AlwaysSucceedDecorator" type="Node" parent="BeehaveTree/SelectorReactiveComposite/Combat/SelectorComposite/GotoEnemy" unique_id=1937375175]
+[node name="AlwaysSucceedDecorator" type="Node" parent="ComprovanteBeehaveTree/SelectorReactiveComposite/Combat/SelectorComposite/GotoEnemy" unique_id=1937375175]
 script = ExtResource("26_pnnsd")
 metadata/_custom_type_script = "uid://dsf3a8vlolhx8"
 
-[node name="SequenceComposite" type="Node" parent="BeehaveTree/SelectorReactiveComposite/Combat/SelectorComposite/GotoEnemy/AlwaysSucceedDecorator" unique_id=1236169596]
+[node name="SequenceComposite" type="Node" parent="ComprovanteBeehaveTree/SelectorReactiveComposite/Combat/SelectorComposite/GotoEnemy/AlwaysSucceedDecorator" unique_id=1236169596]
 script = ExtResource("14_vhq8i")
 metadata/_custom_type_script = "uid://cg016dbe7gs1x"
 
-[node name="IsInRangeCondition" type="Node" parent="BeehaveTree/SelectorReactiveComposite/Combat/SelectorComposite/GotoEnemy/AlwaysSucceedDecorator/SequenceComposite" unique_id=208438763]
+[node name="IsInRangeCondition" type="Node" parent="ComprovanteBeehaveTree/SelectorReactiveComposite/Combat/SelectorComposite/GotoEnemy/AlwaysSucceedDecorator/SequenceComposite" unique_id=208438763]
 script = ExtResource("16_3a7xy")
 metadata/_custom_type_script = "uid://oc2hkcrhiyfa"
 
-[node name="StopNavigationAction" type="Node" parent="BeehaveTree/SelectorReactiveComposite/Combat/SelectorComposite/GotoEnemy/AlwaysSucceedDecorator/SequenceComposite" unique_id=1834280949 node_paths=PackedStringArray("input_component")]
+[node name="StopNavigationAction" type="Node" parent="ComprovanteBeehaveTree/SelectorReactiveComposite/Combat/SelectorComposite/GotoEnemy/AlwaysSucceedDecorator/SequenceComposite" unique_id=1834280949 node_paths=PackedStringArray("input_component")]
 script = ExtResource("29_3qhj5")
 input_component = NodePath("../../../../../../../../InputComponent")
 metadata/_custom_type_script = "uid://sqhnl6cqhp06"
 
-[node name="PlaySpriteFramesAnimationAction" type="Node" parent="BeehaveTree/SelectorReactiveComposite/Combat/SelectorComposite/GotoEnemy/AlwaysSucceedDecorator/SequenceComposite" unique_id=1245213008 node_paths=PackedStringArray("animated_sprite")]
+[node name="PlaySpriteFramesAnimationAction" type="Node" parent="ComprovanteBeehaveTree/SelectorReactiveComposite/Combat/SelectorComposite/GotoEnemy/AlwaysSucceedDecorator/SequenceComposite" unique_id=1245213008 node_paths=PackedStringArray("animated_sprite")]
 script = ExtResource("22_qaros")
 animated_sprite = NodePath("../../../../../../../../ShadedAnimatedSprite3D")
 animation_name = &"idle"
 metadata/_custom_type_script = "uid://conlbm78k0yfx"
 
-[node name="Idle" type="Node" parent="BeehaveTree/SelectorReactiveComposite" unique_id=1148243590]
+[node name="Idle" type="Node" parent="ComprovanteBeehaveTree/SelectorReactiveComposite" unique_id=1148243590]
 script = ExtResource("21_u6f22")
 wait_time = 2.0
 metadata/_custom_type_script = "uid://dorri1tul8gfx"
 
-[node name="SequenceComposite" type="Node" parent="BeehaveTree/SelectorReactiveComposite/Idle" unique_id=1678981524]
+[node name="SequenceComposite" type="Node" parent="ComprovanteBeehaveTree/SelectorReactiveComposite/Idle" unique_id=1678981524]
 script = ExtResource("14_vhq8i")
 metadata/_custom_type_script = "uid://cg016dbe7gs1x"
 
-[node name="SetWanderTargetAction" type="Node" parent="BeehaveTree/SelectorReactiveComposite/Idle/SequenceComposite" unique_id=145306497 node_paths=PackedStringArray("input_component")]
+[node name="SetWanderTargetAction" type="Node" parent="ComprovanteBeehaveTree/SelectorReactiveComposite/Idle/SequenceComposite" unique_id=145306497 node_paths=PackedStringArray("input_component")]
 script = ExtResource("29_3a7xy")
 wander_range = 8.0
 input_component = NodePath("../../../../../InputComponent")
 metadata/_custom_type_script = "uid://538o4tqp8sxm"
 
-[node name="StartNavigationAction" type="Node" parent="BeehaveTree/SelectorReactiveComposite/Idle/SequenceComposite" unique_id=1522656250 node_paths=PackedStringArray("input_component", "navigation_agent")]
+[node name="StartNavigationAction" type="Node" parent="ComprovanteBeehaveTree/SelectorReactiveComposite/Idle/SequenceComposite" unique_id=1522656250 node_paths=PackedStringArray("input_component", "navigation_agent")]
 script = ExtResource("26_s4aa4")
 input_component = NodePath("../../../../../InputComponent")
 navigation_agent = NodePath("../../../../../NavigationAgent3D")
 metadata/_custom_type_script = "uid://bg1soc5i52jps"
 
-[node name="PlaySpriteFramesAnimationAction" type="Node" parent="BeehaveTree/SelectorReactiveComposite/Idle/SequenceComposite" unique_id=565368538 node_paths=PackedStringArray("animated_sprite")]
+[node name="PlaySpriteFramesAnimationAction" type="Node" parent="ComprovanteBeehaveTree/SelectorReactiveComposite/Idle/SequenceComposite" unique_id=565368538 node_paths=PackedStringArray("animated_sprite")]
 script = ExtResource("22_qaros")
 animated_sprite = NodePath("../../../../../ShadedAnimatedSprite3D")
 animation_name = &"walk"
 metadata/_custom_type_script = "uid://conlbm78k0yfx"
 
-[node name="TimeLimiterDecorator" type="Node" parent="BeehaveTree/SelectorReactiveComposite/Idle/SequenceComposite" unique_id=1218154176]
+[node name="TimeLimiterDecorator" type="Node" parent="ComprovanteBeehaveTree/SelectorReactiveComposite/Idle/SequenceComposite" unique_id=1218154176]
 script = ExtResource("27_jhvp8")
 wait_time = 10.0
 metadata/_custom_type_script = "uid://we22430vcb44"
 
-[node name="WaitForDestinationCondition" type="Node" parent="BeehaveTree/SelectorReactiveComposite/Idle/SequenceComposite/TimeLimiterDecorator" unique_id=2042543700 node_paths=PackedStringArray("input_component")]
+[node name="WaitForDestinationCondition" type="Node" parent="ComprovanteBeehaveTree/SelectorReactiveComposite/Idle/SequenceComposite/TimeLimiterDecorator" unique_id=2042543700 node_paths=PackedStringArray("input_component")]
 script = ExtResource("30_qaros")
 input_component = NodePath("../../../../../../InputComponent")
 metadata/_custom_type_script = "uid://c541rfah1pvw8"
 
-[node name="StopNavigationAction" type="Node" parent="BeehaveTree/SelectorReactiveComposite/Idle/SequenceComposite" unique_id=2059735116 node_paths=PackedStringArray("input_component")]
+[node name="StopNavigationAction" type="Node" parent="ComprovanteBeehaveTree/SelectorReactiveComposite/Idle/SequenceComposite" unique_id=2059735116 node_paths=PackedStringArray("input_component")]
 script = ExtResource("29_3qhj5")
 input_component = NodePath("../../../../../InputComponent")
 metadata/_custom_type_script = "uid://sqhnl6cqhp06"
 
-[node name="PlaySpriteFramesAnimationAction2" type="Node" parent="BeehaveTree/SelectorReactiveComposite/Idle/SequenceComposite" unique_id=1515685268 node_paths=PackedStringArray("animated_sprite")]
+[node name="PlaySpriteFramesAnimationAction2" type="Node" parent="ComprovanteBeehaveTree/SelectorReactiveComposite/Idle/SequenceComposite" unique_id=1515685268 node_paths=PackedStringArray("animated_sprite")]
 script = ExtResource("22_qaros")
 animated_sprite = NodePath("../../../../../ShadedAnimatedSprite3D")
 animation_name = &"idle"

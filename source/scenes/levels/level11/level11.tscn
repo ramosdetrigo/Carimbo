@@ -1,0 +1,211 @@
+[gd_scene format=3 uid="uid://c3e71llcelt1s"]
+
+[ext_resource type="Script" uid="uid://ckxpmu5lrfiql" path="res://scenes/levels/level_scene.gd" id="1_j3csc"]
+[ext_resource type="MeshLibrary" uid="uid://be3yh5mqefut3" path="res://resources/mesh_library/level_props.meshlib" id="2_amdmg"]
+[ext_resource type="PackedScene" uid="uid://c3hpiq2ftpgt8" path="res://scenes/levels/doors/scene_door.tscn" id="3_p538j"]
+[ext_resource type="Environment" uid="uid://c44ylihrd2515" path="res://resources/envoriment/fire_enviroment.tres" id="4_2lnft"]
+[ext_resource type="PackedScene" uid="uid://dxyd470cqorqq" path="res://scenes/entities/enemies/comprovante/comprovante.tscn" id="4_aoebq"]
+[ext_resource type="Script" uid="uid://cp04tsvxdoq1h" path="res://scripts/components/camera_path_follow.gd" id="4_p538j"]
+[ext_resource type="PackedScene" uid="uid://572ad1efklon" path="res://scenes/entities/enemies/boleto/boleto.tscn" id="5_5qrul"]
+[ext_resource type="PackedScene" uid="uid://m5dmges2kssb" path="res://scenes/vfx/static/lava/lava_pool.tscn" id="7_aoebq"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_1ybgv"]
+vertices = PackedVector3Array(-4.75, 0.5, -12.75, -4.75, 0.5, -11, 5, 0.5, -11, 5, 0.5, -12.75, -12.75, 0.5, -7, -12.75, 0.5, 7, 13, 0.5, 7, 13, 0.5, -7, -4.75, 0.5, 11.25, -4.75, 0.5, 12.75, 5, 0.5, 12.75, 5, 0.5, 11.25)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1), PackedInt32Array(7, 6, 4), PackedInt32Array(4, 6, 5), PackedInt32Array(11, 10, 8), PackedInt32Array(8, 10, 9)]
+agent_radius = 1.0
+
+[sub_resource type="Curve3D" id="Curve3D_2lnft"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -13, 0, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[node name="Level11" type="Node3D" unique_id=663602909]
+script = ExtResource("1_j3csc")
+metadata/_custom_type_script = "uid://ckxpmu5lrfiql"
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=498926115]
+navigation_mesh = SubResource("NavigationMesh_1ybgv")
+
+[node name="GridMap" type="GridMap" parent="NavigationRegion3D" unique_id=1161245027]
+mesh_library = ExtResource("2_amdmg")
+cell_center_y = false
+data = {
+"cells": PackedInt32Array(-4, 65532, 1441797, -4, 65533, 1441797, -4, 65534, 1441797, -4, 65535, 1441797, -4, 0, 1441797, -4, 1, 1441797, -4, 2, 1441797, -4, 3, 1441797, -3, 65532, 1441797, -3, 65533, 1441797, -3, 65534, 1441797, -3, 65535, 1441797, -3, 0, 1441797, -3, 1, 1441797, -3, 2, 1441797, -3, 3, 1441797, -2, 65532, 1441797, -2, 65533, 1441797, -2, 65534, 1441797, -2, 65535, 1441797, -2, 0, 1441797, -2, 1, 1441797, -2, 2, 1441797, -2, 3, 1441797, -1, 65532, 1441797, -1, 65533, 1441797, -1, 65534, 1441797, -1, 65535, 1441797, -1, 0, 1441797, -1, 1, 1441797, -1, 2, 1441797, -1, 3, 1441797, -65536, 65532, 1441797, -65536, 65533, 1441797, -65536, 65534, 1441797, -65536, 65535, 1441797, -65536, 0, 1441797, -65536, 1, 1441797, -65536, 2, 1441797, -65536, 3, 1441797, -65535, 65532, 1441797, -65535, 65533, 1441797, -65535, 65534, 1441797, -65535, 65535, 1441797, -65535, 0, 1441797, -65535, 1, 1441797, -65535, 2, 1441797, -65535, 3, 1441797, -65534, 65532, 1441797, -65534, 65533, 1441797, -65534, 65534, 1441797, -65534, 65535, 1441797, -65534, 0, 1441797, -65534, 1, 1441797, -65534, 2, 1441797, -65534, 3, 1441797, -65533, 65532, 1441797, -65533, 65533, 1441797, -65533, 65534, 1441797, -65533, 65535, 1441797, -65533, 0, 1441797, -65533, 1, 1441797, -65533, 2, 1441797, -65533, 3, 1441797, -7, 65532, 1441797, -7, 65533, 1441797, -7, 65534, 1441797, -7, 65535, 1441797, -7, 0, 1441797, -7, 1, 1441797, -7, 2, 1441797, -7, 3, 1441797, -6, 65532, 1441797, -6, 65533, 1441797, -6, 65534, 1441797, -6, 65535, 1441797, -6, 0, 1441797, -6, 1, 1441797, -6, 2, 1441797, -6, 3, 1441797, -5, 65532, 1441797, -5, 65533, 1441797, -5, 65534, 1441797, -5, 65535, 1441797, -5, 0, 1441797, -5, 1, 1441797, -5, 2, 1441797, -5, 3, 1441797, -65532, 65532, 1441797, -65532, 65533, 1441797, -65532, 65534, 1441797, -65532, 65535, 1441797, -65532, 0, 1441797, -65532, 1, 1441797, -65532, 2, 1441797, -65532, 3, 1441797, -65531, 65532, 1441797, -65531, 65533, 1441797, -65531, 65534, 1441797, -65531, 65535, 1441797, -65531, 0, 1441797, -65531, 1, 1441797, -65531, 2, 1441797, -65531, 3, 1441797, -65530, 65532, 1441797, -65530, 65533, 1441797, -65530, 65534, 1441797, -65530, 65535, 1441797, -65530, 0, 1441797, -65530, 1, 1441797, -65530, 2, 1441797, -65530, 3, 1441797, -2, 65529, 1441797, -2, 65530, 1441797, -1, 65529, 1441797, -1, 65530, 1441797, -65536, 65529, 1441797, -65536, 65530, 1441797, -65535, 65529, 1441797, -65535, 65530, 1441797, -2, 5, 1441797, -2, 6, 1441797, -1, 5, 1441797, -1, 6, 1441797, -65536, 5, 1441797, -65536, 6, 1441797, -65535, 5, 1441797, -65535, 6, 1441797, -196615, 65532, 1441792, -196614, 65532, 1441792, -196613, 65532, 1441792, -196612, 65532, 1441792, -196611, 65532, 1441792, -196610, 65532, 1441792, -196609, 65532, 1441792, -262144, 65532, 1441792, -262143, 65532, 1441792, -262142, 65532, 1441792, -262141, 65532, 1441792, -262140, 65532, 1441792, -262139, 65532, 1441792, -262138, 65532, 1441792, -196616, 65531, 655360, -196616, 65530, 655360, -196616, 65529, 655360, -196611, 65528, 1048576, -196612, 65528, 1048576, -196613, 65528, 1048576, -196614, 65528, 1048576, -196615, 65528, 1048576, -262142, 65528, 1048576, -262141, 65528, 1048576, -262140, 65528, 1048576, -262139, 65528, 1048576, -262138, 65528, 1048576, -262137, 65531, 0, -262137, 65530, 0, -262137, 65529, 0, -262137, 4, 0, -262137, 5, 0, -262137, 6, 0, -262138, 7, 1441792, -262139, 7, 1441792, -262140, 7, 1441792, -262141, 7, 1441792, -262142, 7, 1441792, -262143, 6, 655360, -262143, 5, 655360, -262138, 3, 1048576, -262139, 3, 1048576, -262140, 3, 1048576, -262141, 3, 1048576, -262142, 3, 1048576, -262143, 3, 1048576, -262144, 3, 1048576, -196609, 3, 1048576, -196610, 3, 1048576, -196611, 3, 1048576, -196612, 3, 1048576, -196613, 3, 1048576, -196614, 3, 1048576, -196615, 3, 1048576, -196610, 6, 0, -196610, 5, 0, -196611, 7, 1441792, -196612, 7, 1441792, -196613, 7, 1441792, -196614, 7, 1441792, -196615, 7, 1441792, -196616, 6, 655360, -196616, 5, 655360, -196616, 4, 655360, -262143, 4, 1048583, -262144, 4, 1048583, -196609, 4, 1048583, -196610, 4, 1048583, -196610, 65531, 1441799, -196609, 65531, 1441799, -262144, 65531, 1441799, -262143, 65531, 1441799, 65529, 7, 1441792, 65530, 7, 1441792, 65531, 7, 1441792, 65532, 7, 1441792, 65533, 7, 1441792, 65534, 7, 1441792, 65535, 7, 1441792, 0, 7, 1441792, 1, 7, 1441792, 2, 7, 1441792, 3, 7, 1441792, 4, 7, 1441792, 5, 7, 1441792, 6, 7, 1441792, 65528, 65529, 655360, 65528, 65530, 655360, 65528, 65531, 655360, 65528, 65532, 655360, 65528, 65533, 655360, 65528, 65534, 655360, 65528, 65535, 655360, 65528, 0, 655360, 65528, 1, 655360, 65528, 2, 655360, 65528, 3, 655360, 65528, 4, 655360, 65528, 5, 655360, 65528, 6, 655360, 65529, 65528, 1048576, 65530, 65528, 1048576, 65531, 65528, 1048576, 65532, 65528, 1048576, 65533, 65528, 1048576, 65534, 65528, 1048576, 65535, 65528, 1048576, 0, 65528, 1048576, 1, 65528, 1048576, 2, 65528, 1048576, 3, 65528, 1048576, 4, 65528, 1048576, 5, 65528, 1048576, 6, 65528, 1048576, 7, 65529, 0, 7, 65530, 0, 7, 65531, 0, 7, 65532, 0, 7, 65533, 0, 7, 65534, 0, 7, 65535, 0, 7, 0, 0, 7, 1, 0, 7, 2, 0, 7, 3, 0, 7, 4, 0, 7, 5, 0, 7, 6, 0, 6, 65535, 655363, 65529, 0, 3, 2, 6, 655361, 2, 5, 655361, 65533, 6, 1, 65533, 5, 1, 65534, 5, 1441793, 65535, 5, 1441793, 0, 5, 1441793, 1, 5, 1441793, 1, 65530, 1048577, 0, 65530, 1048577, 65535, 65530, 1048577, 65534, 65530, 1048577, 65533, 65530, 1, 65533, 65529, 1, 2, 65530, 655361, 2, 65529, 655361, 393210, 65529, 524293, 393210, 65530, 524293, 393210, 65531, 524293, 393210, 65532, 524293, 393210, 65533, 524293, 393210, 65534, 524293, 393210, 65535, 524293, 393210, 0, 524293, 393210, 1, 524293, 393210, 2, 524293, 393210, 3, 524293, 393210, 4, 524293, 393211, 65529, 524293, 393211, 65530, 524293, 393211, 65531, 524293, 393211, 65532, 524293, 393211, 65533, 524293, 393211, 65534, 524293, 393211, 65535, 524293, 393211, 0, 524293, 393211, 1, 524293, 393211, 2, 524293, 393211, 3, 524293, 393211, 4, 524293, 393212, 65529, 524293, 393212, 65530, 524293, 393212, 65531, 524293, 393212, 65532, 524293, 393212, 65533, 524293, 393212, 65534, 524293, 393212, 65535, 524293, 393212, 0, 524293, 393212, 1, 524293, 393212, 2, 524293, 393212, 3, 524293, 393212, 4, 524293, 393213, 65529, 524293, 393213, 65530, 524293, 393213, 65531, 524293, 393213, 65532, 524293, 393213, 65533, 524293, 393213, 65534, 524293, 393213, 65535, 524293, 393213, 0, 524293, 393213, 1, 524293, 393213, 2, 524293, 393213, 3, 524293, 393213, 4, 524293, 393214, 65529, 524293, 393214, 65530, 524293, 393214, 65531, 524293, 393214, 65532, 524293, 393214, 65533, 524293, 393214, 65534, 524293, 393214, 65535, 524293, 393214, 0, 524293, 393214, 1, 524293, 393214, 2, 524293, 393214, 3, 524293, 393214, 4, 524293, 393215, 65529, 524293, 393215, 65530, 524293, 393215, 65531, 524293, 393215, 65532, 524293, 393215, 65533, 524293, 393215, 65534, 524293, 393215, 65535, 524293, 393215, 0, 524293, 393215, 1, 524293, 393215, 2, 524293, 393215, 3, 524293, 393215, 4, 524293, 327680, 65529, 524293, 327680, 65530, 524293, 327680, 65531, 524293, 327680, 65532, 524293, 327680, 65533, 524293, 327680, 65534, 524293, 327680, 65535, 524293, 327680, 0, 524293, 327680, 1, 524293, 327680, 2, 524293, 327680, 3, 524293, 327680, 4, 524293, 327681, 65529, 524293, 327681, 65530, 524293, 327681, 65531, 524293, 327681, 65532, 524293, 327681, 65533, 524293, 327681, 65534, 524293, 327681, 65535, 524293, 327681, 0, 524293, 327681, 1, 524293, 327681, 2, 524293, 327681, 3, 524293, 327681, 4, 524293, 327682, 65529, 524293, 327682, 65530, 524293, 327682, 65531, 524293, 327682, 65532, 524293, 327682, 65533, 524293, 327682, 65534, 524293, 327682, 65535, 524293, 327682, 0, 524293, 327682, 1, 524293, 327682, 2, 524293, 327682, 3, 524293, 327682, 4, 524293, 327683, 65529, 524293, 327683, 65530, 524293, 327683, 65531, 524293, 327683, 65532, 524293, 327683, 65533, 524293, 327683, 65534, 524293, 327683, 65535, 524293, 327683, 0, 524293, 327683, 1, 524293, 327683, 2, 524293, 327683, 3, 524293, 327683, 4, 524293, 327684, 65529, 524293, 327684, 65530, 524293, 327684, 65531, 524293, 327684, 65532, 524293, 327684, 65533, 524293, 327684, 65534, 524293, 327684, 65535, 524293, 327684, 0, 524293, 327684, 1, 524293, 327684, 2, 524293, 327684, 3, 524293, 327684, 4, 524293, 327685, 65529, 524293, 327685, 65530, 524293, 327685, 65531, 524293, 327685, 65532, 524293, 327685, 65533, 524293, 327685, 65534, 524293, 327685, 65535, 524293, 327685, 0, 524293, 327685, 1, 524293, 327685, 2, 524293, 327685, 3, 524293, 327685, 4, 524293, 393209, 6, 524293, 393209, 5, 524293, 393209, 4, 524293, 393209, 3, 524293, 393209, 2, 524293, 393209, 1, 524293, 393209, 0, 524293, 393209, 65535, 524293, 393209, 65534, 524293, 393209, 65533, 524293, 393209, 65532, 524293, 393209, 65531, 524293, 393209, 65530, 524293, 393209, 65529, 524293, 327686, 65529, 524293, 327686, 65530, 524293, 327686, 65531, 524293, 327686, 65532, 524293, 327686, 65533, 524293, 327686, 65534, 524293, 327686, 65535, 524293, 327686, 0, 524293, 327686, 1, 524293, 327686, 2, 524293, 327686, 3, 524293, 327686, 4, 524293, 327686, 5, 524293, 327686, 6, 524293, 327685, 6, 524293, 327684, 6, 524293, 327683, 6, 524293, 327682, 6, 524293, 327681, 6, 524293, 327680, 6, 524293, 393215, 6, 524293, 393214, 6, 524293, 393213, 6, 524293, 393212, 6, 524293, 393211, 6, 524293, 393210, 6, 524293, 393211, 5, 524293, 393212, 5, 524293, 393213, 5, 524293, 393214, 5, 524293, 393215, 5, 524293, 327680, 5, 524293, 327681, 5, 524293, 327682, 5, 524293, 327683, 5, 524293, 327684, 5, 524293, 327685, 5, 524293, 393210, 5, 524293, -3, 65529, 655365, -3, 65530, 655365, -65534, 65529, 655365, -65534, 65530, 655365, 65533, 65531, 1441793, 2, 65531, 1441793, -196611, 65530, 0, -196611, 65529, 0, -262142, 65530, 655360, -262142, 65529, 655360, -262142, 65531, 1441799, -196611, 65531, 1441799, -262142, 6, 655360, -262142, 5, 655360, -262142, 4, 1048583, -196611, 6, 0, -196611, 5, 0, -196611, 4, 1048583, 2, 4, 1048577, 65533, 4, 1048577, -3, 6, 1441797, -3, 5, 1441797, -65534, 5, 1441797, -65534, 6, 1441797)
+}
+metadata/_editor_floor_ = Vector3(0, -1, 0)
+
+[node name="Lights" type="Node3D" parent="NavigationRegion3D/GridMap" unique_id=550535745]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="NavigationRegion3D/GridMap/Lights" unique_id=247828357]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -8)
+light_color = Color(0.71475035, 0.51046205, 0.2746351, 1)
+light_size = 4.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 10.0
+omni_shadow_mode = 0
+
+[node name="OmniLight3D9" type="OmniLight3D" parent="NavigationRegion3D/GridMap/Lights" unique_id=1539433944]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 5, -10)
+light_color = Color(0.71475035, 0.51046205, 0.2746351, 1)
+light_size = 4.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 10.0
+omni_shadow_mode = 0
+
+[node name="OmniLight3D10" type="OmniLight3D" parent="NavigationRegion3D/GridMap/Lights" unique_id=709512034]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 5, -10)
+light_color = Color(0.71475035, 0.51046205, 0.2746351, 1)
+light_size = 4.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 10.0
+omni_shadow_mode = 0
+
+[node name="OmniLight3D11" type="OmniLight3D" parent="NavigationRegion3D/GridMap/Lights" unique_id=2026217085]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 5, 10)
+light_color = Color(0.71475035, 0.51046205, 0.2746351, 1)
+light_size = 4.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 10.0
+omni_shadow_mode = 0
+
+[node name="OmniLight3D12" type="OmniLight3D" parent="NavigationRegion3D/GridMap/Lights" unique_id=694650189]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 5, 9)
+light_color = Color(0.71475035, 0.51046205, 0.2746351, 1)
+light_size = 4.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 10.0
+omni_shadow_mode = 0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="NavigationRegion3D/GridMap/Lights" unique_id=1123009890]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 5, 0)
+light_color = Color(0.71475035, 0.51046205, 0.2746351, 1)
+light_size = 4.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 10.0
+omni_shadow_mode = 0
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="NavigationRegion3D/GridMap/Lights" unique_id=1032900649]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 8)
+light_color = Color(0.71475035, 0.51046205, 0.2746351, 1)
+light_size = 4.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 10.0
+omni_shadow_mode = 0
+
+[node name="OmniLight3D7" type="OmniLight3D" parent="NavigationRegion3D/GridMap/Lights" unique_id=854140275]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 5, 0)
+light_color = Color(0.71475035, 0.51046205, 0.2746351, 1)
+light_size = 4.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 10.0
+omni_shadow_mode = 0
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="NavigationRegion3D/GridMap/Lights" unique_id=1888987839]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 5.656854, 5, -5.656854)
+light_color = Color(0.71475035, 0.51046205, 0.2746351, 1)
+light_size = 4.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 10.0
+omni_shadow_mode = 0
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="NavigationRegion3D/GridMap/Lights" unique_id=2077748532]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 5.656854, 5, 5.656854)
+light_color = Color(0.71475035, 0.51046205, 0.2746351, 1)
+light_size = 4.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 10.0
+omni_shadow_mode = 0
+
+[node name="OmniLight3D6" type="OmniLight3D" parent="NavigationRegion3D/GridMap/Lights" unique_id=646909637]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -5.656854, 5, 5.656854)
+light_color = Color(0.71475035, 0.51046205, 0.2746351, 1)
+light_size = 4.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 10.0
+omni_shadow_mode = 0
+
+[node name="OmniLight3D8" type="OmniLight3D" parent="NavigationRegion3D/GridMap/Lights" unique_id=1811059480]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -5.656854, 5, -5.656854)
+light_color = Color(0.71475035, 0.51046205, 0.2746351, 1)
+light_size = 4.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 10.0
+omni_shadow_mode = 0
+
+[node name="Entrance" parent="NavigationRegion3D/GridMap/Lights" unique_id=1756562916 instance=ExtResource("3_p538j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, 0)
+marker_position = Vector3(-12, 0, 0)
+destination_scene = "uid://cclh57g2igc6g"
+destination_position = Vector3(11, 0, -1.7484555e-07)
+
+[node name="Exit" parent="NavigationRegion3D/GridMap/Lights" unique_id=253320376 instance=ExtResource("3_p538j")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 14, 0, 0)
+marker_position = Vector3(12, 0, -1.7484555e-07)
+destination_scene = "uid://bnebidjh0ykpi"
+destination_position = Vector3(-11, 0, 0)
+
+[node name="Enemies" type="Node3D" parent="NavigationRegion3D/GridMap" unique_id=1454298828]
+
+[node name="Comprovante" parent="NavigationRegion3D/GridMap/Enemies" unique_id=931080643 instance=ExtResource("4_aoebq")]
+transform = Transform3D(0.99998677, 0, -0.0051486986, 0, 1, 0, 0.0051486986, 0, 0.99998677, -5.3963656, 0.16014636, -4.09136)
+
+[node name="Comprovante2" parent="NavigationRegion3D/GridMap/Enemies" unique_id=1148648629 instance=ExtResource("4_aoebq")]
+transform = Transform3D(0.99998677, 0, -0.0051486986, 0, 1, 0, 0.0051486986, 0, 0.99998677, 7.4773126, 0.16014636, -3.2801418)
+
+[node name="Comprovante3" parent="NavigationRegion3D/GridMap/Enemies" unique_id=368624405 instance=ExtResource("4_aoebq")]
+transform = Transform3D(0.99998677, 0, -0.0051486986, 0, 1, 0, 0.0051486986, 0, 0.99998677, 1.6929765, 0.16014636, 4.0208206)
+
+[node name="Boleto" parent="NavigationRegion3D/GridMap/Enemies" unique_id=1012244960 instance=ExtResource("5_5qrul")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6286056, 0.39921474, -11.80042)
+
+[node name="Boleto3" parent="NavigationRegion3D/GridMap/Enemies" unique_id=1592394501 instance=ExtResource("5_5qrul")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0949774, 0.39921474, -11.846941)
+
+[node name="Boleto4" parent="NavigationRegion3D/GridMap/Enemies" unique_id=1601743877 instance=ExtResource("5_5qrul")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.867535, 0.39921474, 12.115248)
+
+[node name="Boleto5" parent="NavigationRegion3D/GridMap/Enemies" unique_id=82344799 instance=ExtResource("5_5qrul")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1708808, 0.39921474, 12.050411)
+
+[node name="Boleto6" parent="NavigationRegion3D/GridMap/Enemies" unique_id=304623966 instance=ExtResource("5_5qrul")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4455462, 0.39921474, 11.918689)
+
+[node name="Boleto2" parent="NavigationRegion3D/GridMap/Enemies" unique_id=960629673 instance=ExtResource("5_5qrul")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28827572, 0.39921474, -11.861889)
+
+[node name="Path3D" type="Path3D" parent="NavigationRegion3D/GridMap" unique_id=949453450]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 5, 13)
+curve = SubResource("Curve3D_2lnft")
+
+[node name="CameraPathFollow" type="PathFollow3D" parent="NavigationRegion3D/GridMap/Path3D" unique_id=733404426 node_paths=PackedStringArray("camera")]
+transform = Transform3D(0.9999993, 0, 0, 0, 0.9999987, 0, 0, 0, 0.9999987, 0, 0, 0)
+rotation_mode = 0
+loop = false
+script = ExtResource("4_p538j")
+camera = NodePath("Camera3D")
+offset = Vector3(8, 0, 0)
+metadata/_custom_type_script = "uid://cp04tsvxdoq1h"
+
+[node name="Camera3D" type="Camera3D" parent="NavigationRegion3D/GridMap/Path3D/CameraPathFollow" unique_id=1096867225]
+transform = Transform3D(0.76604444, -0.27165377, 0.58256334, 0, 0.90630776, 0.42261827, -0.6427876, -0.3237444, 0.69427204, 0, 0, 0)
+
+[node name="FogVolume" parent="NavigationRegion3D/GridMap" unique_id=1074598834 instance=ExtResource("7_aoebq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
+size = Vector3(28, 2, 28)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=703037519]
+environment = ExtResource("4_2lnft")

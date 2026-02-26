@@ -72,9 +72,9 @@ _data = {
 &"dive_attack": SubResource("Animation_w78sf")
 }
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0c8vc"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_w2uf8"]
 atlas = ExtResource("6_r3rdc")
-region = Rect2(0, 0, 256, 256)
+region = Rect2(512, 0, 256, 256)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_sw6y8"]
 viewport_path = NodePath("ShadedAnimatedSprite3D/SubViewport")
@@ -89,7 +89,7 @@ shader_parameter/specular = 0.249999994412
 shader_parameter/texture_normal = ExtResource("4_pbwyr")
 shader_parameter/normal_scale = 1.5600008340999985
 shader_parameter/albedo = Color(1, 1, 1, 1)
-shader_parameter/texture_albedo = SubResource("AtlasTexture_0c8vc")
+shader_parameter/texture_albedo = SubResource("AtlasTexture_w2uf8")
 shader_parameter/texture_carimbo = SubResource("ViewportTexture_sw6y8")
 shader_parameter/carimbo_glow_intensity = 0.0
 shader_parameter/burn_texture = ExtResource("3_3c1s0")
@@ -98,11 +98,11 @@ shader_parameter/burn_size = 0.150000007125
 shader_parameter/burn_smoothness = 0.1330000063175
 shader_parameter/burn_glow_color = Color(1, 0.32, 0, 1)
 shader_parameter/burn_glow_intensity = 10.0
-shader_parameter/region_rect = Vector4(0, 0, 0.33333334, 1)
+shader_parameter/region_rect = Vector4(0.6666667, 0, 0.33333334, 1)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_w2uf8"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_0c8vc"]
 atlas = ExtResource("6_r3rdc")
-region = Rect2(512, 0, 256, 256)
+region = Rect2(0, 0, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w78sf"]
 atlas = ExtResource("6_r3rdc")
@@ -140,10 +140,11 @@ animations = [{
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3c1s0"]
 
-[node name="Passaporte" type="CharacterBody3D" unique_id=1005230644 node_paths=PackedStringArray("beehave_tree", "stampable_sprite")]
+[node name="Passaporte" type="CharacterBody3D" unique_id=1005230644 node_paths=PackedStringArray("beehave_tree", "stats_component", "stampable_sprite") groups=["monster"]]
 collision_layer = 16
 script = ExtResource("1_jscit")
 beehave_tree = NodePath("PassaporteBeehaveTree")
+stats_component = NodePath("StatsComponent")
 stampable_sprite = NodePath("ShadedAnimatedSprite3D")
 metadata/_custom_type_script = "uid://cg1dswyw2p1op"
 
@@ -204,7 +205,7 @@ metadata/_custom_type_script = "uid://bfied8f76qv1k"
 
 [node name="StatsComponent" type="Node" parent="." unique_id=456641389 node_paths=PackedStringArray("input_component", "hitbox_component", "beehave_tree")]
 script = ExtResource("6_iodyl")
-max_health = 4.0
+max_health = 2.0
 is_flying = true
 connect_signals_enable = true
 input_component = NodePath("../InputComponent")
@@ -224,7 +225,7 @@ metadata/_custom_type_script = "uid://c15vrenp7llbg"
 [node name="PassaporteBeehaveTree" type="Node" parent="." unique_id=517946327 node_paths=PackedStringArray("blackboard", "actor")]
 script = ExtResource("7_3c1s0")
 actor_node_path = NodePath("..")
-blackboard = NodePath("@Node@106095")
+blackboard = NodePath("@Node@1460782")
 actor = NodePath("..")
 metadata/_custom_type_script = "uid://bb0t2ovl7wifo"
 

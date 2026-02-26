@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="AttackInfo" format=3 uid="uid://ciggfb1vrf4kc"]
+
+[ext_resource type="Script" uid="uid://cuoa1ubyh5d06" path="res://scripts/attack_system/attack_info.gd" id="1_omqfr"]
+[ext_resource type="Texture2D" uid="uid://de5aie68gk0wk" path="res://assets/textures/stamps/símbolo-vermelho.png" id="2_vhtw6"]
+
+[resource]
+script = ExtResource("1_omqfr")
+damage = 99999999.0
+stamp_texture = ExtResource("2_vhtw6")
+stamp_size = Vector2(0.5, 0.5)
+flags = 7
+metadata/_custom_type_script = "uid://cuoa1ubyh5d06"

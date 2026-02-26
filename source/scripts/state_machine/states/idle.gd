@@ -1,3 +1,4 @@
+@tool
 class_name IdleState
 extends State
 
@@ -6,8 +7,9 @@ extends State
 @export var input_component: InputComponent
 
 
-func enter(_a: CharacterController3D) -> void:
-	pass
+
+func enter() -> void:
+	animated_sprite.play(animation_name)
 
 
 func exit() -> void:
@@ -19,6 +21,7 @@ func process(_delta: float) -> void:
 
 
 func physics_process(delta: float) -> void:
+	if Engine.is_editor_hint(): return
 	move_component.apply_gravity(delta)
 	move_component.stop_horizontal_movement(delta)
 

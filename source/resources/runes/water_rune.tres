@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Rune" format=3 uid="uid://b2yoi87p65bkn"]
+
+[ext_resource type="PackedScene" uid="uid://74aym3i5p7lh" path="res://scenes/objects/weapons/blue_hammer.tscn" id="1_c03gl"]
+[ext_resource type="Script" uid="uid://du7c6s1s7a807" path="res://scripts/components/rune.gd" id="2_87bn3"]
+[ext_resource type="Texture2D" uid="uid://bg8u6ykoqi0qu" path="res://assets/textures/ui/vida/azul_bola.png" id="2_0615l"]
+[ext_resource type="PackedScene" uid="uid://byma2jgolnudi" path="res://scenes/vfx/static/symbols/water_rune.tscn" id="2_c03gl"]
+[ext_resource type="Texture2D" uid="uid://cggf73hkk2xan" path="res://assets/textures/ui/vida/azul_bola_grande.png" id="3_pwpgj"]
+
+[resource]
+resource_name = "Runa Água"
+script = ExtResource("2_87bn3")
+name = "Runa Água"
+icon = ExtResource("2_0615l")
+large_icon = ExtResource("3_pwpgj")
+attack_scene = ExtResource("1_c03gl")
+rune_scene = ExtResource("2_c03gl")
+metadata/_custom_type_script = "uid://du7c6s1s7a807"

@@ -47,6 +47,11 @@ func block() -> void: blocked = true
 func unblock() -> void: blocked = false
 
 
+func fucking_die() -> void:
+	stop_navigation()
+	block()
+
+
 func is_at_destination() -> bool: return _reached
 
 

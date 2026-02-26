@@ -1,10 +1,13 @@
 class_name SceneLoaderAutoload
 extends Node
 
+const LOADING_SCREEN: PackedScene = preload("uid://dossg3cl5gsqo")
+
 signal progress_changed(progress: float)
 signal scene_loaded()
 signal scene_failed()
 
+var loading_scene: LoadingScreen
 var scene_path: String
 var progress: Array = []
 var use_sub_threads: bool = true
@@ -12,7 +15,12 @@ var use_sub_threads: bool = true
 var _player: CharacterController3D
 var _player_dest_pos: Vector3
 
-func _ready() -> void: set_process(false)
+func _ready() -> void:
+	set_process(false)
+	if not loading_scene:
+		loading_scene = LOADING_SCREEN.instantiate()
+		add_child(loading_scene)
+
 
 
 func _process(_delta: float) -> void:
@@ -30,7 +38,7 @@ func _process(_delta: float) -> void:
 
 
 func load_scene(_scene_path: String):
-	# TODO: insert loading scene logic here
+	await loading_scene.start_loading()
 	start_load(_scene_path)
 
 
@@ -49,9 +57,19 @@ func start_load(_scene_path: String):
 
 func _change_to_scene(scene: PackedScene) -> void:
 	set_process(false)
-	_player.reparent(self)
+	if _player: _player.reparent(self)
 	get_tree().change_scene_to_packed(scene)
 	await get_tree().scene_changed
-	_player.reparent(get_tree().current_scene)
-	_player.set_global_position.call_deferred(_player_dest_pos)
+	if _player:
+		_player.reparent(get_tree().current_scene)
+		_player.set_global_position.call_deferred(_player_dest_pos)
+		_player = null
+	_set_cameras()
 	scene_loaded.emit()
+	loading_scene.close()
+
+
+func _set_cameras() -> void:
+	for c: PhantomCamera3D in get_tree().get_nodes_in_group("camera"):
+		c.set_follow_target(_player)
+		c.append_follow_targets(_player)

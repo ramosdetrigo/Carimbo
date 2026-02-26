@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Rune" format=3 uid="uid://dhkf2x6ifyip0"]
+
+[ext_resource type="PackedScene" uid="uid://3gxhim71ls1m" path="res://scenes/objects/weapons/red_hammer.tscn" id="1_amlj0"]
+[ext_resource type="Texture2D" uid="uid://c8s207urk8aid" path="res://assets/textures/ui/vida/vermelho_bola.png" id="2_ndsda"]
+[ext_resource type="Script" uid="uid://du7c6s1s7a807" path="res://scripts/components/rune.gd" id="3_ndsda"]
+[ext_resource type="Texture2D" uid="uid://cpcqposnr265t" path="res://assets/textures/ui/vida/vermelha_bola_grande.png" id="3_uvfn4"]
+[ext_resource type="PackedScene" uid="uid://djwabunt0h667" path="res://scenes/vfx/static/symbols/fire_rune.tscn" id="3_wtwic"]
+
+[resource]
+resource_name = "Runa Fogo"
+script = ExtResource("3_ndsda")
+name = "Runa Fogo"
+icon = ExtResource("2_ndsda")
+large_icon = ExtResource("3_uvfn4")
+attack_scene = ExtResource("1_amlj0")
+rune_scene = ExtResource("3_wtwic")
+metadata/_custom_type_script = "uid://du7c6s1s7a807"

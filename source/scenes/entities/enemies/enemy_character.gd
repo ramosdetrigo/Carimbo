@@ -2,6 +2,8 @@
 class_name EnemyCharacter
 extends StampableCharacter
 
+signal dead()
+
 @export var beehave_tree: BeehaveTree
 @export var stats_component: StatsComponent
 
@@ -12,9 +14,16 @@ func _ready() -> void:
 		func(c: Node) -> bool: return c is BeehaveTree).front()
 
 
+func death() -> void:
+	super.death()
+	beehave_tree.disable()
+	dead.emit()
+
+
 func on_being_hit() -> void:
 	beehave_tree.disable()
 	stampable_sprite.play(&"hit")
 	if stampable_sprite.sprite_frames.get_animation_loop(&"hit"): await stampable_sprite.animation_looped
 	else: await stampable_sprite.animation_finished
+	if stats_component.health <= 0: return
 	beehave_tree.enable()

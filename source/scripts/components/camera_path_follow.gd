@@ -9,10 +9,12 @@ var player: CharacterController3D
 var path: Path3D
 
 func _ready() -> void:
+	if not camera: camera = _get_child_camera()
+	set_process(false)
+	if Engine.is_editor_hint(): return
 	SceneLoader.scene_loaded.connect(_get_player)
 	_get_player()
 	path = get_parent()
-	if not camera: camera = _get_child_camera()
 	camera.set_current(true)
 
 

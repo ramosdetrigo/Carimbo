@@ -1,30 +1,47 @@
 [gd_scene format=3 uid="uid://cpe81jsk65sjm"]
 
 [ext_resource type="Script" uid="uid://ckxpmu5lrfiql" path="res://scenes/levels/level_scene.gd" id="1_repk1"]
+[ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_imcx4"]
+[ext_resource type="Script" uid="uid://bvgv0wqcnb1yp" path="res://scripts/phantom_camera_3d_follow_player.gd" id="2_ljsju"]
 [ext_resource type="Environment" uid="uid://c44ylihrd2515" path="res://resources/envoriment/fire_enviroment.tres" id="2_ymfgg"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="3_imcx4"]
 [ext_resource type="MeshLibrary" uid="uid://be3yh5mqefut3" path="res://resources/mesh_library/level_props.meshlib" id="3_rjpb1"]
-[ext_resource type="Script" uid="uid://cp04tsvxdoq1h" path="res://scripts/components/camera_path_follow.gd" id="4_ujvkl"]
 [ext_resource type="PackedScene" uid="uid://572ad1efklon" path="res://scenes/entities/enemies/boleto/boleto.tscn" id="5_iun15"]
 [ext_resource type="PackedScene" uid="uid://xw64ux4jg7fg" path="res://scenes/entities/enemies/errige/errige.tscn" id="6_qbjt4"]
 [ext_resource type="PackedScene" uid="uid://dxyd470cqorqq" path="res://scenes/entities/enemies/comprovante/comprovante.tscn" id="7_oigun"]
 [ext_resource type="PackedScene" uid="uid://c24ksaog50v3g" path="res://scenes/entities/enemies/atestado/atestado.tscn" id="8_oigun"]
 [ext_resource type="PackedScene" uid="uid://c3hpiq2ftpgt8" path="res://scenes/levels/doors/scene_door.tscn" id="8_qbjt4"]
+[ext_resource type="PackedScene" uid="uid://domk3xwojp1ia" path="res://scenes/components/character/character.tscn" id="11_vaamq"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_rjpb1"]
-vertices = PackedVector3Array(3.9436502, 0.5, 12.857864, 4.4436502, 0.5, 12.857864, 12.44365, 0.5, 4.8578644, 12.44365, 0.5, 4.3578644, -5.5563498, 0.5, -13.642136, -14.05635, 0.5, -5.3921356)
-polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(3, 0, 4), PackedInt32Array(4, 0, 5)]
+vertices = PackedVector3Array(-12.749999, 0.5, -5.7499995, -12.749999, 0.5, 5.7500005, 12.750001, 0.5, 5.7500005, 12.750001, 0.5, -5.7499995)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
 agent_radius = 1.0
 
 [sub_resource type="Curve3D" id="Curve3D_77ktg"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -12, 0, 0, 0, 0, 0, 0, 0, 0, 12, 0, 0),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -9, 0, 0, 0, 0, 0, 0, 0, 0, 9, 0, 0),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
 
-[node name="Level6" type="Node3D" unique_id=13506919]
+[sub_resource type="Resource" id="Resource_0dp8p"]
+script = ExtResource("3_imcx4")
+
+[node name="Level6" type="Node3D" unique_id=13506919 node_paths=PackedStringArray("exit_door")]
 script = ExtResource("1_repk1")
+exit_door = NodePath("NavigationRegion3D/GridMap/Exit")
 metadata/_custom_type_script = "uid://ckxpmu5lrfiql"
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=2115342360]
+physics_interpolation_mode = 1
+transform = Transform3D(0.9659259, -0.18301268, 0.18301271, 0, 0.7071068, 0.70710677, -0.25881904, -0.68301266, 0.6830127, -9, 7.405, 6.1099997)
+top_level = true
+
+[node name="PhantomCameraHost" type="Node" parent="Camera3D" unique_id=1444778565]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("2_imcx4")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1254354966]
 environment = ExtResource("2_ymfgg")
@@ -33,30 +50,18 @@ environment = ExtResource("2_ymfgg")
 navigation_mesh = SubResource("NavigationMesh_rjpb1")
 
 [node name="GridMap" type="GridMap" parent="NavigationRegion3D" unique_id=185523227]
-transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, 0, 0, -1)
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, -1)
 mesh_library = ExtResource("3_rjpb1")
 cell_center_y = false
 data = {
-"cells": PackedInt32Array(6, 65532, 1048576, 5, 65532, 1048576, 4, 65532, 1048576, 3, 65532, 1048576, 2, 65532, 1048576, 1, 65532, 1048576, 0, 65532, 1048576, 65535, 65532, 1048576, 65534, 65532, 1048576, 65533, 65532, 1048576, 65532, 65532, 1048576, 65531, 65532, 1048576, 65530, 65532, 1048576, 65529, 65532, 1048576, 7, 65533, 0, 7, 65534, 0, 7, 65535, 0, 7, 0, 0, 7, 1, 0, 7, 2, 0, 7, 3, 0, 65528, 65533, 655360, 65528, 65534, 655360, 65528, 65535, 655360, 65528, 0, 655360, 65528, 1, 655360, 65528, 2, 655360, 65528, 3, 655360, 65529, 4, 1441792, 65530, 4, 1441792, 65531, 4, 1441792, 65532, 4, 1441792, 65533, 4, 1441792, 65534, 4, 1441792, 65535, 4, 1441792, 0, 4, 1441792, 1, 4, 1441792, 2, 4, 1441792, 3, 4, 1441792, 4, 4, 1441792, 5, 4, 1441792, 6, 4, 1441792, -7, 65533, 1441797, -7, 65534, 1441797, -7, 65535, 1441797, -7, 0, 1441797, -7, 1, 1441797, -7, 2, 1441797, -7, 3, 1441797, -6, 65533, 1441797, -6, 65534, 1441797, -6, 65535, 1441797, -6, 0, 1441797, -6, 1, 1441797, -6, 2, 1441797, -6, 3, 1441797, -5, 65533, 1441797, -5, 65534, 1441797, -5, 65535, 1441797, -5, 0, 1441797, -5, 1, 1441797, -5, 2, 1441797, -5, 3, 1441797, -4, 65533, 1441797, -4, 65534, 1441797, -4, 65535, 1441797, -4, 0, 1441797, -4, 1, 1441797, -4, 2, 1441797, -4, 3, 1441797, -3, 65533, 1441797, -3, 65534, 1441797, -3, 65535, 1441797, -3, 0, 1441797, -3, 1, 1441797, -3, 2, 1441797, -3, 3, 1441797, -2, 65533, 1441797, -2, 65534, 1441797, -2, 65535, 1441797, -2, 0, 1441797, -2, 1, 1441797, -2, 2, 1441797, -2, 3, 1441797, -1, 65533, 1441797, -1, 65534, 1441797, -1, 65535, 1441797, -1, 0, 1441797, -1, 1, 1441797, -1, 2, 1441797, -1, 3, 1441797, -65536, 65533, 1441797, -65536, 65534, 1441797, -65536, 65535, 1441797, -65536, 0, 1441797, -65536, 1, 1441797, -65536, 2, 1441797, -65536, 3, 1441797, -65535, 65533, 1441797, -65535, 65534, 1441797, -65535, 65535, 1441797, -65535, 0, 1441797, -65535, 1, 1441797, -65535, 2, 1441797, -65535, 3, 1441797, -65534, 65533, 1441797, -65534, 65534, 1441797, -65534, 65535, 1441797, -65534, 0, 1441797, -65534, 1, 1441797, -65534, 2, 1441797, -65534, 3, 1441797, -65533, 65533, 1441797, -65533, 65534, 1441797, -65533, 65535, 1441797, -65533, 0, 1441797, -65533, 1, 1441797, -65533, 2, 1441797, -65533, 3, 1441797, -65532, 65533, 1441797, -65532, 65534, 1441797, -65532, 65535, 1441797, -65532, 0, 1441797, -65532, 1, 1441797, -65532, 2, 1441797, -65532, 3, 1441797, -65531, 65533, 1441797, -65531, 65534, 1441797, -65531, 65535, 1441797, -65531, 0, 1441797, -65531, 1, 1441797, -65531, 2, 1441797, -65531, 3, 1441797, -65530, 65533, 1441797, -65530, 65534, 1441797, -65530, 65535, 1441797, -65530, 0, 1441797, -65530, 1, 1441797, -65530, 2, 1441797, -65530, 3, 1441797, 65529, 0, 2, 6, 0, 655362, 393209, 65533, 524293, 393209, 65534, 524293, 393209, 65535, 524293, 393209, 0, 524293, 393209, 1, 524293, 393209, 2, 524293, 393209, 3, 524293, 393210, 65533, 524293, 393210, 65534, 524293, 393210, 65535, 524293, 393210, 0, 524293, 393210, 1, 524293, 393210, 2, 524293, 393210, 3, 524293, 393211, 65533, 524293, 393211, 65534, 524293, 393211, 65535, 524293, 393211, 0, 524293, 393211, 1, 524293, 393211, 2, 524293, 393211, 3, 524293, 393212, 65533, 524293, 393212, 65534, 524293, 393212, 65535, 524293, 393212, 0, 524293, 393212, 1, 524293, 393212, 2, 524293, 393212, 3, 524293, 393213, 65533, 524293, 393213, 65534, 524293, 393213, 65535, 524293, 393213, 0, 524293, 393213, 1, 524293, 393213, 2, 524293, 393213, 3, 524293, 393214, 65533, 524293, 393214, 65534, 524293, 393214, 65535, 524293, 393214, 0, 524293, 393214, 1, 524293, 393214, 2, 524293, 393214, 3, 524293, 393215, 65533, 524293, 393215, 65534, 524293, 393215, 65535, 524293, 393215, 0, 524293, 393215, 1, 524293, 393215, 2, 524293, 393215, 3, 524293, 327680, 65533, 524293, 327680, 65534, 524293, 327680, 65535, 524293, 327680, 0, 524293, 327680, 1, 524293, 327680, 2, 524293, 327680, 3, 524293, 327681, 65533, 524293, 327681, 65534, 524293, 327681, 65535, 524293, 327681, 0, 524293, 327681, 1, 524293, 327681, 2, 524293, 327681, 3, 524293, 327682, 65533, 524293, 327682, 65534, 524293, 327682, 65535, 524293, 327682, 0, 524293, 327682, 1, 524293, 327682, 2, 524293, 327682, 3, 524293, 327683, 65533, 524293, 327683, 65534, 524293, 327683, 65535, 524293, 327683, 0, 524293, 327683, 1, 524293, 327683, 2, 524293, 327683, 3, 524293, 327684, 65533, 524293, 327684, 65534, 524293, 327684, 65535, 524293, 327684, 0, 524293, 327684, 1, 524293, 327684, 2, 524293, 327684, 3, 524293, 327685, 65533, 524293, 327685, 65534, 524293, 327685, 65535, 524293, 327685, 0, 524293, 327685, 1, 524293, 327685, 2, 524293, 327685, 3, 524293, 327686, 65533, 524293, 327686, 65534, 524293, 327686, 65535, 524293, 327686, 0, 524293, 327686, 1, 524293, 327686, 2, 524293, 327686, 3, 524293)
+"cells": PackedInt32Array(6, 65532, 1048576, 5, 65532, 1048576, 4, 65532, 1048576, 3, 65532, 1048576, 2, 65532, 1048576, 1, 65532, 1048576, 0, 65532, 1048576, 65535, 65532, 1048576, 65534, 65532, 1048576, 65533, 65532, 1048576, 65532, 65532, 1048576, 65531, 65532, 1048576, 65530, 65532, 1048576, 65529, 65532, 1048576, 7, 65533, 0, 7, 65534, 0, 7, 65535, 0, 7, 0, 0, 7, 1, 0, 7, 2, 0, 7, 3, 0, 65528, 65533, 655360, 65528, 65534, 655360, 65528, 65535, 655360, 65528, 0, 655360, 65528, 1, 655360, 65528, 2, 655360, 65528, 3, 655360, 65529, 4, 1441792, 65530, 4, 1441792, 65531, 4, 1441792, 65532, 4, 1441792, 65533, 4, 1441792, 65534, 4, 1441792, 65535, 4, 1441792, 0, 4, 1441792, 1, 4, 1441792, 2, 4, 1441792, 3, 4, 1441792, 4, 4, 1441792, 5, 4, 1441792, 6, 4, 1441792, -7, 65533, 1441797, -7, 65534, 1441797, -7, 65535, 1441797, -7, 0, 1441797, -7, 1, 1441797, -7, 2, 1441797, -7, 3, 1441797, -6, 65533, 1441797, -6, 65534, 1441797, -6, 65535, 1441797, -6, 0, 1441797, -6, 1, 1441797, -6, 2, 1441797, -6, 3, 1441797, -5, 65533, 1441797, -5, 65534, 1441797, -5, 65535, 1441797, -5, 0, 1441797, -5, 1, 1441797, -5, 2, 1441797, -5, 3, 1441797, -4, 65533, 1441797, -4, 65534, 1441797, -4, 65535, 1441797, -4, 0, 1441797, -4, 1, 1441797, -4, 2, 1441797, -4, 3, 1441797, -3, 65533, 1441797, -3, 65534, 1441797, -3, 65535, 1441797, -3, 0, 1441797, -3, 1, 1441797, -3, 2, 1441797, -3, 3, 1441797, -2, 65533, 1441797, -2, 65534, 1441797, -2, 65535, 1441797, -2, 0, 1441797, -2, 1, 1441797, -2, 2, 1441797, -2, 3, 1441797, -1, 65533, 1441797, -1, 65534, 1441797, -1, 65535, 1441797, -1, 0, 1441797, -1, 1, 1441797, -1, 2, 1441797, -1, 3, 1441797, -65536, 65533, 1441797, -65536, 65534, 1441797, -65536, 65535, 1441797, -65536, 0, 1441797, -65536, 1, 1441797, -65536, 2, 1441797, -65536, 3, 1441797, -65535, 65533, 1441797, -65535, 65534, 1441797, -65535, 65535, 1441797, -65535, 0, 1441797, -65535, 1, 1441797, -65535, 2, 1441797, -65535, 3, 1441797, -65534, 65533, 1441797, -65534, 65534, 1441797, -65534, 65535, 1441797, -65534, 0, 1441797, -65534, 1, 1441797, -65534, 2, 1441797, -65534, 3, 1441797, -65533, 65533, 1441797, -65533, 65534, 1441797, -65533, 65535, 1441797, -65533, 0, 1441797, -65533, 1, 1441797, -65533, 2, 1441797, -65533, 3, 1441797, -65532, 65533, 1441797, -65532, 65534, 1441797, -65532, 65535, 1441797, -65532, 0, 1441797, -65532, 1, 1441797, -65532, 2, 1441797, -65532, 3, 1441797, -65531, 65533, 1441797, -65531, 65534, 1441797, -65531, 65535, 1441797, -65531, 0, 1441797, -65531, 1, 1441797, -65531, 2, 1441797, -65531, 3, 1441797, -65530, 65533, 1441797, -65530, 65534, 1441797, -65530, 65535, 1441797, -65530, 0, 1441797, -65530, 1, 1441797, -65530, 2, 1441797, -65530, 3, 1441797, 65529, 0, 3, 6, 0, 655363, 393209, 65533, 524293, 393209, 65534, 524293, 393209, 65535, 524293, 393209, 0, 524293, 393209, 1, 524293, 393209, 2, 524293, 393209, 3, 524293, 393210, 65533, 524293, 393210, 65534, 524293, 393210, 65535, 524293, 393210, 0, 524293, 393210, 1, 524293, 393210, 2, 524293, 393210, 3, 524293, 393211, 65533, 524293, 393211, 65534, 524293, 393211, 65535, 524293, 393211, 0, 524293, 393211, 1, 524293, 393211, 2, 524293, 393211, 3, 524293, 393212, 65533, 524293, 393212, 65534, 524293, 393212, 65535, 524293, 393212, 0, 524293, 393212, 1, 524293, 393212, 2, 524293, 393212, 3, 524293, 393213, 65533, 524293, 393213, 65534, 524293, 393213, 65535, 524293, 393213, 0, 524293, 393213, 1, 524293, 393213, 2, 524293, 393213, 3, 524293, 393214, 65533, 524293, 393214, 65534, 524293, 393214, 65535, 524293, 393214, 0, 524293, 393214, 1, 524293, 393214, 2, 524293, 393214, 3, 524293, 393215, 65533, 524293, 393215, 65534, 524293, 393215, 65535, 524293, 393215, 0, 524293, 393215, 1, 524293, 393215, 2, 524293, 393215, 3, 524293, 327680, 65533, 524293, 327680, 65534, 524293, 327680, 65535, 524293, 327680, 0, 524293, 327680, 1, 524293, 327680, 2, 524293, 327680, 3, 524293, 327681, 65533, 524293, 327681, 65534, 524293, 327681, 65535, 524293, 327681, 0, 524293, 327681, 1, 524293, 327681, 2, 524293, 327681, 3, 524293, 327682, 65533, 524293, 327682, 65534, 524293, 327682, 65535, 524293, 327682, 0, 524293, 327682, 1, 524293, 327682, 2, 524293, 327682, 3, 524293, 327683, 65533, 524293, 327683, 65534, 524293, 327683, 65535, 524293, 327683, 0, 524293, 327683, 1, 524293, 327683, 2, 524293, 327683, 3, 524293, 327684, 65533, 524293, 327684, 65534, 524293, 327684, 65535, 524293, 327684, 0, 524293, 327684, 1, 524293, 327684, 2, 524293, 327684, 3, 524293, 327685, 65533, 524293, 327685, 65534, 524293, 327685, 65535, 524293, 327685, 0, 524293, 327685, 1, 524293, 327685, 2, 524293, 327685, 3, 524293, 327686, 65533, 524293, 327686, 65534, 524293, 327686, 65535, 524293, 327686, 0, 524293, 327686, 1, 524293, 327686, 2, 524293, 327686, 3, 524293)
 }
-metadata/_editor_floor_ = Vector3(0, 5, 0)
+metadata/_editor_floor_ = Vector3(0, 0, 0)
 
 [node name="Path3D" type="Path3D" parent="NavigationRegion3D/GridMap" unique_id=1428026198]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 8)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.405, 7.11)
 curve = SubResource("Curve3D_77ktg")
 debug_custom_color = Color(0.9316481, 0.44301617, 0.70225155, 1)
-
-[node name="CameraPathFollow" type="PathFollow3D" parent="NavigationRegion3D/GridMap/Path3D" unique_id=1104054800 node_paths=PackedStringArray("camera")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
-progress = 24.0
-rotation_mode = 0
-loop = false
-script = ExtResource("4_ujvkl")
-camera = NodePath("Camera3D")
-metadata/_custom_type_script = "uid://cp04tsvxdoq1h"
-
-[node name="Camera3D" type="Camera3D" parent="NavigationRegion3D/GridMap/Path3D/CameraPathFollow" unique_id=2115342360]
-transform = Transform3D(0.9659258, -0.18301268, 0.18301268, 0, 0.7071067, 0.7071067, -0.25881904, -0.6830126, 0.6830126, 0, 0, 0)
 
 [node name="Lights" type="Node3D" parent="NavigationRegion3D/GridMap" unique_id=557970980]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
@@ -117,50 +122,48 @@ omni_range = 8.478483
 
 [node name="Enemies" type="Node3D" parent="NavigationRegion3D/GridMap" unique_id=20061869]
 
-[node name="Boleto" parent="NavigationRegion3D/GridMap/Enemies" unique_id=1012244960 node_paths=PackedStringArray("stats_component") instance=ExtResource("5_iun15")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.937078, 0.39845788, -3.9523218)
-stats_component = NodePath("StatsComponent")
+[node name="Boleto" parent="NavigationRegion3D/GridMap/Enemies" unique_id=1012244960 instance=ExtResource("5_iun15")]
+transform = Transform3D(0.9992532, 0, 0, 0, 1, 0, 0, 0, 0.9992532, -10.906395, 0.39845788, -3.952321)
 
-[node name="Boleto2" parent="NavigationRegion3D/GridMap/Enemies" unique_id=658256673 node_paths=PackedStringArray("stats_component") instance=ExtResource("5_iun15")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.627545, 0.39845783, 5.1018496)
-stats_component = NodePath("StatsComponent")
+[node name="Boleto2" parent="NavigationRegion3D/GridMap/Enemies" unique_id=658256673 instance=ExtResource("5_iun15")]
+transform = Transform3D(0.99928683, 0, 0, 0, 1, 0, 0, 0, 0.99928683, -10.596862, 0.39845783, 5.086508)
 
-[node name="Errige" parent="NavigationRegion3D/GridMap/Enemies" unique_id=1891326732 node_paths=PackedStringArray("stats_component") instance=ExtResource("6_qbjt4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4586716, 0.38565877, 1.0642617)
-stats_component = NodePath("StatsComponent")
+[node name="Errige" parent="NavigationRegion3D/GridMap/Enemies" unique_id=1891326732 instance=ExtResource("6_qbjt4")]
+transform = Transform3D(0.99928683, 0, 0, 0, 1, 0, 0, 0, 0.99928683, -5.44333, 0.38565877, 1.0604262)
 
-[node name="Comprovante" parent="NavigationRegion3D/GridMap/Enemies" unique_id=931080643 node_paths=PackedStringArray("stats_component") instance=ExtResource("7_oigun")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5926094, 0.15984285, 0.99999976)
-stats_component = NodePath("StatsComponent")
+[node name="Comprovante" parent="NavigationRegion3D/GridMap/Enemies" unique_id=931080643 instance=ExtResource("7_oigun")]
+transform = Transform3D(0.99928683, 0, 0, 0, 1, 0, 0, 0, 0.99928683, 7.5772676, 0.15984285, 0.99808204)
 
-[node name="Comprovante2" parent="NavigationRegion3D/GridMap/Enemies" unique_id=419172903 node_paths=PackedStringArray("stats_component") instance=ExtResource("7_oigun")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.266836, 0.15984274, -3.3585207)
-stats_component = NodePath("StatsComponent")
+[node name="Comprovante2" parent="NavigationRegion3D/GridMap/Enemies" unique_id=419172903 instance=ExtResource("7_oigun")]
+transform = Transform3D(0.99928683, 0, 0, 0, 1, 0, 0, 0, 0.99928683, 3.259165, 0.15984274, -3.3585205)
 
-[node name="Comprovante3" parent="NavigationRegion3D/GridMap/Enemies" unique_id=1371794593 node_paths=PackedStringArray("stats_component") instance=ExtResource("7_oigun")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2631285, 0.1598429, 5.735402)
-stats_component = NodePath("StatsComponent")
+[node name="Comprovante3" parent="NavigationRegion3D/GridMap/Enemies" unique_id=1371794593 instance=ExtResource("7_oigun")]
+transform = Transform3D(0.99930346, 0, 0, 0, 1, 0, 0, 0, 0.99930346, 3.2554576, 0.1598429, 5.7200603)
 
-[node name="Atestado" parent="NavigationRegion3D/GridMap/Enemies" unique_id=1428994103 node_paths=PackedStringArray("stats_component") instance=ExtResource("8_oigun")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8284273, 0, 1.4142137)
-stats_component = NodePath("StatsComponent")
+[node name="Atestado" parent="NavigationRegion3D/GridMap/Enemies" unique_id=1428994103 instance=ExtResource("8_oigun")]
+transform = Transform3D(0.9993179, 0, 0, 0, 1, 0, 0, 0, 0.9993179, 2.8207564, 0, 1.4103782)
 
-[node name="Entrance" parent="NavigationRegion3D/GridMap" unique_id=1756562916 instance=ExtResource("8_qbjt4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 1)
-marker_position = Vector3(10.606602, 0, 11.020815)
-destination_scene = "uid://8r3eav3jfq30"
-destination_position = Vector3(12, 0, 1)
+[node name="Entrance" parent="NavigationRegion3D/GridMap" unique_id=492947814 instance=ExtResource("8_qbjt4")]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -13.999999, 0, 0.99999994)
+marker_position = Vector3(-11.999998, 0, -1.1920929e-07)
 
-[node name="Marker3D" type="Marker3D" parent="NavigationRegion3D/GridMap/Entrance" unique_id=2090329300]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.778175, 0, 8.192389)
-top_level = true
-
-[node name="Exit" parent="NavigationRegion3D/GridMap" unique_id=492947814 instance=ExtResource("8_qbjt4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, 1)
-marker_position = Vector3(-9.192389, 0, -8.778175)
+[node name="Exit" parent="NavigationRegion3D/GridMap" unique_id=1756562916 instance=ExtResource("8_qbjt4")]
+transform = Transform3D(-0.9999999, 0, -4.4703484e-08, 0, 1, 0, 4.4703484e-08, 0, -0.9999999, 13.999998, 0, 0.9999999)
+marker_position = Vector3(11.999997, 0, -8.9406974e-08)
 destination_scene = "uid://du3pjs2hn1we1"
-destination_position = Vector3(11, 0, 0)
+destination_position = Vector3(-11, 0, 0)
 
-[node name="Marker3D" type="Marker3D" parent="NavigationRegion3D/GridMap/Exit" unique_id=805640938]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.192389, 0, -8.778175)
+[node name="PlayerCharacter" parent="." unique_id=269989542 instance=ExtResource("11_vaamq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.186727, 0, 0.8469391)
+
+[node name="FPPhantomCamera3D" type="Node3D" parent="." unique_id=1344378906 node_paths=PackedStringArray("follow_target", "follow_path")]
+transform = Transform3D(0.9659259, -0.18301268, 0.18301271, 0, 0.7071068, 0.70710677, -0.25881904, -0.68301266, 0.6830127, -9, 7.405, 6.1099997)
 top_level = true
+script = ExtResource("2_ljsju")
+follow_mode = 4
+follow_target = NodePath("../PlayerCharacter")
+follow_path = NodePath("../NavigationRegion3D/GridMap/Path3D")
+tween_resource = SubResource("Resource_0dp8p")
+align_transform_with_view = Callable()
+align_position_with_view = Callable()
+metadata/_custom_type_script = "uid://bvgv0wqcnb1yp"

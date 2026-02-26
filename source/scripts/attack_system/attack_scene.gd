@@ -2,6 +2,7 @@ class_name AttackScene
 extends Node3D
 
 @export var attack_info: AttackInfo
+@export var should_disappear: bool = true
 @export_range(0.1, 100.0, 0.1, "or_greater", "or_less", "suffix:sec")
 var lifetime: float = 0.5: set = _set_lifetime
 @export var should_break_on_contact: bool = true
@@ -16,6 +17,7 @@ func _ready() -> void:
 	if not should_break_on_contact: return
 	hurtbox_component.hit.connect(destroy)
 	hurtbox_component.body_hit.connect(destroy)
+	set_physics_process(not should_disappear)
 
 
 func _physics_process(delta: float) -> void:

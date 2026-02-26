@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://dvx8g5gs2o3ja"]
+
+[ext_resource type="Script" uid="uid://ctsptwrqbeytg" path="res://scripts/attack_system/attack_projectile.gd" id="1_fktem"]
+[ext_resource type="Script" uid="uid://cuoa1ubyh5d06" path="res://scripts/attack_system/attack_info.gd" id="2_jahpa"]
+[ext_resource type="Script" uid="uid://fjgad71t0sd4" path="res://scripts/attack_system/hurtbox_component.gd" id="2_rbprr"]
+[ext_resource type="Texture2D" uid="uid://rxlnntwvakwf" path="res://assets/textures/vfx/particles/spark_05.png" id="4_ytg6t"]
+
+[sub_resource type="Resource" id="Resource_ytg6t"]
+script = ExtResource("2_jahpa")
+damage = 2.0
+flags = 5
+metadata/_custom_type_script = "uid://cuoa1ubyh5d06"
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_rbprr"]
+radius = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_308dq"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("4_ytg6t")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vrcm2"]
+lifetime_randomness = 1.0
+emission_shape = 1
+emission_sphere_radius = 0.5
+angle_min = -179.99998
+angle_max = 180.00002
+direction = Vector3(0, 1, 0)
+spread = 15.0
+initial_velocity_min = -0.19999999
+initial_velocity_max = 0.19999999
+angular_velocity_min = -25.000015
+angular_velocity_max = 24.999983
+gravity = Vector3(0, 0, 0)
+scale_min = 0.19999999
+scale_max = 0.39999998
+color = Color(8.078688, 6.9993367, 2.6819282, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_af8cr"]
+
+[node name="YellowHammer" type="Node3D" unique_id=610195896 node_paths=PackedStringArray("hurtbox_component")]
+script = ExtResource("1_fktem")
+speed = 30.0
+attack_info = SubResource("Resource_ytg6t")
+lifetime = 1.0
+hurtbox_component = NodePath("HurtboxComponent")
+metadata/_custom_type_script = "uid://ctsptwrqbeytg"
+
+[node name="HurtboxComponent" type="Area3D" parent="." unique_id=1120544519]
+collision_layer = 0
+collision_mask = 52
+script = ExtResource("2_rbprr")
+launch_force = 20.0
+metadata/_custom_type_script = "uid://fjgad71t0sd4"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HurtboxComponent" unique_id=1222782554]
+shape = SubResource("SphereShape3D_rbprr")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=2033677491]
+material_override = SubResource("StandardMaterial3D_308dq")
+amount = 20
+lifetime = 0.2
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_vrcm2")
+draw_pass_1 = SubResource("QuadMesh_af8cr")

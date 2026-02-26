@@ -25,7 +25,7 @@ func _ready() -> void:
 
 func _connect_signals() -> void:
 	if hitbox_component: hitbox_component.damaged.connect(on_damaged)
-	if input_component: died.connect(input_component.stop_navigation)
+	if input_component: died.connect(input_component.fucking_die)
 	if owner is StampableCharacter:
 		died.connect((owner as StampableCharacter).death)
 		health_lowered.connect((owner as StampableCharacter).on_being_hit)
@@ -47,7 +47,9 @@ func set_health(value: float) -> void:
 	var old: float = health
 	health = maxf(value, 0.0)
 	health_changed.emit(health)
-	if health <= 0: died.emit()
+	if health <= 0:
+		died.emit()
+		hitbox_component.damaged.disconnect(on_damaged)
 	elif health < old: health_lowered.emit()
 
 

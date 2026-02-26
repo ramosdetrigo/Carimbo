@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Rune" format=3 uid="uid://68oolyclljfd"]
+
+[ext_resource type="PackedScene" uid="uid://dvx8g5gs2o3ja" path="res://scenes/objects/weapons/yellow_hammer.tscn" id="1_wyw60"]
+[ext_resource type="Texture2D" uid="uid://d0dxtrvmv83yq" path="res://assets/textures/ui/vida/amarelo_bola.png" id="2_btcse"]
+[ext_resource type="Script" uid="uid://du7c6s1s7a807" path="res://scripts/components/rune.gd" id="2_fskxk"]
+[ext_resource type="PackedScene" uid="uid://bx08oycjusg5a" path="res://scenes/vfx/static/symbols/electric_rune.tscn" id="2_wyw60"]
+[ext_resource type="Texture2D" uid="uid://dq6estklxh4me" path="res://assets/textures/ui/vida/amarelo_bola_grande.png" id="3_omfsk"]
+
+[resource]
+resource_name = "Runa Eletrica"
+script = ExtResource("2_fskxk")
+name = "Runa Eletrica"
+icon = ExtResource("2_btcse")
+large_icon = ExtResource("3_omfsk")
+attack_scene = ExtResource("1_wyw60")
+rune_scene = ExtResource("2_wyw60")
+metadata/_custom_type_script = "uid://du7c6s1s7a807"

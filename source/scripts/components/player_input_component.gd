@@ -8,7 +8,10 @@ var _last_move_input: Vector3
 func _unhandled_input(event: InputEvent) -> void:
 	if blocked: return
 	_handle_movement()
-	if event.is_action_pressed(&"hit") and weapon_manager: _handle_hit()
+
+
+func _process(_delta: float) -> void:
+	if Input.is_action_pressed(&"hit") and weapon_manager: _handle_hit()
 
 
 func _handle_movement() -> void:
@@ -19,7 +22,6 @@ func _handle_movement() -> void:
 
 
 func _handle_hit() -> void:
-	#var input_dir: Vector2 = _get_mouse_dir()
 	var mouse: Vector3 = MousePointing.get_mouse_pos()
 	weapon_manager.attack(weapon_manager.global_position.direction_to(mouse))
 	get_viewport().set_input_as_handled()

@@ -7,7 +7,10 @@
 [ext_resource type="Script" uid="uid://i7djs8lu52us" path="res://scenes/levels/camera_area.gd" id="4_ppowx"]
 [ext_resource type="Environment" uid="uid://c44ylihrd2515" path="res://resources/envoriment/fire_enviroment.tres" id="5_b6t7m"]
 [ext_resource type="PackedScene" uid="uid://b0e0dmku8m61b" path="res://scenes/entities/enemies/casamento/casamento.tscn" id="5_baxdx"]
+[ext_resource type="Script" uid="uid://bvgv0wqcnb1yp" path="res://scripts/phantom_camera_3d_follow_player.gd" id="7_6ty8s"]
 [ext_resource type="PackedScene" uid="uid://domk3xwojp1ia" path="res://scenes/components/character/character.tscn" id="8_b6t7m"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="8_pucrl"]
+[ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="11_1u2rb"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_baxdx"]
 vertices = PackedVector3Array(-6.75, 0.5, -6.75, -6.75, 0.5, 6.75, 7, 0.5, 6.75, 7, 0.5, -6.75)
@@ -17,8 +20,12 @@ agent_radius = 1.0
 [sub_resource type="BoxShape3D" id="BoxShape3D_oyu8s"]
 size = Vector3(16, 1, 16)
 
-[node name="Level9" type="Node3D" unique_id=363042353]
+[sub_resource type="Resource" id="Resource_o6cun"]
+script = ExtResource("8_pucrl")
+
+[node name="Level9" type="Node3D" unique_id=363042353 node_paths=PackedStringArray("exit_door")]
 script = ExtResource("1_dk0bc")
+exit_door = NodePath("NavigationRegion3D/GridMap/Exit")
 metadata/_custom_type_script = "uid://ckxpmu5lrfiql"
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1850918783]
@@ -70,17 +77,15 @@ shadow_enabled = true
 omni_range = 10.0
 omni_shadow_mode = 0
 
-[node name="Entrance" parent="NavigationRegion3D/GridMap" unique_id=1756562916 instance=ExtResource("3_yyfar")]
+[node name="Exit" parent="NavigationRegion3D/GridMap" unique_id=1756562916 instance=ExtResource("3_yyfar")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 8, 0, 0)
 marker_position = Vector3(6, 0, -1.7484555e-07)
-destination_scene = "uid://c3ydqufdpwrd6"
-destination_position = Vector3(18, 0, 13)
-
-[node name="Exit" parent="NavigationRegion3D/GridMap" unique_id=1272679407 instance=ExtResource("3_yyfar")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
-marker_position = Vector3(-6, 0, 0)
 destination_scene = "uid://cclh57g2igc6g"
 destination_position = Vector3(-11, 0, 0)
+
+[node name="Entrance" parent="NavigationRegion3D/GridMap" unique_id=1272679407 instance=ExtResource("3_yyfar")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
+marker_position = Vector3(-6, 0, 0)
 
 [node name="Enemies" type="Node3D" parent="NavigationRegion3D/GridMap" unique_id=1891266483]
 
@@ -96,22 +101,33 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6664853, 0, 2.8956351)
 [node name="Casamento" parent="NavigationRegion3D/GridMap/Enemies" unique_id=136567050 instance=ExtResource("5_baxdx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1034344e-06, 2.2570186, 1.2758586e-06)
 
-[node name="CameraArea3" type="Area3D" parent="NavigationRegion3D/GridMap" unique_id=1339508633 node_paths=PackedStringArray("camera")]
+[node name="CameraArea3" type="Area3D" parent="NavigationRegion3D/GridMap" unique_id=1339508633]
 collision_layer = 0
 collision_mask = 8
 script = ExtResource("4_ppowx")
-camera = NodePath("Camera3D")
 metadata/_custom_type_script = "uid://i7djs8lu52us"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/GridMap/CameraArea3" unique_id=1785183209]
 shape = SubResource("BoxShape3D_oyu8s")
 debug_color = Color(0.9499399, 0.21283916, 0.19803298, 0.41960785)
 
-[node name="Camera3D" type="Camera3D" parent="NavigationRegion3D/GridMap/CameraArea3" unique_id=1396761441]
-transform = Transform3D(0.79068893, -0.25343978, 0.5572965, 0, 0.9102907, 0.4139697, -0.61221826, -0.32732126, 0.71975684, 6.185055, 6.700438, 6.779106)
+[node name="FPPhantomCamera3D" type="Node3D" parent="NavigationRegion3D/GridMap/CameraArea3" unique_id=593444032]
+transform = Transform3D(0.79015505, 0.25416842, -0.5577217, 0, 0.9099613, 0.41469324, 0.61290705, -0.32767195, 0.71901053, -6.185, 6.7, 6.779)
+script = ExtResource("7_6ty8s")
+tween_resource = SubResource("Resource_o6cun")
+metadata/_custom_type_script = "uid://bvgv0wqcnb1yp"
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1790850784]
 environment = ExtResource("5_b6t7m")
 
 [node name="PlayerCharacter" parent="." unique_id=269989542 instance=ExtResource("8_b6t7m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.386517, 0, -0.33080006)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.664043, 0, 0.02720213)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1396761441]
+transform = Transform3D(0.79015505, 0.25416842, -0.5577217, 0, 0.9099613, 0.41469324, 0.61290705, -0.32767195, 0.71901053, -6.185, 6.7, 6.779)
+top_level = true
+
+[node name="PhantomCameraHost" type="Node" parent="Camera3D" unique_id=1983154131]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("11_1u2rb")

@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://dhjt3y011u5hl"]
+
+[ext_resource type="Script" uid="uid://dqma8312wl2nc" path="res://scenes/ui/player_interface.gd" id="1_gvmqn"]
+[ext_resource type="Texture2D" uid="uid://baqsvh6lfvsfs" path="res://assets/textures/ui/fundo_ui.png" id="2_ged0j"]
+[ext_resource type="Texture2D" uid="uid://chfh1aqhvcgcg" path="res://assets/textures/ui/teu_cu.png" id="3_p7rqs"]
+[ext_resource type="Texture2D" uid="uid://mcrn2q466d5q" path="res://assets/textures/ui/vida/fundo_vida.png" id="4_0287p"]
+[ext_resource type="Texture2D" uid="uid://coh6hesxekbcb" path="res://assets/textures/ui/vida/bgbolas.png" id="4_cmndg"]
+[ext_resource type="Texture2D" uid="uid://drgbc8e68muas" path="res://assets/textures/ui/vida/bolas_bgless.png" id="5_3fo61"]
+[ext_resource type="Texture2D" uid="uid://ddod7l1tnr00i" path="res://assets/textures/ui/vida/borda_vida.png" id="5_cmndg"]
+[ext_resource type="Texture2D" uid="uid://cobc4cjg5riki" path="res://assets/textures/ui/vida/barra_vida.png" id="6_3fo61"]
+
+[node name="PlayerInterface" type="CanvasLayer" unique_id=1667225147]
+script = ExtResource("1_gvmqn")
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="." unique_id=1774003834]
+offset_right = 285.3524
+offset_bottom = 142.0
+ratio = 2.01
+stretch_mode = 1
+
+[node name="Control" type="MarginContainer" parent="AspectRatioContainer" unique_id=320038787]
+layout_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Fundo" type="TextureRect" parent="AspectRatioContainer/Control" unique_id=397225869]
+layout_mode = 2
+texture = ExtResource("2_ged0j")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="TeuCu" type="TextureRect" parent="AspectRatioContainer/Control" unique_id=931345309]
+layout_mode = 2
+texture = ExtResource("3_p7rqs")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Bolas" type="TextureRect" parent="AspectRatioContainer/Control" unique_id=1104322505]
+clip_children = 2
+layout_mode = 2
+texture = ExtResource("4_cmndg")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="RuneSelectorContainer" type="HBoxContainer" parent="AspectRatioContainer/Control/Bolas" unique_id=605089748]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3610757
+anchor_top = 0.48888892
+anchor_right = 0.6834841
+anchor_bottom = 0.6888889
+offset_right = -1.9999695
+metadata/_edit_use_anchors_ = true
+
+[node name="SelectedRune" type="TextureRect" parent="AspectRatioContainer/Control/Bolas" unique_id=353210382]
+unique_name_in_owner = true
+layout_mode = 0
+anchor_left = 0.69352293
+anchor_top = 0.32380953
+anchor_right = 0.9178515
+anchor_bottom = 0.7746032
+expand_mode = 3
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="BolasOutline" type="TextureRect" parent="AspectRatioContainer/Control" unique_id=1731209223]
+layout_mode = 2
+texture = ExtResource("5_3fo61")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="AspectRatioContainer" type="Control" parent="AspectRatioContainer/Control" unique_id=1793899740]
+layout_mode = 2
+
+[node name="Vida" type="TextureProgressBar" parent="AspectRatioContainer/Control/AspectRatioContainer" unique_id=283725993]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 90.03381
+offset_top = 8.0
+offset_right = 214.03381
+offset_bottom = 70.0
+max_value = 1.0
+step = 0.01
+value = 1.0
+nine_patch_stretch = true
+texture_under = ExtResource("4_0287p")
+texture_over = ExtResource("5_cmndg")
+texture_progress = ExtResource("6_3fo61")

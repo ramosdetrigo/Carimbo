@@ -14,7 +14,7 @@ func tick(actor: Node, blackboard: Blackboard) -> int:
 		.filter(func(c: Node) -> bool:
 			return c is EnemyCharacter and (c as EnemyCharacter).stats_component)))
 	var nearby: Array[EnemyCharacter] = []
-	nearby.assign(allies.filter(func(c: EnemyCharacter) -> bool:
+	nearby.assign(allies.filter(func(c: Node3D) -> bool:
 		return (actor as Node3D).global_position.distance_to(c.global_position) <= _range))
 	blackboard.set_value(ALLIES_KEY, nearby)
 	return SUCCESS

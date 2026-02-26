@@ -13,7 +13,8 @@ height_falloff = 7.1184483
 edge_fade = 0.096593596
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dmu1p"]
-size = Vector3(2, 2, 2)
+resource_local_to_scene = true
+size = Vector3(28, 2, 28)
 
 [sub_resource type="Gradient" id="Gradient_2vuqy"]
 offsets = PackedFloat32Array(0.18681319, 0.48351648, 0.67582417, 0.8131868)
@@ -83,6 +84,8 @@ hurtbox_component = NodePath("HurtboxComponent")
 metadata/_custom_type_script = "uid://iji7e78ikilx"
 
 [node name="HurtboxComponent" type="Area3D" parent="AttackScene" unique_id=1120578981]
+collision_layer = 0
+collision_mask = 14
 script = ExtResource("3_eguqn")
 metadata/_custom_type_script = "uid://fjgad71t0sd4"
 

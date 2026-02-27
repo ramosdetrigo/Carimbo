@@ -1,9 +1,10 @@
 extends HBoxContainer
 
-
 func _ready() -> void:
 	await get_tree().create_timer(0.5).timeout
 	%ContinueButton.grab_focus()
+	MusicPlayer.stream = Consts.SONGS.MENU
+	MusicPlayer.play()
 
 
 func _disable_buttons() -> void:

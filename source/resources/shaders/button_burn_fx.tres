@@ -1,0 +1,14 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://cxitdlt5fmjgd"]
+
+[ext_resource type="Shader" uid="uid://bijctqgbday18" path="res://resources/shaders/2d_burn.gdshader" id="1_55mnw"]
+[ext_resource type="Texture2D" uid="uid://ch1fj0j2vc2r1" path="res://resources/burn_noise_texture.tres" id="2_wdrxh"]
+
+[resource]
+resource_local_to_scene = true
+shader = ExtResource("1_55mnw")
+shader_parameter/burn_texture = ExtResource("2_wdrxh")
+shader_parameter/burn_amount = 0.0
+shader_parameter/burn_size = 0.15
+shader_parameter/burn_smoothness = 0.133
+shader_parameter/burn_glow_color = Color(1, 0.32, 0, 1)
+shader_parameter/burn_glow_intensity = 10.0

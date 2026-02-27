@@ -1,0 +1,48 @@
+[gd_resource type="Theme" format=3 uid="uid://j8ln4077rpnx"]
+
+[ext_resource type="Texture2D" uid="uid://ddxmune0eguag" path="res://assets/textures/ui/dialogue.png" id="1_y1kqd"]
+[ext_resource type="FontFile" uid="uid://d21cx2cj86if6" path="res://assets/fonts/IM_Fell_Double_Pica/IMFellDoublePica-Regular.ttf" id="2_ggilb"]
+[ext_resource type="FontFile" uid="uid://blqwf44c8my41" path="res://assets/fonts/Caesar_Dressing/CaesarDressing-Regular.ttf" id="2_kannt"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y1kqd"]
+texture = ExtResource("1_y1kqd")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wil5f"]
+content_margin_left = 75.0
+content_margin_top = 40.0
+content_margin_right = 75.0
+content_margin_bottom = 40.0
+texture = ExtResource("1_y1kqd")
+texture_margin_left = 96.0
+texture_margin_top = 69.0
+texture_margin_right = 102.0
+texture_margin_bottom = 72.0
+region_rect = Rect2(0, 0, 643, 199)
+
+[resource]
+default_font = ExtResource("2_ggilb")
+default_font_size = 20
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_disabled_color = Color(0, 0, 0, 0.5019608)
+Button/colors/font_focus_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0, 0, 0, 1)
+Button/styles/disabled = SubResource("StyleBoxTexture_y1kqd")
+Button/styles/focus = SubResource("StyleBoxTexture_y1kqd")
+Button/styles/hover = SubResource("StyleBoxTexture_y1kqd")
+Button/styles/normal = SubResource("StyleBoxTexture_y1kqd")
+Button/styles/pressed = SubResource("StyleBoxTexture_y1kqd")
+Label/colors/font_color = Color(0.27, 0.135, 0, 1)
+Label/fonts/font = ExtResource("2_kannt")
+MarginContainer/constants/margin_bottom = 15
+MarginContainer/constants/margin_left = 130
+MarginContainer/constants/margin_right = 130
+MarginContainer/constants/margin_top = 15
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_wil5f")
+RichTextLabel/colors/default_color = Color(0.19670999, 0.100472845, 0.011275386, 1)
+RichTextLabel/colors/font_outline_color = Color(0.09908035, 0.037021555, 0.0039316537, 1)
+RichTextLabel/colors/font_shadow_color = Color(0.17, 0.088315, 0.011899999, 0.90588236)
+RichTextLabel/constants/outline_size = 1
+RichTextLabel/constants/shadow_offset_x = 0
+RichTextLabel/constants/shadow_offset_y = 1

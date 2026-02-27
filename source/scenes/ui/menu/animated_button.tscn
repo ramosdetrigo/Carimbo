@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bnft0ws15mkb1"]
+
+[ext_resource type="Script" uid="uid://b57l76got5850" path="res://scenes/ui/menu/animated_button.gd" id="1_4clw6"]
+
+[node name="AnimatedButton" type="Button" unique_id=1447173936]
+custom_minimum_size = Vector2(0, 50)
+size_flags_vertical = 6
+script = ExtResource("1_4clw6")
+rot_range = 5.0
+
+[node name="Label" type="Label" parent="." unique_id=1632084644]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -199.5
+offset_top = -13.0
+offset_right = 199.5
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1

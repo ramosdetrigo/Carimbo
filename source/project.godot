@@ -42,7 +42,7 @@ runtime/balloon_path="res://scenes/dialogue_ballon/balloon.tscn"
 [display]
 
 window/stretch/mode="canvas_items"
-window/stretch/aspect="keep_height"
+window/stretch/aspect="expand"
 
 [editor_plugins]
 
@@ -182,3 +182,4 @@ common/physics_interpolation=true
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)

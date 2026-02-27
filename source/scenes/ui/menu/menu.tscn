@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://dbdx47nsgglcq"]
+
+[ext_resource type="Texture2D" uid="uid://crbqbpq8vb83p" path="res://assets/textures/ui/menu_bgless.png" id="1_h1w4e"]
+[ext_resource type="Script" uid="uid://c634epfqasruk" path="res://scenes/ui/menu/menu.gd" id="2_05f3o"]
+[ext_resource type="Theme" uid="uid://j8ln4077rpnx" path="res://resources/theme/main_ui.tres" id="3_r4xos"]
+[ext_resource type="Texture2D" uid="uid://8ci2m0i1ykjs" path="res://assets/textures/logoda4_crop.svg" id="4_05f3o"]
+[ext_resource type="PackedScene" uid="uid://bnft0ws15mkb1" path="res://scenes/ui/menu/animated_button.tscn" id="5_5gbuo"]
+
+[node name="MainMenu" type="HBoxContainer" unique_id=221427327]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_r4xos")
+script = ExtResource("2_05f3o")
+
+[node name="LeftMargin" type="MarginContainer" parent="." unique_id=1357326692]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="TextureRect" type="TextureRect" parent="LeftMargin" unique_id=64144176]
+layout_mode = 2
+texture = ExtResource("1_h1w4e")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Spacer" type="Control" parent="." unique_id=227313273]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.6
+
+[node name="RightMargin" type="MarginContainer" parent="." unique_id=300198324]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_r4xos")
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="RightVBox" type="VBoxContainer" parent="RightMargin" unique_id=278855899]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Logo" type="TextureRect" parent="RightMargin/RightVBox" unique_id=796749790]
+clip_contents = true
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("4_05f3o")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="ButtonsVbox" type="VBoxContainer" parent="RightMargin/RightVBox" unique_id=1363310708]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ContinueButton" parent="RightMargin/RightVBox/ButtonsVbox" unique_id=1447173936 instance=ExtResource("5_5gbuo")]
+unique_name_in_owner = true
+layout_mode = 2
+label = "Continuar"
+
+[node name="PlayButton" parent="RightMargin/RightVBox/ButtonsVbox" unique_id=712816450 instance=ExtResource("5_5gbuo")]
+unique_name_in_owner = true
+layout_mode = 2
+label = "Novo Jogo"
+
+[node name="ConfigButton" parent="RightMargin/RightVBox/ButtonsVbox" unique_id=277787270 instance=ExtResource("5_5gbuo")]
+unique_name_in_owner = true
+layout_mode = 2
+label = "Configurações"
+
+[node name="CreditsButton" parent="RightMargin/RightVBox/ButtonsVbox" unique_id=2037342249 instance=ExtResource("5_5gbuo")]
+unique_name_in_owner = true
+layout_mode = 2
+label = "Créditos"
+
+[node name="ExitButton" parent="RightMargin/RightVBox/ButtonsVbox" unique_id=54675886 instance=ExtResource("5_5gbuo")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+label = "Sair"
+
+[connection signal="pressed" from="RightMargin/RightVBox/ButtonsVbox/ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="RightMargin/RightVBox/ButtonsVbox/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="RightMargin/RightVBox/ButtonsVbox/ConfigButton" to="." method="_on_config_button_pressed"]
+[connection signal="pressed" from="RightMargin/RightVBox/ButtonsVbox/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="RightMargin/RightVBox/ButtonsVbox/ExitButton" to="." method="_on_exit_button_pressed"]

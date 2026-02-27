@@ -2,11 +2,11 @@
 
 [ext_resource type="Shader" uid="uid://dl6ampid6rth6" path="res://scenes/components/stamped_animated_sprite/shaded_animated_sprite_3d.gdshader" id="1_65egy"]
 [ext_resource type="Texture2D" uid="uid://ch1fj0j2vc2r1" path="res://resources/burn_noise_texture.tres" id="2_chihe"]
-[ext_resource type="Texture2D" uid="uid://dn1mdtvrnxb6v" path="res://assets/tmp/paper_mario.png" id="2_qpmdg"]
 [ext_resource type="Texture2D" uid="uid://o34vnik8cwo4" path="res://assets/textures/paper/Paper003_1K-JPG_NormalGL.jpg" id="4_ng11f"]
 [ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://assets/tmp/icon.svg" id="5_56ys0"]
 [ext_resource type="Texture2D" uid="uid://dkbujjnpxwia0" path="res://assets/textures/paper/Paper003_1K-JPG_Roughness.jpg" id="5_qpmdg"]
 [ext_resource type="Script" uid="uid://ctmgj3s2w7dsb" path="res://scenes/components/stamped_animated_sprite/shaded_animated_sprite_3d.gd" id="6_7kmoi"]
+[ext_resource type="Texture2D" uid="uid://cnh72186tt4jt" path="res://assets/tmp/damage_circle.png" id="6_qpmdg"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_qpmdg"]
 viewport_path = NodePath("StampViewport")
@@ -21,7 +21,7 @@ shader_parameter/specular = 0.249999994412
 shader_parameter/texture_normal = ExtResource("4_ng11f")
 shader_parameter/normal_scale = 1.5600008340999985
 shader_parameter/albedo = Color(1, 1, 1, 1)
-shader_parameter/texture_albedo = ExtResource("2_qpmdg")
+shader_parameter/texture_albedo = ExtResource("5_56ys0")
 shader_parameter/texture_carimbo = SubResource("ViewportTexture_qpmdg")
 shader_parameter/carimbo_glow_intensity = 0.0
 shader_parameter/burn_texture = ExtResource("2_chihe")
@@ -30,7 +30,7 @@ shader_parameter/burn_size = 0.150000007125
 shader_parameter/burn_smoothness = 0.1330000063175
 shader_parameter/burn_glow_color = Color(1, 0.19607843, 0, 1)
 shader_parameter/burn_glow_intensity = 10.0
-shader_parameter/region_rect = Vector4(0, 0, 0, 0)
+shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ppt8k"]
 resource_local_to_scene = true
@@ -40,7 +40,7 @@ animations = [{
 "texture": ExtResource("5_56ys0")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_qpmdg")
+"texture": ExtResource("6_qpmdg")
 }],
 "loop": true,
 "name": &"default",
@@ -51,7 +51,6 @@ animations = [{
 material_override = SubResource("ShaderMaterial_mevdd")
 billboard = 1
 sprite_frames = SubResource("SpriteFrames_ppt8k")
-frame = 1
 frame_progress = 0.4814965
 script = ExtResource("6_7kmoi")
 stamp_viewport = NodePath("StampViewport")

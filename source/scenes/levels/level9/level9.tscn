@@ -46,36 +46,28 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 5, -4)
 light_color = Color(0.87, 0.56549996, 0.348, 1)
 light_size = 4.0
 light_bake_mode = 1
-shadow_enabled = true
 omni_range = 10.0
-omni_shadow_mode = 0
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="NavigationRegion3D/GridMap/Lights" unique_id=1650354442]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 5, 4)
 light_color = Color(0.87, 0.56549996, 0.348, 1)
 light_size = 4.0
 light_bake_mode = 1
-shadow_enabled = true
 omni_range = 10.0
-omni_shadow_mode = 0
 
 [node name="OmniLight3D3" type="OmniLight3D" parent="NavigationRegion3D/GridMap/Lights" unique_id=1141966827]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 5, -4)
 light_color = Color(0.87, 0.56549996, 0.348, 1)
 light_size = 4.0
 light_bake_mode = 1
-shadow_enabled = true
 omni_range = 10.0
-omni_shadow_mode = 0
 
 [node name="OmniLight3D7" type="OmniLight3D" parent="NavigationRegion3D/GridMap/Lights" unique_id=1979909200]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 5, 4)
 light_color = Color(0.87, 0.56549996, 0.348, 1)
 light_size = 4.0
 light_bake_mode = 1
-shadow_enabled = true
 omni_range = 10.0
-omni_shadow_mode = 0
 
 [node name="Exit" parent="NavigationRegion3D/GridMap" unique_id=1756562916 instance=ExtResource("3_yyfar")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 8, 0, 0)
@@ -101,10 +93,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6664853, 0, 2.8956351)
 [node name="Casamento" parent="NavigationRegion3D/GridMap/Enemies" unique_id=136567050 instance=ExtResource("5_baxdx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1034344e-06, 2.2570186, 1.2758586e-06)
 
-[node name="CameraArea3" type="Area3D" parent="NavigationRegion3D/GridMap" unique_id=1339508633]
+[node name="CameraArea3" type="Area3D" parent="NavigationRegion3D/GridMap" unique_id=1339508633 node_paths=PackedStringArray("camera")]
 collision_layer = 0
 collision_mask = 8
 script = ExtResource("4_ppowx")
+camera = NodePath("FPPhantomCamera3D")
 metadata/_custom_type_script = "uid://i7djs8lu52us"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/GridMap/CameraArea3" unique_id=1785183209]
@@ -124,7 +117,8 @@ environment = ExtResource("5_b6t7m")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.664043, 0, 0.02720213)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1396761441]
-transform = Transform3D(0.79015505, 0.25416842, -0.5577217, 0, 0.9099613, 0.41469324, 0.61290705, -0.32767195, 0.71901053, -6.185, 6.7, 6.779)
+physics_interpolation_mode = 1
+transform = Transform3D(0, -0.9701425, 0.24253559, -5.9604645e-08, 0.24253559, 0.9701425, -1, 5.9604645e-08, 0, -3.664043, 8, 0.02720213)
 top_level = true
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D" unique_id=1983154131]

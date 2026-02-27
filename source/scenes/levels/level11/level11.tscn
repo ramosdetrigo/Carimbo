@@ -50,7 +50,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -8)
 light_color = Color(0.71475035, 0.51046205, 0.2746351, 1)
 light_size = 4.0
 light_bake_mode = 1
-shadow_enabled = true
 omni_range = 10.0
 omni_shadow_mode = 0
 
@@ -59,7 +58,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 5, -10)
 light_color = Color(0.71475035, 0.51046205, 0.2746351, 1)
 light_size = 4.0
 light_bake_mode = 1
-shadow_enabled = true
 omni_range = 10.0
 omni_shadow_mode = 0
 
@@ -68,7 +66,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 5, -10)
 light_color = Color(0.71475035, 0.51046205, 0.2746351, 1)
 light_size = 4.0
 light_bake_mode = 1
-shadow_enabled = true
 omni_range = 10.0
 omni_shadow_mode = 0
 
@@ -77,7 +74,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 5, 10)
 light_color = Color(0.71475035, 0.51046205, 0.2746351, 1)
 light_size = 4.0
 light_bake_mode = 1
-shadow_enabled = true
 omni_range = 10.0
 omni_shadow_mode = 0
 
@@ -86,7 +82,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 5, 9)
 light_color = Color(0.71475035, 0.51046205, 0.2746351, 1)
 light_size = 4.0
 light_bake_mode = 1
-shadow_enabled = true
 omni_range = 10.0
 omni_shadow_mode = 0
 
@@ -95,7 +90,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 5, 0)
 light_color = Color(0.71475035, 0.51046205, 0.2746351, 1)
 light_size = 4.0
 light_bake_mode = 1
-shadow_enabled = true
 omni_range = 10.0
 omni_shadow_mode = 0
 
@@ -104,7 +98,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 8)
 light_color = Color(0.71475035, 0.51046205, 0.2746351, 1)
 light_size = 4.0
 light_bake_mode = 1
-shadow_enabled = true
 omni_range = 10.0
 omni_shadow_mode = 0
 
@@ -113,7 +106,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 5, 0)
 light_color = Color(0.71475035, 0.51046205, 0.2746351, 1)
 light_size = 4.0
 light_bake_mode = 1
-shadow_enabled = true
 omni_range = 10.0
 omni_shadow_mode = 0
 
@@ -122,7 +114,6 @@ transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 5.656854, 5
 light_color = Color(0.71475035, 0.51046205, 0.2746351, 1)
 light_size = 4.0
 light_bake_mode = 1
-shadow_enabled = true
 omni_range = 10.0
 omni_shadow_mode = 0
 
@@ -131,7 +122,6 @@ transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 5.656854, 5
 light_color = Color(0.71475035, 0.51046205, 0.2746351, 1)
 light_size = 4.0
 light_bake_mode = 1
-shadow_enabled = true
 omni_range = 10.0
 omni_shadow_mode = 0
 
@@ -140,7 +130,6 @@ transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -5.656854, 
 light_color = Color(0.71475035, 0.51046205, 0.2746351, 1)
 light_size = 4.0
 light_bake_mode = 1
-shadow_enabled = true
 omni_range = 10.0
 omni_shadow_mode = 0
 
@@ -149,7 +138,6 @@ transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -5.656854, 
 light_color = Color(0.71475035, 0.51046205, 0.2746351, 1)
 light_size = 4.0
 light_bake_mode = 1
-shadow_enabled = true
 omni_range = 10.0
 omni_shadow_mode = 0
 
@@ -205,7 +193,7 @@ environment = ExtResource("4_2lnft")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1096867225]
 physics_interpolation_mode = 1
-transform = Transform3D(0.8308166, -0.4883452, 0.26695067, -4.4703484e-08, 0.4796558, 0.8774568, -0.5565462, -0.7290057, 0.398506, -9.78259, 7.288544, 3.310168)
+transform = Transform3D(0, -0.9701425, 0.24253559, -5.9604645e-08, 0.24253559, 0.9701425, -1, 5.9604645e-08, 0, -10, 8, 0)
 top_level = true
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D" unique_id=1619328002]

@@ -45,72 +45,56 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -8)
 light_color = Color(0.71475035, 0.51046205, 0.2746351, 1)
 light_size = 4.0
 light_bake_mode = 1
-shadow_enabled = true
 omni_range = 10.0
-omni_shadow_mode = 0
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="NavigationRegion3D/GridMap/Lights" unique_id=1487569529]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 5, 0)
 light_color = Color(0.71475035, 0.51046205, 0.2746351, 1)
 light_size = 4.0
 light_bake_mode = 1
-shadow_enabled = true
 omni_range = 10.0
-omni_shadow_mode = 0
 
 [node name="OmniLight3D3" type="OmniLight3D" parent="NavigationRegion3D/GridMap/Lights" unique_id=632772376]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 8)
 light_color = Color(0.71475035, 0.51046205, 0.2746351, 1)
 light_size = 4.0
 light_bake_mode = 1
-shadow_enabled = true
 omni_range = 10.0
-omni_shadow_mode = 0
 
 [node name="OmniLight3D7" type="OmniLight3D" parent="NavigationRegion3D/GridMap/Lights" unique_id=658048064]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 5, 0)
 light_color = Color(0.71475035, 0.51046205, 0.2746351, 1)
 light_size = 4.0
 light_bake_mode = 1
-shadow_enabled = true
 omni_range = 10.0
-omni_shadow_mode = 0
 
 [node name="OmniLight3D4" type="OmniLight3D" parent="NavigationRegion3D/GridMap/Lights" unique_id=214113834]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 5.656854, 5, -5.656854)
 light_color = Color(0.71475035, 0.51046205, 0.2746351, 1)
 light_size = 4.0
 light_bake_mode = 1
-shadow_enabled = true
 omni_range = 10.0
-omni_shadow_mode = 0
 
 [node name="OmniLight3D5" type="OmniLight3D" parent="NavigationRegion3D/GridMap/Lights" unique_id=1537209460]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 5.656854, 5, 5.656854)
 light_color = Color(0.71475035, 0.51046205, 0.2746351, 1)
 light_size = 4.0
 light_bake_mode = 1
-shadow_enabled = true
 omni_range = 10.0
-omni_shadow_mode = 0
 
 [node name="OmniLight3D6" type="OmniLight3D" parent="NavigationRegion3D/GridMap/Lights" unique_id=428292966]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -5.656854, 5, 5.656854)
 light_color = Color(0.71475035, 0.51046205, 0.2746351, 1)
 light_size = 4.0
 light_bake_mode = 1
-shadow_enabled = true
 omni_range = 10.0
-omni_shadow_mode = 0
 
 [node name="OmniLight3D8" type="OmniLight3D" parent="NavigationRegion3D/GridMap/Lights" unique_id=1904168474]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -5.656854, 5, -5.656854)
 light_color = Color(0.71475035, 0.51046205, 0.2746351, 1)
 light_size = 4.0
 light_bake_mode = 1
-shadow_enabled = true
 omni_range = 10.0
-omni_shadow_mode = 0
 
 [node name="Entrance" parent="NavigationRegion3D/GridMap/Lights" unique_id=1756562916 instance=ExtResource("3_8pvbd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, 0)
@@ -149,7 +133,8 @@ metadata/_custom_type_script = "uid://bvgv0wqcnb1yp"
 environment = ExtResource("7_cm7l7")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1198026530]
-transform = Transform3D(0.9930684, 0.025531352, -0.114731394, 0, 0.9761231, 0.21721816, 0.11753783, -0.2157125, 0.969357, -1.865, 5.677, 12.767)
+physics_interpolation_mode = 1
+transform = Transform3D(0, -0.9701425, 0.24253559, -5.9604645e-08, 0.24253559, 0.9701425, -1, 5.9604645e-08, 0, -9, 8, 0)
 top_level = true
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D" unique_id=1280414814]

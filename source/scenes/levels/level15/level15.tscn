@@ -38,7 +38,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -8)
 light_color = Color(0.71475035, 0.51046205, 0.2746351, 1)
 light_size = 4.0
 light_bake_mode = 1
-shadow_enabled = true
 omni_range = 10.0
 omni_shadow_mode = 0
 
@@ -47,7 +46,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 5, 0)
 light_color = Color(0.71475035, 0.51046205, 0.2746351, 1)
 light_size = 4.0
 light_bake_mode = 1
-shadow_enabled = true
 omni_range = 10.0
 omni_shadow_mode = 0
 
@@ -56,7 +54,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 8)
 light_color = Color(0.71475035, 0.51046205, 0.2746351, 1)
 light_size = 4.0
 light_bake_mode = 1
-shadow_enabled = true
 omni_range = 10.0
 omni_shadow_mode = 0
 
@@ -65,7 +62,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 5, 0)
 light_color = Color(0.71475035, 0.51046205, 0.2746351, 1)
 light_size = 4.0
 light_bake_mode = 1
-shadow_enabled = true
 omni_range = 10.0
 omni_shadow_mode = 0
 
@@ -74,7 +70,6 @@ transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 5.656854, 5
 light_color = Color(0.71475035, 0.51046205, 0.2746351, 1)
 light_size = 4.0
 light_bake_mode = 1
-shadow_enabled = true
 omni_range = 10.0
 omni_shadow_mode = 0
 
@@ -83,7 +78,6 @@ transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 5.656854, 5
 light_color = Color(0.71475035, 0.51046205, 0.2746351, 1)
 light_size = 4.0
 light_bake_mode = 1
-shadow_enabled = true
 omni_range = 10.0
 omni_shadow_mode = 0
 
@@ -92,7 +86,6 @@ transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -5.656854, 
 light_color = Color(0.71475035, 0.51046205, 0.2746351, 1)
 light_size = 4.0
 light_bake_mode = 1
-shadow_enabled = true
 omni_range = 10.0
 omni_shadow_mode = 0
 
@@ -101,7 +94,6 @@ transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -5.656854, 
 light_color = Color(0.71475035, 0.51046205, 0.2746351, 1)
 light_size = 4.0
 light_bake_mode = 1
-shadow_enabled = true
 omni_range = 10.0
 omni_shadow_mode = 0
 

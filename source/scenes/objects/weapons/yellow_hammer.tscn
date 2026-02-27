@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://cuoa1ubyh5d06" path="res://scripts/attack_system/attack_info.gd" id="2_jahpa"]
 [ext_resource type="Script" uid="uid://fjgad71t0sd4" path="res://scripts/attack_system/hurtbox_component.gd" id="2_rbprr"]
 [ext_resource type="Texture2D" uid="uid://rxlnntwvakwf" path="res://assets/textures/vfx/particles/spark_05.png" id="4_ytg6t"]
+[ext_resource type="Texture2D" uid="uid://crl1uvanniocl" path="res://assets/textures/vfx/particles/faisca.png" id="5_308dq"]
 
 [sub_resource type="Resource" id="Resource_ytg6t"]
 script = ExtResource("2_jahpa")
@@ -44,6 +45,17 @@ color = Color(8.078688, 6.9993367, 2.6819282, 1)
 
 [sub_resource type="QuadMesh" id="QuadMesh_af8cr"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vrcm2"]
+transparency = 1
+cull_mode = 2
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+albedo_texture = ExtResource("5_308dq")
+albedo_texture_force_srgb = true
+emission_enabled = true
+emission = Color(1, 0.6166667, 0, 1)
+emission_energy_multiplier = 16.0
+
 [node name="YellowHammer" type="Node3D" unique_id=610195896 node_paths=PackedStringArray("hurtbox_component")]
 script = ExtResource("1_fktem")
 speed = 30.0
@@ -69,3 +81,9 @@ lifetime = 0.2
 fixed_fps = 60
 process_material = SubResource("ParticleProcessMaterial_vrcm2")
 draw_pass_1 = SubResource("QuadMesh_af8cr")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1799328986]
+transform = Transform3D(0.2, 0, 0, 0, -8.742278e-09, -0.2, 0, 0.2, -8.742278e-09, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_vrcm2")
+modulate = Color(6.013793, 4.5258365, 0.4297785, 1)
+texture = ExtResource("5_308dq")

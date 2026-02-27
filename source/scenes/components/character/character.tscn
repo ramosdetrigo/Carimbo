@@ -785,20 +785,18 @@ metadata/_custom_type_script = "uid://ccmiitq0sdh7j"
 
 [node name="PhantomCamera3D" type="Node3D" parent="." unique_id=848212730 node_paths=PackedStringArray("follow_target", "look_at_target")]
 unique_name_in_owner = true
-transform = Transform3D(0, -0.97014153, 0.2425526, -5.9604602e-08, 0.24253535, 0.9702105, -0.9999993, 5.9604584e-08, 0, 2, 8, 0)
+transform = Transform3D(-3.4562582e-08, -0.6497494, 0.7602012, -4.8560654e-08, 0.7601472, 0.6497956, -0.9999994, 5.960459e-08, 0, 2, 3, 0)
 top_level = true
 script = ExtResource("37_hjivr")
 follow_mode = 2
 follow_target = NodePath("..")
-look_at_mode = 2
 look_at_target = NodePath("..")
 tween_resource = SubResource("Resource_rb5yu")
-follow_offset = Vector3(2, 8, 0)
+follow_offset = Vector3(2, 3, 0)
 follow_damping = true
 follow_axis_lock = 2
 align_transform_with_view = Callable()
 align_position_with_view = Callable()
-align_rotation_with_view = Callable()
 metadata/_custom_type_script = "uid://csjccrhj5wnx7"
 
 [connection signal="animation_finished" from="ShadedAnimatedSprite3D" to="ShadedAnimatedSprite3D" method="play" binds= [&"idle"]]

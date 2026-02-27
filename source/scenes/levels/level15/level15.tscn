@@ -3,15 +3,21 @@
 [ext_resource type="Script" uid="uid://ckxpmu5lrfiql" path="res://scenes/levels/level_scene.gd" id="1_igujk"]
 [ext_resource type="MeshLibrary" uid="uid://be3yh5mqefut3" path="res://resources/mesh_library/level_props.meshlib" id="2_oxh2k"]
 [ext_resource type="PackedScene" uid="uid://c3hpiq2ftpgt8" path="res://scenes/levels/doors/scene_door.tscn" id="3_okbqr"]
+[ext_resource type="Script" uid="uid://k651grd68161" path="res://scenes/levels/level5/healer_box.gd" id="4_6mlsx"]
 [ext_resource type="PackedScene" uid="uid://bi3cegty1y7xs" path="res://scenes/vfx/static/symbols/knockback_rune.tscn" id="4_ejewu"]
-[ext_resource type="Script" uid="uid://i7djs8lu52us" path="res://scenes/levels/camera_area.gd" id="5_cnxbl"]
 [ext_resource type="Environment" uid="uid://c44ylihrd2515" path="res://resources/envoriment/fire_enviroment.tres" id="6_jq4be"]
+[ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="7_m8jwd"]
+[ext_resource type="Script" uid="uid://bvgv0wqcnb1yp" path="res://scripts/phantom_camera_3d_follow_player.gd" id="8_4yq5x"]
+[ext_resource type="PackedScene" uid="uid://domk3xwojp1ia" path="res://scenes/components/character/character.tscn" id="9_6mlsx"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="9_x16qv"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_yax02"]
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_88c10"]
-height = 0.5
-radius = 14.0
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_sqq0f"]
+radius = 5.0
+
+[sub_resource type="Resource" id="Resource_l7bki"]
+script = ExtResource("9_x16qv")
 
 [node name="Level10" type="Node3D" unique_id=2027348526 node_paths=PackedStringArray("exit_door")]
 script = ExtResource("1_igujk")
@@ -107,24 +113,39 @@ marker_position = Vector3(11, 0, -1.7484555e-07)
 destination_scene = "uid://8j66i15hf3p4"
 destination_position = Vector3(-18, 0, 11)
 
-[node name="KnockbackRune" parent="NavigationRegion3D/GridMap/Lights" unique_id=945686240 instance=ExtResource("4_ejewu")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0.1, 0)
-
 [node name="Enemies" type="Node3D" parent="NavigationRegion3D/GridMap" unique_id=926605760]
 
-[node name="CameraArea3" type="Area3D" parent="NavigationRegion3D/GridMap" unique_id=1391119992]
+[node name="Healerbox" type="Area3D" parent="NavigationRegion3D/GridMap" unique_id=878134827]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
 collision_layer = 0
 collision_mask = 8
-script = ExtResource("5_cnxbl")
-metadata/_custom_type_script = "uid://i7djs8lu52us"
+script = ExtResource("4_6mlsx")
+metadata/_custom_type_script = "uid://k651grd68161"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/GridMap/CameraArea3" unique_id=991603872]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
-shape = SubResource("CylinderShape3D_88c10")
-debug_color = Color(0.9499399, 0.21283916, 0.19803298, 0.41960785)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/GridMap/Healerbox" unique_id=1661430809]
+shape = SubResource("CylinderShape3D_sqq0f")
 
-[node name="Camera3D" type="Camera3D" parent="NavigationRegion3D/GridMap/CameraArea3" unique_id=1198026530]
-transform = Transform3D(0.9930684, 0.025531352, -0.114731394, 0, 0.9761231, 0.21721816, 0.11753783, -0.2157125, 0.969357, -0.8654238, 5.677467, 14.641994)
+[node name="Rune" parent="NavigationRegion3D/GridMap/Healerbox" unique_id=945686240 instance=ExtResource("4_ejewu")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=961935023]
 environment = ExtResource("6_jq4be")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1198026530]
+transform = Transform3D(0.9996092, 0.01179466, -0.025346475, 0, 0.90664446, 0.42189547, 0.027956355, -0.42173058, 0.9062901, 0.03073275, 6.8880672, 12.72773)
+top_level = true
+
+[node name="PhantomCameraHost" type="Node" parent="Camera3D" unique_id=969206925]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("7_m8jwd")
+
+[node name="FPPhantomCamera3D" type="Node3D" parent="." unique_id=648041605]
+transform = Transform3D(0.9996092, 0.01179466, -0.025346475, 0, 0.90664446, 0.42189547, 0.027956355, -0.42173058, 0.9062901, 0.03073275, 6.8880672, 12.72773)
+script = ExtResource("8_4yq5x")
+priority = 1
+tween_resource = SubResource("Resource_l7bki")
+metadata/_custom_type_script = "uid://bvgv0wqcnb1yp"
+
+[node name="PlayerCharacter" parent="." unique_id=269989542 instance=ExtResource("9_6mlsx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.786009, 0, 0)

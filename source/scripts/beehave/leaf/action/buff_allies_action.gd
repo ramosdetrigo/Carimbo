@@ -10,10 +10,13 @@ const ALLIES_KEY = BeehaveConsts.ALLIES_KEY
 func tick(_actor: Node, blackboard: Blackboard) -> int:
 	var allies: Array[EnemyCharacter] = []
 	allies.assign(blackboard.get_value(ALLIES_KEY, []))
-	allies.assign(allies.filter(func(c: EnemyCharacter) -> bool:
-		return c.stats_component.armor <= 0.0))
-	if allies.is_empty(): return FAILURE
-	_apply_buff_callback(allies.pick_random())
+	for n: Node in allies:
+		if not is_instance_valid(n) or n.is_queued_for_deletion(): continue
+		if n is not EnemyCharacter: continue
+		var ally: EnemyCharacter = n
+		if not (ally.stats_component and ally.stats_component.armor <= 0.0): continue
+		_apply_buff_callback(ally)
+		break
 	return SUCCESS
 
 

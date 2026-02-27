@@ -16,7 +16,7 @@ func _on_body_entered(body: Node3D) -> void:
 
 func set_size(v: Vector3) -> void:
 	size = v
-	await ready
+	if not Engine.is_editor_hint(): await ready
 	(hurtbox_collision.shape as BoxShape3D).size = size
 	(lava_mesh.mesh as PlaneMesh).size = Vector2(size.x, size.z)
 	((lava_mesh.mesh as PlaneMesh).material as ShaderMaterial).set_shader_parameter("uv_scale",

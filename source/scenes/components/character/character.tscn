@@ -608,8 +608,22 @@ height = 2.5
 script = ExtResource("35_neimr")
 frequency = 3.0
 randomize_noise_seed = 1
-noise_seed = 992
+noise_seed = 224
 rotational_multiplier_z = 0.0
+metadata/_custom_type_script = "uid://cuffvge5ad4aa"
+
+[sub_resource type="Resource" id="Resource_xbv7c"]
+script = ExtResource("35_neimr")
+amplitude = 5.0
+frequency = 2.0
+randomize_noise_seed = 1
+noise_seed = 224
+rotational_noise = false
+positional_noise = true
+rotational_multiplier_z = 0.0
+positional_multiplier_x = 0.51
+positional_multiplier_y = 0.0
+positional_multiplier_z = 0.57
 metadata/_custom_type_script = "uid://cuffvge5ad4aa"
 
 [sub_resource type="Resource" id="Resource_rb5yu"]
@@ -681,9 +695,10 @@ actor = NodePath("..")
 input_component = NodePath("../PlayerInputComponent")
 metadata/_custom_type_script = "uid://c6tbcxlt1e2hy"
 
-[node name="PlayerInputComponent" type="Node" parent="." unique_id=805557834 node_paths=PackedStringArray("weapon_manager")]
+[node name="PlayerInputComponent" type="Node" parent="." unique_id=805557834 node_paths=PackedStringArray("weapon_manager", "hit_noise")]
 script = ExtResource("10_72r7g")
 weapon_manager = NodePath("../WeaponManager")
+hit_noise = NodePath("../HitNoise")
 metadata/_custom_type_script = "uid://bc4ynw03213w5"
 
 [node name="StateMachine" type="Node" parent="." unique_id=511908981 node_paths=PackedStringArray("initial_state", "attack_state", "ranged_state", "hit_state")]
@@ -776,11 +791,17 @@ metadata/_custom_type_script = "uid://blua7mg5dbvwn"
 [node name="Splat" type="AudioStreamPlayer" parent="." unique_id=2047522109]
 stream = ExtResource("27_a6gqt")
 
-[node name="PhantomCameraNoiseEmitter3D" type="Node3D" parent="." unique_id=287624549]
+[node name="DamageNoise" type="Node3D" parent="." unique_id=287624549]
 script = ExtResource("34_fgtne")
 noise = SubResource("Resource_wglof")
 duration = 0.5
 decay_time = 2.0
+metadata/_custom_type_script = "uid://ccmiitq0sdh7j"
+
+[node name="HitNoise" type="Node3D" parent="." unique_id=1433942265]
+script = ExtResource("34_fgtne")
+noise = SubResource("Resource_xbv7c")
+decay_time = 0.25881633
 metadata/_custom_type_script = "uid://ccmiitq0sdh7j"
 
 [node name="PhantomCamera3D" type="Node3D" parent="." unique_id=848212730 node_paths=PackedStringArray("follow_target")]
@@ -806,4 +827,4 @@ metadata/_custom_type_script = "uid://csjccrhj5wnx7"
 [connection signal="runes_updated" from="WeaponManager" to="PlayerInterface" method="on_runes_updated"]
 [connection signal="health_changed" from="StatsComponent" to="PlayerInterface" method="_on_health_changed" flags=18]
 [connection signal="health_lowered" from="StatsComponent" to="StateMachine" method="_on_stats_component_health_lowered"]
-[connection signal="health_lowered" from="StatsComponent" to="PhantomCameraNoiseEmitter3D" method="emit"]
+[connection signal="health_lowered" from="StatsComponent" to="DamageNoise" method="emit"]

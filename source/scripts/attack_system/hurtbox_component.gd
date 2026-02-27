@@ -1,6 +1,7 @@
 class_name HurtboxComponent
 extends Area3D
 
+signal stick(hitbox: HitboxComponent)
 signal hit()
 signal body_hit()
 
@@ -34,3 +35,4 @@ func _handle_damage(hitbox: HitboxComponent) -> void:
 	var info: AttackInfo = attack_info if attack_info else AttackInfo.new()
 	hitbox.damage(info)
 	hit.emit()
+	stick.emit(hitbox)

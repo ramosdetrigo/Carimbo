@@ -1,6 +1,8 @@
 class_name AttackScene
 extends Node3D
 
+signal lifetime_depleted()
+
 @export var attack_info: AttackInfo
 @export var should_disappear: bool = true
 @export_range(0.1, 100.0, 0.1, "or_greater", "or_less", "suffix:sec")
@@ -13,15 +15,23 @@ var swing_dir: Vector3:
 	set(v): swing_dir = v; if hurtbox_component: hurtbox_component.launch_direction = swing_dir
 
 func _ready() -> void:
+	_handle_particle()
+	_handle_hurtbox()
+
+
+func _handle_particle() -> void:
+	if not particle: particle = _get_particle()
+	if not particle: return
+	particle.set_emitting(true)
+	if particle.one_shot: particle.finished.connect(particle.queue_free)
+	else: lifetime_depleted.connect(particle.queue_free)
+	particle.reparent.call_deferred(get_parent_node_3d())
+
+
+func _handle_hurtbox() -> void:
 	if not hurtbox_component: hurtbox_component = _get_hurtbox_component()
 	if not hurtbox_component: return
 	hurtbox_component.attack_info = attack_info
-	if not particle:
-		particle = _get_particle()
-	if particle:
-		particle.set_emitting(true)
-		particle.finished.connect(particle.queue_free)
-		particle.reparent.call_deferred(get_parent_node_3d())
 	if not should_break_on_contact: return
 	hurtbox_component.hit.connect(destroy)
 	hurtbox_component.body_hit.connect(destroy)
@@ -43,6 +53,7 @@ func _physics_process(delta: float) -> void:
 
 
 func destroy() -> void:
+	lifetime_depleted.emit()
 	queue_free()
 
 

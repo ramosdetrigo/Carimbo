@@ -18,7 +18,10 @@ func _ready() -> void:
 	hurtbox_component.attack_info = attack_info
 	if not particle:
 		particle = _get_particle()
-	if particle: particle.set_emitting(true)
+	if particle:
+		particle.set_emitting(true)
+		particle.finished.connect(particle.queue_free)
+		particle.reparent.call_deferred(get_parent_node_3d())
 	if not should_break_on_contact: return
 	hurtbox_component.hit.connect(destroy)
 	hurtbox_component.body_hit.connect(destroy)

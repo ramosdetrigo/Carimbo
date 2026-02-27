@@ -11,6 +11,15 @@
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="8_a6hnc"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="9_a6hnc"]
 [ext_resource type="PackedScene" uid="uid://domk3xwojp1ia" path="res://scenes/components/character/character.tscn" id="10_v3fft"]
+[ext_resource type="Shader" uid="uid://dl6ampid6rth6" path="res://scenes/components/stamped_animated_sprite/shaded_animated_sprite_3d.gdshader" id="12_gp4n4"]
+[ext_resource type="Texture2D" uid="uid://ch1fj0j2vc2r1" path="res://resources/burn_noise_texture.tres" id="13_mgov4"]
+[ext_resource type="Texture2D" uid="uid://dqyykf3mww3uv" path="res://assets/textures/player/attack.png" id="14_s4ocn"]
+[ext_resource type="Texture2D" uid="uid://o34vnik8cwo4" path="res://assets/textures/paper/Paper003_1K-JPG_NormalGL.jpg" id="15_k7wyf"]
+[ext_resource type="Texture2D" uid="uid://dkbujjnpxwia0" path="res://assets/textures/paper/Paper003_1K-JPG_Roughness.jpg" id="16_qijmx"]
+[ext_resource type="Script" uid="uid://du7c6s1s7a807" path="res://scripts/components/rune.gd" id="17_k0rkn"]
+[ext_resource type="Resource" uid="uid://dhkf2x6ifyip0" path="res://resources/runes/fire_rune.tres" id="18_u4iep"]
+[ext_resource type="Resource" uid="uid://b2yoi87p65bkn" path="res://resources/runes/water_rune.tres" id="19_78y47"]
+[ext_resource type="Resource" uid="uid://68oolyclljfd" path="res://resources/runes/eletric_rune.tres" id="20_6hm0i"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_1ybgv"]
 vertices = PackedVector3Array(-4.75, 0.5, -12.75, -4.75, 0.5, -11, 5, 0.5, -11, 5, 0.5, -12.75, -12.75, 0.5, -7, -12.75, 0.5, 7, 13, 0.5, 7, 13, 0.5, -7, -4.75, 0.5, 11.25, -4.75, 0.5, 12.75, 5, 0.5, 12.75, 5, 0.5, 11.25)
@@ -26,6 +35,34 @@ point_count = 2
 
 [sub_resource type="Resource" id="Resource_83a7x"]
 script = ExtResource("9_a6hnc")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yylnd"]
+atlas = ExtResource("14_s4ocn")
+region = Rect2(0, 0, 270, 270)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_hmtlh"]
+viewport_path = NodePath("ShadedAnimatedSprite3D/SubViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2ynov"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("12_gp4n4")
+shader_parameter/roughness = 1.0
+shader_parameter/texture_roughness = ExtResource("16_qijmx")
+shader_parameter/specular = 0.249999994412
+shader_parameter/texture_normal = ExtResource("15_k7wyf")
+shader_parameter/normal_scale = 1.5600008340999985
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = SubResource("AtlasTexture_yylnd")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_hmtlh")
+shader_parameter/carimbo_glow_intensity = 0.0
+shader_parameter/burn_texture = ExtResource("13_mgov4")
+shader_parameter/burn_amount = 0.0
+shader_parameter/burn_size = 0.150000007125
+shader_parameter/burn_smoothness = 0.1330000063175
+shader_parameter/burn_glow_color = Color(1, 0.32, 0, 1)
+shader_parameter/burn_glow_intensity = 10.0
+shader_parameter/region_rect = Vector4(0, 0, 0.083333336, 1)
 
 [node name="Level11" type="Node3D" unique_id=663602909 node_paths=PackedStringArray("exit_door")]
 script = ExtResource("1_j3csc")
@@ -193,7 +230,7 @@ environment = ExtResource("4_2lnft")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1096867225]
 physics_interpolation_mode = 1
-transform = Transform3D(0, -0.9701425, 0.24253559, -5.9604645e-08, 0.24253559, 0.9701425, -1, 5.9604645e-08, 0, -10, 8, 0)
+transform = Transform3D(-3.4562582e-08, -0.6497494, 0.7602012, -4.8560654e-08, 0.7601472, 0.6497956, -0.9999994, 5.960459e-08, 0, -10, 3, 0)
 top_level = true
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D" unique_id=1619328002]
@@ -215,3 +252,14 @@ metadata/_custom_type_script = "uid://bvgv0wqcnb1yp"
 
 [node name="PlayerCharacter" parent="." unique_id=269989542 instance=ExtResource("10_v3fft")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 0)
+
+[node name="ShadedAnimatedSprite3D" parent="PlayerCharacter" index="1" unique_id=1555501919]
+material_override = SubResource("ShaderMaterial_2ynov")
+
+[node name="WeaponManager" parent="PlayerCharacter" index="2" unique_id=2002537722]
+runes = Array[ExtResource("17_k0rkn")]([ExtResource("18_u4iep"), ExtResource("19_78y47"), ExtResource("20_6hm0i")])
+
+[node name="PhantomCamera3D" parent="PlayerCharacter" index="15" unique_id=848212730]
+transform = Transform3D(-3.4562582e-08, -0.6497494, 0.7602012, -4.8560654e-08, 0.7601472, 0.6497956, -0.9999994, 5.960459e-08, 0, -10, 3, 0)
+
+[editable path="PlayerCharacter"]

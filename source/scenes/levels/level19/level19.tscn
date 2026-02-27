@@ -13,8 +13,20 @@
 [ext_resource type="Texture2D" uid="uid://c3at5slgj58to" path="res://assets/textures/vfx/particles/ring.png" id="8_us5en"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="9_l183q"]
 [ext_resource type="PackedScene" uid="uid://domk3xwojp1ia" path="res://scenes/components/character/character.tscn" id="10_7yu7t"]
+[ext_resource type="Shader" uid="uid://dl6ampid6rth6" path="res://scenes/components/stamped_animated_sprite/shaded_animated_sprite_3d.gdshader" id="14_8mqwg"]
+[ext_resource type="Texture2D" uid="uid://ch1fj0j2vc2r1" path="res://resources/burn_noise_texture.tres" id="15_pgc1u"]
+[ext_resource type="Texture2D" uid="uid://dqyykf3mww3uv" path="res://assets/textures/player/attack.png" id="16_wsohq"]
+[ext_resource type="Texture2D" uid="uid://o34vnik8cwo4" path="res://assets/textures/paper/Paper003_1K-JPG_NormalGL.jpg" id="17_r6flq"]
+[ext_resource type="Texture2D" uid="uid://dkbujjnpxwia0" path="res://assets/textures/paper/Paper003_1K-JPG_Roughness.jpg" id="18_ojqlt"]
+[ext_resource type="Script" uid="uid://du7c6s1s7a807" path="res://scripts/components/rune.gd" id="19_fdcio"]
+[ext_resource type="Resource" uid="uid://dhkf2x6ifyip0" path="res://resources/runes/fire_rune.tres" id="20_tn5dl"]
+[ext_resource type="Resource" uid="uid://b2yoi87p65bkn" path="res://resources/runes/water_rune.tres" id="21_wuunb"]
+[ext_resource type="Resource" uid="uid://68oolyclljfd" path="res://resources/runes/eletric_rune.tres" id="22_57y8e"]
+[ext_resource type="Resource" uid="uid://3mpy0qw7jpp8" path="res://resources/runes/strenght_rune.tres" id="23_ydc1n"]
 
-[sub_resource type="NavigationMesh" id="NavigationMesh_yax02"]
+[sub_resource type="NavigationMesh" id="NavigationMesh_8mqwg"]
+vertices = PackedVector3Array(-8.75, 0.5, 10, -4.75, 0.5, 12.5, -1, 0.5, 13.25, -12.25, 0.5, 5.25, -1, 0.5, -13.25, -4.75, 0.5, -12.5, -8.75, 0.5, -10, -12.25, 0.5, -5.25, 4.75, 0.5, 12.5, 8.75, 0.5, 10, 8.75, 0.5, -10, 4.75, 0.5, -12.5, 12.5, 0.5, -4.75, 12.5, 0.5, 4.75)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(5, 4, 6), PackedInt32Array(6, 4, 7), PackedInt32Array(9, 8, 2), PackedInt32Array(11, 10, 4), PackedInt32Array(4, 10, 12), PackedInt32Array(2, 3, 9), PackedInt32Array(9, 3, 7), PackedInt32Array(9, 7, 4), PackedInt32Array(9, 4, 12), PackedInt32Array(12, 13, 9)]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_sqq0f"]
 radius = 1.7641602
@@ -33,7 +45,7 @@ particles_anim_loop = false
 [sub_resource type="Gradient" id="Gradient_5q7v8"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_uj87e"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_8ivor"]
 gradient = SubResource("Gradient_5q7v8")
 
 [sub_resource type="Curve" id="Curve_na37q"]
@@ -41,7 +53,7 @@ _limits = [0.0, 2.0, 0.0, 1.0]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.30419558, 1.1578952), 0.0, 0.0, 0, 0, Vector2(0.55769205, 0.9268298), 0.0, 0.0, 0, 0, Vector2(0.8199299, 1.1322213), 0.0, 0.0, 0, 0, Vector2(1, 1.6713741), 10.235296, 0.0, 0, 0]
 point_count = 5
 
-[sub_resource type="CurveTexture" id="CurveTexture_uj87e"]
+[sub_resource type="CurveTexture" id="CurveTexture_b01xw"]
 curve = SubResource("Curve_na37q")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_dw5rb"]
@@ -58,14 +70,42 @@ initial_velocity_max = 1.0
 gravity = Vector3(0, 0, 0)
 scale_min = 0.08
 scale_max = 0.16
-scale_curve = SubResource("CurveTexture_uj87e")
+scale_curve = SubResource("CurveTexture_b01xw")
 color = Color(3.19193, 3.710256, 1.8220106, 1)
-color_ramp = SubResource("GradientTexture1D_uj87e")
+color_ramp = SubResource("GradientTexture1D_8ivor")
 
 [sub_resource type="QuadMesh" id="QuadMesh_pwqel"]
 
 [sub_resource type="Resource" id="Resource_l7bki"]
 script = ExtResource("9_l183q")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yylnd"]
+atlas = ExtResource("16_wsohq")
+region = Rect2(0, 0, 270, 270)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_8mqwg"]
+viewport_path = NodePath("ShadedAnimatedSprite3D/SubViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pgc1u"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("14_8mqwg")
+shader_parameter/roughness = 1.0
+shader_parameter/texture_roughness = ExtResource("18_ojqlt")
+shader_parameter/specular = 0.249999994412
+shader_parameter/texture_normal = ExtResource("17_r6flq")
+shader_parameter/normal_scale = 1.5600008340999985
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = SubResource("AtlasTexture_yylnd")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_8mqwg")
+shader_parameter/carimbo_glow_intensity = 0.0
+shader_parameter/burn_texture = ExtResource("15_pgc1u")
+shader_parameter/burn_amount = 0.0
+shader_parameter/burn_size = 0.150000007125
+shader_parameter/burn_smoothness = 0.1330000063175
+shader_parameter/burn_glow_color = Color(1, 0.32, 0, 1)
+shader_parameter/burn_glow_intensity = 10.0
+shader_parameter/region_rect = Vector4(0, 0, 0.083333336, 1)
 
 [node name="Level19" type="Node3D" unique_id=2027348526 node_paths=PackedStringArray("exit_door")]
 script = ExtResource("1_47t0h")
@@ -73,7 +113,7 @@ exit_door = NodePath("NavigationRegion3D/GridMap/Lights/Exit")
 metadata/_custom_type_script = "uid://ckxpmu5lrfiql"
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=732782216]
-navigation_mesh = SubResource("NavigationMesh_yax02")
+navigation_mesh = SubResource("NavigationMesh_8mqwg")
 
 [node name="GridMap" type="GridMap" parent="NavigationRegion3D" unique_id=873311870]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -1)
@@ -158,8 +198,8 @@ marker_position = Vector3(-11, 0, 0)
 [node name="Exit" parent="NavigationRegion3D/GridMap/Lights" unique_id=1742187779 instance=ExtResource("3_evhx3")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 13, 0, 0)
 marker_position = Vector3(11, 0, -1.7484555e-07)
-destination_scene = "uid://8j66i15hf3p4"
-destination_position = Vector3(-18, 0, 11)
+destination_scene = "uid://b6qbwchtb74h5"
+destination_position = Vector3(-11, 0, 0)
 
 [node name="Enemies" type="Node3D" parent="NavigationRegion3D/GridMap" unique_id=926605760]
 
@@ -220,3 +260,15 @@ metadata/_custom_type_script = "uid://bvgv0wqcnb1yp"
 
 [node name="PlayerCharacter" parent="." unique_id=269989542 instance=ExtResource("10_7yu7t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.786009, 0, 0)
+
+[node name="ShadedAnimatedSprite3D" parent="PlayerCharacter" index="1" unique_id=1555501919]
+material_override = SubResource("ShaderMaterial_pgc1u")
+
+[node name="WeaponManager" parent="PlayerCharacter" index="2" unique_id=2002537722]
+runes = Array[ExtResource("19_fdcio")]([ExtResource("20_tn5dl"), ExtResource("21_wuunb"), ExtResource("22_57y8e")])
+sub_runes = Array[ExtResource("19_fdcio")]([ExtResource("23_ydc1n")])
+
+[node name="PhantomCamera3D" parent="PlayerCharacter" index="15" unique_id=848212730]
+transform = Transform3D(-3.4562582e-08, -0.6497494, 0.7602012, -4.8560654e-08, 0.7601472, 0.6497956, -0.9999994, 5.960459e-08, 0, -8.786009, 3, 0)
+
+[editable path="PlayerCharacter"]

@@ -10,7 +10,8 @@ uniform float burn_glow_intensity: hint_range(0.0, 10.0, 0.1) = 10.0;
 void fragment() {
 	vec4 cor_og = texture(TEXTURE, UV);
 	
-	float burn_noise = texture(burn_texture, UV).r * (1.0 - burn_size) + burn_size;
+	vec2 burn_uv = vec2(UV.x, UV.y * (TEXTURE_PIXEL_SIZE.x / TEXTURE_PIXEL_SIZE.y));
+	float burn_noise = texture(burn_texture, burn_uv).r * (1.0 - burn_size) + burn_size;
 	float burn_val = step(burn_amount, burn_noise);
 	COLOR.a = cor_og.a * burn_val;
 	

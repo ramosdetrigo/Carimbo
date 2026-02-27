@@ -1,0 +1,172 @@
+[gd_scene format=3 uid="uid://dge06eg0ev1ao"]
+
+[ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="3_e0ywy"]
+[ext_resource type="MeshLibrary" uid="uid://be3yh5mqefut3" path="res://resources/mesh_library/level_props.meshlib" id="4_11b7f"]
+[ext_resource type="Script" uid="uid://dj4esefrjyce0" path="res://scripts/components/door.gd" id="5_o56qs"]
+[ext_resource type="Script" uid="uid://bvgv0wqcnb1yp" path="res://scripts/phantom_camera_3d_follow_player.gd" id="7_qvk8r"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="8_31whn"]
+[ext_resource type="Texture2D" uid="uid://lkeultvpjsj1" path="res://assets/textures/logoda4_dark.svg" id="9_wotqd"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4l2q5"]
+sky_top_color = Color(0.3333091, 0.07350255, 0.05406054, 1)
+sky_horizon_color = Color(0.20485693, 0.03212632, 0.021665383, 1)
+ground_bottom_color = Color(0.09721538, 0.01852827, 0, 1)
+ground_horizon_color = Color(0.20485693, 0.03212632, 0.021665383, 1)
+
+[sub_resource type="Sky" id="Sky_3xb12"]
+sky_material = SubResource("ProceduralSkyMaterial_4l2q5")
+
+[sub_resource type="Environment" id="Environment_bvf2d"]
+background_mode = 2
+sky = SubResource("Sky_3xb12")
+ambient_light_source = 1
+tonemap_mode = 2
+glow_enabled = true
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0
+volumetric_fog_albedo = Color(0.28478888, 0.07470257, 0.041376807, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4l2q5"]
+size = Vector3(1.201416, 9, 4)
+
+[sub_resource type="Resource" id="Resource_5bog2"]
+script = ExtResource("8_31whn")
+
+[sub_resource type="Animation" id="Animation_bu3e7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FPPhantomCamera3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.5235988, -1.5707964, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_rf6bg"]
+resource_name = "rotate_camera"
+length = 6.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FPPhantomCamera3D:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1.5, 4.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.5235988, -1.3089969, 0), Vector3(-0.5235988, -1.7453293, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bu3e7"]
+_data = {
+&"RESET": SubResource("Animation_bu3e7"),
+&"rotate_camera": SubResource("Animation_rf6bg")
+}
+
+[node name="MenuLevel1" type="Node3D" unique_id=1033831689]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=96218592]
+transform = Transform3D(-4.3711392e-08, 0.5, -0.8660253, 0, 0.8660254, 0.49999997, 1.0000001, 2.1855694e-08, -3.785517e-08, -6.343, 6.116, -1.1)
+top_level = true
+current = true
+
+[node name="PhantomCameraHost" type="Node" parent="Camera3D" unique_id=235178724]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("3_e0ywy")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1851506791]
+environment = SubResource("Environment_bvf2d")
+
+[node name="GridMap" type="GridMap" parent="." unique_id=1894313328]
+mesh_library = ExtResource("4_11b7f")
+cell_center_y = false
+data = {
+"cells": PackedInt32Array(65532, 65531, 1048576, 65533, 65531, 1048576, 65534, 65531, 1048576, 65535, 65531, 1048576, 0, 65531, 1048576, 1, 65531, 1048576, 2, 65531, 1048576, 3, 65531, 1048576, 4, 65532, 0, 4, 65533, 0, 4, 65534, 0, 4, 65535, 0, 4, 0, 0, 4, 1, 0, 4, 2, 0, 3, 3, 1441792, 2, 3, 1441792, 1, 3, 1441792, 0, 3, 1441792, 65535, 3, 1441792, 65534, 3, 1441792, 65533, 3, 1441792, 65532, 3, 1441792, 65531, 2, 655360, 65531, 1, 655360, 65531, 0, 655360, 65531, 65535, 655360, 65531, 65534, 655360, 65531, 65533, 655360, 65531, 65532, 655360, -4, 65532, 5, -4, 65533, 5, -4, 65534, 5, -4, 65535, 5, -4, 0, 5, -4, 1, 5, -4, 2, 5, -3, 65532, 5, -3, 65533, 5, -3, 65534, 5, -3, 65535, 5, -3, 0, 5, -3, 1, 5, -3, 2, 5, -2, 65532, 5, -2, 65533, 5, -2, 65534, 5, -2, 65535, 5, -2, 0, 5, -2, 1, 5, -2, 2, 5, -1, 65532, 5, -1, 65533, 5, -1, 65534, 5, -1, 65535, 5, -1, 0, 5, -1, 1, 5, -1, 2, 5, -65536, 65532, 5, -65536, 65533, 5, -65536, 65534, 5, -65536, 65535, 5, -65536, 0, 5, -65536, 1, 5, -65536, 2, 5, -65535, 65532, 5, -65535, 65533, 5, -65535, 65534, 5, -65535, 65535, 5, -65535, 0, 5, -65535, 1, 5, -65535, 2, 5, -65534, 65532, 5, -65534, 65533, 5, -65534, 65534, 5, -65534, 65535, 5, -65534, 0, 5, -65534, 1, 5, -65534, 2, 5, -65533, 65532, 5, -65533, 65533, 5, -65533, 65534, 5, -65533, 65535, 5, -65533, 0, 5, -65533, 1, 5, -65533, 2, 5, 3, 65535, 655363, 65535, 65534, 655369, 65533, 2, 1048584, 65535, 2, 1048584, 1, 2, 1048584, 65533, 65532, 1441800, 65535, 65532, 1441800, 1, 65532, 1441800, 65533, 65533, 7, 65535, 65533, 7, 1, 65533, 7, 1, 1, 655367, 65535, 1, 655367, 65533, 1, 655367, 393212, 65532, 524293, 393212, 65533, 524293, 393212, 65534, 524293, 393212, 65535, 524293, 393212, 0, 524293, 393212, 1, 524293, 393212, 2, 524293, 393213, 65532, 524293, 393213, 65533, 524293, 393213, 65534, 524293, 393213, 65535, 524293, 393213, 0, 524293, 393213, 1, 524293, 393213, 2, 524293, 393214, 65532, 524293, 393214, 65533, 524293, 393214, 65534, 524293, 393214, 65535, 524293, 393214, 0, 524293, 393214, 1, 524293, 393214, 2, 524293, 393215, 65532, 524293, 393215, 65533, 524293, 393215, 65534, 524293, 393215, 65535, 524293, 393215, 0, 524293, 393215, 1, 524293, 393215, 2, 524293, 327680, 65532, 524293, 327680, 65533, 524293, 327680, 65534, 524293, 327680, 65535, 524293, 327680, 0, 524293, 327680, 1, 524293, 327680, 2, 524293, 327681, 65532, 524293, 327681, 65533, 524293, 327681, 65534, 524293, 327681, 65535, 524293, 327681, 0, 524293, 327681, 1, 524293, 327681, 2, 524293, 327682, 65532, 524293, 327682, 65533, 524293, 327682, 65534, 524293, 327682, 65535, 524293, 327682, 0, 524293, 327682, 1, 524293, 327682, 2, 524293, 327683, 65532, 524293, 327683, 65533, 524293, 327683, 65534, 524293, 327683, 65535, 524293, 327683, 0, 524293, 327683, 1, 524293, 327683, 2, 524293, 65533, 0, 10, 2, 1, 10, 65534, 65533, 1441801, 65532, 1, 1048585, 2, 65533, 9, 2, 65532, 655370)
+}
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="Door" type="Area3D" parent="GridMap" unique_id=81351939]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1, -1)
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("5_o56qs")
+marker_position = Vector3(10, 1, -1)
+destination_scene = "uid://olifsxpreo8e"
+destination_position = Vector3(-10, 0, 1)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GridMap/Door" unique_id=1396129682]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+shape = SubResource("BoxShape3D_4l2q5")
+
+[node name="Lights" type="Node3D" parent="GridMap" unique_id=1394666551]
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="GridMap/Lights" unique_id=1980159585]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 5, -6)
+light_color = Color(0.87, 0.56549996, 0.348, 1)
+light_energy = 2.0
+light_volumetric_fog_energy = 2.0
+light_bake_mode = 1
+omni_range = 8.478483
+
+[node name="OmniLight3D8" type="OmniLight3D" parent="GridMap/Lights" unique_id=142249019]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 5, 4)
+light_color = Color(0.87, 0.56549996, 0.348, 1)
+light_energy = 2.0
+light_volumetric_fog_energy = 2.0
+light_bake_mode = 1
+omni_range = 8.478483
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="GridMap/Lights" unique_id=513940812]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 5, -6)
+light_color = Color(0.87, 0.56549996, 0.348, 1)
+light_energy = 2.0
+light_volumetric_fog_energy = 2.0
+light_bake_mode = 1
+omni_range = 8.478483
+
+[node name="OmniLight3D9" type="OmniLight3D" parent="GridMap/Lights" unique_id=2079559811]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 5, 4)
+light_color = Color(0.87, 0.56549996, 0.348, 1)
+light_energy = 2.0
+light_volumetric_fog_energy = 2.0
+light_bake_mode = 1
+omni_range = 8.478483
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1104689630]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 2, -1)
+light_color = Color(0.75, 0.486, 0.27, 1)
+light_energy = 2.0
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 2.0
+shadow_enabled = true
+omni_range = 8.758742
+
+[node name="FPPhantomCamera3D" type="Node3D" parent="." unique_id=2016082095]
+transform = Transform3D(-4.3711392e-08, 0.5, -0.8660253, 0, 0.8660254, 0.49999997, 1.0000001, 2.1855694e-08, -3.785517e-08, -6.343, 6.116, -1.1)
+script = ExtResource("7_qvk8r")
+tween_resource = SubResource("Resource_5bog2")
+metadata/_custom_type_script = "uid://bvgv0wqcnb1yp"
+
+[node name="Decal" type="Decal" parent="." unique_id=1906762300]
+transform = Transform3D(1, 0, 0, 0, -4.3711385e-08, -0.99999994, 0, 0.99999994, -4.3711385e-08, -0.5128337, 4.508997, -7.9760537)
+size = Vector3(7.297, 1, 4)
+texture_albedo = ExtResource("9_wotqd")
+
+[node name="Decal2" type="Decal" parent="." unique_id=424263138]
+transform = Transform3D(-1, -8.742277e-08, 3.8213705e-15, 0, -4.3711385e-08, -0.99999994, 8.742278e-08, -0.99999994, 4.3711385e-08, -0.513, 4.509, 5.976)
+size = Vector3(7.297, 1, 4)
+texture_albedo = ExtResource("9_wotqd")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=759282079]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_bu3e7")
+autoplay = &"rotate_camera"
+speed_scale = 0.25

@@ -6,7 +6,6 @@
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vyhqo"]
 albedo_texture = ExtResource("1_q14ec")
-distance_fade_mode = 2
 distance_fade_max_distance = 5.0
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_k1q5k"]
@@ -20,7 +19,6 @@ size = Vector3(0.001, 8, 2)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5h1ip"]
 albedo_texture = ExtResource("1_q14ec")
-distance_fade_mode = 2
 distance_fade_max_distance = 5.0
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_khy26"]
@@ -33,7 +31,6 @@ cull_mode = 2
 albedo_texture = ExtResource("1_q14ec")
 uv1_scale = Vector3(1, 0.125, 1)
 uv1_offset = Vector3(0, 0.875, 0)
-distance_fade_mode = 2
 distance_fade_max_distance = 5.0
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_eu5cw"]
@@ -48,7 +45,6 @@ size = Vector3(0.001, 1, 2)
 transparency = 1
 cull_mode = 2
 albedo_texture = ExtResource("2_llv17")
-distance_fade_mode = 2
 distance_fade_max_distance = 5.0
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_5h1ip"]
@@ -64,7 +60,6 @@ size = Vector3(2, 0.001, 2)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ludqd"]
 albedo_texture = ExtResource("4_fggqu")
 uv1_scale = Vector3(4, 1, 1)
-distance_fade_mode = 2
 distance_fade_max_distance = 5.0
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_5h1ip"]

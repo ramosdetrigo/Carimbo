@@ -1,20 +1,183 @@
 [gd_scene format=3 uid="uid://8r3eav3jfq30"]
 
-[ext_resource type="Script" uid="uid://ckxpmu5lrfiql" path="res://scenes/levels/level_scene.gd" id="1_wyavl"]
+[ext_resource type="Script" uid="uid://bc6iefx8s1401" path="res://scenes/levels/level5/level_5.gd" id="1_h1ojk"]
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_gnwc0"]
+[ext_resource type="Resource" uid="uid://d1wbui2v5m3hl" path="res://resources/dialog/water_rune.dialogue" id="2_i5wvq"]
 [ext_resource type="MeshLibrary" uid="uid://be3yh5mqefut3" path="res://resources/mesh_library/level_props.meshlib" id="3_ly24c"]
+[ext_resource type="Script" uid="uid://k651grd68161" path="res://scenes/levels/level5/healer_box.gd" id="4_2vva3"]
 [ext_resource type="PackedScene" uid="uid://c3hpiq2ftpgt8" path="res://scenes/levels/doors/scene_door.tscn" id="4_kplnt"]
 [ext_resource type="PackedScene" uid="uid://byma2jgolnudi" path="res://scenes/vfx/static/symbols/water_rune.tscn" id="4_ludqd"]
-[ext_resource type="Script" uid="uid://i7djs8lu52us" path="res://scenes/levels/camera_area.gd" id="5_kplnt"]
+[ext_resource type="Resource" uid="uid://b2yoi87p65bkn" path="res://resources/runes/water_rune.tres" id="5_h1ojk"]
+[ext_resource type="Texture2D" uid="uid://cggf73hkk2xan" path="res://assets/textures/ui/vida/azul_bola_grande.png" id="6_h1ojk"]
 [ext_resource type="Script" uid="uid://bvgv0wqcnb1yp" path="res://scripts/phantom_camera_3d_follow_player.gd" id="7_2vva3"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="8_h1ojk"]
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_fail8"]
-height = 0.002
-radius = 14.0
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_h1ojk"]
+radius = 5.0
 
-[sub_resource type="Resource" id="Resource_i5wvq"]
-script = ExtResource("8_h1ojk")
+[sub_resource type="Animation" id="Animation_h1ojk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 5, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WaterRune:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../FPPhantomCamera3D2:priority")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:monitoring")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:monitorable")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_i5wvq"]
+resource_name = "gift"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 1),
+"transitions": PackedFloat32Array(2, 2, 0.5),
+"update": 0,
+"values": [Vector3(0, 5, 0), Vector3(0, 5.872, 0), Vector3(0, -0.6473441, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"dialog"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../FPPhantomCamera3D2:priority")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.53333336),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 4]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:monitoring")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:monitorable")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_yf3gk"]
+resource_name = "rune"
+length = 20.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WaterRune:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 20),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 6.2831855, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../FPPhantomCamera3D2:priority")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yf3gk"]
+_data = {
+&"RESET": SubResource("Animation_h1ojk"),
+&"gift": SubResource("Animation_i5wvq"),
+&"rune": SubResource("Animation_yf3gk")
+}
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fail8"]
 sky_top_color = Color(0.3333091, 0.07350255, 0.05406054, 1)
@@ -35,13 +198,21 @@ volumetric_fog_enabled = true
 volumetric_fog_density = 0.0
 volumetric_fog_albedo = Color(0.28478888, 0.07470257, 0.041376807, 1)
 
-[node name="Level5" type="Node3D" unique_id=37976033 node_paths=PackedStringArray("exit_door")]
-script = ExtResource("1_wyavl")
+[sub_resource type="Resource" id="Resource_i5wvq"]
+script = ExtResource("8_h1ojk")
+
+[sub_resource type="Resource" id="Resource_h1ojk"]
+script = ExtResource("8_h1ojk")
+
+[node name="Level5" type="Node3D" unique_id=37976033 node_paths=PackedStringArray("animation_player", "exit_door")]
+script = ExtResource("1_h1ojk")
+animation_player = NodePath("GridMap/Healerbox/AnimationPlayer")
 exit_door = NodePath("GridMap/Exit")
+starting_dialog = ExtResource("2_i5wvq")
 metadata/_custom_type_script = "uid://ckxpmu5lrfiql"
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1223465776]
-transform = Transform3D(0.9997951, -0.0014184765, -0.02019049, 0.0067306007, 0.9640719, 0.26555613, 0.019088399, -0.26563764, 0.96388394, 0.46441096, 5.322884, 13.899929)
+transform = Transform3D(0.99997556, -0.00698126, 0, 0.006791201, 0.97275215, 0.2317479, -0.0016178922, -0.23174225, 0.9727759, 1.034, 5.323, 13.9)
 top_level = true
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D" unique_id=1044877335]
@@ -122,8 +293,28 @@ light_volumetric_fog_energy = 2.0
 light_bake_mode = 1
 omni_range = 8.478483
 
-[node name="WaterRune" parent="GridMap" unique_id=945686240 instance=ExtResource("4_ludqd")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 1, 0, 1)
+[node name="Healerbox" type="Area3D" parent="GridMap" unique_id=1515373088]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("4_2vva3")
+rune_enable = true
+rune = ExtResource("5_h1ojk")
+metadata/_custom_type_script = "uid://k651grd68161"
+
+[node name="WaterRune" parent="GridMap/Healerbox" unique_id=945686240 instance=ExtResource("4_ludqd")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GridMap/Healerbox" unique_id=444543194]
+shape = SubResource("CylinderShape3D_h1ojk")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="GridMap/Healerbox" unique_id=739175701]
+libraries/ = SubResource("AnimationLibrary_yf3gk")
+
+[node name="Sprite3D" type="Sprite3D" parent="GridMap/Healerbox" unique_id=1614723083]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+billboard = 1
+texture = ExtResource("6_h1ojk")
 
 [node name="Entrance" parent="GridMap" unique_id=1756562916 instance=ExtResource("4_kplnt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 1)
@@ -135,20 +326,23 @@ marker_position = Vector3(12, 0, 0.9999998)
 destination_scene = "uid://cpe81jsk65sjm"
 destination_position = Vector3(-11.999998, 0, -1.1920929e-07)
 
-[node name="CameraArea" type="Area3D" parent="GridMap" unique_id=459398441 node_paths=PackedStringArray("camera")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
-script = ExtResource("5_kplnt")
-camera = NodePath("FPPhantomCamera3D")
-metadata/_custom_type_script = "uid://i7djs8lu52us"
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=599409113]
+environment = SubResource("Environment_t22y2")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="GridMap/CameraArea" unique_id=1245766080]
-shape = SubResource("CylinderShape3D_fail8")
-
-[node name="FPPhantomCamera3D" type="Node3D" parent="GridMap/CameraArea" unique_id=1966701159]
-transform = Transform3D(0.9997951, -0.0014184765, -0.02019049, 0.0067306007, 0.9640719, 0.26555613, 0.019088399, -0.26563764, 0.96388394, -0.53558904, 5.322884, 12.899929)
+[node name="FPPhantomCamera3D" type="Node3D" parent="." unique_id=1966701159]
+transform = Transform3D(0.99997556, -0.00698126, 0, 0.006791201, 0.97275215, 0.2317479, -0.0016178922, -0.23174225, 0.9727759, 1.034, 5.323, 13.9)
 script = ExtResource("7_2vva3")
+should_set_priority = null
+priority = 2
 tween_resource = SubResource("Resource_i5wvq")
 metadata/_custom_type_script = "uid://bvgv0wqcnb1yp"
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=599409113]
-environment = SubResource("Environment_t22y2")
+[node name="FPPhantomCamera3D2" type="Node3D" parent="." unique_id=740520750]
+transform = Transform3D(0.9999905, 0.0023602769, -0.0036694459, 0, 0.841038, 0.5409761, 0.004362997, -0.5409709, 0.84102994, 0.8357921, 6.5528116, 9.089561)
+script = ExtResource("7_2vva3")
+should_set_priority = false
+priority = 1
+tween_resource = SubResource("Resource_h1ojk")
+metadata/_custom_type_script = "uid://bvgv0wqcnb1yp"
+
+[connection signal="body_entered" from="GridMap/Healerbox" to="." method="give_gift" unbinds=1]

@@ -7,6 +7,7 @@ extends State
 @export var input_component: InputComponent
 @export var time: float = 0.5
 @export var speed: float = 30.0
+@export var hitbox: HitboxComponent
 
 var _last_time: float
 var _og_speed: float
@@ -16,12 +17,12 @@ func enter() -> void:
 	_last_time = Time.get_ticks_msec()
 	_og_speed = move_component.speed
 	move_component.speed = speed
-
+	hitbox.set_monitorable(false)
 
 
 func exit() -> void:
 	move_component.speed = _og_speed
-
+	hitbox.set_monitorable(true)
 
 
 func process(_delta: float) -> void:

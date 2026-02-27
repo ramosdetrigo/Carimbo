@@ -615,10 +615,11 @@ metadata/_custom_type_script = "uid://cuffvge5ad4aa"
 [sub_resource type="Resource" id="Resource_rb5yu"]
 script = ExtResource("38_qnac1")
 
-[node name="PlayerCharacter" type="CharacterBody3D" unique_id=269989542 node_paths=PackedStringArray("state_machine", "death_state", "stampable_sprite") groups=["player"]]
+[node name="PlayerCharacter" type="CharacterBody3D" unique_id=269989542 node_paths=PackedStringArray("state_machine", "stats", "death_state", "stampable_sprite") groups=["player"]]
 collision_layer = 8
 script = ExtResource("1_6d1i5")
 state_machine = NodePath("StateMachine")
+stats = NodePath("StatsComponent")
 death_state = NodePath("StateMachine/DeathState")
 stampable_sprite = NodePath("ShadedAnimatedSprite3D")
 invert_flip = true
@@ -646,9 +647,10 @@ size = Vector2i(270, 270)
 render_target_clear_mode = 2
 render_target_update_mode = 1
 
-[node name="WeaponManager" type="Node3D" parent="." unique_id=2002537722 node_paths=PackedStringArray("cooldown_timer")]
+[node name="WeaponManager" type="Node3D" parent="." unique_id=2002537722 node_paths=PackedStringArray("stats_component", "cooldown_timer")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -0.0579077)
 script = ExtResource("9_albb0")
+stats_component = NodePath("../StatsComponent")
 cooldown_timer = NodePath("../CooldownTimer")
 runes = Array[ExtResource("16_fgtne")]([ExtResource("17_neimr")])
 metadata/_custom_type_script = "uid://cdr65apsfmy8"
@@ -711,12 +713,13 @@ animated_sprite = NodePath("../../ShadedAnimatedSprite3D")
 animation_name = "walk"
 metadata/_custom_type_script = "uid://p013328bt87o"
 
-[node name="RollState" type="Node" parent="StateMachine" unique_id=205530947 node_paths=PackedStringArray("idle_state", "move_component", "input_component", "animated_sprite")]
+[node name="RollState" type="Node" parent="StateMachine" unique_id=205530947 node_paths=PackedStringArray("idle_state", "move_component", "input_component", "hitbox", "animated_sprite")]
 script = ExtResource("26_80i3n")
 idle_state = NodePath("../IdleState")
 move_component = NodePath("../../MoveComponent")
 input_component = NodePath("../../PlayerInputComponent")
 speed = 20.0
+hitbox = NodePath("../../HitboxComponent")
 animated_sprite = NodePath("../../ShadedAnimatedSprite3D")
 animation_name = "roll"
 metadata/_custom_type_script = "uid://bo27hd1h0bn3l"

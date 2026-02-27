@@ -10,18 +10,16 @@ func on_rune_change(rune: Rune) -> void:
 
 
 func on_runes_updated(runes: Array[Rune]) -> void:
+	for child: Node in rune_selector_container.get_children():
+		child.reparent(get_tree().root)
+		child.queue_free()
 	for rune: Rune in runes:
-		if rune_selector_container.get_children().any(_run_filter.bind(rune)): return
 		var texture: TextureRect = TextureRect.new()
 		texture.set_texture(rune.icon)
 		texture.set_expand_mode(TextureRect.EXPAND_FIT_WIDTH_PROPORTIONAL)
 		texture.set_stretch_mode(TextureRect.STRETCH_KEEP_ASPECT_CENTERED)
 		texture.set_name(rune.name)
 		rune_selector_container.add_child(texture)
-
-
-func _run_filter(c: Node, rune: Rune) -> bool:
-	return c is TextureRect and (c as TextureRect).texture == rune.icon
 
 
 func _on_health_changed(health: float, stats_component: StatsComponent) -> void:

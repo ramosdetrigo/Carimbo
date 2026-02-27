@@ -6,6 +6,7 @@ signal runes_updated(runes: Array[Rune])
 signal attack_melee()
 signal attack_ranged()
 
+@export var stats_component: StatsComponent
 @export var cooldown_timer: Timer
 @export var attack_spawn_offset: Vector3
 @export var runes: Array[Rune] = []
@@ -13,7 +14,11 @@ var current_rune: Rune:
 	set(v): current_rune = v; rune_changed.emit(current_rune)
 var current_type: int = -1
 
+static var instance: WeaponManager
+
 func _ready() -> void:
+	if not instance: instance = self
+	else: queue_free()
 	runes_updated.emit.call_deferred(runes)
 	select_rune.call_deferred(0)
 
@@ -29,6 +34,10 @@ func attack(shooting_dir: Vector3 = Vector3.UP) -> void:
 	attk.swing_dir = shooting_dir
 	(attack_ranged if attk is AttackProjectile else attack_melee).emit()
 	cooldown_timer.start(current_rune.cooldown)
+	if current_rune.is_flag_true(Rune.RuneFlags.LIFE_STEAL):
+		stats_component.set_health_call(func(p: float) -> float: return p + attk.attack_info.damage / 2.0)
+	if current_rune.is_flag_true(Rune.RuneFlags.ARMOR_PROVIDER):
+		stats_component.set_armor(2)
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -41,3 +50,8 @@ func select_rune(type: int) -> void:
 	if current_type == type: return
 	current_type = type
 	current_rune = runes.get(current_type)
+
+
+func append_rune(rune: Rune) -> void:
+	runes.append(rune)
+	runes_updated.emit(runes)

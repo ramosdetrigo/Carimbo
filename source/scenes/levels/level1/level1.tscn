@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://bvgv0wqcnb1yp" path="res://scripts/phantom_camera_3d_follow_player.gd" id="7_1nwpw"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="8_yc1fu"]
 [ext_resource type="Texture2D" uid="uid://lkeultvpjsj1" path="res://assets/textures/logoda4_dark.svg" id="9_5bog2"]
+[ext_resource type="Texture2D" uid="uid://crbqbpq8vb83p" path="res://assets/textures/ui/menu_bgless.png" id="10_yc1fu"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4l2q5"]
 sky_top_color = Color(0.3333091, 0.07350255, 0.05406054, 1)
@@ -51,7 +52,7 @@ metadata/_custom_type_script = "uid://ckxpmu5lrfiql"
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=96218592]
 physics_interpolation_mode = 1
-transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, -0.5, 7.2702093, 5)
+transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, -0.5, 7.2702093, 5.806922)
 top_level = true
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D" unique_id=235178724]
@@ -84,7 +85,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
 shape = SubResource("BoxShape3D_4l2q5")
 
 [node name="Path3D" type="Path3D" parent="GridMap" unique_id=595868693]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 7.2702093, 5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 7.2702093, 5.806922)
 curve = SubResource("Curve3D_65gyt")
 
 [node name="Lights" type="Node3D" parent="GridMap" unique_id=1394666551]
@@ -134,7 +135,7 @@ shadow_enabled = true
 omni_range = 8.758742
 
 [node name="FPPhantomCamera3D" type="Node3D" parent="." unique_id=2016082095 node_paths=PackedStringArray("follow_target", "follow_path")]
-transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, -0.5, 7.2702093, 5)
+transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, -0.5, 7.2702093, 5.806922)
 top_level = true
 script = ExtResource("7_1nwpw")
 follow_mode = 4
@@ -154,3 +155,8 @@ texture_albedo = ExtResource("9_5bog2")
 transform = Transform3D(-1, -8.742277e-08, 3.8213705e-15, 0, -4.3711385e-08, -0.99999994, 8.742278e-08, -0.99999994, 4.3711385e-08, -0.513, 4.509, 5.976)
 size = Vector3(7.297, 1, 4)
 texture_albedo = ExtResource("9_5bog2")
+
+[node name="Decal3" type="Decal" parent="." unique_id=1704146032]
+transform = Transform3D(1.1924881e-08, 0.99999994, -4.3711385e-08, 0, -4.3711385e-08, -0.99999994, -1, 1.192488e-08, -5.21253e-16, -7.84741, 4.509001, -3.420137)
+size = Vector3(7.297, 1, 4)
+texture_albedo = ExtResource("10_yc1fu")

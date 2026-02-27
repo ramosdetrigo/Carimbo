@@ -2,6 +2,7 @@ class_name CharacterController3D
 extends StampableCharacter
 
 @export var state_machine: StateMachine
+@export var stats: StatsComponent
 
 @onready var splat: AudioStreamPlayer = $Splat
 @export var death_state: DeathState

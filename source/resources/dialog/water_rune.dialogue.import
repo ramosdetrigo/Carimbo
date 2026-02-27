@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://d1wbui2v5m3hl"
+path="res://.godot/imported/water_rune.dialogue-16250be021462249b41d208465500421.tres"
+
+[deps]
+
+source_file="res://resources/dialog/water_rune.dialogue"
+dest_files=["res://.godot/imported/water_rune.dialogue-16250be021462249b41d208465500421.tres"]
+
+[params]
+
+defaults=true

@@ -1,22 +1,43 @@
 [gd_scene format=3 uid="uid://dhjt3y011u5hl"]
 
 [ext_resource type="Script" uid="uid://dqma8312wl2nc" path="res://scenes/ui/player_interface.gd" id="1_gvmqn"]
+[ext_resource type="Texture2D" uid="uid://dt2jpxeb0d7ub" path="res://assets/safe-area-overlay-background.png" id="2_cmndg"]
 [ext_resource type="Texture2D" uid="uid://baqsvh6lfvsfs" path="res://assets/textures/ui/fundo_ui.png" id="2_ged0j"]
 [ext_resource type="Texture2D" uid="uid://chfh1aqhvcgcg" path="res://assets/textures/ui/teu_cu.png" id="3_p7rqs"]
+[ext_resource type="Texture2D" uid="uid://dq2d2piftfprd" path="res://assets/textures/ui/input_buttons/xp.png" id="4_3fo61"]
 [ext_resource type="Texture2D" uid="uid://mcrn2q466d5q" path="res://assets/textures/ui/vida/fundo_vida.png" id="4_0287p"]
 [ext_resource type="Texture2D" uid="uid://coh6hesxekbcb" path="res://assets/textures/ui/vida/bgbolas.png" id="4_cmndg"]
 [ext_resource type="Texture2D" uid="uid://drgbc8e68muas" path="res://assets/textures/ui/vida/bolas_bgless.png" id="5_3fo61"]
 [ext_resource type="Texture2D" uid="uid://ddod7l1tnr00i" path="res://assets/textures/ui/vida/borda_vida.png" id="5_cmndg"]
 [ext_resource type="Texture2D" uid="uid://cobc4cjg5riki" path="res://assets/textures/ui/vida/barra_vida.png" id="6_3fo61"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_thgi5"]
+atlas = ExtResource("4_3fo61")
+region = Rect2(1089, 167, 382, 184)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w3uem"]
+atlas = ExtResource("4_3fo61")
+region = Rect2(65, 679, 382, 184)
+
 [node name="PlayerInterface" type="CanvasLayer" unique_id=1667225147]
 script = ExtResource("1_gvmqn")
 
+[node name="SafeAreaOverlayBackground" type="Sprite2D" parent="." unique_id=577188996]
+visible = false
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("2_cmndg")
+centered = false
+
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="." unique_id=1774003834]
-offset_right = 285.3524
-offset_bottom = 142.0
+anchors_preset = -1
+anchor_left = 0.052083332
+anchor_top = 0.052469134
+anchor_right = 0.29978505
+anchor_bottom = 0.27160493
+offset_bottom = 1.5258789e-05
 ratio = 2.01
 stretch_mode = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Control" type="MarginContainer" parent="AspectRatioContainer" unique_id=320038787]
 layout_mode = 2
@@ -27,6 +48,35 @@ layout_mode = 2
 texture = ExtResource("2_ged0j")
 expand_mode = 3
 stretch_mode = 5
+
+[node name="Control" type="Control" parent="AspectRatioContainer/Control" unique_id=1241715038]
+layout_mode = 2
+
+[node name="Inputs" type="TextureRect" parent="AspectRatioContainer/Control/Control" unique_id=1781986232]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3159081
+anchor_top = 0.7112676
+anchor_right = 0.3887533
+anchor_bottom = 0.7816901
+grow_vertical = 0
+texture = SubResource("AtlasTexture_thgi5")
+expand_mode = 3
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="Inputs2" type="TextureRect" parent="AspectRatioContainer/Control/Control" unique_id=299409662]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.65976775
+anchor_top = 0.7112676
+anchor_right = 0.7326129
+anchor_bottom = 0.7816901
+grow_vertical = 0
+texture = SubResource("AtlasTexture_w3uem")
+expand_mode = 3
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
 
 [node name="TeuCu" type="TextureRect" parent="AspectRatioContainer/Control" unique_id=931345309]
 layout_mode = 2
@@ -86,3 +136,7 @@ nine_patch_stretch = true
 texture_under = ExtResource("4_0287p")
 texture_over = ExtResource("5_cmndg")
 texture_progress = ExtResource("6_3fo61")
+
+[node name="Xp" type="Sprite2D" parent="." unique_id=1441672301]
+position = Vector2(2309, -485)
+texture = ExtResource("4_3fo61")

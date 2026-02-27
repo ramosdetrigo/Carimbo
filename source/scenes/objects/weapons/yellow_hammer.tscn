@@ -3,11 +3,14 @@
 [ext_resource type="Script" uid="uid://ctsptwrqbeytg" path="res://scripts/attack_system/attack_projectile.gd" id="1_fktem"]
 [ext_resource type="Script" uid="uid://cuoa1ubyh5d06" path="res://scripts/attack_system/attack_info.gd" id="2_jahpa"]
 [ext_resource type="Script" uid="uid://fjgad71t0sd4" path="res://scripts/attack_system/hurtbox_component.gd" id="2_rbprr"]
+[ext_resource type="Texture2D" uid="uid://blfnl5ogv1ctn" path="res://assets/textures/stamps/símbolo-amarelo.png" id="3_308dq"]
 [ext_resource type="Texture2D" uid="uid://rxlnntwvakwf" path="res://assets/textures/vfx/particles/spark_05.png" id="4_ytg6t"]
 
 [sub_resource type="Resource" id="Resource_ytg6t"]
 script = ExtResource("2_jahpa")
 damage = 2.0
+stamp_texture = ExtResource("3_308dq")
+stamp_size = Vector2(0.5, 0.5)
 flags = 5
 metadata/_custom_type_script = "uid://cuoa1ubyh5d06"
 

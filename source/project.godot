@@ -11,8 +11,10 @@ config_version=5
 [application]
 
 config/name="Diabo A4"
-run/main_scene="uid://dbx0mdbod3dh8"
+run/main_scene="uid://dbdx47nsgglcq"
 config/features=PackedStringArray("4.6", "Forward Plus")
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/image="uid://cprwim2tvu84l"
 config/icon="uid://bijbd3t0d6fpq"
 
 [audio]
@@ -162,7 +164,7 @@ aim_back={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://resources/dialog/test.dialogue", "res://resources/dialog/water_rune.dialogue", "res://resources/dialog/eletric_rune.dialogue")
+locale/translations_pot_files=PackedStringArray("res://resources/dialog/test.dialogue", "res://resources/dialog/water_rune.dialogue", "res://resources/dialog/eletric_rune.dialogue", "res://resources/dialog/intro/intro1.dialogue", "res://resources/dialog/intro/intro2.dialogue", "res://resources/dialog/intro/intro3.dialogue")
 
 [layer_names]
 

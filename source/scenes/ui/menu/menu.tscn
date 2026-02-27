@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://8ci2m0i1ykjs" path="res://assets/textures/logoda4_crop.svg" id="4_05f3o"]
 [ext_resource type="PackedScene" uid="uid://bnft0ws15mkb1" path="res://scenes/ui/menu/animated_button.tscn" id="5_5gbuo"]
 [ext_resource type="Texture2D" uid="uid://dd08wxj3sc24g" path="res://assets/textures/ui/vignette.png" id="7_047m5"]
+[ext_resource type="Texture2D" uid="uid://b2thhsdd4hbak" path="res://assets/textures/logo_cafundo.svg" id="8_1316l"]
 
 [node name="Menu" type="Control" unique_id=935163273]
 layout_mode = 3
@@ -15,6 +16,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("2_05f3o")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1002233836]
 layout_mode = 1
@@ -50,7 +52,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_r4xos")
-script = ExtResource("2_05f3o")
 
 [node name="LeftMargin" type="MarginContainer" parent="HBox" unique_id=1357326692]
 layout_mode = 2
@@ -98,6 +99,7 @@ size_flags_vertical = 3
 
 [node name="ContinueButton" parent="HBox/RightMargin/RightVBox/ButtonsVbox" unique_id=1447173936 instance=ExtResource("5_5gbuo")]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 label = "Continuar"
 
@@ -123,8 +125,28 @@ layout_mode = 2
 size_flags_horizontal = 4
 label = "Sair"
 
-[connection signal="pressed" from="HBox/RightMargin/RightVBox/ButtonsVbox/ContinueButton" to="HBox" method="_on_continue_button_pressed"]
-[connection signal="pressed" from="HBox/RightMargin/RightVBox/ButtonsVbox/PlayButton" to="HBox" method="_on_play_button_pressed"]
-[connection signal="pressed" from="HBox/RightMargin/RightVBox/ButtonsVbox/ConfigButton" to="HBox" method="_on_config_button_pressed"]
-[connection signal="pressed" from="HBox/RightMargin/RightVBox/ButtonsVbox/CreditsButton" to="HBox" method="_on_credits_button_pressed"]
-[connection signal="pressed" from="HBox/RightMargin/RightVBox/ButtonsVbox/ExitButton" to="HBox" method="_on_exit_button_pressed"]
+[node name="LogoCover" type="ColorRect" parent="." unique_id=809926663]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="LogoTexture" type="TextureRect" parent="LogoCover" unique_id=566531412]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_1316l")
+stretch_mode = 3
+
+[connection signal="pressed" from="HBox/RightMargin/RightVBox/ButtonsVbox/ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="HBox/RightMargin/RightVBox/ButtonsVbox/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="HBox/RightMargin/RightVBox/ButtonsVbox/ConfigButton" to="." method="_on_config_button_pressed"]
+[connection signal="pressed" from="HBox/RightMargin/RightVBox/ButtonsVbox/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="HBox/RightMargin/RightVBox/ButtonsVbox/ExitButton" to="." method="_on_exit_button_pressed"]

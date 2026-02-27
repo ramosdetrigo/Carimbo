@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://c8ywh0t2oq5wr"]
+
+[ext_resource type="Script" uid="uid://lw88kbwvnvts" path="res://scenes/objects/weapons/purple_hammer.gd" id="1_givvv"]
+[ext_resource type="Script" uid="uid://cuoa1ubyh5d06" path="res://scripts/attack_system/attack_info.gd" id="2_0qqpc"]
+[ext_resource type="Texture2D" uid="uid://dttvady2su02o" path="res://assets/textures/stamps/símbolo-roxo.png" id="3_givvv"]
+[ext_resource type="Script" uid="uid://fjgad71t0sd4" path="res://scripts/attack_system/hurtbox_component.gd" id="4_81x42"]
+[ext_resource type="Texture2D" uid="uid://c3at5slgj58to" path="res://assets/textures/vfx/particles/ring.png" id="6_givvv"]
+[ext_resource type="Texture2D" uid="uid://crl1uvanniocl" path="res://assets/textures/vfx/particles/faisca.png" id="6_un4fl"]
+
+[sub_resource type="Resource" id="Resource_ytg6t"]
+script = ExtResource("2_0qqpc")
+stamp_texture = ExtResource("3_givvv")
+stamp_size = Vector2(0.25, 0.25)
+flags = 6
+metadata/_custom_type_script = "uid://cuoa1ubyh5d06"
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_rbprr"]
+radius = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vrcm2"]
+transparency = 1
+cull_mode = 2
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+albedo_texture = ExtResource("6_un4fl")
+albedo_texture_force_srgb = true
+emission_enabled = true
+emission = Color(0.2824193, 0.054258138, 0.43618825, 1)
+emission_energy_multiplier = 16.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0qqpc"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("6_givvv")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id="Gradient_lv2cw"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_givvv"]
+gradient = SubResource("Gradient_lv2cw")
+
+[sub_resource type="Curve" id="Curve_81x42"]
+_limits = [0.0, 2.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.30419558, 1.1578952), 0.0, 0.0, 0, 0, Vector2(0.55769205, 0.9268298), 0.0, 0.0, 0, 0, Vector2(0.8199299, 1.1322213), 0.0, 0.0, 0, 0, Vector2(1, 1.6713741), 10.235296, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="CurveTexture" id="CurveTexture_0qqpc"]
+curve = SubResource("Curve_81x42")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_raqff"]
+emission_shape = 6
+emission_ring_axis = Vector3(0, 1, 0)
+emission_ring_height = 0.0
+emission_ring_radius = 0.3
+emission_ring_inner_radius = 0.15
+emission_ring_cone_angle = 90.0
+direction = Vector3(0, 1, 0)
+spread = 15.0
+initial_velocity_min = 0.099999994
+initial_velocity_max = 0.5
+gravity = Vector3(0, 0, 0)
+scale_min = 0.12
+scale_max = 0.24
+scale_curve = SubResource("CurveTexture_0qqpc")
+color = Color(2.7477086, 1.5974389, 4.473112, 1)
+color_ramp = SubResource("GradientTexture1D_givvv")
+
+[sub_resource type="QuadMesh" id="QuadMesh_un4fl"]
+
+[node name="PurpleHammer" type="Node3D" unique_id=610195896 node_paths=PackedStringArray("hurtbox_component", "particle")]
+script = ExtResource("1_givvv")
+speed = 30.0
+attack_info = SubResource("Resource_ytg6t")
+lifetime = 0.30000000000000004
+hurtbox_component = NodePath("HurtboxComponent")
+particle = NodePath("GPUParticles3D")
+metadata/_custom_type_script = "uid://ctsptwrqbeytg"
+
+[node name="HurtboxComponent" type="Area3D" parent="." unique_id=1120544519]
+collision_layer = 0
+collision_mask = 116
+script = ExtResource("4_81x42")
+launch_force = 20.0
+metadata/_custom_type_script = "uid://fjgad71t0sd4"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HurtboxComponent" unique_id=1222782554]
+shape = SubResource("SphereShape3D_rbprr")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1799328986]
+transform = Transform3D(0.2, 0, 0, 0, -8.742278e-09, -0.2, 0, 0.2, -8.742278e-09, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_vrcm2")
+modulate = Color(0.46772665, 0.15326175, 0.5104821, 1)
+texture = ExtResource("6_un4fl")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=645672808]
+material_override = SubResource("StandardMaterial3D_0qqpc")
+amount = 12
+lifetime = 4.0
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_raqff")
+draw_pass_1 = SubResource("QuadMesh_un4fl")
+
+[connection signal="stick" from="HurtboxComponent" to="." method="on_stick"]

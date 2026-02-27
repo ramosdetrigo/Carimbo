@@ -11,8 +11,8 @@
 script = ExtResource("2_jahpa")
 damage = 2.0
 stamp_texture = ExtResource("3_308dq")
-stamp_size = Vector2(0.5, 0.5)
-flags = 5
+stamp_size = Vector2(0.25, 0.25)
+flags = 4
 metadata/_custom_type_script = "uid://cuoa1ubyh5d06"
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_rbprr"]
@@ -59,12 +59,13 @@ emission_enabled = true
 emission = Color(1, 0.6166667, 0, 1)
 emission_energy_multiplier = 16.0
 
-[node name="YellowHammer" type="Node3D" unique_id=610195896 node_paths=PackedStringArray("hurtbox_component")]
+[node name="YellowHammer" type="Node3D" unique_id=610195896 node_paths=PackedStringArray("hurtbox_component", "particle")]
 script = ExtResource("1_fktem")
 speed = 30.0
 attack_info = SubResource("Resource_ytg6t")
-lifetime = 1.0
+lifetime = 0.30000000000000004
 hurtbox_component = NodePath("HurtboxComponent")
+particle = NodePath("GPUParticles3D")
 metadata/_custom_type_script = "uid://ctsptwrqbeytg"
 
 [node name="HurtboxComponent" type="Area3D" parent="." unique_id=1120544519]

@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://cuaclh4kmwlyp"]
+
+[ext_resource type="Script" uid="uid://bpsuliumrn4g1" path="res://scenes/objects/weapons/poison.gd" id="1_c3vee"]
+[ext_resource type="Script" uid="uid://cuoa1ubyh5d06" path="res://scripts/attack_system/attack_info.gd" id="2_37dys"]
+[ext_resource type="Texture2D" uid="uid://dttvady2su02o" path="res://assets/textures/stamps/símbolo-roxo.png" id="3_c3vee"]
+[ext_resource type="Script" uid="uid://fjgad71t0sd4" path="res://scripts/attack_system/hurtbox_component.gd" id="5_a4grr"]
+[ext_resource type="Texture2D" uid="uid://c3at5slgj58to" path="res://assets/textures/vfx/particles/ring.png" id="5_c3vee"]
+
+[sub_resource type="Resource" id="Resource_7fl2k"]
+script = ExtResource("2_37dys")
+stamp_texture = ExtResource("3_c3vee")
+stamp_size = Vector2(0.25, 0.25)
+flags = 2
+metadata/_custom_type_script = "uid://cuoa1ubyh5d06"
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ht51p"]
+radius = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_37dys"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("5_c3vee")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id="Gradient_yhl65"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_jkhme"]
+gradient = SubResource("Gradient_yhl65")
+
+[sub_resource type="Curve" id="Curve_41qon"]
+_limits = [0.0, 2.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.30419558, 1.1578952), 0.0, 0.0, 0, 0, Vector2(0.55769205, 0.9268298), 0.0, 0.0, 0, 0, Vector2(0.8199299, 1.1322213), 0.0, 0.0, 0, 0, Vector2(1, 1.6713741), 10.235296, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="CurveTexture" id="CurveTexture_uj87e"]
+curve = SubResource("Curve_41qon")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_a4grr"]
+emission_shape = 6
+emission_ring_axis = Vector3(0, 1, 0)
+emission_ring_height = 0.0
+emission_ring_radius = 0.3
+emission_ring_inner_radius = 0.15
+emission_ring_cone_angle = 90.0
+direction = Vector3(0, 1, 0)
+spread = 15.0
+initial_velocity_min = 0.099999994
+initial_velocity_max = 0.5
+gravity = Vector3(0, 0, 0)
+scale_min = 0.12
+scale_max = 0.24
+scale_curve = SubResource("CurveTexture_uj87e")
+color = Color(2.7477086, 1.5974389, 4.473112, 1)
+color_ramp = SubResource("GradientTexture1D_jkhme")
+
+[sub_resource type="QuadMesh" id="QuadMesh_av7n0"]
+
+[node name="Poison" type="Node3D" unique_id=712241038 node_paths=PackedStringArray("hurtbox_component", "particle")]
+script = ExtResource("1_c3vee")
+attack_info = SubResource("Resource_7fl2k")
+lifetime = 6.0
+hurtbox_component = NodePath("HurtboxComponent")
+particle = NodePath("GPUParticles3D")
+metadata/_custom_type_script = "uid://iji7e78ikilx"
+
+[node name="HurtboxComponent" type="Area3D" parent="." unique_id=1953897522]
+collision_layer = 0
+collision_mask = 116
+script = ExtResource("5_a4grr")
+launch_force = 20.0
+metadata/_custom_type_script = "uid://fjgad71t0sd4"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HurtboxComponent" unique_id=1228507417]
+shape = SubResource("SphereShape3D_ht51p")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=1344620547]
+material_override = SubResource("StandardMaterial3D_37dys")
+amount = 12
+lifetime = 4.0
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_a4grr")
+draw_pass_1 = SubResource("QuadMesh_av7n0")

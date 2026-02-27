@@ -1,196 +1,29 @@
-[gd_scene format=3 uid="uid://ddxf88bkpk7iu"]
+[gd_scene format=3 uid="uid://dnrd0l3mk1ip2"]
 
-[ext_resource type="Script" uid="uid://ckxpmu5lrfiql" path="res://scenes/levels/level_scene.gd" id="1_igujk"]
-[ext_resource type="MeshLibrary" uid="uid://be3yh5mqefut3" path="res://resources/mesh_library/level_props.meshlib" id="2_oxh2k"]
-[ext_resource type="PackedScene" uid="uid://c3hpiq2ftpgt8" path="res://scenes/levels/doors/scene_door.tscn" id="3_okbqr"]
-[ext_resource type="Script" uid="uid://k651grd68161" path="res://scenes/levels/level5/healer_box.gd" id="4_6mlsx"]
-[ext_resource type="PackedScene" uid="uid://bi3cegty1y7xs" path="res://scenes/vfx/static/symbols/knockback_rune.tscn" id="4_ejewu"]
-[ext_resource type="Resource" uid="uid://68oolyclljfd" path="res://resources/runes/eletric_rune.tres" id="5_x16qv"]
-[ext_resource type="Environment" uid="uid://c44ylihrd2515" path="res://resources/envoriment/fire_enviroment.tres" id="6_jq4be"]
-[ext_resource type="Texture2D" uid="uid://dq6estklxh4me" path="res://assets/textures/ui/vida/amarelo_bola_grande.png" id="6_sqq0f"]
-[ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="7_m8jwd"]
-[ext_resource type="Script" uid="uid://bvgv0wqcnb1yp" path="res://scripts/phantom_camera_3d_follow_player.gd" id="8_4yq5x"]
-[ext_resource type="PackedScene" uid="uid://domk3xwojp1ia" path="res://scenes/components/character/character.tscn" id="9_6mlsx"]
-[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="9_x16qv"]
+[ext_resource type="Script" uid="uid://ckxpmu5lrfiql" path="res://scenes/levels/level_scene.gd" id="1_47t0h"]
+[ext_resource type="MeshLibrary" uid="uid://be3yh5mqefut3" path="res://resources/mesh_library/level_props.meshlib" id="2_dusv6"]
+[ext_resource type="PackedScene" uid="uid://c3hpiq2ftpgt8" path="res://scenes/levels/doors/scene_door.tscn" id="3_evhx3"]
+[ext_resource type="Script" uid="uid://k651grd68161" path="res://scenes/levels/level5/healer_box.gd" id="4_o316q"]
+[ext_resource type="PackedScene" uid="uid://b0e0dmku8m61b" path="res://scenes/entities/enemies/casamento/casamento.tscn" id="4_us5en"]
+[ext_resource type="PackedScene" uid="uid://bxgw65gxcyvvi" path="res://scenes/entities/enemies/nascimento/certidao_nascimento.tscn" id="5_leyew"]
+[ext_resource type="PackedScene" uid="uid://bi3cegty1y7xs" path="res://scenes/vfx/static/symbols/knockback_rune.tscn" id="5_ofujr"]
+[ext_resource type="PackedScene" uid="uid://c24ksaog50v3g" path="res://scenes/entities/enemies/atestado/atestado.tscn" id="6_5q7v8"]
+[ext_resource type="Environment" uid="uid://c44ylihrd2515" path="res://resources/envoriment/fire_enviroment.tres" id="6_t03b1"]
+[ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="7_5jsub"]
+[ext_resource type="Script" uid="uid://bvgv0wqcnb1yp" path="res://scripts/phantom_camera_3d_follow_player.gd" id="8_sjr3p"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="9_l183q"]
+[ext_resource type="PackedScene" uid="uid://domk3xwojp1ia" path="res://scenes/components/character/character.tscn" id="10_7yu7t"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_yax02"]
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_l7bki"]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_sqq0f"]
 radius = 5.0
 
-[sub_resource type="Animation" id="Animation_cm7l7"]
-resource_name = "RESET"
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite3D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 5, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Rune:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("FPPhantomCamera3D:priority")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath(".:monitoring")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath(".:monitorable")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
-[sub_resource type="Animation" id="Animation_tiuof"]
-resource_name = "gift"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite3D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3, 1),
-"transitions": PackedFloat32Array(2, 2, 0.5),
-"update": 0,
-"values": [Vector3(0, 5, 0), Vector3(0, 5.872, 0), Vector3(0, -0.6473441, 0)]
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../..")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(1),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"dialog"
-}]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("FPPhantomCamera3D:priority")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.53333336),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [1, 4]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath(".:monitoring")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath(".:monitorable")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-
-[sub_resource type="Animation" id="Animation_44mxp"]
-resource_name = "rune"
-length = 20.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Rune:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 20),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 6.2831855, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("FPPhantomCamera3D:priority")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_fkonq"]
-_data = {
-&"RESET": SubResource("Animation_cm7l7"),
-&"gift": SubResource("Animation_tiuof"),
-&"rune": SubResource("Animation_44mxp")
-}
-
-[sub_resource type="Resource" id="Resource_o8iyt"]
-script = ExtResource("9_x16qv")
-
 [sub_resource type="Resource" id="Resource_l7bki"]
-script = ExtResource("9_x16qv")
+script = ExtResource("9_l183q")
 
-[node name="Level10" type="Node3D" unique_id=2027348526 node_paths=PackedStringArray("exit_door")]
-script = ExtResource("1_igujk")
+[node name="Level19" type="Node3D" unique_id=2027348526 node_paths=PackedStringArray("exit_door")]
+script = ExtResource("1_47t0h")
 exit_door = NodePath("NavigationRegion3D/GridMap/Lights/Exit")
 metadata/_custom_type_script = "uid://ckxpmu5lrfiql"
 
@@ -199,7 +32,7 @@ navigation_mesh = SubResource("NavigationMesh_yax02")
 
 [node name="GridMap" type="GridMap" parent="NavigationRegion3D" unique_id=873311870]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -1)
-mesh_library = ExtResource("2_oxh2k")
+mesh_library = ExtResource("2_dusv6")
 cell_center_y = false
 data = {
 "cells": PackedInt32Array(0, 0, 6, 65529, 2, 655360, 65529, 1, 655360, 65529, 0, 655360, 65529, 65535, 655360, 65529, 65534, 655360, 7, 65534, 0, 7, 65535, 0, 7, 0, 0, 7, 1, 0, 7, 2, 0, 65530, 0, 3, 6, 0, 655363, 393209, 65529, 524293, 393209, 65530, 524293, 393209, 65531, 524293, 393209, 65532, 524293, 393209, 65533, 524293, 393209, 65534, 524293, 393209, 65535, 524293, 393209, 0, 524293, 393209, 1, 524293, 393209, 2, 524293, 393209, 3, 524293, 393209, 4, 524293, 393209, 5, 524293, 393209, 6, 524293, 393209, 7, 524293, 393210, 65529, 524293, 393210, 65530, 524293, 393210, 65531, 524293, 393210, 65532, 524293, 393210, 65533, 524293, 393210, 65534, 524293, 393210, 65535, 524293, 393210, 0, 524293, 393210, 1, 524293, 393210, 2, 524293, 393210, 3, 524293, 393210, 4, 524293, 393210, 5, 524293, 393210, 6, 524293, 393210, 7, 524293, 393211, 65529, 524293, 393211, 65530, 524293, 393211, 65531, 524293, 393211, 65532, 524293, 393211, 65533, 524293, 393211, 65534, 524293, 393211, 65535, 524293, 393211, 0, 524293, 393211, 1, 524293, 393211, 2, 524293, 393211, 3, 524293, 393211, 4, 524293, 393211, 5, 524293, 393211, 6, 524293, 393211, 7, 524293, 393212, 65529, 524293, 393212, 65530, 524293, 393212, 65531, 524293, 393212, 65532, 524293, 393212, 65533, 524293, 393212, 65534, 524293, 393212, 65535, 524293, 393212, 0, 524293, 393212, 1, 524293, 393212, 2, 524293, 393212, 3, 524293, 393212, 4, 524293, 393212, 5, 524293, 393212, 6, 524293, 393212, 7, 524293, 393213, 65529, 524293, 393213, 65530, 524293, 393213, 65531, 524293, 393213, 65532, 524293, 393213, 65533, 524293, 393213, 65534, 524293, 393213, 65535, 524293, 393213, 0, 524293, 393213, 1, 524293, 393213, 2, 524293, 393213, 3, 524293, 393213, 4, 524293, 393213, 5, 524293, 393213, 6, 524293, 393213, 7, 524293, 393214, 65529, 524293, 393214, 65530, 524293, 393214, 65531, 524293, 393214, 65532, 524293, 393214, 65533, 524293, 393214, 65534, 524293, 393214, 65535, 524293, 393214, 0, 524293, 393214, 1, 524293, 393214, 2, 524293, 393214, 3, 524293, 393214, 4, 524293, 393214, 5, 524293, 393214, 6, 524293, 393214, 7, 524293, 393215, 65529, 524293, 393215, 65530, 524293, 393215, 65531, 524293, 393215, 65532, 524293, 393215, 65533, 524293, 393215, 65534, 524293, 393215, 65535, 524293, 393215, 0, 524293, 393215, 1, 524293, 393215, 2, 524293, 393215, 3, 524293, 393215, 4, 524293, 393215, 5, 524293, 393215, 6, 524293, 393215, 7, 524293, 327680, 65529, 524293, 327680, 65530, 524293, 327680, 65531, 524293, 327680, 65532, 524293, 327680, 65533, 524293, 327680, 65534, 524293, 327680, 65535, 524293, 327680, 0, 524293, 327680, 1, 524293, 327680, 2, 524293, 327680, 3, 524293, 327680, 4, 524293, 327680, 5, 524293, 327680, 6, 524293, 327680, 7, 524293, 327681, 65529, 524293, 327681, 65530, 524293, 327681, 65531, 524293, 327681, 65532, 524293, 327681, 65533, 524293, 327681, 65534, 524293, 327681, 65535, 524293, 327681, 0, 524293, 327681, 1, 524293, 327681, 2, 524293, 327681, 3, 524293, 327681, 4, 524293, 327681, 5, 524293, 327681, 6, 524293, 327681, 7, 524293, 327682, 65529, 524293, 327682, 65530, 524293, 327682, 65531, 524293, 327682, 65532, 524293, 327682, 65533, 524293, 327682, 65534, 524293, 327682, 65535, 524293, 327682, 0, 524293, 327682, 1, 524293, 327682, 2, 524293, 327682, 3, 524293, 327682, 4, 524293, 327682, 5, 524293, 327682, 6, 524293, 327682, 7, 524293, 327683, 65529, 524293, 327683, 65530, 524293, 327683, 65531, 524293, 327683, 65532, 524293, 327683, 65533, 524293, 327683, 65534, 524293, 327683, 65535, 524293, 327683, 0, 524293, 327683, 1, 524293, 327683, 2, 524293, 327683, 3, 524293, 327683, 4, 524293, 327683, 5, 524293, 327683, 6, 524293, 327683, 7, 524293, 327684, 65529, 524293, 327684, 65530, 524293, 327684, 65531, 524293, 327684, 65532, 524293, 327684, 65533, 524293, 327684, 65534, 524293, 327684, 65535, 524293, 327684, 0, 524293, 327684, 1, 524293, 327684, 2, 524293, 327684, 3, 524293, 327684, 4, 524293, 327684, 5, 524293, 327684, 6, 524293, 327684, 7, 524293, 327685, 65529, 524293, 327685, 65530, 524293, 327685, 65531, 524293, 327685, 65532, 524293, 327685, 65533, 524293, 327685, 65534, 524293, 327685, 65535, 524293, 327685, 0, 524293, 327685, 1, 524293, 327685, 2, 524293, 327685, 3, 524293, 327685, 4, 524293, 327685, 5, 524293, 327685, 6, 524293, 327685, 7, 524293, 327686, 65529, 524293, 327686, 65530, 524293, 327686, 65531, 524293, 327686, 65532, 524293, 327686, 65533, 524293, 327686, 65534, 524293, 327686, 65535, 524293, 327686, 0, 524293, 327686, 1, 524293, 327686, 2, 524293, 327686, 3, 524293, 327686, 4, 524293, 327686, 5, 524293, 327686, 6, 524293, 327686, 7, 524293, 327687, 65529, 524293, 327687, 65530, 524293, 327687, 65531, 524293, 327687, 65532, 524293, 327687, 65533, 524293, 327687, 65534, 524293, 327687, 65535, 524293, 327687, 0, 524293, 327687, 1, 524293, 327687, 2, 524293, 327687, 3, 524293, 327687, 4, 524293, 327687, 5, 524293, 327687, 6, 524293, 327687, 7, 524293)
@@ -273,11 +106,11 @@ light_bake_mode = 1
 omni_range = 10.0
 omni_shadow_mode = 0
 
-[node name="Entrance" parent="NavigationRegion3D/GridMap/Lights" unique_id=1756562916 instance=ExtResource("3_okbqr")]
+[node name="Entrance" parent="NavigationRegion3D/GridMap/Lights" unique_id=1756562916 instance=ExtResource("3_evhx3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, 0)
 marker_position = Vector3(-11, 0, 0)
 
-[node name="Exit" parent="NavigationRegion3D/GridMap/Lights" unique_id=1742187779 instance=ExtResource("3_okbqr")]
+[node name="Exit" parent="NavigationRegion3D/GridMap/Lights" unique_id=1742187779 instance=ExtResource("3_evhx3")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 13, 0, 0)
 marker_position = Vector3(11, 0, -1.7484555e-07)
 destination_scene = "uid://8j66i15hf3p4"
@@ -285,55 +118,55 @@ destination_position = Vector3(-18, 0, 11)
 
 [node name="Enemies" type="Node3D" parent="NavigationRegion3D/GridMap" unique_id=926605760]
 
-[node name="Healerbox" type="Area3D" parent="NavigationRegion3D/GridMap" unique_id=1764297304]
+[node name="Casamento" parent="NavigationRegion3D/GridMap/Enemies" unique_id=136567050 instance=ExtResource("4_us5en")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9604645e-08, 0.25753003, 1.1920929e-07)
+
+[node name="CertidaoNascimento" parent="NavigationRegion3D/GridMap/Enemies" unique_id=113904686 instance=ExtResource("5_leyew")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.854386, 1.495948, 5.3413754)
+
+[node name="CertidaoNascimento2" parent="NavigationRegion3D/GridMap/Enemies" unique_id=1334477448 instance=ExtResource("5_leyew")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2074485, 1.495948, -3.8186064)
+
+[node name="CertidaoNascimento3" parent="NavigationRegion3D/GridMap/Enemies" unique_id=879140533 instance=ExtResource("5_leyew")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7012386, 1.4959484, 6.973266)
+
+[node name="Atestado" parent="NavigationRegion3D/GridMap/Enemies" unique_id=1428994103 instance=ExtResource("6_5q7v8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.28644, 0, 0.15888786)
+
+[node name="Atestado2" parent="NavigationRegion3D/GridMap/Enemies" unique_id=1336606088 instance=ExtResource("6_5q7v8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6791553, 0, -5.1448994)
+
+[node name="Healerbox" type="Area3D" parent="NavigationRegion3D/GridMap" unique_id=878134827]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
 collision_layer = 0
 collision_mask = 8
-script = ExtResource("4_6mlsx")
-rune_enable = true
-rune = ExtResource("5_x16qv")
+script = ExtResource("4_o316q")
 metadata/_custom_type_script = "uid://k651grd68161"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/GridMap/Healerbox" unique_id=1255457996]
-shape = SubResource("CylinderShape3D_l7bki")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/GridMap/Healerbox" unique_id=1661430809]
+shape = SubResource("CylinderShape3D_sqq0f")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="NavigationRegion3D/GridMap/Healerbox" unique_id=456593748]
-libraries/ = SubResource("AnimationLibrary_fkonq")
-
-[node name="Sprite3D" type="Sprite3D" parent="NavigationRegion3D/GridMap/Healerbox" unique_id=1580859082]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
-billboard = 1
-texture = ExtResource("6_sqq0f")
-
-[node name="FPPhantomCamera3D" type="Node3D" parent="NavigationRegion3D/GridMap/Healerbox" unique_id=422878278]
-transform = Transform3D(0.9999905, 0.0023602769, -0.0036694459, 0, 0.841038, 0.5409761, 0.004362997, -0.5409709, 0.84102994, 0.8357921, 6.5528116, 9.089561)
-script = ExtResource("8_4yq5x")
-should_set_priority = false
-priority = 1
-tween_resource = SubResource("Resource_o8iyt")
-metadata/_custom_type_script = "uid://bvgv0wqcnb1yp"
-
-[node name="Rune" parent="NavigationRegion3D/GridMap/Healerbox" unique_id=945686240 instance=ExtResource("4_ejewu")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0.001, 0)
+[node name="Rune" parent="NavigationRegion3D/GridMap/Healerbox" unique_id=945686240 instance=ExtResource("5_ofujr")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0.14909744, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=961935023]
-environment = ExtResource("6_jq4be")
+environment = ExtResource("6_t03b1")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1198026530]
-transform = Transform3D(0.9999905, 0.0023602769, -0.0036694459, 0, 0.841038, 0.5409761, 0.004362997, -0.5409709, 0.84102994, 0.8357921, 6.5528116, 9.089561)
+transform = Transform3D(0.9996092, 0.01179466, -0.025346475, 0, 0.90664446, 0.42189547, 0.027956355, -0.42173058, 0.9062901, 0.03073275, 6.8880672, 12.72773)
 top_level = true
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D" unique_id=969206925]
 process_priority = 300
 process_physics_priority = 300
-script = ExtResource("7_m8jwd")
+script = ExtResource("7_5jsub")
 
 [node name="FPPhantomCamera3D" type="Node3D" parent="." unique_id=648041605]
 transform = Transform3D(0.9996092, 0.01179466, -0.025346475, 0, 0.90664446, 0.42189547, 0.027956355, -0.42173058, 0.9062901, 0.03073275, 6.8880672, 12.72773)
-script = ExtResource("8_4yq5x")
+script = ExtResource("8_sjr3p")
 priority = 1
 tween_resource = SubResource("Resource_l7bki")
 metadata/_custom_type_script = "uid://bvgv0wqcnb1yp"
 
-[node name="PlayerCharacter" parent="." unique_id=269989542 instance=ExtResource("9_6mlsx")]
+[node name="PlayerCharacter" parent="." unique_id=269989542 instance=ExtResource("10_7yu7t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.786009, 0, 0)

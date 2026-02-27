@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://c3hpiq2ftpgt8" path="res://scenes/levels/doors/scene_door.tscn" id="8_q4udx"]
 [ext_resource type="Script" uid="uid://bvgv0wqcnb1yp" path="res://scripts/phantom_camera_3d_follow_player.gd" id="9_6jcyl"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="10_q4udx"]
-[ext_resource type="Texture2D" uid="uid://b2thhsdd4hbak" path="res://assets/textures/logo_cafundo.svg" id="12_q4udx"]
+[ext_resource type="Texture2D" uid="uid://lkeultvpjsj1" path="res://assets/textures/logoda4_dark.svg" id="12_q4udx"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_pso0i"]
 vertices = PackedVector3Array(-4.5, 0.5, -5.249998, -4.75, 0.5, -17.249998, -7.25, 0.5, -17.249998, -7.25, 0.5, -4.999998, 4.5, 0.5, -2.749998, 4.75, 0.5, -0.9999981, 7.5, 0.5, -1.2499981, 7.25, 0.5, -17.249998, -3.25, 0.5, -3.749998, -3.75, 0.5, -3.499998, 3.5, 0.5, -2.249998, 3.75, 0.5, -2.749998, -3.5, 0.5, -17.249998, -4.5, 0.5, -3.749998, -7.25, 0.5, 15.250002, 3.5, 0.5, 15.250002, 4.75, 0.5, 15.250002, 7.5, 0.5, 15.250002)
@@ -123,25 +123,25 @@ omni_range = 8.478483
 [node name="Enemies" type="Node3D" parent="NavigationRegion3D/GridMap" unique_id=1787381994]
 
 [node name="Comprovante2" parent="NavigationRegion3D/GridMap/Enemies" unique_id=854788738 instance=ExtResource("4_sdmh0")]
-transform = Transform3D(0.9938595, 0, -5.9247003e-07, 0, 1, 0, 5.9247003e-07, 0, 0.9938595, -3.701285, 0.15949027, 0.48019683)
+transform = Transform3D(0.9937819, 0, -5.9239846e-07, 0, 1, 0, 5.9239846e-07, 0, 0.9937819, -3.7009745, 0.15949027, 0.48015803)
 
 [node name="Comprovante3" parent="NavigationRegion3D/GridMap/Enemies" unique_id=984612625 instance=ExtResource("4_sdmh0")]
-transform = Transform3D(0.99386334, 0, -5.9247355e-07, 0, 1, 0, 5.9247355e-07, 0, 0.99386334, -1.6400182, 0.15948942, -5.8887563)
+transform = Transform3D(0.99378574, 0, -5.92402e-07, 0, 1, 0, 5.92402e-07, 0, 0.99378574, -1.639863, 0.15948942, -5.8881354)
 
 [node name="Comprovante4" parent="NavigationRegion3D/GridMap/Enemies" unique_id=1485109863 instance=ExtResource("4_sdmh0")]
-transform = Transform3D(0.9938595, 0, -5.9247003e-07, 0, 1, 0, 5.9247003e-07, 0, 0.9938595, 6.827197, 0.1594891, 4.25142)
+transform = Transform3D(0.9937819, 0, -5.9239846e-07, 0, 1, 0, 5.9239846e-07, 0, 0.9937819, 6.826576, 0.1594891, 4.250799)
 
 [node name="Comprovante5" parent="NavigationRegion3D/GridMap/Enemies" unique_id=191056278 instance=ExtResource("4_sdmh0")]
-transform = Transform3D(0.9938606, 0, -5.9247094e-07, 0, 1, 0, 5.9247094e-07, 0, 0.9938606, 8.135398, 0.15948921, -0.95347714)
+transform = Transform3D(0.993783, 0, -5.923994e-07, 0, 1, 0, 5.923994e-07, 0, 0.993783, 8.134156, 0.15948921, -0.95339954)
 
 [node name="Errige" parent="NavigationRegion3D/GridMap/Enemies" unique_id=1891326732 instance=ExtResource("5_d40we")]
-transform = Transform3D(0.9938596, 0, -5.924701e-07, 0, 1, 0, 5.924701e-07, 0, 0.9938596, 2.1840217, 0.38454756, 0.28929055)
+transform = Transform3D(0.993782, 0, -5.923985e-07, 0, 1, 0, 5.923985e-07, 0, 0.993782, 2.1837113, 0.38454756, 0.28925174)
 
 [node name="Boleto2" parent="NavigationRegion3D/GridMap/Enemies" unique_id=6232751 instance=ExtResource("6_4tddo")]
-transform = Transform3D(0.9938635, 0, -5.924737e-07, 0, 1, 0, 5.924737e-07, 0, 0.9938635, 7.2030554, 0.397306, -6.2874856)
+transform = Transform3D(0.9937859, 0, -5.9240216e-07, 0, 1, 0, 5.9240216e-07, 0, 0.9937859, 7.2024345, 0.397306, -6.2868648)
 
 [node name="Boleto4" parent="NavigationRegion3D/GridMap/Enemies" unique_id=2059109754 instance=ExtResource("6_4tddo")]
-transform = Transform3D(0.9938594, 0, -5.924699e-07, 0, 1, 0, 5.924699e-07, 0, 0.9938594, -0.83423686, 0.39724514, 6.329411)
+transform = Transform3D(0.9937818, 0, -5.9239835e-07, 0, 1, 0, 5.9239835e-07, 0, 0.9937818, -0.83415926, 0.39724514, 6.32879)
 
 [node name="SceneDoor" parent="NavigationRegion3D/GridMap" unique_id=1756562916 instance=ExtResource("8_q4udx")]
 transform = Transform3D(0.9999997, 0, 1.0658141e-14, 0, 1, 0, -1.0658141e-14, 0, 0.9999997, -15.999995, 1, -5.801727e-07)

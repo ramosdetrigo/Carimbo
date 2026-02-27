@@ -8,6 +8,10 @@ var target_pos: Vector3: set = set_target_pos
 var _nav_agent: NavigationAgent3D
 var _reached: bool = false
 
+func _ready() -> void:
+	DialogueManager.dialogue_started.connect(fucking_die.unbind(1))
+	DialogueManager.dialogue_ended.connect(unblock.unbind(1))
+
 
 func _physics_process(_delta: float) -> void:
 	_update_agent_move_direction()

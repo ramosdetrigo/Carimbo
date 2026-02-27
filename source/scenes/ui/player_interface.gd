@@ -6,6 +6,7 @@ extends CanvasLayer
 
 
 func on_rune_change(rune: Rune) -> void:
+	if not rune: return
 	selected_rune.set_texture(rune.large_icon)
 
 

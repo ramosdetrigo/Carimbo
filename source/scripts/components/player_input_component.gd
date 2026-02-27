@@ -2,6 +2,7 @@ class_name PlayerInputComponent
 extends InputComponent
 
 @export var weapon_manager: WeaponManager
+@export var hit_noise: PhantomCameraNoiseEmitter3D
 
 var _last_move_input: Vector3
 var is_gamepad: bool = true
@@ -28,6 +29,7 @@ func _handle_movement() -> void:
 
 func _handle_hit() -> void:
 	weapon_manager.attack(weapon_manager.global_position.direction_to(aim))
+	hit_noise.emit()
 
 
 func set_input_direction(value: Vector3) -> void:

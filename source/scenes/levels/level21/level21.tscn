@@ -1,0 +1,197 @@
+[gd_scene format=3 uid="uid://bts2jcc2rigo8"]
+
+[ext_resource type="Script" uid="uid://ckxpmu5lrfiql" path="res://scenes/levels/level_scene.gd" id="1_efbel"]
+[ext_resource type="MeshLibrary" uid="uid://be3yh5mqefut3" path="res://resources/mesh_library/level_props.meshlib" id="2_iwy7d"]
+[ext_resource type="PackedScene" uid="uid://c3hpiq2ftpgt8" path="res://scenes/levels/doors/scene_door.tscn" id="3_y8bf6"]
+[ext_resource type="Texture2D" uid="uid://lkeultvpjsj1" path="res://assets/textures/logoda4_dark.svg" id="7_l680p"]
+[ext_resource type="PackedScene" uid="uid://m5dmges2kssb" path="res://scenes/vfx/static/lava/lava_pool.tscn" id="9_g5cx2"]
+[ext_resource type="Environment" uid="uid://c44ylihrd2515" path="res://resources/envoriment/fire_enviroment.tres" id="10_x1igu"]
+[ext_resource type="PackedScene" uid="uid://domk3xwojp1ia" path="res://scenes/components/character/character.tscn" id="11_pj4bw"]
+[ext_resource type="Shader" uid="uid://dl6ampid6rth6" path="res://scenes/components/stamped_animated_sprite/shaded_animated_sprite_3d.gdshader" id="12_arej4"]
+[ext_resource type="Texture2D" uid="uid://ch1fj0j2vc2r1" path="res://resources/burn_noise_texture.tres" id="13_h0yef"]
+[ext_resource type="Texture2D" uid="uid://dqyykf3mww3uv" path="res://assets/textures/player/attack.png" id="14_yepoo"]
+[ext_resource type="Texture2D" uid="uid://o34vnik8cwo4" path="res://assets/textures/paper/Paper003_1K-JPG_NormalGL.jpg" id="15_fcmyw"]
+[ext_resource type="Texture2D" uid="uid://dkbujjnpxwia0" path="res://assets/textures/paper/Paper003_1K-JPG_Roughness.jpg" id="16_c041y"]
+[ext_resource type="Script" uid="uid://du7c6s1s7a807" path="res://scripts/components/rune.gd" id="17_8krj4"]
+[ext_resource type="Resource" uid="uid://dhkf2x6ifyip0" path="res://resources/runes/fire_rune.tres" id="18_32t02"]
+[ext_resource type="Resource" uid="uid://3mpy0qw7jpp8" path="res://resources/runes/strenght_rune.tres" id="18_e7okl"]
+[ext_resource type="Resource" uid="uid://bobquv3otkbes" path="res://resources/runes/wave_rune.tres" id="19_ig3ux"]
+[ext_resource type="Resource" uid="uid://b2yoi87p65bkn" path="res://resources/runes/water_rune.tres" id="19_l2y7w"]
+[ext_resource type="Resource" uid="uid://68oolyclljfd" path="res://resources/runes/eletric_rune.tres" id="20_xfkey"]
+[ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="21_2fa5w"]
+[ext_resource type="Script" uid="uid://bvgv0wqcnb1yp" path="res://scripts/phantom_camera_3d_follow_player.gd" id="22_j6ycm"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="23_bu7ws"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_gi7db"]
+vertices = PackedVector3Array(-3.5, 1.5, -23.425596, -3.5, 1.75, -21.925596, -2.5, 1.5, -21.925596, -2.5, 1.5, -23.425596, 1.5, 0.5, -21.175596, 1.5, 0.5, -23.425596, -1.5, 0.5, -23.425596, -1.5, 0.5, -21.175596, -3.5, 0.5, -20.925596, -3.5, 0.5, -16.425596, -1.25, 0.5, -16.425596, 1.5, 0.5, -16.425596, 3.5, 0.5, -16.425596, 3.5, 0.5, -20.925596, -1.25, 0.5, -9.425596, 1.5, 0.5, -9.425596, 2.5, 1.5, -23.425596, 2.5, 1.75, -21.925596, 3.5, 1.5, -21.925596, 3.5, 1.5, -23.425596, -5.75, 0.5, 5.074404, -5.5, 0.5, 5.824404, -4.25, 0.5, 5.824404, -4, 0.5, -5.925596, -5.5, 0.5, -5.925596, -5.75, 0.5, -4.925596, -1.5, 0.5, -7.425596, -3.75, 0.5, -7.675596, 1.75, 0.5, -7.425596, 7.5, 0.5, 5.574404, 5.75, 0.5, -2.1755962, 5.75, 0.5, -7.675596, 7.5, 0.5, -1.9255962, -7.25, 0.5, -4.925596, -7.25, 0.5, 5.074404, -7.25, 1.75, -7.925596, -7.25, 1.75, -5.925596, -6.5, 1.5, -5.925596, -6.5, 1.75, -7.925596, -0.5, -1.5, 0.32440376, -0.5, -1.5, 1.5744038, 0.5, -1.5, 1.5744038, 0.5, -1.5, 0.32440376, -3.75, 0.5, 7.824404, -5.5, 0.5, 8.074404, -5.75, 0.5, 9.074404, -7.25, 0.5, 9.074404, -7.25, 0.5, 15.324404, 7.5, 0.5, 15.324404, -3.75, 0.5, 6.074404, -7.25, 1.75, 6.074404, -7.25, 1.75, 8.074404, -6.5, 1.5, 8.074404, -6.5, 1.75, 6.074404)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1), PackedInt32Array(7, 6, 4), PackedInt32Array(4, 6, 5), PackedInt32Array(10, 9, 8), PackedInt32Array(12, 11, 13), PackedInt32Array(13, 11, 4), PackedInt32Array(10, 11, 14), PackedInt32Array(14, 11, 15), PackedInt32Array(7, 4, 8), PackedInt32Array(8, 4, 10), PackedInt32Array(10, 4, 11), PackedInt32Array(19, 18, 16), PackedInt32Array(16, 18, 17), PackedInt32Array(22, 21, 20), PackedInt32Array(25, 24, 23), PackedInt32Array(23, 27, 26), PackedInt32Array(15, 28, 14), PackedInt32Array(14, 28, 26), PackedInt32Array(20, 25, 22), PackedInt32Array(22, 25, 28), PackedInt32Array(22, 28, 30), PackedInt32Array(22, 30, 29), PackedInt32Array(23, 26, 28), PackedInt32Array(28, 31, 30), PackedInt32Array(28, 25, 23), PackedInt32Array(30, 32, 29), PackedInt32Array(20, 34, 25), PackedInt32Array(25, 34, 33), PackedInt32Array(38, 37, 35), PackedInt32Array(35, 37, 36), PackedInt32Array(42, 41, 39), PackedInt32Array(39, 41, 40), PackedInt32Array(45, 44, 43), PackedInt32Array(47, 46, 45), PackedInt32Array(45, 43, 47), PackedInt32Array(47, 43, 48), PackedInt32Array(48, 43, 29), PackedInt32Array(49, 22, 29), PackedInt32Array(43, 49, 29), PackedInt32Array(53, 52, 50), PackedInt32Array(50, 52, 51)]
+
+[sub_resource type="Curve3D" id="Curve3D_gk424"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 7, 0, 15, 0, 0, 0, 0, 0, 0, 7, 0, -5),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yylnd"]
+atlas = ExtResource("14_yepoo")
+region = Rect2(0, 0, 270, 270)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_nfs1x"]
+viewport_path = NodePath("ShadedAnimatedSprite3D/SubViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e7okl"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("12_arej4")
+shader_parameter/roughness = 1.0
+shader_parameter/texture_roughness = ExtResource("16_c041y")
+shader_parameter/specular = 0.249999994412
+shader_parameter/texture_normal = ExtResource("15_fcmyw")
+shader_parameter/normal_scale = 1.5600008340999985
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = SubResource("AtlasTexture_yylnd")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_nfs1x")
+shader_parameter/carimbo_glow_intensity = 0.0
+shader_parameter/burn_texture = ExtResource("13_h0yef")
+shader_parameter/burn_amount = 0.0
+shader_parameter/burn_size = 0.150000007125
+shader_parameter/burn_smoothness = 0.1330000063175
+shader_parameter/burn_glow_color = Color(1, 0.32, 0, 1)
+shader_parameter/burn_glow_intensity = 10.0
+shader_parameter/region_rect = Vector4(0, 0, 0.083333336, 1)
+
+[sub_resource type="Resource" id="Resource_7ngyk"]
+script = ExtResource("23_bu7ws")
+
+[node name="Level21" type="Node3D" unique_id=663602909 node_paths=PackedStringArray("exit_door")]
+script = ExtResource("1_efbel")
+exit_door = NodePath("NavigationRegion3D/GridMap/Lights/Exit")
+metadata/_custom_type_script = "uid://ckxpmu5lrfiql"
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=498926115]
+navigation_mesh = SubResource("NavigationMesh_gi7db")
+
+[node name="GridMap" type="GridMap" parent="NavigationRegion3D" unique_id=1161245027]
+mesh_library = ExtResource("2_iwy7d")
+cell_center_y = false
+data = {
+"cells": PackedInt32Array(-2, 7, 5, -1, 7, 5, -65536, 7, 5, -65535, 7, 5, -65533, 5, 5, -65533, 4, 5, -65533, 2, 5, -65533, 1, 5, -4, 1, 5, -4, 2, 5, -4, 4, 5, -4, 5, 5, -2, 1, 5, -2, 2, 5, -2, 3, 5, -2, 4, 5, -2, 5, 5, -2, 6, 5, -1, 65530, 5, -1, 65531, 5, -1, 65532, 5, -1, 65533, 5, -1, 65534, 5, -1, 65535, 5, -1, 0, 5, -1, 1, 5, -1, 2, 5, -1, 3, 5, -1, 4, 5, -1, 5, 5, -1, 6, 5, -65536, 65530, 5, -65536, 65531, 5, -65536, 65532, 5, -65536, 65533, 5, -65536, 65534, 5, -65536, 65535, 5, -65536, 0, 5, -65536, 1, 5, -65536, 2, 5, -65536, 3, 5, -65536, 4, 5, -65536, 5, 5, -65536, 6, 5, -65535, 1, 5, -65535, 2, 5, -65535, 3, 5, -65535, 4, 5, -65535, 5, 5, -65535, 6, 5, -1, 65529, 5, -65536, 65529, 5, 65531, 7, 655360, 65531, 6, 655360, 65531, 5, 655360, 65531, 4, 655360, 65531, 3, 655360, 65531, 2, 655360, 65531, 1, 655360, 65531, 0, 655360, 65531, 65535, 655360, 65531, 65534, 655360, 65531, 65533, 655360, 65531, 65532, 655360, 65531, 65531, 655360, 65531, 65530, 655360, 65531, 65529, 655360, 4, 7, 0, 4, 6, 0, 4, 5, 0, 4, 4, 0, 4, 3, 0, 4, 2, 0, 4, 1, 0, 4, 0, 0, 4, 65535, 0, 4, 65534, 0, 4, 65533, 0, 4, 65532, 0, 4, 65531, 0, 4, 65530, 0, 4, 65529, 0, 3, 8, 1441792, 2, 8, 1441792, 1, 8, 1441792, 0, 8, 1441792, 65535, 8, 1441792, 65534, 8, 1441792, 65533, 8, 1441792, 65532, 8, 1441792, 0, 7, 1048580, 393212, 65529, 1179653, 393212, 65530, 1179653, 393212, 65531, 1179653, 393212, 65532, 1179653, 393212, 65533, 1179653, 393212, 65534, 1179653, 393212, 65535, 1179653, 393212, 0, 1179653, 393212, 1, 1179653, 393212, 2, 1179653, 393212, 3, 1179653, 393212, 4, 1179653, 393212, 5, 1179653, 393212, 6, 1179653, 393212, 7, 1179653, 393213, 65529, 1179653, 393213, 65530, 1179653, 393213, 65531, 1179653, 393213, 65532, 1179653, 393213, 65533, 1179653, 393213, 65534, 1179653, 393213, 65535, 1179653, 393213, 0, 1179653, 393213, 1, 1179653, 393213, 2, 1179653, 393213, 3, 1179653, 393213, 4, 1179653, 393213, 5, 1179653, 393213, 6, 1179653, 393213, 7, 1179653, 393214, 65529, 1179653, 393214, 65530, 1179653, 393214, 65531, 1179653, 393214, 65532, 1179653, 393214, 65533, 1179653, 393214, 65534, 1179653, 393214, 65535, 1179653, 393214, 0, 1179653, 393214, 1, 1179653, 393214, 2, 1179653, 393214, 3, 1179653, 393214, 4, 1179653, 393214, 5, 1179653, 393214, 6, 1179653, 393214, 7, 1179653, 393215, 65529, 1179653, 393215, 65530, 1179653, 393215, 65531, 1179653, 393215, 65532, 1179653, 393215, 65533, 1179653, 393215, 65534, 1179653, 393215, 65535, 1179653, 393215, 0, 1179653, 393215, 1, 1179653, 393215, 2, 1179653, 393215, 3, 1179653, 393215, 4, 1179653, 393215, 5, 1179653, 393215, 6, 1179653, 393215, 7, 1179653, 327680, 65529, 1179653, 327680, 65530, 1179653, 327680, 65531, 1179653, 327680, 65532, 1179653, 327680, 65533, 1179653, 327680, 65534, 1179653, 327680, 65535, 1179653, 327680, 0, 1179653, 327680, 1, 1179653, 327680, 2, 1179653, 327680, 3, 1179653, 327680, 4, 1179653, 327680, 5, 1179653, 327680, 6, 1179653, 327680, 7, 1179653, 327681, 65529, 1179653, 327681, 65530, 1179653, 327681, 65531, 1179653, 327681, 65532, 1179653, 327681, 65533, 1179653, 327681, 65534, 1179653, 327681, 65535, 1179653, 327681, 0, 1179653, 327681, 1, 1179653, 327681, 2, 1179653, 327681, 3, 1179653, 327681, 4, 1179653, 327681, 5, 1179653, 327681, 6, 1179653, 327681, 7, 1179653, 327682, 65529, 1179653, 327682, 65530, 1179653, 327682, 65531, 1179653, 327682, 65532, 1179653, 327682, 65533, 1179653, 327682, 65534, 1179653, 327682, 65535, 1179653, 327682, 0, 1179653, 327682, 1, 1179653, 327682, 2, 1179653, 327682, 3, 1179653, 327682, 4, 1179653, 327682, 5, 1179653, 327682, 6, 1179653, 327682, 7, 1179653, 327683, 65529, 1179653, 327683, 65530, 1179653, 327683, 65531, 1179653, 327683, 65532, 1179653, 327683, 65533, 1179653, 327683, 65534, 1179653, 327683, 65535, 1179653, 327683, 0, 1179653, 327683, 1, 1179653, 327683, 2, 1179653, 327683, 3, 1179653, 327683, 4, 1179653, 327683, 5, 1179653, 327683, 6, 1179653, 327683, 7, 1179653, -4, 7, 5, -3, 7, 5, -65534, 7, 5, -65533, 7, 5, -65533, 65532, 5, -65533, 65533, 5, -65533, 65534, 5, -65533, 65535, 5, -65533, 0, 5, -65533, 3, 5, -65533, 6, 5, -4, 65532, 5, -4, 65533, 5, -4, 65534, 5, -4, 65535, 5, -4, 0, 5, -4, 3, 5, -4, 6, 5, -3, 65532, 5, -3, 65533, 5, -3, 65534, 5, -3, 65535, 5, -3, 0, 5, -3, 1, 5, -3, 2, 5, -3, 3, 5, -3, 4, 5, -3, 5, 5, -3, 6, 5, -2, 65532, 5, -2, 65533, 5, -2, 65534, 5, -2, 65535, 5, -2, 0, 5, -65535, 65532, 5, -65535, 65533, 5, -65535, 65534, 5, -65535, 65535, 5, -65535, 0, 5, -65534, 65532, 5, -65534, 65533, 5, -65534, 65534, 5, -65534, 65535, 5, -65534, 0, 5, -65534, 1, 5, -65534, 2, 5, -65534, 3, 5, -65534, 4, 5, -65534, 5, 5, -65534, 6, 5, -1, 65528, 5, -65536, 65528, 5, -2, 65524, 5, -2, 65525, 5, -2, 65526, 5, -2, 65527, 5, -1, 65524, 5, -1, 65525, 5, -1, 65526, 5, -1, 65527, 5, -65536, 65524, 5, -65536, 65525, 5, -65536, 65526, 5, -65536, 65527, 5, -65535, 65524, 5, -65535, 65525, 5, -65535, 65526, 5, -65535, 65527, 5, 65532, 65523, 1048576, 65533, 65523, 1048576, 65534, 65523, 1048576, 65535, 65523, 1048576, 65535, 65524, 1441796, 0, 65523, 1048576, 1, 65523, 1048576, 2, 65523, 1048576, 3, 65523, 1048576, 65531, 65528, 655360, 65531, 65527, 655360, 65531, 65526, 655360, 65531, 65525, 655360, 65531, 65524, 655360, 4, 65524, 0, 4, 65525, 0, 4, 65526, 0, 4, 65527, 0, 4, 65528, 0, -196613, 65531, 655360, -196613, 65530, 655360, -196613, 65529, 655360, -196613, 65528, 655360, -196613, 65527, 655360, -196613, 65526, 655360, -196613, 65525, 655360, -196613, 65524, 655360, -262140, 65531, 0, -262140, 65530, 0, -262140, 65529, 0, -262140, 65528, 0, -262140, 65527, 0, -262140, 65526, 0, -262140, 65525, 0, -262140, 65524, 0, -196612, 65523, 1048576, -196611, 65523, 1048576, -262142, 65523, 1048576, -262141, 65523, 1048576, -262143, 65527, 655360, -262143, 65526, 655360, -262143, 65525, 655360, -262143, 65524, 655360, -196610, 65527, 0, -196610, 65526, 0, -196610, 65525, 0, -196610, 65524, 0, -196609, 65528, 0, -196609, 65529, 0, -196609, 65530, 0, -196609, 65531, 0, -262144, 65531, 655360, -262144, 65530, 655360, -262144, 65529, 655360, -262144, 65528, 655360, -262141, 65532, 1441792, -262142, 65532, 1441792, -262143, 65532, 1441792, -196610, 65532, 1441792, -196611, 65532, 1441792, -196612, 65532, 1441792, -196610, 65528, 1441793, -262143, 65528, 1441793, 65532, 65532, 655368, 65532, 3, 655368, 3, 65532, 655367, 3, 65533, 655367, 3, 65534, 655367, 65534, 65532, 655369, 0, 4, 655369, 65534, 0, 1048585, 2, 1, 10, 65533, 5, 10, 65535, 65531, 2, 65535, 65530, 2, 65535, 65529, 2, 65535, 65528, 2, 0, 65528, 655362, 0, 65529, 655362, 0, 65530, 655362, 0, 65531, 655362, 65535, 65525, 655370, 65534, 65524, 655368, 1, 65524, 655368, 65533, 3, 655367, 65533, 65532, 7)
+}
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="Lights" type="Node3D" parent="NavigationRegion3D/GridMap" unique_id=550535745]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="NavigationRegion3D/GridMap/Lights" unique_id=247828357]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.786929, 4.999996, -6.944695)
+light_color = Color(0.71475035, 0.51046205, 0.2746351, 1)
+light_bake_mode = 1
+omni_range = 10.0
+
+[node name="OmniLight3D9" type="OmniLight3D" parent="NavigationRegion3D/GridMap/Lights" unique_id=1539433944]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.012813, 4.999998, 0.62352085)
+light_color = Color(0.71475035, 0.51046205, 0.2746351, 1)
+light_bake_mode = 1
+omni_range = 10.0
+
+[node name="OmniLight3D10" type="OmniLight3D" parent="NavigationRegion3D/GridMap/Lights" unique_id=709512034]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6265616, 5, 2.622094)
+light_color = Color(0.71475035, 0.51046205, 0.2746351, 1)
+light_bake_mode = 1
+omni_range = 10.0
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="NavigationRegion3D/GridMap/Lights" unique_id=1032900649]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.99833, 5, 11.90347)
+light_color = Color(0.71475035, 0.51046205, 0.2746351, 1)
+light_bake_mode = 1
+omni_range = 10.0
+
+[node name="OmniLight3D6" type="OmniLight3D" parent="NavigationRegion3D/GridMap/Lights" unique_id=646909637]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.3074846, 5, 11.477424)
+light_color = Color(0.71475035, 0.51046205, 0.2746351, 1)
+light_bake_mode = 1
+omni_range = 10.0
+
+[node name="OmniLight3D16" type="OmniLight3D" parent="NavigationRegion3D/GridMap/Lights" unique_id=278633080]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.30919933, 5, -21.254679)
+light_color = Color(0.71475035, 0.51046205, 0.2746351, 1)
+light_bake_mode = 1
+omni_range = 10.0
+
+[node name="OmniLight3D17" type="OmniLight3D" parent="NavigationRegion3D/GridMap/Lights" unique_id=1723829596]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.847028, 5, -8.1752615)
+light_color = Color(0.71475035, 0.51046205, 0.2746351, 1)
+light_bake_mode = 1
+omni_range = 10.0
+
+[node name="Entrance" parent="NavigationRegion3D/GridMap/Lights" unique_id=1756562916 instance=ExtResource("3_y8bf6")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 16)
+marker_position = Vector3(-8.742278e-08, 0, 14)
+is_locked = true
+
+[node name="Exit" parent="NavigationRegion3D/GridMap/Lights" unique_id=253320376 instance=ExtResource("3_y8bf6")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -24)
+marker_position = Vector3(-8.742278e-08, 0, -22)
+is_locked = true
+
+[node name="Enemies" type="Node3D" parent="NavigationRegion3D/GridMap" unique_id=1454298828]
+
+[node name="Path3D" type="Path3D" parent="NavigationRegion3D/GridMap" unique_id=949453450]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, 0)
+curve = SubResource("Curve3D_gk424")
+
+[node name="Decal" type="Decal" parent="NavigationRegion3D/GridMap" unique_id=1824143174]
+transform = Transform3D(-4.371138e-08, 0.9999999, -4.3711378e-08, 0.004468024, -4.351563e-08, -0.9999899, -0.9999899, -4.3906244e-08, -0.0044679344, -7.901929, 4.508996, -3.6403513)
+size = Vector3(7.297, 1, 4)
+texture_albedo = ExtResource("7_l680p")
+
+[node name="Decal2" type="Decal" parent="NavigationRegion3D/GridMap" unique_id=1433840315]
+transform = Transform3D(0.9999899, 1.9485924e-10, 0.004467935, 0.0044680242, -4.3515627e-08, -0.9999899, -4.2987836e-13, 0.9999999, -4.3516074e-08, 4.5908995, 4.508996, -23.956757)
+size = Vector3(7.297, 1, 4)
+texture_albedo = ExtResource("7_l680p")
+
+[node name="HurtboxComponent" parent="NavigationRegion3D/GridMap" unique_id=1120578981 instance=ExtResource("9_g5cx2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 1)
+size = Vector3(17, 1, 31)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=703037519]
+environment = ExtResource("10_x1igu")
+
+[node name="PlayerCharacter" parent="." unique_id=269989542 instance=ExtResource("11_pj4bw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2780285, 0, 12.700645)
+
+[node name="ShadedAnimatedSprite3D" parent="PlayerCharacter" index="1" unique_id=1555501919]
+material_override = SubResource("ShaderMaterial_e7okl")
+
+[node name="WeaponManager" parent="PlayerCharacter" index="2" unique_id=2002537722]
+runes = Array[ExtResource("17_8krj4")]([ExtResource("18_32t02"), ExtResource("19_l2y7w"), ExtResource("20_xfkey")])
+sub_runes = Array[ExtResource("17_8krj4")]([ExtResource("18_e7okl"), ExtResource("19_ig3ux")])
+
+[node name="PhantomCamera3D" parent="PlayerCharacter" index="15" unique_id=848212730]
+transform = Transform3D(-3.4562582e-08, -0.6497494, 0.7602012, -4.8560654e-08, 0.7601472, 0.6497956, -0.9999994, 5.960459e-08, 0, 2.2780285, 3, 12.700645)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1096867225]
+physics_interpolation_mode = 1
+transform = Transform3D(0.821647, -0.32489604, 0.4683355, 0, 0.8216461, 0.56999636, -0.56999665, -0.46833578, 0.675103, 7, 7, 15)
+top_level = true
+
+[node name="PhantomCameraHost" type="Node" parent="Camera3D" unique_id=1343620662]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("21_2fa5w")
+
+[node name="FPPhantomCamera3D" type="Node3D" parent="." unique_id=1619712072 node_paths=PackedStringArray("follow_target", "follow_path")]
+transform = Transform3D(0.821647, -0.32489604, 0.4683355, 0, 0.8216461, 0.56999636, -0.56999665, -0.46833578, 0.675103, 7, 7, 15)
+top_level = true
+script = ExtResource("22_j6ycm")
+follow_mode = 4
+follow_target = NodePath("../PlayerCharacter")
+follow_path = NodePath("../NavigationRegion3D/GridMap/Path3D")
+tween_resource = SubResource("Resource_7ngyk")
+follow_offset = Vector3(0, 0, 5)
+follow_damping = true
+align_transform_with_view = Callable()
+align_position_with_view = Callable()
+metadata/_custom_type_script = "uid://bvgv0wqcnb1yp"
+
+[editable path="PlayerCharacter"]

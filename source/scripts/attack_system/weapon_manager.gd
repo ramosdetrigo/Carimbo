@@ -10,9 +10,11 @@ signal attack_ranged()
 @export var cooldown_timer: Timer
 @export var attack_spawn_offset: Vector3
 @export var runes: Array[Rune] = []
+@export var sub_runes: Array[Rune] = []
+
 var current_rune: Rune:
 	set(v): current_rune = v; rune_changed.emit(current_rune)
-var current_type: int = -1
+var current_type: int = 0
 
 static var instance: WeaponManager
 
@@ -38,20 +40,31 @@ func attack(shooting_dir: Vector3 = Vector3.UP) -> void:
 		stats_component.set_health_call(func(p: float) -> float: return p + attk.attack_info.damage / 2.0)
 	if current_rune.is_flag_true(Rune.RuneFlags.ARMOR_PROVIDER):
 		stats_component.set_armor(2)
+	if current_rune in sub_runes:
+		select_rune(current_type)
 
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed(&"rune_next"): select_rune(current_type + 1)
-	if event.is_action_pressed(&"rune_prev"): select_rune(current_type - 1)
+	elif event.is_action_pressed(&"rune_prev"): select_rune(current_type - 1)
+	elif event.is_action_pressed(&"sub_rune"): select_sub_rune()
 
 
 func select_rune(type: int) -> void:
 	type = wrapi(type, 0, runes.size())
-	if current_type == type: return
 	current_type = type
 	current_rune = runes.get(current_type)
+
+
+func select_sub_rune() -> void:
+	if current_type >= sub_runes.size(): select_rune(current_type); return
+	current_rune = sub_runes.get(current_type)
 
 
 func append_rune(rune: Rune) -> void:
 	runes.append(rune)
 	runes_updated.emit(runes)
+
+
+func append_sub_rune(rune: Rune) -> void:
+	sub_runes.append(rune)

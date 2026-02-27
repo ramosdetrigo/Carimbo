@@ -4,7 +4,7 @@ extends Node3D
 var current_rune: Node3D: set = set_current_rune
 
 func _on_rune_change(rune: Rune) -> void:
-	if not rune.rune_scene: current_rune = null; return
+	if not rune or not rune.rune_scene: current_rune = null; return
 	current_rune = rune.rune_scene.instantiate()
 
 

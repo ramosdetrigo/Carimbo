@@ -1,0 +1,259 @@
+[gd_scene format=3 uid="uid://c2u06uo1kf7um"]
+
+[ext_resource type="Script" uid="uid://iji7e78ikilx" path="res://scripts/attack_system/attack_scene.gd" id="1_jvklm"]
+[ext_resource type="Script" uid="uid://cuoa1ubyh5d06" path="res://scripts/attack_system/attack_info.gd" id="2_wh0dn"]
+[ext_resource type="Texture2D" uid="uid://dv2oadca8ad1s" path="res://assets/textures/stamps/símbolo-verde.png" id="3_rjvs8"]
+[ext_resource type="Script" uid="uid://fjgad71t0sd4" path="res://scripts/attack_system/hurtbox_component.gd" id="4_4p4in"]
+[ext_resource type="Texture2D" uid="uid://crl1uvanniocl" path="res://assets/textures/vfx/particles/faisca.png" id="5_wh0dn"]
+[ext_resource type="Script" uid="uid://ctsptwrqbeytg" path="res://scripts/attack_system/attack_projectile.gd" id="6_rjvs8"]
+
+[sub_resource type="Resource" id="Resource_4p4in"]
+script = ExtResource("2_wh0dn")
+stamp_texture = ExtResource("3_rjvs8")
+stamp_size = Vector2(0.25, 0.25)
+flags = 1
+metadata/_custom_type_script = "uid://cuoa1ubyh5d06"
+
+[sub_resource type="Curve" id="Curve_wp06i"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_xlx4m"]
+curve = SubResource("Curve_wp06i")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_4tulo"]
+lifetime_randomness = 1.0
+angle_min = -179.99998
+angle_max = 180.00002
+spread = 180.0
+flatness = 1.0
+initial_velocity_min = 5.0
+initial_velocity_max = 10.0
+angular_velocity_min = -150.00002
+angular_velocity_max = 149.99998
+gravity = Vector3(0, 0, 0)
+damping_min = 0.15
+damping_max = 0.35000002
+scale_min = 0.08
+scale_max = 0.14999999
+scale_curve = SubResource("CurveTexture_xlx4m")
+color = Color(2.7079759, 2.9711132, 1.756633, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rjvs8"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+albedo_texture = ExtResource("5_wh0dn")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_rjvs8"]
+material = SubResource("StandardMaterial3D_rjvs8")
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_jvklm"]
+radius = 3.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_rjvs8"]
+radius = 1.0
+
+[node name="GreenHammer" type="Node3D" unique_id=712241038 node_paths=PackedStringArray("hurtbox_component", "particle")]
+script = ExtResource("1_jvklm")
+attack_info = SubResource("Resource_4p4in")
+lifetime = 1.0
+should_break_on_contact = false
+hurtbox_component = NodePath("HurtboxComponent")
+particle = NodePath("Puff")
+metadata/_custom_type_script = "uid://iji7e78ikilx"
+
+[node name="Puff" type="GPUParticles3D" parent="." unique_id=2134799546]
+emitting = false
+amount = 64
+lifetime = 1.5
+one_shot = true
+explosiveness = 1.0
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_4tulo")
+draw_pass_1 = SubResource("QuadMesh_rjvs8")
+
+[node name="HurtboxComponent" type="Area3D" parent="." unique_id=1953897522]
+collision_layer = 0
+collision_mask = 116
+script = ExtResource("4_4p4in")
+launch_force = 20.0
+metadata/_custom_type_script = "uid://fjgad71t0sd4"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HurtboxComponent" unique_id=1228507417]
+shape = SubResource("CylinderShape3D_jvklm")
+
+[node name="AttackProjectile" type="Node3D" parent="." unique_id=1236593161]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+script = ExtResource("6_rjvs8")
+speed = 10.0
+attack_info = SubResource("Resource_4p4in")
+lifetime = 1.0
+should_break_on_contact = false
+metadata/_custom_type_script = "uid://ctsptwrqbeytg"
+
+[node name="HurtboxComponent" type="Area3D" parent="AttackProjectile" unique_id=1462093421]
+collision_layer = 0
+collision_mask = 36
+script = ExtResource("4_4p4in")
+metadata/_custom_type_script = "uid://fjgad71t0sd4"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AttackProjectile/HurtboxComponent" unique_id=1975439545]
+shape = SubResource("SphereShape3D_rjvs8")
+
+[node name="Marker3D" type="Marker3D" parent="AttackProjectile" unique_id=16673408]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+
+[node name="AttackProjectile2" type="Node3D" parent="." unique_id=94092207]
+transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, 2.1213202, 0, -2.1213202)
+script = ExtResource("6_rjvs8")
+speed = 10.0
+attack_info = SubResource("Resource_4p4in")
+lifetime = 1.0
+should_break_on_contact = false
+metadata/_custom_type_script = "uid://ctsptwrqbeytg"
+
+[node name="HurtboxComponent" type="Area3D" parent="AttackProjectile2" unique_id=71256115]
+collision_layer = 0
+collision_mask = 36
+script = ExtResource("4_4p4in")
+metadata/_custom_type_script = "uid://fjgad71t0sd4"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AttackProjectile2/HurtboxComponent" unique_id=1541431022]
+shape = SubResource("SphereShape3D_rjvs8")
+
+[node name="Marker3D" type="Marker3D" parent="AttackProjectile2" unique_id=108721835]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+
+[node name="AttackProjectile3" type="Node3D" parent="." unique_id=308630156]
+transform = Transform3D(0, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, 0, 2.9999998, 0, 0)
+script = ExtResource("6_rjvs8")
+speed = 10.0
+attack_info = SubResource("Resource_4p4in")
+lifetime = 1.0
+should_break_on_contact = false
+metadata/_custom_type_script = "uid://ctsptwrqbeytg"
+
+[node name="HurtboxComponent" type="Area3D" parent="AttackProjectile3" unique_id=669822891]
+collision_layer = 0
+collision_mask = 36
+script = ExtResource("4_4p4in")
+metadata/_custom_type_script = "uid://fjgad71t0sd4"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AttackProjectile3/HurtboxComponent" unique_id=1599247786]
+shape = SubResource("SphereShape3D_rjvs8")
+
+[node name="Marker3D" type="Marker3D" parent="AttackProjectile3" unique_id=1807757376]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+
+[node name="AttackProjectile4" type="Node3D" parent="." unique_id=465980469]
+transform = Transform3D(-0.7071067, 0, -0.7071067, 0, 1, 0, 0.7071067, 0, -0.7071067, 2.1213202, 0, 2.1213202)
+script = ExtResource("6_rjvs8")
+speed = 10.0
+attack_info = SubResource("Resource_4p4in")
+lifetime = 1.0
+should_break_on_contact = false
+metadata/_custom_type_script = "uid://ctsptwrqbeytg"
+
+[node name="HurtboxComponent" type="Area3D" parent="AttackProjectile4" unique_id=737627990]
+collision_layer = 0
+collision_mask = 36
+script = ExtResource("4_4p4in")
+metadata/_custom_type_script = "uid://fjgad71t0sd4"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AttackProjectile4/HurtboxComponent" unique_id=417434770]
+shape = SubResource("SphereShape3D_rjvs8")
+
+[node name="Marker3D" type="Marker3D" parent="AttackProjectile4" unique_id=1278167689]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+
+[node name="AttackProjectile5" type="Node3D" parent="." unique_id=1250841165]
+transform = Transform3D(-0.9999999, 0, 0, 0, 1, 0, 0, 0, -0.9999999, 0, 0, 2.9999995)
+script = ExtResource("6_rjvs8")
+speed = 10.0
+attack_info = SubResource("Resource_4p4in")
+lifetime = 1.0
+should_break_on_contact = false
+metadata/_custom_type_script = "uid://ctsptwrqbeytg"
+
+[node name="HurtboxComponent" type="Area3D" parent="AttackProjectile5" unique_id=2091830439]
+collision_layer = 0
+collision_mask = 36
+script = ExtResource("4_4p4in")
+metadata/_custom_type_script = "uid://fjgad71t0sd4"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AttackProjectile5/HurtboxComponent" unique_id=433769679]
+shape = SubResource("SphereShape3D_rjvs8")
+
+[node name="Marker3D" type="Marker3D" parent="AttackProjectile5" unique_id=315798281]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+
+[node name="AttackProjectile6" type="Node3D" parent="." unique_id=1652959005]
+transform = Transform3D(-0.7071067, 0, 0.7071067, 0, 1, 0, -0.7071067, 0, -0.7071067, -2.1213202, 0, 2.1213202)
+script = ExtResource("6_rjvs8")
+speed = 10.0
+attack_info = SubResource("Resource_4p4in")
+lifetime = 1.0
+should_break_on_contact = false
+metadata/_custom_type_script = "uid://ctsptwrqbeytg"
+
+[node name="HurtboxComponent" type="Area3D" parent="AttackProjectile6" unique_id=1271739808]
+collision_layer = 0
+collision_mask = 36
+script = ExtResource("4_4p4in")
+metadata/_custom_type_script = "uid://fjgad71t0sd4"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AttackProjectile6/HurtboxComponent" unique_id=1363307727]
+shape = SubResource("SphereShape3D_rjvs8")
+
+[node name="Marker3D" type="Marker3D" parent="AttackProjectile6" unique_id=84724176]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+
+[node name="AttackProjectile7" type="Node3D" parent="." unique_id=1357604693]
+transform = Transform3D(0, 0, 0.9999999, 0, 1, 0, -0.9999999, 0, 0, -2.9999995, 0, 0)
+script = ExtResource("6_rjvs8")
+speed = 10.0
+attack_info = SubResource("Resource_4p4in")
+lifetime = 1.0
+should_break_on_contact = false
+metadata/_custom_type_script = "uid://ctsptwrqbeytg"
+
+[node name="HurtboxComponent" type="Area3D" parent="AttackProjectile7" unique_id=980552394]
+collision_layer = 0
+collision_mask = 36
+script = ExtResource("4_4p4in")
+metadata/_custom_type_script = "uid://fjgad71t0sd4"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AttackProjectile7/HurtboxComponent" unique_id=2049286181]
+shape = SubResource("SphereShape3D_rjvs8")
+
+[node name="Marker3D" type="Marker3D" parent="AttackProjectile7" unique_id=800582357]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+
+[node name="AttackProjectile8" type="Node3D" parent="." unique_id=169785434]
+transform = Transform3D(0.7071067, 0, 0.7071067, 0, 1, 0, -0.7071067, 0, 0.7071067, -2.1213202, 0, -2.1213202)
+script = ExtResource("6_rjvs8")
+speed = 10.0
+attack_info = SubResource("Resource_4p4in")
+lifetime = 1.0
+should_break_on_contact = false
+metadata/_custom_type_script = "uid://ctsptwrqbeytg"
+
+[node name="HurtboxComponent" type="Area3D" parent="AttackProjectile8" unique_id=1426990645]
+collision_layer = 0
+collision_mask = 36
+script = ExtResource("4_4p4in")
+metadata/_custom_type_script = "uid://fjgad71t0sd4"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AttackProjectile8/HurtboxComponent" unique_id=1021036056]
+shape = SubResource("SphereShape3D_rjvs8")
+
+[node name="Marker3D" type="Marker3D" parent="AttackProjectile8" unique_id=1243068507]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)

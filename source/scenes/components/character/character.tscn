@@ -23,9 +23,7 @@
 [ext_resource type="Script" uid="uid://baffaklkbk27f" path="res://scripts/attack_system/hitbox_component.gd" id="12_cfbnc"]
 [ext_resource type="Script" uid="uid://du7c6s1s7a807" path="res://scripts/components/rune.gd" id="16_fgtne"]
 [ext_resource type="Resource" uid="uid://dhkf2x6ifyip0" path="res://resources/runes/fire_rune.tres" id="17_neimr"]
-[ext_resource type="Resource" uid="uid://b2yoi87p65bkn" path="res://resources/runes/water_rune.tres" id="18_wglof"]
 [ext_resource type="Script" uid="uid://cqxuelwl2k4bg" path="res://scripts/attack_system/stats_component.gd" id="19_bedty"]
-[ext_resource type="Resource" uid="uid://68oolyclljfd" path="res://resources/runes/eletric_rune.tres" id="19_xbv7c"]
 [ext_resource type="Script" uid="uid://blua7mg5dbvwn" path="res://scenes/components/character/rune_manager.gd" id="20_bedty"]
 [ext_resource type="PackedScene" uid="uid://dhjt3y011u5hl" path="res://scenes/ui/player_interface.tscn" id="21_oucov"]
 [ext_resource type="Script" uid="uid://bo27hd1h0bn3l" path="res://scripts/state_machine/states/roll.gd" id="26_80i3n"]
@@ -652,7 +650,7 @@ render_target_update_mode = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -0.0579077)
 script = ExtResource("9_albb0")
 cooldown_timer = NodePath("../CooldownTimer")
-runes = Array[ExtResource("16_fgtne")]([ExtResource("17_neimr"), ExtResource("18_wglof"), ExtResource("19_xbv7c")])
+runes = Array[ExtResource("16_fgtne")]([ExtResource("17_neimr")])
 metadata/_custom_type_script = "uid://cdr65apsfmy8"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=77915751]

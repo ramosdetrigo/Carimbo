@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://ckxpmu5lrfiql" path="res://scenes/levels/level_scene.gd" id="1_3xs1f"]
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_5fsi0"]
-[ext_resource type="Script" uid="uid://dj4esefrjyce0" path="res://scripts/components/door.gd" id="2_aod77"]
 [ext_resource type="MeshLibrary" uid="uid://be3yh5mqefut3" path="res://resources/mesh_library/level_props.meshlib" id="3_lirhk"]
 [ext_resource type="PackedScene" uid="uid://dxyd470cqorqq" path="res://scenes/entities/enemies/comprovante/comprovante.tscn" id="4_mguho"]
 [ext_resource type="PackedScene" uid="uid://572ad1efklon" path="res://scenes/entities/enemies/boleto/boleto.tscn" id="5_ohtdt"]
+[ext_resource type="PackedScene" uid="uid://c3hpiq2ftpgt8" path="res://scenes/levels/doors/scene_door.tscn" id="6_5fsi0"]
 [ext_resource type="PackedScene" uid="uid://domk3xwojp1ia" path="res://scenes/components/character/character.tscn" id="6_hjakd"]
 [ext_resource type="Script" uid="uid://bvgv0wqcnb1yp" path="res://scripts/phantom_camera_3d_follow_player.gd" id="7_5fsi0"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="8_nfwes"]
@@ -14,9 +14,6 @@
 vertices = PackedVector3Array(-10.75, 0.5, -4.75, -10.75, 0.5, 6.75, 15, 0.5, 6.75, 15, 0.5, -4.75)
 polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
 agent_radius = 1.0
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_4l2q5"]
-size = Vector3(1.4765625, 9, 4)
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4l2q5"]
 sky_top_color = Color(0.3333091, 0.07350255, 0.05406054, 1)
@@ -50,7 +47,7 @@ script = ExtResource("8_nfwes")
 
 [node name="Level3" type="Node3D" unique_id=1932782662 node_paths=PackedStringArray("exit_door")]
 script = ExtResource("1_3xs1f")
-exit_door = NodePath("World/Exit")
+exit_door = NodePath("World/SceneDoor2")
 metadata/_custom_type_script = "uid://ckxpmu5lrfiql"
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=531069827]
@@ -65,34 +62,6 @@ script = ExtResource("2_5fsi0")
 
 [node name="World" type="NavigationRegion3D" parent="." unique_id=617859488]
 navigation_mesh = SubResource("NavigationMesh_aod77")
-
-[node name="Exit" type="Area3D" parent="World" unique_id=454430314]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 16, 0, 1)
-collision_layer = 0
-collision_mask = 8
-script = ExtResource("2_aod77")
-marker_position = Vector3(14, 0, 0.9999998)
-destination_scene = "uid://jdrpkba5unug"
-destination_position = Vector3(6.1195936e-07, 0, 13.999999)
-metadata/_custom_type_script = "uid://dj4esefrjyce0"
-metadata/_edit_group_ = true
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Exit" unique_id=1396129682]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
-shape = SubResource("BoxShape3D_4l2q5")
-
-[node name="Entrance" type="Area3D" parent="World" unique_id=1563106975]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 1)
-collision_layer = 0
-collision_mask = 8
-script = ExtResource("2_aod77")
-marker_position = Vector3(-10, 0, 1)
-metadata/_custom_type_script = "uid://dj4esefrjyce0"
-metadata/_edit_group_ = true
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Entrance" unique_id=1455781284]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
-shape = SubResource("BoxShape3D_4l2q5")
 
 [node name="Comprovante" parent="World" unique_id=931080643 instance=ExtResource("4_mguho")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.139089, 0.15984285, 4.500721)
@@ -165,6 +134,16 @@ light_energy = 2.0
 light_volumetric_fog_energy = 2.0
 light_bake_mode = 1
 omni_range = 8.478483
+
+[node name="SceneDoor" parent="World" unique_id=1756562916 instance=ExtResource("6_5fsi0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 1)
+marker_position = Vector3(-10, 0, 1)
+
+[node name="SceneDoor2" parent="World" unique_id=876349303 instance=ExtResource("6_5fsi0")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 16, 0, 1)
+marker_position = Vector3(14, 0, 1.0000001)
+destination_scene = "uid://jdrpkba5unug"
+destination_position = Vector3(6.1195936e-07, 0, 13.999999)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1851506791]
 environment = SubResource("Environment_bvf2d")

@@ -14,8 +14,8 @@ var current_rune: Rune:
 var current_type: int = -1
 
 func _ready() -> void:
-	runes.resize(3)
 	runes_updated.emit.call_deferred(runes)
+	select_rune.call_deferred(0)
 
 
 func attack(shooting_dir: Vector3 = Vector3.UP) -> void:

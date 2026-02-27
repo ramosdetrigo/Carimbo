@@ -61,13 +61,13 @@ theme = ExtResource("2_kt011")
 
 [node name="MarginContainer" type="MarginContainer" parent="Balloon" unique_id=570753256]
 layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
+anchors_preset = -1
+anchor_top = 0.56635803
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -219.0
+anchor_bottom = 0.904321
 grow_horizontal = 2
 grow_vertical = 0
+metadata/_edit_use_anchors_ = true
 
 [node name="PanelContainer" type="PanelContainer" parent="Balloon/MarginContainer" unique_id=2051307497]
 clip_children = 2

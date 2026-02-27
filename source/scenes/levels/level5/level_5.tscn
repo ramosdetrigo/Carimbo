@@ -41,7 +41,7 @@ exit_door = NodePath("GridMap/Exit")
 metadata/_custom_type_script = "uid://ckxpmu5lrfiql"
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1223465776]
-transform = Transform3D(0.9994061, 0.015809456, -0.030619698, 0.005452291, 0.80481625, 0.59349895, 0.034026127, -0.59331346, 0.8042521, 0.46441096, 5.322884, 13.899929)
+transform = Transform3D(0.9997951, -0.0014184765, -0.02019049, 0.0067306007, 0.9640719, 0.26555613, 0.019088399, -0.26563764, 0.96388394, 0.46441096, 5.322884, 13.899929)
 top_level = true
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D" unique_id=1044877335]
@@ -145,7 +145,7 @@ metadata/_custom_type_script = "uid://i7djs8lu52us"
 shape = SubResource("CylinderShape3D_fail8")
 
 [node name="FPPhantomCamera3D" type="Node3D" parent="GridMap/CameraArea" unique_id=1966701159]
-transform = Transform3D(0.9994061, 0.015809456, -0.030619698, 0.005452291, 0.80481625, 0.59349895, 0.034026127, -0.59331346, 0.8042521, -0.53558904, 5.322884, 12.899929)
+transform = Transform3D(0.9997951, -0.0014184765, -0.02019049, 0.0067306007, 0.9640719, 0.26555613, 0.019088399, -0.26563764, 0.96388394, -0.53558904, 5.322884, 12.899929)
 script = ExtResource("7_2vva3")
 tween_resource = SubResource("Resource_i5wvq")
 metadata/_custom_type_script = "uid://bvgv0wqcnb1yp"

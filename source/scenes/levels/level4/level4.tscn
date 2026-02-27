@@ -3,21 +3,18 @@
 [ext_resource type="Script" uid="uid://ckxpmu5lrfiql" path="res://scenes/levels/level_scene.gd" id="1_bon0b"]
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_6jcyl"]
 [ext_resource type="MeshLibrary" uid="uid://be3yh5mqefut3" path="res://resources/mesh_library/level_props.meshlib" id="2_lbn3a"]
-[ext_resource type="Script" uid="uid://dj4esefrjyce0" path="res://scripts/components/door.gd" id="3_d40we"]
 [ext_resource type="PackedScene" uid="uid://dxyd470cqorqq" path="res://scenes/entities/enemies/comprovante/comprovante.tscn" id="4_sdmh0"]
 [ext_resource type="PackedScene" uid="uid://xw64ux4jg7fg" path="res://scenes/entities/enemies/errige/errige.tscn" id="5_d40we"]
 [ext_resource type="PackedScene" uid="uid://572ad1efklon" path="res://scenes/entities/enemies/boleto/boleto.tscn" id="6_4tddo"]
 [ext_resource type="Environment" uid="uid://c44ylihrd2515" path="res://resources/envoriment/fire_enviroment.tres" id="8_4tddo"]
 [ext_resource type="PackedScene" uid="uid://domk3xwojp1ia" path="res://scenes/components/character/character.tscn" id="8_gor1f"]
+[ext_resource type="PackedScene" uid="uid://c3hpiq2ftpgt8" path="res://scenes/levels/doors/scene_door.tscn" id="8_q4udx"]
 [ext_resource type="Script" uid="uid://bvgv0wqcnb1yp" path="res://scripts/phantom_camera_3d_follow_player.gd" id="9_6jcyl"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="10_q4udx"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_pso0i"]
 vertices = PackedVector3Array(-4.5, 0.5, -5.249998, -4.75, 0.5, -17.249998, -7.25, 0.5, -17.249998, -7.25, 0.5, -4.999998, 4.5, 0.5, -2.749998, 4.75, 0.5, -0.9999981, 7.5, 0.5, -1.2499981, 7.25, 0.5, -17.249998, -3.25, 0.5, -3.749998, -3.75, 0.5, -3.499998, 3.5, 0.5, -2.249998, 3.75, 0.5, -2.749998, -3.5, 0.5, -17.249998, -4.5, 0.5, -3.749998, -7.25, 0.5, 15.250002, 3.5, 0.5, 15.250002, 4.75, 0.5, 15.250002, 7.5, 0.5, 15.250002)
 polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(5, 4, 6), PackedInt32Array(6, 4, 7), PackedInt32Array(11, 10, 8), PackedInt32Array(8, 10, 9), PackedInt32Array(11, 8, 4), PackedInt32Array(4, 8, 12), PackedInt32Array(4, 12, 7), PackedInt32Array(0, 13, 3), PackedInt32Array(3, 13, 14), PackedInt32Array(10, 15, 9), PackedInt32Array(9, 15, 14), PackedInt32Array(14, 13, 9), PackedInt32Array(16, 5, 17), PackedInt32Array(17, 5, 6)]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_4tddo"]
-size = Vector3(1.4765625, 9, 4)
 
 [sub_resource type="Resource" id="Resource_rnqjc"]
 script = ExtResource("10_q4udx")
@@ -31,7 +28,7 @@ point_count = 2
 
 [node name="Level4" type="Node3D" unique_id=2027944547 node_paths=PackedStringArray("exit_door")]
 script = ExtResource("1_bon0b")
-exit_door = NodePath("NavigationRegion3D/GridMap/Exit")
+exit_door = NodePath("NavigationRegion3D/GridMap/SceneDoor2")
 metadata/_custom_type_script = "uid://ckxpmu5lrfiql"
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1445090227]
@@ -122,66 +119,50 @@ light_volumetric_fog_energy = 2.0
 light_bake_mode = 1
 omni_range = 8.478483
 
-[node name="Exit" type="Area3D" parent="NavigationRegion3D/GridMap" unique_id=1711420920]
-transform = Transform3D(-0.99999994, 0, 8.742277e-08, 0, 1, 0, -8.742277e-08, 0, -0.99999994, 17.999998, 0, 0)
-collision_layer = 0
-collision_mask = 8
-script = ExtResource("3_d40we")
-marker_position = Vector3(-8.7422757e-07, 0, -15.999996)
-destination_scene = "uid://8r3eav3jfq30"
-destination_position = Vector3(-10, 0, 1)
-metadata/_custom_type_script = "uid://dj4esefrjyce0"
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/GridMap/Exit" unique_id=1020881041]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, 0)
-shape = SubResource("BoxShape3D_4tddo")
-
-[node name="Entrance" type="Area3D" parent="NavigationRegion3D/GridMap" unique_id=2038154045]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 0)
-collision_layer = 0
-collision_mask = 8
-script = ExtResource("3_d40we")
-marker_position = Vector3(6.1195936e-07, 0, 13.999999)
-metadata/_custom_type_script = "uid://dj4esefrjyce0"
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/GridMap/Entrance" unique_id=2108977718]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, 0)
-shape = SubResource("BoxShape3D_4tddo")
-
 [node name="Enemies" type="Node3D" parent="NavigationRegion3D/GridMap" unique_id=1787381994]
 
 [node name="Comprovante" parent="NavigationRegion3D/GridMap/Enemies" unique_id=931080643 instance=ExtResource("4_sdmh0")]
-transform = Transform3D(0.9971923, 0, -5.955445e-07, 0, 1, 0, 5.955445e-07, 0, 0.9971923, -11.004415, 0.15984268, -0.6414438)
+transform = Transform3D(0.9968563, 0, -5.952346e-07, 0, 1, 0, 5.952346e-07, 0, 0.9968563, -10.999038, 0.15984268, -0.64110774)
 
 [node name="Comprovante2" parent="NavigationRegion3D/GridMap/Enemies" unique_id=854788738 instance=ExtResource("4_sdmh0")]
-transform = Transform3D(0.9971923, 0, -5.955445e-07, 0, 1, 0, 5.955445e-07, 0, 0.9971923, -3.714616, 0.1598428, 0.48186323)
+transform = Transform3D(0.9968563, 0, -5.952346e-07, 0, 1, 0, 5.952346e-07, 0, 0.9968563, -3.7132719, 0.1598428, 0.4816952)
 
 [node name="Comprovante3" parent="NavigationRegion3D/GridMap/Enemies" unique_id=984612625 instance=ExtResource("4_sdmh0")]
-transform = Transform3D(0.9971923, 0, -5.955445e-07, 0, 1, 0, 5.955445e-07, 0, 0.9971923, -6.2297006, 0.15984276, -5.5929074)
+transform = Transform3D(0.9968563, 0, -5.952346e-07, 0, 1, 0, 5.952346e-07, 0, 0.9968563, -6.227012, 0.15984276, -5.590219)
 
 [node name="Comprovante4" parent="NavigationRegion3D/GridMap/Enemies" unique_id=1485109863 instance=ExtResource("4_sdmh0")]
-transform = Transform3D(0.9971923, 0, -5.955445e-07, 0, 1, 0, 5.955445e-07, 0, 0.9971923, 6.8538594, 0.15984285, 4.2780824)
+transform = Transform3D(0.9968563, 0, -5.952346e-07, 0, 1, 0, 5.952346e-07, 0, 0.9968563, 6.851171, 0.15984285, 4.275394)
 
 [node name="Comprovante5" parent="NavigationRegion3D/GridMap/Enemies" unique_id=191056278 instance=ExtResource("4_sdmh0")]
-transform = Transform3D(0.9971923, 0, -5.955445e-07, 0, 1, 0, 5.955445e-07, 0, 0.9971923, 10.407278, 0.1598428, -0.8116328)
+transform = Transform3D(0.9968563, 0, -5.952346e-07, 0, 1, 0, 5.952346e-07, 0, 0.9968563, 10.401901, 0.1598428, -0.81129676)
 
 [node name="Comprovante6" parent="NavigationRegion3D/GridMap/Enemies" unique_id=135126183 instance=ExtResource("4_sdmh0")]
-transform = Transform3D(0.9971923, 0, -5.955445e-07, 0, 1, 0, 5.955445e-07, 0, 0.9971923, 13.6793785, 0.15984282, 4.160023)
+transform = Transform3D(0.9968563, 0, -5.952346e-07, 0, 1, 0, 5.952346e-07, 0, 0.9968563, 13.674002, 0.15984282, 4.157335)
 
 [node name="Errige" parent="NavigationRegion3D/GridMap/Enemies" unique_id=1891326732 instance=ExtResource("5_d40we")]
-transform = Transform3D(0.9971923, 0, -5.955445e-07, 0, 1, 0, 5.955445e-07, 0, 0.9971923, 2.1973526, 0.38454756, 0.2909569)
+transform = Transform3D(0.9968563, 0, -5.952346e-07, 0, 1, 0, 5.952346e-07, 0, 0.9968563, 2.1960084, 0.38454756, 0.2907889)
 
 [node name="Boleto" parent="NavigationRegion3D/GridMap/Enemies" unique_id=1012244960 instance=ExtResource("6_4tddo")]
-transform = Transform3D(0.9971923, 0, -5.955445e-07, 0, 1, 0, 5.955445e-07, 0, 0.9971923, 7.8402333, 0.3984579, -6.3707685)
+transform = Transform3D(0.9968563, 0, -5.952346e-07, 0, 1, 0, 5.952346e-07, 0, 0.9968563, 7.837545, 0.3984579, -6.36808)
 
 [node name="Boleto2" parent="NavigationRegion3D/GridMap/Enemies" unique_id=6232751 instance=ExtResource("6_4tddo")]
-transform = Transform3D(0.9971923, 0, -5.955445e-07, 0, 1, 0, 5.955445e-07, 0, 0.9971923, 15.593278, 0.397306, -6.314116)
+transform = Transform3D(0.9968563, 0, -5.952346e-07, 0, 1, 0, 5.952346e-07, 0, 0.9968563, 15.587901, 0.397306, -6.3114276)
 
 [node name="Boleto3" parent="NavigationRegion3D/GridMap/Enemies" unique_id=2117199079 instance=ExtResource("6_4tddo")]
-transform = Transform3D(0.9971923, 0, -5.955445e-07, 0, 1, 0, 5.955445e-07, 0, 0.9971923, -10.450013, 0.39845794, 6.4399104)
+transform = Transform3D(0.9968563, 0, -5.952346e-07, 0, 1, 0, 5.952346e-07, 0, 0.9968563, -10.444636, 0.39845794, 6.437222)
 
 [node name="Boleto4" parent="NavigationRegion3D/GridMap/Enemies" unique_id=2059109754 instance=ExtResource("6_4tddo")]
-transform = Transform3D(0.9971923, 0, -5.955445e-07, 0, 1, 0, 5.955445e-07, 0, 0.9971923, -0.8375698, 0.398458, 6.3560743)
+transform = Transform3D(0.9968563, 0, -5.952346e-07, 0, 1, 0, 5.952346e-07, 0, 0.9968563, -0.8372337, 0.398458, 6.353386)
+
+[node name="SceneDoor" parent="NavigationRegion3D/GridMap" unique_id=1756562916 instance=ExtResource("8_q4udx")]
+transform = Transform3D(0.9999997, 0, 1.0658141e-14, 0, 1, 0, -1.0658141e-14, 0, 0.9999997, -15.999995, 1, -5.801727e-07)
+marker_position = Vector3(3.1786527e-08, 1, 13.999995)
+
+[node name="SceneDoor2" parent="NavigationRegion3D/GridMap" unique_id=555225927 instance=ExtResource("8_q4udx")]
+transform = Transform3D(-0.99999964, 0, -8.742275e-08, 0, 1, 0, 8.742275e-08, 0, -0.99999964, 18.000006, 1, 9.060145e-07)
+marker_position = Vector3(3.8147752e-07, 1, -16.000004)
+destination_scene = "uid://8r3eav3jfq30"
+destination_position = Vector3(-10, 0, 1)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1784484561]
 environment = ExtResource("8_4tddo")

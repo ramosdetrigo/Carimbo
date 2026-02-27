@@ -194,7 +194,7 @@ shape = SubResource("SphereShape3D_dakoy")
 [node name="NascimentoBeehaveTree" type="Node" parent="." unique_id=1447399182 node_paths=PackedStringArray("blackboard", "actor")]
 script = ExtResource("10_1fn1j")
 actor_node_path = NodePath("..")
-blackboard = NodePath("@Node@1411151")
+blackboard = NodePath("@Node@121468")
 actor = NodePath("..")
 metadata/_custom_type_script = "uid://bb0t2ovl7wifo"
 

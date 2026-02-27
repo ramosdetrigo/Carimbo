@@ -33,9 +33,9 @@
 [ext_resource type="Script" uid="uid://csptl82xkqche" path="res://scripts/beehave/leaf/condition/wait_for_sprite_animation_finished_condition.gd" id="31_o5jln"]
 [ext_resource type="Script" uid="uid://sqhnl6cqhp06" path="res://scripts/beehave/leaf/action/stop_navigation_action.gd" id="32_v7hf8"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_24mnh"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_v7hf8"]
 atlas = ExtResource("5_uqqi4")
-region = Rect2(0, 0, 512, 512)
+region = Rect2(0, 1536, 512, 512)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_u1dib"]
 viewport_path = NodePath("ShadedAnimatedSprite3D/SubViewport")
@@ -50,7 +50,7 @@ shader_parameter/specular = 0.249999994412
 shader_parameter/texture_normal = ExtResource("4_g10rj")
 shader_parameter/normal_scale = 1.5600008340999985
 shader_parameter/albedo = Color(1, 1, 1, 1)
-shader_parameter/texture_albedo = SubResource("AtlasTexture_24mnh")
+shader_parameter/texture_albedo = SubResource("AtlasTexture_v7hf8")
 shader_parameter/texture_carimbo = SubResource("ViewportTexture_u1dib")
 shader_parameter/carimbo_glow_intensity = 0.0
 shader_parameter/burn_texture = ExtResource("4_8gtkm")
@@ -59,15 +59,15 @@ shader_parameter/burn_size = 0.150000007125
 shader_parameter/burn_smoothness = 0.1330000063175
 shader_parameter/burn_glow_color = Color(1, 0.32, 0, 1)
 shader_parameter/burn_glow_intensity = 10.0
-shader_parameter/region_rect = Vector4(0, 0, 0.5, 0.16666667)
+shader_parameter/region_rect = Vector4(0, 0.5, 0.5, 0.16666667)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y7snv"]
 atlas = ExtResource("5_uqqi4")
 region = Rect2(0, 2048, 512, 512)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_v7hf8"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_24mnh"]
 atlas = ExtResource("5_uqqi4")
-region = Rect2(0, 1536, 512, 512)
+region = Rect2(0, 0, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0teup"]
 atlas = ExtResource("5_uqqi4")
@@ -92,7 +92,7 @@ region = Rect2(512, 512, 512, 512)
 [sub_resource type="SpriteFrames" id="SpriteFrames_u1dib"]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 1.5,
 "texture": SubResource("AtlasTexture_y7snv")
 }],
 "loop": false,
@@ -100,7 +100,7 @@ animations = [{
 "speed": 1.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 2.0,
 "texture": SubResource("AtlasTexture_v7hf8")
 }],
 "loop": false,
@@ -169,7 +169,7 @@ material_override = SubResource("ShaderMaterial_qjr6i")
 pixel_size = 0.005
 billboard = 2
 sprite_frames = SubResource("SpriteFrames_u1dib")
-animation = &"idle"
+animation = &"hit"
 autoplay = "idle"
 script = ExtResource("3_0kxu0")
 stamp_viewport = NodePath("SubViewport")
@@ -229,7 +229,7 @@ shape = SubResource("CylinderShape3D_v7hf8")
 [node name="BoletoBeehaveTree" type="Node" parent="." unique_id=289134762 node_paths=PackedStringArray("blackboard", "actor")]
 script = ExtResource("13_ex3sn")
 actor_node_path = NodePath("..")
-blackboard = NodePath("@Node@51001")
+blackboard = NodePath("@Node@105375")
 actor = NodePath("..")
 metadata/_custom_type_script = "uid://bb0t2ovl7wifo"
 

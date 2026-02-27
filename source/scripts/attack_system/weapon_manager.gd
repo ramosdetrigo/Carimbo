@@ -6,6 +6,7 @@ signal runes_updated(runes: Array[Rune])
 signal attack_melee()
 signal attack_ranged()
 
+@export var cooldown_timer: Timer
 @export var attack_spawn_offset: Vector3
 @export var runes: Array[Rune] = []
 var current_rune: Rune:
@@ -19,6 +20,7 @@ func _ready() -> void:
 
 func attack(shooting_dir: Vector3 = Vector3.UP) -> void:
 	if not current_rune or not current_rune.attack_scene: return
+	if not cooldown_timer.is_stopped(): return
 	var attk: AttackScene = current_rune.attack_scene.instantiate()
 	owner.add_sibling(attk)
 	var pos: Vector3 = global_position + attack_spawn_offset
@@ -26,9 +28,10 @@ func attack(shooting_dir: Vector3 = Vector3.UP) -> void:
 	attk.look_at_from_position(pos, pos + shooting_dir)
 	attk.swing_dir = shooting_dir
 	(attack_ranged if attk is AttackProjectile else attack_melee).emit()
+	cooldown_timer.start(current_rune.cooldown)
 
 
-func _input(event: InputEvent) -> void:
+func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed(&"rune_next"): select_rune(current_type + 1)
 	if event.is_action_pressed(&"rune_prev"): select_rune(current_type - 1)
 

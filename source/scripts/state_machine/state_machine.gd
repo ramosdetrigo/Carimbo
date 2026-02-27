@@ -34,7 +34,8 @@ func _physics_process(delta: float) -> void:
 	if current_state != null: current_state.physics_process(delta)
 
 
-func _on_state_transitioned(_from: State, to: State) -> void:
+func _on_state_transitioned(from: State, to: State) -> void:
+	if from != current_state: return
 	current_state.exit()
 	current_state = to
 	current_state.enter()

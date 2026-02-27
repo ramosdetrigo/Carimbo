@@ -6,6 +6,7 @@ extends State
 @export var roll: RollState
 
 func enter() -> void:
+	animated_sprite.stop()
 	animated_sprite.play(animation_name)
 	await animated_sprite.animation_finished
 	transitioned.emit(self, walk)

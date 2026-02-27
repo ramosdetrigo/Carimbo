@@ -1,0 +1,71 @@
+[gd_resource type="Theme" format=3 uid="uid://bwg8bf7smssbg"]
+
+[ext_resource type="Texture2D" uid="uid://ddxmune0eguag" path="res://assets/textures/ui/dialogue.png" id="1_erg6w"]
+[ext_resource type="FontFile" uid="uid://d21cx2cj86if6" path="res://assets/fonts/IM_Fell_Double_Pica/IMFellDoublePica-Regular.ttf" id="1_pgl6l"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.329412, 0.329412, 0.329412, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ri4m3"]
+bg_color = Color(0.121569, 0.121569, 0.121569, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e0njw"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.6, 0.6, 0.6, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wil5f"]
+content_margin_left = 75.0
+content_margin_top = 40.0
+content_margin_right = 75.0
+content_margin_bottom = 40.0
+texture = ExtResource("1_erg6w")
+texture_margin_left = 96.0
+texture_margin_top = 69.0
+texture_margin_right = 102.0
+texture_margin_bottom = 72.0
+region_rect = Rect2(0, 0, 643, 199)
+
+[resource]
+default_font = ExtResource("1_pgl6l")
+default_font_size = 20
+Button/styles/disabled = SubResource("StyleBoxFlat_spyqn")
+Button/styles/focus = SubResource("StyleBoxFlat_ri4m3")
+Button/styles/hover = SubResource("StyleBoxFlat_e0njw")
+Button/styles/normal = SubResource("StyleBoxFlat_e0njw")
+MarginContainer/constants/margin_bottom = 15
+MarginContainer/constants/margin_left = 130
+MarginContainer/constants/margin_right = 130
+MarginContainer/constants/margin_top = 15
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_wil5f")
+RichTextLabel/colors/default_color = Color(0.19670999, 0.100472845, 0.011275386, 1)
+RichTextLabel/colors/font_outline_color = Color(0.09908035, 0.037021555, 0.0039316537, 1)
+RichTextLabel/colors/font_shadow_color = Color(0.17, 0.088315, 0.011899999, 0.90588236)
+RichTextLabel/constants/outline_size = 1
+RichTextLabel/constants/shadow_offset_x = 0
+RichTextLabel/constants/shadow_offset_y = 1

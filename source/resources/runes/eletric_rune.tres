@@ -14,4 +14,5 @@ icon = ExtResource("2_btcse")
 large_icon = ExtResource("3_omfsk")
 attack_scene = ExtResource("1_wyw60")
 rune_scene = ExtResource("2_wyw60")
+cooldown = 0.35
 metadata/_custom_type_script = "uid://du7c6s1s7a807"

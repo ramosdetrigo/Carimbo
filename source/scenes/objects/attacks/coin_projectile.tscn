@@ -57,7 +57,7 @@ sprite_frames = SubResource("SpriteFrames_fnqaj")
 autoplay = "default"
 
 [node name="HurtboxComponent" type="Area3D" parent="." unique_id=2011867498]
-collision_layer = 0
+collision_layer = 64
 collision_mask = 3
 script = ExtResource("1_uxk2s")
 metadata/_custom_type_script = "uid://fjgad71t0sd4"

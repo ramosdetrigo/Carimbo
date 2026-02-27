@@ -17,10 +17,10 @@ func _ready() -> void:
 	if not should_break_on_contact: return
 	hurtbox_component.hit.connect(destroy)
 	hurtbox_component.body_hit.connect(destroy)
-	set_physics_process(not should_disappear)
 
 
 func _physics_process(delta: float) -> void:
+	if not should_disappear: return
 	lifetime -= delta
 
 

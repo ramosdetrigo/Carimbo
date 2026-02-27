@@ -18,6 +18,7 @@ func _ready() -> void:
 
 func _on_area_entered(area: Area3D) -> void:
 	if area is HitboxComponent: _handle_damage(area)
+	if area is HurtboxComponent: area.owner.queue_free()
 
 
 func _on_body_entered(body: Node3D) -> void:

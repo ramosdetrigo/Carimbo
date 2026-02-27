@@ -1,20 +1,7 @@
 [gd_scene format=3 uid="uid://m5dmges2kssb"]
 
-[ext_resource type="Script" uid="uid://iji7e78ikilx" path="res://scripts/attack_system/attack_scene.gd" id="1_eme7b"]
-[ext_resource type="Script" uid="uid://hx87m0q5asdc" path="res://scenes/vfx/static/lava/lava_pool.gd" id="1_yrqy1"]
-[ext_resource type="Resource" uid="uid://ciggfb1vrf4kc" path="res://resources/attack/onhit.tres" id="2_yrqy1"]
-[ext_resource type="Script" uid="uid://fjgad71t0sd4" path="res://scripts/attack_system/hurtbox_component.gd" id="3_eguqn"]
+[ext_resource type="Script" uid="uid://bpdve12veemq2" path="res://scenes/vfx/static/lava/lava_pool.gd" id="1_yrqy1"]
 [ext_resource type="Shader" uid="uid://dyytm8ffmovvi" path="res://scenes/vfx/static/lava.gdshader" id="4_yjyyr"]
-
-[sub_resource type="FogMaterial" id="FogMaterial_psnax"]
-albedo = Color(0.69648236, 0.18224016, 0.123515494, 1)
-emission = Color(0.5894126, 0.2249873, 9.62615e-08, 1)
-height_falloff = 7.1184483
-edge_fade = 0.096593596
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_dmu1p"]
-resource_local_to_scene = true
-size = Vector3(28, 2, 28)
 
 [sub_resource type="Gradient" id="Gradient_2vuqy"]
 offsets = PackedFloat32Array(0.18681319, 0.48351648, 0.67582417, 0.8131868)
@@ -73,25 +60,19 @@ material = SubResource("ShaderMaterial_dklbb")
 subdivide_width = 32
 subdivide_depth = 32
 
-[node name="FogVolume" type="FogVolume" unique_id=1074598834]
-material = SubResource("FogMaterial_psnax")
-script = ExtResource("1_yrqy1")
+[sub_resource type="BoxShape3D" id="BoxShape3D_dmu1p"]
+resource_local_to_scene = true
+size = Vector3(2, 2, 2)
 
-[node name="AttackScene" type="Node3D" parent="." unique_id=502047860 node_paths=PackedStringArray("hurtbox_component")]
-script = ExtResource("1_eme7b")
-attack_info = ExtResource("2_yrqy1")
-hurtbox_component = NodePath("HurtboxComponent")
-metadata/_custom_type_script = "uid://iji7e78ikilx"
-
-[node name="HurtboxComponent" type="Area3D" parent="AttackScene" unique_id=1120578981]
+[node name="HurtboxComponent" type="Area3D" unique_id=1120578981]
 collision_layer = 0
 collision_mask = 14
-script = ExtResource("3_eguqn")
+script = ExtResource("1_yrqy1")
 metadata/_custom_type_script = "uid://fjgad71t0sd4"
-
-[node name="HurtboxCollision" type="CollisionShape3D" parent="AttackScene/HurtboxComponent" unique_id=1094792591]
-unique_name_in_owner = true
-shape = SubResource("BoxShape3D_dmu1p")
 
 [node name="LavaMesh" type="MeshInstance3D" parent="." unique_id=1067949371]
 mesh = SubResource("PlaneMesh_0c8ue")
+
+[node name="HurtboxCollision" type="CollisionShape3D" parent="." unique_id=1094792591]
+unique_name_in_owner = true
+shape = SubResource("BoxShape3D_dmu1p")

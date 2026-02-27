@@ -8,3 +8,4 @@ extends Resource
 @export var large_icon: Texture2D
 @export var attack_scene: PackedScene
 @export var rune_scene: PackedScene
+@export var cooldown: float = 0.5

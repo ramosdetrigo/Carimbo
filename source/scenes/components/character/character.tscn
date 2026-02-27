@@ -626,6 +626,9 @@ stampable_sprite = NodePath("ShadedAnimatedSprite3D")
 invert_flip = true
 metadata/_custom_type_script = "uid://bnfb6cxda8lhn"
 
+[node name="CooldownTimer" type="Timer" parent="." unique_id=442682382]
+one_shot = true
+
 [node name="ShadedAnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=1555501919 node_paths=PackedStringArray("stamp_viewport")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 sorting_offset = 30.0
@@ -645,9 +648,10 @@ size = Vector2i(270, 270)
 render_target_clear_mode = 2
 render_target_update_mode = 1
 
-[node name="WeaponManager" type="Node3D" parent="." unique_id=2002537722]
+[node name="WeaponManager" type="Node3D" parent="." unique_id=2002537722 node_paths=PackedStringArray("cooldown_timer")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -0.0579077)
 script = ExtResource("9_albb0")
+cooldown_timer = NodePath("../CooldownTimer")
 runes = Array[ExtResource("16_fgtne")]([ExtResource("17_neimr"), ExtResource("18_wglof"), ExtResource("19_xbv7c")])
 metadata/_custom_type_script = "uid://cdr65apsfmy8"
 
@@ -714,7 +718,6 @@ script = ExtResource("26_80i3n")
 idle_state = NodePath("../IdleState")
 move_component = NodePath("../../MoveComponent")
 input_component = NodePath("../../PlayerInputComponent")
-time = 1.0
 speed = 20.0
 animated_sprite = NodePath("../../ShadedAnimatedSprite3D")
 animation_name = "roll"
@@ -735,9 +738,10 @@ animated_sprite = NodePath("../../ShadedAnimatedSprite3D")
 animation_name = "attack"
 metadata/_custom_type_script = "uid://d352a55805m0s"
 
-[node name="RangedAttackState" type="Node" parent="StateMachine" unique_id=1331686234 node_paths=PackedStringArray("idle", "animated_sprite")]
+[node name="RangedAttackState" type="Node" parent="StateMachine" unique_id=1331686234 node_paths=PackedStringArray("idle", "roll", "animated_sprite")]
 script = ExtResource("30_fgtne")
 idle = NodePath("../IdleState")
+roll = NodePath("../RollState")
 animated_sprite = NodePath("../../ShadedAnimatedSprite3D")
 animation_name = "fire"
 metadata/_custom_type_script = "uid://cx83xvoq5jjog"
@@ -778,14 +782,21 @@ duration = 0.5
 decay_time = 2.0
 metadata/_custom_type_script = "uid://ccmiitq0sdh7j"
 
-[node name="PhantomCamera3D" type="Node3D" parent="." unique_id=848212730 node_paths=PackedStringArray("look_at_target")]
+[node name="PhantomCamera3D" type="Node3D" parent="." unique_id=848212730 node_paths=PackedStringArray("follow_target", "look_at_target")]
 unique_name_in_owner = true
-transform = Transform3D(0.82758886, -0.44769847, 0.33861905, 0, 0.603239, 0.7975605, -0.56133485, -0.6600522, 0.49923384, 2.21741, 7.288544, 3.310168)
+transform = Transform3D(0, -0.97014153, 0.2425526, -5.9604602e-08, 0.24253535, 0.9702105, -0.9999993, 5.9604584e-08, 0, 2, 8, 0)
+top_level = true
 script = ExtResource("37_hjivr")
+follow_mode = 2
+follow_target = NodePath("..")
 look_at_mode = 2
 look_at_target = NodePath("..")
 tween_resource = SubResource("Resource_rb5yu")
+follow_offset = Vector3(2, 8, 0)
+follow_damping = true
+follow_axis_lock = 2
 align_transform_with_view = Callable()
+align_position_with_view = Callable()
 align_rotation_with_view = Callable()
 metadata/_custom_type_script = "uid://csjccrhj5wnx7"
 

@@ -55,7 +55,7 @@ metadata/_custom_type_script = "uid://ckxpmu5lrfiql"
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=531069827]
 physics_interpolation_mode = 1
-transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, -7, 8, 7)
+transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, -7, 8, 8)
 top_level = true
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D" unique_id=1242830130]
@@ -73,7 +73,7 @@ collision_mask = 8
 script = ExtResource("2_aod77")
 marker_position = Vector3(14, 0, 0.9999998)
 destination_scene = "uid://jdrpkba5unug"
-destination_position = Vector3(-11.999998, 0, -1.1920929e-07)
+destination_position = Vector3(6.1195936e-07, 0, 13.999999)
 metadata/_custom_type_script = "uid://dj4esefrjyce0"
 metadata/_edit_group_ = true
 
@@ -176,14 +176,14 @@ omni_range = 8.478483
 environment = SubResource("Environment_bvf2d")
 
 [node name="Path3D" type="Path3D" parent="." unique_id=333141322]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 7)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 8)
 curve = SubResource("Curve3D_gblnm")
 
 [node name="PlayerCharacter" parent="." unique_id=269989542 instance=ExtResource("6_hjakd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.785682, 0, 0.67074966)
 
 [node name="FPPhantomCamera3D" type="Node3D" parent="." unique_id=1769472821 node_paths=PackedStringArray("follow_target", "follow_path")]
-transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, -7, 8, 7)
+transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, -7, 8, 8)
 top_level = true
 script = ExtResource("7_5fsi0")
 follow_mode = 4

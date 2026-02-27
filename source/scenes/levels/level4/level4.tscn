@@ -13,21 +13,21 @@
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="10_q4udx"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_pso0i"]
-vertices = PackedVector3Array(3.500001, 0.5, -4.7499995, 5.500001, 0.5, -4.7499995, 5.500001, 0.5, -7.2499995, -15.249999, 0.5, -7.2499995, 3.250001, 0.5, -3.9999995, -15.249999, 0.5, 3.2500005, 2.000001, 0.5, 3.2500005, 17.25, 0.5, -4.7499995, 17.25, 0.5, -7.2499995, 2.250001, 0.5, 4.5000005, 0.75000095, 0.5, 4.5000005, 1.000001, 0.5, 7.2500005, 17.25, 0.5, 7.2500005, 3.500001, 0.5, -3.4999995, 2.500001, 0.5, 3.5000005, 17.25, 0.5, -3.4999995, -15.249999, 0.5, 4.5000005, -15.249999, 0.5, 7.2500005)
-polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(6, 5, 4), PackedInt32Array(4, 5, 3), PackedInt32Array(3, 0, 4), PackedInt32Array(2, 8, 1), PackedInt32Array(1, 8, 7), PackedInt32Array(10, 9, 11), PackedInt32Array(11, 9, 12), PackedInt32Array(6, 4, 13), PackedInt32Array(6, 13, 14), PackedInt32Array(14, 13, 15), PackedInt32Array(14, 15, 12), PackedInt32Array(12, 9, 14), PackedInt32Array(16, 10, 17), PackedInt32Array(17, 10, 11)]
+vertices = PackedVector3Array(-4.5, 0.5, -5.249998, -4.75, 0.5, -17.249998, -7.25, 0.5, -17.249998, -7.25, 0.5, -4.999998, 4.5, 0.5, -2.749998, 4.75, 0.5, -0.9999981, 7.5, 0.5, -1.2499981, 7.25, 0.5, -17.249998, -3.25, 0.5, -3.749998, -3.75, 0.5, -3.499998, 3.5, 0.5, -2.249998, 3.75, 0.5, -2.749998, -3.5, 0.5, -17.249998, -4.5, 0.5, -3.749998, -7.25, 0.5, 15.250002, 3.5, 0.5, 15.250002, 4.75, 0.5, 15.250002, 7.5, 0.5, 15.250002)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(5, 4, 6), PackedInt32Array(6, 4, 7), PackedInt32Array(11, 10, 8), PackedInt32Array(8, 10, 9), PackedInt32Array(11, 8, 4), PackedInt32Array(4, 8, 12), PackedInt32Array(4, 12, 7), PackedInt32Array(0, 13, 3), PackedInt32Array(3, 13, 14), PackedInt32Array(10, 15, 9), PackedInt32Array(9, 15, 14), PackedInt32Array(14, 13, 9), PackedInt32Array(16, 5, 17), PackedInt32Array(17, 5, 6)]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4tddo"]
 size = Vector3(1.4765625, 9, 4)
 
+[sub_resource type="Resource" id="Resource_rnqjc"]
+script = ExtResource("10_q4udx")
+
 [sub_resource type="Curve3D" id="Curve3D_lbn3a"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -10, 0, 0, 0, 0, 0, 0, 0, 0, 13, 0, 0),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -20),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
-
-[sub_resource type="Resource" id="Resource_rnqjc"]
-script = ExtResource("10_q4udx")
 
 [node name="Level4" type="Node3D" unique_id=2027944547 node_paths=PackedStringArray("exit_door")]
 script = ExtResource("1_bon0b")
@@ -36,7 +36,7 @@ metadata/_custom_type_script = "uid://ckxpmu5lrfiql"
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1445090227]
 physics_interpolation_mode = 1
-transform = Transform3D(0.9659258, -0.1830127, 0.1830127, 0, 0.70710677, 0.70710677, -0.25881904, -0.68301266, 0.68301266, -10, 8, 5.9999995)
+transform = Transform3D(0.8480461, 0.26895383, -0.45659217, 0, 0.86162746, 0.50753653, 0.529918, -0.4304161, 0.73070025, -6.74289, 6, 14.11656)
 top_level = true
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D" unique_id=1610799305]
@@ -48,7 +48,7 @@ script = ExtResource("2_6jcyl")
 navigation_mesh = SubResource("NavigationMesh_pso0i")
 
 [node name="GridMap" type="GridMap" parent="NavigationRegion3D" unique_id=410305706]
-transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 0, 0, 0)
 mesh_library = ExtResource("2_lbn3a")
 cell_center_y = false
 data = {
@@ -135,7 +135,7 @@ transform = Transform3D(-0.99999994, 0, 8.742277e-08, 0, 1, 0, -8.742277e-08, 0,
 collision_layer = 0
 collision_mask = 8
 script = ExtResource("3_d40we")
-marker_position = Vector3(15.999996, 0, -1.7484552e-07)
+marker_position = Vector3(-8.7422757e-07, 0, -15.999996)
 destination_scene = "uid://8r3eav3jfq30"
 destination_position = Vector3(-10, 0, 1)
 metadata/_custom_type_script = "uid://dj4esefrjyce0"
@@ -149,7 +149,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 0)
 collision_layer = 0
 collision_mask = 8
 script = ExtResource("3_d40we")
-marker_position = Vector3(-13.999999, 0, 0)
+marker_position = Vector3(6.1195936e-07, 0, 13.999999)
 metadata/_custom_type_script = "uid://dj4esefrjyce0"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/GridMap/Entrance" unique_id=2108977718]
@@ -159,56 +159,57 @@ shape = SubResource("BoxShape3D_4tddo")
 [node name="Enemies" type="Node3D" parent="NavigationRegion3D/GridMap" unique_id=1787381994]
 
 [node name="Comprovante" parent="NavigationRegion3D/GridMap/Enemies" unique_id=931080643 instance=ExtResource("4_sdmh0")]
-transform = Transform3D(0.99915195, 0, 0, 0, 1, 0, 0, 0, 0.99915195, -11.035831, 0.15984268, -0.6434052)
+transform = Transform3D(0.9972049, 0, -5.955561e-07, 0, 1, 0, 5.955561e-07, 0, 0.9972049, -11.004616, 0.15984268, -0.64145637)
 
 [node name="Comprovante2" parent="NavigationRegion3D/GridMap/Enemies" unique_id=854788738 instance=ExtResource("4_sdmh0")]
-transform = Transform3D(0.99915195, 0, 0, 0, 1, 0, 0, 0, 0.99915195, -3.7224555, 0.1598428, 0.48284388)
+transform = Transform3D(0.9972049, 0, -5.955561e-07, 0, 1, 0, 5.955561e-07, 0, 0.9972049, -3.7146664, 0.1598428, 0.48186952)
 
 [node name="Comprovante3" parent="NavigationRegion3D/GridMap/Enemies" unique_id=984612625 instance=ExtResource("4_sdmh0")]
-transform = Transform3D(0.99915195, 0, 0, 0, 1, 0, 0, 0, 0.99915195, -6.245411, 0.15984276, -5.60861)
+transform = Transform3D(0.9972049, 0, -5.955561e-07, 0, 1, 0, 5.955561e-07, 0, 0.9972049, -6.229801, 0.15984276, -5.593008)
 
 [node name="Comprovante4" parent="NavigationRegion3D/GridMap/Enemies" unique_id=1485109863 instance=ExtResource("4_sdmh0")]
-transform = Transform3D(0.99915195, 0, 0, 0, 1, 0, 0, 0, 0.99915195, 6.8695707, 0.15984285, 4.293783)
+transform = Transform3D(0.9972049, 0, -5.955561e-07, 0, 1, 0, 5.955561e-07, 0, 0.9972049, 6.85396, 0.15984285, 4.278183)
 
 [node name="Comprovante5" parent="NavigationRegion3D/GridMap/Enemies" unique_id=191056278 instance=ExtResource("4_sdmh0")]
-transform = Transform3D(0.99915195, 0, 0, 0, 1, 0, 0, 0, 0.99915195, 10.438713, 0.1598428, -0.81359553)
+transform = Transform3D(0.9972049, 0, -5.955561e-07, 0, 1, 0, 5.955561e-07, 0, 0.9972049, 10.407479, 0.1598428, -0.8116454)
 
 [node name="Comprovante6" parent="NavigationRegion3D/GridMap/Enemies" unique_id=135126183 instance=ExtResource("4_sdmh0")]
-transform = Transform3D(0.99915195, 0, 0, 0, 1, 0, 0, 0, 0.99915195, 13.710793, 0.15984282, 4.175735)
+transform = Transform3D(0.9972049, 0, -5.955561e-07, 0, 1, 0, 5.955561e-07, 0, 0.9972049, 13.67958, 0.15984282, 4.160124)
 
 [node name="Errige" parent="NavigationRegion3D/GridMap/Enemies" unique_id=1891326732 instance=ExtResource("5_d40we")]
-transform = Transform3D(0.99915195, 0, 0, 0, 1, 0, 0, 0, 0.99915195, 2.2052088, 0.38611007, 0.2919382)
+transform = Transform3D(0.9972049, 0, -5.955561e-07, 0, 1, 0, 5.955561e-07, 0, 0.9972049, 2.197403, 0.38454756, 0.2909632)
 
 [node name="Boleto" parent="NavigationRegion3D/GridMap/Enemies" unique_id=1012244960 instance=ExtResource("6_4tddo")]
-transform = Transform3D(0.99915195, 0, 0, 0, 1, 0, 0, 0, 0.99915195, 7.8559256, 0.3984579, -6.3864727)
+transform = Transform3D(0.9972049, 0, -5.955561e-07, 0, 1, 0, 5.955561e-07, 0, 0.9972049, 7.840334, 0.3984579, -6.370869)
 
 [node name="Boleto2" parent="NavigationRegion3D/GridMap/Enemies" unique_id=6232751 instance=ExtResource("6_4tddo")]
-transform = Transform3D(0.99915195, 0, 0, 0, 1, 0, 0, 0, 0.99915195, 15.624687, 0.3988685, -6.329822)
+transform = Transform3D(0.9972049, 0, -5.955561e-07, 0, 1, 0, 5.955561e-07, 0, 0.9972049, 15.593479, 0.397306, -6.3142166)
 
 [node name="Boleto3" parent="NavigationRegion3D/GridMap/Enemies" unique_id=2117199079 instance=ExtResource("6_4tddo")]
-transform = Transform3D(0.99915195, 0, 0, 0, 1, 0, 0, 0, 0.99915195, -10.481421, 0.39845794, 6.455613)
+transform = Transform3D(0.9972049, 0, -5.955561e-07, 0, 1, 0, 5.955561e-07, 0, 0.9972049, -10.450214, 0.39845794, 6.440011)
 
 [node name="Boleto4" parent="NavigationRegion3D/GridMap/Enemies" unique_id=2059109754 instance=ExtResource("6_4tddo")]
-transform = Transform3D(0.99915195, 0, 0, 0, 1, 0, 0, 0, 0.99915195, -0.8395364, 0.398458, 6.3717766)
-
-[node name="Path3D" type="Path3D" parent="NavigationRegion3D/GridMap" unique_id=127956866]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 6)
-curve = SubResource("Curve3D_lbn3a")
+transform = Transform3D(0.9972049, 0, -5.955561e-07, 0, 1, 0, 5.955561e-07, 0, 0.9972049, -0.83758235, 0.398458, 6.356175)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1784484561]
 environment = ExtResource("8_4tddo")
 
 [node name="PlayerCharacter" parent="." unique_id=269989542 instance=ExtResource("8_gor1f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.644661, 0, 0.3283453)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15739489, -9.536743e-07, 12.914746)
 
 [node name="FPPhantomCamera3D" type="Node3D" parent="." unique_id=834115302 node_paths=PackedStringArray("follow_target", "follow_path")]
-transform = Transform3D(0.9659258, -0.1830127, 0.1830127, 0, 0.70710677, 0.70710677, -0.25881904, -0.68301266, 0.68301266, -10, 8, 5.9999995)
+transform = Transform3D(0.8480461, 0.26895383, -0.45659217, 0, 0.86162746, 0.50753653, 0.529918, -0.4304161, 0.73070025, -6.74289, 6, 14.11656)
 top_level = true
 script = ExtResource("9_6jcyl")
 follow_mode = 4
 follow_target = NodePath("../PlayerCharacter")
-follow_path = NodePath("../NavigationRegion3D/GridMap/Path3D")
+follow_path = NodePath("../Path3D")
 tween_resource = SubResource("Resource_rnqjc")
+follow_offset = Vector3(0, 0, 3)
 align_transform_with_view = Callable()
 align_position_with_view = Callable()
 metadata/_custom_type_script = "uid://bvgv0wqcnb1yp"
+
+[node name="Path3D" type="Path3D" parent="." unique_id=127956866]
+transform = Transform3D(0.9999994, 0, 0, 0, 1, 0, 0, 0, 0.9999994, -6.74289, 6, 14.11656)
+curve = SubResource("Curve3D_lbn3a")

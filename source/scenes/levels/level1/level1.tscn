@@ -125,15 +125,6 @@ omni_range = 8.478483
 [node name="PlayerCharacter" parent="." unique_id=269989542 instance=ExtResource("2_4l2q5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -1)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="PlayerCharacter" unique_id=1104689630]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
-light_color = Color(0.75, 0.486, 0.27, 1)
-light_energy = 2.0
-light_indirect_energy = 2.0
-light_volumetric_fog_energy = 2.0
-shadow_enabled = true
-omni_range = 8.758742
-
 [node name="FPPhantomCamera3D" type="Node3D" parent="." unique_id=2016082095 node_paths=PackedStringArray("follow_target", "follow_path")]
 transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, -0.5, 7.2702093, 5.806922)
 top_level = true

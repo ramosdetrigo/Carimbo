@@ -11,11 +11,13 @@
 [ext_resource type="Texture2D" uid="uid://cggf73hkk2xan" path="res://assets/textures/ui/vida/azul_bola_grande.png" id="6_h1ojk"]
 [ext_resource type="Script" uid="uid://bvgv0wqcnb1yp" path="res://scripts/phantom_camera_3d_follow_player.gd" id="7_2vva3"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="8_h1ojk"]
+[ext_resource type="PackedScene" uid="uid://domk3xwojp1ia" path="res://scenes/components/character/character.tscn" id="12_yf3gk"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_h1ojk"]
 radius = 5.0
 
 [sub_resource type="Animation" id="Animation_h1ojk"]
+resource_name = "RESET"
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -332,7 +334,6 @@ environment = SubResource("Environment_t22y2")
 [node name="FPPhantomCamera3D" type="Node3D" parent="." unique_id=1966701159]
 transform = Transform3D(0.99997556, -0.00698126, 0, 0.006791201, 0.97275215, 0.2317479, -0.0016178922, -0.23174225, 0.9727759, 1.034, 5.323, 13.9)
 script = ExtResource("7_2vva3")
-should_set_priority = null
 priority = 2
 tween_resource = SubResource("Resource_i5wvq")
 metadata/_custom_type_script = "uid://bvgv0wqcnb1yp"
@@ -344,5 +345,8 @@ should_set_priority = false
 priority = 1
 tween_resource = SubResource("Resource_h1ojk")
 metadata/_custom_type_script = "uid://bvgv0wqcnb1yp"
+
+[node name="PlayerCharacter" parent="." unique_id=269989542 instance=ExtResource("12_yf3gk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.39209, 0, 1.7041435)
 
 [connection signal="body_entered" from="GridMap/Healerbox" to="." method="give_gift" unbinds=1]

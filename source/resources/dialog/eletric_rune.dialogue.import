@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cghckue06i8it"
+path="res://.godot/imported/eletric_rune.dialogue-9ffdfcec95987cc9fa34f306879d5770.tres"
+
+[deps]
+
+source_file="res://resources/dialog/eletric_rune.dialogue"
+dest_files=["res://.godot/imported/eletric_rune.dialogue-9ffdfcec95987cc9fa34f306879d5770.tres"]
+
+[params]
+
+defaults=true

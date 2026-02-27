@@ -1,28 +1,200 @@
 [gd_scene format=3 uid="uid://cclh57g2igc6g"]
 
-[ext_resource type="Script" uid="uid://ckxpmu5lrfiql" path="res://scenes/levels/level_scene.gd" id="1_21ylp"]
+[ext_resource type="Script" uid="uid://bc6iefx8s1401" path="res://scenes/levels/level5/level_5.gd" id="1_cm7l7"]
+[ext_resource type="Resource" uid="uid://cghckue06i8it" path="res://resources/dialog/eletric_rune.dialogue" id="2_44mxp"]
 [ext_resource type="MeshLibrary" uid="uid://be3yh5mqefut3" path="res://resources/mesh_library/level_props.meshlib" id="2_wxg6v"]
 [ext_resource type="PackedScene" uid="uid://c3hpiq2ftpgt8" path="res://scenes/levels/doors/scene_door.tscn" id="3_8pvbd"]
 [ext_resource type="PackedScene" uid="uid://bx08oycjusg5a" path="res://scenes/vfx/static/symbols/electric_rune.tscn" id="4_yax02"]
+[ext_resource type="Script" uid="uid://k651grd68161" path="res://scenes/levels/level5/healer_box.gd" id="5_44mxp"]
+[ext_resource type="Resource" uid="uid://68oolyclljfd" path="res://resources/runes/eletric_rune.tres" id="5_cm7l7"]
 [ext_resource type="Script" uid="uid://bvgv0wqcnb1yp" path="res://scripts/phantom_camera_3d_follow_player.gd" id="6_8pvbd"]
-[ext_resource type="Script" uid="uid://i7djs8lu52us" path="res://scenes/levels/camera_area.gd" id="6_hb125"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="7_48nlb"]
 [ext_resource type="Environment" uid="uid://c44ylihrd2515" path="res://resources/envoriment/fire_enviroment.tres" id="7_cm7l7"]
+[ext_resource type="Texture2D" uid="uid://dq6estklxh4me" path="res://assets/textures/ui/vida/amarelo_bola_grande.png" id="8_tqsyt"]
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="9_48nlb"]
 [ext_resource type="PackedScene" uid="uid://domk3xwojp1ia" path="res://scenes/components/character/character.tscn" id="10_5h8ni"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_yax02"]
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_88c10"]
-height = 0.5
-radius = 14.0
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_nrv33"]
+radius = 5.0
+
+[sub_resource type="Animation" id="Animation_cm7l7"]
+resource_name = "RESET"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 5, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Rune:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FPPhantomCamera3D:priority")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:monitoring")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:monitorable")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_tiuof"]
+resource_name = "gift"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 1),
+"transitions": PackedFloat32Array(2, 2, 0.5),
+"update": 0,
+"values": [Vector3(0, 5, 0), Vector3(0, 5.872, 0), Vector3(0, -0.6473441, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"dialog"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FPPhantomCamera3D:priority")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.53333336),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 4]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:monitoring")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:monitorable")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_44mxp"]
+resource_name = "rune"
+length = 20.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Rune:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 20),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 6.2831855, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FPPhantomCamera3D:priority")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_klgyf"]
+_data = {
+&"RESET": SubResource("Animation_cm7l7"),
+&"gift": SubResource("Animation_tiuof"),
+&"rune": SubResource("Animation_44mxp")
+}
+
+[sub_resource type="Resource" id="Resource_8ivbx"]
+script = ExtResource("7_48nlb")
 
 [sub_resource type="Resource" id="Resource_5h8ni"]
 script = ExtResource("7_48nlb")
 
-[node name="Level10" type="Node3D" unique_id=2027348526 node_paths=PackedStringArray("exit_door")]
-script = ExtResource("1_21ylp")
+[node name="Level10" type="Node3D" unique_id=2027348526 node_paths=PackedStringArray("animation_player", "exit_door")]
+script = ExtResource("1_cm7l7")
+animation_player = NodePath("NavigationRegion3D/GridMap/Healerbox/AnimationPlayer")
 exit_door = NodePath("NavigationRegion3D/GridMap/Lights/Exit")
+starting_dialog = ExtResource("2_44mxp")
 metadata/_custom_type_script = "uid://ckxpmu5lrfiql"
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=732782216]
@@ -106,35 +278,44 @@ marker_position = Vector3(11, 0, -1.7484555e-07)
 destination_scene = "uid://c3e71llcelt1s"
 destination_position = Vector3(-12, 0, 0)
 
-[node name="ElectricRune" parent="NavigationRegion3D/GridMap/Lights" unique_id=945686240 instance=ExtResource("4_yax02")]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0.1, 0)
-
 [node name="Enemies" type="Node3D" parent="NavigationRegion3D/GridMap" unique_id=926605760]
 
-[node name="CameraArea3" type="Area3D" parent="NavigationRegion3D/GridMap" unique_id=1391119992 node_paths=PackedStringArray("camera")]
+[node name="Healerbox" type="Area3D" parent="NavigationRegion3D/GridMap" unique_id=636592212]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
 collision_layer = 0
 collision_mask = 8
-script = ExtResource("6_hb125")
-camera = NodePath("FPPhantomCamera3D")
-metadata/_custom_type_script = "uid://i7djs8lu52us"
+script = ExtResource("5_44mxp")
+rune_enable = true
+rune = ExtResource("5_cm7l7")
+metadata/_custom_type_script = "uid://k651grd68161"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/GridMap/CameraArea3" unique_id=991603872]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
-shape = SubResource("CylinderShape3D_88c10")
-debug_color = Color(0.9499399, 0.21283916, 0.19803298, 0.41960785)
+[node name="Rune" parent="NavigationRegion3D/GridMap/Healerbox" unique_id=945686240 instance=ExtResource("4_yax02")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0.1, 0)
 
-[node name="FPPhantomCamera3D" type="Node3D" parent="NavigationRegion3D/GridMap/CameraArea3" unique_id=1941715877]
-transform = Transform3D(0.9930684, 0.025531352, -0.114731394, 0, 0.9761231, 0.21721816, 0.11753783, -0.2157125, 0.969357, -0.865, 5.677, 13.767)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/GridMap/Healerbox" unique_id=1520494008]
+shape = SubResource("CylinderShape3D_nrv33")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="NavigationRegion3D/GridMap/Healerbox" unique_id=426915777]
+libraries/ = SubResource("AnimationLibrary_klgyf")
+
+[node name="Sprite3D" type="Sprite3D" parent="NavigationRegion3D/GridMap/Healerbox" unique_id=1959192432]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+billboard = 1
+texture = ExtResource("8_tqsyt")
+
+[node name="FPPhantomCamera3D" type="Node3D" parent="NavigationRegion3D/GridMap/Healerbox" unique_id=209859807]
+transform = Transform3D(0.9999905, 0.0023602769, -0.0036694459, 0, 0.841038, 0.5409761, 0.004362997, -0.5409709, 0.84102994, 0.8357921, 6.5528116, 9.089561)
 script = ExtResource("6_8pvbd")
-tween_resource = SubResource("Resource_5h8ni")
+should_set_priority = false
+priority = 1
+tween_resource = SubResource("Resource_8ivbx")
 metadata/_custom_type_script = "uid://bvgv0wqcnb1yp"
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=961935023]
 environment = ExtResource("7_cm7l7")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1198026530]
-physics_interpolation_mode = 1
-transform = Transform3D(0, -0.9701425, 0.24253559, -5.9604645e-08, 0.24253559, 0.9701425, -1, 5.9604645e-08, 0, -9, 8, 0)
+transform = Transform3D(0.9999905, 0.0023602769, -0.0036694459, 0, 0.841038, 0.5409761, 0.004362997, -0.5409709, 0.84102994, 0.8357921, 6.5528116, 9.089561)
 top_level = true
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D" unique_id=1280414814]
@@ -144,3 +325,9 @@ script = ExtResource("9_48nlb")
 
 [node name="PlayerCharacter" parent="." unique_id=269989542 instance=ExtResource("10_5h8ni")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, 0)
+
+[node name="FPPhantomCamera3D" type="Node3D" parent="." unique_id=1941715877]
+transform = Transform3D(0.9930684, 0.025531352, -0.114731394, 0, 0.9761231, 0.21721816, 0.11753783, -0.2157125, 0.969357, -1.865, 5.677, 12.767)
+script = ExtResource("6_8pvbd")
+tween_resource = SubResource("Resource_5h8ni")
+metadata/_custom_type_script = "uid://bvgv0wqcnb1yp"

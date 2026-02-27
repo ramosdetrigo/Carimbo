@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Rune" format=3 uid="uid://bobquv3otkbes"]
+
+[ext_resource type="Texture2D" uid="uid://bg8u6ykoqi0qu" path="res://assets/textures/ui/vida/azul_bola.png" id="1_k1qu3"]
+[ext_resource type="PackedScene" uid="uid://c2u06uo1kf7um" path="res://scenes/objects/weapons/green_hammer.tscn" id="1_lb4kv"]
+[ext_resource type="Texture2D" uid="uid://cggf73hkk2xan" path="res://assets/textures/ui/vida/azul_bola_grande.png" id="2_6jrpg"]
+[ext_resource type="Script" uid="uid://du7c6s1s7a807" path="res://scripts/components/rune.gd" id="3_lb4kv"]
+[ext_resource type="PackedScene" uid="uid://wqcmmwlffv8w" path="res://scenes/vfx/static/symbols/shockwave_rune.tscn" id="4_8mk3s"]
+
+[resource]
+resource_name = "Wave Rune"
+script = ExtResource("3_lb4kv")
+name = "Wave Rune"
+icon = ExtResource("1_k1qu3")
+large_icon = ExtResource("2_6jrpg")
+attack_scene = ExtResource("1_lb4kv")
+rune_scene = ExtResource("4_8mk3s")
+metadata/_custom_type_script = "uid://du7c6s1s7a807"

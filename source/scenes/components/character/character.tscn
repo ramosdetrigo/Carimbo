@@ -783,14 +783,13 @@ duration = 0.5
 decay_time = 2.0
 metadata/_custom_type_script = "uid://ccmiitq0sdh7j"
 
-[node name="PhantomCamera3D" type="Node3D" parent="." unique_id=848212730 node_paths=PackedStringArray("follow_target", "look_at_target")]
+[node name="PhantomCamera3D" type="Node3D" parent="." unique_id=848212730 node_paths=PackedStringArray("follow_target")]
 unique_name_in_owner = true
 transform = Transform3D(-3.4562582e-08, -0.6497494, 0.7602012, -4.8560654e-08, 0.7601472, 0.6497956, -0.9999994, 5.960459e-08, 0, 2, 3, 0)
 top_level = true
 script = ExtResource("37_hjivr")
 follow_mode = 2
 follow_target = NodePath("..")
-look_at_target = NodePath("..")
 tween_resource = SubResource("Resource_rb5yu")
 follow_offset = Vector3(2, 3, 0)
 follow_damping = true

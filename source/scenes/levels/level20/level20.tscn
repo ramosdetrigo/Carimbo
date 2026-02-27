@@ -5,14 +5,24 @@
 [ext_resource type="MeshLibrary" uid="uid://be3yh5mqefut3" path="res://resources/mesh_library/level_props.meshlib" id="3_kitan"]
 [ext_resource type="PackedScene" uid="uid://c3hpiq2ftpgt8" path="res://scenes/levels/doors/scene_door.tscn" id="4_lm1ut"]
 [ext_resource type="Script" uid="uid://k651grd68161" path="res://scenes/levels/level5/healer_box.gd" id="5_ups0r"]
+[ext_resource type="Resource" uid="uid://bobquv3otkbes" path="res://resources/runes/wave_rune.tres" id="6_4i6dv"]
 [ext_resource type="Resource" uid="uid://68oolyclljfd" path="res://resources/runes/eletric_rune.tres" id="6_iq5pc"]
+[ext_resource type="Texture2D" uid="uid://cggf73hkk2xan" path="res://assets/textures/ui/vida/azul_bola_grande.png" id="7_0h66r"]
 [ext_resource type="PackedScene" uid="uid://wqcmmwlffv8w" path="res://scenes/vfx/static/symbols/shockwave_rune.tscn" id="7_4i6dv"]
-[ext_resource type="Texture2D" uid="uid://dq6estklxh4me" path="res://assets/textures/ui/vida/amarelo_bola_grande.png" id="8_hxng3"]
+[ext_resource type="Script" uid="uid://du7c6s1s7a807" path="res://scripts/components/rune.gd" id="8_finfj"]
 [ext_resource type="Script" uid="uid://bvgv0wqcnb1yp" path="res://scripts/phantom_camera_3d_follow_player.gd" id="9_qhlfs"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="10_ehfin"]
 [ext_resource type="Environment" uid="uid://c44ylihrd2515" path="res://resources/envoriment/fire_enviroment.tres" id="11_t720h"]
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="12_gfxgr"]
 [ext_resource type="PackedScene" uid="uid://domk3xwojp1ia" path="res://scenes/components/character/character.tscn" id="13_7st34"]
+[ext_resource type="Shader" uid="uid://dl6ampid6rth6" path="res://scenes/components/stamped_animated_sprite/shaded_animated_sprite_3d.gdshader" id="14_omrow"]
+[ext_resource type="Texture2D" uid="uid://ch1fj0j2vc2r1" path="res://resources/burn_noise_texture.tres" id="15_20mtl"]
+[ext_resource type="Texture2D" uid="uid://dqyykf3mww3uv" path="res://assets/textures/player/attack.png" id="16_mq11u"]
+[ext_resource type="Texture2D" uid="uid://o34vnik8cwo4" path="res://assets/textures/paper/Paper003_1K-JPG_NormalGL.jpg" id="17_3gwb4"]
+[ext_resource type="Texture2D" uid="uid://dkbujjnpxwia0" path="res://assets/textures/paper/Paper003_1K-JPG_Roughness.jpg" id="18_aumqc"]
+[ext_resource type="Resource" uid="uid://dhkf2x6ifyip0" path="res://resources/runes/fire_rune.tres" id="20_nq3dp"]
+[ext_resource type="Resource" uid="uid://b2yoi87p65bkn" path="res://resources/runes/water_rune.tres" id="21_x2gir"]
+[ext_resource type="Resource" uid="uid://3mpy0qw7jpp8" path="res://resources/runes/strenght_rune.tres" id="23_sr5tw"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_yax02"]
 
@@ -100,7 +110,7 @@ tracks/0/keys = {
 tracks/1/type = "method"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../..")
+tracks/1/path = NodePath("../../..")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -187,10 +197,38 @@ _data = {
 [sub_resource type="Resource" id="Resource_8ivbx"]
 script = ExtResource("10_ehfin")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_yylnd"]
+atlas = ExtResource("16_mq11u")
+region = Rect2(0, 0, 270, 270)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_87ilw"]
+viewport_path = NodePath("ShadedAnimatedSprite3D/SubViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h7t3s"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("14_omrow")
+shader_parameter/roughness = 1.0
+shader_parameter/texture_roughness = ExtResource("18_aumqc")
+shader_parameter/specular = 0.249999994412
+shader_parameter/texture_normal = ExtResource("17_3gwb4")
+shader_parameter/normal_scale = 1.5600008340999985
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = SubResource("AtlasTexture_yylnd")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_87ilw")
+shader_parameter/carimbo_glow_intensity = 0.0
+shader_parameter/burn_texture = ExtResource("15_20mtl")
+shader_parameter/burn_amount = 0.0
+shader_parameter/burn_size = 0.150000007125
+shader_parameter/burn_smoothness = 0.1330000063175
+shader_parameter/burn_glow_color = Color(1, 0.32, 0, 1)
+shader_parameter/burn_glow_intensity = 10.0
+shader_parameter/region_rect = Vector4(0, 0, 0.083333336, 1)
+
 [sub_resource type="Resource" id="Resource_5h8ni"]
 script = ExtResource("10_ehfin")
 
-[node name="Level10" type="Node3D" unique_id=2027348526 node_paths=PackedStringArray("animation_player", "exit_door")]
+[node name="Level20" type="Node3D" unique_id=2027348526 node_paths=PackedStringArray("animation_player", "exit_door")]
 script = ExtResource("1_k5rkf")
 animation_player = NodePath("NavigationRegion3D/GridMap/Healerbox/AnimationPlayer")
 exit_door = NodePath("NavigationRegion3D/GridMap/Lights/Exit")
@@ -275,18 +313,19 @@ marker_position = Vector3(-11, 0, 0)
 [node name="Exit" parent="NavigationRegion3D/GridMap/Lights" unique_id=1742187779 instance=ExtResource("4_lm1ut")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 13, 0, 0)
 marker_position = Vector3(11, 0, -1.7484555e-07)
-destination_scene = "uid://c3e71llcelt1s"
-destination_position = Vector3(-12, 0, 0)
+destination_scene = "uid://bts2jcc2rigo8"
+destination_position = Vector3(-8.742278e-08, 0, 14)
 
 [node name="Enemies" type="Node3D" parent="NavigationRegion3D/GridMap" unique_id=926605760]
 
 [node name="Healerbox" type="Area3D" parent="NavigationRegion3D/GridMap" unique_id=636592212]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
 collision_layer = 0
-collision_mask = 8
+collision_mask = 10
 script = ExtResource("5_ups0r")
 rune_enable = true
-rune = ExtResource("6_iq5pc")
+rune = ExtResource("6_4i6dv")
+is_sub_rune = true
 metadata/_custom_type_script = "uid://k651grd68161"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/GridMap/Healerbox" unique_id=1520494008]
@@ -301,7 +340,7 @@ libraries/ = SubResource("AnimationLibrary_klgyf")
 [node name="Sprite3D" type="Sprite3D" parent="NavigationRegion3D/GridMap/Healerbox" unique_id=1959192432]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
 billboard = 1
-texture = ExtResource("8_hxng3")
+texture = ExtResource("7_0h66r")
 
 [node name="FPPhantomCamera3D" type="Node3D" parent="NavigationRegion3D/GridMap/Healerbox" unique_id=209859807]
 transform = Transform3D(0.9999905, 0.0023602769, -0.0036694459, 0, 0.841038, 0.5409761, 0.004362997, -0.5409709, 0.84102994, 0.8357921, 6.5528116, 9.089561)
@@ -326,8 +365,22 @@ script = ExtResource("12_gfxgr")
 [node name="PlayerCharacter" parent="." unique_id=269989542 instance=ExtResource("13_7st34")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, 0)
 
+[node name="ShadedAnimatedSprite3D" parent="PlayerCharacter" index="1" unique_id=1555501919]
+material_override = SubResource("ShaderMaterial_h7t3s")
+
+[node name="WeaponManager" parent="PlayerCharacter" index="2" unique_id=2002537722]
+runes = Array[ExtResource("8_finfj")]([ExtResource("20_nq3dp"), ExtResource("21_x2gir"), ExtResource("6_iq5pc")])
+sub_runes = Array[ExtResource("8_finfj")]([ExtResource("23_sr5tw")])
+
+[node name="PhantomCamera3D" parent="PlayerCharacter" index="14" unique_id=848212730]
+transform = Transform3D(-3.4562582e-08, -0.6497494, 0.7602012, -4.8560654e-08, 0.7601472, 0.6497956, -0.9999994, 5.960459e-08, 0, -9, 3, 0)
+
 [node name="FPPhantomCamera3D" type="Node3D" parent="." unique_id=1941715877]
 transform = Transform3D(0.9930684, 0.025531352, -0.114731394, 0, 0.9761231, 0.21721816, 0.11753783, -0.2157125, 0.969357, -1.865, 5.677, 12.767)
 script = ExtResource("9_qhlfs")
 tween_resource = SubResource("Resource_5h8ni")
 metadata/_custom_type_script = "uid://bvgv0wqcnb1yp"
+
+[connection signal="body_entered" from="NavigationRegion3D/GridMap/Healerbox" to="." method="give_gift" unbinds=1]
+
+[editable path="PlayerCharacter"]

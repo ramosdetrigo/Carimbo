@@ -100,7 +100,7 @@ tracks/0/keys = {
 tracks/1/type = "method"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../..")
+tracks/1/path = NodePath("../../..")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -331,3 +331,5 @@ transform = Transform3D(0.9930684, 0.025531352, -0.114731394, 0, 0.9761231, 0.21
 script = ExtResource("6_8pvbd")
 tween_resource = SubResource("Resource_5h8ni")
 metadata/_custom_type_script = "uid://bvgv0wqcnb1yp"
+
+[connection signal="body_entered" from="NavigationRegion3D/GridMap/Healerbox" to="." method="give_gift" unbinds=1]

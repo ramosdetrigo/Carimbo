@@ -72,7 +72,6 @@ light_color = Color(0.87, 0.56549996, 0.348, 1)
 light_energy = 2.0
 light_volumetric_fog_energy = 2.0
 light_bake_mode = 1
-shadow_enabled = true
 omni_range = 8.478483
 
 [node name="OmniLight3D8" type="OmniLight3D" parent="NavigationRegion3D/GridMap/Lights" unique_id=1354339388]
@@ -81,7 +80,6 @@ light_color = Color(0.87, 0.56549996, 0.348, 1)
 light_energy = 2.0
 light_volumetric_fog_energy = 2.0
 light_bake_mode = 1
-shadow_enabled = true
 omni_range = 8.478483
 
 [node name="OmniLight3D9" type="OmniLight3D" parent="NavigationRegion3D/GridMap/Lights" unique_id=1204497986]
@@ -90,7 +88,6 @@ light_color = Color(0.87, 0.56549996, 0.348, 1)
 light_energy = 2.0
 light_volumetric_fog_energy = 2.0
 light_bake_mode = 1
-shadow_enabled = true
 omni_range = 8.478483
 
 [node name="OmniLight3D10" type="OmniLight3D" parent="NavigationRegion3D/GridMap/Lights" unique_id=1866563858]
@@ -99,7 +96,6 @@ light_color = Color(0.87, 0.56549996, 0.348, 1)
 light_energy = 2.0
 light_volumetric_fog_energy = 2.0
 light_bake_mode = 1
-shadow_enabled = true
 omni_range = 8.478483
 
 [node name="OmniLight3D11" type="OmniLight3D" parent="NavigationRegion3D/GridMap/Lights" unique_id=1877302612]
@@ -108,7 +104,6 @@ light_color = Color(0.87, 0.56549996, 0.348, 1)
 light_energy = 2.0
 light_volumetric_fog_energy = 2.0
 light_bake_mode = 1
-shadow_enabled = true
 omni_range = 8.478483
 
 [node name="OmniLight3D12" type="OmniLight3D" parent="NavigationRegion3D/GridMap/Lights" unique_id=1337190484]
@@ -117,31 +112,30 @@ light_color = Color(0.87, 0.56549996, 0.348, 1)
 light_energy = 2.0
 light_volumetric_fog_energy = 2.0
 light_bake_mode = 1
-shadow_enabled = true
 omni_range = 8.478483
 
 [node name="Enemies" type="Node3D" parent="NavigationRegion3D/GridMap" unique_id=20061869]
 
 [node name="Boleto" parent="NavigationRegion3D/GridMap/Enemies" unique_id=1012244960 instance=ExtResource("5_iun15")]
-transform = Transform3D(0.9992532, 0, 0, 0, 1, 0, 0, 0, 0.9992532, -10.906395, 0.39845788, -3.952321)
+transform = Transform3D(0.99924207, 0, 0, 0, 1, 0, 0, 0, 0.99924207, -10.906217, 0.39845788, -3.952321)
 
 [node name="Boleto2" parent="NavigationRegion3D/GridMap/Enemies" unique_id=658256673 instance=ExtResource("5_iun15")]
-transform = Transform3D(0.99928683, 0, 0, 0, 1, 0, 0, 0, 0.99928683, -10.596862, 0.39845783, 5.086508)
+transform = Transform3D(0.9992757, 0, 0, 0, 1, 0, 0, 0, 0.9992757, -10.5966835, 0.39845783, 5.0864186)
 
 [node name="Errige" parent="NavigationRegion3D/GridMap/Enemies" unique_id=1891326732 instance=ExtResource("6_qbjt4")]
-transform = Transform3D(0.99928683, 0, 0, 0, 1, 0, 0, 0, 0.99928683, -5.44333, 0.38565877, 1.0604262)
+transform = Transform3D(0.9992757, 0, 0, 0, 1, 0, 0, 0, 0.9992757, -5.4432406, 0.38565877, 1.060404)
 
 [node name="Comprovante" parent="NavigationRegion3D/GridMap/Enemies" unique_id=931080643 instance=ExtResource("7_oigun")]
-transform = Transform3D(0.99928683, 0, 0, 0, 1, 0, 0, 0, 0.99928683, 7.5772676, 0.15984285, 0.99808204)
+transform = Transform3D(0.9992757, 0, 0, 0, 1, 0, 0, 0, 0.9992757, 7.5771785, 0.15984285, 0.9980709)
 
 [node name="Comprovante2" parent="NavigationRegion3D/GridMap/Enemies" unique_id=419172903 instance=ExtResource("7_oigun")]
-transform = Transform3D(0.99928683, 0, 0, 0, 1, 0, 0, 0, 0.99928683, 3.259165, 0.15984274, -3.3585205)
+transform = Transform3D(0.9992757, 0, 0, 0, 1, 0, 0, 0, 0.9992757, 3.2591205, 0.15984274, -3.3585205)
 
 [node name="Comprovante3" parent="NavigationRegion3D/GridMap/Enemies" unique_id=1371794593 instance=ExtResource("7_oigun")]
-transform = Transform3D(0.99930346, 0, 0, 0, 1, 0, 0, 0, 0.99930346, 3.2554576, 0.1598429, 5.7200603)
+transform = Transform3D(0.9992923, 0, 0, 0, 1, 0, 0, 0, 0.9992923, 3.255413, 0.1598429, 5.719971)
 
 [node name="Atestado" parent="NavigationRegion3D/GridMap/Enemies" unique_id=1428994103 instance=ExtResource("8_oigun")]
-transform = Transform3D(0.9993179, 0, 0, 0, 1, 0, 0, 0, 0.9993179, 2.8207564, 0, 1.4103782)
+transform = Transform3D(0.99930674, 0, 0, 0, 1, 0, 0, 0, 0.99930674, 2.8207119, 0, 1.4103559)
 
 [node name="Entrance" parent="NavigationRegion3D/GridMap" unique_id=492947814 instance=ExtResource("8_qbjt4")]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -13.999999, 0, 0.99999994)

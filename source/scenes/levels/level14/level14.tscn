@@ -22,8 +22,9 @@ _data = {
 }
 point_count = 2
 
-[node name="Level11" type="Node3D" unique_id=663602909]
+[node name="Level11" type="Node3D" unique_id=663602909 node_paths=PackedStringArray("exit_door")]
 script = ExtResource("1_0q0g0")
+exit_door = NodePath("NavigationRegion3D/GridMap/Lights/Exit")
 metadata/_custom_type_script = "uid://ckxpmu5lrfiql"
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=498926115]

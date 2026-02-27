@@ -76,7 +76,6 @@ collision_layer = 0
 collision_mask = 8
 script = ExtResource("5_o5tsl")
 marker_position = Vector3(10, 1, -1)
-is_locked = null
 destination_scene = "uid://olifsxpreo8e"
 destination_position = Vector3(-10, 0, 1)
 
@@ -96,7 +95,6 @@ light_color = Color(0.87, 0.56549996, 0.348, 1)
 light_energy = 2.0
 light_volumetric_fog_energy = 2.0
 light_bake_mode = 1
-shadow_enabled = true
 omni_range = 8.478483
 
 [node name="OmniLight3D8" type="OmniLight3D" parent="GridMap/Lights" unique_id=142249019]
@@ -105,7 +103,6 @@ light_color = Color(0.87, 0.56549996, 0.348, 1)
 light_energy = 2.0
 light_volumetric_fog_energy = 2.0
 light_bake_mode = 1
-shadow_enabled = true
 omni_range = 8.478483
 
 [node name="OmniLight3D5" type="OmniLight3D" parent="GridMap/Lights" unique_id=513940812]
@@ -114,7 +111,6 @@ light_color = Color(0.87, 0.56549996, 0.348, 1)
 light_energy = 2.0
 light_volumetric_fog_energy = 2.0
 light_bake_mode = 1
-shadow_enabled = true
 omni_range = 8.478483
 
 [node name="OmniLight3D9" type="OmniLight3D" parent="GridMap/Lights" unique_id=2079559811]
@@ -123,7 +119,6 @@ light_color = Color(0.87, 0.56549996, 0.348, 1)
 light_energy = 2.0
 light_volumetric_fog_energy = 2.0
 light_bake_mode = 1
-shadow_enabled = true
 omni_range = 8.478483
 
 [node name="PlayerCharacter" parent="." unique_id=269989542 instance=ExtResource("2_4l2q5")]

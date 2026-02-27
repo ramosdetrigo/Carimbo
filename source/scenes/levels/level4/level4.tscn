@@ -64,7 +64,6 @@ light_color = Color(0.87, 0.56549996, 0.348, 1)
 light_energy = 2.0
 light_volumetric_fog_energy = 2.0
 light_bake_mode = 1
-shadow_enabled = true
 omni_range = 8.478483
 
 [node name="OmniLight3D12" type="OmniLight3D" parent="NavigationRegion3D/GridMap/Lights" unique_id=1154828464]
@@ -73,7 +72,6 @@ light_color = Color(0.87, 0.56549996, 0.348, 1)
 light_energy = 2.0
 light_volumetric_fog_energy = 2.0
 light_bake_mode = 1
-shadow_enabled = true
 omni_range = 8.478483
 
 [node name="OmniLight3D8" type="OmniLight3D" parent="NavigationRegion3D/GridMap/Lights" unique_id=1624403126]
@@ -82,7 +80,6 @@ light_color = Color(0.87, 0.56549996, 0.348, 1)
 light_energy = 2.0
 light_volumetric_fog_energy = 2.0
 light_bake_mode = 1
-shadow_enabled = true
 omni_range = 8.478483
 
 [node name="OmniLight3D10" type="OmniLight3D" parent="NavigationRegion3D/GridMap/Lights" unique_id=73392492]
@@ -91,7 +88,6 @@ light_color = Color(0.87, 0.56549996, 0.348, 1)
 light_energy = 2.0
 light_volumetric_fog_energy = 2.0
 light_bake_mode = 1
-shadow_enabled = true
 omni_range = 8.478483
 
 [node name="OmniLight3D14" type="OmniLight3D" parent="NavigationRegion3D/GridMap/Lights" unique_id=837034742]
@@ -100,7 +96,6 @@ light_color = Color(0.87, 0.56549996, 0.348, 1)
 light_energy = 2.0
 light_volumetric_fog_energy = 2.0
 light_bake_mode = 1
-shadow_enabled = true
 omni_range = 8.478483
 
 [node name="OmniLight3D11" type="OmniLight3D" parent="NavigationRegion3D/GridMap/Lights" unique_id=595216398]
@@ -109,7 +104,6 @@ light_color = Color(0.87, 0.56549996, 0.348, 1)
 light_energy = 2.0
 light_volumetric_fog_energy = 2.0
 light_bake_mode = 1
-shadow_enabled = true
 omni_range = 8.478483
 
 [node name="OmniLight3D9" type="OmniLight3D" parent="NavigationRegion3D/GridMap/Lights" unique_id=1331406967]
@@ -118,7 +112,6 @@ light_color = Color(0.87, 0.56549996, 0.348, 1)
 light_energy = 2.0
 light_volumetric_fog_energy = 2.0
 light_bake_mode = 1
-shadow_enabled = true
 omni_range = 8.478483
 
 [node name="OmniLight3D13" type="OmniLight3D" parent="NavigationRegion3D/GridMap/Lights" unique_id=943335241]
@@ -127,7 +120,6 @@ light_color = Color(0.87, 0.56549996, 0.348, 1)
 light_energy = 2.0
 light_volumetric_fog_energy = 2.0
 light_bake_mode = 1
-shadow_enabled = true
 omni_range = 8.478483
 
 [node name="Exit" type="Area3D" parent="NavigationRegion3D/GridMap" unique_id=1711420920]
@@ -159,37 +151,37 @@ shape = SubResource("BoxShape3D_4tddo")
 [node name="Enemies" type="Node3D" parent="NavigationRegion3D/GridMap" unique_id=1787381994]
 
 [node name="Comprovante" parent="NavigationRegion3D/GridMap/Enemies" unique_id=931080643 instance=ExtResource("4_sdmh0")]
-transform = Transform3D(0.9972049, 0, -5.955561e-07, 0, 1, 0, 5.955561e-07, 0, 0.9972049, -11.004616, 0.15984268, -0.64145637)
+transform = Transform3D(0.9971923, 0, -5.955445e-07, 0, 1, 0, 5.955445e-07, 0, 0.9971923, -11.004415, 0.15984268, -0.6414438)
 
 [node name="Comprovante2" parent="NavigationRegion3D/GridMap/Enemies" unique_id=854788738 instance=ExtResource("4_sdmh0")]
-transform = Transform3D(0.9972049, 0, -5.955561e-07, 0, 1, 0, 5.955561e-07, 0, 0.9972049, -3.7146664, 0.1598428, 0.48186952)
+transform = Transform3D(0.9971923, 0, -5.955445e-07, 0, 1, 0, 5.955445e-07, 0, 0.9971923, -3.714616, 0.1598428, 0.48186323)
 
 [node name="Comprovante3" parent="NavigationRegion3D/GridMap/Enemies" unique_id=984612625 instance=ExtResource("4_sdmh0")]
-transform = Transform3D(0.9972049, 0, -5.955561e-07, 0, 1, 0, 5.955561e-07, 0, 0.9972049, -6.229801, 0.15984276, -5.593008)
+transform = Transform3D(0.9971923, 0, -5.955445e-07, 0, 1, 0, 5.955445e-07, 0, 0.9971923, -6.2297006, 0.15984276, -5.5929074)
 
 [node name="Comprovante4" parent="NavigationRegion3D/GridMap/Enemies" unique_id=1485109863 instance=ExtResource("4_sdmh0")]
-transform = Transform3D(0.9972049, 0, -5.955561e-07, 0, 1, 0, 5.955561e-07, 0, 0.9972049, 6.85396, 0.15984285, 4.278183)
+transform = Transform3D(0.9971923, 0, -5.955445e-07, 0, 1, 0, 5.955445e-07, 0, 0.9971923, 6.8538594, 0.15984285, 4.2780824)
 
 [node name="Comprovante5" parent="NavigationRegion3D/GridMap/Enemies" unique_id=191056278 instance=ExtResource("4_sdmh0")]
-transform = Transform3D(0.9972049, 0, -5.955561e-07, 0, 1, 0, 5.955561e-07, 0, 0.9972049, 10.407479, 0.1598428, -0.8116454)
+transform = Transform3D(0.9971923, 0, -5.955445e-07, 0, 1, 0, 5.955445e-07, 0, 0.9971923, 10.407278, 0.1598428, -0.8116328)
 
 [node name="Comprovante6" parent="NavigationRegion3D/GridMap/Enemies" unique_id=135126183 instance=ExtResource("4_sdmh0")]
-transform = Transform3D(0.9972049, 0, -5.955561e-07, 0, 1, 0, 5.955561e-07, 0, 0.9972049, 13.67958, 0.15984282, 4.160124)
+transform = Transform3D(0.9971923, 0, -5.955445e-07, 0, 1, 0, 5.955445e-07, 0, 0.9971923, 13.6793785, 0.15984282, 4.160023)
 
 [node name="Errige" parent="NavigationRegion3D/GridMap/Enemies" unique_id=1891326732 instance=ExtResource("5_d40we")]
-transform = Transform3D(0.9972049, 0, -5.955561e-07, 0, 1, 0, 5.955561e-07, 0, 0.9972049, 2.197403, 0.38454756, 0.2909632)
+transform = Transform3D(0.9971923, 0, -5.955445e-07, 0, 1, 0, 5.955445e-07, 0, 0.9971923, 2.1973526, 0.38454756, 0.2909569)
 
 [node name="Boleto" parent="NavigationRegion3D/GridMap/Enemies" unique_id=1012244960 instance=ExtResource("6_4tddo")]
-transform = Transform3D(0.9972049, 0, -5.955561e-07, 0, 1, 0, 5.955561e-07, 0, 0.9972049, 7.840334, 0.3984579, -6.370869)
+transform = Transform3D(0.9971923, 0, -5.955445e-07, 0, 1, 0, 5.955445e-07, 0, 0.9971923, 7.8402333, 0.3984579, -6.3707685)
 
 [node name="Boleto2" parent="NavigationRegion3D/GridMap/Enemies" unique_id=6232751 instance=ExtResource("6_4tddo")]
-transform = Transform3D(0.9972049, 0, -5.955561e-07, 0, 1, 0, 5.955561e-07, 0, 0.9972049, 15.593479, 0.397306, -6.3142166)
+transform = Transform3D(0.9971923, 0, -5.955445e-07, 0, 1, 0, 5.955445e-07, 0, 0.9971923, 15.593278, 0.397306, -6.314116)
 
 [node name="Boleto3" parent="NavigationRegion3D/GridMap/Enemies" unique_id=2117199079 instance=ExtResource("6_4tddo")]
-transform = Transform3D(0.9972049, 0, -5.955561e-07, 0, 1, 0, 5.955561e-07, 0, 0.9972049, -10.450214, 0.39845794, 6.440011)
+transform = Transform3D(0.9971923, 0, -5.955445e-07, 0, 1, 0, 5.955445e-07, 0, 0.9971923, -10.450013, 0.39845794, 6.4399104)
 
 [node name="Boleto4" parent="NavigationRegion3D/GridMap/Enemies" unique_id=2059109754 instance=ExtResource("6_4tddo")]
-transform = Transform3D(0.9972049, 0, -5.955561e-07, 0, 1, 0, 5.955561e-07, 0, 0.9972049, -0.83758235, 0.398458, 6.356175)
+transform = Transform3D(0.9971923, 0, -5.955445e-07, 0, 1, 0, 5.955445e-07, 0, 0.9971923, -0.8375698, 0.398458, 6.3560743)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1784484561]
 environment = ExtResource("8_4tddo")

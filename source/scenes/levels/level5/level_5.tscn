@@ -64,7 +64,6 @@ light_color = Color(0.24193507, 0.70318556, 0.8807105, 1)
 light_energy = 0.545
 light_volumetric_fog_energy = 2.0
 light_bake_mode = 1
-shadow_enabled = true
 omni_range = 8.478483
 
 [node name="OmniLight3D4" type="OmniLight3D" parent="GridMap" unique_id=2068704172]
@@ -73,7 +72,6 @@ light_color = Color(0.24193507, 0.70318556, 0.8807105, 1)
 light_energy = 0.545
 light_volumetric_fog_energy = 2.0
 light_bake_mode = 1
-shadow_enabled = true
 omni_range = 8.478483
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="GridMap" unique_id=1661295426]
@@ -82,7 +80,6 @@ light_color = Color(0.24193507, 0.70318556, 0.8807105, 1)
 light_energy = 0.545
 light_volumetric_fog_energy = 2.0
 light_bake_mode = 1
-shadow_enabled = true
 omni_range = 8.478483
 
 [node name="OmniLight3D3" type="OmniLight3D" parent="GridMap" unique_id=362880169]
@@ -91,7 +88,6 @@ light_color = Color(0.24193507, 0.70318556, 0.8807105, 1)
 light_energy = 0.545
 light_volumetric_fog_energy = 2.0
 light_bake_mode = 1
-shadow_enabled = true
 omni_range = 8.478483
 
 [node name="OmniLight3D6" type="OmniLight3D" parent="GridMap" unique_id=1268511638]
@@ -100,7 +96,6 @@ light_color = Color(0.24193507, 0.70318556, 0.8807105, 1)
 light_energy = 0.545
 light_volumetric_fog_energy = 2.0
 light_bake_mode = 1
-shadow_enabled = true
 omni_range = 8.478483
 
 [node name="OmniLight3D8" type="OmniLight3D" parent="GridMap" unique_id=2073159682]
@@ -109,7 +104,6 @@ light_color = Color(0.24193507, 0.70318556, 0.8807105, 1)
 light_energy = 0.545
 light_volumetric_fog_energy = 2.0
 light_bake_mode = 1
-shadow_enabled = true
 omni_range = 8.478483
 
 [node name="OmniLight3D9" type="OmniLight3D" parent="GridMap" unique_id=918920472]
@@ -118,7 +112,6 @@ light_color = Color(0.24193507, 0.70318556, 0.8807105, 1)
 light_energy = 0.545
 light_volumetric_fog_energy = 2.0
 light_bake_mode = 1
-shadow_enabled = true
 omni_range = 8.478483
 
 [node name="OmniLight3D5" type="OmniLight3D" parent="GridMap" unique_id=209325932]
@@ -127,7 +120,6 @@ light_color = Color(0.24193507, 0.70318556, 0.8807105, 1)
 light_energy = 0.545
 light_volumetric_fog_energy = 2.0
 light_bake_mode = 1
-shadow_enabled = true
 omni_range = 8.478483
 
 [node name="WaterRune" parent="GridMap" unique_id=945686240 instance=ExtResource("4_ludqd")]

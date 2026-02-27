@@ -109,7 +109,6 @@ light_color = Color(0.87, 0.56549996, 0.348, 1)
 light_energy = 2.0
 light_volumetric_fog_energy = 2.0
 light_bake_mode = 1
-shadow_enabled = true
 omni_range = 8.478483
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="World/GridMap" unique_id=52612662]
@@ -118,7 +117,6 @@ light_color = Color(0.87, 0.56549996, 0.348, 1)
 light_energy = 2.0
 light_volumetric_fog_energy = 2.0
 light_bake_mode = 1
-shadow_enabled = true
 omni_range = 8.478483
 
 [node name="OmniLight3D3" type="OmniLight3D" parent="World/GridMap" unique_id=908342390]
@@ -127,7 +125,6 @@ light_color = Color(0.87, 0.56549996, 0.348, 1)
 light_energy = 2.0
 light_volumetric_fog_energy = 2.0
 light_bake_mode = 1
-shadow_enabled = true
 omni_range = 8.478483
 
 [node name="OmniLight3D4" type="OmniLight3D" parent="World/GridMap" unique_id=2032879870]
@@ -136,7 +133,6 @@ light_color = Color(0.87, 0.56549996, 0.348, 1)
 light_energy = 2.0
 light_volumetric_fog_energy = 2.0
 light_bake_mode = 1
-shadow_enabled = true
 omni_range = 8.478483
 
 [node name="OmniLight3D5" type="OmniLight3D" parent="World/GridMap" unique_id=1924131780]
@@ -145,7 +141,6 @@ light_color = Color(0.87, 0.56549996, 0.348, 1)
 light_energy = 2.0
 light_volumetric_fog_energy = 2.0
 light_bake_mode = 1
-shadow_enabled = true
 omni_range = 8.478483
 
 [node name="OmniLight3D6" type="OmniLight3D" parent="World/GridMap" unique_id=1105710283]
@@ -154,7 +149,6 @@ light_color = Color(0.87, 0.56549996, 0.348, 1)
 light_energy = 2.0
 light_volumetric_fog_energy = 2.0
 light_bake_mode = 1
-shadow_enabled = true
 omni_range = 8.478483
 
 [node name="PlayerCharacter" parent="World/GridMap" unique_id=269989542 instance=ExtResource("5_0ybc4")]

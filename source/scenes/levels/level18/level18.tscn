@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://572ad1efklon" path="res://scenes/entities/enemies/boleto/boleto.tscn" id="4_3yvwn"]
 [ext_resource type="Texture2D" uid="uid://lkeultvpjsj1" path="res://assets/textures/logoda4_dark.svg" id="4_bt2di"]
 [ext_resource type="PackedScene" uid="uid://c24ksaog50v3g" path="res://scenes/entities/enemies/atestado/atestado.tscn" id="5_a61re"]
-[ext_resource type="Texture2D" uid="uid://b2thhsdd4hbak" path="res://assets/textures/logo_cafundo.svg" id="5_iawjf"]
 [ext_resource type="PackedScene" uid="uid://m5dmges2kssb" path="res://scenes/vfx/static/lava/lava_pool.tscn" id="6_dh518"]
 [ext_resource type="PackedScene" uid="uid://bxgw65gxcyvvi" path="res://scenes/entities/enemies/nascimento/certidao_nascimento.tscn" id="6_x51ff"]
 [ext_resource type="Environment" uid="uid://c44ylihrd2515" path="res://resources/envoriment/fire_enviroment.tres" id="6_yiysg"]
@@ -39,10 +38,10 @@ point_count = 2
 atlas = ExtResource("10_f8brc")
 region = Rect2(0, 0, 270, 270)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_3yvwn"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_5xsa3"]
 viewport_path = NodePath("ShadedAnimatedSprite3D/SubViewport")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_a61re"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3yvwn"]
 resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("8_jd1su")
@@ -53,7 +52,7 @@ shader_parameter/texture_normal = ExtResource("11_djb0j")
 shader_parameter/normal_scale = 1.5600008340999985
 shader_parameter/albedo = Color(1, 1, 1, 1)
 shader_parameter/texture_albedo = SubResource("AtlasTexture_yylnd")
-shader_parameter/texture_carimbo = SubResource("ViewportTexture_3yvwn")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_5xsa3")
 shader_parameter/carimbo_glow_intensity = 0.0
 shader_parameter/burn_texture = ExtResource("9_gw4wj")
 shader_parameter/burn_amount = 0.0
@@ -171,11 +170,6 @@ transform = Transform3D(-4.371138e-08, 0.9999999, -4.3711378e-08, 0.3229595, -2.
 size = Vector3(7.297, 1, 4)
 texture_albedo = ExtResource("4_bt2di")
 
-[node name="Decal3" type="Decal" parent="NavigationRegion3D/GridMap" unique_id=1439706868]
-transform = Transform3D(1, 0, 0, 0, -4.3711385e-08, -0.99999994, 0, 0.99999994, -4.3711385e-08, -4.6843596, 4.508997, -14.077099)
-size = Vector3(5.636, 1, 4)
-texture_albedo = ExtResource("5_iawjf")
-
 [node name="HurtboxComponent" parent="NavigationRegion3D/GridMap" unique_id=1120578981 instance=ExtResource("6_dh518")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 1)
 size = Vector3(17, 1, 31)
@@ -187,12 +181,12 @@ environment = ExtResource("6_yiysg")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2780285, 0, 12.700645)
 
 [node name="ShadedAnimatedSprite3D" parent="PlayerCharacter" index="1" unique_id=1555501919]
-material_override = SubResource("ShaderMaterial_a61re")
+material_override = SubResource("ShaderMaterial_3yvwn")
 
 [node name="WeaponManager" parent="PlayerCharacter" index="2" unique_id=2002537722]
 runes = Array[ExtResource("13_pnc0h")]([ExtResource("14_qv2qv"), ExtResource("15_tfymt"), ExtResource("16_wp800")])
 
-[node name="PhantomCamera3D" parent="PlayerCharacter" index="14" unique_id=848212730]
+[node name="PhantomCamera3D" parent="PlayerCharacter" index="15" unique_id=848212730]
 transform = Transform3D(-3.4562582e-08, -0.6497494, 0.7602012, -4.8560654e-08, 0.7601472, 0.6497956, -0.9999994, 5.960459e-08, 0, 2.2780285, 3, 12.700645)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1096867225]

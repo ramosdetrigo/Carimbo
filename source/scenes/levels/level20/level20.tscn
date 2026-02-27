@@ -201,10 +201,10 @@ script = ExtResource("10_ehfin")
 atlas = ExtResource("16_mq11u")
 region = Rect2(0, 0, 270, 270)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_87ilw"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_omrow"]
 viewport_path = NodePath("ShadedAnimatedSprite3D/SubViewport")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_h7t3s"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_20mtl"]
 resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("14_omrow")
@@ -215,7 +215,7 @@ shader_parameter/texture_normal = ExtResource("17_3gwb4")
 shader_parameter/normal_scale = 1.5600008340999985
 shader_parameter/albedo = Color(1, 1, 1, 1)
 shader_parameter/texture_albedo = SubResource("AtlasTexture_yylnd")
-shader_parameter/texture_carimbo = SubResource("ViewportTexture_87ilw")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_omrow")
 shader_parameter/carimbo_glow_intensity = 0.0
 shader_parameter/burn_texture = ExtResource("15_20mtl")
 shader_parameter/burn_amount = 0.0
@@ -366,13 +366,13 @@ script = ExtResource("12_gfxgr")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, 0)
 
 [node name="ShadedAnimatedSprite3D" parent="PlayerCharacter" index="1" unique_id=1555501919]
-material_override = SubResource("ShaderMaterial_h7t3s")
+material_override = SubResource("ShaderMaterial_20mtl")
 
 [node name="WeaponManager" parent="PlayerCharacter" index="2" unique_id=2002537722]
 runes = Array[ExtResource("8_finfj")]([ExtResource("20_nq3dp"), ExtResource("21_x2gir"), ExtResource("6_iq5pc")])
 sub_runes = Array[ExtResource("8_finfj")]([ExtResource("23_sr5tw")])
 
-[node name="PhantomCamera3D" parent="PlayerCharacter" index="14" unique_id=848212730]
+[node name="PhantomCamera3D" parent="PlayerCharacter" index="15" unique_id=848212730]
 transform = Transform3D(-3.4562582e-08, -0.6497494, 0.7602012, -4.8560654e-08, 0.7601472, 0.6497956, -0.9999994, 5.960459e-08, 0, -9, 3, 0)
 
 [node name="FPPhantomCamera3D" type="Node3D" parent="." unique_id=1941715877]

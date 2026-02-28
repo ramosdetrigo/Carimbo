@@ -26,15 +26,6 @@ Button/styles/hover = SubResource("StyleBoxEmpty_sfjrn")
 Button/styles/normal = SubResource("StyleBoxEmpty_1y3t0")
 Button/styles/pressed = SubResource("StyleBoxEmpty_l0v51")
 
-[sub_resource type="InputEventAction" id="InputEventAction_3axht"]
-action = &"ui_cancel"
-
-[sub_resource type="InputEventAction" id="InputEventAction_oy65n"]
-action = &"ui_close_dialog"
-
-[sub_resource type="Shortcut" id="Shortcut_0us07"]
-events = [SubResource("InputEventAction_3axht"), SubResource("InputEventAction_oy65n")]
-
 [node name="EscMenu" type="CanvasLayer" unique_id=2041106339]
 process_mode = 3
 layer = 999
@@ -196,7 +187,6 @@ focus_neighbor_top = NodePath("../MusicTextureRect/MusicMargin/MusicHBox/MusicSl
 focus_neighbor_bottom = NodePath("../ExitButton")
 focus_next = NodePath("../ExitButton")
 focus_previous = NodePath("../MusicTextureRect/MusicMargin/MusicHBox/MusicSlider")
-shortcut = SubResource("Shortcut_0us07")
 label = "Voltar"
 burn_on_press = false
 
@@ -209,10 +199,9 @@ size_flags_vertical = 4
 focus_neighbor_top = NodePath("../BackButton")
 focus_previous = NodePath("../BackButton")
 label = "Exit"
-burn_on_press = false
 
 [connection signal="toggled" from="UIRoot/EscMenu/ButtonsVbox/Fullscreen" to="." method="_on_fullscreen_toggled"]
 [connection signal="value_changed" from="UIRoot/EscMenu/ButtonsVbox/SoundsTextureRect/SoundsMargin/SoundsHBox/SoundsSlider" to="." method="_on_sounds_slider_value_changed"]
 [connection signal="value_changed" from="UIRoot/EscMenu/ButtonsVbox/MusicTextureRect/MusicMargin/MusicHBox/MusicSlider" to="." method="_on_music_slider_value_changed"]
 [connection signal="pressed" from="UIRoot/EscMenu/ButtonsVbox/BackButton" to="." method="close_menu"]
-[connection signal="toggled" from="UIRoot/EscMenu/ButtonsVbox/ExitButton" to="." method="quit" flags=18]
+[connection signal="pressed" from="UIRoot/EscMenu/ButtonsVbox/ExitButton" to="." method="quit" flags=18]

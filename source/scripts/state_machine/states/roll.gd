@@ -17,12 +17,12 @@ func enter() -> void:
 	_last_time = Time.get_ticks_msec()
 	_og_speed = move_component.speed
 	move_component.speed = speed
-	hitbox.set_monitorable(false)
+	hitbox.set_monitorable.call_deferred(false)
 
 
 func exit() -> void:
 	move_component.speed = _og_speed
-	hitbox.set_monitorable(true)
+	hitbox.set_monitorable.call_deferred(true)
 
 
 func process(_delta: float) -> void:

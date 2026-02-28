@@ -13,7 +13,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		and (event is InputEventJoypadButton or event is InputEventJoypadMotion)
 	if blocked: return
 	_handle_movement()
-	aim = gamepad_aim() if is_gamepad else MousePointing.get_mouse_pos()
+	aim = gamepad_aim() if is_gamepad else mouse_aim()
 
 
 func _process(_delta: float) -> void:
@@ -28,7 +28,7 @@ func _handle_movement() -> void:
 
 
 func _handle_hit() -> void:
-	weapon_manager.attack(weapon_manager.global_position.direction_to(aim))
+	weapon_manager.attack(aim)
 	hit_noise.emit()
 
 
@@ -38,6 +38,9 @@ func set_input_direction(value: Vector3) -> void:
 
 
 func gamepad_aim() -> Vector3:
-	var a: Vector2 = Input.get_vector(&"aim_left", &"aim_right", &"aim_forward", &"aim_back")
-	if a: return Vector3(a.x, 0.0, a.y)
+	if movement_input: return movement_input
 	return aim
+
+
+func mouse_aim() -> Vector3:
+	return weapon_manager.global_position.direction_to(MousePointing.get_mouse_pos())

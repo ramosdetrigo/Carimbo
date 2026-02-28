@@ -57,31 +57,62 @@ shader_parameter/burn_glow_color = Color(1, 0.32, 0, 1)
 shader_parameter/burn_glow_intensity = 10.0
 shader_parameter/region_rect = Vector4(0, 0, 1, 1)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_rhx1o"]
+atlas = ExtResource("4_hepet")
+region = Rect2(0, 1536, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1svfh"]
+atlas = ExtResource("4_hepet")
+region = Rect2(0, 1024, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k7i2i"]
+atlas = ExtResource("4_hepet")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tcy7h"]
+atlas = ExtResource("4_hepet")
+region = Rect2(512, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_688pf"]
+atlas = ExtResource("4_hepet")
+region = Rect2(1024, 0, 512, 512)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_7iavi"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": ExtResource("4_hepet")
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_rhx1o")
 }],
 "loop": false,
 "name": &"death",
 "speed": 1.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": ExtResource("4_hepet")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("4_hepet")
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_1svfh")
 }],
 "loop": false,
 "name": &"hit",
 "speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k7i2i")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tcy7h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_688pf")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 6.0
 }]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_r3b27"]
@@ -105,7 +136,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 material_override = SubResource("ShaderMaterial_od2dc")
 billboard = 1
 sprite_frames = SubResource("SpriteFrames_7iavi")
-animation = &"death"
+animation = &"hit"
+autoplay = "idle"
 script = ExtResource("7_ye5ds")
 audio_player = NodePath("AudioStreamPlayer3D")
 stamp_viewport = NodePath("SubViewport")
@@ -114,12 +146,15 @@ metadata/_custom_type_script = "uid://ctmgj3s2w7dsb"
 [node name="SubViewport" type="SubViewport" parent="ShadedAnimatedSprite3D" unique_id=1331408483]
 disable_3d = true
 transparent_bg = true
+size = Vector2i(1536, 2049)
 render_target_clear_mode = 2
 render_target_update_mode = 1
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="ShadedAnimatedSprite3D" unique_id=946061885]
 stream = ExtResource("8_rhx1o")
 bus = &"Sounds"
+
+[node name="DeathAudio" type="AudioStreamPlayer3D" parent="ShadedAnimatedSprite3D" unique_id=1186615570]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=910878181]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.87146, 0)
@@ -168,7 +203,7 @@ metadata/_custom_type_script = "uid://bfied8f76qv1k"
 
 [node name="CasamentoBeehaveTree" type="Node" parent="." unique_id=2040254420 node_paths=PackedStringArray("blackboard", "actor")]
 script = ExtResource("12_s2cls")
-blackboard = NodePath("@Node@41260")
+blackboard = NodePath("@Node@123193")
 actor = NodePath("..")
 metadata/_custom_type_script = "uid://bb0t2ovl7wifo"
 
@@ -301,3 +336,5 @@ metadata/_custom_type_script = "uid://c541rfah1pvw8"
 script = ExtResource("29_tm5a7")
 input_component = NodePath("../../../../../InputComponent")
 metadata/_custom_type_script = "uid://sqhnl6cqhp06"
+
+[connection signal="dead" from="." to="ShadedAnimatedSprite3D/DeathAudio" method="play"]

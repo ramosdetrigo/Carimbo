@@ -11,7 +11,7 @@ func enter() -> void:
 	await animated_sprite.animation_finished
 	animated_sprite.play(loop_death_animation)
 
-	SceneLoader.load_scene("uid://dbx0mdbod3dh8")
+	SceneLoader.load_last_paint_room()
 
 
 func exit() -> void: pass

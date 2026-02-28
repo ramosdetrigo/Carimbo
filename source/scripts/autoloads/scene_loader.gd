@@ -2,6 +2,7 @@ class_name SceneLoaderAutoload
 extends Node
 
 const LOADING_SCREEN: PackedScene = preload("uid://dossg3cl5gsqo")
+const LEVEL_1 = "uid://dbx0mdbod3dh8"
 
 signal progress_changed(progress: float)
 signal scene_loaded()
@@ -19,6 +20,7 @@ var _last_paint_room: String
 
 func _ready() -> void:
 	set_process(false)
+	set_process_mode(Node.PROCESS_MODE_ALWAYS)
 	_last_paint_room = SaveSys.load_last_level()
 	if not loading_scene:
 		loading_scene = LOADING_SCREEN.instantiate()
@@ -55,6 +57,7 @@ func load_scene_with_player(_scene_path: String,
 
 func load_last_paint_room() -> void:
 	_last_paint_room = SaveSys.load_last_level()
+	if _last_paint_room.is_empty(): _last_paint_room = LEVEL_1
 	load_scene(_last_paint_room)
 
 

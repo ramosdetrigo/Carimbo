@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://ch7qu6368vpnt"]
+
+[ext_resource type="Script" uid="uid://crbnu50kfki1r" path="res://scenes/ui/menu/submenus/main.gd" id="1_c8x4o"]
+[ext_resource type="Theme" uid="uid://j8ln4077rpnx" path="res://resources/theme/main_ui.tres" id="1_g1ny7"]
+[ext_resource type="Texture2D" uid="uid://8ci2m0i1ykjs" path="res://assets/textures/logoda4_crop.svg" id="1_ur5i3"]
+[ext_resource type="PackedScene" uid="uid://bnft0ws15mkb1" path="res://scenes/ui/menu/animated_button.tscn" id="2_c8x4o"]
+
+[node name="MainMenu" type="VBoxContainer" unique_id=1861023147 node_paths=PackedStringArray("buttons")]
+offset_right = 387.0
+offset_bottom = 608.0
+size_flags_horizontal = 3
+theme = ExtResource("1_g1ny7")
+script = ExtResource("1_c8x4o")
+buttons = [NodePath("ButtonsVbox/ContinueButton"), NodePath("ButtonsVbox/PlayButton"), NodePath("ButtonsVbox/ConfigButton"), NodePath("ButtonsVbox/CreditsButton"), NodePath("ButtonsVbox/ExitButton")]
+metadata/_custom_type_script = "uid://cs262fdhaiudl"
+
+[node name="Logo" type="TextureRect" parent="." unique_id=1021709663]
+clip_contents = true
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("1_ur5i3")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="ButtonsVbox" type="VBoxContainer" parent="." unique_id=540358293]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ContinueButton" parent="ButtonsVbox" unique_id=1447173936 instance=ExtResource("2_c8x4o")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+label = "Continuar"
+
+[node name="PlayButton" parent="ButtonsVbox" unique_id=538765829 instance=ExtResource("2_c8x4o")]
+unique_name_in_owner = true
+layout_mode = 2
+label = "Novo Jogo"
+
+[node name="ConfigButton" parent="ButtonsVbox" unique_id=1394869589 instance=ExtResource("2_c8x4o")]
+unique_name_in_owner = true
+layout_mode = 2
+label = "Configurações"
+
+[node name="CreditsButton" parent="ButtonsVbox" unique_id=2065398685 instance=ExtResource("2_c8x4o")]
+unique_name_in_owner = true
+layout_mode = 2
+label = "Créditos"
+
+[node name="ExitButton" parent="ButtonsVbox" unique_id=1796528440 instance=ExtResource("2_c8x4o")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+label = "Sair"
+
+[connection signal="pressed" from="ButtonsVbox/ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="ButtonsVbox/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="ButtonsVbox/ConfigButton" to="." method="_on_config_button_pressed"]
+[connection signal="pressed" from="ButtonsVbox/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="ButtonsVbox/ExitButton" to="." method="_on_exit_button_pressed"]

@@ -48,7 +48,7 @@ shader_parameter/normal_scale = 1.5600008340999985
 shader_parameter/albedo = Color(1, 1, 1, 1)
 shader_parameter/texture_albedo = SubResource("AtlasTexture_x3nh7")
 shader_parameter/texture_carimbo = SubResource("ViewportTexture_nbbw7")
-shader_parameter/carimbo_glow_intensity = 0.0
+shader_parameter/carimbo_glow_intensity = 10.0
 shader_parameter/burn_texture = ExtResource("3_nbbw7")
 shader_parameter/burn_amount = 0.0
 shader_parameter/burn_size = 0.150000007125
@@ -215,7 +215,7 @@ metadata/_custom_type_script = "uid://c6tbcxlt1e2hy"
 
 [node name="AtestadoBeehaveTree" type="Node" parent="." unique_id=331908298 node_paths=PackedStringArray("blackboard", "actor")]
 script = ExtResource("13_taiqs")
-blackboard = NodePath("@Node@166143")
+blackboard = NodePath("@Node@27996")
 actor = NodePath("..")
 metadata/_custom_type_script = "uid://bb0t2ovl7wifo"
 
@@ -240,7 +240,6 @@ metadata/_custom_type_script = "uid://conlbm78k0yfx"
 
 [node name="GetAlliesAction" type="Node" parent="AtestadoBeehaveTree/SelectorReactiveComposite/BuffAllies/SequenceComposite" unique_id=1041740145]
 script = ExtResource("22_l6imi")
-_range = 100.0
 metadata/_custom_type_script = "uid://qvwyjwtkcuxs"
 
 [node name="DelayDecorator" type="Node" parent="AtestadoBeehaveTree/SelectorReactiveComposite/BuffAllies/SequenceComposite" unique_id=1335150950]

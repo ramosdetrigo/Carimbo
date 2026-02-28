@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://cpogqw038io66"]
+
+[ext_resource type="Theme" uid="uid://j8ln4077rpnx" path="res://resources/theme/main_ui.tres" id="1_3ihr0"]
+[ext_resource type="Script" uid="uid://crq4jqwnlikyg" path="res://scenes/ui/menu/submenus/credits.gd" id="2_3ihr0"]
+[ext_resource type="Texture2D" uid="uid://8ci2m0i1ykjs" path="res://assets/textures/logoda4_crop.svg" id="3_atpp1"]
+[ext_resource type="PackedScene" uid="uid://bnft0ws15mkb1" path="res://scenes/ui/menu/animated_button.tscn" id="4_8yxcq"]
+
+[node name="CreditsMenu" type="VBoxContainer" unique_id=1861023147]
+offset_right = 387.0
+offset_bottom = 608.0
+size_flags_horizontal = 3
+theme = ExtResource("1_3ihr0")
+script = ExtResource("2_3ihr0")
+metadata/_custom_type_script = "uid://cs262fdhaiudl"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1615845115]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect" unique_id=1091787796]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Logo" type="TextureRect" parent="TextureRect/MarginContainer" unique_id=1021709663]
+clip_contents = true
+layout_mode = 2
+texture = ExtResource("3_atpp1")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BackButton" parent="." unique_id=1796528440 instance=ExtResource("4_8yxcq")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+label = "Voltar"
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

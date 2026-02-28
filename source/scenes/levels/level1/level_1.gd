@@ -9,8 +9,4 @@ func _ready() -> void:
 
 
 func _play_main_song(_r = null) -> void:
-	if MusicPlayer.stream == Consts.SONGS.BATTLE1:
-		return
-	MusicPlayer.stop()
-	MusicPlayer.stream = Consts.SONGS.BATTLE1
-	MusicPlayer.play()
+	MusicPlayer.play_song(Consts.SONGS.BATTLE1)

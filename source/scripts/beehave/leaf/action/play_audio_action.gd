@@ -7,8 +7,6 @@ extends ActionLeaf
 
 
 func tick(actor: Node, _blackboard: Blackboard) -> int:
-	audio_player.reparent(actor.get_parent())
-	audio_player.finished.connect(audio_player.queue_free)
 	audio_player.play()
 	return SUCCESS
 

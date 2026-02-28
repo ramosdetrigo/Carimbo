@@ -16,7 +16,9 @@ var swing_dir: Vector3:
 	set(v): swing_dir = v; if hurtbox_component: hurtbox_component.launch_direction = swing_dir
 
 func _ready() -> void:
-	if not audio: audio = get_children().filter(func(c): return c is AudioStreamPlayer3D).front()
+	if not audio:
+		var a: Array = get_children().filter(func(c): return c is AudioStreamPlayer3D)
+		audio = null if a.is_empty() else a.front()
 	if audio: audio.play()
 	_handle_particle()
 	_handle_hurtbox()

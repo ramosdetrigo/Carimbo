@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bnfb6cxda8lhn" path="res://scenes/components/character/character_controler_3d.gd" id="1_6d1i5"]
 [ext_resource type="Script" uid="uid://cf1upyw7x1cla" path="res://scripts/state_machine/states/idle.gd" id="2_61ex5"]
 [ext_resource type="Shader" uid="uid://dl6ampid6rth6" path="res://scenes/components/stamped_animated_sprite/shaded_animated_sprite_3d.gdshader" id="2_albb0"]
+[ext_resource type="PackedScene" uid="uid://do0pqol4us85c" path="res://scenes/ui/esc_menu.tscn" id="2_xbv7c"]
 [ext_resource type="Texture2D" uid="uid://ch1fj0j2vc2r1" path="res://resources/burn_noise_texture.tres" id="3_0fpak"]
 [ext_resource type="Script" uid="uid://p013328bt87o" path="res://scripts/state_machine/states/move.gd" id="3_6d1i5"]
 [ext_resource type="Texture2D" uid="uid://c08g6e0pfttkp" path="res://assets/textures/player/idle.png" id="4_0fpak"]
@@ -788,8 +789,11 @@ metadata/_custom_type_script = "uid://blua7mg5dbvwn"
 
 [node name="PlayerInterface" parent="." unique_id=1667225147 instance=ExtResource("21_oucov")]
 
+[node name="EscMenu" parent="." unique_id=2041106339 instance=ExtResource("2_xbv7c")]
+
 [node name="Splat" type="AudioStreamPlayer" parent="." unique_id=2047522109]
 stream = ExtResource("27_a6gqt")
+bus = &"Sounds"
 
 [node name="DamageNoise" type="Node3D" parent="." unique_id=287624549]
 script = ExtResource("34_fgtne")

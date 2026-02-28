@@ -8,6 +8,7 @@ signal burned
 	set(text):
 		(%Label as Label).text = text
 		label = text
+@export var burn_on_press: bool = true
 
 const burn_material: ShaderMaterial = preload("res://resources/shaders/button_burn_fx.tres")
 
@@ -60,6 +61,8 @@ func _mouse_exited() -> void:
 	_reset()
 
 func _pressed() -> void:
+	if not burn_on_press: return
+	
 	material = burn_material.duplicate()
 	_reset()
 	var tween: Tween = create_tween()

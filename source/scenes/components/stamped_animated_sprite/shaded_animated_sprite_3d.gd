@@ -29,16 +29,18 @@ func stamp(image: Texture2D, size: Vector2 = Vector2(1.0, 1.0)) -> void:
 	# anda até 1/4 do tamanho do viewport pra algum lado
 	var r = vp_size/4.0
 	var pos_offset = Vector2(randi_range(-r.x, r.x), randi_range(-r.y, r.y))
-
+	var rot = deg_to_rad(randf_range(-50.0, 50.0))
+	
 	var pos = vp_size/2.0 + pos_offset
-	stamp_offset(image, pos, size)
+	stamp_offset(image, pos, size, rot)
 
 
 ## Desenha uma imagem por cima do sprite = null
-func stamp_offset(image: Texture2D, pos: Vector2, size: Vector2) -> void:
+func stamp_offset(image: Texture2D, pos: Vector2, size: Vector2, rot: float) -> void:
 	var sprite = Sprite2D.new()
 	sprite.position = pos
 	sprite.scale = size
+	sprite.rotation = rot
 	sprite.texture = image
 	stamp_viewport.add_child(sprite)
 

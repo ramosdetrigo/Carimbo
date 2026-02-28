@@ -120,11 +120,13 @@ value = 0.5
 
 [node name="BackButton" parent="ButtonsVbox" unique_id=2065398685 instance=ExtResource("4_l0v51")]
 unique_name_in_owner = true
+clip_contents = true
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 label = "Voltar"
+burn_on_press = null
 
 [connection signal="value_changed" from="ButtonsVbox/SoundsTextureRect/SoundsMargin/SoundsHBox/SoundsSlider" to="." method="_on_sounds_slider_value_changed"]
 [connection signal="value_changed" from="ButtonsVbox/MusicTextureRect/MusicMargin/MusicHBox/MusicSlider" to="." method="_on_music_slider_value_changed"]

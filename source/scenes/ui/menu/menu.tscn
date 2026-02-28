@@ -33,7 +33,7 @@ render_target_update_mode = 4
 
 [node name="MenuLevel1" parent="SubViewportContainer/SubViewport" unique_id=1223334471 instance=ExtResource("1_5gbuo")]
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1419801652]
+[node name="Vignette" type="TextureRect" parent="." unique_id=1419801652]
 modulate = Color(1, 1, 1, 0.64705884)
 layout_mode = 0
 anchor_right = 1.0

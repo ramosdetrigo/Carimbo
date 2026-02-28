@@ -53,7 +53,7 @@ shader_parameter/normal_scale = 1.5600008340999985
 shader_parameter/albedo = Color(1, 1, 1, 1)
 shader_parameter/texture_albedo = SubResource("AtlasTexture_8oi5f")
 shader_parameter/texture_carimbo = SubResource("ViewportTexture_2r5vq")
-shader_parameter/carimbo_glow_intensity = 0.0
+shader_parameter/carimbo_glow_intensity = 10.0
 shader_parameter/burn_texture = ExtResource("3_gbopn")
 shader_parameter/burn_amount = 0.0
 shader_parameter/burn_size = 0.150000007125
@@ -219,7 +219,7 @@ shape = SubResource("CapsuleShape3D_8lugo")
 [node name="ErrigeBeehaveTree" type="Node" parent="." unique_id=356257183 node_paths=PackedStringArray("blackboard", "actor")]
 script = ExtResource("9_b7hfo")
 actor_node_path = NodePath("..")
-blackboard = NodePath("@Node@1461493")
+blackboard = NodePath("@Node@33560")
 actor = NodePath("..")
 metadata/_custom_type_script = "uid://bb0t2ovl7wifo"
 

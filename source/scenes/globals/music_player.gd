@@ -2,4 +2,10 @@ extends AudioStreamPlayer
 
 func _ready() -> void:
 	bus = "Music"
-	AudioServer.set_bus_volume_linear(Consts.BUS_MUSIC, 0.2)
+
+
+func play_song(song: AudioStream) -> void:
+	if stream != song:
+		stop()
+		stream = song
+		play()

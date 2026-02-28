@@ -14,7 +14,7 @@ uniform vec4 albedo : source_color = vec4(1);
 uniform sampler2D texture_albedo : hint_default_transparent, source_color, filter_linear_mipmap, repeat_disable;
 
 uniform sampler2D texture_carimbo : hint_default_transparent, source_color, filter_linear_mipmap, repeat_disable;
-uniform float carimbo_glow_intensity: hint_range(0.0, 10.0, 0.1);
+uniform float carimbo_glow_intensity: hint_range(0.0, 10.0, 0.1) = 10.0;
 
 uniform sampler2D burn_texture;
 uniform float burn_amount: hint_range(0.0, 1.0, 0.01);

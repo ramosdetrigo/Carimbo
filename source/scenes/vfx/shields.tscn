@@ -1,0 +1,193 @@
+[gd_scene format=3 uid="uid://cd1b6a08kepn4"]
+
+[ext_resource type="Texture2D" uid="uid://vs5byvpt5vqc" path="res://assets/textures/vfx/escudo.png" id="1_f4aji"]
+[ext_resource type="Script" uid="uid://dteavq3bxksij" path="res://scenes/vfx/shields.gd" id="1_l8aag"]
+[ext_resource type="Texture2D" uid="uid://crl1uvanniocl" path="res://assets/textures/vfx/particles/faisca.png" id="3_a74gx"]
+
+[sub_resource type="Animation" id="Animation_f4aji"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ShieldSprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.25, 0.25, 0.25)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ShieldSprite2:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.25, 0.25, 0.25)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ShieldSprite3:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.25, 0.25, 0.25)]
+}
+
+[sub_resource type="Animation" id="Animation_l8aag"]
+resource_name = "rotate"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 6.2831855, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_a74gx"]
+resource_name = "scale_down"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ShieldSprite:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.25, 0.25, 0.25), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ShieldSprite2:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.25, 0.25, 0.25), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ShieldSprite3:scale")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.25, 0.25, 0.25), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a74gx"]
+_data = {
+&"RESET": SubResource("Animation_f4aji"),
+&"rotate": SubResource("Animation_l8aag"),
+&"scale_down": SubResource("Animation_a74gx")
+}
+
+[sub_resource type="Curve" id="Curve_a74gx"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_kdo62"]
+curve = SubResource("Curve_a74gx")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_kdo62"]
+lifetime_randomness = 0.75
+emission_shape = 6
+emission_ring_axis = Vector3(0, 1, 0)
+emission_ring_height = 0.5
+emission_ring_radius = 1.0
+emission_ring_inner_radius = 1.0
+emission_ring_cone_angle = 90.0
+angle_min = -179.99998
+angle_max = 180.00002
+direction = Vector3(0, 0, 0)
+spread = 180.0
+flatness = 0.5
+initial_velocity_min = 0.5
+initial_velocity_max = 1.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.19999999
+scale_max = 0.39999998
+scale_curve = SubResource("CurveTexture_kdo62")
+color = Color(0, 2.215635, 2.8024793, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pub20"]
+transparency = 1
+cull_mode = 2
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+albedo_texture = ExtResource("3_a74gx")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_8tqa5"]
+material = SubResource("StandardMaterial3D_pub20")
+
+[node name="Shields" type="Node3D" unique_id=1272549898 node_paths=PackedStringArray("gpu_particles_3d", "animation_player")]
+script = ExtResource("1_l8aag")
+gpu_particles_3d = NodePath("GPUParticles3D")
+animation_player = NodePath("AnimationPlayer")
+
+[node name="ShieldSprite" type="Sprite3D" parent="." unique_id=160033687]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, -1)
+texture = ExtResource("1_f4aji")
+
+[node name="ShieldSprite2" type="Sprite3D" parent="." unique_id=351986107]
+transform = Transform3D(0.12499999, 0, -0.21650636, 0, 0.25, 0, 0.21650636, 0, 0.12499999, -0.866, 0, 0.5)
+texture = ExtResource("1_f4aji")
+
+[node name="ShieldSprite3" type="Sprite3D" parent="." unique_id=972340207]
+transform = Transform3D(0.12499999, 0, 0.21650636, 0, 0.25, 0, -0.21650636, 0, 0.12499999, 0.866, 0, 0.5)
+texture = ExtResource("1_f4aji")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=923256409]
+libraries/ = SubResource("AnimationLibrary_a74gx")
+autoplay = &"rotate"
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=521930071]
+transform = Transform3D(-0.8724498, 0, 0.48870367, 0, 1, 0, -0.48870367, 0, -0.8724498, 0, 0, 0)
+emitting = false
+amount = 64
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_kdo62")
+draw_pass_1 = SubResource("QuadMesh_8tqa5")

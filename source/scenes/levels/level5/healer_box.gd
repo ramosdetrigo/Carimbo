@@ -6,9 +6,12 @@ extends Area3D
 @export_custom(PROPERTY_HINT_GROUP_ENABLE, "") var rune_enable: bool = false
 @export var rune: Rune
 @export var is_sub_rune: bool = false
+@export var audio_stream_player: AudioStreamPlayer
 
 func _ready() -> void:
 	body_entered.connect(_on_body_entered)
+	if not audio_stream_player: audio_stream_player = get_children().filter(func(c):
+		return c is AudioStreamPlayer).front()
 
 
 func _on_body_entered(body: Node3D) -> void:
@@ -17,7 +20,7 @@ func _on_body_entered(body: Node3D) -> void:
 	b.stats.set_health_call(func(c: float) -> float: return c + heal_amount)
 	if not rune_enable: return
 	elif not rune: return
-	if not is_sub_rune:
-		WeaponManager.instance.append_rune(rune); return
-	WeaponManager.instance.append_sub_rune(rune)
+	if not is_sub_rune: WeaponManager.instance.append_rune(rune)
+	else: WeaponManager.instance.append_sub_rune(rune)
 	body_entered.disconnect(_on_body_entered)
+	if audio_stream_player: audio_stream_player.play()

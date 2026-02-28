@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://cuoa1ubyh5d06" path="res://scripts/attack_system/attack_info.gd" id="2_onduj"]
 [ext_resource type="Texture2D" uid="uid://debc8ts841wia" path="res://assets/textures/stamps/símbolo-azul.png" id="3_k6i22"]
 [ext_resource type="Script" uid="uid://fjgad71t0sd4" path="res://scripts/attack_system/hurtbox_component.gd" id="4_3j3qg"]
+[ext_resource type="AudioStream" uid="uid://byxfu5jqv6ygq" path="res://assets/sounds/hammer.mp3" id="4_xbhsi"]
 [ext_resource type="Texture2D" uid="uid://c3at5slgj58to" path="res://assets/textures/vfx/particles/ring.png" id="5_onduj"]
 
 [sub_resource type="Resource" id="Resource_onduj"]
@@ -67,6 +68,10 @@ attack_info = SubResource("Resource_onduj")
 hurtbox_component = NodePath("HurtboxComponent")
 particle = NodePath("GPUParticles3D")
 metadata/_custom_type_script = "uid://iji7e78ikilx"
+
+[node name="Hammer" type="AudioStreamPlayer3D" parent="." unique_id=193607510]
+stream = ExtResource("4_xbhsi")
+bus = &"Sounds"
 
 [node name="HurtboxComponent" type="Area3D" parent="." unique_id=1953897522]
 collision_layer = 0

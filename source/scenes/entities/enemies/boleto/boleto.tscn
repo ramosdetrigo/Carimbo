@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://dfe4v2sdvd1bd" path="res://assets/sounds/burn1.mp3" id="8_o5jln"]
 [ext_resource type="Script" uid="uid://cqxuelwl2k4bg" path="res://scripts/attack_system/stats_component.gd" id="8_yp07s"]
 [ext_resource type="Script" uid="uid://baffaklkbk27f" path="res://scripts/attack_system/hitbox_component.gd" id="9_2a0nr"]
+[ext_resource type="AudioStream" uid="uid://b8ejg8s8ue10q" path="res://assets/sounds/paper_tear1.mp3" id="9_xnw1q"]
 [ext_resource type="Script" uid="uid://c15vrenp7llbg" path="res://scripts/debug/debug_label.gd" id="11_qjr6i"]
 [ext_resource type="Script" uid="uid://c6tbcxlt1e2hy" path="res://scripts/components/move_component.gd" id="11_uqqi4"]
 [ext_resource type="Script" uid="uid://bfied8f76qv1k" path="res://scripts/components/input_component.gd" id="12_3kibg"]
@@ -27,6 +28,8 @@
 [ext_resource type="Script" uid="uid://dorri1tul8gfx" path="res://addons/beehave/nodes/decorators/delayer.gd" id="23_y7snv"]
 [ext_resource type="Script" uid="uid://we22430vcb44" path="res://addons/beehave/nodes/decorators/time_limiter.gd" id="24_c6tnj"]
 [ext_resource type="Script" uid="uid://crkjak4kyv56m" path="res://addons/beehave/nodes/decorators/inverter.gd" id="25_24mnh"]
+[ext_resource type="Script" uid="uid://wjp502fx2wy" path="res://scripts/beehave/leaf/action/play_audio_action.gd" id="25_aqyvl"]
+[ext_resource type="AudioStream" uid="uid://dh8433r0uwa05" path="res://assets/sounds/pop.mp3" id="26_4wer4"]
 [ext_resource type="Script" uid="uid://b8qgfm5nhx8mh" path="res://scripts/beehave/leaf/action/set_enemy_target_action.gd" id="26_c6tnj"]
 [ext_resource type="Script" uid="uid://bg1soc5i52jps" path="res://scripts/beehave/leaf/action/start_navigation_action.gd" id="27_24mnh"]
 [ext_resource type="Script" uid="uid://538o4tqp8sxm" path="res://scripts/beehave/leaf/action/set_wander_target_action.gd" id="30_jsgmn"]
@@ -187,6 +190,15 @@ render_target_update_mode = 1
 stream = ExtResource("8_o5jln")
 bus = &"Sounds"
 
+[node name="DeathAudio" type="AudioStreamPlayer3D" parent="ShadedAnimatedSprite3D" unique_id=1555459699]
+stream = ExtResource("9_xnw1q")
+bus = &"Sounds"
+
+[node name="Pop" type="AudioStreamPlayer3D" parent="ShadedAnimatedSprite3D" unique_id=907336129]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+stream = ExtResource("26_4wer4")
+bus = &"Sounds"
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1313853746]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8164978, 0)
 shape = SubResource("CapsuleShape3D_porrh")
@@ -235,7 +247,7 @@ shape = SubResource("CylinderShape3D_v7hf8")
 [node name="BoletoBeehaveTree" type="Node" parent="." unique_id=289134762 node_paths=PackedStringArray("blackboard", "actor")]
 script = ExtResource("13_ex3sn")
 actor_node_path = NodePath("..")
-blackboard = NodePath("@Node@39608")
+blackboard = NodePath("@Node@303812")
 actor = NodePath("..")
 metadata/_custom_type_script = "uid://bb0t2ovl7wifo"
 
@@ -295,7 +307,16 @@ script = ExtResource("23_y7snv")
 wait_time = 0.3
 metadata/_custom_type_script = "uid://dorri1tul8gfx"
 
-[node name="AttackAction" type="Node" parent="BoletoBeehaveTree/SelectorReactiveComposite/Combat/SelectorComposite/InRange/DelayDecorator/CooldownDecorator/RepeaterDecorator/DelayDecorator" unique_id=1576295130]
+[node name="SequenceComposite" type="Node" parent="BoletoBeehaveTree/SelectorReactiveComposite/Combat/SelectorComposite/InRange/DelayDecorator/CooldownDecorator/RepeaterDecorator/DelayDecorator" unique_id=1674970291]
+script = ExtResource("14_46xen")
+metadata/_custom_type_script = "uid://cg016dbe7gs1x"
+
+[node name="PlayAudioAction" type="Node" parent="BoletoBeehaveTree/SelectorReactiveComposite/Combat/SelectorComposite/InRange/DelayDecorator/CooldownDecorator/RepeaterDecorator/DelayDecorator/SequenceComposite" unique_id=264843700 node_paths=PackedStringArray("audio_player")]
+script = ExtResource("25_aqyvl")
+audio_player = NodePath("../../../../../../../../../../../ShadedAnimatedSprite3D/Pop")
+metadata/_custom_type_script = "uid://wjp502fx2wy"
+
+[node name="AttackAction" type="Node" parent="BoletoBeehaveTree/SelectorReactiveComposite/Combat/SelectorComposite/InRange/DelayDecorator/CooldownDecorator/RepeaterDecorator/DelayDecorator/SequenceComposite" unique_id=1576295130]
 script = ExtResource("23_c6tnj")
 attack_scene = ExtResource("15_y7snv")
 attack_spawn_offset = Vector3(0, 2, 0)
@@ -412,3 +433,5 @@ script = ExtResource("21_y7snv")
 animated_sprite = NodePath("../../../../../ShadedAnimatedSprite3D")
 animation_name = &"idle"
 metadata/_custom_type_script = "uid://conlbm78k0yfx"
+
+[connection signal="dead" from="." to="ShadedAnimatedSprite3D/DeathAudio" method="play"]

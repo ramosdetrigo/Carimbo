@@ -3,6 +3,7 @@ class_name EnemyCharacter
 extends StampableCharacter
 
 signal dead()
+signal on_launch(block: bool)
 
 @export var beehave_tree: BeehaveTree
 @export var stats_component: StatsComponent
@@ -19,6 +20,10 @@ func death() -> void:
 	dead.emit()
 	super.death()
 	remove_from_group(BeehaveConsts.MONSTER_NODE_GROUP)
+
+
+func block_move_component() -> void: on_launch.emit(true)
+func unblock_move_component() -> void: on_launch.emit(false)
 
 
 func on_being_hit() -> void:

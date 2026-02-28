@@ -24,7 +24,15 @@ func _on_area_entered(area: Area3D) -> void:
 
 func _on_body_entered(body: Node3D) -> void:
 	if body is FallingObject: _launch_falling_object(body)
+	elif body is EnemyCharacter: _launch_enemy_character(body)
 	body_hit.emit()
+
+
+func _launch_enemy_character(body: EnemyCharacter) -> void:
+	body.block_move_component()
+	body.velocity = launch_direction * launch_force
+	get_tree().create_timer(1.5).timeout.connect(body.unblock_move_component, CONNECT_ONE_SHOT)
+	print("shit")
 
 
 func _launch_falling_object(body: FallingObject) -> void:

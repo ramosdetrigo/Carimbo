@@ -31,9 +31,10 @@ func attack(shooting_dir: Vector3 = Vector3.UP) -> void:
 	var attk: AttackScene = current_rune.attack_scene.instantiate()
 	owner.add_sibling(attk)
 	var pos: Vector3 = global_position + attack_spawn_offset
-	if attk is not AttackProjectile: shooting_dir.y = 0.0; shooting_dir = shooting_dir.normalized()
+	var swing: Vector3 = shooting_dir
+	swing.y = 0.2
 	attk.look_at_from_position(pos, pos + shooting_dir)
-	attk.swing_dir = shooting_dir
+	attk.swing_dir = swing.normalized()
 	(attack_ranged if attk is AttackProjectile else attack_melee).emit()
 	cooldown_timer.start(current_rune.cooldown)
 	if current_rune.is_flag_true(Rune.RuneFlags.LIFE_STEAL):

@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://du7c6s1s7a807" path="res://scripts/components/rune.gd" id="8_finfj"]
 [ext_resource type="Script" uid="uid://bvgv0wqcnb1yp" path="res://scripts/phantom_camera_3d_follow_player.gd" id="9_qhlfs"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="10_ehfin"]
+[ext_resource type="AudioStream" uid="uid://b3v8py8bhm2fk" path="res://assets/sounds/new_rune.mp3" id="11_20mtl"]
 [ext_resource type="Environment" uid="uid://c44ylihrd2515" path="res://resources/envoriment/fire_enviroment.tres" id="11_t720h"]
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="12_gfxgr"]
 [ext_resource type="PackedScene" uid="uid://domk3xwojp1ia" path="res://scenes/components/character/character.tscn" id="13_7st34"]
@@ -201,10 +202,10 @@ script = ExtResource("10_ehfin")
 atlas = ExtResource("16_mq11u")
 region = Rect2(0, 0, 270, 270)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_omrow"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_mq11u"]
 viewport_path = NodePath("ShadedAnimatedSprite3D/SubViewport")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_20mtl"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3gwb4"]
 resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("14_omrow")
@@ -215,7 +216,7 @@ shader_parameter/texture_normal = ExtResource("17_3gwb4")
 shader_parameter/normal_scale = 1.5600008340999985
 shader_parameter/albedo = Color(1, 1, 1, 1)
 shader_parameter/texture_albedo = SubResource("AtlasTexture_yylnd")
-shader_parameter/texture_carimbo = SubResource("ViewportTexture_omrow")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_mq11u")
 shader_parameter/carimbo_glow_intensity = 0.0
 shader_parameter/burn_texture = ExtResource("15_20mtl")
 shader_parameter/burn_amount = 0.0
@@ -309,12 +310,14 @@ omni_range = 10.0
 [node name="Entrance" parent="NavigationRegion3D/GridMap/Lights" unique_id=1756562916 instance=ExtResource("4_lm1ut")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, 0)
 marker_position = Vector3(-11, 0, 0)
+is_paint_room = false
 
 [node name="Exit" parent="NavigationRegion3D/GridMap/Lights" unique_id=1742187779 instance=ExtResource("4_lm1ut")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 13, 0, 0)
 marker_position = Vector3(11, 0, -1.7484555e-07)
 destination_scene = "uid://bts2jcc2rigo8"
 destination_position = Vector3(-8.742278e-08, 0, 14)
+is_paint_room = false
 
 [node name="Enemies" type="Node3D" parent="NavigationRegion3D/GridMap" unique_id=926605760]
 
@@ -350,11 +353,14 @@ priority = 1
 tween_resource = SubResource("Resource_8ivbx")
 metadata/_custom_type_script = "uid://bvgv0wqcnb1yp"
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="NavigationRegion3D/GridMap/Healerbox" unique_id=1856287973]
+stream = ExtResource("11_20mtl")
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=961935023]
 environment = ExtResource("11_t720h")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1198026530]
-transform = Transform3D(0.99999046, 0.002360277, -0.0036694456, 2.3283064e-10, 0.8410379, 0.54097617, 0.0043629967, -0.54097104, 0.8410299, 0.8357921, 6.5528116, 9.089561)
+transform = Transform3D(0.9999905, 0.0023602769, -0.0036694459, 0, 0.841038, 0.5409761, 0.004362997, -0.5409709, 0.84102994, 0.8357921, 6.5528116, 9.089561)
 top_level = true
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D" unique_id=1280414814]
@@ -366,13 +372,13 @@ script = ExtResource("12_gfxgr")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, 0)
 
 [node name="ShadedAnimatedSprite3D" parent="PlayerCharacter" index="1" unique_id=1555501919]
-material_override = SubResource("ShaderMaterial_20mtl")
+material_override = SubResource("ShaderMaterial_3gwb4")
 
 [node name="WeaponManager" parent="PlayerCharacter" index="2" unique_id=2002537722]
 runes = Array[ExtResource("8_finfj")]([ExtResource("20_nq3dp"), ExtResource("21_x2gir"), ExtResource("6_iq5pc")])
 sub_runes = Array[ExtResource("8_finfj")]([ExtResource("23_sr5tw")])
 
-[node name="PhantomCamera3D" parent="PlayerCharacter" index="15" unique_id=848212730]
+[node name="PhantomCamera3D" parent="PlayerCharacter" index="16" unique_id=848212730]
 transform = Transform3D(-3.4562582e-08, -0.6497494, 0.7602012, -4.8560654e-08, 0.7601472, 0.6497956, -0.9999994, 5.960459e-08, 0, -9, 3, 0)
 
 [node name="FPPhantomCamera3D" type="Node3D" parent="." unique_id=1941715877]

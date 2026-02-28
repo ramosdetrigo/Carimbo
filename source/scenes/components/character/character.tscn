@@ -36,6 +36,7 @@
 [ext_resource type="Script" uid="uid://ccmiitq0sdh7j" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_noise_emitter_3d.gd" id="34_fgtne"]
 [ext_resource type="Script" uid="uid://cuffvge5ad4aa" path="res://addons/phantom_camera/scripts/resources/phantom_camera_noise_3d.gd" id="35_neimr"]
 [ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="37_hjivr"]
+[ext_resource type="AudioStream" uid="uid://ppyanksqqout" path="res://assets/sounds/player_damage1.mp3" id="38_hjivr"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="38_qnac1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yylnd"]
@@ -823,6 +824,10 @@ align_transform_with_view = Callable()
 align_position_with_view = Callable()
 metadata/_custom_type_script = "uid://csjccrhj5wnx7"
 
+[node name="PlayerDamage1" type="AudioStreamPlayer" parent="." unique_id=167297671]
+stream = ExtResource("38_hjivr")
+bus = &"Sounds"
+
 [connection signal="animation_finished" from="ShadedAnimatedSprite3D" to="ShadedAnimatedSprite3D" method="play" binds= [&"idle"]]
 [connection signal="attack_melee" from="WeaponManager" to="StateMachine" method="_on_weapon_manager_attack_melee"]
 [connection signal="attack_ranged" from="WeaponManager" to="StateMachine" method="_on_weapon_manager_attack_ranged"]
@@ -832,3 +837,4 @@ metadata/_custom_type_script = "uid://csjccrhj5wnx7"
 [connection signal="health_changed" from="StatsComponent" to="PlayerInterface" method="_on_health_changed" flags=18]
 [connection signal="health_lowered" from="StatsComponent" to="StateMachine" method="_on_stats_component_health_lowered"]
 [connection signal="health_lowered" from="StatsComponent" to="DamageNoise" method="emit"]
+[connection signal="health_lowered" from="StatsComponent" to="PlayerDamage1" method="play"]

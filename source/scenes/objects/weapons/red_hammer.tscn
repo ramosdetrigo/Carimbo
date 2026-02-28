@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://cuoa1ubyh5d06" path="res://scripts/attack_system/attack_info.gd" id="2_8q12r"]
 [ext_resource type="Texture2D" uid="uid://de5aie68gk0wk" path="res://assets/textures/stamps/símbolo-vermelho.png" id="3_tpv0d"]
 [ext_resource type="Script" uid="uid://fjgad71t0sd4" path="res://scripts/attack_system/hurtbox_component.gd" id="4_oiev7"]
+[ext_resource type="AudioStream" uid="uid://byxfu5jqv6ygq" path="res://assets/sounds/hammer.mp3" id="4_tpv0d"]
 [ext_resource type="Texture2D" uid="uid://db11mohofq7po" path="res://assets/textures/vfx/particles/puff.png" id="5_8q12r"]
 
 [sub_resource type="Resource" id="Resource_7fl2k"]
@@ -63,6 +64,10 @@ hurtbox_component = NodePath("HurtboxComponent")
 particle = NodePath("Puff")
 metadata/_custom_type_script = "uid://iji7e78ikilx"
 
+[node name="Hammer" type="AudioStreamPlayer3D" parent="." unique_id=23961282]
+stream = ExtResource("4_tpv0d")
+bus = &"Sounds"
+
 [node name="Puff" type="GPUParticles3D" parent="." unique_id=2134799546]
 material_override = SubResource("StandardMaterial3D_tpv0d")
 emitting = false
@@ -76,9 +81,9 @@ draw_pass_1 = SubResource("QuadMesh_y2x1i")
 
 [node name="HurtboxComponent" type="Area3D" parent="." unique_id=1953897522]
 collision_layer = 0
-collision_mask = 116
+collision_mask = 4
 script = ExtResource("4_oiev7")
-launch_force = 20.0
+launch_force = 0.0
 metadata/_custom_type_script = "uid://fjgad71t0sd4"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="HurtboxComponent" unique_id=1228507417]

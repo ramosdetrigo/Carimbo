@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://c15vrenp7llbg" path="res://scripts/debug/debug_label.gd" id="9_gliei"]
 [ext_resource type="AudioStream" uid="uid://dfe4v2sdvd1bd" path="res://assets/sounds/burn1.mp3" id="9_ser7i"]
 [ext_resource type="Script" uid="uid://baffaklkbk27f" path="res://scripts/attack_system/hitbox_component.gd" id="10_46ys3"]
+[ext_resource type="AudioStream" uid="uid://b8ejg8s8ue10q" path="res://assets/sounds/paper_tear1.mp3" id="10_tllcy"]
 [ext_resource type="Script" uid="uid://bb0t2ovl7wifo" path="res://addons/beehave/nodes/beehave_tree.gd" id="11_3fptt"]
 [ext_resource type="Script" uid="uid://c6tbcxlt1e2hy" path="res://scripts/components/move_component.gd" id="11_t2rdl"]
 [ext_resource type="Script" uid="uid://cw22yurt5l74k" path="res://addons/beehave/nodes/composites/selector_reactive.gd" id="13_0s78c"]
@@ -188,6 +189,10 @@ render_target_update_mode = 1
 stream = ExtResource("9_ser7i")
 bus = &"Sounds"
 
+[node name="DeathAudio" type="AudioStreamPlayer3D" parent="ShadedAnimatedSprite3D" unique_id=934703460]
+stream = ExtResource("10_tllcy")
+bus = &"Sounds"
+
 [node name="StatsComponent" type="Node" parent="." unique_id=1772835128 node_paths=PackedStringArray("input_component", "hitbox_component", "beehave_tree")]
 script = ExtResource("8_l7hhy")
 max_health = 10.0
@@ -233,7 +238,7 @@ shape = SubResource("SphereShape3D_gliei")
 [node name="CnhBeehaveTree" type="Node" parent="." unique_id=1218304045 node_paths=PackedStringArray("blackboard", "actor")]
 script = ExtResource("11_3fptt")
 actor_node_path = NodePath("..")
-blackboard = NodePath("@Node@119089")
+blackboard = NodePath("@Node@261891")
 actor = NodePath("..")
 metadata/_custom_type_script = "uid://bb0t2ovl7wifo"
 
@@ -342,3 +347,5 @@ script = ExtResource("21_3t13t")
 animated_sprite = NodePath("../../../../../ShadedAnimatedSprite3D")
 animation_name = &"idle"
 metadata/_custom_type_script = "uid://conlbm78k0yfx"
+
+[connection signal="dead" from="." to="ShadedAnimatedSprite3D/DeathAudio" method="play"]

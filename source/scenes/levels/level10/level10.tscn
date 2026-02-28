@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dq6estklxh4me" path="res://assets/textures/ui/vida/amarelo_bola_grande.png" id="8_tqsyt"]
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="9_48nlb"]
 [ext_resource type="PackedScene" uid="uid://domk3xwojp1ia" path="res://scenes/components/character/character.tscn" id="10_5h8ni"]
+[ext_resource type="AudioStream" uid="uid://b3v8py8bhm2fk" path="res://assets/sounds/new_rune.mp3" id="11_ioapt"]
 [ext_resource type="Shader" uid="uid://dl6ampid6rth6" path="res://scenes/components/stamped_animated_sprite/shaded_animated_sprite_3d.gdshader" id="14_f2see"]
 [ext_resource type="Texture2D" uid="uid://ch1fj0j2vc2r1" path="res://resources/burn_noise_texture.tres" id="15_ioapt"]
 [ext_resource type="Texture2D" uid="uid://dqyykf3mww3uv" path="res://assets/textures/player/attack.png" id="16_q4bsp"]
@@ -199,10 +200,10 @@ script = ExtResource("7_48nlb")
 atlas = ExtResource("16_q4bsp")
 region = Rect2(0, 0, 270, 270)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_1dun5"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_q4bsp"]
 viewport_path = NodePath("ShadedAnimatedSprite3D/SubViewport")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_200gx"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3h4ug"]
 resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("14_f2see")
@@ -213,7 +214,7 @@ shader_parameter/texture_normal = ExtResource("17_3h4ug")
 shader_parameter/normal_scale = 1.5600008340999985
 shader_parameter/albedo = Color(1, 1, 1, 1)
 shader_parameter/texture_albedo = SubResource("AtlasTexture_yylnd")
-shader_parameter/texture_carimbo = SubResource("ViewportTexture_1dun5")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_q4bsp")
 shader_parameter/carimbo_glow_intensity = 0.0
 shader_parameter/burn_texture = ExtResource("15_ioapt")
 shader_parameter/burn_amount = 0.0
@@ -349,6 +350,9 @@ priority = 1
 tween_resource = SubResource("Resource_8ivbx")
 metadata/_custom_type_script = "uid://bvgv0wqcnb1yp"
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="NavigationRegion3D/GridMap/Healerbox" unique_id=823528644]
+stream = ExtResource("11_ioapt")
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=961935023]
 environment = ExtResource("7_cm7l7")
 
@@ -365,7 +369,7 @@ script = ExtResource("9_48nlb")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, 0)
 
 [node name="ShadedAnimatedSprite3D" parent="PlayerCharacter" index="1" unique_id=1555501919]
-material_override = SubResource("ShaderMaterial_200gx")
+material_override = SubResource("ShaderMaterial_3h4ug")
 
 [node name="WeaponManager" parent="PlayerCharacter" index="2" unique_id=2002537722]
 runes = Array[ExtResource("19_1yysb")]([ExtResource("20_63s8e"), ExtResource("21_iu6du")])

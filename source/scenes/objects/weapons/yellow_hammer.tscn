@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://blfnl5ogv1ctn" path="res://assets/textures/stamps/símbolo-amarelo.png" id="3_308dq"]
 [ext_resource type="Texture2D" uid="uid://rxlnntwvakwf" path="res://assets/textures/vfx/particles/spark_05.png" id="4_ytg6t"]
 [ext_resource type="Texture2D" uid="uid://crl1uvanniocl" path="res://assets/textures/vfx/particles/faisca.png" id="5_308dq"]
+[ext_resource type="AudioStream" uid="uid://cjt851ct6ew21" path="res://assets/sounds/laser1.mp3" id="7_af8cr"]
 
 [sub_resource type="Resource" id="Resource_ytg6t"]
 script = ExtResource("2_jahpa")
@@ -71,9 +72,8 @@ metadata/_custom_type_script = "uid://ctsptwrqbeytg"
 
 [node name="HurtboxComponent" type="Area3D" parent="." unique_id=1120544519]
 collision_layer = 0
-collision_mask = 116
+collision_mask = 4
 script = ExtResource("2_rbprr")
-launch_force = 20.0
 metadata/_custom_type_script = "uid://fjgad71t0sd4"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="HurtboxComponent" unique_id=1222782554]
@@ -92,3 +92,7 @@ transform = Transform3D(0.2, 0, 0, 0, -8.742278e-09, -0.2, 0, 0.2, -8.742278e-09
 material_override = SubResource("StandardMaterial3D_vrcm2")
 modulate = Color(6.013793, 4.5258365, 0.4297785, 1)
 texture = ExtResource("5_308dq")
+
+[node name="Hammer" type="AudioStreamPlayer3D" parent="." unique_id=1371757893]
+stream = ExtResource("7_af8cr")
+bus = &"Sounds"

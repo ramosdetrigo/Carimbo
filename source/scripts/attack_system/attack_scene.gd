@@ -10,11 +10,14 @@ var lifetime: float = 0.5: set = _set_lifetime
 @export var should_break_on_contact: bool = true
 @export var hurtbox_component: HurtboxComponent
 @export var particle: GPUParticles3D
+@export var audio: AudioStreamPlayer3D
 
 var swing_dir: Vector3:
 	set(v): swing_dir = v; if hurtbox_component: hurtbox_component.launch_direction = swing_dir
 
 func _ready() -> void:
+	if not audio: audio = get_children().filter(func(c): return c is AudioStreamPlayer3D).front()
+	if audio: audio.play()
 	_handle_particle()
 	_handle_hurtbox()
 

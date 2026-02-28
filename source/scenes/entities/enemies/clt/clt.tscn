@@ -1,0 +1,814 @@
+[gd_scene format=3 uid="uid://b2sgpfxgwrjy3"]
+
+[ext_resource type="Script" uid="uid://cg1dswyw2p1op" path="res://scenes/entities/enemies/enemy_character.gd" id="1_2k8tu"]
+[ext_resource type="Shader" uid="uid://dl6ampid6rth6" path="res://scenes/components/stamped_animated_sprite/shaded_animated_sprite_3d.gdshader" id="2_w1f8u"]
+[ext_resource type="Texture2D" uid="uid://ch1fj0j2vc2r1" path="res://resources/burn_noise_texture.tres" id="3_s7v4p"]
+[ext_resource type="Texture2D" uid="uid://b7xdumv7hexii" path="res://assets/textures/enemies/clt/clt.png" id="4_hktqo"]
+[ext_resource type="Texture2D" uid="uid://o34vnik8cwo4" path="res://assets/textures/paper/Paper003_1K-JPG_NormalGL.jpg" id="5_d3ia7"]
+[ext_resource type="Texture2D" uid="uid://dkbujjnpxwia0" path="res://assets/textures/paper/Paper003_1K-JPG_Roughness.jpg" id="6_ph6n7"]
+[ext_resource type="Script" uid="uid://ctmgj3s2w7dsb" path="res://scenes/components/stamped_animated_sprite/shaded_animated_sprite_3d.gd" id="7_3vp5l"]
+[ext_resource type="AudioStream" uid="uid://dfe4v2sdvd1bd" path="res://assets/sounds/burn1.mp3" id="8_pdide"]
+[ext_resource type="Script" uid="uid://baffaklkbk27f" path="res://scripts/attack_system/hitbox_component.gd" id="9_11qx5"]
+[ext_resource type="AudioStream" uid="uid://b8ejg8s8ue10q" path="res://assets/sounds/paper_tear1.mp3" id="9_pqx2w"]
+[ext_resource type="Script" uid="uid://cqxuelwl2k4bg" path="res://scripts/attack_system/stats_component.gd" id="10_j6v3s"]
+[ext_resource type="Script" uid="uid://c15vrenp7llbg" path="res://scripts/debug/debug_label.gd" id="11_ffi04"]
+[ext_resource type="Script" uid="uid://c6tbcxlt1e2hy" path="res://scripts/components/move_component.gd" id="12_h6mu8"]
+[ext_resource type="Script" uid="uid://bfied8f76qv1k" path="res://scripts/components/input_component.gd" id="13_dm813"]
+[ext_resource type="Script" uid="uid://bb0t2ovl7wifo" path="res://addons/beehave/nodes/beehave_tree.gd" id="14_m3gqv"]
+[ext_resource type="Script" uid="uid://cw22yurt5l74k" path="res://addons/beehave/nodes/composites/selector_reactive.gd" id="15_rugv5"]
+[ext_resource type="Script" uid="uid://cg016dbe7gs1x" path="res://addons/beehave/nodes/composites/sequence.gd" id="16_8r425"]
+[ext_resource type="Script" uid="uid://din3o6je4hf0y" path="res://scripts/beehave/leaf/action/get_enemy_action.gd" id="17_stgu7"]
+[ext_resource type="Script" uid="uid://bx6gqb65ng2f4" path="res://scripts/beehave/leaf/condition/hp_less_than_condition.gd" id="18_tnjr0"]
+[ext_resource type="Script" uid="uid://oc2hkcrhiyfa" path="res://scripts/beehave/leaf/condition/is_in_range_condition.gd" id="18_umd83"]
+[ext_resource type="Script" uid="uid://5aiqrlyonbxb" path="res://scripts/beehave/leaf/action/play_animation_action.gd" id="19_hktqo"]
+[ext_resource type="Script" uid="uid://8hn4kne15ac5" path="res://addons/beehave/nodes/composites/selector.gd" id="19_scolu"]
+[ext_resource type="Script" uid="uid://conlbm78k0yfx" path="res://scripts/beehave/leaf/action/play_sprite_frames_animation_action.gd" id="19_wl0hn"]
+[ext_resource type="Script" uid="uid://dorri1tul8gfx" path="res://addons/beehave/nodes/decorators/delayer.gd" id="20_r4v3i"]
+[ext_resource type="Script" uid="uid://c5v7wuqn1xvdy" path="res://addons/beehave/nodes/decorators/repeater.gd" id="20_u6j7b"]
+[ext_resource type="Script" uid="uid://wpfn0jjwq6r3" path="res://scripts/beehave/leaf/action/attack_action.gd" id="21_xoqhw"]
+[ext_resource type="PackedScene" uid="uid://bhppg2f3nkfmv" path="res://scenes/objects/attacks/powerfull_attack.tscn" id="22_mk8gb"]
+[ext_resource type="Script" uid="uid://c84st521ytmk3" path="res://addons/beehave/nodes/decorators/until_fail.gd" id="22_pqx2w"]
+[ext_resource type="PackedScene" uid="uid://8gjcppe7ib7d" path="res://scenes/objects/attacks/coin_projectile.tscn" id="24_smowf"]
+[ext_resource type="Script" uid="uid://b8qgfm5nhx8mh" path="res://scripts/beehave/leaf/action/set_enemy_target_action.gd" id="25_q6aoy"]
+[ext_resource type="Script" uid="uid://bg1soc5i52jps" path="res://scripts/beehave/leaf/action/start_navigation_action.gd" id="26_0krno"]
+[ext_resource type="Script" uid="uid://we22430vcb44" path="res://addons/beehave/nodes/decorators/time_limiter.gd" id="27_360p0"]
+[ext_resource type="Script" uid="uid://cssfcwmucql4s" path="res://scripts/beehave/leaf/condition/wait_for_range_condition.gd" id="28_p65fj"]
+[ext_resource type="Script" uid="uid://dsf3a8vlolhx8" path="res://addons/beehave/nodes/decorators/succeeder.gd" id="29_rloj3"]
+[ext_resource type="Script" uid="uid://sqhnl6cqhp06" path="res://scripts/beehave/leaf/action/stop_navigation_action.gd" id="30_f3ufb"]
+[ext_resource type="Script" uid="uid://c541rfah1pvw8" path="res://scripts/beehave/leaf/condition/wait_for_destination_condition.gd" id="32_0dlqp"]
+[ext_resource type="Script" uid="uid://chor6813h6vl0" path="res://scripts/beehave/leaf/action/set_specific_target_action.gd" id="37_8p563"]
+[ext_resource type="PackedScene" uid="uid://bwl3pcaqelafe" path="res://scenes/objects/attacks/tentacle_attack.tscn" id="39_kyt5n"]
+
+[sub_resource type="Animation" id="Animation_smowf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../ShadedAnimatedSprite3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 2, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_pqx2w"]
+resource_name = "fly_down"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../ShadedAnimatedSprite3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(2, 0.5),
+"update": 0,
+"values": [Vector3(0, 5, 0), Vector3(0, 2, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_hktqo"]
+resource_name = "fly_up"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../ShadedAnimatedSprite3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(0.5, 2),
+"update": 0,
+"values": [Vector3(0, 2, 0), Vector3(0, 5, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pqx2w"]
+_data = {
+&"RESET": SubResource("Animation_smowf"),
+&"fly_down": SubResource("Animation_pqx2w"),
+&"fly_up": SubResource("Animation_hktqo")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sneoy"]
+atlas = ExtResource("4_hktqo")
+region = Rect2(0, 1024, 512, 512)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_lo2oa"]
+viewport_path = NodePath("ShadedAnimatedSprite3D/SubViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_od2dc"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("2_w1f8u")
+shader_parameter/roughness = 1.0
+shader_parameter/texture_roughness = ExtResource("6_ph6n7")
+shader_parameter/specular = 0.249999994412
+shader_parameter/texture_normal = ExtResource("5_d3ia7")
+shader_parameter/normal_scale = 1.5600008340999985
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = SubResource("AtlasTexture_sneoy")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_lo2oa")
+shader_parameter/carimbo_glow_intensity = 10.0
+shader_parameter/burn_texture = ExtResource("3_s7v4p")
+shader_parameter/burn_amount = 0.0
+shader_parameter/burn_size = 0.150000007125
+shader_parameter/burn_smoothness = 0.1330000063175
+shader_parameter/burn_glow_color = Color(1, 0.32, 0, 1)
+shader_parameter/burn_glow_intensity = 10.0
+shader_parameter/region_rect = Vector4(0, 0.25, 0.16666667, 0.125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jxu4y"]
+atlas = ExtResource("4_hktqo")
+region = Rect2(0, 3584, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u6j7b"]
+atlas = ExtResource("4_hktqo")
+region = Rect2(512, 3584, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jn6er"]
+atlas = ExtResource("4_hktqo")
+region = Rect2(0, 1536, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8p563"]
+atlas = ExtResource("4_hktqo")
+region = Rect2(512, 1024, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kq10k"]
+atlas = ExtResource("4_hktqo")
+region = Rect2(1024, 1024, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kyt5n"]
+atlas = ExtResource("4_hktqo")
+region = Rect2(0, 2560, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2l4d"]
+atlas = ExtResource("4_hktqo")
+region = Rect2(512, 1536, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oi1bf"]
+atlas = ExtResource("4_hktqo")
+region = Rect2(0, 512, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qpq73"]
+atlas = ExtResource("4_hktqo")
+region = Rect2(512, 512, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ri13n"]
+atlas = ExtResource("4_hktqo")
+region = Rect2(0, 2048, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qkttr"]
+atlas = ExtResource("4_hktqo")
+region = Rect2(512, 2048, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jpqwv"]
+atlas = ExtResource("4_hktqo")
+region = Rect2(0, 3072, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pqx2w"]
+atlas = ExtResource("4_hktqo")
+region = Rect2(512, 3072, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7fl6r"]
+atlas = ExtResource("4_hktqo")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oj1ls"]
+atlas = ExtResource("4_hktqo")
+region = Rect2(512, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7pnnt"]
+atlas = ExtResource("4_hktqo")
+region = Rect2(1024, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqdoh"]
+atlas = ExtResource("4_hktqo")
+region = Rect2(1536, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fq1ma"]
+atlas = ExtResource("4_hktqo")
+region = Rect2(2048, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_83r5q"]
+atlas = ExtResource("4_hktqo")
+region = Rect2(2560, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fnsto"]
+atlas = ExtResource("4_hktqo")
+region = Rect2(0, 512, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j5j0r"]
+atlas = ExtResource("4_hktqo")
+region = Rect2(512, 512, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_seuo6"]
+atlas = ExtResource("4_hktqo")
+region = Rect2(1024, 512, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3boo8"]
+atlas = ExtResource("4_hktqo")
+region = Rect2(1536, 512, 512, 512)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7iavi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jxu4y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u6j7b")
+}],
+"loop": false,
+"name": &"death",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_jn6er")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_8p563")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sneoy")
+}],
+"loop": false,
+"name": &"fly_down",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_sneoy")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_8p563")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kq10k")
+}],
+"loop": false,
+"name": &"fly_up",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kyt5n")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jn6er")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g2l4d")
+}],
+"loop": true,
+"name": &"idle_flight",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oi1bf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qpq73")
+}],
+"loop": true,
+"name": &"idle_ground",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_ri13n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qkttr")
+}],
+"loop": false,
+"name": &"melee_attack",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_jpqwv")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_pqx2w")
+}],
+"loop": true,
+"name": &"pre_coffin_attack",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_7fl6r")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_oj1ls")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_7pnnt")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_dqdoh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fq1ma")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_83r5q")
+}],
+"loop": false,
+"name": &"transform",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fnsto")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j5j0r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_seuo6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3boo8")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 6.0
+}]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_r3b27"]
+radius = 1.8193359
+height = 4.2561035
+
+[node name="CLT" type="CharacterBody3D" unique_id=136567050 node_paths=PackedStringArray("beehave_tree", "stats_component", "stampable_sprite") groups=["monster"]]
+collision_layer = 16
+script = ExtResource("1_2k8tu")
+beehave_tree = NodePath("CasamentoBeehaveTree")
+stats_component = NodePath("StatsComponent")
+stampable_sprite = NodePath("ShadedAnimatedSprite3D")
+metadata/_custom_type_script = "uid://cg1dswyw2p1op"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1331215027]
+root_node = NodePath("../CasamentoBeehaveTree")
+libraries/ = SubResource("AnimationLibrary_pqx2w")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1040862579]
+avoidance_enabled = true
+radius = 1.5
+
+[node name="ShadedAnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=744002826 node_paths=PackedStringArray("audio_player", "stamp_viewport")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+material_override = SubResource("ShaderMaterial_od2dc")
+billboard = 1
+sprite_frames = SubResource("SpriteFrames_7iavi")
+animation = &"fly_up"
+autoplay = "idle_flight"
+script = ExtResource("7_3vp5l")
+audio_player = NodePath("AudioStreamPlayer3D")
+stamp_viewport = NodePath("SubViewport")
+metadata/_custom_type_script = "uid://ctmgj3s2w7dsb"
+
+[node name="SubViewport" type="SubViewport" parent="ShadedAnimatedSprite3D" unique_id=1331408483]
+disable_3d = true
+transparent_bg = true
+render_target_clear_mode = 2
+render_target_update_mode = 1
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="ShadedAnimatedSprite3D" unique_id=946061885]
+stream = ExtResource("8_pdide")
+bus = &"Sounds"
+
+[node name="DeathAudio" type="AudioStreamPlayer3D" parent="ShadedAnimatedSprite3D" unique_id=189716895]
+stream = ExtResource("9_pqx2w")
+bus = &"Sounds"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=910878181]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.87146, 0)
+shape = SubResource("CapsuleShape3D_r3b27")
+
+[node name="HurtboxComponent" type="Area3D" parent="." unique_id=1125796493 node_paths=PackedStringArray("stampable_sprite")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("9_11qx5")
+connect_signals_enable = true
+stampable_sprite = NodePath("../ShadedAnimatedSprite3D")
+metadata/_custom_type_script = "uid://baffaklkbk27f"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HurtboxComponent" unique_id=150873822]
+shape = SubResource("CapsuleShape3D_r3b27")
+
+[node name="StatsComponent" type="Node" parent="." unique_id=1282891804 node_paths=PackedStringArray("input_component", "hitbox_component", "beehave_tree")]
+script = ExtResource("10_j6v3s")
+max_health = 12.0
+max_armor = 1.0
+connect_signals_enable = true
+input_component = NodePath("../InputComponent")
+hitbox_component = NodePath("../HurtboxComponent")
+beehave_tree = NodePath("../CasamentoBeehaveTree")
+metadata/_custom_type_script = "uid://cqxuelwl2k4bg"
+
+[node name="DebugLabel3D" type="Label3D" parent="." unique_id=174513415 node_paths=PackedStringArray("stats_component")]
+editor_description = "Uma label para debug que irá mostrar os valores de vida e armadura de um StatsComponent"
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, 0)
+billboard = 1
+text = "FILHO DA PUTA"
+script = ExtResource("11_ffi04")
+stats_component = NodePath("../StatsComponent")
+metadata/_custom_type_script = "uid://c15vrenp7llbg"
+
+[node name="MoveComponent" type="Node" parent="." unique_id=577874832 node_paths=PackedStringArray("actor", "input_component")]
+script = ExtResource("12_h6mu8")
+actor = NodePath("..")
+input_component = NodePath("../InputComponent")
+metadata/_custom_type_script = "uid://c6tbcxlt1e2hy"
+
+[node name="InputComponent" type="Node" parent="." unique_id=876107865]
+script = ExtResource("13_dm813")
+metadata/_custom_type_script = "uid://bfied8f76qv1k"
+
+[node name="CasamentoBeehaveTree" type="Node" parent="." unique_id=2040254420 node_paths=PackedStringArray("blackboard", "actor")]
+script = ExtResource("14_m3gqv")
+blackboard = NodePath("@Node@129483")
+actor = NodePath("..")
+metadata/_custom_type_script = "uid://bb0t2ovl7wifo"
+
+[node name="SelectorReactiveComposite" type="Node" parent="CasamentoBeehaveTree" unique_id=273194]
+script = ExtResource("15_rugv5")
+metadata/_custom_type_script = "uid://cw22yurt5l74k"
+
+[node name="Fase3" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite" unique_id=732708874]
+script = ExtResource("16_8r425")
+metadata/_custom_type_script = "uid://cg016dbe7gs1x"
+
+[node name="HPLessThanCondition" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase3" unique_id=189696834]
+script = ExtResource("18_tnjr0")
+health_percentage = 30.0
+metadata/_custom_type_script = "uid://bx6gqb65ng2f4"
+
+[node name="Fase2" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite" unique_id=1983383487]
+script = ExtResource("16_8r425")
+metadata/_custom_type_script = "uid://cg016dbe7gs1x"
+
+[node name="HPLessThanCondition" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase2" unique_id=126382406]
+script = ExtResource("18_tnjr0")
+health_percentage = 60.0
+metadata/_custom_type_script = "uid://bx6gqb65ng2f4"
+
+[node name="Fase1" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite" unique_id=385636286]
+script = ExtResource("16_8r425")
+metadata/_custom_type_script = "uid://cg016dbe7gs1x"
+
+[node name="RepeaterDecorator" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1" unique_id=825408400]
+script = ExtResource("20_u6j7b")
+repetitions = 3
+metadata/_custom_type_script = "uid://c5v7wuqn1xvdy"
+
+[node name="NonTentacle" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator" unique_id=1989739737]
+script = ExtResource("16_8r425")
+metadata/_custom_type_script = "uid://cg016dbe7gs1x"
+
+[node name="Melee" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle" unique_id=58849585]
+script = ExtResource("16_8r425")
+metadata/_custom_type_script = "uid://cg016dbe7gs1x"
+
+[node name="GetEnemyAction" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Melee" unique_id=395574382]
+script = ExtResource("17_stgu7")
+metadata/_custom_type_script = "uid://din3o6je4hf0y"
+
+[node name="TimeLimiterDecorator" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Melee" unique_id=548210733]
+script = ExtResource("27_360p0")
+wait_time = 10.0
+metadata/_custom_type_script = "uid://we22430vcb44"
+
+[node name="UntilFailDecorator" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Melee/TimeLimiterDecorator" unique_id=140152522]
+script = ExtResource("22_pqx2w")
+metadata/_custom_type_script = "uid://c84st521ytmk3"
+
+[node name="SelectorComposite" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Melee/TimeLimiterDecorator/UntilFailDecorator" unique_id=1414222207]
+script = ExtResource("19_scolu")
+metadata/_custom_type_script = "uid://8hn4kne15ac5"
+
+[node name="Attack" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Melee/TimeLimiterDecorator/UntilFailDecorator/SelectorComposite" unique_id=321198659]
+script = ExtResource("16_8r425")
+metadata/_custom_type_script = "uid://cg016dbe7gs1x"
+
+[node name="IsInRangeCondition" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Melee/TimeLimiterDecorator/UntilFailDecorator/SelectorComposite/Attack" unique_id=1958905762]
+script = ExtResource("18_umd83")
+metadata/_custom_type_script = "uid://oc2hkcrhiyfa"
+
+[node name="DelayDecorator" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Melee/TimeLimiterDecorator/UntilFailDecorator/SelectorComposite/Attack" unique_id=525046527]
+script = ExtResource("20_r4v3i")
+wait_time = 0.5
+metadata/_custom_type_script = "uid://dorri1tul8gfx"
+
+[node name="RepeaterDecorator" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Melee/TimeLimiterDecorator/UntilFailDecorator/SelectorComposite/Attack/DelayDecorator" unique_id=1355451614]
+script = ExtResource("20_u6j7b")
+repetitions = 3
+metadata/_custom_type_script = "uid://c5v7wuqn1xvdy"
+
+[node name="DelayDecorator" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Melee/TimeLimiterDecorator/UntilFailDecorator/SelectorComposite/Attack/DelayDecorator/RepeaterDecorator" unique_id=2065887652]
+script = ExtResource("20_r4v3i")
+wait_time = 0.5
+metadata/_custom_type_script = "uid://dorri1tul8gfx"
+
+[node name="SequenceComposite" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Melee/TimeLimiterDecorator/UntilFailDecorator/SelectorComposite/Attack/DelayDecorator/RepeaterDecorator/DelayDecorator" unique_id=806443921]
+script = ExtResource("16_8r425")
+metadata/_custom_type_script = "uid://cg016dbe7gs1x"
+
+[node name="AttackAction" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Melee/TimeLimiterDecorator/UntilFailDecorator/SelectorComposite/Attack/DelayDecorator/RepeaterDecorator/DelayDecorator/SequenceComposite" unique_id=1839467025]
+script = ExtResource("21_xoqhw")
+attack_scene = ExtResource("22_mk8gb")
+spawn_at_target = true
+metadata/_custom_type_script = "uid://wpfn0jjwq6r3"
+
+[node name="PlaySpriteFramesAnimationAction" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Melee/TimeLimiterDecorator/UntilFailDecorator/SelectorComposite/Attack/DelayDecorator/RepeaterDecorator/DelayDecorator/SequenceComposite" unique_id=562210843 node_paths=PackedStringArray("animated_sprite")]
+script = ExtResource("19_wl0hn")
+animated_sprite = NodePath("../../../../../../../../../../../../../../../ShadedAnimatedSprite3D")
+animation_name = &"melee_attack"
+metadata/_custom_type_script = "uid://conlbm78k0yfx"
+
+[node name="PlaySpriteFramesAnimationAction" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Melee/TimeLimiterDecorator/UntilFailDecorator/SelectorComposite/Attack" unique_id=743663229 node_paths=PackedStringArray("animated_sprite")]
+script = ExtResource("19_wl0hn")
+animated_sprite = NodePath("../../../../../../../../../../../ShadedAnimatedSprite3D")
+animation_name = &"idle_ground"
+metadata/_custom_type_script = "uid://conlbm78k0yfx"
+
+[node name="GotoPlayer" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Melee/TimeLimiterDecorator/UntilFailDecorator/SelectorComposite" unique_id=720354903]
+script = ExtResource("16_8r425")
+metadata/_custom_type_script = "uid://cg016dbe7gs1x"
+
+[node name="GetEnemyAction" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Melee/TimeLimiterDecorator/UntilFailDecorator/SelectorComposite/GotoPlayer" unique_id=2052887762]
+script = ExtResource("17_stgu7")
+metadata/_custom_type_script = "uid://din3o6je4hf0y"
+
+[node name="SetEnemyTargetAction" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Melee/TimeLimiterDecorator/UntilFailDecorator/SelectorComposite/GotoPlayer" unique_id=1392471944 node_paths=PackedStringArray("input_component")]
+script = ExtResource("25_q6aoy")
+input_component = NodePath("../../../../../../../../../../../InputComponent")
+metadata/_custom_type_script = "uid://b8qgfm5nhx8mh"
+
+[node name="StartNavigationAction" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Melee/TimeLimiterDecorator/UntilFailDecorator/SelectorComposite/GotoPlayer" unique_id=633912599 node_paths=PackedStringArray("input_component", "navigation_agent")]
+script = ExtResource("26_0krno")
+input_component = NodePath("../../../../../../../../../../../InputComponent")
+navigation_agent = NodePath("../../../../../../../../../../../NavigationAgent3D")
+metadata/_custom_type_script = "uid://bg1soc5i52jps"
+
+[node name="PlaySpriteFramesAnimationAction" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Melee/TimeLimiterDecorator/UntilFailDecorator/SelectorComposite/GotoPlayer" unique_id=742275444 node_paths=PackedStringArray("animated_sprite")]
+script = ExtResource("19_wl0hn")
+animated_sprite = NodePath("../../../../../../../../../../../ShadedAnimatedSprite3D")
+animation_name = &"walk"
+metadata/_custom_type_script = "uid://conlbm78k0yfx"
+
+[node name="TimeLimiterDecorator" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Melee/TimeLimiterDecorator/UntilFailDecorator/SelectorComposite/GotoPlayer" unique_id=1497949340]
+script = ExtResource("27_360p0")
+wait_time = 1.0
+metadata/_custom_type_script = "uid://we22430vcb44"
+
+[node name="WaitForRangeCondition" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Melee/TimeLimiterDecorator/UntilFailDecorator/SelectorComposite/GotoPlayer/TimeLimiterDecorator" unique_id=1476485452]
+script = ExtResource("28_p65fj")
+metadata/_custom_type_script = "uid://cssfcwmucql4s"
+
+[node name="AlwaysSucceedDecorator" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Melee/TimeLimiterDecorator/UntilFailDecorator/SelectorComposite/GotoPlayer" unique_id=687216141]
+script = ExtResource("29_rloj3")
+metadata/_custom_type_script = "uid://dsf3a8vlolhx8"
+
+[node name="SequenceComposite" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Melee/TimeLimiterDecorator/UntilFailDecorator/SelectorComposite/GotoPlayer/AlwaysSucceedDecorator" unique_id=1885649565]
+script = ExtResource("16_8r425")
+metadata/_custom_type_script = "uid://cg016dbe7gs1x"
+
+[node name="IsInRangeCondition" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Melee/TimeLimiterDecorator/UntilFailDecorator/SelectorComposite/GotoPlayer/AlwaysSucceedDecorator/SequenceComposite" unique_id=1048870870]
+script = ExtResource("18_umd83")
+metadata/_custom_type_script = "uid://oc2hkcrhiyfa"
+
+[node name="StopNavigationAction" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Melee/TimeLimiterDecorator/UntilFailDecorator/SelectorComposite/GotoPlayer/AlwaysSucceedDecorator/SequenceComposite" unique_id=221531669]
+script = ExtResource("30_f3ufb")
+metadata/_custom_type_script = "uid://sqhnl6cqhp06"
+
+[node name="Ranged" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle" unique_id=395141725]
+script = ExtResource("16_8r425")
+metadata/_custom_type_script = "uid://cg016dbe7gs1x"
+
+[node name="PlayAnimationAction" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Ranged" unique_id=1333159638 node_paths=PackedStringArray("animation_player")]
+script = ExtResource("19_hktqo")
+animation_player = NodePath("../../../../../../../AnimationPlayer")
+animation_name = &"fly_up"
+metadata/_custom_type_script = "uid://5aiqrlyonbxb"
+
+[node name="PlaySpriteFramesAnimationAction" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Ranged" unique_id=1119008480 node_paths=PackedStringArray("animated_sprite")]
+script = ExtResource("19_wl0hn")
+animated_sprite = NodePath("../../../../../../../ShadedAnimatedSprite3D")
+animation_name = &"fly_up"
+metadata/_custom_type_script = "uid://conlbm78k0yfx"
+
+[node name="DelayDecorator" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Ranged" unique_id=1246699239]
+script = ExtResource("20_r4v3i")
+wait_time = 0.8
+metadata/_custom_type_script = "uid://dorri1tul8gfx"
+
+[node name="PlaySpriteFramesAnimationAction2" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Ranged/DelayDecorator" unique_id=1514506885 node_paths=PackedStringArray("animated_sprite")]
+script = ExtResource("19_wl0hn")
+animated_sprite = NodePath("../../../../../../../../ShadedAnimatedSprite3D")
+animation_name = &"idle_flight"
+metadata/_custom_type_script = "uid://conlbm78k0yfx"
+
+[node name="TimeLimiterDecorator" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Ranged" unique_id=361057121]
+script = ExtResource("27_360p0")
+wait_time = 10.0
+metadata/_custom_type_script = "uid://we22430vcb44"
+
+[node name="UntilFailDecorator" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Ranged/TimeLimiterDecorator" unique_id=2143841913]
+script = ExtResource("22_pqx2w")
+metadata/_custom_type_script = "uid://c84st521ytmk3"
+
+[node name="SelectorComposite" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Ranged/TimeLimiterDecorator/UntilFailDecorator" unique_id=669774550]
+script = ExtResource("19_scolu")
+metadata/_custom_type_script = "uid://8hn4kne15ac5"
+
+[node name="Shoot" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Ranged/TimeLimiterDecorator/UntilFailDecorator/SelectorComposite" unique_id=969358291]
+script = ExtResource("16_8r425")
+metadata/_custom_type_script = "uid://cg016dbe7gs1x"
+
+[node name="IsInRangeCondition" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Ranged/TimeLimiterDecorator/UntilFailDecorator/SelectorComposite/Shoot" unique_id=461347669]
+script = ExtResource("18_umd83")
+view_range = 3.0
+metadata/_custom_type_script = "uid://oc2hkcrhiyfa"
+
+[node name="DelayDecorator" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Ranged/TimeLimiterDecorator/UntilFailDecorator/SelectorComposite/Shoot" unique_id=241359196]
+script = ExtResource("20_r4v3i")
+wait_time = 0.5
+metadata/_custom_type_script = "uid://dorri1tul8gfx"
+
+[node name="AttackAction" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Ranged/TimeLimiterDecorator/UntilFailDecorator/SelectorComposite/Shoot/DelayDecorator" unique_id=1281854809]
+script = ExtResource("21_xoqhw")
+attack_scene = ExtResource("24_smowf")
+attack_spawn_offset = Vector3(0, 3, 0)
+metadata/_custom_type_script = "uid://wpfn0jjwq6r3"
+
+[node name="GotoPlayer" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Ranged/TimeLimiterDecorator/UntilFailDecorator/SelectorComposite" unique_id=678295733]
+script = ExtResource("16_8r425")
+metadata/_custom_type_script = "uid://cg016dbe7gs1x"
+
+[node name="GetEnemyAction" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Ranged/TimeLimiterDecorator/UntilFailDecorator/SelectorComposite/GotoPlayer" unique_id=1454960257]
+script = ExtResource("17_stgu7")
+metadata/_custom_type_script = "uid://din3o6je4hf0y"
+
+[node name="SetEnemyTargetAction" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Ranged/TimeLimiterDecorator/UntilFailDecorator/SelectorComposite/GotoPlayer" unique_id=43785353 node_paths=PackedStringArray("input_component")]
+script = ExtResource("25_q6aoy")
+input_component = NodePath("../../../../../../../../../../../InputComponent")
+metadata/_custom_type_script = "uid://b8qgfm5nhx8mh"
+
+[node name="StartNavigationAction" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Ranged/TimeLimiterDecorator/UntilFailDecorator/SelectorComposite/GotoPlayer" unique_id=1424101666 node_paths=PackedStringArray("input_component", "navigation_agent")]
+script = ExtResource("26_0krno")
+input_component = NodePath("../../../../../../../../../../../InputComponent")
+navigation_agent = NodePath("../../../../../../../../../../../NavigationAgent3D")
+metadata/_custom_type_script = "uid://bg1soc5i52jps"
+
+[node name="TimeLimiterDecorator" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Ranged/TimeLimiterDecorator/UntilFailDecorator/SelectorComposite/GotoPlayer" unique_id=592636098]
+script = ExtResource("27_360p0")
+wait_time = 1.0
+metadata/_custom_type_script = "uid://we22430vcb44"
+
+[node name="WaitForRangeCondition" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Ranged/TimeLimiterDecorator/UntilFailDecorator/SelectorComposite/GotoPlayer/TimeLimiterDecorator" unique_id=1869433790]
+script = ExtResource("28_p65fj")
+_range = 3.0
+metadata/_custom_type_script = "uid://cssfcwmucql4s"
+
+[node name="AlwaysSucceedDecorator" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Ranged/TimeLimiterDecorator/UntilFailDecorator/SelectorComposite/GotoPlayer" unique_id=299182867]
+script = ExtResource("29_rloj3")
+metadata/_custom_type_script = "uid://dsf3a8vlolhx8"
+
+[node name="SequenceComposite" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Ranged/TimeLimiterDecorator/UntilFailDecorator/SelectorComposite/GotoPlayer/AlwaysSucceedDecorator" unique_id=1322086999]
+script = ExtResource("16_8r425")
+metadata/_custom_type_script = "uid://cg016dbe7gs1x"
+
+[node name="IsInRangeCondition" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Ranged/TimeLimiterDecorator/UntilFailDecorator/SelectorComposite/GotoPlayer/AlwaysSucceedDecorator/SequenceComposite" unique_id=1432826664]
+script = ExtResource("18_umd83")
+view_range = 3.0
+metadata/_custom_type_script = "uid://oc2hkcrhiyfa"
+
+[node name="StopNavigationAction" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Ranged/TimeLimiterDecorator/UntilFailDecorator/SelectorComposite/GotoPlayer/AlwaysSucceedDecorator/SequenceComposite" unique_id=1932475047]
+script = ExtResource("30_f3ufb")
+metadata/_custom_type_script = "uid://sqhnl6cqhp06"
+
+[node name="PlayAnimationAction2" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Ranged" unique_id=640223742 node_paths=PackedStringArray("animation_player")]
+script = ExtResource("19_hktqo")
+animation_player = NodePath("../../../../../../../AnimationPlayer")
+animation_name = &"fly_down"
+metadata/_custom_type_script = "uid://5aiqrlyonbxb"
+
+[node name="PlaySpriteFramesAnimationAction3" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Ranged" unique_id=2024887927 node_paths=PackedStringArray("animated_sprite")]
+script = ExtResource("19_wl0hn")
+animated_sprite = NodePath("../../../../../../../ShadedAnimatedSprite3D")
+animation_name = &"fly_down"
+metadata/_custom_type_script = "uid://conlbm78k0yfx"
+
+[node name="DelayDecorator2" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Ranged" unique_id=635573671]
+script = ExtResource("20_r4v3i")
+wait_time = 0.8
+metadata/_custom_type_script = "uid://dorri1tul8gfx"
+
+[node name="PlaySpriteFramesAnimationAction4" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Ranged/DelayDecorator2" unique_id=137497830 node_paths=PackedStringArray("animated_sprite")]
+script = ExtResource("19_wl0hn")
+animated_sprite = NodePath("../../../../../../../../ShadedAnimatedSprite3D")
+animation_name = &"idle_ground"
+metadata/_custom_type_script = "uid://conlbm78k0yfx"
+
+[node name="Tentacles" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1" unique_id=472962372]
+script = ExtResource("16_8r425")
+metadata/_custom_type_script = "uid://cg016dbe7gs1x"
+
+[node name="SetSpecificTargetAction" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/Tentacles" unique_id=1798265584 node_paths=PackedStringArray("input_component")]
+script = ExtResource("37_8p563")
+input_component = NodePath("../../../../../InputComponent")
+metadata/_custom_type_script = "uid://chor6813h6vl0"
+
+[node name="StartNavigationAction" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/Tentacles" unique_id=691880852 node_paths=PackedStringArray("input_component", "navigation_agent")]
+script = ExtResource("26_0krno")
+input_component = NodePath("../../../../../InputComponent")
+navigation_agent = NodePath("../../../../../NavigationAgent3D")
+metadata/_custom_type_script = "uid://bg1soc5i52jps"
+
+[node name="PlayAnimationAction" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/Tentacles" unique_id=429297006 node_paths=PackedStringArray("animation_player")]
+script = ExtResource("19_hktqo")
+animation_player = NodePath("../../../../../AnimationPlayer")
+animation_name = &"fly_up"
+metadata/_custom_type_script = "uid://5aiqrlyonbxb"
+
+[node name="PlaySpriteFramesAnimationAction" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/Tentacles" unique_id=1511158467 node_paths=PackedStringArray("animated_sprite")]
+script = ExtResource("19_wl0hn")
+animated_sprite = NodePath("../../../../../ShadedAnimatedSprite3D")
+animation_name = &"fly_up"
+metadata/_custom_type_script = "uid://conlbm78k0yfx"
+
+[node name="DelayDecorator" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/Tentacles" unique_id=59153794]
+script = ExtResource("20_r4v3i")
+wait_time = 0.8
+metadata/_custom_type_script = "uid://dorri1tul8gfx"
+
+[node name="PlaySpriteFramesAnimationAction2" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/Tentacles/DelayDecorator" unique_id=675577465 node_paths=PackedStringArray("animated_sprite")]
+script = ExtResource("19_wl0hn")
+animated_sprite = NodePath("../../../../../../ShadedAnimatedSprite3D")
+animation_name = &"idle_flight"
+metadata/_custom_type_script = "uid://conlbm78k0yfx"
+
+[node name="WaitForDestinationCondition" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/Tentacles" unique_id=119793443 node_paths=PackedStringArray("input_component")]
+script = ExtResource("32_0dlqp")
+input_component = NodePath("../../../../../InputComponent")
+metadata/_custom_type_script = "uid://c541rfah1pvw8"
+
+[node name="PlayAnimationAction2" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/Tentacles" unique_id=770124148 node_paths=PackedStringArray("animation_player")]
+script = ExtResource("19_hktqo")
+animation_player = NodePath("../../../../../AnimationPlayer")
+animation_name = &"fly_down"
+metadata/_custom_type_script = "uid://5aiqrlyonbxb"
+
+[node name="PlaySpriteFramesAnimationAction3" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/Tentacles" unique_id=1191212709 node_paths=PackedStringArray("animated_sprite")]
+script = ExtResource("19_wl0hn")
+animated_sprite = NodePath("../../../../../ShadedAnimatedSprite3D")
+animation_name = &"fly_down"
+metadata/_custom_type_script = "uid://conlbm78k0yfx"
+
+[node name="DelayDecorator2" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/Tentacles" unique_id=1976415002]
+script = ExtResource("20_r4v3i")
+wait_time = 0.8
+metadata/_custom_type_script = "uid://dorri1tul8gfx"
+
+[node name="PlaySpriteFramesAnimationAction4" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/Tentacles/DelayDecorator2" unique_id=2136310348 node_paths=PackedStringArray("animated_sprite")]
+script = ExtResource("19_wl0hn")
+animated_sprite = NodePath("../../../../../../ShadedAnimatedSprite3D")
+animation_name = &"idle_ground"
+metadata/_custom_type_script = "uid://conlbm78k0yfx"
+
+[node name="TimeLimiterDecorator2" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/Tentacles" unique_id=1857827935]
+script = ExtResource("27_360p0")
+wait_time = 20.0
+metadata/_custom_type_script = "uid://we22430vcb44"
+
+[node name="UntilFailDecorator" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/Tentacles/TimeLimiterDecorator2" unique_id=1794045876]
+script = ExtResource("22_pqx2w")
+metadata/_custom_type_script = "uid://c84st521ytmk3"
+
+[node name="DelayDecorator" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/Tentacles/TimeLimiterDecorator2/UntilFailDecorator" unique_id=1526567113]
+script = ExtResource("20_r4v3i")
+wait_time = 1.0
+metadata/_custom_type_script = "uid://dorri1tul8gfx"
+
+[node name="AttackAction" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/Tentacles/TimeLimiterDecorator2/UntilFailDecorator/DelayDecorator" unique_id=1158875675]
+script = ExtResource("21_xoqhw")
+attack_scene = ExtResource("39_kyt5n")
+spawn_at_target = true
+metadata/_custom_type_script = "uid://wpfn0jjwq6r3"
+
+[connection signal="dead" from="." to="ShadedAnimatedSprite3D/DeathAudio" method="play"]
+[connection signal="on_launch" from="." to="MoveComponent" method="_on_launch"]

@@ -15,7 +15,7 @@ func tick(actor: Node, blackboard: Blackboard) -> int:
 	actor.add_sibling(attack)
 	var pos: Vector3 = (actor as Node3D).global_position + attack_spawn_offset
 	var target: Vector3 = blackboard.get_value(TARGET_POS_KEY, pos + Vector3.DOWN)
-	target.y = pos.y
+	#target.y = pos.y
 	if spawn_at_target: attack.set_global_position.call_deferred(target)
 	else: attack.look_at_from_position(pos, target)
 	return SUCCESS

@@ -1,0 +1,144 @@
+[gd_scene format=3 uid="uid://bwl3pcaqelafe"]
+
+[ext_resource type="Script" uid="uid://brxy1clipyokc" path="res://scenes/objects/attacks/tentacle_attack.gd" id="1_bdjxi"]
+[ext_resource type="Script" uid="uid://cuoa1ubyh5d06" path="res://scripts/attack_system/attack_info.gd" id="2_ghs44"]
+[ext_resource type="Texture2D" uid="uid://ddvf2tcrr4143" path="res://assets/textures/enemies/boleto/boleto_sprite_sheet.png" id="3_shw1q"]
+[ext_resource type="Script" uid="uid://fjgad71t0sd4" path="res://scripts/attack_system/hurtbox_component.gd" id="4_shukk"]
+[ext_resource type="Texture2D" uid="uid://boqg1i4eii13s" path="res://assets/textures/enemies/clt/tentaculo.png" id="5_shw1q"]
+[ext_resource type="Texture2D" uid="uid://db11mohofq7po" path="res://assets/textures/vfx/particles/puff.png" id="6_shw1q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5c8i2"]
+atlas = ExtResource("3_shw1q")
+region = Rect2(133, 2717, 289, 156)
+
+[sub_resource type="Resource" id="Resource_7yvkn"]
+script = ExtResource("2_ghs44")
+stamp_texture = SubResource("AtlasTexture_5c8i2")
+stamp_size = Vector2(0.25, 0.25)
+flags = 1
+metadata/_custom_type_script = "uid://cuoa1ubyh5d06"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ghs44"]
+size = Vector3(1, 4, 1)
+
+[sub_resource type="Animation" id="Animation_ghs44"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HurtboxComponent:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -4, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_bdjxi"]
+resource_name = "rise"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HurtboxComponent:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.5, 2),
+"update": 0,
+"values": [Vector3(0, -4, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ghs44"]
+_data = {
+&"RESET": SubResource("Animation_ghs44"),
+&"rise": SubResource("Animation_bdjxi")
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_shukk"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("6_shw1q")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id="Gradient_0dxll"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_lsrl7"]
+gradient = SubResource("Gradient_0dxll")
+
+[sub_resource type="Curve" id="Curve_hpwbc"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.87237734, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_g3mld"]
+curve = SubResource("Curve_hpwbc")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_r3sy8"]
+emission_shape = 6
+emission_ring_axis = Vector3(0, 1, 0)
+emission_ring_height = 0.0
+emission_ring_radius = 0.4
+emission_ring_inner_radius = 0.2
+emission_ring_cone_angle = 90.0
+angle_min = -179.99998
+angle_max = 180.00002
+direction = Vector3(0, 1, 0)
+spread = 15.0
+initial_velocity_min = 1.5
+initial_velocity_max = 4.0
+angular_velocity_min = -90.000015
+angular_velocity_max = 89.999985
+gravity = Vector3(0, -4, 0)
+damping_min = 0.5
+damping_max = 0.5
+scale_min = 0.14999999
+scale_max = 0.29999998
+scale_curve = SubResource("CurveTexture_g3mld")
+color = Color(0, 0, 0, 1)
+color_ramp = SubResource("GradientTexture1D_lsrl7")
+
+[sub_resource type="QuadMesh" id="QuadMesh_vofr7"]
+
+[node name="TentacleAttack" type="Node3D" unique_id=1595268403 node_paths=PackedStringArray("animation_player", "hurtbox_component")]
+script = ExtResource("1_bdjxi")
+animation_player = NodePath("AnimationPlayer")
+attack_info = SubResource("Resource_7yvkn")
+lifetime = 5.0
+should_break_on_contact = false
+hurtbox_component = NodePath("HurtboxComponent")
+metadata/_custom_type_script = "uid://iji7e78ikilx"
+
+[node name="HurtboxComponent" type="Area3D" parent="." unique_id=1523860770]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
+collision_layer = 64
+collision_mask = 2
+script = ExtResource("4_shukk")
+metadata/_custom_type_script = "uid://fjgad71t0sd4"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HurtboxComponent" unique_id=1103816115]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+shape = SubResource("BoxShape3D_ghs44")
+
+[node name="Sprite3D" type="Sprite3D" parent="HurtboxComponent" unique_id=613806485]
+offset = Vector2(0, 200)
+billboard = 2
+texture = ExtResource("5_shw1q")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=507500941]
+libraries/ = SubResource("AnimationLibrary_ghs44")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=443620564]
+material_override = SubResource("StandardMaterial3D_shukk")
+amount = 12
+lifetime = 1.5
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_r3sy8")
+draw_pass_1 = SubResource("QuadMesh_vofr7")

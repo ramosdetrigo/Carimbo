@@ -26,7 +26,9 @@ func _handle_particle() -> void:
 
 func _get_direction() -> Vector3:
 	var yaw: float = global_transform.basis.get_euler().y
-	return Vector3.FORWARD.rotated(Vector3.UP, yaw).normalized()
+	var pitch: float = global_transform.basis.get_euler().x
+	var a: Vector3 = Vector3.FORWARD.rotated(Vector3.UP, yaw).normalized()
+	return a.rotated(Vector3.RIGHT, pitch).normalized()
 
 
 func _get_enemy_direction() -> Vector3:

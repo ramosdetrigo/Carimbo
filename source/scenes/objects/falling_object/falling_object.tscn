@@ -9,7 +9,7 @@ radius = 0.9463208
 
 [node name="FallingObject" type="RigidBody3D" unique_id=473632287]
 collision_layer = 32
-collision_mask = 33
+collision_mask = 49
 contact_monitor = true
 max_contacts_reported = 2
 script = ExtResource("1_2gcsc")

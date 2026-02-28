@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dkbujjnpxwia0" path="res://assets/textures/paper/Paper003_1K-JPG_Roughness.jpg" id="5_qpmdg"]
 [ext_resource type="Script" uid="uid://ctmgj3s2w7dsb" path="res://scenes/components/stamped_animated_sprite/shaded_animated_sprite_3d.gd" id="6_7kmoi"]
 [ext_resource type="Texture2D" uid="uid://cnh72186tt4jt" path="res://assets/tmp/damage_circle.png" id="6_qpmdg"]
+[ext_resource type="AudioStream" uid="uid://dfe4v2sdvd1bd" path="res://assets/sounds/burn1.mp3" id="8_chihe"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_qpmdg"]
 viewport_path = NodePath("StampViewport")
@@ -72,3 +73,8 @@ positional_shadow_atlas_quad_3 = 0
 size = Vector2i(256, 256)
 render_target_clear_mode = 2
 render_target_update_mode = 1
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1103323008]
+unique_name_in_owner = true
+stream = ExtResource("8_chihe")
+bus = &"Sounds"

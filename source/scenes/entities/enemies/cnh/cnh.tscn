@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://cqxuelwl2k4bg" path="res://scripts/attack_system/stats_component.gd" id="8_l7hhy"]
 [ext_resource type="Script" uid="uid://bfied8f76qv1k" path="res://scripts/components/input_component.gd" id="9_ans7w"]
 [ext_resource type="Script" uid="uid://c15vrenp7llbg" path="res://scripts/debug/debug_label.gd" id="9_gliei"]
+[ext_resource type="AudioStream" uid="uid://dfe4v2sdvd1bd" path="res://assets/sounds/burn1.mp3" id="9_ser7i"]
 [ext_resource type="Script" uid="uid://baffaklkbk27f" path="res://scripts/attack_system/hitbox_component.gd" id="10_46ys3"]
 [ext_resource type="Script" uid="uid://bb0t2ovl7wifo" path="res://addons/beehave/nodes/beehave_tree.gd" id="11_3fptt"]
 [ext_resource type="Script" uid="uid://c6tbcxlt1e2hy" path="res://scripts/components/move_component.gd" id="11_t2rdl"]
@@ -164,7 +165,7 @@ metadata/_custom_type_script = "uid://fjgad71t0sd4"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("BoxShape3D_ra08q")
 
-[node name="ShadedAnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=1941403872 node_paths=PackedStringArray("stamp_viewport")]
+[node name="ShadedAnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=1941403872 node_paths=PackedStringArray("audio_player", "stamp_viewport")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9984317, 0)
 material_override = SubResource("ShaderMaterial_u4nbv")
 billboard = 1
@@ -172,6 +173,7 @@ sprite_frames = SubResource("SpriteFrames_nlx5i")
 animation = &"idle"
 autoplay = "idle"
 script = ExtResource("7_n8cc6")
+audio_player = NodePath("AudioStreamPlayer3D")
 stamp_viewport = NodePath("SubViewport")
 metadata/_custom_type_script = "uid://ctmgj3s2w7dsb"
 
@@ -181,6 +183,10 @@ transparent_bg = true
 size = Vector2i(512, 511)
 render_target_clear_mode = 2
 render_target_update_mode = 1
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="ShadedAnimatedSprite3D" unique_id=1894342032]
+stream = ExtResource("9_ser7i")
+bus = &"Sounds"
 
 [node name="StatsComponent" type="Node" parent="." unique_id=1772835128 node_paths=PackedStringArray("input_component", "hitbox_component", "beehave_tree")]
 script = ExtResource("8_l7hhy")
@@ -227,7 +233,7 @@ shape = SubResource("SphereShape3D_gliei")
 [node name="CnhBeehaveTree" type="Node" parent="." unique_id=1218304045 node_paths=PackedStringArray("blackboard", "actor")]
 script = ExtResource("11_3fptt")
 actor_node_path = NodePath("..")
-blackboard = NodePath("@Node@32056")
+blackboard = NodePath("@Node@43276")
 actor = NodePath("..")
 metadata/_custom_type_script = "uid://bb0t2ovl7wifo"
 

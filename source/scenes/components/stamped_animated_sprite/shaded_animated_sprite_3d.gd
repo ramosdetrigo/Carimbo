@@ -5,6 +5,7 @@ extends AnimatedSprite3D
 const SHADER_STAMPABLE_SPRITE: ShaderMaterial = preload("uid://brb72iyoqsyk6")
 
 signal burned
+@export var audio_player: AudioStreamPlayer3D
 
 @export var stamp_viewport: SubViewport:
 	set(v): stamp_viewport = v; _update_viewport_size(); update_configuration_warnings()
@@ -97,7 +98,13 @@ func _update_shader_anim() -> void:
 
 
 ## Executa o efeito de burn
-func trigger_burn_fx(burn_time: float = 1.0) -> void:
+func trigger_burn_fx(sound: bool = true, burn_time: float = 1.0) -> void:
+	if sound and audio_player:
+		if audio_player.get_parent() == self:
+			audio_player.reparent(get_tree().current_scene)
+			audio_player.global_position = global_position
+			audio_player.finished.connect(audio_player.queue_free)
+		audio_player.play()
 	var particles: GPUParticles3D = Consts.PARTICLE_SPARK.instantiate()
 	particles.emitting = true
 	get_tree().current_scene.add_child(particles)

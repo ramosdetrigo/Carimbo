@@ -46,8 +46,6 @@ _data = {
 process_mode = 3
 layer = 100
 script = ExtResource("1_36de5")
-next_action = &"next_dialogue"
-skip_action = &"skip_dialog"
 
 [node name="Balloon" type="Control" parent="." unique_id=102827474]
 unique_name_in_owner = true
@@ -101,7 +99,6 @@ layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("2_kt011")
 text = "Dialogue..."
-skip_action = &"skip_dialog"
 
 [node name="Control" type="Control" parent="Balloon/MarginContainer/PanelContainer/HBoxContainer" unique_id=1639153844]
 custom_minimum_size = Vector2(20, 10)

@@ -62,6 +62,7 @@ emission_energy_multiplier = 16.0
 [node name="YellowHammer" type="Node3D" unique_id=610195896 node_paths=PackedStringArray("hurtbox_component", "particle")]
 script = ExtResource("1_fktem")
 speed = 30.0
+homing = true
 attack_info = SubResource("Resource_ytg6t")
 lifetime = 0.30000000000000004
 hurtbox_component = NodePath("HurtboxComponent")

@@ -214,10 +214,10 @@ script = ExtResource("10_ptv6m")
 atlas = ExtResource("16_wuosv")
 region = Rect2(0, 0, 270, 270)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_fob5m"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_ew4ck"]
 viewport_path = NodePath("ShadedAnimatedSprite3D/SubViewport")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ih2rn"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c0muk"]
 resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("14_qlsgf")
@@ -228,7 +228,7 @@ shader_parameter/texture_normal = ExtResource("17_xckrd")
 shader_parameter/normal_scale = 1.5600008340999985
 shader_parameter/albedo = Color(1, 1, 1, 1)
 shader_parameter/texture_albedo = SubResource("AtlasTexture_yylnd")
-shader_parameter/texture_carimbo = SubResource("ViewportTexture_fob5m")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_ew4ck")
 shader_parameter/carimbo_glow_intensity = 0.0
 shader_parameter/burn_texture = ExtResource("15_uloeo")
 shader_parameter/burn_amount = 0.0
@@ -367,7 +367,7 @@ metadata/_custom_type_script = "uid://bvgv0wqcnb1yp"
 environment = ExtResource("11_401ml")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1198026530]
-transform = Transform3D(0.9930684, 0.025531352, -0.114731394, 0, 0.9761231, 0.21721816, 0.11753783, -0.2157125, 0.969357, -1.865, 5.677, 12.767)
+transform = Transform3D(0.9999905, 0.0023602769, -0.0036694459, 0, 0.841038, 0.5409761, 0.004362997, -0.5409709, 0.84102994, 0.8357921, 6.5528116, 9.089561)
 top_level = true
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D" unique_id=1280414814]
@@ -379,13 +379,13 @@ script = ExtResource("12_3lku4")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, 0)
 
 [node name="ShadedAnimatedSprite3D" parent="PlayerCharacter" index="1" unique_id=1555501919]
-material_override = SubResource("ShaderMaterial_ih2rn")
+material_override = SubResource("ShaderMaterial_c0muk")
 
 [node name="WeaponManager" parent="PlayerCharacter" index="2" unique_id=2002537722]
 runes = Array[ExtResource("19_4ypkb")]([ExtResource("20_7nxcg"), ExtResource("21_brvfa"), ExtResource("22_2h78l")])
 sub_runes = Array[ExtResource("19_4ypkb")]([ExtResource("23_g5sj5"), ExtResource("6_1bmkr")])
 
-[node name="PhantomCamera3D" parent="PlayerCharacter" index="15" unique_id=848212730]
+[node name="PhantomCamera3D" parent="PlayerCharacter" index="16" unique_id=848212730]
 transform = Transform3D(-3.4562582e-08, -0.6497494, 0.7602012, -4.8560654e-08, 0.7601472, 0.6497956, -0.9999994, 5.960459e-08, 0, -9, 3, 0)
 
 [node name="FPPhantomCamera3D" type="Node3D" parent="." unique_id=1941715877]

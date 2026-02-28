@@ -15,9 +15,10 @@ func _ready() -> void:
 
 
 func death() -> void:
-	super.death()
 	beehave_tree.disable()
 	dead.emit()
+	super.death()
+	remove_from_group(BeehaveConsts.MONSTER_NODE_GROUP)
 
 
 func on_being_hit() -> void:

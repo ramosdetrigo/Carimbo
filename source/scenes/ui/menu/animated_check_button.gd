@@ -1,16 +1,9 @@
 @tool
-class_name AnimatedButton
-extends Button
+class_name AnimatedCheckButton
+extends CheckBox
 
-signal burned
 
-@export var label: String = "" :
-	set(text):
-		(%Label as Label).text = text
-		label = text
 @export var burn_on_press: bool = true
-
-const burn_material: ShaderMaterial = preload("res://resources/shaders/button_burn_fx.tres")
 
 @export var tween_duration: float = 0.1
 
@@ -33,7 +26,6 @@ func _ready() -> void:
 	focus_exited.connect(_mouse_exited)
 	mouse_entered.connect(_mouse_entered)
 	mouse_exited.connect(_mouse_exited)
-	pressed.connect(_pressed)
 
 func _scale(target: Vector2) -> void:
 	if scale_tween:
@@ -59,16 +51,3 @@ func _mouse_entered() -> void:
 func _mouse_exited() -> void:
 	if disabled: _reset(); return
 	_reset()
-
-func _pressed() -> void:
-	if not burn_on_press: return
-
-	material = burn_material.duplicate()
-	_reset()
-	var tween: Tween = create_tween()
-	tween.set_parallel(true)
-	tween.tween_method(func(x: float):
-		(material as ShaderMaterial).set_shader_parameter("burn_amount", x)
-		, 0.0, 1.0, 1.0)
-	tween.tween_property(self, "modulate", Color.TRANSPARENT, 1.0)
-	tween.finished.connect(burned.emit)

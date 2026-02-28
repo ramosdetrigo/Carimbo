@@ -4,6 +4,7 @@
 
 [node name="AnimatedButton" type="Button" unique_id=1447173936]
 custom_minimum_size = Vector2(0, 50)
+pivot_offset_ratio = Vector2(0.5, 0.5)
 size_flags_vertical = 6
 script = ExtResource("1_4clw6")
 rot_range = 5.0

@@ -38,10 +38,10 @@ point_count = 2
 atlas = ExtResource("14_yepoo")
 region = Rect2(0, 0, 270, 270)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_nfs1x"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_e7okl"]
 viewport_path = NodePath("ShadedAnimatedSprite3D/SubViewport")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_e7okl"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ig3ux"]
 resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("12_arej4")
@@ -52,7 +52,7 @@ shader_parameter/texture_normal = ExtResource("15_fcmyw")
 shader_parameter/normal_scale = 1.5600008340999985
 shader_parameter/albedo = Color(1, 1, 1, 1)
 shader_parameter/texture_albedo = SubResource("AtlasTexture_yylnd")
-shader_parameter/texture_carimbo = SubResource("ViewportTexture_nfs1x")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_e7okl")
 shader_parameter/carimbo_glow_intensity = 0.0
 shader_parameter/burn_texture = ExtResource("13_h0yef")
 shader_parameter/burn_amount = 0.0
@@ -129,6 +129,7 @@ omni_range = 10.0
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 16)
 marker_position = Vector3(-8.742278e-08, 0, 14)
 is_locked = true
+is_paint_room = false
 
 [node name="Exit" parent="NavigationRegion3D/GridMap/Lights" unique_id=253320376 instance=ExtResource("3_y8bf6")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -24)
@@ -136,6 +137,7 @@ marker_position = Vector3(-8.742278e-08, 0, -22)
 is_locked = true
 destination_scene = "uid://cqebva7dnn62k"
 destination_position = Vector3(-8.742278e-08, 0, 14)
+is_paint_room = false
 
 [node name="Enemies" type="Node3D" parent="NavigationRegion3D/GridMap" unique_id=1454298828]
 
@@ -200,13 +202,13 @@ environment = ExtResource("10_x1igu")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2780285, 0, 12.700645)
 
 [node name="ShadedAnimatedSprite3D" parent="PlayerCharacter" index="1" unique_id=1555501919]
-material_override = SubResource("ShaderMaterial_e7okl")
+material_override = SubResource("ShaderMaterial_ig3ux")
 
 [node name="WeaponManager" parent="PlayerCharacter" index="2" unique_id=2002537722]
 runes = Array[ExtResource("17_8krj4")]([ExtResource("18_32t02"), ExtResource("19_l2y7w"), ExtResource("20_xfkey")])
 sub_runes = Array[ExtResource("17_8krj4")]([ExtResource("18_e7okl"), ExtResource("19_ig3ux")])
 
-[node name="PhantomCamera3D" parent="PlayerCharacter" index="15" unique_id=848212730]
+[node name="PhantomCamera3D" parent="PlayerCharacter" index="16" unique_id=848212730]
 transform = Transform3D(-3.4562582e-08, -0.6497494, 0.7602012, -4.8560654e-08, 0.7601472, 0.6497956, -0.9999994, 5.960459e-08, 0, 2.2780285, 3, 12.700645)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1096867225]

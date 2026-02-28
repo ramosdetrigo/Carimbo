@@ -31,21 +31,35 @@ size_flags_vertical = 3
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
+focus_neighbor_bottom = NodePath("../PlayButton")
+focus_next = NodePath("../PlayButton")
 label = "Continuar"
 
 [node name="PlayButton" parent="ButtonsVbox" unique_id=538765829 instance=ExtResource("2_c8x4o")]
 unique_name_in_owner = true
 layout_mode = 2
+focus_neighbor_top = NodePath("../ContinueButton")
+focus_neighbor_bottom = NodePath("../ConfigButton")
+focus_next = NodePath("../ConfigButton")
+focus_previous = NodePath("../ContinueButton")
 label = "Novo Jogo"
 
 [node name="ConfigButton" parent="ButtonsVbox" unique_id=1394869589 instance=ExtResource("2_c8x4o")]
 unique_name_in_owner = true
 layout_mode = 2
+focus_neighbor_top = NodePath("../PlayButton")
+focus_neighbor_bottom = NodePath("../CreditsButton")
+focus_next = NodePath("../CreditsButton")
+focus_previous = NodePath("../PlayButton")
 label = "Configurações"
 
 [node name="CreditsButton" parent="ButtonsVbox" unique_id=2065398685 instance=ExtResource("2_c8x4o")]
 unique_name_in_owner = true
 layout_mode = 2
+focus_neighbor_top = NodePath("../ConfigButton")
+focus_neighbor_bottom = NodePath("../ExitButton")
+focus_next = NodePath("../ExitButton")
+focus_previous = NodePath("../ConfigButton")
 label = "Créditos"
 
 [node name="ExitButton" parent="ButtonsVbox" unique_id=1796528440 instance=ExtResource("2_c8x4o")]
@@ -53,10 +67,12 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 size_flags_horizontal = 4
+focus_neighbor_top = NodePath("../CreditsButton")
+focus_previous = NodePath("../CreditsButton")
 label = "Sair"
 
-[connection signal="pressed" from="ButtonsVbox/ContinueButton" to="." method="_on_continue_button_pressed"]
-[connection signal="pressed" from="ButtonsVbox/PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="ButtonsVbox/ConfigButton" to="." method="_on_config_button_pressed"]
-[connection signal="pressed" from="ButtonsVbox/CreditsButton" to="." method="_on_credits_button_pressed"]
-[connection signal="pressed" from="ButtonsVbox/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="ButtonsVbox/ContinueButton" to="." method="_on_continue_button_pressed" flags=18]
+[connection signal="pressed" from="ButtonsVbox/PlayButton" to="." method="_on_play_button_pressed" flags=18]
+[connection signal="pressed" from="ButtonsVbox/ConfigButton" to="." method="_on_config_button_pressed" flags=18]
+[connection signal="pressed" from="ButtonsVbox/CreditsButton" to="." method="_on_credits_button_pressed" flags=18]
+[connection signal="pressed" from="ButtonsVbox/ExitButton" to="." method="_on_exit_button_pressed" flags=18]

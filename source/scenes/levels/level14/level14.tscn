@@ -179,12 +179,14 @@ omni_shadow_mode = 0
 [node name="Entrance" parent="NavigationRegion3D/GridMap/Lights" unique_id=1756562916 instance=ExtResource("3_4skbt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 0)
 marker_position = Vector3(-18, 0, 0)
+is_paint_room = false
 
 [node name="Exit" parent="NavigationRegion3D/GridMap/Lights" unique_id=253320376 instance=ExtResource("3_4skbt")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 20, 0, 0)
 marker_position = Vector3(18, 0, -1.7484555e-07)
 destination_scene = "uid://ddxf88bkpk7iu"
 destination_position = Vector3(-11, 0, 0)
+is_paint_room = true
 
 [node name="Enemies" type="Node3D" parent="NavigationRegion3D/GridMap" unique_id=1454298828]
 

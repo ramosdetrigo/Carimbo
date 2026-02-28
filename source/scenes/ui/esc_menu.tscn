@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://w8bdqfecxcnf" path="res://scenes/ui/esc_menu.gd" id="1_1apln"]
 [ext_resource type="Texture2D" uid="uid://dd08wxj3sc24g" path="res://assets/textures/ui/vignette.png" id="2_wvp1r"]
 [ext_resource type="Theme" uid="uid://j8ln4077rpnx" path="res://resources/theme/main_ui.tres" id="3_3axht"]
+[ext_resource type="Script" uid="uid://dfkfj4hao1ksh" path="res://scenes/ui/menu/animated_check_button.gd" id="4_3axht"]
 [ext_resource type="Texture2D" uid="uid://ddxmune0eguag" path="res://assets/textures/ui/dialogue.png" id="5_0us07"]
 [ext_resource type="Texture2D" uid="uid://dasmrdgn8oc51" path="res://assets/textures/ui/audioOn.png" id="6_8dnxo"]
 [ext_resource type="Texture2D" uid="uid://dgkbonw3xi7m6" path="res://assets/textures/ui/musicOn.png" id="7_crh4y"]
@@ -24,6 +25,15 @@ Button/styles/focus = SubResource("StyleBoxEmpty_0nq0b")
 Button/styles/hover = SubResource("StyleBoxEmpty_sfjrn")
 Button/styles/normal = SubResource("StyleBoxEmpty_1y3t0")
 Button/styles/pressed = SubResource("StyleBoxEmpty_l0v51")
+
+[sub_resource type="InputEventAction" id="InputEventAction_3axht"]
+action = &"ui_cancel"
+
+[sub_resource type="InputEventAction" id="InputEventAction_oy65n"]
+action = &"ui_close_dialog"
+
+[sub_resource type="Shortcut" id="Shortcut_0us07"]
+events = [SubResource("InputEventAction_3axht"), SubResource("InputEventAction_oy65n")]
 
 [node name="EscMenu" type="CanvasLayer" unique_id=2041106339]
 process_mode = 3
@@ -77,6 +87,18 @@ size_flags_vertical = 3
 theme_override_constants/separation = 20
 alignment = 1
 
+[node name="Fullscreen" type="CheckBox" parent="UIRoot/EscMenu/ButtonsVbox" unique_id=1726010649]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(387, 50)
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../SoundsTextureRect/SoundsMargin/SoundsHBox/SoundsSlider")
+focus_next = NodePath("../SoundsTextureRect/SoundsMargin/SoundsHBox/SoundsSlider")
+text = "Tela Inteira"
+alignment = 1
+script = ExtResource("4_3axht")
+rot_range = 5.0
+metadata/_custom_type_script = "uid://dfkfj4hao1ksh"
+
 [node name="SoundsTextureRect" type="TextureRect" parent="UIRoot/EscMenu/ButtonsVbox" unique_id=1709909565]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
@@ -113,8 +135,12 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 size_flags_stretch_ratio = 6.0
+focus_neighbor_top = NodePath("../../../../Fullscreen")
+focus_neighbor_bottom = NodePath("../../../../MusicTextureRect/MusicMargin/MusicHBox/MusicSlider")
+focus_next = NodePath("../../../../MusicTextureRect/MusicMargin/MusicHBox/MusicSlider")
+focus_previous = NodePath("../../../../Fullscreen")
 max_value = 1.0
-step = 0.0
+step = 0.05
 value = 0.5
 
 [node name="MusicTextureRect" type="TextureRect" parent="UIRoot/EscMenu/ButtonsVbox" unique_id=1898103191]
@@ -152,8 +178,12 @@ modulate = Color(1, 0.35000002, 0, 1)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
+focus_neighbor_top = NodePath("../../../../SoundsTextureRect/SoundsMargin/SoundsHBox/SoundsSlider")
+focus_neighbor_bottom = NodePath("../../../../BackButton")
+focus_next = NodePath("../../../../BackButton")
+focus_previous = NodePath("../../../../SoundsTextureRect/SoundsMargin/SoundsHBox/SoundsSlider")
 max_value = 1.0
-step = 0.0
+step = 0.05
 value = 0.5
 
 [node name="BackButton" parent="UIRoot/EscMenu/ButtonsVbox" unique_id=2065398685 instance=ExtResource("8_nf7rg")]
@@ -162,9 +192,27 @@ custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+focus_neighbor_top = NodePath("../MusicTextureRect/MusicMargin/MusicHBox/MusicSlider")
+focus_neighbor_bottom = NodePath("../ExitButton")
+focus_next = NodePath("../ExitButton")
+focus_previous = NodePath("../MusicTextureRect/MusicMargin/MusicHBox/MusicSlider")
+shortcut = SubResource("Shortcut_0us07")
 label = "Voltar"
 burn_on_press = false
 
+[node name="ExitButton" parent="UIRoot/EscMenu/ButtonsVbox" unique_id=1447173936 instance=ExtResource("8_nf7rg")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_neighbor_top = NodePath("../BackButton")
+focus_previous = NodePath("../BackButton")
+label = "Exit"
+burn_on_press = false
+
+[connection signal="toggled" from="UIRoot/EscMenu/ButtonsVbox/Fullscreen" to="." method="_on_fullscreen_toggled"]
 [connection signal="value_changed" from="UIRoot/EscMenu/ButtonsVbox/SoundsTextureRect/SoundsMargin/SoundsHBox/SoundsSlider" to="." method="_on_sounds_slider_value_changed"]
 [connection signal="value_changed" from="UIRoot/EscMenu/ButtonsVbox/MusicTextureRect/MusicMargin/MusicHBox/MusicSlider" to="." method="_on_music_slider_value_changed"]
 [connection signal="pressed" from="UIRoot/EscMenu/ButtonsVbox/BackButton" to="." method="close_menu"]
+[connection signal="toggled" from="UIRoot/EscMenu/ButtonsVbox/ExitButton" to="." method="quit" flags=18]

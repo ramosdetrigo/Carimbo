@@ -194,12 +194,14 @@ omni_shadow_mode = 0
 [node name="Entrance" parent="NavigationRegion3D/GridMap/Lights" unique_id=1756562916 instance=ExtResource("3_evhx3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, 0)
 marker_position = Vector3(-11, 0, 0)
+is_paint_room = false
 
 [node name="Exit" parent="NavigationRegion3D/GridMap/Lights" unique_id=1742187779 instance=ExtResource("3_evhx3")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 13, 0, 0)
 marker_position = Vector3(11, 0, -1.7484555e-07)
 destination_scene = "uid://b6qbwchtb74h5"
 destination_position = Vector3(-11, 0, 0)
+is_paint_room = true
 
 [node name="Enemies" type="Node3D" parent="NavigationRegion3D/GridMap" unique_id=926605760]
 
@@ -268,7 +270,7 @@ material_override = SubResource("ShaderMaterial_pgc1u")
 runes = Array[ExtResource("19_fdcio")]([ExtResource("20_tn5dl"), ExtResource("21_wuunb"), ExtResource("22_57y8e")])
 sub_runes = Array[ExtResource("19_fdcio")]([ExtResource("23_ydc1n")])
 
-[node name="PhantomCamera3D" parent="PlayerCharacter" index="15" unique_id=848212730]
+[node name="PhantomCamera3D" parent="PlayerCharacter" index="16" unique_id=848212730]
 transform = Transform3D(-3.4562582e-08, -0.6497494, 0.7602012, -4.8560654e-08, 0.7601472, 0.6497956, -0.9999994, 5.960459e-08, 0, -8.786009, 3, 0)
 
 [editable path="PlayerCharacter"]

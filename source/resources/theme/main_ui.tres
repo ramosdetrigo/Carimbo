@@ -3,8 +3,17 @@
 [ext_resource type="Texture2D" uid="uid://ddxmune0eguag" path="res://assets/textures/ui/dialogue.png" id="1_y1kqd"]
 [ext_resource type="FontFile" uid="uid://d21cx2cj86if6" path="res://assets/fonts/IM_Fell_Double_Pica/IMFellDoublePica-Regular.ttf" id="2_ggilb"]
 [ext_resource type="FontFile" uid="uid://blqwf44c8my41" path="res://assets/fonts/Caesar_Dressing/CaesarDressing-Regular.ttf" id="2_kannt"]
+[ext_resource type="Texture2D" uid="uid://byttixt3s7ywh" path="res://assets/textures/ui/check.svg" id="2_sikyt"]
+[ext_resource type="Texture2D" uid="uid://bm7jdbrhtu0un" path="res://assets/textures/ui/x.svg" id="3_hrljr"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y1kqd"]
+texture = ExtResource("1_y1kqd")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sikyt"]
+content_margin_left = 60.0
+content_margin_top = 0.0
+content_margin_right = 60.0
+content_margin_bottom = 0.0
 texture = ExtResource("1_y1kqd")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wil5f"]
@@ -33,6 +42,14 @@ Button/styles/focus = SubResource("StyleBoxTexture_y1kqd")
 Button/styles/hover = SubResource("StyleBoxTexture_y1kqd")
 Button/styles/normal = SubResource("StyleBoxTexture_y1kqd")
 Button/styles/pressed = SubResource("StyleBoxTexture_y1kqd")
+CheckBox/icons/checked = ExtResource("2_sikyt")
+CheckBox/icons/unchecked = ExtResource("3_hrljr")
+CheckBox/styles/disabled = SubResource("StyleBoxTexture_sikyt")
+CheckBox/styles/focus = SubResource("StyleBoxTexture_sikyt")
+CheckBox/styles/hover = SubResource("StyleBoxTexture_sikyt")
+CheckBox/styles/hover_pressed = SubResource("StyleBoxTexture_sikyt")
+CheckBox/styles/normal = SubResource("StyleBoxTexture_sikyt")
+CheckBox/styles/pressed = SubResource("StyleBoxTexture_sikyt")
 Label/colors/font_color = Color(0.27, 0.135, 0, 1)
 Label/fonts/font = ExtResource("2_kannt")
 MarginContainer/constants/margin_bottom = 15

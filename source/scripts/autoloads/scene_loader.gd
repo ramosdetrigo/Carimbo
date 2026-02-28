@@ -15,8 +15,11 @@ var use_sub_threads: bool = true
 var _player: CharacterController3D
 var _player_dest_pos: Vector3
 
+var _last_paint_room: String
+
 func _ready() -> void:
 	set_process(false)
+	_last_paint_room = SaveSys.load_last_level()
 	if not loading_scene:
 		loading_scene = LOADING_SCREEN.instantiate()
 		add_child(loading_scene)
@@ -43,10 +46,16 @@ func load_scene(_scene_path: String):
 
 
 func load_scene_with_player(_scene_path: String,
-		player: CharacterController3D, destination: Vector3 = Vector3.ZERO):
+		player: CharacterController3D, destination: Vector3 = Vector3.ZERO, paint_room: bool = false):
 	_player_dest_pos = destination
 	_player = player
+	if paint_room: _last_paint_room = _scene_path
 	load_scene(_scene_path)
+
+
+func load_last_paint_room() -> void:
+	_last_paint_room = SaveSys.load_last_level()
+	load_scene(_last_paint_room)
 
 
 func start_load(_scene_path: String):
@@ -66,6 +75,7 @@ func _change_to_scene(scene: PackedScene) -> void:
 		_player = null
 	_set_cameras()
 	scene_loaded.emit()
+	SaveSys.save_game_info(_last_paint_room)
 	loading_scene.close()
 
 

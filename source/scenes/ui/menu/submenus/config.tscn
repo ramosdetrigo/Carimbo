@@ -2,6 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://j8ln4077rpnx" path="res://resources/theme/main_ui.tres" id="1_l5i8q"]
 [ext_resource type="Script" uid="uid://cv2llswlc7c8s" path="res://scenes/ui/menu/submenus/config.gd" id="2_nc3es"]
+[ext_resource type="Script" uid="uid://dfkfj4hao1ksh" path="res://scenes/ui/menu/animated_check_button.gd" id="3_l0v51"]
 [ext_resource type="Texture2D" uid="uid://ddxmune0eguag" path="res://assets/textures/ui/dialogue.png" id="3_l5i8q"]
 [ext_resource type="PackedScene" uid="uid://bnft0ws15mkb1" path="res://scenes/ui/menu/animated_button.tscn" id="4_l0v51"]
 [ext_resource type="Texture2D" uid="uid://dasmrdgn8oc51" path="res://assets/textures/ui/audioOn.png" id="4_ol3wh"]
@@ -24,6 +25,15 @@ Button/styles/hover = SubResource("StyleBoxEmpty_sfjrn")
 Button/styles/normal = SubResource("StyleBoxEmpty_1y3t0")
 Button/styles/pressed = SubResource("StyleBoxEmpty_l0v51")
 
+[sub_resource type="InputEventAction" id="InputEventAction_ol3wh"]
+action = &"ui_cancel"
+
+[sub_resource type="InputEventAction" id="InputEventAction_l0v51"]
+action = &"ui_close_dialog"
+
+[sub_resource type="Shortcut" id="Shortcut_k0wdl"]
+events = [SubResource("InputEventAction_ol3wh"), SubResource("InputEventAction_l0v51")]
+
 [node name="ConfigMenu" type="VBoxContainer" unique_id=1861023147]
 offset_right = 387.0
 offset_bottom = 608.0
@@ -38,6 +48,21 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 20
 alignment = 1
+
+[node name="Fullscreen" type="CheckBox" parent="ButtonsVbox" unique_id=1317324538]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(387, 50)
+layout_mode = 2
+focus_neighbor_top = NodePath("../BackButton")
+focus_neighbor_bottom = NodePath("../SoundsTextureRect/SoundsMargin/SoundsHBox/SoundsSlider")
+focus_next = NodePath("../SoundsTextureRect/SoundsMargin/SoundsHBox/SoundsSlider")
+focus_previous = NodePath("../BackButton")
+text = "Tela Inteira"
+alignment = 1
+script = ExtResource("3_l0v51")
+burn_on_press = false
+rot_range = 5.0
+metadata/_custom_type_script = "uid://dfkfj4hao1ksh"
 
 [node name="SoundsTextureRect" type="TextureRect" parent="ButtonsVbox" unique_id=1709909565]
 custom_minimum_size = Vector2(0, 50)
@@ -75,8 +100,12 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 size_flags_stretch_ratio = 6.0
+focus_neighbor_top = NodePath("../../../../Fullscreen")
+focus_neighbor_bottom = NodePath("../../../../MusicTextureRect/MusicMargin/MusicHBox/MusicSlider")
+focus_next = NodePath("../../../../MusicTextureRect/MusicMargin/MusicHBox/MusicSlider")
+focus_previous = NodePath("../../../../Fullscreen")
 max_value = 1.0
-step = 0.0
+step = 0.05
 value = 0.5
 
 [node name="MusicTextureRect" type="TextureRect" parent="ButtonsVbox" unique_id=1898103191]
@@ -114,8 +143,12 @@ modulate = Color(1, 0.35000002, 0, 1)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
+focus_neighbor_top = NodePath("../../../../SoundsTextureRect/SoundsMargin/SoundsHBox/SoundsSlider")
+focus_neighbor_bottom = NodePath("../../../../BackButton")
+focus_next = NodePath("../../../../BackButton")
+focus_previous = NodePath("../../../../SoundsTextureRect/SoundsMargin/SoundsHBox/SoundsSlider")
 max_value = 1.0
-step = 0.0
+step = 0.05
 value = 0.5
 
 [node name="BackButton" parent="ButtonsVbox" unique_id=2065398685 instance=ExtResource("4_l0v51")]
@@ -125,9 +158,13 @@ custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+focus_neighbor_top = NodePath("../MusicTextureRect/MusicMargin/MusicHBox/MusicSlider")
+focus_neighbor_bottom = NodePath("../Fullscreen")
+focus_next = NodePath("../Fullscreen")
+focus_previous = NodePath("../MusicTextureRect/MusicMargin/MusicHBox/MusicSlider")
+shortcut = SubResource("Shortcut_k0wdl")
 label = "Voltar"
-burn_on_press = null
 
 [connection signal="value_changed" from="ButtonsVbox/SoundsTextureRect/SoundsMargin/SoundsHBox/SoundsSlider" to="." method="_on_sounds_slider_value_changed"]
 [connection signal="value_changed" from="ButtonsVbox/MusicTextureRect/MusicMargin/MusicHBox/MusicSlider" to="." method="_on_music_slider_value_changed"]
-[connection signal="pressed" from="ButtonsVbox/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="ButtonsVbox/BackButton" to="." method="_on_back_button_pressed" flags=18]

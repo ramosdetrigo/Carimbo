@@ -38,10 +38,13 @@ jobs:
           version: "*"
           enable-plugins: true
 
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
       - name: Set up environment
         run: |
-          let app = $"./compiled/${{ matrix.platform }}/($env.app_binary_name)"
-          let package = $"($env.app_binary_name)-${{ matrix.platform }}.zip"
+          let app = "./compiled/${{ matrix.platform }}"
+          let package = $"($app)/($env.app_binary_name).zip"
 
           if ("${{ inputs.version }}" !~ '^v\d+\.\d+\.\d+$') {
             error make {msg: "Version must match vX.Y.Z"}
@@ -49,9 +52,6 @@ jobs:
 
           $"app=($app)
           package=($package)" | save -a $env.GITHUB_ENV
-
-      - name: Checkout repository
-        uses: actions/checkout@v4
 
       - name: Setup Godot Project Version
         run: sed -i "s|config/version=\"[^\"]*\"|config/version=\"${{ inputs.version }}\"|" ./source/project.godot
@@ -67,7 +67,7 @@ jobs:
         run: mkdir $env.app
 
       - name: Build Project
-        run: godot ./source/project.godot --import --headless --export-release ${{ matrix.platform }} ${{ env.app }}/${{ env.package }}
+        run: godot ./source/project.godot --import --headless --export-release ${{ matrix.platform }} $env.package
 
       - name: Upload package to workflow artifacts
         uses: actions/upload-artifact@v4
@@ -80,8 +80,7 @@ jobs:
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: ${{ env.app }}/${{ env.package }}
-          asset_name: ${{ env.package }}
+          file: ${{ env.package }}
           release_name: ${{ inputs.version }}
           tag: ${{ inputs.version }}
           overwrite: true

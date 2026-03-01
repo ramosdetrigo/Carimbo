@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://brxftxypdtkwj"]
+
+[ext_resource type="Script" uid="uid://dmu3fppbo25hr" path="res://scenes/levels/intro/outro_sequence.gd" id="1_2h742"]
+[ext_resource type="Texture2D" uid="uid://dkiivp68irnrp" path="res://assets/textures/intro/intro1.png" id="2_xur5p"]
+[ext_resource type="AudioStream" uid="uid://c4pqnxjjjhqj5" path="res://assets/tmp/YTDown.com_YouTube_Lego-yoda-death-sound_Media_glN0W8WogK8_007_128k.mp3" id="3_kqb7e"]
+
+[node name="OutroSequence" type="Control" unique_id=65244850]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2h742")
+
+[node name="Image" type="TextureRect" parent="." unique_id=625700047]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("2_xur5p")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1811832976]
+unique_name_in_owner = true
+stream = ExtResource("3_kqb7e")
+bus = &"Sounds"

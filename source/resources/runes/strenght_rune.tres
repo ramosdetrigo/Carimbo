@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="Rune" format=3 uid="uid://3mpy0qw7jpp8"]
 
 [ext_resource type="PackedScene" uid="uid://c2176j37jg501" path="res://scenes/objects/weapons/orange_hammer.tscn" id="1_ydh7x"]
-[ext_resource type="Texture2D" uid="uid://d0dxtrvmv83yq" path="res://assets/textures/ui/vida/amarelo_bola.png" id="2_c33p1"]
-[ext_resource type="Texture2D" uid="uid://dq6estklxh4me" path="res://assets/textures/ui/vida/amarelo_bola_grande.png" id="3_7jn0q"]
+[ext_resource type="Texture2D" uid="uid://dhr0mfpeqgp38" path="res://assets/textures/ui/vida/laranja_bola.png" id="2_ydh7x"]
+[ext_resource type="Texture2D" uid="uid://bkqpke3hhjvun" path="res://assets/textures/ui/vida/laranja_bola_grande.png" id="3_c33p1"]
 [ext_resource type="PackedScene" uid="uid://bi3cegty1y7xs" path="res://scenes/vfx/static/symbols/knockback_rune.tscn" id="4_dv3rj"]
 [ext_resource type="Script" uid="uid://du7c6s1s7a807" path="res://scripts/components/rune.gd" id="5_4uabh"]
 
@@ -10,8 +10,8 @@
 resource_name = "Runa de Força"
 script = ExtResource("5_4uabh")
 name = "Runa de Força"
-icon = ExtResource("2_c33p1")
-large_icon = ExtResource("3_7jn0q")
+icon = ExtResource("2_ydh7x")
+large_icon = ExtResource("3_c33p1")
 attack_scene = ExtResource("1_ydh7x")
 rune_scene = ExtResource("4_dv3rj")
 metadata/_custom_type_script = "uid://du7c6s1s7a807"

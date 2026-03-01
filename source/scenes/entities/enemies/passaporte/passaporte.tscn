@@ -15,6 +15,7 @@
 [ext_resource type="Script" uid="uid://bb0t2ovl7wifo" path="res://addons/beehave/nodes/beehave_tree.gd" id="7_3c1s0"]
 [ext_resource type="AudioStream" uid="uid://dfe4v2sdvd1bd" path="res://assets/sounds/burn1.mp3" id="8_qsvuf"]
 [ext_resource type="AudioStream" uid="uid://b8ejg8s8ue10q" path="res://assets/sounds/paper_tear1.mp3" id="9_nvx1e"]
+[ext_resource type="PackedScene" uid="uid://cd1b6a08kepn4" path="res://scenes/vfx/shields.tscn" id="10_ixgbq"]
 [ext_resource type="Script" uid="uid://cw22yurt5l74k" path="res://addons/beehave/nodes/composites/selector_reactive.gd" id="14_0c8vc"]
 [ext_resource type="Script" uid="uid://8hn4kne15ac5" path="res://addons/beehave/nodes/composites/selector.gd" id="14_w2uf8"]
 [ext_resource type="Script" uid="uid://cg016dbe7gs1x" path="res://addons/beehave/nodes/composites/sequence.gd" id="15_0c8vc"]
@@ -244,6 +245,8 @@ bus = &"Sounds"
 stream = ExtResource("9_nvx1e")
 bus = &"Sounds"
 
+[node name="Shields" parent="ShadedAnimatedSprite3D" unique_id=1272549898 instance=ExtResource("10_ixgbq")]
+
 [node name="HitboxComponent" type="Area3D" parent="." unique_id=1100271751 node_paths=PackedStringArray("stampable_sprite")]
 collision_layer = 4
 collision_mask = 0
@@ -288,7 +291,7 @@ metadata/_custom_type_script = "uid://c15vrenp7llbg"
 [node name="PassaporteBeehaveTree" type="Node" parent="." unique_id=517946327 node_paths=PackedStringArray("blackboard", "actor")]
 script = ExtResource("7_3c1s0")
 actor_node_path = NodePath("..")
-blackboard = NodePath("@Node@276086")
+blackboard = NodePath("@Node@235834")
 actor = NodePath("..")
 metadata/_custom_type_script = "uid://bb0t2ovl7wifo"
 
@@ -454,3 +457,4 @@ input_component = NodePath("../../../../../InputComponent")
 metadata/_custom_type_script = "uid://sqhnl6cqhp06"
 
 [connection signal="dead" from="." to="ShadedAnimatedSprite3D/DeathAudio" method="play"]
+[connection signal="armor_changed" from="StatsComponent" to="ShadedAnimatedSprite3D/Shields" method="on_armor_changed"]

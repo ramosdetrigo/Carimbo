@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://85rse2vjxe6q"
+path="res://.godot/imported/strenght_rune.dialogue-74077c5f1ec079985787c70bfc19a803.tres"
+
+[deps]
+
+source_file="res://resources/dialog/strenght_rune.dialogue"
+dest_files=["res://.godot/imported/strenght_rune.dialogue-74077c5f1ec079985787c70bfc19a803.tres"]
+
+[params]
+
+defaults=true

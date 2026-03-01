@@ -25,6 +25,8 @@ func _on_area_entered(area: Area3D) -> void:
 func _on_body_entered(body: Node3D) -> void:
 	if body is FallingObject: _launch_falling_object(body)
 	elif body is EnemyCharacter: _launch_enemy_character(body)
+	elif owner is AttackScene and (owner as AttackScene).should_break_on_contact:
+		(owner as AttackScene).destroy()
 	body_hit.emit()
 
 

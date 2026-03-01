@@ -27,7 +27,7 @@ metadata/_custom_type_script = "uid://iji7e78ikilx"
 
 [node name="HurtboxComponent" type="Area3D" parent="." unique_id=1523860770]
 collision_layer = 64
-collision_mask = 2
+collision_mask = 130
 script = ExtResource("4_tm3st")
 metadata/_custom_type_script = "uid://fjgad71t0sd4"
 

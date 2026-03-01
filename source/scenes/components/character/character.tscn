@@ -664,7 +664,7 @@ render_target_clear_mode = 2
 render_target_update_mode = 1
 
 [node name="WeaponManager" type="Node3D" parent="." unique_id=2002537722 node_paths=PackedStringArray("stats_component", "cooldown_timer")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -0.0579077)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.586483, -0.0579077)
 script = ExtResource("9_albb0")
 stats_component = NodePath("../StatsComponent")
 cooldown_timer = NodePath("../CooldownTimer")

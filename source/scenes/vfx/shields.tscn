@@ -189,5 +189,6 @@ emitting = false
 amount = 64
 one_shot = true
 explosiveness = 1.0
+local_coords = true
 process_material = SubResource("ParticleProcessMaterial_kdo62")
 draw_pass_1 = SubResource("QuadMesh_8tqa5")

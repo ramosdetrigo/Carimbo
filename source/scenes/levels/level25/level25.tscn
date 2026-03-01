@@ -1,0 +1,229 @@
+[gd_scene format=3 uid="uid://di2d8p6a4t1nm"]
+
+[ext_resource type="Script" uid="uid://ckxpmu5lrfiql" path="res://scenes/levels/level_scene.gd" id="1_6hi02"]
+[ext_resource type="MeshLibrary" uid="uid://be3yh5mqefut3" path="res://resources/mesh_library/level_props.meshlib" id="2_h7pk1"]
+[ext_resource type="PackedScene" uid="uid://c3hpiq2ftpgt8" path="res://scenes/levels/doors/scene_door.tscn" id="3_x72w2"]
+[ext_resource type="PackedScene" uid="uid://b2sgpfxgwrjy3" path="res://scenes/entities/enemies/clt/clt.tscn" id="4_65s0l"]
+[ext_resource type="Texture2D" uid="uid://lkeultvpjsj1" path="res://assets/textures/logoda4_dark.svg" id="7_t75u7"]
+[ext_resource type="Environment" uid="uid://c44ylihrd2515" path="res://resources/envoriment/fire_enviroment.tres" id="8_fcye0"]
+[ext_resource type="PackedScene" uid="uid://domk3xwojp1ia" path="res://scenes/components/character/character.tscn" id="9_f573d"]
+[ext_resource type="Shader" uid="uid://dl6ampid6rth6" path="res://scenes/components/stamped_animated_sprite/shaded_animated_sprite_3d.gdshader" id="10_6jlun"]
+[ext_resource type="Texture2D" uid="uid://ch1fj0j2vc2r1" path="res://resources/burn_noise_texture.tres" id="11_r5a0p"]
+[ext_resource type="Texture2D" uid="uid://dqyykf3mww3uv" path="res://assets/textures/player/attack.png" id="12_al6nu"]
+[ext_resource type="Texture2D" uid="uid://o34vnik8cwo4" path="res://assets/textures/paper/Paper003_1K-JPG_NormalGL.jpg" id="13_egd4n"]
+[ext_resource type="Texture2D" uid="uid://dkbujjnpxwia0" path="res://assets/textures/paper/Paper003_1K-JPG_Roughness.jpg" id="14_ejvig"]
+[ext_resource type="Script" uid="uid://du7c6s1s7a807" path="res://scripts/components/rune.gd" id="15_fxi1g"]
+[ext_resource type="Resource" uid="uid://dhkf2x6ifyip0" path="res://resources/runes/fire_rune.tres" id="16_sl28g"]
+[ext_resource type="Resource" uid="uid://b2yoi87p65bkn" path="res://resources/runes/water_rune.tres" id="17_xlnmw"]
+[ext_resource type="Resource" uid="uid://68oolyclljfd" path="res://resources/runes/eletric_rune.tres" id="18_6fh37"]
+[ext_resource type="Resource" uid="uid://3mpy0qw7jpp8" path="res://resources/runes/strenght_rune.tres" id="19_4ve5m"]
+[ext_resource type="Resource" uid="uid://bobquv3otkbes" path="res://resources/runes/wave_rune.tres" id="20_26tdj"]
+[ext_resource type="Resource" uid="uid://beughubdcg8qg" path="res://resources/runes/poison_rune.tres" id="21_vjyiu"]
+[ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="22_le2g8"]
+[ext_resource type="Script" uid="uid://bb0t2ovl7wifo" path="res://addons/beehave/nodes/beehave_tree.gd" id="23_lsb53"]
+[ext_resource type="Script" uid="uid://bvgv0wqcnb1yp" path="res://scripts/phantom_camera_3d_follow_player.gd" id="23_sqsbi"]
+[ext_resource type="Script" uid="uid://2qri6rrfv8ui" path="res://addons/beehave/nodes/decorators/cooldown.gd" id="24_emjxb"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="24_jvcb0"]
+[ext_resource type="Script" uid="uid://cg016dbe7gs1x" path="res://addons/beehave/nodes/composites/sequence.gd" id="25_377b7"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_mxqxy"]
+vertices = PackedVector3Array(-7.5, 1.6722401, -19.376091, -7.5, 1.4222401, -18.626091, -6, 1.6722401, -18.626091, -6, 1.4222401, -19.376091, -5.75, 0.42224014, 16.123909, -5.75, 0.42224014, 17.623909, -5, 0.42224014, 17.873909, 5, 0.42224014, 17.873909, 5.75, 0.42224014, 17.623909, 5.75, 0.42224014, 16.123909, -7.25, 0.42224014, 15.873909, -5.75, 0.42224014, -16.126091, 5.75, 0.42224014, -16.126091, 5.75, 0.42224014, -17.626091, 5, 0.42224014, -17.876091, -5, 0.42224014, -17.876091, -5.75, 0.42224014, -17.626091, 7.5, 0.42224014, -15.876091, -5, 0.42224014, 19.373909, 5, 0.42224014, 19.373909, 7.5, 0.42224014, 15.873909, -7.5, 0.42224014, -15.876091, 5, 0.42224014, -19.376091, -5, 0.42224014, -19.376091, 6, 1.6722401, -19.376091, 6, 1.4222401, -18.626091, 7.5, 1.6722401, -18.626091, 7.5, 1.4222401, -19.376091, -7.25, 1.4222401, 18.623909, -7.25, 1.4222401, 19.373909, -6, 1.6722401, 19.373909, -6, 1.4222401, 18.623909, 6, 1.6722401, 18.623909, 6, 1.4222401, 19.373909, 7.5, 1.6722401, 19.373909, 7.5, 1.4222401, 18.623909)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1), PackedInt32Array(5, 4, 6), PackedInt32Array(6, 4, 7), PackedInt32Array(8, 7, 9), PackedInt32Array(9, 7, 4), PackedInt32Array(9, 4, 10), PackedInt32Array(16, 15, 11), PackedInt32Array(11, 15, 14), PackedInt32Array(11, 14, 13), PackedInt32Array(11, 13, 12), PackedInt32Array(11, 12, 17), PackedInt32Array(7, 19, 6), PackedInt32Array(6, 19, 18), PackedInt32Array(9, 10, 20), PackedInt32Array(20, 10, 17), PackedInt32Array(17, 10, 11), PackedInt32Array(11, 10, 21), PackedInt32Array(15, 23, 14), PackedInt32Array(14, 23, 22), PackedInt32Array(27, 26, 24), PackedInt32Array(24, 26, 25), PackedInt32Array(31, 30, 28), PackedInt32Array(28, 30, 29), PackedInt32Array(35, 34, 32), PackedInt32Array(32, 34, 33)]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yylnd"]
+atlas = ExtResource("12_al6nu")
+region = Rect2(0, 0, 270, 270)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_emjxb"]
+viewport_path = NodePath("ShadedAnimatedSprite3D/SubViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_377b7"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("10_6jlun")
+shader_parameter/roughness = 1.0
+shader_parameter/texture_roughness = ExtResource("14_ejvig")
+shader_parameter/specular = 0.249999994412
+shader_parameter/texture_normal = ExtResource("13_egd4n")
+shader_parameter/normal_scale = 1.5600008340999985
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = SubResource("AtlasTexture_yylnd")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_emjxb")
+shader_parameter/carimbo_glow_intensity = 0.0
+shader_parameter/burn_texture = ExtResource("11_r5a0p")
+shader_parameter/burn_amount = 0.0
+shader_parameter/burn_size = 0.150000007125
+shader_parameter/burn_smoothness = 0.1330000063175
+shader_parameter/burn_glow_color = Color(1, 0.32, 0, 1)
+shader_parameter/burn_glow_intensity = 10.0
+shader_parameter/region_rect = Vector4(0, 0, 0.083333336, 1)
+
+[sub_resource type="Resource" id="Resource_7ngyk"]
+script = ExtResource("24_jvcb0")
+
+[sub_resource type="Curve3D" id="Curve3D_gk424"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 20, 0, 0, 0, 0, 0, 0, 0, 0, -16),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[node name="Level24" type="Node3D" unique_id=663602909 node_paths=PackedStringArray("exit_door")]
+script = ExtResource("1_6hi02")
+exit_door = NodePath("NavigationRegion3D/GridMap/Lights/Exit")
+metadata/_custom_type_script = "uid://ckxpmu5lrfiql"
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=498926115]
+navigation_mesh = SubResource("NavigationMesh_mxqxy")
+
+[node name="GridMap" type="GridMap" parent="NavigationRegion3D" unique_id=1161245027]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+mesh_library = ExtResource("2_h7pk1")
+cell_center_y = false
+data = {
+"cells": PackedInt32Array(393212, 65529, 1179653, 393212, 65530, 1179653, 393212, 65531, 1179653, 393212, 65532, 1179653, 393212, 65533, 1179653, 393212, 65534, 1179653, 393212, 65535, 1179653, 393212, 0, 1179653, 393212, 1, 1179653, 393212, 2, 1179653, 393212, 3, 1179653, 393212, 4, 1179653, 393212, 5, 1179653, 393212, 6, 1179653, 393212, 7, 1179653, 393213, 65529, 1179653, 393213, 65530, 1179653, 393213, 65531, 1179653, 393213, 65532, 1179653, 393213, 65533, 1179653, 393213, 65534, 1179653, 393213, 65535, 1179653, 393213, 0, 1179653, 393213, 1, 1179653, 393213, 2, 1179653, 393213, 3, 1179653, 393213, 4, 1179653, 393213, 5, 1179653, 393213, 6, 1179653, 393213, 7, 1179653, -8, 65532, 5, -8, 65533, 5, -8, 65534, 5, -8, 65535, 5, -8, 0, 5, -8, 1, 5, -8, 2, 5, -8, 3, 5, -7, 65532, 5, -7, 65533, 5, -7, 65534, 5, -7, 65535, 5, -7, 0, 5, -7, 1, 5, -7, 2, 5, -7, 3, 5, -6, 65532, 5, -6, 65533, 5, -6, 65534, 5, -6, 65535, 5, -6, 0, 5, -6, 1, 5, -6, 2, 5, -6, 3, 5, -5, 65532, 5, -5, 65533, 5, -5, 65534, 5, -5, 65535, 5, -5, 0, 5, -5, 1, 5, -5, 2, 5, -5, 3, 5, -4, 65532, 5, -4, 65533, 5, -4, 65534, 5, -4, 65535, 5, -4, 0, 5, -4, 1, 5, -4, 2, 5, -4, 3, 5, -3, 65532, 5, -3, 65533, 5, -3, 65534, 5, -3, 65535, 5, -3, 0, 5, -3, 1, 5, -3, 2, 5, -3, 3, 5, -2, 65532, 5, -2, 65533, 5, -2, 65534, 5, -2, 65535, 5, -2, 0, 5, -2, 1, 5, -2, 2, 5, -2, 3, 5, -1, 65532, 5, -1, 65533, 5, -1, 65534, 5, -1, 65535, 5, -1, 0, 5, -1, 1, 5, -1, 2, 5, -1, 3, 5, -65536, 65532, 5, -65536, 65533, 5, -65536, 65534, 5, -65536, 65535, 5, -65536, 0, 5, -65536, 1, 5, -65536, 2, 5, -65536, 3, 5, -65535, 65532, 5, -65535, 65533, 5, -65535, 65534, 5, -65535, 65535, 5, -65535, 0, 5, -65535, 1, 5, -65535, 2, 5, -65535, 3, 5, -65534, 65532, 5, -65534, 65533, 5, -65534, 65534, 5, -65534, 65535, 5, -65534, 0, 5, -65534, 1, 5, -65534, 2, 5, -65534, 3, 5, -65533, 65532, 5, -65533, 65533, 5, -65533, 65534, 5, -65533, 65535, 5, -65533, 0, 5, -65533, 1, 5, -65533, 2, 5, -65533, 3, 5, -65532, 65532, 5, -65532, 65533, 5, -65532, 65534, 5, -65532, 65535, 5, -65532, 0, 5, -65532, 1, 5, -65532, 2, 5, -65532, 3, 5, -65531, 65532, 5, -65531, 65533, 5, -65531, 65534, 5, -65531, 65535, 5, -65531, 0, 5, -65531, 1, 5, -65531, 2, 5, -65531, 3, 5, -65530, 65532, 5, -65530, 65533, 5, -65530, 65534, 5, -65530, 65535, 5, -65530, 0, 5, -65530, 1, 5, -65530, 2, 5, -65530, 3, 5, -65529, 65532, 5, -65529, 65533, 5, -65529, 65534, 5, -65529, 65535, 5, -65529, 0, 5, -65529, 1, 5, -65529, 2, 5, -65529, 3, 5, -10, 65532, 5, -10, 65533, 5, -10, 65534, 5, -10, 65535, 5, -10, 0, 5, -10, 1, 5, -10, 2, 5, -10, 3, 5, -9, 65532, 5, -9, 65533, 5, -9, 65534, 5, -9, 65535, 5, -9, 0, 5, -9, 1, 5, -9, 2, 5, -9, 3, 5, -65528, 65532, 5, -65528, 65533, 5, -65528, 65534, 5, -65528, 65535, 5, -65528, 0, 5, -65528, 1, 5, -65528, 2, 5, -65528, 3, 5, -65527, 65532, 5, -65527, 65533, 5, -65527, 65534, 5, -65527, 65535, 5, -65527, 0, 5, -65527, 1, 5, -65527, 2, 5, -65527, 3, 5, 65526, 65531, 1048576, 65527, 65531, 1048576, 65528, 65531, 1048576, 65529, 65531, 1048576, 65530, 65531, 1048576, 65531, 65531, 1048576, 65532, 65531, 1048576, 65533, 65531, 1048576, 65534, 65531, 1048576, 65535, 65531, 1048576, 0, 65531, 1048576, 1, 65531, 1048576, 2, 65531, 1048576, 3, 65531, 1048576, 4, 65531, 1048576, 5, 65531, 1048576, 6, 65531, 1048576, 7, 65531, 1048576, 8, 65531, 1048576, 9, 65531, 1048576, 10, 65532, 0, 10, 65533, 0, 10, 65534, 0, 10, 65535, 0, 10, 0, 0, 10, 1, 0, 10, 2, 0, 10, 3, 0, 65526, 4, 1441792, 65527, 4, 1441792, 65528, 4, 1441792, 65529, 4, 1441792, 65530, 4, 1441792, 65531, 4, 1441792, 65532, 4, 1441792, 65533, 4, 1441792, 65534, 4, 1441792, 65535, 4, 1441792, 0, 4, 1441792, 1, 4, 1441792, 2, 4, 1441792, 3, 4, 1441792, 4, 4, 1441792, 5, 4, 1441792, 6, 4, 1441792, 7, 4, 1441792, 8, 4, 1441792, 9, 4, 1441792, 65525, 3, 655360, 65525, 2, 655360, 65525, 1, 655360, 65525, 0, 655360, 65525, 65535, 655360, 65525, 65534, 655360, 65525, 65533, 655360, 65525, 65532, 655360, 6, 2, 655369, 0, 65533, 1048585, 65532, 2, 9, 65528, 65533, 655369, 65531, 65534, 655369, 3, 2, 655369, 0, 1, 655369, 65528, 65535, 655369, 65530, 65532, 655369, 4, 65534, 655369, 65529, 1, 655369, 9, 3, 655368, 9, 65532, 655368, 65526, 65532, 8, 65526, 3, 8, 65527, 3, 7, 65527, 65532, 1048583, 8, 65532, 1048583, 8, 3, 1048583, 65526, 0, 4, 9, 65535, 655364)
+}
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="Lights" type="Node3D" parent="NavigationRegion3D/GridMap" unique_id=550535745]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="NavigationRegion3D/GridMap/Lights" unique_id=247828357]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.528087, 4.999996, -3.6447005)
+light_color = Color(0.71475035, 0.51046205, 0.2746351, 1)
+light_bake_mode = 1
+omni_range = 10.0
+
+[node name="OmniLight3D9" type="OmniLight3D" parent="NavigationRegion3D/GridMap/Lights" unique_id=1539433944]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.077501, 4.999998, 3.0823421)
+light_color = Color(0.71475035, 0.51046205, 0.2746351, 1)
+light_bake_mode = 1
+omni_range = 10.0
+
+[node name="OmniLight3D10" type="OmniLight3D" parent="NavigationRegion3D/GridMap/Lights" unique_id=709512034]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.561838, 5, 3.7867968)
+light_color = Color(0.71475035, 0.51046205, 0.2746351, 1)
+light_bake_mode = 1
+omni_range = 10.0
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="NavigationRegion3D/GridMap/Lights" unique_id=1032900649]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.013427, 5, 4.2034836)
+light_color = Color(0.71475035, 0.51046205, 0.2746351, 1)
+light_bake_mode = 1
+omni_range = 10.0
+
+[node name="OmniLight3D6" type="OmniLight3D" parent="NavigationRegion3D/GridMap/Lights" unique_id=646909637]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.854526, 5, -3.0813732)
+light_color = Color(0.71475035, 0.51046205, 0.2746351, 1)
+light_bake_mode = 1
+omni_range = 10.0
+
+[node name="OmniLight3D17" type="OmniLight3D" parent="NavigationRegion3D/GridMap/Lights" unique_id=1723829596]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.0588026, 5, -4.551739)
+light_color = Color(0.71475035, 0.51046205, 0.2746351, 1)
+light_bake_mode = 1
+omni_range = 10.0
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="NavigationRegion3D/GridMap/Lights" unique_id=2085799349]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.986573, 5, 4.2034836)
+light_color = Color(0.71475035, 0.51046205, 0.2746351, 1)
+light_bake_mode = 1
+omni_range = 10.0
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="NavigationRegion3D/GridMap/Lights" unique_id=1074717284]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+light_color = Color(0.71475035, 0.51046205, 0.2746351, 1)
+light_bake_mode = 1
+omni_range = 10.0
+
+[node name="OmniLight3D18" type="OmniLight3D" parent="NavigationRegion3D/GridMap/Lights" unique_id=522543824]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9411976, 5, -4.551739)
+light_color = Color(0.71475035, 0.51046205, 0.2746351, 1)
+light_bake_mode = 1
+omni_range = 10.0
+
+[node name="Entrance" parent="NavigationRegion3D/GridMap/Lights" unique_id=1756562916 instance=ExtResource("3_x72w2")]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, -20, 0, 0)
+marker_position = Vector3(4.371139e-07, 0, 18)
+is_locked = true
+
+[node name="Exit" parent="NavigationRegion3D/GridMap/Lights" unique_id=253320376 instance=ExtResource("3_x72w2")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 20, 0, 0)
+marker_position = Vector3(-9.616506e-07, 0, -18)
+is_locked = true
+destination_scene = "uid://cetyn3aqc2ge5"
+destination_position = Vector3(-11, 0, 0)
+is_paint_room = true
+
+[node name="Enemies" type="Node3D" parent="NavigationRegion3D/GridMap" unique_id=1454298828]
+
+[node name="CLT" parent="NavigationRegion3D/GridMap/Enemies" unique_id=136567050 instance=ExtResource("4_65s0l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.999997, 0.2580189, -9.4279494e-07)
+
+[node name="Decal" type="Decal" parent="NavigationRegion3D/GridMap" unique_id=1824143174]
+transform = Transform3D(0.9999862, 6.0040856e-13, 0.0052359616, 0.0052359616, -2.2887114e-10, -0.9999862, 6.0040856e-13, 0.9999999, -2.2887114e-10, -0.8625355, 4.508996, -7.904071)
+size = Vector3(7.297, 1, 4)
+texture_albedo = ExtResource("7_t75u7")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=703037519]
+environment = ExtResource("8_fcye0")
+
+[node name="PlayerCharacter" parent="." unique_id=269989542 instance=ExtResource("9_f573d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20395851, 0, 15.644737)
+
+[node name="ShadedAnimatedSprite3D" parent="PlayerCharacter" index="1" unique_id=1555501919]
+material_override = SubResource("ShaderMaterial_377b7")
+
+[node name="WeaponManager" parent="PlayerCharacter" index="2" unique_id=2002537722]
+runes = Array[ExtResource("15_fxi1g")]([ExtResource("16_sl28g"), ExtResource("17_xlnmw"), ExtResource("18_6fh37")])
+sub_runes = Array[ExtResource("15_fxi1g")]([ExtResource("19_4ve5m"), ExtResource("20_26tdj"), ExtResource("21_vjyiu")])
+
+[node name="PhantomCamera3D" parent="PlayerCharacter" index="16" unique_id=848212730]
+transform = Transform3D(-3.4562582e-08, -0.6497494, 0.7602012, -4.8560654e-08, 0.7601472, 0.6497956, -0.9999994, 5.960459e-08, 0, 2.2039585, 3, 15.644737)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1096867225]
+physics_interpolation_mode = 1
+transform = Transform3D(0.99999934, 0, 0, 0, 0.78800887, 0.61565995, 0, -0.61566, 0.78800875, 0, 7, 20)
+top_level = true
+
+[node name="PhantomCameraHost" type="Node" parent="Camera3D" unique_id=396890830]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("22_le2g8")
+
+[node name="FPPhantomCamera3D" type="Node3D" parent="." unique_id=1619712072 node_paths=PackedStringArray("follow_target", "follow_path")]
+transform = Transform3D(0.99999934, 0, 0, 0, 0.78800887, 0.61565995, 0, -0.61566, 0.78800875, 0, 7, 20)
+top_level = true
+script = ExtResource("23_sqsbi")
+follow_mode = 4
+follow_target = NodePath("../PlayerCharacter")
+follow_path = NodePath("../Path3D")
+tween_resource = SubResource("Resource_7ngyk")
+follow_offset = Vector3(0, 0, 5)
+follow_damping = true
+align_transform_with_view = Callable()
+align_position_with_view = Callable()
+metadata/_custom_type_script = "uid://bvgv0wqcnb1yp"
+
+[node name="Path3D" type="Path3D" parent="." unique_id=949453450]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, 0)
+curve = SubResource("Curve3D_gk424")
+
+[node name="SpawnHealbox" type="Node3D" parent="." unique_id=1307797931]
+
+[node name="BeehaveTree" type="Node" parent="SpawnHealbox" unique_id=2058119235 node_paths=PackedStringArray("blackboard", "actor")]
+script = ExtResource("23_lsb53")
+actor_node_path = NodePath("..")
+blackboard = NodePath("@Node@224765")
+actor = NodePath("..")
+metadata/_custom_type_script = "uid://bb0t2ovl7wifo"
+
+[node name="CooldownDecorator" type="Node" parent="SpawnHealbox/BeehaveTree" unique_id=782182871]
+script = ExtResource("24_emjxb")
+wait_time = 10.0
+metadata/_custom_type_script = "uid://2qri6rrfv8ui"
+
+[node name="SequenceComposite" type="Node" parent="SpawnHealbox/BeehaveTree/CooldownDecorator" unique_id=1307777434]
+script = ExtResource("25_377b7")
+metadata/_custom_type_script = "uid://cg016dbe7gs1x"
+
+[editable path="PlayerCharacter"]

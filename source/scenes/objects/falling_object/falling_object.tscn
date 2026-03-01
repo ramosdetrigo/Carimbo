@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://assets/tmp/icon.svg" id="1_0wxl7"]
 [ext_resource type="Script" uid="uid://duow468xp3x63" path="res://scenes/objects/falling_object/falling_object.gd" id="1_2gcsc"]
-[ext_resource type="PackedScene" uid="uid://dwevc0sgyx4os" path="res://scenes/objects/attacks/simple_attack.tscn" id="2_31anu"]
+[ext_resource type="PackedScene" uid="uid://bucv56gcn80cf" path="res://scenes/objects/attacks/obj_powerfull_attack.tscn" id="2_31anu"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_2gcsc"]
 radius = 0.9463208

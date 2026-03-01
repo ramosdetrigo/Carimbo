@@ -5,7 +5,7 @@ extends Node3D
 
 @export var starting_dialog: DialogueResource
 var enemy_count: int = 0:
-	set(v): enemy_count = v; if enemy_count <= 0: exit_door.unlock()
+	set(v): enemy_count = v; if enemy_count <= 0 and exit_door: exit_door.unlock()
 
 func _ready() -> void:
 	if starting_dialog:

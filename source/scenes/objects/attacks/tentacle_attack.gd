@@ -12,3 +12,9 @@ func destroy() -> void:
 	await animation_player.animation_finished
 	lifetime_depleted.emit()
 	queue_free()
+
+
+func _handle_particle() -> void:
+	if not particle: particle = _get_particle()
+	if not particle: return
+	particle.set_emitting(true)

@@ -27,6 +27,7 @@
 [ext_resource type="Script" uid="uid://sqhnl6cqhp06" path="res://scripts/beehave/leaf/action/stop_navigation_action.gd" id="21_7tueb"]
 [ext_resource type="Script" uid="uid://qvwyjwtkcuxs" path="res://scripts/beehave/leaf/action/get_allies_action.gd" id="22_l6imi"]
 [ext_resource type="Script" uid="uid://v4jop1qp3ahx" path="res://scripts/beehave/leaf/action/buff_allies_action.gd" id="23_taiqs"]
+[ext_resource type="PackedScene" uid="uid://cd1b6a08kepn4" path="res://scenes/vfx/shields.tscn" id="28_7tueb"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1hsg8"]
 radius = 0.7758789
@@ -184,6 +185,8 @@ bus = &"Sounds"
 stream = ExtResource("9_rccfi")
 bus = &"Sounds"
 
+[node name="Shields" parent="ShadedAnimatedSprite3D" unique_id=1272549898 instance=ExtResource("28_7tueb")]
+
 [node name="HitboxComponent" type="Area3D" parent="." unique_id=1834025907 node_paths=PackedStringArray("stampable_sprite")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 collision_layer = 4
@@ -226,7 +229,7 @@ metadata/_custom_type_script = "uid://c6tbcxlt1e2hy"
 
 [node name="AtestadoBeehaveTree" type="Node" parent="." unique_id=331908298 node_paths=PackedStringArray("blackboard", "actor")]
 script = ExtResource("13_taiqs")
-blackboard = NodePath("@Node@274123")
+blackboard = NodePath("@Node@226900")
 actor = NodePath("..")
 metadata/_custom_type_script = "uid://bb0t2ovl7wifo"
 
@@ -318,3 +321,4 @@ animation_name = &"idle"
 metadata/_custom_type_script = "uid://conlbm78k0yfx"
 
 [connection signal="dead" from="." to="ShadedAnimatedSprite3D/DeathAudio" method="play"]
+[connection signal="armor_changed" from="StatsComponent" to="ShadedAnimatedSprite3D/Shields" method="on_armor_changed"]

@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://bucv56gcn80cf"]
+
+[ext_resource type="Script" uid="uid://iji7e78ikilx" path="res://scripts/attack_system/attack_scene.gd" id="1_0uwhi"]
+[ext_resource type="Script" uid="uid://cuoa1ubyh5d06" path="res://scripts/attack_system/attack_info.gd" id="2_gp2we"]
+[ext_resource type="Texture2D" uid="uid://ddvf2tcrr4143" path="res://assets/textures/enemies/boleto/boleto_sprite_sheet.png" id="3_6bqqg"]
+[ext_resource type="Script" uid="uid://fjgad71t0sd4" path="res://scripts/attack_system/hurtbox_component.gd" id="4_7gj75"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5c8i2"]
+atlas = ExtResource("3_6bqqg")
+region = Rect2(133, 2717, 289, 156)
+
+[sub_resource type="Resource" id="Resource_7yvkn"]
+script = ExtResource("2_gp2we")
+damage = 2.0
+stamp_texture = SubResource("AtlasTexture_5c8i2")
+stamp_size = Vector2(0.25, 0.25)
+flags = 1
+metadata/_custom_type_script = "uid://cuoa1ubyh5d06"
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_6vuk0"]
+radius = 1.5
+
+[node name="ObjPowerfullAttack" type="Node3D" unique_id=1595268403 node_paths=PackedStringArray("hurtbox_component")]
+script = ExtResource("1_0uwhi")
+attack_info = SubResource("Resource_7yvkn")
+hurtbox_component = NodePath("HurtboxComponent")
+metadata/_custom_type_script = "uid://iji7e78ikilx"
+
+[node name="HurtboxComponent" type="Area3D" parent="." unique_id=1523860770]
+collision_layer = 64
+collision_mask = 198
+script = ExtResource("4_7gj75")
+metadata/_custom_type_script = "uid://fjgad71t0sd4"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HurtboxComponent" unique_id=1103816115]
+shape = SubResource("SphereShape3D_6vuk0")

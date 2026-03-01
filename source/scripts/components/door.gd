@@ -14,6 +14,7 @@ signal unlocked()
 @export_file("*.tscn") var destination_scene: String
 @export var destination_position: Vector3
 @export var is_paint_room: bool = false
+@export var with_player: bool = true
 
 var position_marker: Marker3D
 
@@ -33,6 +34,7 @@ func _process(_delta: float) -> void:
 
 func change_to_scene(player: CharacterController3D) -> void:
 	lock()
+	if not with_player: SceneLoader.reset_player(); SceneLoader.load_scene(destination_scene); return
 	SceneLoader.load_scene_with_player(destination_scene, player, destination_position, is_paint_room)
 
 

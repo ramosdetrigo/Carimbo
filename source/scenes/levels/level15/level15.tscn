@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ddxf88bkpk7iu"]
 
 [ext_resource type="Script" uid="uid://bc6iefx8s1401" path="res://scenes/levels/level5/level_5.gd" id="1_x16qv"]
+[ext_resource type="Resource" uid="uid://85rse2vjxe6q" path="res://resources/dialog/strenght_rune.dialogue" id="2_fam8h"]
 [ext_resource type="MeshLibrary" uid="uid://be3yh5mqefut3" path="res://resources/mesh_library/level_props.meshlib" id="2_oxh2k"]
 [ext_resource type="PackedScene" uid="uid://c3hpiq2ftpgt8" path="res://scenes/levels/doors/scene_door.tscn" id="3_okbqr"]
 [ext_resource type="Script" uid="uid://k651grd68161" path="res://scenes/levels/level5/healer_box.gd" id="4_6mlsx"]
@@ -203,10 +204,10 @@ script = ExtResource("9_x16qv")
 atlas = ExtResource("15_pw6tb")
 region = Rect2(0, 0, 270, 270)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_fam8h"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_q0hf7"]
 viewport_path = NodePath("ShadedAnimatedSprite3D/SubViewport")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_q0hf7"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rgb5h"]
 resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("13_2e35o")
@@ -217,7 +218,7 @@ shader_parameter/texture_normal = ExtResource("16_jvynk")
 shader_parameter/normal_scale = 1.5600008340999985
 shader_parameter/albedo = Color(1, 1, 1, 1)
 shader_parameter/texture_albedo = SubResource("AtlasTexture_yylnd")
-shader_parameter/texture_carimbo = SubResource("ViewportTexture_fam8h")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_q0hf7")
 shader_parameter/carimbo_glow_intensity = 0.0
 shader_parameter/burn_texture = ExtResource("14_4het2")
 shader_parameter/burn_amount = 0.0
@@ -231,6 +232,7 @@ shader_parameter/region_rect = Vector4(0, 0, 0.083333336, 1)
 script = ExtResource("1_x16qv")
 animation_player = NodePath("NavigationRegion3D/GridMap/Healerbox/AnimationPlayer")
 exit_door = NodePath("NavigationRegion3D/GridMap/Lights/Exit")
+starting_dialog = ExtResource("2_fam8h")
 metadata/_custom_type_script = "uid://ckxpmu5lrfiql"
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=732782216]
@@ -365,7 +367,7 @@ stream = ExtResource("10_qy50g")
 environment = ExtResource("6_jq4be")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1198026530]
-transform = Transform3D(0.9996092, 0.01179466, -0.025346475, 0, 0.90664446, 0.42189547, 0.027956355, -0.42173058, 0.9062901, 0.03073275, 6.8880672, 12.72773)
+transform = Transform3D(0.9999905, 0.0023602769, -0.0036694459, 0, 0.841038, 0.5409761, 0.004362997, -0.5409709, 0.84102994, 0.8357921, 6.5528116, 9.089561)
 top_level = true
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D" unique_id=969206925]
@@ -384,7 +386,7 @@ metadata/_custom_type_script = "uid://bvgv0wqcnb1yp"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.786009, 0, 0)
 
 [node name="ShadedAnimatedSprite3D" parent="PlayerCharacter" index="1" unique_id=1555501919]
-material_override = SubResource("ShaderMaterial_q0hf7")
+material_override = SubResource("ShaderMaterial_rgb5h")
 
 [node name="WeaponManager" parent="PlayerCharacter" index="2" unique_id=2002537722]
 runes = Array[ExtResource("26_vh67i")]([ExtResource("27_ppjxv"), ExtResource("28_gc4hl"), ExtResource("5_x16qv")])

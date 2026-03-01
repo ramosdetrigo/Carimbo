@@ -19,25 +19,32 @@
 [ext_resource type="Script" uid="uid://cg016dbe7gs1x" path="res://addons/beehave/nodes/composites/sequence.gd" id="16_8r425"]
 [ext_resource type="Script" uid="uid://din3o6je4hf0y" path="res://scripts/beehave/leaf/action/get_enemy_action.gd" id="17_stgu7"]
 [ext_resource type="Script" uid="uid://bx6gqb65ng2f4" path="res://scripts/beehave/leaf/condition/hp_less_than_condition.gd" id="18_tnjr0"]
-[ext_resource type="Script" uid="uid://oc2hkcrhiyfa" path="res://scripts/beehave/leaf/condition/is_in_range_condition.gd" id="18_umd83"]
 [ext_resource type="Script" uid="uid://5aiqrlyonbxb" path="res://scripts/beehave/leaf/action/play_animation_action.gd" id="19_hktqo"]
-[ext_resource type="Script" uid="uid://8hn4kne15ac5" path="res://addons/beehave/nodes/composites/selector.gd" id="19_scolu"]
 [ext_resource type="Script" uid="uid://conlbm78k0yfx" path="res://scripts/beehave/leaf/action/play_sprite_frames_animation_action.gd" id="19_wl0hn"]
 [ext_resource type="Script" uid="uid://dorri1tul8gfx" path="res://addons/beehave/nodes/decorators/delayer.gd" id="20_r4v3i"]
 [ext_resource type="Script" uid="uid://c5v7wuqn1xvdy" path="res://addons/beehave/nodes/decorators/repeater.gd" id="20_u6j7b"]
+[ext_resource type="Script" uid="uid://crkjak4kyv56m" path="res://addons/beehave/nodes/decorators/inverter.gd" id="21_kyt5n"]
 [ext_resource type="Script" uid="uid://wpfn0jjwq6r3" path="res://scripts/beehave/leaf/action/attack_action.gd" id="21_xoqhw"]
-[ext_resource type="PackedScene" uid="uid://bhppg2f3nkfmv" path="res://scenes/objects/attacks/powerfull_attack.tscn" id="22_mk8gb"]
-[ext_resource type="Script" uid="uid://c84st521ytmk3" path="res://addons/beehave/nodes/decorators/until_fail.gd" id="22_pqx2w"]
-[ext_resource type="PackedScene" uid="uid://8gjcppe7ib7d" path="res://scenes/objects/attacks/coin_projectile.tscn" id="24_smowf"]
-[ext_resource type="Script" uid="uid://b8qgfm5nhx8mh" path="res://scripts/beehave/leaf/action/set_enemy_target_action.gd" id="25_q6aoy"]
+[ext_resource type="Script" uid="uid://cg2o7jlo4btkv" path="res://scripts/beehave/leaf/condition/is_playing_frames_animation_condition.gd" id="22_jn6er"]
 [ext_resource type="Script" uid="uid://bg1soc5i52jps" path="res://scripts/beehave/leaf/action/start_navigation_action.gd" id="26_0krno"]
-[ext_resource type="Script" uid="uid://we22430vcb44" path="res://addons/beehave/nodes/decorators/time_limiter.gd" id="27_360p0"]
 [ext_resource type="Script" uid="uid://cssfcwmucql4s" path="res://scripts/beehave/leaf/condition/wait_for_range_condition.gd" id="28_p65fj"]
 [ext_resource type="Script" uid="uid://dsf3a8vlolhx8" path="res://addons/beehave/nodes/decorators/succeeder.gd" id="29_rloj3"]
+[ext_resource type="PackedScene" uid="uid://badesjfj0wkjc" path="res://scenes/objects/attacks/persistent_tentacle_attack.tscn" id="30_7fl6r"]
 [ext_resource type="Script" uid="uid://sqhnl6cqhp06" path="res://scripts/beehave/leaf/action/stop_navigation_action.gd" id="30_f3ufb"]
-[ext_resource type="Script" uid="uid://c541rfah1pvw8" path="res://scripts/beehave/leaf/condition/wait_for_destination_condition.gd" id="32_0dlqp"]
+[ext_resource type="PackedScene" uid="uid://bbea24bmwk3a2" path="res://scenes/objects/attacks/coffin_spawner.tscn" id="33_7pnnt"]
+[ext_resource type="Script" uid="uid://2qri6rrfv8ui" path="res://addons/beehave/nodes/decorators/cooldown.gd" id="33_kq10k"]
+[ext_resource type="PackedScene" uid="uid://dyyhajvjbbjqp" path="res://scenes/objects/weapons/push.tscn" id="34_7pnnt"]
+[ext_resource type="PackedScene" uid="uid://dxyd470cqorqq" path="res://scenes/entities/enemies/comprovante/comprovante.tscn" id="36_7fl6r"]
 [ext_resource type="Script" uid="uid://chor6813h6vl0" path="res://scripts/beehave/leaf/action/set_specific_target_action.gd" id="37_8p563"]
+[ext_resource type="Script" uid="uid://oc2hkcrhiyfa" path="res://scripts/beehave/leaf/condition/is_in_range_condition.gd" id="38_kq10k"]
+[ext_resource type="PackedScene" uid="uid://bhppg2f3nkfmv" path="res://scenes/objects/attacks/powerfull_attack.tscn" id="39_g2l4d"]
 [ext_resource type="PackedScene" uid="uid://bwl3pcaqelafe" path="res://scenes/objects/attacks/tentacle_attack.tscn" id="39_kyt5n"]
+[ext_resource type="Script" uid="uid://docm6x45208x4" path="res://scripts/beehave/leaf/action/play_particle_action.gd" id="40_ri13n"]
+[ext_resource type="PackedScene" uid="uid://cf1dd1li6avuh" path="res://scenes/vfx/particles/ooze.tscn" id="41_g2l4d"]
+[ext_resource type="Script" uid="uid://c5hiifip64aob" path="res://scripts/beehave/decorator/until_in_range_decorator.gd" id="41_ri13n"]
+[ext_resource type="Script" uid="uid://qvwyjwtkcuxs" path="res://scripts/beehave/leaf/action/get_allies_action.gd" id="42_jpqwv"]
+[ext_resource type="Script" uid="uid://b8qgfm5nhx8mh" path="res://scripts/beehave/leaf/action/set_enemy_target_action.gd" id="42_qkttr"]
+[ext_resource type="Script" uid="uid://v4jop1qp3ahx" path="res://scripts/beehave/leaf/action/buff_allies_action.gd" id="43_7fl6r"]
 
 [sub_resource type="Animation" id="Animation_smowf"]
 length = 0.001
@@ -354,13 +361,13 @@ height = 4.2561035
 [node name="CLT" type="CharacterBody3D" unique_id=136567050 node_paths=PackedStringArray("beehave_tree", "stats_component", "stampable_sprite") groups=["monster"]]
 collision_layer = 16
 script = ExtResource("1_2k8tu")
-beehave_tree = NodePath("CasamentoBeehaveTree")
+beehave_tree = NodePath("CLTBeehaveTree")
 stats_component = NodePath("StatsComponent")
 stampable_sprite = NodePath("ShadedAnimatedSprite3D")
 metadata/_custom_type_script = "uid://cg1dswyw2p1op"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1331215027]
-root_node = NodePath("../CasamentoBeehaveTree")
+root_node = NodePath("../CLTBeehaveTree")
 libraries/ = SubResource("AnimationLibrary_pqx2w")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1040862579]
@@ -411,12 +418,12 @@ shape = SubResource("CapsuleShape3D_r3b27")
 
 [node name="StatsComponent" type="Node" parent="." unique_id=1282891804 node_paths=PackedStringArray("input_component", "hitbox_component", "beehave_tree")]
 script = ExtResource("10_j6v3s")
-max_health = 12.0
-max_armor = 1.0
+max_health = 100.0
+max_armor = 3.0
 connect_signals_enable = true
 input_component = NodePath("../InputComponent")
 hitbox_component = NodePath("../HurtboxComponent")
-beehave_tree = NodePath("../CasamentoBeehaveTree")
+beehave_tree = NodePath("../CLTBeehaveTree")
 metadata/_custom_type_script = "uid://cqxuelwl2k4bg"
 
 [node name="DebugLabel3D" type="Label3D" parent="." unique_id=174513415 node_paths=PackedStringArray("stats_component")]
@@ -438,373 +445,886 @@ metadata/_custom_type_script = "uid://c6tbcxlt1e2hy"
 script = ExtResource("13_dm813")
 metadata/_custom_type_script = "uid://bfied8f76qv1k"
 
-[node name="CasamentoBeehaveTree" type="Node" parent="." unique_id=2040254420 node_paths=PackedStringArray("blackboard", "actor")]
+[node name="CLTBeehaveTree" type="Node" parent="." unique_id=2040254420 node_paths=PackedStringArray("blackboard", "actor")]
 script = ExtResource("14_m3gqv")
-blackboard = NodePath("@Node@129483")
+blackboard = NodePath("@Node@19814")
 actor = NodePath("..")
 metadata/_custom_type_script = "uid://bb0t2ovl7wifo"
 
-[node name="SelectorReactiveComposite" type="Node" parent="CasamentoBeehaveTree" unique_id=273194]
+[node name="SelectorReactiveComposite" type="Node" parent="CLTBeehaveTree" unique_id=273194]
 script = ExtResource("15_rugv5")
 metadata/_custom_type_script = "uid://cw22yurt5l74k"
 
-[node name="Fase3" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite" unique_id=732708874]
+[node name="Fase3" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite" unique_id=732708874]
 script = ExtResource("16_8r425")
 metadata/_custom_type_script = "uid://cg016dbe7gs1x"
 
-[node name="HPLessThanCondition" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase3" unique_id=189696834]
+[node name="HPLessThanCondition" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase3" unique_id=189696834]
 script = ExtResource("18_tnjr0")
 health_percentage = 30.0
 metadata/_custom_type_script = "uid://bx6gqb65ng2f4"
 
-[node name="Fase2" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite" unique_id=1983383487]
+[node name="MoveToExit" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase3" unique_id=6749423]
+script = ExtResource("29_rloj3")
+metadata/_custom_type_script = "uid://dsf3a8vlolhx8"
+
+[node name="SequenceComposite" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase3/MoveToExit" unique_id=1745938123]
 script = ExtResource("16_8r425")
 metadata/_custom_type_script = "uid://cg016dbe7gs1x"
 
-[node name="HPLessThanCondition" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase2" unique_id=126382406]
+[node name="SetSpecificTargetAction" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase3/MoveToExit/SequenceComposite" unique_id=1307792002 node_paths=PackedStringArray("input_component")]
+script = ExtResource("37_8p563")
+target = Vector3(0, 0, -16)
+input_component = NodePath("../../../../../../InputComponent")
+metadata/_custom_type_script = "uid://chor6813h6vl0"
+
+[node name="InverterDecorator" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase3/MoveToExit/SequenceComposite" unique_id=293554284]
+script = ExtResource("21_kyt5n")
+metadata/_custom_type_script = "uid://crkjak4kyv56m"
+
+[node name="IsInRangeCondition" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase3/MoveToExit/SequenceComposite/InverterDecorator" unique_id=1451995495]
+script = ExtResource("38_kq10k")
+metadata/_custom_type_script = "uid://oc2hkcrhiyfa"
+
+[node name="FlyUp" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase3/MoveToExit/SequenceComposite" unique_id=2003737874]
+script = ExtResource("29_rloj3")
+metadata/_custom_type_script = "uid://dsf3a8vlolhx8"
+
+[node name="FlyUp" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase3/MoveToExit/SequenceComposite/FlyUp" unique_id=1103146732]
+script = ExtResource("16_8r425")
+metadata/_custom_type_script = "uid://cg016dbe7gs1x"
+
+[node name="InverterDecorator" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase3/MoveToExit/SequenceComposite/FlyUp/FlyUp" unique_id=1677302255]
+script = ExtResource("21_kyt5n")
+metadata/_custom_type_script = "uid://crkjak4kyv56m"
+
+[node name="IsPlayingFramesAnimationAction" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase3/MoveToExit/SequenceComposite/FlyUp/FlyUp/InverterDecorator" unique_id=166238674 node_paths=PackedStringArray("animated_sprite")]
+script = ExtResource("22_jn6er")
+animated_sprite = NodePath("../../../../../../../../../ShadedAnimatedSprite3D")
+animation_name = &"idle_flight"
+metadata/_custom_type_script = "uid://cg2o7jlo4btkv"
+
+[node name="PlayAnimationAction" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase3/MoveToExit/SequenceComposite/FlyUp/FlyUp" unique_id=101051015 node_paths=PackedStringArray("animation_player")]
+script = ExtResource("19_hktqo")
+animation_player = NodePath("../../../../../../../../AnimationPlayer")
+animation_name = &"fly_up"
+metadata/_custom_type_script = "uid://5aiqrlyonbxb"
+
+[node name="PlaySpriteFramesAnimationAction" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase3/MoveToExit/SequenceComposite/FlyUp/FlyUp" unique_id=697724315 node_paths=PackedStringArray("animated_sprite")]
+script = ExtResource("19_wl0hn")
+animated_sprite = NodePath("../../../../../../../../ShadedAnimatedSprite3D")
+animation_name = &"fly_up"
+metadata/_custom_type_script = "uid://conlbm78k0yfx"
+
+[node name="DelayDecorator" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase3/MoveToExit/SequenceComposite/FlyUp/FlyUp" unique_id=1954420788]
+script = ExtResource("20_r4v3i")
+wait_time = 0.8
+metadata/_custom_type_script = "uid://dorri1tul8gfx"
+
+[node name="PlaySpriteFramesAnimationAction2" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase3/MoveToExit/SequenceComposite/FlyUp/FlyUp/DelayDecorator" unique_id=298622009 node_paths=PackedStringArray("animated_sprite")]
+script = ExtResource("19_wl0hn")
+animated_sprite = NodePath("../../../../../../../../../ShadedAnimatedSprite3D")
+animation_name = &"idle_flight"
+metadata/_custom_type_script = "uid://conlbm78k0yfx"
+
+[node name="StartNavigationAction" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase3/MoveToExit/SequenceComposite" unique_id=1814580568 node_paths=PackedStringArray("input_component", "navigation_agent")]
+script = ExtResource("26_0krno")
+input_component = NodePath("../../../../../../InputComponent")
+navigation_agent = NodePath("../../../../../../NavigationAgent3D")
+metadata/_custom_type_script = "uid://bg1soc5i52jps"
+
+[node name="WaitForRangeCondition" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase3/MoveToExit/SequenceComposite" unique_id=481943982]
+script = ExtResource("28_p65fj")
+metadata/_custom_type_script = "uid://cssfcwmucql4s"
+
+[node name="FlyDown" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase3/MoveToExit/SequenceComposite" unique_id=503467273]
+script = ExtResource("16_8r425")
+metadata/_custom_type_script = "uid://cg016dbe7gs1x"
+
+[node name="PlayAnimationAction2" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase3/MoveToExit/SequenceComposite/FlyDown" unique_id=475964487 node_paths=PackedStringArray("animation_player")]
+script = ExtResource("19_hktqo")
+animation_player = NodePath("../../../../../../../AnimationPlayer")
+animation_name = &"fly_down"
+metadata/_custom_type_script = "uid://5aiqrlyonbxb"
+
+[node name="PlaySpriteFramesAnimationAction3" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase3/MoveToExit/SequenceComposite/FlyDown" unique_id=825682942 node_paths=PackedStringArray("animated_sprite")]
+script = ExtResource("19_wl0hn")
+animated_sprite = NodePath("../../../../../../../ShadedAnimatedSprite3D")
+animation_name = &"fly_down"
+metadata/_custom_type_script = "uid://conlbm78k0yfx"
+
+[node name="DelayDecorator2" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase3/MoveToExit/SequenceComposite/FlyDown" unique_id=1547915140]
+script = ExtResource("20_r4v3i")
+wait_time = 0.8
+metadata/_custom_type_script = "uid://dorri1tul8gfx"
+
+[node name="PlaySpriteFramesAnimationAction4" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase3/MoveToExit/SequenceComposite/FlyDown/DelayDecorator2" unique_id=838650343 node_paths=PackedStringArray("animated_sprite")]
+script = ExtResource("19_wl0hn")
+animated_sprite = NodePath("../../../../../../../../ShadedAnimatedSprite3D")
+animation_name = &"idle_ground"
+metadata/_custom_type_script = "uid://conlbm78k0yfx"
+
+[node name="StopNavigationAction" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase3/MoveToExit/SequenceComposite" unique_id=644842870 node_paths=PackedStringArray("input_component")]
+script = ExtResource("30_f3ufb")
+input_component = NodePath("../../../../../../InputComponent")
+metadata/_custom_type_script = "uid://sqhnl6cqhp06"
+
+[node name="Barrier" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase3" unique_id=1265216404]
+script = ExtResource("29_rloj3")
+metadata/_custom_type_script = "uid://dsf3a8vlolhx8"
+
+[node name="CooldownDecorator" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase3/Barrier" unique_id=1652525319]
+script = ExtResource("33_kq10k")
+wait_time = 9.4
+metadata/_custom_type_script = "uid://2qri6rrfv8ui"
+
+[node name="Barrier" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase3/Barrier/CooldownDecorator" unique_id=850066440]
+script = ExtResource("16_8r425")
+metadata/_custom_type_script = "uid://cg016dbe7gs1x"
+
+[node name="SetSpecificTargetAction" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase3/Barrier/CooldownDecorator/Barrier" unique_id=355076614 node_paths=PackedStringArray("input_component")]
+script = ExtResource("37_8p563")
+target = Vector3(0, 0, -16)
+input_component = NodePath("../../../../../../../InputComponent")
+metadata/_custom_type_script = "uid://chor6813h6vl0"
+
+[node name="Push" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase3/Barrier/CooldownDecorator/Barrier" unique_id=826674552]
+script = ExtResource("21_xoqhw")
+attack_scene = ExtResource("34_7pnnt")
+attack_spawn_offset = Vector3(0, 0.1, 0)
+metadata/_custom_type_script = "uid://wpfn0jjwq6r3"
+
+[node name="Tentacles" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase3/Barrier/CooldownDecorator/Barrier" unique_id=1346789983]
+script = ExtResource("21_xoqhw")
+attack_scene = ExtResource("30_7fl6r")
+attack_spawn_offset = Vector3(0, 0, 4)
+spawn_at_target = true
+metadata/_custom_type_script = "uid://wpfn0jjwq6r3"
+
+[node name="Tentacles2" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase3/Barrier/CooldownDecorator/Barrier" unique_id=1548546140]
+script = ExtResource("21_xoqhw")
+attack_scene = ExtResource("30_7fl6r")
+attack_spawn_offset = Vector3(-2, 0, 4)
+spawn_at_target = true
+metadata/_custom_type_script = "uid://wpfn0jjwq6r3"
+
+[node name="Tentacles3" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase3/Barrier/CooldownDecorator/Barrier" unique_id=1068228709]
+script = ExtResource("21_xoqhw")
+attack_scene = ExtResource("30_7fl6r")
+attack_spawn_offset = Vector3(-4, 0, 4)
+spawn_at_target = true
+metadata/_custom_type_script = "uid://wpfn0jjwq6r3"
+
+[node name="Tentacles4" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase3/Barrier/CooldownDecorator/Barrier" unique_id=747879906]
+script = ExtResource("21_xoqhw")
+attack_scene = ExtResource("30_7fl6r")
+attack_spawn_offset = Vector3(-6, 0, 4)
+spawn_at_target = true
+metadata/_custom_type_script = "uid://wpfn0jjwq6r3"
+
+[node name="Tentacles5" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase3/Barrier/CooldownDecorator/Barrier" unique_id=987060587]
+script = ExtResource("21_xoqhw")
+attack_scene = ExtResource("30_7fl6r")
+attack_spawn_offset = Vector3(2, 0, 4)
+spawn_at_target = true
+metadata/_custom_type_script = "uid://wpfn0jjwq6r3"
+
+[node name="Tentacles6" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase3/Barrier/CooldownDecorator/Barrier" unique_id=2096997028]
+script = ExtResource("21_xoqhw")
+attack_scene = ExtResource("30_7fl6r")
+attack_spawn_offset = Vector3(4, 0, 4)
+spawn_at_target = true
+metadata/_custom_type_script = "uid://wpfn0jjwq6r3"
+
+[node name="Tentacles7" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase3/Barrier/CooldownDecorator/Barrier" unique_id=1925957241]
+script = ExtResource("21_xoqhw")
+attack_scene = ExtResource("30_7fl6r")
+attack_spawn_offset = Vector3(6, 0, 4)
+spawn_at_target = true
+metadata/_custom_type_script = "uid://wpfn0jjwq6r3"
+
+[node name="DelayDecorator" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase3" unique_id=1525293987]
+script = ExtResource("20_r4v3i")
+wait_time = 1.0
+metadata/_custom_type_script = "uid://dorri1tul8gfx"
+
+[node name="SequenceComposite" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase3/DelayDecorator" unique_id=1893440223]
+script = ExtResource("16_8r425")
+metadata/_custom_type_script = "uid://cg016dbe7gs1x"
+
+[node name="GetEnemyAction" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase3/DelayDecorator/SequenceComposite" unique_id=1792827009]
+script = ExtResource("17_stgu7")
+metadata/_custom_type_script = "uid://din3o6je4hf0y"
+
+[node name="AttackAction" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase3/DelayDecorator/SequenceComposite" unique_id=820844972]
+script = ExtResource("21_xoqhw")
+attack_scene = ExtResource("33_7pnnt")
+spawn_at_target = true
+metadata/_custom_type_script = "uid://wpfn0jjwq6r3"
+
+[node name="Allies" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase3" unique_id=353932453]
+script = ExtResource("29_rloj3")
+metadata/_custom_type_script = "uid://dsf3a8vlolhx8"
+
+[node name="CooldownDecorator" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase3/Allies" unique_id=739502366]
+script = ExtResource("33_kq10k")
+wait_time = 10.0
+metadata/_custom_type_script = "uid://2qri6rrfv8ui"
+
+[node name="Barrier" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase3/Allies/CooldownDecorator" unique_id=1967205567]
+script = ExtResource("16_8r425")
+metadata/_custom_type_script = "uid://cg016dbe7gs1x"
+
+[node name="SetSpecificTargetAction" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase3/Allies/CooldownDecorator/Barrier" unique_id=787245415 node_paths=PackedStringArray("input_component")]
+script = ExtResource("37_8p563")
+input_component = NodePath("../../../../../../../InputComponent")
+metadata/_custom_type_script = "uid://chor6813h6vl0"
+
+[node name="Tentacles" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase3/Allies/CooldownDecorator/Barrier" unique_id=1043741045]
+script = ExtResource("21_xoqhw")
+attack_scene = ExtResource("36_7fl6r")
+attack_spawn_offset = Vector3(4, 0, 0)
+spawn_at_target = true
+metadata/_custom_type_script = "uid://wpfn0jjwq6r3"
+
+[node name="Tentacles2" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase3/Allies/CooldownDecorator/Barrier" unique_id=71942437]
+script = ExtResource("21_xoqhw")
+attack_scene = ExtResource("36_7fl6r")
+attack_spawn_offset = Vector3(-4, 0, 0)
+spawn_at_target = true
+metadata/_custom_type_script = "uid://wpfn0jjwq6r3"
+
+[node name="Tentacles3" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase3/Allies/CooldownDecorator/Barrier" unique_id=1787744212]
+script = ExtResource("21_xoqhw")
+attack_scene = ExtResource("36_7fl6r")
+attack_spawn_offset = Vector3(-2, 0, 4)
+spawn_at_target = true
+metadata/_custom_type_script = "uid://wpfn0jjwq6r3"
+
+[node name="Tentacles4" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase3/Allies/CooldownDecorator/Barrier" unique_id=986317198]
+script = ExtResource("21_xoqhw")
+attack_scene = ExtResource("36_7fl6r")
+attack_spawn_offset = Vector3(2, 0, 4)
+spawn_at_target = true
+metadata/_custom_type_script = "uid://wpfn0jjwq6r3"
+
+[node name="Fase2" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite" unique_id=1983383487]
+script = ExtResource("16_8r425")
+metadata/_custom_type_script = "uid://cg016dbe7gs1x"
+
+[node name="HPLessThanCondition" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase2" unique_id=126382406]
 script = ExtResource("18_tnjr0")
 health_percentage = 60.0
 metadata/_custom_type_script = "uid://bx6gqb65ng2f4"
 
-[node name="Fase1" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite" unique_id=385636286]
+[node name="MoveToExit" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase2" unique_id=1625547764]
+script = ExtResource("29_rloj3")
+metadata/_custom_type_script = "uid://dsf3a8vlolhx8"
+
+[node name="SequenceComposite" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase2/MoveToExit" unique_id=2065274807]
 script = ExtResource("16_8r425")
 metadata/_custom_type_script = "uid://cg016dbe7gs1x"
 
-[node name="RepeaterDecorator" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1" unique_id=825408400]
-script = ExtResource("20_u6j7b")
-repetitions = 3
-metadata/_custom_type_script = "uid://c5v7wuqn1xvdy"
+[node name="SetSpecificTargetAction" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase2/MoveToExit/SequenceComposite" unique_id=1849742616 node_paths=PackedStringArray("input_component")]
+script = ExtResource("37_8p563")
+target = Vector3(0, 0, -16)
+input_component = NodePath("../../../../../../InputComponent")
+metadata/_custom_type_script = "uid://chor6813h6vl0"
 
-[node name="NonTentacle" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator" unique_id=1989739737]
+[node name="InverterDecorator" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase2/MoveToExit/SequenceComposite" unique_id=1137946965]
+script = ExtResource("21_kyt5n")
+metadata/_custom_type_script = "uid://crkjak4kyv56m"
+
+[node name="IsInRangeCondition" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase2/MoveToExit/SequenceComposite/InverterDecorator" unique_id=746549845]
+script = ExtResource("38_kq10k")
+metadata/_custom_type_script = "uid://oc2hkcrhiyfa"
+
+[node name="FlyUp" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase2/MoveToExit/SequenceComposite" unique_id=538514781]
+script = ExtResource("29_rloj3")
+metadata/_custom_type_script = "uid://dsf3a8vlolhx8"
+
+[node name="FlyUp" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase2/MoveToExit/SequenceComposite/FlyUp" unique_id=1720963387]
 script = ExtResource("16_8r425")
 metadata/_custom_type_script = "uid://cg016dbe7gs1x"
 
-[node name="Melee" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle" unique_id=58849585]
+[node name="InverterDecorator" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase2/MoveToExit/SequenceComposite/FlyUp/FlyUp" unique_id=870699978]
+script = ExtResource("21_kyt5n")
+metadata/_custom_type_script = "uid://crkjak4kyv56m"
+
+[node name="IsPlayingFramesAnimationAction" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase2/MoveToExit/SequenceComposite/FlyUp/FlyUp/InverterDecorator" unique_id=1324575486 node_paths=PackedStringArray("animated_sprite")]
+script = ExtResource("22_jn6er")
+animated_sprite = NodePath("../../../../../../../../../ShadedAnimatedSprite3D")
+animation_name = &"idle_flight"
+metadata/_custom_type_script = "uid://cg2o7jlo4btkv"
+
+[node name="PlayAnimationAction" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase2/MoveToExit/SequenceComposite/FlyUp/FlyUp" unique_id=1824413187 node_paths=PackedStringArray("animation_player")]
+script = ExtResource("19_hktqo")
+animation_player = NodePath("../../../../../../../../AnimationPlayer")
+animation_name = &"fly_up"
+metadata/_custom_type_script = "uid://5aiqrlyonbxb"
+
+[node name="PlaySpriteFramesAnimationAction" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase2/MoveToExit/SequenceComposite/FlyUp/FlyUp" unique_id=375228761 node_paths=PackedStringArray("animated_sprite")]
+script = ExtResource("19_wl0hn")
+animated_sprite = NodePath("../../../../../../../../ShadedAnimatedSprite3D")
+animation_name = &"fly_up"
+metadata/_custom_type_script = "uid://conlbm78k0yfx"
+
+[node name="DelayDecorator" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase2/MoveToExit/SequenceComposite/FlyUp/FlyUp" unique_id=452822422]
+script = ExtResource("20_r4v3i")
+wait_time = 0.8
+metadata/_custom_type_script = "uid://dorri1tul8gfx"
+
+[node name="PlaySpriteFramesAnimationAction2" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase2/MoveToExit/SequenceComposite/FlyUp/FlyUp/DelayDecorator" unique_id=1691594518 node_paths=PackedStringArray("animated_sprite")]
+script = ExtResource("19_wl0hn")
+animated_sprite = NodePath("../../../../../../../../../ShadedAnimatedSprite3D")
+animation_name = &"idle_flight"
+metadata/_custom_type_script = "uid://conlbm78k0yfx"
+
+[node name="StartNavigationAction" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase2/MoveToExit/SequenceComposite" unique_id=1220897249 node_paths=PackedStringArray("input_component", "navigation_agent")]
+script = ExtResource("26_0krno")
+input_component = NodePath("../../../../../../InputComponent")
+navigation_agent = NodePath("../../../../../../NavigationAgent3D")
+metadata/_custom_type_script = "uid://bg1soc5i52jps"
+
+[node name="WaitForRangeCondition" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase2/MoveToExit/SequenceComposite" unique_id=412897193]
+script = ExtResource("28_p65fj")
+metadata/_custom_type_script = "uid://cssfcwmucql4s"
+
+[node name="FlyDown" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase2/MoveToExit/SequenceComposite" unique_id=67692113]
 script = ExtResource("16_8r425")
 metadata/_custom_type_script = "uid://cg016dbe7gs1x"
 
-[node name="GetEnemyAction" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Melee" unique_id=395574382]
+[node name="PlayAnimationAction2" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase2/MoveToExit/SequenceComposite/FlyDown" unique_id=1633078615 node_paths=PackedStringArray("animation_player")]
+script = ExtResource("19_hktqo")
+animation_player = NodePath("../../../../../../../AnimationPlayer")
+animation_name = &"fly_down"
+metadata/_custom_type_script = "uid://5aiqrlyonbxb"
+
+[node name="PlaySpriteFramesAnimationAction3" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase2/MoveToExit/SequenceComposite/FlyDown" unique_id=1080705431 node_paths=PackedStringArray("animated_sprite")]
+script = ExtResource("19_wl0hn")
+animated_sprite = NodePath("../../../../../../../ShadedAnimatedSprite3D")
+animation_name = &"fly_down"
+metadata/_custom_type_script = "uid://conlbm78k0yfx"
+
+[node name="DelayDecorator2" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase2/MoveToExit/SequenceComposite/FlyDown" unique_id=1177204402]
+script = ExtResource("20_r4v3i")
+wait_time = 0.8
+metadata/_custom_type_script = "uid://dorri1tul8gfx"
+
+[node name="PlaySpriteFramesAnimationAction4" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase2/MoveToExit/SequenceComposite/FlyDown/DelayDecorator2" unique_id=1349541850 node_paths=PackedStringArray("animated_sprite")]
+script = ExtResource("19_wl0hn")
+animated_sprite = NodePath("../../../../../../../../ShadedAnimatedSprite3D")
+animation_name = &"idle_ground"
+metadata/_custom_type_script = "uid://conlbm78k0yfx"
+
+[node name="StopNavigationAction" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase2/MoveToExit/SequenceComposite" unique_id=323583772 node_paths=PackedStringArray("input_component")]
+script = ExtResource("30_f3ufb")
+input_component = NodePath("../../../../../../InputComponent")
+metadata/_custom_type_script = "uid://sqhnl6cqhp06"
+
+[node name="Barrier" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase2" unique_id=695659414]
+script = ExtResource("29_rloj3")
+metadata/_custom_type_script = "uid://dsf3a8vlolhx8"
+
+[node name="CooldownDecorator" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase2/Barrier" unique_id=347685558]
+script = ExtResource("33_kq10k")
+wait_time = 9.4
+metadata/_custom_type_script = "uid://2qri6rrfv8ui"
+
+[node name="Barrier" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase2/Barrier/CooldownDecorator" unique_id=1233746633]
+script = ExtResource("16_8r425")
+metadata/_custom_type_script = "uid://cg016dbe7gs1x"
+
+[node name="GetEnemyAction" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase2/Barrier/CooldownDecorator/Barrier" unique_id=392120127]
 script = ExtResource("17_stgu7")
 metadata/_custom_type_script = "uid://din3o6je4hf0y"
 
-[node name="TimeLimiterDecorator" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Melee" unique_id=548210733]
-script = ExtResource("27_360p0")
-wait_time = 10.0
-metadata/_custom_type_script = "uid://we22430vcb44"
-
-[node name="UntilFailDecorator" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Melee/TimeLimiterDecorator" unique_id=140152522]
-script = ExtResource("22_pqx2w")
-metadata/_custom_type_script = "uid://c84st521ytmk3"
-
-[node name="SelectorComposite" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Melee/TimeLimiterDecorator/UntilFailDecorator" unique_id=1414222207]
-script = ExtResource("19_scolu")
-metadata/_custom_type_script = "uid://8hn4kne15ac5"
-
-[node name="Attack" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Melee/TimeLimiterDecorator/UntilFailDecorator/SelectorComposite" unique_id=321198659]
-script = ExtResource("16_8r425")
-metadata/_custom_type_script = "uid://cg016dbe7gs1x"
-
-[node name="IsInRangeCondition" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Melee/TimeLimiterDecorator/UntilFailDecorator/SelectorComposite/Attack" unique_id=1958905762]
-script = ExtResource("18_umd83")
-metadata/_custom_type_script = "uid://oc2hkcrhiyfa"
-
-[node name="DelayDecorator" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Melee/TimeLimiterDecorator/UntilFailDecorator/SelectorComposite/Attack" unique_id=525046527]
-script = ExtResource("20_r4v3i")
-wait_time = 0.5
-metadata/_custom_type_script = "uid://dorri1tul8gfx"
-
-[node name="RepeaterDecorator" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Melee/TimeLimiterDecorator/UntilFailDecorator/SelectorComposite/Attack/DelayDecorator" unique_id=1355451614]
-script = ExtResource("20_u6j7b")
-repetitions = 3
-metadata/_custom_type_script = "uid://c5v7wuqn1xvdy"
-
-[node name="DelayDecorator" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Melee/TimeLimiterDecorator/UntilFailDecorator/SelectorComposite/Attack/DelayDecorator/RepeaterDecorator" unique_id=2065887652]
-script = ExtResource("20_r4v3i")
-wait_time = 0.5
-metadata/_custom_type_script = "uid://dorri1tul8gfx"
-
-[node name="SequenceComposite" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Melee/TimeLimiterDecorator/UntilFailDecorator/SelectorComposite/Attack/DelayDecorator/RepeaterDecorator/DelayDecorator" unique_id=806443921]
-script = ExtResource("16_8r425")
-metadata/_custom_type_script = "uid://cg016dbe7gs1x"
-
-[node name="AttackAction" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Melee/TimeLimiterDecorator/UntilFailDecorator/SelectorComposite/Attack/DelayDecorator/RepeaterDecorator/DelayDecorator/SequenceComposite" unique_id=1839467025]
+[node name="AttackAction8" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase2/Barrier/CooldownDecorator/Barrier" unique_id=442791786]
 script = ExtResource("21_xoqhw")
-attack_scene = ExtResource("22_mk8gb")
+attack_scene = ExtResource("34_7pnnt")
+attack_spawn_offset = Vector3(0, 0.1, 0)
+metadata/_custom_type_script = "uid://wpfn0jjwq6r3"
+
+[node name="SetSpecificTargetAction" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase2/Barrier/CooldownDecorator/Barrier" unique_id=595745693 node_paths=PackedStringArray("input_component")]
+script = ExtResource("37_8p563")
+target = Vector3(0, 0, -16)
+input_component = NodePath("../../../../../../../InputComponent")
+metadata/_custom_type_script = "uid://chor6813h6vl0"
+
+[node name="AttackAction" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase2/Barrier/CooldownDecorator/Barrier" unique_id=2004293359]
+script = ExtResource("21_xoqhw")
+attack_scene = ExtResource("30_7fl6r")
+attack_spawn_offset = Vector3(0, 0, 4)
 spawn_at_target = true
 metadata/_custom_type_script = "uid://wpfn0jjwq6r3"
 
-[node name="PlaySpriteFramesAnimationAction" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Melee/TimeLimiterDecorator/UntilFailDecorator/SelectorComposite/Attack/DelayDecorator/RepeaterDecorator/DelayDecorator/SequenceComposite" unique_id=562210843 node_paths=PackedStringArray("animated_sprite")]
+[node name="AttackAction2" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase2/Barrier/CooldownDecorator/Barrier" unique_id=38289363]
+script = ExtResource("21_xoqhw")
+attack_scene = ExtResource("30_7fl6r")
+attack_spawn_offset = Vector3(-2, 0, 4)
+spawn_at_target = true
+metadata/_custom_type_script = "uid://wpfn0jjwq6r3"
+
+[node name="AttackAction3" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase2/Barrier/CooldownDecorator/Barrier" unique_id=1154921297]
+script = ExtResource("21_xoqhw")
+attack_scene = ExtResource("30_7fl6r")
+attack_spawn_offset = Vector3(-4, 0, 4)
+spawn_at_target = true
+metadata/_custom_type_script = "uid://wpfn0jjwq6r3"
+
+[node name="AttackAction4" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase2/Barrier/CooldownDecorator/Barrier" unique_id=776248940]
+script = ExtResource("21_xoqhw")
+attack_scene = ExtResource("30_7fl6r")
+attack_spawn_offset = Vector3(-6, 0, 4)
+spawn_at_target = true
+metadata/_custom_type_script = "uid://wpfn0jjwq6r3"
+
+[node name="AttackAction5" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase2/Barrier/CooldownDecorator/Barrier" unique_id=94299145]
+script = ExtResource("21_xoqhw")
+attack_scene = ExtResource("30_7fl6r")
+attack_spawn_offset = Vector3(2, 0, 4)
+spawn_at_target = true
+metadata/_custom_type_script = "uid://wpfn0jjwq6r3"
+
+[node name="AttackAction6" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase2/Barrier/CooldownDecorator/Barrier" unique_id=1566839327]
+script = ExtResource("21_xoqhw")
+attack_scene = ExtResource("30_7fl6r")
+attack_spawn_offset = Vector3(4, 0, 4)
+spawn_at_target = true
+metadata/_custom_type_script = "uid://wpfn0jjwq6r3"
+
+[node name="AttackAction7" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase2/Barrier/CooldownDecorator/Barrier" unique_id=1432152102]
+script = ExtResource("21_xoqhw")
+attack_scene = ExtResource("30_7fl6r")
+attack_spawn_offset = Vector3(6, 0, 4)
+spawn_at_target = true
+metadata/_custom_type_script = "uid://wpfn0jjwq6r3"
+
+[node name="DelayDecorator" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase2" unique_id=857299739]
+script = ExtResource("20_r4v3i")
+wait_time = 1.0
+metadata/_custom_type_script = "uid://dorri1tul8gfx"
+
+[node name="SequenceComposite" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase2/DelayDecorator" unique_id=330326524]
+script = ExtResource("16_8r425")
+metadata/_custom_type_script = "uid://cg016dbe7gs1x"
+
+[node name="GetEnemyAction" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase2/DelayDecorator/SequenceComposite" unique_id=972065442]
+script = ExtResource("17_stgu7")
+metadata/_custom_type_script = "uid://din3o6je4hf0y"
+
+[node name="AttackAction" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase2/DelayDecorator/SequenceComposite" unique_id=388055584]
+script = ExtResource("21_xoqhw")
+attack_scene = ExtResource("33_7pnnt")
+spawn_at_target = true
+metadata/_custom_type_script = "uid://wpfn0jjwq6r3"
+
+[node name="Fase1" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite" unique_id=439164794]
+script = ExtResource("16_8r425")
+metadata/_custom_type_script = "uid://cg016dbe7gs1x"
+
+[node name="InverterDecorator" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1" unique_id=1039764130]
+script = ExtResource("21_kyt5n")
+metadata/_custom_type_script = "uid://crkjak4kyv56m"
+
+[node name="HPLessThanCondition" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/InverterDecorator" unique_id=698070635]
+script = ExtResource("18_tnjr0")
+health_percentage = 60.0
+metadata/_custom_type_script = "uid://bx6gqb65ng2f4"
+
+[node name="Seconf" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1" unique_id=1049609140]
+script = ExtResource("29_rloj3")
+metadata/_custom_type_script = "uid://dsf3a8vlolhx8"
+
+[node name="RepeaterDecorator" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Seconf" unique_id=1237429950]
+script = ExtResource("20_u6j7b")
+metadata/_custom_type_script = "uid://c5v7wuqn1xvdy"
+
+[node name="SequenceComposite" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Seconf/RepeaterDecorator" unique_id=1634529020]
+script = ExtResource("16_8r425")
+metadata/_custom_type_script = "uid://cg016dbe7gs1x"
+
+[node name="Ground" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Seconf/RepeaterDecorator/SequenceComposite" unique_id=1554219332]
+script = ExtResource("16_8r425")
+metadata/_custom_type_script = "uid://cg016dbe7gs1x"
+
+[node name="FlyDown" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Seconf/RepeaterDecorator/SequenceComposite/Ground" unique_id=1717046980]
+script = ExtResource("29_rloj3")
+metadata/_custom_type_script = "uid://dsf3a8vlolhx8"
+
+[node name="FlyDown" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Seconf/RepeaterDecorator/SequenceComposite/Ground/FlyDown" unique_id=1170771735]
+script = ExtResource("16_8r425")
+metadata/_custom_type_script = "uid://cg016dbe7gs1x"
+
+[node name="InverterDecorator" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Seconf/RepeaterDecorator/SequenceComposite/Ground/FlyDown/FlyDown" unique_id=716188054]
+script = ExtResource("21_kyt5n")
+metadata/_custom_type_script = "uid://crkjak4kyv56m"
+
+[node name="IsPlayingFramesAnimationAction" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Seconf/RepeaterDecorator/SequenceComposite/Ground/FlyDown/FlyDown/InverterDecorator" unique_id=1396445371 node_paths=PackedStringArray("animated_sprite")]
+script = ExtResource("22_jn6er")
+animated_sprite = NodePath("../../../../../../../../../../../ShadedAnimatedSprite3D")
+animation_name = &"idle_ground"
+metadata/_custom_type_script = "uid://cg2o7jlo4btkv"
+
+[node name="PlayAnimationAction" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Seconf/RepeaterDecorator/SequenceComposite/Ground/FlyDown/FlyDown" unique_id=132703717 node_paths=PackedStringArray("animation_player")]
+script = ExtResource("19_hktqo")
+animation_player = NodePath("../../../../../../../../../../AnimationPlayer")
+animation_name = &"fly_down"
+metadata/_custom_type_script = "uid://5aiqrlyonbxb"
+
+[node name="PlaySpriteFramesAnimationAction" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Seconf/RepeaterDecorator/SequenceComposite/Ground/FlyDown/FlyDown" unique_id=1864457968 node_paths=PackedStringArray("animated_sprite")]
 script = ExtResource("19_wl0hn")
-animated_sprite = NodePath("../../../../../../../../../../../../../../../ShadedAnimatedSprite3D")
-animation_name = &"melee_attack"
+animated_sprite = NodePath("../../../../../../../../../../ShadedAnimatedSprite3D")
+animation_name = &"fly_down"
 metadata/_custom_type_script = "uid://conlbm78k0yfx"
 
-[node name="PlaySpriteFramesAnimationAction" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Melee/TimeLimiterDecorator/UntilFailDecorator/SelectorComposite/Attack" unique_id=743663229 node_paths=PackedStringArray("animated_sprite")]
+[node name="DelayDecorator" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Seconf/RepeaterDecorator/SequenceComposite/Ground/FlyDown/FlyDown" unique_id=247239134]
+script = ExtResource("20_r4v3i")
+wait_time = 0.8
+metadata/_custom_type_script = "uid://dorri1tul8gfx"
+
+[node name="PlaySpriteFramesAnimationAction2" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Seconf/RepeaterDecorator/SequenceComposite/Ground/FlyDown/FlyDown/DelayDecorator" unique_id=1890952197 node_paths=PackedStringArray("animated_sprite")]
 script = ExtResource("19_wl0hn")
 animated_sprite = NodePath("../../../../../../../../../../../ShadedAnimatedSprite3D")
 animation_name = &"idle_ground"
 metadata/_custom_type_script = "uid://conlbm78k0yfx"
 
-[node name="GotoPlayer" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Melee/TimeLimiterDecorator/UntilFailDecorator/SelectorComposite" unique_id=720354903]
+[node name="SelectorReactiveComposite" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Seconf/RepeaterDecorator/SequenceComposite/Ground" unique_id=1262789165]
+script = ExtResource("15_rugv5")
+metadata/_custom_type_script = "uid://cw22yurt5l74k"
+
+[node name="InRange" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Seconf/RepeaterDecorator/SequenceComposite/Ground/SelectorReactiveComposite" unique_id=1501160429]
 script = ExtResource("16_8r425")
 metadata/_custom_type_script = "uid://cg016dbe7gs1x"
 
-[node name="GetEnemyAction" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Melee/TimeLimiterDecorator/UntilFailDecorator/SelectorComposite/GotoPlayer" unique_id=2052887762]
+[node name="GetEnemyAction" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Seconf/RepeaterDecorator/SequenceComposite/Ground/SelectorReactiveComposite/InRange" unique_id=481853411]
 script = ExtResource("17_stgu7")
 metadata/_custom_type_script = "uid://din3o6je4hf0y"
 
-[node name="SetEnemyTargetAction" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Melee/TimeLimiterDecorator/UntilFailDecorator/SelectorComposite/GotoPlayer" unique_id=1392471944 node_paths=PackedStringArray("input_component")]
-script = ExtResource("25_q6aoy")
-input_component = NodePath("../../../../../../../../../../../InputComponent")
+[node name="IsInRangeCondition" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Seconf/RepeaterDecorator/SequenceComposite/Ground/SelectorReactiveComposite/InRange" unique_id=254280788]
+script = ExtResource("38_kq10k")
+view_range = 2.3
+metadata/_custom_type_script = "uid://oc2hkcrhiyfa"
+
+[node name="RepeaterDecorator" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Seconf/RepeaterDecorator/SequenceComposite/Ground/SelectorReactiveComposite/InRange" unique_id=941854852]
+script = ExtResource("20_u6j7b")
+repetitions = 2
+metadata/_custom_type_script = "uid://c5v7wuqn1xvdy"
+
+[node name="DelayDecorator" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Seconf/RepeaterDecorator/SequenceComposite/Ground/SelectorReactiveComposite/InRange/RepeaterDecorator" unique_id=1177489591]
+script = ExtResource("20_r4v3i")
+wait_time = 0.3
+metadata/_custom_type_script = "uid://dorri1tul8gfx"
+
+[node name="SequenceComposite" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Seconf/RepeaterDecorator/SequenceComposite/Ground/SelectorReactiveComposite/InRange/RepeaterDecorator/DelayDecorator" unique_id=1719989863]
+script = ExtResource("16_8r425")
+metadata/_custom_type_script = "uid://cg016dbe7gs1x"
+
+[node name="AttackAction" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Seconf/RepeaterDecorator/SequenceComposite/Ground/SelectorReactiveComposite/InRange/RepeaterDecorator/DelayDecorator/SequenceComposite" unique_id=21545827]
+script = ExtResource("21_xoqhw")
+attack_scene = ExtResource("39_g2l4d")
+attack_spawn_offset = Vector3(0, 1, 0)
+spawn_at_target = true
+metadata/_custom_type_script = "uid://wpfn0jjwq6r3"
+
+[node name="PlaySpriteFramesAnimationAction" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Seconf/RepeaterDecorator/SequenceComposite/Ground/SelectorReactiveComposite/InRange/RepeaterDecorator/DelayDecorator/SequenceComposite" unique_id=1944118097 node_paths=PackedStringArray("animated_sprite")]
+script = ExtResource("19_wl0hn")
+animated_sprite = NodePath("../../../../../../../../../../../../../ShadedAnimatedSprite3D")
+animation_name = &"melee_attack"
+metadata/_custom_type_script = "uid://conlbm78k0yfx"
+
+[node name="PlayParticleAction" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Seconf/RepeaterDecorator/SequenceComposite/Ground/SelectorReactiveComposite/InRange/RepeaterDecorator/DelayDecorator/SequenceComposite" unique_id=2038561670]
+script = ExtResource("40_ri13n")
+particle_scene = ExtResource("41_g2l4d")
+metadata/_custom_type_script = "uid://docm6x45208x4"
+
+[node name="GotoEnemy" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Seconf/RepeaterDecorator/SequenceComposite/Ground/SelectorReactiveComposite" unique_id=417875165]
+script = ExtResource("16_8r425")
+metadata/_custom_type_script = "uid://cg016dbe7gs1x"
+
+[node name="GetEnemyAction" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Seconf/RepeaterDecorator/SequenceComposite/Ground/SelectorReactiveComposite/GotoEnemy" unique_id=2048870231]
+script = ExtResource("17_stgu7")
+metadata/_custom_type_script = "uid://din3o6je4hf0y"
+
+[node name="SetEnemyTargetAction" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Seconf/RepeaterDecorator/SequenceComposite/Ground/SelectorReactiveComposite/GotoEnemy" unique_id=1406946164 node_paths=PackedStringArray("input_component")]
+script = ExtResource("42_qkttr")
+input_component = NodePath("../../../../../../../../../../InputComponent")
 metadata/_custom_type_script = "uid://b8qgfm5nhx8mh"
 
-[node name="StartNavigationAction" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Melee/TimeLimiterDecorator/UntilFailDecorator/SelectorComposite/GotoPlayer" unique_id=633912599 node_paths=PackedStringArray("input_component", "navigation_agent")]
-script = ExtResource("26_0krno")
-input_component = NodePath("../../../../../../../../../../../InputComponent")
-navigation_agent = NodePath("../../../../../../../../../../../NavigationAgent3D")
-metadata/_custom_type_script = "uid://bg1soc5i52jps"
-
-[node name="PlaySpriteFramesAnimationAction" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Melee/TimeLimiterDecorator/UntilFailDecorator/SelectorComposite/GotoPlayer" unique_id=742275444 node_paths=PackedStringArray("animated_sprite")]
+[node name="PlaySpriteFramesAnimationAction" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Seconf/RepeaterDecorator/SequenceComposite/Ground/SelectorReactiveComposite/GotoEnemy" unique_id=101321321 node_paths=PackedStringArray("animated_sprite")]
 script = ExtResource("19_wl0hn")
-animated_sprite = NodePath("../../../../../../../../../../../ShadedAnimatedSprite3D")
+animated_sprite = NodePath("../../../../../../../../../../ShadedAnimatedSprite3D")
 animation_name = &"walk"
 metadata/_custom_type_script = "uid://conlbm78k0yfx"
 
-[node name="TimeLimiterDecorator" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Melee/TimeLimiterDecorator/UntilFailDecorator/SelectorComposite/GotoPlayer" unique_id=1497949340]
-script = ExtResource("27_360p0")
-wait_time = 1.0
-metadata/_custom_type_script = "uid://we22430vcb44"
+[node name="StartNavigationAction" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Seconf/RepeaterDecorator/SequenceComposite/Ground/SelectorReactiveComposite/GotoEnemy" unique_id=1696825725 node_paths=PackedStringArray("input_component", "navigation_agent")]
+script = ExtResource("26_0krno")
+input_component = NodePath("../../../../../../../../../../InputComponent")
+navigation_agent = NodePath("../../../../../../../../../../NavigationAgent3D")
+metadata/_custom_type_script = "uid://bg1soc5i52jps"
 
-[node name="WaitForRangeCondition" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Melee/TimeLimiterDecorator/UntilFailDecorator/SelectorComposite/GotoPlayer/TimeLimiterDecorator" unique_id=1476485452]
-script = ExtResource("28_p65fj")
-metadata/_custom_type_script = "uid://cssfcwmucql4s"
+[node name="UntilInRangeDecorator" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Seconf/RepeaterDecorator/SequenceComposite/Ground/SelectorReactiveComposite/GotoEnemy" unique_id=892195969]
+script = ExtResource("41_ri13n")
+view_range = 1.8
+metadata/_custom_type_script = "uid://c5hiifip64aob"
 
-[node name="AlwaysSucceedDecorator" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Melee/TimeLimiterDecorator/UntilFailDecorator/SelectorComposite/GotoPlayer" unique_id=687216141]
+[node name="SequenceComposite" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Seconf/RepeaterDecorator/SequenceComposite/Ground/SelectorReactiveComposite/GotoEnemy/UntilInRangeDecorator" unique_id=92164563]
+script = ExtResource("16_8r425")
+metadata/_custom_type_script = "uid://cg016dbe7gs1x"
+
+[node name="GetEnemyAction2" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Seconf/RepeaterDecorator/SequenceComposite/Ground/SelectorReactiveComposite/GotoEnemy/UntilInRangeDecorator/SequenceComposite" unique_id=1567935797]
+script = ExtResource("17_stgu7")
+metadata/_custom_type_script = "uid://din3o6je4hf0y"
+
+[node name="SetEnemyTargetAction" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Seconf/RepeaterDecorator/SequenceComposite/Ground/SelectorReactiveComposite/GotoEnemy/UntilInRangeDecorator/SequenceComposite" unique_id=1282074455 node_paths=PackedStringArray("input_component")]
+script = ExtResource("42_qkttr")
+input_component = NodePath("../../../../../../../../../../../../InputComponent")
+metadata/_custom_type_script = "uid://b8qgfm5nhx8mh"
+
+[node name="StartNavigationAction" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Seconf/RepeaterDecorator/SequenceComposite/Ground/SelectorReactiveComposite/GotoEnemy/UntilInRangeDecorator/SequenceComposite" unique_id=1110309884 node_paths=PackedStringArray("input_component", "navigation_agent")]
+script = ExtResource("26_0krno")
+input_component = NodePath("../../../../../../../../../../../../InputComponent")
+navigation_agent = NodePath("../../../../../../../../../../../../NavigationAgent3D")
+metadata/_custom_type_script = "uid://bg1soc5i52jps"
+
+[node name="SequenceComposite" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Seconf/RepeaterDecorator/SequenceComposite/Ground/SelectorReactiveComposite/GotoEnemy" unique_id=1931089661]
+script = ExtResource("16_8r425")
+metadata/_custom_type_script = "uid://cg016dbe7gs1x"
+
+[node name="IsInRangeCondition" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Seconf/RepeaterDecorator/SequenceComposite/Ground/SelectorReactiveComposite/GotoEnemy/SequenceComposite" unique_id=1994977504]
+script = ExtResource("38_kq10k")
+view_range = 2.3
+metadata/_custom_type_script = "uid://oc2hkcrhiyfa"
+
+[node name="StopNavigationAction" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Seconf/RepeaterDecorator/SequenceComposite/Ground/SelectorReactiveComposite/GotoEnemy/SequenceComposite" unique_id=563352726 node_paths=PackedStringArray("input_component")]
+script = ExtResource("30_f3ufb")
+input_component = NodePath("../../../../../../../../../../../InputComponent")
+metadata/_custom_type_script = "uid://sqhnl6cqhp06"
+
+[node name="PlaySpriteFramesAnimationAction" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Seconf/RepeaterDecorator/SequenceComposite/Ground/SelectorReactiveComposite/GotoEnemy/SequenceComposite" unique_id=349755674 node_paths=PackedStringArray("animated_sprite")]
+script = ExtResource("19_wl0hn")
+animated_sprite = NodePath("../../../../../../../../../../../ShadedAnimatedSprite3D")
+animation_name = &"idle_ground"
+metadata/_custom_type_script = "uid://conlbm78k0yfx"
+
+[node name="Flight" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Seconf/RepeaterDecorator/SequenceComposite" unique_id=790614886]
+script = ExtResource("16_8r425")
+metadata/_custom_type_script = "uid://cg016dbe7gs1x"
+
+[node name="AlwaysSucceedDecorator" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Seconf/RepeaterDecorator/SequenceComposite/Flight" unique_id=503254653]
 script = ExtResource("29_rloj3")
 metadata/_custom_type_script = "uid://dsf3a8vlolhx8"
 
-[node name="SequenceComposite" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Melee/TimeLimiterDecorator/UntilFailDecorator/SelectorComposite/GotoPlayer/AlwaysSucceedDecorator" unique_id=1885649565]
+[node name="FlyUp" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Seconf/RepeaterDecorator/SequenceComposite/Flight/AlwaysSucceedDecorator" unique_id=1646605965]
 script = ExtResource("16_8r425")
 metadata/_custom_type_script = "uid://cg016dbe7gs1x"
 
-[node name="IsInRangeCondition" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Melee/TimeLimiterDecorator/UntilFailDecorator/SelectorComposite/GotoPlayer/AlwaysSucceedDecorator/SequenceComposite" unique_id=1048870870]
-script = ExtResource("18_umd83")
-metadata/_custom_type_script = "uid://oc2hkcrhiyfa"
+[node name="InverterDecorator" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Seconf/RepeaterDecorator/SequenceComposite/Flight/AlwaysSucceedDecorator/FlyUp" unique_id=166103368]
+script = ExtResource("21_kyt5n")
+metadata/_custom_type_script = "uid://crkjak4kyv56m"
 
-[node name="StopNavigationAction" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Melee/TimeLimiterDecorator/UntilFailDecorator/SelectorComposite/GotoPlayer/AlwaysSucceedDecorator/SequenceComposite" unique_id=221531669]
+[node name="IsPlayingFramesAnimationAction" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Seconf/RepeaterDecorator/SequenceComposite/Flight/AlwaysSucceedDecorator/FlyUp/InverterDecorator" unique_id=224135718 node_paths=PackedStringArray("animated_sprite")]
+script = ExtResource("22_jn6er")
+animated_sprite = NodePath("../../../../../../../../../../../ShadedAnimatedSprite3D")
+animation_name = &"idle_flight"
+metadata/_custom_type_script = "uid://cg2o7jlo4btkv"
+
+[node name="PlayAnimationAction" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Seconf/RepeaterDecorator/SequenceComposite/Flight/AlwaysSucceedDecorator/FlyUp" unique_id=869595440 node_paths=PackedStringArray("animation_player")]
+script = ExtResource("19_hktqo")
+animation_player = NodePath("../../../../../../../../../../AnimationPlayer")
+animation_name = &"fly_up"
+metadata/_custom_type_script = "uid://5aiqrlyonbxb"
+
+[node name="PlaySpriteFramesAnimationAction" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Seconf/RepeaterDecorator/SequenceComposite/Flight/AlwaysSucceedDecorator/FlyUp" unique_id=1015403592 node_paths=PackedStringArray("animated_sprite")]
+script = ExtResource("19_wl0hn")
+animated_sprite = NodePath("../../../../../../../../../../ShadedAnimatedSprite3D")
+animation_name = &"fly_up"
+metadata/_custom_type_script = "uid://conlbm78k0yfx"
+
+[node name="DelayDecorator" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Seconf/RepeaterDecorator/SequenceComposite/Flight/AlwaysSucceedDecorator/FlyUp" unique_id=791809102]
+script = ExtResource("20_r4v3i")
+wait_time = 0.8
+metadata/_custom_type_script = "uid://dorri1tul8gfx"
+
+[node name="PlaySpriteFramesAnimationAction2" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Seconf/RepeaterDecorator/SequenceComposite/Flight/AlwaysSucceedDecorator/FlyUp/DelayDecorator" unique_id=605919567 node_paths=PackedStringArray("animated_sprite")]
+script = ExtResource("19_wl0hn")
+animated_sprite = NodePath("../../../../../../../../../../../ShadedAnimatedSprite3D")
+animation_name = &"idle_flight"
+metadata/_custom_type_script = "uid://conlbm78k0yfx"
+
+[node name="SetSpecificTargetAction" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Seconf/RepeaterDecorator/SequenceComposite/Flight" unique_id=1819230872 node_paths=PackedStringArray("input_component")]
+script = ExtResource("37_8p563")
+target = Vector3(0, 0, 0.035)
+input_component = NodePath("../../../../../../../../InputComponent")
+metadata/_custom_type_script = "uid://chor6813h6vl0"
+
+[node name="StartNavigationAction" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Seconf/RepeaterDecorator/SequenceComposite/Flight" unique_id=28668428 node_paths=PackedStringArray("input_component", "navigation_agent")]
+script = ExtResource("26_0krno")
+input_component = NodePath("../../../../../../../../InputComponent")
+navigation_agent = NodePath("../../../../../../../../NavigationAgent3D")
+metadata/_custom_type_script = "uid://bg1soc5i52jps"
+
+[node name="WaitForRangeCondition" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Seconf/RepeaterDecorator/SequenceComposite/Flight" unique_id=1855511479]
+script = ExtResource("28_p65fj")
+metadata/_custom_type_script = "uid://cssfcwmucql4s"
+
+[node name="StopNavigationAction" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Seconf/RepeaterDecorator/SequenceComposite/Flight" unique_id=726020369 node_paths=PackedStringArray("input_component")]
 script = ExtResource("30_f3ufb")
+input_component = NodePath("../../../../../../../../InputComponent")
 metadata/_custom_type_script = "uid://sqhnl6cqhp06"
 
-[node name="Ranged" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle" unique_id=395141725]
+[node name="Shoot" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Seconf/RepeaterDecorator/SequenceComposite/Flight" unique_id=1842425896]
+script = ExtResource("20_u6j7b")
+repetitions = 5
+metadata/_custom_type_script = "uid://c5v7wuqn1xvdy"
+
+[node name="Shoot" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Seconf/RepeaterDecorator/SequenceComposite/Flight/Shoot" unique_id=303432015]
+script = ExtResource("20_r4v3i")
+wait_time = 1.5
+metadata/_custom_type_script = "uid://dorri1tul8gfx"
+
+[node name="RepeaterDecorator" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Seconf/RepeaterDecorator/SequenceComposite/Flight/Shoot/Shoot" unique_id=174933619]
+script = ExtResource("20_u6j7b")
+repetitions = 3
+metadata/_custom_type_script = "uid://c5v7wuqn1xvdy"
+
+[node name="DelayDecorator" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Seconf/RepeaterDecorator/SequenceComposite/Flight/Shoot/Shoot/RepeaterDecorator" unique_id=1065351014]
+script = ExtResource("20_r4v3i")
+wait_time = 0.5
+metadata/_custom_type_script = "uid://dorri1tul8gfx"
+
+[node name="SequenceComposite" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Seconf/RepeaterDecorator/SequenceComposite/Flight/Shoot/Shoot/RepeaterDecorator/DelayDecorator" unique_id=443383365]
 script = ExtResource("16_8r425")
 metadata/_custom_type_script = "uid://cg016dbe7gs1x"
 
-[node name="PlayAnimationAction" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Ranged" unique_id=1333159638 node_paths=PackedStringArray("animation_player")]
+[node name="GetEnemyAction" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Seconf/RepeaterDecorator/SequenceComposite/Flight/Shoot/Shoot/RepeaterDecorator/DelayDecorator/SequenceComposite" unique_id=1711101349]
+script = ExtResource("17_stgu7")
+metadata/_custom_type_script = "uid://din3o6je4hf0y"
+
+[node name="AttackAction" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Seconf/RepeaterDecorator/SequenceComposite/Flight/Shoot/Shoot/RepeaterDecorator/DelayDecorator/SequenceComposite" unique_id=154658065]
+script = ExtResource("21_xoqhw")
+attack_scene = ExtResource("33_7pnnt")
+spawn_at_target = true
+metadata/_custom_type_script = "uid://wpfn0jjwq6r3"
+
+[node name="Tentacles" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1" unique_id=472962372]
+script = ExtResource("16_8r425")
+metadata/_custom_type_script = "uid://cg016dbe7gs1x"
+
+[node name="SetSpecificTargetAction" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Tentacles" unique_id=1798265584 node_paths=PackedStringArray("input_component")]
+script = ExtResource("37_8p563")
+target = Vector3(0, 0, -16)
+input_component = NodePath("../../../../../InputComponent")
+metadata/_custom_type_script = "uid://chor6813h6vl0"
+
+[node name="AlwaysSucceedDecorator" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Tentacles" unique_id=1737310150]
+script = ExtResource("29_rloj3")
+metadata/_custom_type_script = "uid://dsf3a8vlolhx8"
+
+[node name="FlyUp" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Tentacles/AlwaysSucceedDecorator" unique_id=1485530325]
+script = ExtResource("16_8r425")
+metadata/_custom_type_script = "uid://cg016dbe7gs1x"
+
+[node name="InverterDecorator" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Tentacles/AlwaysSucceedDecorator/FlyUp" unique_id=1841797359]
+script = ExtResource("21_kyt5n")
+metadata/_custom_type_script = "uid://crkjak4kyv56m"
+
+[node name="IsPlayingFramesAnimationAction" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Tentacles/AlwaysSucceedDecorator/FlyUp/InverterDecorator" unique_id=1349674439 node_paths=PackedStringArray("animated_sprite")]
+script = ExtResource("22_jn6er")
+animated_sprite = NodePath("../../../../../../../../ShadedAnimatedSprite3D")
+animation_name = &"idle_flight"
+metadata/_custom_type_script = "uid://cg2o7jlo4btkv"
+
+[node name="PlayAnimationAction" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Tentacles/AlwaysSucceedDecorator/FlyUp" unique_id=429297006 node_paths=PackedStringArray("animation_player")]
 script = ExtResource("19_hktqo")
 animation_player = NodePath("../../../../../../../AnimationPlayer")
 animation_name = &"fly_up"
 metadata/_custom_type_script = "uid://5aiqrlyonbxb"
 
-[node name="PlaySpriteFramesAnimationAction" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Ranged" unique_id=1119008480 node_paths=PackedStringArray("animated_sprite")]
+[node name="PlaySpriteFramesAnimationAction" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Tentacles/AlwaysSucceedDecorator/FlyUp" unique_id=1511158467 node_paths=PackedStringArray("animated_sprite")]
 script = ExtResource("19_wl0hn")
 animated_sprite = NodePath("../../../../../../../ShadedAnimatedSprite3D")
 animation_name = &"fly_up"
 metadata/_custom_type_script = "uid://conlbm78k0yfx"
 
-[node name="DelayDecorator" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Ranged" unique_id=1246699239]
+[node name="DelayDecorator" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Tentacles/AlwaysSucceedDecorator/FlyUp" unique_id=59153794]
 script = ExtResource("20_r4v3i")
 wait_time = 0.8
 metadata/_custom_type_script = "uid://dorri1tul8gfx"
 
-[node name="PlaySpriteFramesAnimationAction2" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Ranged/DelayDecorator" unique_id=1514506885 node_paths=PackedStringArray("animated_sprite")]
+[node name="PlaySpriteFramesAnimationAction2" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Tentacles/AlwaysSucceedDecorator/FlyUp/DelayDecorator" unique_id=675577465 node_paths=PackedStringArray("animated_sprite")]
 script = ExtResource("19_wl0hn")
 animated_sprite = NodePath("../../../../../../../../ShadedAnimatedSprite3D")
 animation_name = &"idle_flight"
 metadata/_custom_type_script = "uid://conlbm78k0yfx"
 
-[node name="TimeLimiterDecorator" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Ranged" unique_id=361057121]
-script = ExtResource("27_360p0")
-wait_time = 10.0
-metadata/_custom_type_script = "uid://we22430vcb44"
-
-[node name="UntilFailDecorator" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Ranged/TimeLimiterDecorator" unique_id=2143841913]
-script = ExtResource("22_pqx2w")
-metadata/_custom_type_script = "uid://c84st521ytmk3"
-
-[node name="SelectorComposite" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Ranged/TimeLimiterDecorator/UntilFailDecorator" unique_id=669774550]
-script = ExtResource("19_scolu")
-metadata/_custom_type_script = "uid://8hn4kne15ac5"
-
-[node name="Shoot" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Ranged/TimeLimiterDecorator/UntilFailDecorator/SelectorComposite" unique_id=969358291]
-script = ExtResource("16_8r425")
-metadata/_custom_type_script = "uid://cg016dbe7gs1x"
-
-[node name="IsInRangeCondition" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Ranged/TimeLimiterDecorator/UntilFailDecorator/SelectorComposite/Shoot" unique_id=461347669]
-script = ExtResource("18_umd83")
-view_range = 3.0
-metadata/_custom_type_script = "uid://oc2hkcrhiyfa"
-
-[node name="DelayDecorator" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Ranged/TimeLimiterDecorator/UntilFailDecorator/SelectorComposite/Shoot" unique_id=241359196]
-script = ExtResource("20_r4v3i")
-wait_time = 0.5
-metadata/_custom_type_script = "uid://dorri1tul8gfx"
-
-[node name="AttackAction" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Ranged/TimeLimiterDecorator/UntilFailDecorator/SelectorComposite/Shoot/DelayDecorator" unique_id=1281854809]
-script = ExtResource("21_xoqhw")
-attack_scene = ExtResource("24_smowf")
-attack_spawn_offset = Vector3(0, 3, 0)
-metadata/_custom_type_script = "uid://wpfn0jjwq6r3"
-
-[node name="GotoPlayer" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Ranged/TimeLimiterDecorator/UntilFailDecorator/SelectorComposite" unique_id=678295733]
-script = ExtResource("16_8r425")
-metadata/_custom_type_script = "uid://cg016dbe7gs1x"
-
-[node name="GetEnemyAction" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Ranged/TimeLimiterDecorator/UntilFailDecorator/SelectorComposite/GotoPlayer" unique_id=1454960257]
-script = ExtResource("17_stgu7")
-metadata/_custom_type_script = "uid://din3o6je4hf0y"
-
-[node name="SetEnemyTargetAction" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Ranged/TimeLimiterDecorator/UntilFailDecorator/SelectorComposite/GotoPlayer" unique_id=43785353 node_paths=PackedStringArray("input_component")]
-script = ExtResource("25_q6aoy")
-input_component = NodePath("../../../../../../../../../../../InputComponent")
-metadata/_custom_type_script = "uid://b8qgfm5nhx8mh"
-
-[node name="StartNavigationAction" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Ranged/TimeLimiterDecorator/UntilFailDecorator/SelectorComposite/GotoPlayer" unique_id=1424101666 node_paths=PackedStringArray("input_component", "navigation_agent")]
-script = ExtResource("26_0krno")
-input_component = NodePath("../../../../../../../../../../../InputComponent")
-navigation_agent = NodePath("../../../../../../../../../../../NavigationAgent3D")
-metadata/_custom_type_script = "uid://bg1soc5i52jps"
-
-[node name="TimeLimiterDecorator" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Ranged/TimeLimiterDecorator/UntilFailDecorator/SelectorComposite/GotoPlayer" unique_id=592636098]
-script = ExtResource("27_360p0")
-wait_time = 1.0
-metadata/_custom_type_script = "uid://we22430vcb44"
-
-[node name="WaitForRangeCondition" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Ranged/TimeLimiterDecorator/UntilFailDecorator/SelectorComposite/GotoPlayer/TimeLimiterDecorator" unique_id=1869433790]
-script = ExtResource("28_p65fj")
-_range = 3.0
-metadata/_custom_type_script = "uid://cssfcwmucql4s"
-
-[node name="AlwaysSucceedDecorator" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Ranged/TimeLimiterDecorator/UntilFailDecorator/SelectorComposite/GotoPlayer" unique_id=299182867]
-script = ExtResource("29_rloj3")
-metadata/_custom_type_script = "uid://dsf3a8vlolhx8"
-
-[node name="SequenceComposite" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Ranged/TimeLimiterDecorator/UntilFailDecorator/SelectorComposite/GotoPlayer/AlwaysSucceedDecorator" unique_id=1322086999]
-script = ExtResource("16_8r425")
-metadata/_custom_type_script = "uid://cg016dbe7gs1x"
-
-[node name="IsInRangeCondition" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Ranged/TimeLimiterDecorator/UntilFailDecorator/SelectorComposite/GotoPlayer/AlwaysSucceedDecorator/SequenceComposite" unique_id=1432826664]
-script = ExtResource("18_umd83")
-view_range = 3.0
-metadata/_custom_type_script = "uid://oc2hkcrhiyfa"
-
-[node name="StopNavigationAction" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Ranged/TimeLimiterDecorator/UntilFailDecorator/SelectorComposite/GotoPlayer/AlwaysSucceedDecorator/SequenceComposite" unique_id=1932475047]
-script = ExtResource("30_f3ufb")
-metadata/_custom_type_script = "uid://sqhnl6cqhp06"
-
-[node name="PlayAnimationAction2" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Ranged" unique_id=640223742 node_paths=PackedStringArray("animation_player")]
-script = ExtResource("19_hktqo")
-animation_player = NodePath("../../../../../../../AnimationPlayer")
-animation_name = &"fly_down"
-metadata/_custom_type_script = "uid://5aiqrlyonbxb"
-
-[node name="PlaySpriteFramesAnimationAction3" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Ranged" unique_id=2024887927 node_paths=PackedStringArray("animated_sprite")]
-script = ExtResource("19_wl0hn")
-animated_sprite = NodePath("../../../../../../../ShadedAnimatedSprite3D")
-animation_name = &"fly_down"
-metadata/_custom_type_script = "uid://conlbm78k0yfx"
-
-[node name="DelayDecorator2" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Ranged" unique_id=635573671]
-script = ExtResource("20_r4v3i")
-wait_time = 0.8
-metadata/_custom_type_script = "uid://dorri1tul8gfx"
-
-[node name="PlaySpriteFramesAnimationAction4" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/RepeaterDecorator/NonTentacle/Ranged/DelayDecorator2" unique_id=137497830 node_paths=PackedStringArray("animated_sprite")]
-script = ExtResource("19_wl0hn")
-animated_sprite = NodePath("../../../../../../../../ShadedAnimatedSprite3D")
-animation_name = &"idle_ground"
-metadata/_custom_type_script = "uid://conlbm78k0yfx"
-
-[node name="Tentacles" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1" unique_id=472962372]
-script = ExtResource("16_8r425")
-metadata/_custom_type_script = "uid://cg016dbe7gs1x"
-
-[node name="SetSpecificTargetAction" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/Tentacles" unique_id=1798265584 node_paths=PackedStringArray("input_component")]
-script = ExtResource("37_8p563")
-input_component = NodePath("../../../../../InputComponent")
-metadata/_custom_type_script = "uid://chor6813h6vl0"
-
-[node name="StartNavigationAction" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/Tentacles" unique_id=691880852 node_paths=PackedStringArray("input_component", "navigation_agent")]
+[node name="StartNavigationAction" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Tentacles" unique_id=691880852 node_paths=PackedStringArray("input_component", "navigation_agent")]
 script = ExtResource("26_0krno")
 input_component = NodePath("../../../../../InputComponent")
 navigation_agent = NodePath("../../../../../NavigationAgent3D")
 metadata/_custom_type_script = "uid://bg1soc5i52jps"
 
-[node name="PlayAnimationAction" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/Tentacles" unique_id=429297006 node_paths=PackedStringArray("animation_player")]
-script = ExtResource("19_hktqo")
-animation_player = NodePath("../../../../../AnimationPlayer")
-animation_name = &"fly_up"
-metadata/_custom_type_script = "uid://5aiqrlyonbxb"
+[node name="WaitForDestinationCondition" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Tentacles" unique_id=1270570716]
+script = ExtResource("28_p65fj")
+_range = 0.5
+metadata/_custom_type_script = "uid://cssfcwmucql4s"
 
-[node name="PlaySpriteFramesAnimationAction" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/Tentacles" unique_id=1511158467 node_paths=PackedStringArray("animated_sprite")]
-script = ExtResource("19_wl0hn")
-animated_sprite = NodePath("../../../../../ShadedAnimatedSprite3D")
-animation_name = &"fly_up"
-metadata/_custom_type_script = "uid://conlbm78k0yfx"
-
-[node name="DelayDecorator" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/Tentacles" unique_id=59153794]
-script = ExtResource("20_r4v3i")
-wait_time = 0.8
-metadata/_custom_type_script = "uid://dorri1tul8gfx"
-
-[node name="PlaySpriteFramesAnimationAction2" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/Tentacles/DelayDecorator" unique_id=675577465 node_paths=PackedStringArray("animated_sprite")]
-script = ExtResource("19_wl0hn")
-animated_sprite = NodePath("../../../../../../ShadedAnimatedSprite3D")
-animation_name = &"idle_flight"
-metadata/_custom_type_script = "uid://conlbm78k0yfx"
-
-[node name="WaitForDestinationCondition" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/Tentacles" unique_id=119793443 node_paths=PackedStringArray("input_component")]
-script = ExtResource("32_0dlqp")
+[node name="StopNavigationAction" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Tentacles" unique_id=1987869337 node_paths=PackedStringArray("input_component")]
+script = ExtResource("30_f3ufb")
 input_component = NodePath("../../../../../InputComponent")
-metadata/_custom_type_script = "uid://c541rfah1pvw8"
+metadata/_custom_type_script = "uid://sqhnl6cqhp06"
 
-[node name="PlayAnimationAction2" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/Tentacles" unique_id=770124148 node_paths=PackedStringArray("animation_player")]
+[node name="PlayAnimationAction2" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Tentacles" unique_id=770124148 node_paths=PackedStringArray("animation_player")]
 script = ExtResource("19_hktqo")
 animation_player = NodePath("../../../../../AnimationPlayer")
 animation_name = &"fly_down"
 metadata/_custom_type_script = "uid://5aiqrlyonbxb"
 
-[node name="PlaySpriteFramesAnimationAction3" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/Tentacles" unique_id=1191212709 node_paths=PackedStringArray("animated_sprite")]
+[node name="PlaySpriteFramesAnimationAction3" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Tentacles" unique_id=1191212709 node_paths=PackedStringArray("animated_sprite")]
 script = ExtResource("19_wl0hn")
 animated_sprite = NodePath("../../../../../ShadedAnimatedSprite3D")
 animation_name = &"fly_down"
 metadata/_custom_type_script = "uid://conlbm78k0yfx"
 
-[node name="DelayDecorator2" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/Tentacles" unique_id=1976415002]
+[node name="DelayDecorator2" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Tentacles" unique_id=1976415002]
 script = ExtResource("20_r4v3i")
 wait_time = 0.8
 metadata/_custom_type_script = "uid://dorri1tul8gfx"
 
-[node name="PlaySpriteFramesAnimationAction4" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/Tentacles/DelayDecorator2" unique_id=2136310348 node_paths=PackedStringArray("animated_sprite")]
+[node name="PlaySpriteFramesAnimationAction4" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Tentacles/DelayDecorator2" unique_id=2136310348 node_paths=PackedStringArray("animated_sprite")]
 script = ExtResource("19_wl0hn")
 animated_sprite = NodePath("../../../../../../ShadedAnimatedSprite3D")
 animation_name = &"idle_ground"
 metadata/_custom_type_script = "uid://conlbm78k0yfx"
 
-[node name="TimeLimiterDecorator2" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/Tentacles" unique_id=1857827935]
-script = ExtResource("27_360p0")
-wait_time = 20.0
-metadata/_custom_type_script = "uid://we22430vcb44"
+[node name="GetAlliesAction" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Tentacles" unique_id=1423562559]
+script = ExtResource("42_jpqwv")
+metadata/_custom_type_script = "uid://qvwyjwtkcuxs"
 
-[node name="UntilFailDecorator" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/Tentacles/TimeLimiterDecorator2" unique_id=1794045876]
-script = ExtResource("22_pqx2w")
-metadata/_custom_type_script = "uid://c84st521ytmk3"
+[node name="BuffAlliesAction" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Tentacles" unique_id=1853521498]
+script = ExtResource("43_7fl6r")
+armor_buff = 3.0
+metadata/_custom_type_script = "uid://v4jop1qp3ahx"
 
-[node name="DelayDecorator" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/Tentacles/TimeLimiterDecorator2/UntilFailDecorator" unique_id=1526567113]
+[node name="RepeaterDecorator" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Tentacles" unique_id=99795163]
+script = ExtResource("20_u6j7b")
+repetitions = 10
+metadata/_custom_type_script = "uid://c5v7wuqn1xvdy"
+
+[node name="DelayDecorator3" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Tentacles/RepeaterDecorator" unique_id=1526567113]
 script = ExtResource("20_r4v3i")
 wait_time = 1.0
 metadata/_custom_type_script = "uid://dorri1tul8gfx"
 
-[node name="AttackAction" type="Node" parent="CasamentoBeehaveTree/SelectorReactiveComposite/Fase1/Tentacles/TimeLimiterDecorator2/UntilFailDecorator/DelayDecorator" unique_id=1158875675]
+[node name="SequenceComposite" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Tentacles/RepeaterDecorator/DelayDecorator3" unique_id=1951443078]
+script = ExtResource("16_8r425")
+metadata/_custom_type_script = "uid://cg016dbe7gs1x"
+
+[node name="GetEnemyAction" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Tentacles/RepeaterDecorator/DelayDecorator3/SequenceComposite" unique_id=781259949]
+script = ExtResource("17_stgu7")
+metadata/_custom_type_script = "uid://din3o6je4hf0y"
+
+[node name="AttackAction" type="Node" parent="CLTBeehaveTree/SelectorReactiveComposite/Fase1/Tentacles/RepeaterDecorator/DelayDecorator3/SequenceComposite" unique_id=1158875675]
 script = ExtResource("21_xoqhw")
 attack_scene = ExtResource("39_kyt5n")
 spawn_at_target = true

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://qfvebbm036kn"
+path="res://.godot/imported/outro.dialogue-d65faaf938a85d3d9af7fac21421ffcf.tres"
+
+[deps]
+
+source_file="res://resources/dialog/intro/outro.dialogue"
+dest_files=["res://.godot/imported/outro.dialogue-d65faaf938a85d3d9af7fac21421ffcf.tres"]
+
+[params]
+
+defaults=true

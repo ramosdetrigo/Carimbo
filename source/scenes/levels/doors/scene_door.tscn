@@ -230,7 +230,6 @@ collision_layer = 0
 collision_mask = 8
 script = ExtResource("1_1i1nm")
 marker_position = Vector3(2, 0, 0)
-is_paint_room = null
 metadata/_custom_type_script = "uid://dj4esefrjyce0"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=290609747]

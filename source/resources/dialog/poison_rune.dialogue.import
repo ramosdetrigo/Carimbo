@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://q3u5ux8sxgtx"
+path="res://.godot/imported/poison_rune.dialogue-d50d6d24a2cdc17bcda35ad0291b8ab2.tres"
+
+[deps]
+
+source_file="res://resources/dialog/poison_rune.dialogue"
+dest_files=["res://.godot/imported/poison_rune.dialogue-d50d6d24a2cdc17bcda35ad0291b8ab2.tres"]
+
+[params]
+
+defaults=true

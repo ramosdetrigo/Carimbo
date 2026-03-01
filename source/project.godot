@@ -41,6 +41,7 @@ gdscript/warnings/unsafe_method_access=1
 [dialogue_manager]
 
 runtime/balloon_path="res://scenes/dialogue_ballon/balloon.tscn"
+editor/wrap_long_lines=true
 
 [display]
 
@@ -184,7 +185,7 @@ sub_rune={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://resources/dialog/test.dialogue", "res://resources/dialog/water_rune.dialogue", "res://resources/dialog/eletric_rune.dialogue", "res://resources/dialog/intro/intro1.dialogue", "res://resources/dialog/intro/intro2.dialogue", "res://resources/dialog/intro/intro3.dialogue")
+locale/translations_pot_files=PackedStringArray("res://resources/dialog/test.dialogue", "res://resources/dialog/water_rune.dialogue", "res://resources/dialog/eletric_rune.dialogue", "res://resources/dialog/intro/intro1.dialogue", "res://resources/dialog/intro/intro2.dialogue", "res://resources/dialog/intro/intro3.dialogue", "res://resources/dialog/poison_rune.dialogue", "res://resources/dialog/wave_rune.dialogue", "res://resources/dialog/strenght_rune.dialogue", "res://resources/dialog/intro/outro.dialogue")
 
 [layer_names]
 

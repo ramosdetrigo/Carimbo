@@ -32,11 +32,11 @@ var intro_scenes: Array[Scene] = [
 func _ready() -> void:
 	image.modulate = Color.TRANSPARENT
 	await get_tree().create_timer(1.0).timeout
-	
+
 	await _play_scene(intro_scenes[0])
 	await _play_scene(intro_scenes[1])
 	await _play_scene(intro_scenes[2])
-	
+
 	SceneLoader.load_scene("uid://dbx0mdbod3dh8") # level 1
 
 
@@ -63,7 +63,7 @@ func _image_fade_in() -> void:
 	_reset_tween()
 	image.scale = Vector2(1.5, 1.5)
 	image.rotation_degrees = randf_range(-5.0, 5.0)
-	
+
 	tween.tween_property(image, "modulate", Color.WHITE, trans_time);
 	tween.tween_property(image, "scale", Vector2.ONE, trans_time);
 	tween.tween_property(image, "rotation", 0.0, trans_time);

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Rune" format=3 uid="uid://beughubdcg8qg"]
+
+[ext_resource type="PackedScene" uid="uid://c8ywh0t2oq5wr" path="res://scenes/objects/weapons/purple_hammer.tscn" id="1_iotjd"]
+[ext_resource type="Texture2D" uid="uid://bbwh5yjggaoco" path="res://assets/textures/ui/vida/roxo_bola.png" id="2_iotjd"]
+[ext_resource type="Texture2D" uid="uid://c825yfxhsog2l" path="res://assets/textures/ui/vida/roxo_bola_grande.png" id="3_8snup"]
+[ext_resource type="PackedScene" uid="uid://cnxbpj7e1y3j8" path="res://scenes/vfx/static/symbols/poison_rune.tscn" id="4_tlmxc"]
+[ext_resource type="Script" uid="uid://du7c6s1s7a807" path="res://scripts/components/rune.gd" id="5_vrfud"]
+
+[resource]
+resource_name = "Poison Rune"
+script = ExtResource("5_vrfud")
+name = "Poison Rune"
+icon = ExtResource("2_iotjd")
+large_icon = ExtResource("3_8snup")
+attack_scene = ExtResource("1_iotjd")
+rune_scene = ExtResource("4_tlmxc")
+cooldown = 1.0
+metadata/_custom_type_script = "uid://du7c6s1s7a807"

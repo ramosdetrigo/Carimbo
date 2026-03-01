@@ -15,8 +15,8 @@ stamp_size = Vector2(0.25, 0.25)
 flags = 1
 metadata/_custom_type_script = "uid://cuoa1ubyh5d06"
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_ht51p"]
-radius = 1.0
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ntwdj"]
+radius = 3.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ntwdj"]
 transparency = 1
@@ -76,7 +76,7 @@ launch_force = 20.0
 metadata/_custom_type_script = "uid://fjgad71t0sd4"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="HurtboxComponent" unique_id=1228507417]
-shape = SubResource("SphereShape3D_ht51p")
+shape = SubResource("CylinderShape3D_ntwdj")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=1329502933]
 material_override = SubResource("StandardMaterial3D_ntwdj")

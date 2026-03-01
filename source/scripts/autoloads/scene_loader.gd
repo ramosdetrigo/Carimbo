@@ -55,6 +55,12 @@ func load_scene_with_player(_scene_path: String,
 	load_scene(_scene_path)
 
 
+func reset_player() -> void:
+	if not is_instance_valid(_player) or not _player: return
+	_player.queue_free()
+	_player = null
+
+
 func load_last_paint_room() -> void:
 	_last_paint_room = SaveSys.load_last_level()
 	if _last_paint_room.is_empty(): _last_paint_room = LEVEL_1

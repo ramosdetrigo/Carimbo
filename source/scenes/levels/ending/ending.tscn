@@ -1,0 +1,184 @@
+[gd_scene format=3 uid="uid://duw2nedn700j8"]
+
+[ext_resource type="Script" uid="uid://ckxpmu5lrfiql" path="res://scenes/levels/level_scene.gd" id="1_5e7wn"]
+[ext_resource type="MeshLibrary" uid="uid://be3yh5mqefut3" path="res://resources/mesh_library/level_props.meshlib" id="3_t6stk"]
+[ext_resource type="PackedScene" uid="uid://c3hpiq2ftpgt8" path="res://scenes/levels/doors/scene_door.tscn" id="4_21xrn"]
+[ext_resource type="Script" uid="uid://bvgv0wqcnb1yp" path="res://scripts/phantom_camera_3d_follow_player.gd" id="9_tlddj"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="10_ro5l8"]
+[ext_resource type="Environment" uid="uid://c44ylihrd2515" path="res://resources/envoriment/fire_enviroment.tres" id="12_trgfp"]
+[ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="13_s5qwj"]
+[ext_resource type="PackedScene" uid="uid://domk3xwojp1ia" path="res://scenes/components/character/character.tscn" id="14_1eujw"]
+[ext_resource type="Shader" uid="uid://dl6ampid6rth6" path="res://scenes/components/stamped_animated_sprite/shaded_animated_sprite_3d.gdshader" id="15_6sqea"]
+[ext_resource type="Texture2D" uid="uid://ch1fj0j2vc2r1" path="res://resources/burn_noise_texture.tres" id="16_meuc5"]
+[ext_resource type="Texture2D" uid="uid://dqyykf3mww3uv" path="res://assets/textures/player/attack.png" id="17_s8r32"]
+[ext_resource type="Texture2D" uid="uid://o34vnik8cwo4" path="res://assets/textures/paper/Paper003_1K-JPG_NormalGL.jpg" id="18_jahsh"]
+[ext_resource type="Texture2D" uid="uid://dkbujjnpxwia0" path="res://assets/textures/paper/Paper003_1K-JPG_Roughness.jpg" id="19_e7lof"]
+[ext_resource type="Script" uid="uid://dj4esefrjyce0" path="res://scripts/components/door.gd" id="20_67tap"]
+[ext_resource type="Script" uid="uid://du7c6s1s7a807" path="res://scripts/components/rune.gd" id="20_cood7"]
+[ext_resource type="Texture2D" uid="uid://lkeultvpjsj1" path="res://assets/textures/logoda4_dark.svg" id="21_67tap"]
+[ext_resource type="Resource" uid="uid://dhkf2x6ifyip0" path="res://resources/runes/fire_rune.tres" id="21_rxw27"]
+[ext_resource type="Resource" uid="uid://b2yoi87p65bkn" path="res://resources/runes/water_rune.tres" id="22_knqsl"]
+[ext_resource type="Resource" uid="uid://68oolyclljfd" path="res://resources/runes/eletric_rune.tres" id="23_jmnwm"]
+[ext_resource type="Resource" uid="uid://3mpy0qw7jpp8" path="res://resources/runes/strenght_rune.tres" id="24_pfsj6"]
+[ext_resource type="Resource" uid="uid://bobquv3otkbes" path="res://resources/runes/wave_rune.tres" id="25_n8h7j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yylnd"]
+atlas = ExtResource("17_s8r32")
+region = Rect2(0, 0, 270, 270)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_jylxd"]
+viewport_path = NodePath("ShadedAnimatedSprite3D/SubViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_67tap"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("15_6sqea")
+shader_parameter/roughness = 1.0
+shader_parameter/texture_roughness = ExtResource("19_e7lof")
+shader_parameter/specular = 0.249999994412
+shader_parameter/texture_normal = ExtResource("18_jahsh")
+shader_parameter/normal_scale = 1.5600008340999985
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = SubResource("AtlasTexture_yylnd")
+shader_parameter/texture_carimbo = SubResource("ViewportTexture_jylxd")
+shader_parameter/carimbo_glow_intensity = 0.0
+shader_parameter/burn_texture = ExtResource("16_meuc5")
+shader_parameter/burn_amount = 0.0
+shader_parameter/burn_size = 0.150000007125
+shader_parameter/burn_smoothness = 0.1330000063175
+shader_parameter/burn_glow_color = Color(1, 0.32, 0, 1)
+shader_parameter/burn_glow_intensity = 10.0
+shader_parameter/region_rect = Vector4(0, 0, 0.083333336, 1)
+
+[sub_resource type="Resource" id="Resource_5h8ni"]
+script = ExtResource("10_ro5l8")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ey24n"]
+size = Vector3(25, 1, 25)
+
+[node name="Level23" type="Node3D" unique_id=2027348526]
+script = ExtResource("1_5e7wn")
+metadata/_custom_type_script = "uid://ckxpmu5lrfiql"
+
+[node name="Lights" type="Node3D" parent="." unique_id=1784018073]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lights" unique_id=608939908]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -8)
+light_color = Color(0.71475035, 0.51046205, 0.2746351, 1)
+light_size = 4.0
+light_bake_mode = 1
+omni_range = 10.0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Lights" unique_id=1487569529]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 5, 0)
+light_color = Color(0.71475035, 0.51046205, 0.2746351, 1)
+light_size = 4.0
+light_bake_mode = 1
+omni_range = 10.0
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="Lights" unique_id=632772376]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 8)
+light_color = Color(0.71475035, 0.51046205, 0.2746351, 1)
+light_size = 4.0
+light_bake_mode = 1
+omni_range = 10.0
+
+[node name="OmniLight3D7" type="OmniLight3D" parent="Lights" unique_id=658048064]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 5, 0)
+light_color = Color(0.71475035, 0.51046205, 0.2746351, 1)
+light_size = 4.0
+light_bake_mode = 1
+omni_range = 10.0
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="Lights" unique_id=214113834]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 5.656854, 5, -5.656854)
+light_color = Color(0.71475035, 0.51046205, 0.2746351, 1)
+light_size = 4.0
+light_bake_mode = 1
+omni_range = 10.0
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="Lights" unique_id=1537209460]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 5.656854, 5, 5.656854)
+light_color = Color(0.71475035, 0.51046205, 0.2746351, 1)
+light_size = 4.0
+light_bake_mode = 1
+omni_range = 10.0
+
+[node name="OmniLight3D6" type="OmniLight3D" parent="Lights" unique_id=428292966]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -5.656854, 5, 5.656854)
+light_color = Color(0.71475035, 0.51046205, 0.2746351, 1)
+light_size = 4.0
+light_bake_mode = 1
+omni_range = 10.0
+
+[node name="OmniLight3D8" type="OmniLight3D" parent="Lights" unique_id=1904168474]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -5.656854, 5, -5.656854)
+light_color = Color(0.71475035, 0.51046205, 0.2746351, 1)
+light_size = 4.0
+light_bake_mode = 1
+omni_range = 10.0
+
+[node name="Entrance" parent="Lights" unique_id=1756562916 instance=ExtResource("4_21xrn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 0)
+marker_position = Vector3(-10, 0, 0)
+is_locked = true
+with_player = null
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=961935023]
+environment = ExtResource("12_trgfp")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1198026530]
+transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, 0, 5, 10)
+top_level = true
+
+[node name="PhantomCameraHost" type="Node" parent="Camera3D" unique_id=1280414814]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("13_s5qwj")
+
+[node name="PlayerCharacter" parent="." unique_id=269989542 instance=ExtResource("14_1eujw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 0)
+
+[node name="ShadedAnimatedSprite3D" parent="PlayerCharacter" index="1" unique_id=1555501919]
+material_override = SubResource("ShaderMaterial_67tap")
+
+[node name="WeaponManager" parent="PlayerCharacter" index="2" unique_id=2002537722]
+runes = Array[ExtResource("20_cood7")]([ExtResource("21_rxw27"), ExtResource("22_knqsl"), ExtResource("23_jmnwm")])
+sub_runes = Array[ExtResource("20_cood7")]([ExtResource("24_pfsj6"), ExtResource("25_n8h7j")])
+
+[node name="PhantomCamera3D" parent="PlayerCharacter" index="16" unique_id=848212730]
+transform = Transform3D(-3.4562582e-08, -0.6497494, 0.7602012, -4.8560654e-08, 0.7601472, 0.6497956, -0.9999994, 5.960459e-08, 0, -8, 3, 0)
+
+[node name="FPPhantomCamera3D" type="Node3D" parent="." unique_id=1941715877]
+transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, 0, 5, 10)
+script = ExtResource("9_tlddj")
+tween_resource = SubResource("Resource_5h8ni")
+metadata/_custom_type_script = "uid://bvgv0wqcnb1yp"
+
+[node name="SceneDoor" type="Area3D" parent="." unique_id=1653468103]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9, 0)
+collision_layer = 0
+collision_mask = 11
+script = ExtResource("20_67tap")
+marker_position = Vector3(2, -9, 0)
+destination_scene = "uid://brxftxypdtkwj"
+with_player = false
+metadata/_custom_type_script = "uid://dj4esefrjyce0"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SceneDoor" unique_id=2065925198]
+shape = SubResource("BoxShape3D_ey24n")
+
+[node name="GridMap" type="GridMap" parent="." unique_id=140443157]
+mesh_library = ExtResource("3_t6stk")
+cell_center_y = false
+data = {
+"cells": PackedInt32Array(-4, 65532, 5, -3, 65532, 5, -2, 65532, 5, -1, 65532, 5, -65536, 65532, 5, -65535, 65532, 5, -65534, 65532, 5, -65533, 65532, 5, -65533, 65533, 5, -65533, 65534, 5, -65533, 65535, 5, -65533, 0, 5, -65533, 1, 5, -65533, 2, 5, -65533, 3, 5, -4, 3, 5, -3, 3, 5, -2, 3, 5, -1, 3, 5, -65536, 3, 5, -65535, 3, 5, -65534, 3, 5, -4, 65533, 5, -4, 65534, 5, -4, 65535, 5, -4, 0, 5, -4, 1, 5, -4, 2, 5, -6, 65530, 5, -6, 65531, 5, -6, 65532, 5, -5, 65530, 5, -5, 65531, 5, -5, 65532, 5, -4, 65530, 5, -4, 65531, 5, -3, 65530, 5, -3, 65531, 5, -2, 65530, 5, -2, 65531, 5, -1, 65530, 5, -1, 65531, 5, -65536, 65530, 5, -65536, 65531, 5, -65535, 65530, 5, -65535, 65531, 5, -65534, 65530, 5, -65534, 65531, 5, -65533, 65530, 5, -65533, 65531, 5, -65532, 65530, 5, -65532, 65531, 5, -65532, 65532, 5, -65531, 65530, 5, -65531, 65531, 5, -65531, 65532, 5, -65533, 4, 5, -65533, 5, 5, -65532, 65533, 5, -65532, 65534, 5, -65532, 65535, 5, -65532, 0, 5, -65532, 1, 5, -65532, 2, 5, -65532, 3, 5, -65532, 4, 5, -65532, 5, 5, -65531, 65533, 5, -65531, 65534, 5, -65531, 65535, 5, -65531, 0, 5, -65531, 1, 5, -65531, 2, 5, -65531, 3, 5, -65531, 4, 5, -65531, 5, 5, -6, 3, 5, -6, 4, 5, -6, 5, 5, -5, 3, 5, -5, 4, 5, -5, 5, 5, -4, 4, 5, -4, 5, 5, -3, 4, 5, -3, 5, 5, -2, 4, 5, -2, 5, 5, -1, 4, 5, -1, 5, 5, -65536, 4, 5, -65536, 5, 5, -65535, 4, 5, -65535, 5, 5, -65534, 4, 5, -65534, 5, 5, -6, 65533, 5, -6, 65534, 5, -6, 65535, 5, -6, 0, 5, -6, 1, 5, -6, 2, 5, -5, 65533, 5, -5, 65534, 5, -5, 65535, 5, -5, 0, 5, -5, 1, 5, -5, 2, 5, 65530, 65529, 1048576, 65531, 65529, 1048576, 65532, 65529, 1048576, 65533, 65529, 1048576, 65534, 65529, 1048576, 65535, 65529, 1048576, 0, 65529, 1048576, 1, 65529, 1048576, 2, 65529, 1048576, 3, 65529, 1048576, 4, 65529, 1048576, 5, 65529, 1048576, 6, 65530, 0, 6, 65531, 0, 6, 65532, 0, 6, 65533, 0, 6, 65534, 0, 6, 65535, 0, 6, 0, 0, 6, 1, 0, 6, 2, 0, 6, 3, 0, 6, 4, 0, 6, 5, 0, 65530, 6, 1441792, 65531, 6, 1441792, 65532, 6, 1441792, 65533, 6, 1441792, 65534, 6, 1441792, 65535, 6, 1441792, 0, 6, 1441792, 1, 6, 1441792, 2, 6, 1441792, 3, 6, 1441792, 4, 6, 1441792, 5, 6, 1441792, 65529, 5, 655360, 65529, 65530, 655360, 65529, 65531, 655360, 65529, 65532, 655360, 65529, 65533, 655360, 65529, 65534, 655360, 65529, 65535, 655360, 65529, 0, 655360, 65529, 1, 655360, 65529, 2, 655360, 65529, 3, 655360, 65529, 4, 655360, 65530, 0, 4, -262142, 65532, 1048576, -262143, 65532, 1048576, -262144, 65532, 1048576, -196609, 65532, 1048576, -196610, 65532, 1048576, -196611, 65532, 1048576, -262141, 65533, 0, -262141, 65534, 0, -262141, 65535, 0, -262141, 0, 0, -262141, 1, 0, -262141, 2, 0, -262142, 3, 1441792, -262143, 3, 1441792, -262144, 3, 1441792, -196609, 3, 1441792, -196610, 3, 1441792, -196611, 3, 1441792, -196612, 2, 655360, -196612, 1, 655360, -196612, 0, 655360, -196612, 65535, 655360, -196612, 65534, 655360, -196612, 65533, 655360, -458756, 2, 655360, -458756, 1, 655360, -458756, 0, 655360, -458756, 65535, 655360, -458756, 65534, 655360, -458756, 65533, 655360, -458755, 65532, 1048576, -458754, 65532, 1048576, -458753, 65532, 1048576, -524288, 65532, 1048576, -524287, 65532, 1048576, -524286, 65532, 1048576, -524285, 65533, 0, -524285, 65534, 0, -524285, 65535, 0, -524285, 0, 0, -524285, 1, 0, -524285, 2, 0, -524286, 3, 1441792, -524287, 3, 1441792, -524288, 3, 1441792, -458753, 3, 1441792, -458754, 3, 1441792, -458755, 3, 1441792, -524291, 65533, 1441797, -524290, 65533, 1441797, -524289, 65533, 1441797, -589824, 65533, 1441797, -589824, 65534, 1441797, -589823, 65533, 1441797, -589822, 65533, 1441797, -589822, 65534, 1441797, -589823, 65534, 1441797, -589822, 65535, 1441797, -589823, 65535, 1441797, -589823, 0, 1441797, -589822, 1, 1441797, -589822, 0, 1441797, -589822, 2, 1441797, -589823, 2, 1441797, -589824, 2, 1441797, -589824, 1, 1441797, -524289, 1, 1441797, -524290, 1, 1441797, -524291, 1, 1441797, -524291, 2, 1441797, -524290, 2, 1441797, -524289, 2, 1441797, -589823, 1, 1441797, -589824, 0, 1441797, -589824, 65535, 1441797, -524289, 65534, 1441797, -524290, 65534, 1441797, -524291, 65534, 1441797, -524291, 65535, 1441797, -524291, 0, 1441797, -524290, 0, 1441797, -524289, 0, 1441797, -524290, 65535, 1441797, -524289, 65535, 1441797)
+}
+metadata/_editor_floor_ = Vector3(0, -9, 0)
+
+[node name="Decal" type="Decal" parent="." unique_id=1278624713]
+transform = Transform3D(0.9999862, 6.0040856e-13, 0.0052359616, 0.0052359616, -2.2887114e-10, -0.9999862, 6.0040856e-13, 0.9999999, -2.2887114e-10, 0.13746452, 4.508996, -11.904071)
+size = Vector3(7.297, 1, 4)
+texture_albedo = ExtResource("21_67tap")
+
+[editable path="PlayerCharacter"]

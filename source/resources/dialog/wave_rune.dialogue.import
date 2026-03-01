@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cacpaf0btvrhf"
+path="res://.godot/imported/wave_rune.dialogue-da3d931d620431982171eed556169a74.tres"
+
+[deps]
+
+source_file="res://resources/dialog/wave_rune.dialogue"
+dest_files=["res://.godot/imported/wave_rune.dialogue-da3d931d620431982171eed556169a74.tres"]
+
+[params]
+
+defaults=true

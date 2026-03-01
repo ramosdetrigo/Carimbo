@@ -1,0 +1,108 @@
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Version number in the format `v1.2.3`"
+        required: true
+        type: string
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref || github.run_id }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: nu {0}
+
+env:
+  godot_version: 4.6.1
+  app_binary_name: diaboa4
+
+jobs:
+  foward-env:
+    runs-on: ubuntu-latest
+    steps:
+      - name: do nothing
+        run: "true"
+    outputs:
+      itch_page: ${{ env.itch_page }}
+
+  get-version:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Determine version number
+        id: tag
+        run: echo "ref=${GITHUB_REF#refs/*/}" >> "${GITHUB_OUTPUT}"
+    outputs:
+      version: ${{ inputs.version || steps.tag.outputs.ref }}
+
+  build:
+    needs:
+      - get-version
+    env:
+      version: ${{ needs.get-version.outputs.version }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    strategy:
+      matrix:
+        include:
+          - platform: linux
+          - platform: windows
+
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+      - name: Set up environment
+        run: |
+          let app = $"./compiled/${{ matrix.platform }}/($env.app_binary_name)"
+          let package = $"($env.app_binary_name)-${{ matrix.platform }}.zip"
+
+          $"app=($app)
+          package=($package)
+          " | save -a $env.GITHUB_ENV
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Godot Project Version
+        run: sed -i 's/config\/version="[^"]*"/config\/version="${{ env.version }}"/' ./source/project.godot
+
+      - name: Setup Godot
+        uses: chickensoft-games/setup-godot@v2
+        with:
+          version: ${{ env.godot_version }}
+          use-dotnet: false
+          include-templates: true
+
+      - name: Verify Setup, Open and Import Files
+        run: godot --headless --editor --quit --import ./source/project.godot
+
+      - name: Prepare output directories
+        run: rm -rf tmp; mkdir '${{ env.app }}'
+
+      - name: Build Project
+        run: godot ./source/project.godot --headless --export-release ${{ matrix.platform }} ${{ env.app }}/${{ env.package }}
+
+      - name: Upload package to workflow artifacts
+        if: ${{ env.is_platform_enabled == 'true' }}
+        uses: actions/upload-artifact@v4
+        with:
+          path: ${{ env.app }}/${{ env.package }}
+          name: package-${{ matrix.platform }}
+          retention-days: 1
+
+      - name: Upload package to GitHub release
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: ${{ env.app }}/${{ env.package }}
+          asset_name: ${{ env.package }}
+          release_name: ${{ env.version }}
+          tag: ${{ env.version }}
+          overwrite: true

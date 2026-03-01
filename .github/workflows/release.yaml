@@ -43,7 +43,7 @@ jobs:
 
       - name: Set up environment
         run: |
-          let app = "./compiled/${{ matrix.platform }}"
+          let app = "compiled/${{ matrix.platform }}"
           let package = $"($app)/($env.app_binary_name).zip"
 
           if ("${{ inputs.version }}" !~ '^v\d+\.\d+\.\d+$') {
@@ -72,7 +72,7 @@ jobs:
       - name: Upload package to workflow artifacts
         uses: actions/upload-artifact@v4
         with:
-          path: ${{ env.app }}/${{ env.package }}
+          path: ${{ env.package }}
           name: package-${{ matrix.platform }}
           retention-days: 1
 

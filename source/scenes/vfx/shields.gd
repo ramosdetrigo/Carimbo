@@ -3,6 +3,7 @@ extends Node3D
 @export var gpu_particles_3d: GPUParticles3D
 @export var animation_player: AnimationPlayer
 
+
 func on_armor_changed(armor: float) -> void:
 	if armor > 0.0:
 		show()

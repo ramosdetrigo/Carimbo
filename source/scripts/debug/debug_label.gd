@@ -14,6 +14,7 @@ func _init() -> void:
 
 
 func _ready() -> void:
+	if not OS.is_debug_build(): queue_free()
 	if Engine.is_editor_hint() or not stats_component: return
 	set_health(stats_component.health)
 	set_armor(stats_component.armor)

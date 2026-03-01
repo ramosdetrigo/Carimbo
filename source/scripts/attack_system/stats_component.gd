@@ -21,6 +21,7 @@ signal armor_changed(armor: float)
 
 func _ready() -> void:
 	if connect_signals_enable: _connect_signals()
+	armor_changed.emit(armor)
 
 
 func _connect_signals() -> void:

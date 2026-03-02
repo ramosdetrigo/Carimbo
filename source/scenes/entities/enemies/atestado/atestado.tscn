@@ -206,6 +206,7 @@ connect_signals_enable = true
 input_component = NodePath("../InputComponent")
 hitbox_component = NodePath("../HitboxComponent")
 beehave_tree = NodePath("../AtestadoBeehaveTree")
+ignore_armor = true
 metadata/_custom_type_script = "uid://cqxuelwl2k4bg"
 
 [node name="DebugLabel3D" type="Label3D" parent="." unique_id=2033551976 node_paths=PackedStringArray("stats_component")]
@@ -229,7 +230,7 @@ metadata/_custom_type_script = "uid://c6tbcxlt1e2hy"
 
 [node name="AtestadoBeehaveTree" type="Node" parent="." unique_id=331908298 node_paths=PackedStringArray("blackboard", "actor")]
 script = ExtResource("13_taiqs")
-blackboard = NodePath("@Node@226900")
+blackboard = NodePath("@Node@32535")
 actor = NodePath("..")
 metadata/_custom_type_script = "uid://bb0t2ovl7wifo"
 

@@ -633,6 +633,7 @@ script = ExtResource("38_qnac1")
 
 [node name="PlayerCharacter" type="CharacterBody3D" unique_id=269989542 node_paths=PackedStringArray("state_machine", "stats", "death_state", "stampable_sprite") groups=["player"]]
 collision_layer = 8
+collision_mask = 257
 script = ExtResource("1_6d1i5")
 state_machine = NodePath("StateMachine")
 stats = NodePath("StatsComponent")
@@ -664,7 +665,7 @@ render_target_clear_mode = 2
 render_target_update_mode = 1
 
 [node name="WeaponManager" type="Node3D" parent="." unique_id=2002537722 node_paths=PackedStringArray("stats_component", "cooldown_timer")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.586483, -0.0579077)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.092966, -0.0579077)
 script = ExtResource("9_albb0")
 stats_component = NodePath("../StatsComponent")
 cooldown_timer = NodePath("../CooldownTimer")

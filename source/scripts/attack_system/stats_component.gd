@@ -15,6 +15,7 @@ signal armor_changed(armor: float)
 @export var input_component: InputComponent
 @export var hitbox_component: HitboxComponent
 @export var beehave_tree: BeehaveTree
+@export var ignore_armor: bool = false
 
 @onready var health: float = self.max_health
 @onready var armor: float = self.max_armor

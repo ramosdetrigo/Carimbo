@@ -2,10 +2,15 @@ name: Export Game
 
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+    inputs:
+      itch-upload:
+        type: boolean
+        default: false
+        description: Upload to ItchIo?
+      github-upload:
+        type: boolean
+        default: true
+        description: Upload to Github?
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref || github.run_id }}
@@ -17,7 +22,7 @@ defaults:
 
 env:
   project-godot-root: ./source/
-  itch-project-slug: username/game
+  itch-project-slug: cafundogames/diaboa4
 
 jobs:
   export:
@@ -32,8 +37,7 @@ jobs:
           version: "*"
           enable-plugins: true
 
-      - name: Get Info
-        id: info
+      - name: get info
         run: |
           let version = (open ($env.project-godot-root | path join "project.godot")
             | lines
@@ -43,9 +47,10 @@ jobs:
             | get 1
             | str trim -c '"')
 
-          $"version=($version)" | save -a $env.GITHUB_OUTPUT
+          $"version=($version)" | save -a $env.GITHUB_ENV
 
       - name: export game
+        if: inputs.github-upload || inputs.itch-upload
         id: export
         uses: firebelley/godot-export@v7.0.0
         with:
@@ -56,20 +61,44 @@ jobs:
           archive_output: true
 
       - name: create release
+        if: inputs.github-upload && !env.ACT
         uses: ncipollo/release-action@v1.20.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           generateReleaseNotes: true
-          tag: ${{ steps.info.outputs.version }}
+          tag: ${{ env.version }}
           allowUpdates: true
           artifactErrorsFailBuild: true
           artifacts: ${{ steps.export.outputs.archive_directory }}/*
 
-      - name: Setup buttler
+      - name: setup butler
+        if: inputs.itch-upload && env.itch-project-slug != 'username/game'
         uses: remarkablegames/setup-butler@v2
         with:
           butler-version: LATEST
 
-      - name: Upload to Itch
-        if: env.itch-project-slug != 'username/game'
-        run: echo (ls ${{ steps.export.outputs.archive_directory }}/)
+      - name: upload to itch
+        if: inputs.itch-upload && env.itch-project-slug != 'username/game'
+        run: |
+          let info = (ls ${{steps.export.outputs.archive_directory}}
+            | each { |f|
+              let channel = match ($f.name | path basename | str kebab-case) {
+                  $n if ($n | str contains "linux") => "linux",
+                  $n if ($n | str contains "windows") => "windows",
+                  $n if ($n | str contains "win") => "windows",
+                  $n if ($n | str contains "mac") => "osx",
+                  $n if ($n | str contains "android") => "android",
+                  $n if ($n | str contains "web") => "web",
+                  _ => "other"
+              }
+              {
+                file: $f.name,
+                channel: $channel
+              }
+            })
+
+          for i in $info {
+            ^butler push --fix-permissions --userversion=$"($env.version)" $i.file $"($env.itch-project-slug):($i.channel)"
+          }
+        env:
+          BUTLER_API_KEY: ${{ secrets.BUTLER_CREDENTIALS }}

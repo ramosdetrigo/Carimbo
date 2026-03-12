@@ -194,6 +194,7 @@ omni_shadow_mode = 0
 [node name="Entrance" parent="NavigationRegion3D/GridMap/Lights" unique_id=1756562916 instance=ExtResource("3_evhx3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, 0)
 marker_position = Vector3(-11, 0, 0)
+is_paint_room = false
 
 [node name="Exit" parent="NavigationRegion3D/GridMap/Lights" unique_id=1742187779 instance=ExtResource("3_evhx3")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 13, 0, 0)
